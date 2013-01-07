@@ -104,6 +104,8 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 
+		'ExpressiveDateServiceProvider',
+
 	),
 
 	/*
