@@ -148,6 +148,9 @@ return array(
 		'Validator'  => 'Illuminate\Support\Facades\Validator',
 		'View'       => 'Illuminate\Support\Facades\View',
 
+		// Underscore.php
+		'String' => 'Underscore\Types\String',
+
 	),
 
 );

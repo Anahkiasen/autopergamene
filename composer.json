@@ -1,6 +1,7 @@
 {
 	"require": {
-		"illuminate/foundation": "1.2.*"
+		"illuminate/foundation": "1.2.*",
+		"anahkiasen/underscore-php": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
