@@ -156,6 +156,7 @@ return array(
 
     // Underscore.php
     'String' => 'Underscore\Types\String',
+    'Arrays' => 'Underscore\Types\Arrays',
     'HTML'   => 'Cerberus\Facades\HTML',
     'Basset' => 'Basset\Facades\Basset',
 
