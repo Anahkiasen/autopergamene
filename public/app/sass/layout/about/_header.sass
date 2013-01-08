@@ -1,0 +1,23 @@
+//////////////////////////////////////////////////////////////////////
+///////////////////////////// ABOUT HEADER ///////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+aside
+
+  // Structure
+  width: 100%
+  +rem(height, 20rem)
+  +rem(margin-bottom, 1rem)
+
+  // Appearance
+  @extend %cover
+  @extend .image-wrap
+  background-image: image-url('maxime-fabre.jpg')
+
+  // Responsive ---------------------------------------------------- /
+
+  +from-to($desktop, $wide)
+    +rem(height, 25rem)
+
+  +from($wide)
+    +rem(height, 30rem)

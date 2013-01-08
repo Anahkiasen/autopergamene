@@ -1,0 +1,107 @@
+//////////////////////////////////////////////////////////////////////
+////////////////////////// BLOCK PLACEHOLDERS ////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+// Responsive containers ------------------------------------------- /
+
+%body
+  @extend %container-wide
+  +rem(padding, 2rem)
+
+  +to($tablet)
+    +rem(padding, 1rem)
+
+  +from-to($tablet, $wide)
+    width: 90%
+
+  +from-to($wide, $wider)
+    width: 70%
+
+  +from($wider)
+    width: 60%
+
+%content
+  +from-to($desktop, $wide)
+    +per-row(2)
+
+  +from($wide)
+    +per-row(3)
+
+// Typography ------------------------------------------------------ /
+
+%wide-block
+  display: block
+  width: 100%
+
+%accent
+  color: $color-accent
+  font-weight: 500
+
+%lips
+  border: none
+  border-bottom: 1px solid mix(white, $color-accent, 70)
+  +rem(margin, 1rem 0)
+
+// Accent blocks --------------------------------------------------- /
+
+%accent-block
+  background-color: $color-accent
+  border: none
+  color: white
+  text-align: center
+
+%clickable-block
+  @extend %accent-block
+  @extend %wide-block
+  @extend %font-base
+  @extend %font-size-normal
+  clear: both
+  cursor: pointer
+  +rem(padding, 0.25rem 0)
+  &:hover
+    background-color: lighten($color-accent, 10)
+    color: white
+  &:active
+    background-color: lighten($color-accent, 15)
+
+// Light blocks ---------------------------------------------------- /
+
+%light-block
+  background-color: fade(black, 5)
+  color: grey(20)
+  +rem(padding, 0.75rem)
+  text-align: justify
+
+%quotation
+  @extend %light-block
+  font-style: italic
+  margin-left: 0
+  margin-right: 0
+
+  +from($desktop)
+    background-image: image-url('quotes.png')
+    +rem(background-position, 1rem 1rem)
+    background-repeat: no-repeat
+    background-size: 10%
+    +rem(margin, 2rem 10%)
+    +rem(padding, 2rem)
+
+%light-accent-block
+  @extend %accent-block
+  background-color: $light-color-accent
+  text-shadow: 0 .15em 0 fade(black, 25)
+
+@import category
+
+// Animations ------------------------------------------------------ /
+
+%hidden
+  @extend %transition
+  height: 0
+  +opacity(0)
+  overflow: hidden
+
+%reveal
+  height: 100%
+  max-height: auto
+  +opacity(100)

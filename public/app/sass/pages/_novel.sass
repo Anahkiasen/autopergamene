@@ -1,0 +1,36 @@
+//////////////////////////////////////////////////////////////////////
+////////////////////////////// NOVEL VIEW ////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+.novel
+
+  figure
+    @extend %cover
+
+  // Text styles --------------------------------------------------- /
+
+  h1
+    +font-size(4rem)
+    +rem(margin-bottom, 2rem)
+
+  article
+    h3
+      text-align: center
+      margin: 1rem
+    p
+      +rem(text-indent, 3rem)
+    ul
+      @extend blockquote
+      @extend %reset-list
+      margin: 0
+      +rem(padding, 2rem)
+      font-style: normal
+      li:before
+        content: '-'
+        +rem(padding-right, 1rem)
+
+  // Novel not found ----------------------------------------------- /
+
+  .alert
+    @extend %light-block
+    +rem(margin, 2rem 0)

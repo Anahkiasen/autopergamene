@@ -1,0 +1,22 @@
+//////////////////////////////////////////////////////////////////////
+//////////////////////////// LINKED ARTICLES /////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+.articles
+  @extend %hidden
+  +rem(margin-top, 1rem)
+
+  &.open
+    @extend %reveal
+
+  article
+    @extend %responsive-category
+
+    blockquote
+      +rem(margin, 0.5rem 0 0)
+      +rem(padding, 1rem)
+
+    h3
+      @extend %font-base
+      font-weight: 500
+      +font-size(ms(0.5))

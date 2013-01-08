@@ -1,0 +1,41 @@
+.image-wrap
+  @extend %transition
+  &:hover
+    @extend %opacity75
+
+%cover
+  background-position: center
+  background-size: cover
+  +rem(height, 15rem)
+  +from($wide)
+    +rem(height, 20rem)
+
+%captioned
+  @extend %border-box
+  @extend %light-block
+  background-color: fade(black, 3)
+  +rem(padding, 1rem)
+  +rem(margin, 1rem 0)
+  text-align: center
+  width: 100%
+
+  +from($desktop)
+    .image-wrap
+      max-width: 75%
+
+%polaroid
+  @extend %captioned
+
+  figcaption
+    @extend %light-block
+    font-style: italic
+    +rem(margin-top, 1rem)
+
+  h2
+    @extend %condensed-title
+    +rem(margin, 0 0 1rem)
+
+%wide-image
+  text-align: center
+  img
+    max-width: 100%

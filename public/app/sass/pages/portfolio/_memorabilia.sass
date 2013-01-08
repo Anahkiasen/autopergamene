@@ -1,0 +1,32 @@
+//////////////////////////////////////////////////////////////////////
+///////////////////////////// MEMORABILIA ////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+// Photosets ------------------------------------------------------- /
+
+.collection
+  @extend %responsive-category
+
+// Inside a photoset ----------------------------------------------- /
+
+.photoset
+
+  figure
+    @extend %captioned
+    @extend %wide-image
+    position: relative
+
+    h2
+      @extend %condensed-title
+      +rem(margin, 0 0 1rem)
+
+    h3
+      $offset: 10px
+      @extend %font-base
+      @extend %font-size-large
+      bottom: $offset / 2
+      color: fade(white, 20)
+      left: $offset
+      margin: 0
+      position: absolute
+      text-align: center

@@ -1,0 +1,25 @@
+//////////////////////////////////////////////////////////////////////
+///////////////////////// GRACEFUL DEGRADATION ///////////////////////
+//////////////////////////////////////////////////////////////////////
+
+.repository
+  @extend %content
+
+  h3
+    +rem(margin-bottom, 1rem)
+
+  figure
+    @extend %category
+    +from($wide)
+      +rem(min-height, 15rem)
+
+    // Tags
+    & + p
+      @extend %opacity25
+
+    &:hover
+      @extend %accent-block
+      & + p
+        @extend %opacity100
+      h3, h4
+        color: white

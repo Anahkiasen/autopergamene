@@ -1,0 +1,80 @@
+//////////////////////////////////////////////////////////////////////
+///////////////////////////// ARTICLE VIEW ///////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+.article, .novel
+  @extend %body
+  background-color: fade(white, 50)
+
+  // Titles -------------------------------------------------------- /
+
+  h1
+    @extend %font-light
+    text-align: center
+
+  article
+
+    // Image styles ------------------------------------------------ /
+
+    .wp-caption
+      @extend %captioned
+      a
+        border: none
+      a + a
+        img
+          width: 50%
+      p
+        @extend %font-base
+        @extend %font-size-medium
+        font-weight: 500
+        +rem(margin, 0.5rem 0 0)
+        text-align: center
+
+    img
+      max-width: 100%
+      &.wide
+        width: 100%
+      &.alignleft
+        float: left
+        +rem(margin-right, 1rem)
+        width: 20%
+      &.aligncenter
+        display: block
+        margin: auto
+
+    .image-wrap
+      +rem(margin, 1rem 0)
+      display: block
+      width: auto
+
+    // Special blocks ---------------------------------------------- /
+
+    del
+      @extend %light-block
+      @extend %wide-block
+      text-decoration: none
+      strong
+        color: grey(30)
+
+    pre
+      +rem(padding, 1rem)
+
+    // Article body ------------------------------------------------ /
+
+    h1
+      @extend %font-base
+      border-bottom: 1px solid grey(30)
+      +rem(padding-bottom, 0.25rem)
+      text-align: left
+
+    h2
+      @extend %font-size-medium
+      +rem(margin, 1rem 0)
+
+    blockquote
+      @extend %quotation
+      p
+        margin: 0
+
+    p
+      text-align: justify

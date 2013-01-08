@@ -1,0 +1,34 @@
+//////////////////////////////////////////////////////////////////////
+/////////////////////////// ABOUT SCAFFOLDING ////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+// Titles -------------------------------------------------------- /
+
+h2, h3, h4
+  @extend %font-base
+  span
+    color: grey(60)
+
+h2
+  @extend %accent
+  @extend %font-size-medium
+  font-weight: 300
+
+h4
+  +rem(margin-bottom, 1rem)
+
+// Body ---------------------------------------------------------- /
+
+article
+  +rem(margin-bottom, 1rem)
+
+p
+  @extend %border-box
+  @extend %light-block
+  @extend %reset-text
+
+img
+  margin-right: 3px
+  position: relative
+  top: 5px
+  width: ms(0.5)

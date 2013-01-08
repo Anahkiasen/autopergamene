@@ -1,0 +1,24 @@
+//////////////////////////////////////////////////////////////////////
+/////////////////////////// PORTFOLIO HOME ///////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+@import ../layout/about
+
+.categories
+  @extend %container-wide
+
+  // Main title ---------------------------------------------------- /
+
+  h2
+    @extend %accent
+    @extend %font-light
+    +font-size($xlarge)
+    font-weight: 100
+    +rem(margin-bottom, 2rem)
+    text-align: center
+    text-transform: lowercase
+
+  // Categories ---------------------------------------------------- /
+
+  figure
+    @extend %giant-category
