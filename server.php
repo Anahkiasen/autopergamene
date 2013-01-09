@@ -1,6 +1,6 @@
 <?php
 
-$uri = $_SERVER['REQUEST_URI'];
+$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 $requested = __DIR__.'/public'.$uri;
 

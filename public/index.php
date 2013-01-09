@@ -35,7 +35,7 @@ require __DIR__.'/../vendor/autoload.php';
 
 if (is_dir($workbench = __DIR__.'/../workbench'))
 {
-  Illuminate\Workbench\Starter::start($workbench);
+	Illuminate\Workbench\Starter::start($workbench);
 }
 
 /*
