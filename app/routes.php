@@ -21,5 +21,5 @@ Route::any('category/{slug}', array('as' => 'category', 'do' => function($slug) 
   $category = Category::find($slug);
 
   return View::make('categories.'.$slug)
-    ->with_category($category);
+    ->with('category', $category);
 }));
