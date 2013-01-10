@@ -23,7 +23,13 @@ class ContentTest extends TestCase
     $url = 'category/'.String::slugify($categoryName);
     $crawler = $this->getPage($url);
 
-    $articles = $crawler->filter('.articles article');
-    $this->assertNotEquals(0, sizeof($articles), 'No articles found in this category');
+    $this->assertItemsExist($crawler, '.articles article', 'No articles found in this category');
+  }
+
+  public function testCanLoadRepositories()
+  {
+    $crawler = $this->getPage('category/graceful-degradation');
+
+    $this->assertNthItemsExist($crawler, 4, '.repository');
   }
 }

@@ -19,11 +19,23 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
   ////////////////////////////////////////////////////////////////////
 
   /**
+   * Check if a particular number of items exist in a page
+   */
+  protected function assertNthItemsExist($crawler, $number, $select, $message = null)
+  {
+    $this->assertCount($number, $crawler->filter($select), $message);
+  }
+
+  /**
+   * Check if some items exist in a page
+   */
+  protected function assertItemsExist($crawler, $select, $message = null)
+  {
+    $this->assertNotCount(0, $crawler->filter($select), $message);
+  }
+
+  /**
    * Get the Crawler for a page
-   *
-   * @param string $url The page url
-   *
-   * @return Crawler
    */
   protected function getPage($url)
   {
@@ -40,6 +52,14 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
   {
     $crawler = $this->getPage($url);
 
-    $this->assertCount(1, $crawler->filter('title:contains("' .$title. '")'), "The request page $title couldn't be reacher");
+    $this->assertTagContains($crawler, 'title', $title);
+  }
+
+  /**
+   * Check if a tag contains something
+   */
+  protected function assertTagContains($crawler, $tag, $content)
+  {
+    $this->assertCount(1, $crawler->filter($tag.':contains("' .$content. '")'), "The tag $tag doesn't contain $content");
   }
 }
