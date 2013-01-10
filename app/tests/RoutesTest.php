@@ -17,14 +17,6 @@ class RoutesTest extends TestCase
     ];
   }
 
-  public function provideCategoriesWithArticles()
-  {
-    return [
-      ['Graceful Degradation'],
-      ['Memorabilia'],
-    ];
-  }
-
   // Tests --------------------------------------------------------- /
 
   public function testcanDisplayHomepage()
@@ -39,17 +31,5 @@ class RoutesTest extends TestCase
   {
     $url = 'category/'.String::slugify($categoryName);
     $this->assertIsPage($url, $categoryName);
-  }
-
-  /**
-   * @dataProvider provideCategoriesWithArticles
-   */
-  public function testCanLoadRelatedArticles($categoryName)
-  {
-    $url = 'category/'.String::slugify($categoryName);
-    $crawler = $this->getPage($url);
-
-    $articles = sizeof($crawler->filter('.articles article'));
-    $this->assertNotEquals(0, $articles, 'No articles found in this category');
   }
 }
