@@ -14,6 +14,14 @@ class Category extends Eloquent
   // Attributes ---------------------------------------------------- /
 
   /**
+   * Whether the category points to an external link or not
+   */
+  public function isExternal()
+  {
+    return String::startsWith($this->link, 'http');
+  }
+
+  /**
    * Get a link to the category's content
    */
   public function getLink()
