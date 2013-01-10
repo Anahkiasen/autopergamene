@@ -18,7 +18,7 @@ class Category extends Eloquent
    */
   public function isExternal()
   {
-    return String::startsWith($this->link, 'http');
+    return !String::startsWith($this->link, URL::getRequest()->root());
   }
 
   /**
