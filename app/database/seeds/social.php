@@ -1,5 +1,6 @@
 <?php
 
+// Raw data
 $_social = [
   'Mail'       => 'ehtnam6@gmail.com',
   'Facebook'   => 'http://www.facebook.com/Anahkiasen',
@@ -13,6 +14,7 @@ $_social = [
   'Twitter'    => 'https://twitter.com/#!/Anahkiasen',
 ];
 
+// Format data
 foreach ($_social as $name => $link) {
   $social[] = [
     'name' => $name,

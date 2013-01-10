@@ -19,3 +19,11 @@ View::composer('about', function($event) {
 View::composer('categories', function($event) {
   $event->view->categories = Category::all();
 });
+
+//////////////////////////////////////////////////////////////////////
+/////////////////////////// PAGE COMPOSERS ///////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+View::composer('categories.graceful-degradation', function($event) {
+  $event->view->repositories = DB::table('repositories')->get();
+});
