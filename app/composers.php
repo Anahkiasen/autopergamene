@@ -31,3 +31,7 @@ View::composer('categories.the-winter-throat', function($event) {
 View::composer('categories.graceful-degradation', function($event) {
   $event->view->repositories = DB::table('repositories')->get();
 });
+
+View::composer('categories.today-is-sunday', function($event) {
+  $event->view->tableaux = Tableau::latest();
+});
