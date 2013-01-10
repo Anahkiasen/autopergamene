@@ -1,6 +1,5 @@
 <?php
 use Underscore\Types\String;
-use Illuminate\Database\Query\Builder;
 
 class RoutesTest extends Cerberus\Scrutiny
 {
@@ -8,13 +7,19 @@ class RoutesTest extends Cerberus\Scrutiny
 
   public function provideCategories()
   {
-    return $this->app['db']->from('categories')->get();
+    return array(
+      array('Graceful Degradation'),
+      array('Illustration'),
+      array("Les Fleurs d'Avril"),
+      array('Memorabilia'),
+      array('The Winter Throat'),
+      array('Today is Sunday'),
+    );
   }
 
   public function provideArticles()
   {
-    $this->app['db'] = $this->app['db']->connection($connection);
-    return $this->app['db']->from('articles')->get();
+    return DB::table('articles')->get();
   }
 
   // Tests --------------------------------------------------------- /
@@ -24,12 +29,18 @@ class RoutesTest extends Cerberus\Scrutiny
     $this->assertIsPage('', 'Autopergamene');
   }
 
-
-  public function testCanDisplayArticles()
+  /**
+   * @dataProvider provideCategories
+   */
+  public function testCanDisplayCategories($categoryName)
   {
-    var_dump($this->app['db']->from('categories')->get());
-    return true;
-    $url = 'category/graceful-degradation/articles/'.$article->id;
-    $this->assertIsPage($url, $article->name);
+    $url = 'category/'.String::slugify($categoryName);
+    $this->assertIsPage($url, $categoryName);
+  }
+
+  public function testCanDisplayArticles($article)
+  {
+    $url = 'category/graceful-degradation/articles/7';
+    $this->assertIsPage($url, 'Nouveau design test');
   }
 }
