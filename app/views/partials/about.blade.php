@@ -18,15 +18,15 @@
     <span class='block' data-show='.about-biography'>Qui je suis ?</span>
     <section class='about-biography'>
       <p>
-        Je travaille dans le web depuis bientôt {{ $work }} ans au {{ HTML::blankLink('http://www.stappler.fr/', 'Principe de Stappler') }}.
+        Je travaille dans le web depuis bientôt {{ $work }} ans au {{ HTML::toBlank('http://www.stappler.fr/', 'Principe de Stappler') }}.
         J'y ai fait mes premières incursions avec à peine quelques connaissances personnelles, puis de projet en projet c'est devenu ma passion. J'embrasse aujourd'hui la scène du web et tout ce qu'elle a de standards et d'enjeux – qu'il s'agisse des technologies et langages front-end (<strong>HTML5</strong>, <strong>CSS</strong> ou <strong>Javascript</strong>) ou back-end (<strong>PHP</strong>, <strong>Ruby</strong> avec maîtrise de l'<strong>OOP</strong> et de divers frameworks).
       </p>
       <p>
-        Je suis sérieux, passioné, et au courant des derniers mouvements d'un domaine changeant au jour-le-jour. Ce via les nombreux designers et developpeurs influents que je suis activement sur des réseaux sociaux comme {{ HTML::blankLink('http://twitter.com/Anahkiasen', 'Twitter') }}.<br />
+        Je suis sérieux, passioné, et au courant des derniers mouvements d'un domaine changeant au jour-le-jour. Ce via les nombreux designers et developpeurs influents que je suis activement sur des réseaux sociaux comme {{ HTML::toBlank('http://twitter.com/Anahkiasen', 'Twitter') }}.<br />
         Je cherche à comprendre plutôt qu'à recopier&nbsp;; je ne cherche pas à faire simplement mon travail, je cherche à le faire <em>bien</em>.
       </p>
       <p>
-        Plongé jusqu'au cou dans l'univers de l'<strong>open-source</strong>, j'ai moi-même de nombreux projets et librairies disponibles sur des sites majeurs comme {{ HTML::blankLink('http://github.com/Anahkiasen/', 'Github') }} ou {{ HTML::blankLink('https://bitbucket.org/Anahkiasen', 'Bitbucket') }}. Cette proximité me permet de participer activement au dévelopement des outils que j'emploie, de les améliorer, ou d'en créer de nouveaux.
+        Plongé jusqu'au cou dans l'univers de l'<strong>open-source</strong>, j'ai moi-même de nombreux projets et librairies disponibles sur des sites majeurs comme {{ HTML::toBlank('http://github.com/Anahkiasen/', 'Github') }} ou {{ HTML::toBlank('https://bitbucket.org/Anahkiasen', 'Bitbucket') }}. Cette proximité me permet de participer activement au dévelopement des outils que j'emploie, de les améliorer, ou d'en créer de nouveaux.
       </p>
 
       {{-- Details and links --}}
@@ -37,7 +37,7 @@
           <ul>
             @foreach($social as $service)
               <li>
-                {{ HTML::image('app/svg/'.$service->icon, $service->name) }} {{ HTML::blankLink($service->link, $service->name) }}
+                {{ HTML::image('app/svg/'.$service->icon, $service->name) }} {{ HTML::toBlank($service->link, $service->name) }}
               </li>
             @endforeach
           </ul>

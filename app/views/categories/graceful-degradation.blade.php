@@ -5,8 +5,8 @@
 
   <p>
     Un ensemble de projets ou librairies développées au fur et à mesure de mon travail.
-    En majorité des bundles pour le framework {{ HTML::blankLink('http://laravel.com', 'Laravel') }}
-    ou distribués via {{ HTML::blankLink('http://getcomposer.org', 'Composer') }}
+    En majorité des bundles pour le framework {{ HTML::toBlank('http://laravel.com', 'Laravel') }}
+    ou distribués via {{ HTML::toBlank('http://getcomposer.org', 'Composer') }}
   </p>
   <p>
     Tous sont en PHP — même si mes compétences s'étendent à d'autres langages, j'ai principalement
@@ -14,7 +14,7 @@
   </p>
   <p>
     Étant très à cheval sur le fait de rester à jour quand on est webdévelopeur on webdesigner, tous réspectent autant que faire se peut
-    les standards du {{ HTML::blankLink('https://github.com/php-fig/fig-standards', 'PSR') }} et tirent partie des dernières avancées en terme d'OOP (namespaces, magic methods, etc).
+    les standards du {{ HTML::toBlank('https://github.com/php-fig/fig-standards', 'PSR') }} et tirent partie des dernières avancées en terme d'OOP (namespaces, magic methods, etc).
   </p>
 
   @include('articles')

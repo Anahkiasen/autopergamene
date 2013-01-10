@@ -5,7 +5,7 @@
 @stop
 
 @section('navigation')
-  {{ HTML::homeLink("Revenir à l'accueil", array('class' => 'back')) }}
+  {{ HTML::homeLink() }}
 @stop
 
 @section('layout')
