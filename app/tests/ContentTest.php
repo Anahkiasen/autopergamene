@@ -81,4 +81,11 @@ class ContentTest extends Cerberus\Scrutiny
 
     $this->assertTagContains($crawler, 'h3', '0');
   }
+
+  public function testCanLoadTableaux()
+  {
+    $crawler = $this->getPage('category/today-is-sunday');
+
+    $this->assertNthItemsExist($crawler, 39, '.tableau img');
+  }
 }
