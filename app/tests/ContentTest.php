@@ -67,4 +67,18 @@ class ContentTest extends Cerberus\Scrutiny
 
     $this->assertNthItemsExist($crawler, 4, '.repository');
   }
+
+  public function testCanLoadNovels()
+  {
+    $crawler = $this->getPage('category/les-fleurs-davril');
+
+    $this->assertItemsExist($crawler, '.novel-summary');
+  }
+
+  public function testNovelsAreRenderedCorrectly()
+  {
+    $crawler = $this->getPage('category/les-fleurs-davril/a-lombre-dun-chene');
+
+    $this->assertTagContains($crawler, 'h3', '0');
+  }
 }

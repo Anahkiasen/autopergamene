@@ -11,21 +11,13 @@ class Base extends Eloquent
     return static::orderBy('created_at', 'desc')->get();
   }
 
-  /**
-   * Get a category from its slug
-   */
-  public static function fromSlug($slug)
-  {
-    return static::where('slug', $slug)->first();
-  }
-
   // Attributes ---------------------------------------------------- /
 
-  public function getSlug()
-  {
-    return String::slugify($this->name);
-  }
-
+  /**
+   * Get formatted date of creations
+   *
+   * @return string Y-m-d created_at field
+   */
   public function getDateOfCreation()
   {
     $date = new DateTime($this->created_at);
