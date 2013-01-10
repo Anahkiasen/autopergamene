@@ -17,7 +17,7 @@ $repositories = [
 ];
 
 // Format data
-$repositories = Arrays::each($repositories, function($repository) {
+return Arrays::each($repositories, function($repository) {
   return [
     'name'    => $repository[0],
     'content' => $repository[1],
@@ -27,5 +27,3 @@ $repositories = Arrays::each($repositories, function($repository) {
     'updated_at' => new DateTime,
   ];
 });
-
-return $repositories;

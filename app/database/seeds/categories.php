@@ -13,7 +13,7 @@ $categories = [
 ];
 
 // Format data
-$categories = Arrays::each($categories, function($category) {
+return Arrays::each($categories, function($category) {
   return [
     'id'          => String::slugify($category[0]),
     'name'        => $category[0],
@@ -23,5 +23,3 @@ $categories = Arrays::each($categories, function($category) {
     'updated_at'  => new DateTime,
   ];
 });
-
-return $categories;

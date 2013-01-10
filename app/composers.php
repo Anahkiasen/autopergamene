@@ -24,6 +24,10 @@ View::composer('categories', function($event) {
 /////////////////////////// PAGE COMPOSERS ///////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+View::composer('categories.the-winter-throat', function($event) {
+  $event->view->tracks = Track::all();
+});
+
 View::composer('categories.graceful-degradation', function($event) {
   $event->view->repositories = DB::table('repositories')->get();
 });
