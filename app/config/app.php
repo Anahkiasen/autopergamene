@@ -174,9 +174,7 @@ return array(
     'Basset' => 'Basset\Facades\Basset',
 
     // Imagine
-    'Box' => 'Imagine\Image\Box',
-    'Imagine' => 'Imagine\Gd\Imagine',
-    'Point' => 'Imagine\Image\Point',
+    'Thumb' => 'Cerberus\Facades\Thumb',
 
   ),
 
