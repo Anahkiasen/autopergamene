@@ -30,15 +30,10 @@ class ContentTest extends Cerberus\Scrutiny
     $this->assertItemsExist($crawler, 'footer');
   }
 
-  /**
-   * @dataProvider provideExternalHomeLinks
-   */
-  public function testExternalHomeCategoriesAreBlank($category)
+  public function testExternalHomeCategoriesAreBlank()
   {
-    $crawler = $this->getPage();
-    /*$links = $crawler->filter('.categories figure a')->each(function($link) {
-      return $link->attr('alt');
-    });
+    /*$crawler = $this->getPage();
+    $links = $crawler->filter('figure a')->extract(array('target', 'alt'));
     var_dump($links);*/
   }
 
@@ -50,9 +45,9 @@ class ContentTest extends Cerberus\Scrutiny
     $this->assertNthItemsExist($crawler, 10, '.social li');
 
     // Check if there are all external
-    $targets = $crawler->filter('.social a')->extract(array('_text', 'target'));
-    $targets = Arrays::from($targets)->pluck(1)->unique();
-    $this->assertContains('_blank', $targets->obtain());
+    $targets = $crawler->filter('.social a')->extract('target');
+    $targets = Arrays::unique($targets);
+    $this->assertContains('_blank', $targets);
   }
 
   /**
