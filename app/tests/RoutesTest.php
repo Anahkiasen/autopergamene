@@ -3,6 +3,8 @@ use Underscore\Types\String;
 
 class RoutesTest extends TestCase
 {
+	// Data providers ------------------------------------------------ /
+
 	public function provideCategories()
 	{
 		return [
@@ -19,10 +21,7 @@ class RoutesTest extends TestCase
 
   public function testHomepage()
   {
-    $crawler = $this->client->request('GET', '/');
-
-    $this->assertTrue($this->client->getResponse()->isOk());
-    $this->assertCount(1, $crawler->filter('h1:contains("Autopergamene")'));
+  	$this->assertIsPage('', 'Autopergamene');
   }
 
   /**
@@ -30,9 +29,20 @@ class RoutesTest extends TestCase
    */
   public function testCategories($categoryName)
   {
-    $crawler = $this->client->request('GET', '/category/'.String::slugify($categoryName));
+  	$url = 'category/'.String::slugify($categoryName);
+  	$this->assertIsPage($url, $categoryName);
+  }
+
+	// Helpers ------------------------------------------------------- /
+
+  /**
+   * Check if a page is correctly loaded
+   */
+	private function assertIsPage($url, $title)
+	{
+    $crawler = $this->client->request('GET', '/'.$url);
 
     $this->assertTrue($this->client->getResponse()->isOk());
-    $this->assertCount(1, $crawler->filter('title:contains("' .$categoryName. '")'));
-  }
+		$this->assertCount(1, $crawler->filter('title:contains("' .$title. '")'), "The request page $title couldn't be reacher");
+	}
 }
