@@ -1,5 +1,6 @@
 <?php
 use Underscore\Types\String;
+use Illuminate\Database\Query\Builder;
 
 class RoutesTest extends Cerberus\Scrutiny
 {
@@ -7,14 +8,13 @@ class RoutesTest extends Cerberus\Scrutiny
 
   public function provideCategories()
   {
-    return array(
-      array('Graceful Degradation'),
-      array('Illustration'),
-      array("Les Fleurs d'Avril"),
-      array('Memorabilia'),
-      array('The Winter Throat'),
-      array('Today is Sunday'),
-    );
+    return $this->app['db']->from('categories')->get();
+  }
+
+  public function provideArticles()
+  {
+    $this->app['db'] = $this->app['db']->connection($connection);
+    return $this->app['db']->from('articles')->get();
   }
 
   // Tests --------------------------------------------------------- /
@@ -24,12 +24,12 @@ class RoutesTest extends Cerberus\Scrutiny
     $this->assertIsPage('', 'Autopergamene');
   }
 
-  /**
-   * @dataProvider provideCategories
-   */
-  public function testCanDisplayCategories($categoryName)
+
+  public function testCanDisplayArticles()
   {
-    $url = 'category/'.String::slugify($categoryName);
-    $this->assertIsPage($url, $categoryName);
+    var_dump($this->app['db']->from('categories')->get());
+    return true;
+    $url = 'category/graceful-degradation/articles/'.$article->id;
+    $this->assertIsPage($url, $article->name);
   }
 }
