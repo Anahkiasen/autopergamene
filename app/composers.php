@@ -32,6 +32,10 @@ View::composer('categories.memorabilia', function($event) {
   $event->view->photosets = Photoset::latest();
 });
 
+View::composer('categories.les-fleurs-davril', function($event) {
+  $event->view->novels = Novel::orderBy('created_at', 'desc')->get();
+});
+
 View::composer('categories.graceful-degradation', function($event) {
   $event->view->repositories = DB::table('repositories')->get();
 });

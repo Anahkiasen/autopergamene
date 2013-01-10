@@ -53,3 +53,16 @@ Route::any('category/illustration/support/{id}', array(
       ->with('category', $category)
       ->with('support', $support);
 }));
+
+// Display a novel ------------------------------------------------- /
+
+Route::any('category/les-fleurs-davril/{id}', array(
+  'as' => 'novel',
+  'do' => function($slug) {
+    $novel = Novel::find($slug);
+    $category = Category::find('les-fleurs-davril');
+
+    return View::make('novel')
+      ->with('category', $category)
+      ->with('novel', $novel);
+}));
