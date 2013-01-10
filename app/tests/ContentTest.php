@@ -23,7 +23,7 @@ class ContentTest extends TestCase
     $url = 'category/'.String::slugify($categoryName);
     $crawler = $this->getPage($url);
 
-    $articles = sizeof($crawler->filter('.articles article'));
-    $this->assertNotEquals(0, $articles, 'No articles found in this category');
+    $articles = $crawler->filter('.articles article');
+    $this->assertNotEquals(0, sizeof($articles), 'No articles found in this category');
   }
 }
