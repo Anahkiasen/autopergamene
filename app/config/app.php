@@ -141,6 +141,7 @@ return array(
     'App'        => 'Illuminate\Support\Facades\App',
     'Artisan'    => 'Illuminate\Support\Facades\Artisan',
     'Auth'       => 'Illuminate\Support\Facades\Auth',
+    'Blade'      => 'Illuminate\Support\Facades\Blade',
     'Cache'      => 'Illuminate\Support\Facades\Cache',
     'Config'     => 'Illuminate\Support\Facades\Config',
     'Controller' => 'Illuminate\Routing\Controllers\Controller',
