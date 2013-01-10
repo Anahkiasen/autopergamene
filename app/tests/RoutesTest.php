@@ -50,7 +50,7 @@ class RoutesTest extends TestCase
     $crawler = $this->getPage($url);
 
     $articles = sizeof($crawler->filter('.articles article'));
-    $this->assertGreaterThan(0, $articles);
+    $this->assertNotEquals(0, $articles, 'No articles found in this category');
   }
 
   // Helpers ------------------------------------------------------- /
