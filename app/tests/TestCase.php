@@ -23,7 +23,10 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
    */
   protected function assertNthItemsExist($crawler, $number, $select, $message = null)
   {
-    $this->assertCount($number, $crawler->filter($select), $message);
+    $items = $crawler->filter($select);
+    if (!$message) $message = sizeof($items). " instead of $number of `$select` were found in the page";
+
+    $this->assertCount($number, $items, $message);
   }
 
   /**
@@ -31,13 +34,15 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
    */
   protected function assertItemsExist($crawler, $select, $message = null)
   {
+    if (!$message) $message = "The items `$select` were no found in the page";
+
     $this->assertNotCount(0, $crawler->filter($select), $message);
   }
 
   /**
    * Get the Crawler for a page
    */
-  protected function getPage($url)
+  protected function getPage($url = null)
   {
     $crawler = $this->client->request('GET', '/'.$url);
     $this->assertTrue($this->client->getResponse()->isOk());

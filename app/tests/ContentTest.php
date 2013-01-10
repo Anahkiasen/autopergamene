@@ -15,6 +15,26 @@ class ContentTest extends TestCase
 
   // Tests --------------------------------------------------------- /
 
+  public function testFooterIsProperlyLoaded()
+  {
+    $crawler = $this->getPage();
+
+    $this->assertItemsExist($crawler, 'footer');
+  }
+
+  public function testSocialNetworksAreLoadedAndExternal()
+  {
+    $crawler = $this->getPage();
+
+    // Check number of social networks
+    $this->assertNthItemsExist($crawler, 10, '.social li');
+
+    // Check if there are all external
+    $targets = $crawler->filter('.social a')->extract(array('_text', 'target'));
+    $targets = Arrays::from($targets)->pluck(1)->unique();
+    $this->assertContains('_blank', $targets->obtain());
+  }
+
   /**
    * @dataProvider provideCategoriesWithArticles
    */
@@ -31,5 +51,10 @@ class ContentTest extends TestCase
     $crawler = $this->getPage('category/graceful-degradation');
 
     $this->assertNthItemsExist($crawler, 4, '.repository');
+  }
+
+  public function test($value='')
+  {
+    # code...
   }
 }
