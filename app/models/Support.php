@@ -13,7 +13,7 @@ class Support extends Eloquent
 
   public function thumbnail()
   {
-    return $this->hasOne('Illustration')->where('thumbnail', '=', 1);
+    return $this->hasOne('Illustration')->where('thumbnail', 1);
   }
 
   // Attributes ---------------------------------------------------- /

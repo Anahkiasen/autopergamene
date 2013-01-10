@@ -13,7 +13,7 @@ class Photoset extends Base
 
   public function thumbnail()
   {
-    return $this->hasOne('Photo')->where('thumbnail', '=', 1);
+    return $this->hasOne('Photo')->where('thumbnail', 1);
   }
 
   // Fetchers ------------------------------------------------------ /
@@ -25,7 +25,7 @@ class Photoset extends Base
   {
     return static::with(array(
       'thumbnail' => function($query) {
-        return $query->where('thumbnail', '=', 1);
+        return $query->where('thumbnail', 1);
       }))->orderBy('created_at', 'desc')->get();
   }
 

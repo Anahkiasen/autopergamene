@@ -16,7 +16,7 @@ class Base extends Eloquent
    */
   public static function fromSlug($slug)
   {
-    return static::where('slug', '=', $slug)->first();
+    return static::where('slug', $slug)->first();
   }
 
   // Attributes ---------------------------------------------------- /
