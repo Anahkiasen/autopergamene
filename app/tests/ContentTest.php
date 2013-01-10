@@ -7,10 +7,10 @@ class ContentTest extends TestCase
 
   public function provideCategoriesWithArticles()
   {
-    return [
-      ['Graceful Degradation'],
-      ['Memorabilia'],
-    ];
+    return array(
+      array('Graceful Degradation'),
+      array('Memorabilia'),
+    );
   }
 
   // Tests --------------------------------------------------------- /
@@ -51,10 +51,5 @@ class ContentTest extends TestCase
     $crawler = $this->getPage('category/graceful-degradation');
 
     $this->assertNthItemsExist($crawler, 4, '.repository');
-  }
-
-  public function test($value='')
-  {
-    # code...
   }
 }

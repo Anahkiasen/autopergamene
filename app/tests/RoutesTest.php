@@ -7,14 +7,14 @@ class RoutesTest extends TestCase
 
   public function provideCategories()
   {
-    return [
-      ['Graceful Degradation'],
-      ['Illustration'],
-      ["Les Fleurs d'Avril"],
-      ['Memorabilia'],
-      ['The Winter Throat'],
-      ['Today is Sunday'],
-    ];
+    return array(
+      array('Graceful Degradation'),
+      array('Illustration'),
+      array("Les Fleurs d'Avril"),
+      array('Memorabilia'),
+      array('The Winter Throat'),
+      array('Today is Sunday'),
+    );
   }
 
   // Tests --------------------------------------------------------- /
