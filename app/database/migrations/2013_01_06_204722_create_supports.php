@@ -8,7 +8,6 @@ class CreateSupports extends Migration
     Schema::create('supports', function($table) {
       $table->string('id');
       $table->string('name');
-      $table->text('description');
       $table->timestamps();
     });
   }

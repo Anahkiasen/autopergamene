@@ -173,6 +173,11 @@ return array(
     'HTML'   => 'Cerberus\Facades\HTML',
     'Basset' => 'Basset\Facades\Basset',
 
+    // Imagine
+    'Box' => 'Imagine\Image\Box',
+    'Imagine' => 'Imagine\Gd\Imagine',
+    'Point' => 'Imagine\Image\Point',
+
   ),
 
 );

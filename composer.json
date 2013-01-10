@@ -4,7 +4,8 @@
 		"anahkiasen/underscore-php": "dev-master",
 		"jasonlewis/basset": "dev-master",
 		"jasonlewis/expressive-date": "dev-master",
-		"anahkiasen/cerberus": "dev-master"
+		"anahkiasen/cerberus": "dev-master",
+		"imagine/Imagine": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

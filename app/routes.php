@@ -40,3 +40,16 @@ Route::any('category/{slug}/articles/{id}', array(
       ->with('category', $category)
       ->with('article', $article);
 }));
+
+// Display a support ----------------------------------------------- /
+
+Route::any('category/illustration/support/{id}', array(
+  'as' => 'support',
+  'do' => function($slug) {
+    $support  = Support::with('illustrations')->find($slug);
+    $category = Category::find('illustration');
+
+    return View::make('support')
+      ->with('category', $category)
+      ->with('support', $support);
+}));
