@@ -21,7 +21,7 @@
       <article>
         {{ $novel->content }}
         <blockquote>
-          <strong>Publié le : {{ $novel->created_at }}</strong>
+          <strong>Publié le : {{ $novel->date_of_creation }}</strong>
         </blockquote>
       </article>
     @else

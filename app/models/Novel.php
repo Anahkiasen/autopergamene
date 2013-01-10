@@ -48,15 +48,4 @@ class Novel extends Base
 
     return $text;
   }
-
-  /**
-   * Get formatted creation date
-   */
-  public function getCreatedAt()
-  {
-    $date = $this->getOriginal('created_at');
-    $date = new DateTime($date);
-
-    return $date->format('Y-m-d');
-  }
 }

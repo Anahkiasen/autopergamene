@@ -28,17 +28,4 @@ class Photoset extends Base
         return $query->where('thumbnail', 1);
       }))->orderBy('created_at', 'desc')->get();
   }
-
-  // Attributes ---------------------------------------------------- /
-
-  /**
-   * Format the date to MONTH/YEAR
-   */
-  public function getCreatedAt()
-  {
-    $date = $this->getOriginal('created_at');
-    $date = DateTime::createFromFormat('U', $date);
-
-    return $date->format('m/Y');
-  }
 }

@@ -25,4 +25,11 @@ class Base extends Eloquent
   {
     return String::slugify($this->name);
   }
+
+  public function getDateOfCreation()
+  {
+    $date = new DateTime($this->created_at);
+
+    return $date->format('Y-m-d');
+  }
 }

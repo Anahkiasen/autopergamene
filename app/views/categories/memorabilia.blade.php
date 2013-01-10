@@ -19,7 +19,7 @@
           {{ $photoset->thumbnail }}
           <figcaption>
             <h3>{{ $photoset->name }}</h3>
-            <h4>{{ $photoset->created_at }}</h4>
+            <h4>{{ $photoset->date_of_creation }}</h4>
           </figcaption>
         </a>
       </figure>
