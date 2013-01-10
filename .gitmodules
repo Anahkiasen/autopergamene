@@ -1,3 +1,12 @@
 [submodule "public/components/normalize"]
 	path = public/components/normalize
 	url = git://github.com/necolas/normalize.css.git
+[submodule "public/components/rainbow"]
+	path = public/components/rainbow
+	url = git@github.com:ccampbell/rainbow.git
+[submodule "public/components/jquery"]
+	path = public/components/jquery
+	url = git@github.com:components/jquery.git
+[submodule "public/components/bootstrap"]
+	path = public/components/bootstrap
+	url = git@github.com:twitter/bootstrap.git
