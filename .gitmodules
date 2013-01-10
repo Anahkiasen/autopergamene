@@ -10,3 +10,6 @@
 [submodule "public/components/bootstrap"]
 	path = public/components/bootstrap
 	url = git@github.com:twitter/bootstrap.git
+[submodule "public/components/classlist"]
+	path = public/components/classlist
+	url = git@github.com:eligrey/classList.js.git
