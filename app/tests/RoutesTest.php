@@ -3,46 +3,80 @@ use Underscore\Types\String;
 
 class RoutesTest extends TestCase
 {
-	// Data providers ------------------------------------------------ /
+  // Data providers ------------------------------------------------ /
 
-	public function provideCategories()
-	{
-		return [
-			['Graceful Degradation'],
-			['Illustration'],
-			["Les Fleurs d'Avril"],
-			['Memorabilia'],
-			['The Winter Throat'],
-			['Today is Sunday'],
-		];
-	}
-
-	// Tests --------------------------------------------------------- /
-
-  public function testHomepage()
+  public function provideCategories()
   {
-  	$this->assertIsPage('', 'Autopergamene');
+    return [
+      ['Graceful Degradation'],
+      ['Illustration'],
+      ["Les Fleurs d'Avril"],
+      ['Memorabilia'],
+      ['The Winter Throat'],
+      ['Today is Sunday'],
+    ];
+  }
+
+  public function provideCategoriesWithArticles()
+  {
+    return [
+      ['Graceful Degradation'],
+      ['Memorabilia'],
+    ];
+  }
+
+  // Tests --------------------------------------------------------- /
+
+  public function testcanDisplayHomepage()
+  {
+    $this->assertIsPage('', 'Autopergamene');
   }
 
   /**
    * @dataProvider provideCategories
    */
-  public function testCategories($categoryName)
+  public function testCanDisplayCategories($categoryName)
   {
-  	$url = 'category/'.String::slugify($categoryName);
-  	$this->assertIsPage($url, $categoryName);
+    $url = 'category/'.String::slugify($categoryName);
+    $this->assertIsPage($url, $categoryName);
   }
 
-	// Helpers ------------------------------------------------------- /
+  /**
+   * @dataProvider provideCategoriesWithArticles
+   */
+  public function testCanLoadRelatedArticles($categoryName)
+  {
+    $url = 'category/'.String::slugify($categoryName);
+    $crawler = $this->getPage($url);
+
+    $articles = sizeof($crawler->filter('.articles article'));
+    $this->assertGreaterThan(0, $articles);
+  }
+
+  // Helpers ------------------------------------------------------- /
+
+  /**
+   * Get the Crawler for a page
+   *
+   * @param string $url The page url
+   *
+   * @return Crawler
+   */
+  private function getPage($url)
+  {
+    $crawler = $this->client->request('GET', '/'.$url);
+    $this->assertTrue($this->client->getResponse()->isOk());
+
+    return $crawler;
+  }
 
   /**
    * Check if a page is correctly loaded
    */
-	private function assertIsPage($url, $title)
-	{
-    $crawler = $this->client->request('GET', '/'.$url);
+  private function assertIsPage($url, $title)
+  {
+    $crawler = $this->getPage($url);
 
-    $this->assertTrue($this->client->getResponse()->isOk());
-		$this->assertCount(1, $crawler->filter('title:contains("' .$title. '")'), "The request page $title couldn't be reacher");
-	}
+    $this->assertCount(1, $crawler->filter('title:contains("' .$title. '")'), "The request page $title couldn't be reacher");
+  }
 }
