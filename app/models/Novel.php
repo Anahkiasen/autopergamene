@@ -31,9 +31,9 @@ class Novel extends Base
   public function getContent()
   {
     // Get novel if it exists
-    $text = path('app'). 'seeds' .DS. 'novels' .DS. $this->id. '.md';
-    $text = File::get($text);
-    if (!$text) return false;
+    $text = __DIR__.'/../database/novels/'.$this->id.'.md';
+    if (File::exists($text)) $text = File::get($text);
+    else return false;
 
     // Parse Markdown
     $markdown = new MarkdownParser();
