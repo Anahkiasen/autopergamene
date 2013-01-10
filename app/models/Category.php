@@ -4,6 +4,13 @@ class Category extends Eloquent
 {
   protected $table = 'categories';
 
+  // Relationships ------------------------------------------------- /
+
+  public function articles()
+  {
+    return $this->hasMany('Article')->orderBy('created_at', 'desc');
+  }
+
   // Attributes ---------------------------------------------------- /
 
   /**
