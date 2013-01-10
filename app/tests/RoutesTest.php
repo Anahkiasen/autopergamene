@@ -1,7 +1,7 @@
 <?php
 use Underscore\Types\String;
 
-class RoutesTest extends TestCase
+class RoutesTest extends Cerberus\Scrutiny
 {
   // Data providers ------------------------------------------------ /
 

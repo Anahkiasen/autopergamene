@@ -1,7 +1,7 @@
 <?php
 use Underscore\Types\String;
 
-class ContentTest extends TestCase
+class ContentTest extends Cerberus\Scrutiny
 {
   // Data providers ------------------------------------------------ /
 
@@ -13,6 +13,14 @@ class ContentTest extends TestCase
     );
   }
 
+  public function provideExternalHomeLinks()
+  {
+    return array(
+      array('Le Soulèvement'),
+      array('Le blog'),
+    );
+  }
+
   // Tests --------------------------------------------------------- /
 
   public function testFooterIsProperlyLoaded()
@@ -20,6 +28,18 @@ class ContentTest extends TestCase
     $crawler = $this->getPage();
 
     $this->assertItemsExist($crawler, 'footer');
+  }
+
+  /**
+   * @dataProvider provideExternalHomeLinks
+   */
+  public function testExternalHomeCategoriesAreBlank($category)
+  {
+    $crawler = $this->getPage();
+    /*$links = $crawler->filter('.categories figure a')->each(function($link) {
+      return $link->attr('alt');
+    });
+    var_dump($links);*/
   }
 
   public function testSocialNetworksAreLoadedAndExternal()
