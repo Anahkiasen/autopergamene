@@ -1,20 +1,20 @@
 {
-	"require": {
-		"illuminate/foundation": "1.2.*",
-		"anahkiasen/underscore-php": "dev-master",
-		"jasonlewis/basset": "dev-master",
-		"jasonlewis/expressive-date": "dev-master",
-		"anahkiasen/cerberus": "dev-master",
-		"imagine/Imagine": "dev-master"
-	},
-	"autoload": {
-		"classmap": [
-			"app/commands",
-			"app/controllers",
-			"app/models",
-			"app/database/migrations",
-			"app/tests/TestCase.php"
-		]
-	},
-	"minimum-stability": "dev"
+  "require": {
+    "illuminate/foundation": "1.2.*",
+    "anahkiasen/underscore-php": "dev-master",
+    "jasonlewis/basset": "dev-master",
+    "jasonlewis/expressive-date": "dev-master",
+    "anahkiasen/cerberus": "dev-master",
+    "imagine/Imagine": "dev-master"
+  },
+  "autoload": {
+    "classmap": [
+      "app/commands",
+      "app/controllers",
+      "app/models",
+      "app/database/migrations",
+      "app/tests/TestCase.php"
+    ]
+  },
+  "minimum-stability": "dev"
 }
