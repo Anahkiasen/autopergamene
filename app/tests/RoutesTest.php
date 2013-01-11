@@ -53,6 +53,8 @@ class RoutesTest extends Cerberus\Scrutiny
     $this->assertIsPage($url, $categoryName);
   }
 
+  // Subroutes ----------------------------------------------------- /
+
   /**
    * @dataProvider provideSupports
    */

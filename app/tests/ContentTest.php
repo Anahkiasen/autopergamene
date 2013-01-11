@@ -30,13 +30,6 @@ class ContentTest extends Cerberus\Scrutiny
     $this->assertItemsExist($crawler, 'footer');
   }
 
-  public function testExternalHomeCategoriesAreBlank()
-  {
-    /*$crawler = $this->getPage();
-    $links = $crawler->filter('figure a')->extract(array('target', 'alt'));
-    var_dump($links);*/
-  }
-
   public function testSocialNetworksAreLoadedAndExternal()
   {
     $crawler = $this->getPage();
@@ -46,8 +39,7 @@ class ContentTest extends Cerberus\Scrutiny
 
     // Check if there are all external
     $targets = $crawler->filter('.social a')->extract('target');
-    $targets = Arrays::unique($targets);
-    $this->assertContains('_blank', $targets);
+    $this->assertContains('_blank', Arrays::unique($targets));
   }
 
   /**
@@ -72,14 +64,7 @@ class ContentTest extends Cerberus\Scrutiny
   {
     $crawler = $this->getPage('category/les-fleurs-davril');
 
-    $this->assertItemsExist($crawler, '.novel-summary');
-  }
-
-  public function testNovelsAreRenderedCorrectly()
-  {
-    $crawler = $this->getPage('category/les-fleurs-davril/a-lombre-dun-chene');
-
-    $this->assertTagContains($crawler, 'h3', '0');
+    $this->assertNthItemsExist($crawler, 8, '.novel-summary');
   }
 
   public function testCanLoadTableaux()
@@ -87,5 +72,12 @@ class ContentTest extends Cerberus\Scrutiny
     $crawler = $this->getPage('category/today-is-sunday');
 
     $this->assertNthItemsExist($crawler, 39, '.tableau img');
+  }
+
+  public function testNovelsAreRenderedCorrectly()
+  {
+    $crawler = $this->getPage('category/les-fleurs-davril/a-lombre-dun-chene');
+
+    $this->assertTagContains($crawler, 'h3', '0');
   }
 }
