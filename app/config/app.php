@@ -172,6 +172,7 @@ return array(
     // Underscore.php
     'String' => 'Underscore\Types\String',
     'Arrays' => 'Underscore\Types\Arrays',
+    'Number' => 'Underscore\Types\Number',
     'HTML'   => 'Cerberus\Facades\HTML',
     'Basset' => 'Basset\Facades\Basset',
 

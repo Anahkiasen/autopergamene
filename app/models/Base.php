@@ -20,7 +20,8 @@ class Base extends Eloquent
    */
   public function getDateOfCreation()
   {
-    $date = new DateTime($this->created_at);
+    $format = strlen($this->created_at) == 10 ? 'U' : 'Y-m-d H:i:s';
+    $date = DateTime::createFromFormat($format, $this->created_at);
 
     return $date->format('Y-m-d');
   }

@@ -67,3 +67,16 @@ Route::any('category/les-fleurs-davril/{id}', array(
       ->with('category', $category)
       ->with('novel', $novel);
 }));
+
+// Display a photoset ---------------------------------------------- /
+
+Route::any('category/memorabilia/album/{id}', array(
+  'as' => 'photoset',
+  'do' => function($slug) {
+    $photoset = Photoset::where('slug', $slug)->first();
+    $category = Category::find('memorabilia');
+
+    return View::make('photoset')
+      ->with('category', $category)
+      ->with('photoset', $photoset);
+}));
