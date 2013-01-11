@@ -22,6 +22,16 @@ class RoutesTest extends Cerberus\Scrutiny
     return DB::table('articles')->get();
   }
 
+  public function provideSupports()
+  {
+    return array(
+      array('digital', 'Peinture digitale'),
+      array('drawings', 'Papier'),
+      array('maya', 'Rendus 3D'),
+      array('video', 'Vidéo'),
+    );
+  }
+
   // Tests --------------------------------------------------------- /
 
   public function testcanDisplayHomepage()
@@ -41,6 +51,15 @@ class RoutesTest extends Cerberus\Scrutiny
 
     $url = 'category/'.String::slugify($categoryName);
     $this->assertIsPage($url, $categoryName);
+  }
+
+  /**
+   * @dataProvider provideSupports
+   */
+  public function testCanDisplaySupport($slug, $name)
+  {
+    $url = 'category/illustration/support/'.$slug;
+    $this->assertIsPage($url, $name);
   }
 
   public function testCanDisplayArticles()
