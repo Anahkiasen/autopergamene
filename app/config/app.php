@@ -176,6 +176,7 @@ return array(
     'Basset' => 'Basset\Facades\Basset',
 
     // Imagine
+    'Flickering' => 'Flickering\Flickering',
     'Thumb' => 'Cerberus\Facades\Thumb',
 
   ),

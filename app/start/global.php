@@ -33,6 +33,17 @@ App::error(function(Exception $exception, $code)
 
 /*
 |--------------------------------------------------------------------------
+| Connect to the Flickr API
+|--------------------------------------------------------------------------|
+*/
+
+$key    = Config::get('flickering.key');
+$secret = Config::get('flickering.secret');
+
+Flickering::handshake($key, $secret);
+
+/*
+|--------------------------------------------------------------------------
 | Require The Filters File
 |--------------------------------------------------------------------------
 |
