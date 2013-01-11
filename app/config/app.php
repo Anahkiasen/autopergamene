@@ -109,6 +109,7 @@ return array(
     'ExpressiveDateServiceProvider',
     'Cerberus\Providers\CerberusServiceProvider',
     'Basset\BassetServiceProvider',
+    'Glow\GlowServiceProvider',
 
   ),
 

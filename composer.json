@@ -6,7 +6,8 @@
     "jasonlewis/expressive-date": "dev-master",
     "anahkiasen/cerberus": "dev-master",
     "imagine/Imagine": "dev-master",
-    "dflydev/markdown": "dev-master"
+    "dflydev/markdown": "dev-master",
+    "anahkiasen/glow": "dev-master"
   },
   "autoload": {
     "classmap": [
