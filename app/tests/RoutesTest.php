@@ -69,4 +69,10 @@ class RoutesTest extends Cerberus\Scrutiny
     $url = 'category/graceful-degradation/articles/7';
     $this->assertIsPage($url, 'Nouveau design test');
   }
+
+  public function testCanDisplayPhotoset()
+  {
+    $url = 'category/memorabilia/album/la-page-blanche';
+    $this->assertIsPage($url, 'La Page Blanche');
+  }
 }
