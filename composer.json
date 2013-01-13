@@ -1,23 +1,23 @@
 {
-  "require": {
-    "illuminate/foundation": "1.2.*",
-    "anahkiasen/underscore-php": "dev-master",
-    "jasonlewis/basset": "dev-master",
-    "jasonlewis/expressive-date": "dev-master",
-    "anahkiasen/cerberus": "dev-master",
-    "imagine/Imagine": "dev-master",
-    "dflydev/markdown": "dev-master",
-    "anahkiasen/glow": "dev-master"
-  },
-  "autoload": {
-    "classmap": [
-      "app/commands",
-      "app/controllers",
-      "app/libraries",
-      "app/models",
-      "app/database/migrations",
-      "app/tests/TestCase.php"
-    ]
-  },
-  "minimum-stability": "dev"
+	"require": {
+		"laravel/framework": "4.0.*",
+		"anahkiasen/underscore-php": "dev-master",
+		"jasonlewis/basset": "dev-master",
+		"jasonlewis/expressive-date": "dev-master",
+		"anahkiasen/cerberus": "dev-master",
+		"imagine/Imagine": "dev-master",
+		"dflydev/markdown": "dev-master",
+		"anahkiasen/glow": "dev-master"
+	},
+	"autoload": {
+		"classmap": [
+			"app/commands",
+			"app/controllers",
+			"app/libraries",
+			"app/models",
+			"app/database/migrations",
+			"app/tests/TestCase.php"
+		]
+	},
+	"minimum-stability": "dev"
 }
