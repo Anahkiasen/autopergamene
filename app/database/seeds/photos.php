@@ -1,8 +1,10 @@
 <?php
 
 // Get all collections from my Flickr user
+$photos = array();
 $sets = Flickering::photosetsGetList('31667913@N06');
 $photosets = Arrays::each($sets->results()->photoset, function($photoset) { return $photoset['id']; });
+
 foreach ($photosets as $photoset_id) {
 
   // Get all photos from this set
@@ -10,13 +12,12 @@ foreach ($photosets as $photoset_id) {
   $_photos = $_photos->results()->photo;
 
   // Get all sets ids from there
-  $photos = Arrays::each($_photos, function($photo) use ($photoset_id) {
-
+  foreach($_photos as $key => $photo) {
     $name    = $photo['title'];
     $surname = preg_replace('/[0-9a-z]+ (- )?\(?([a-zA-Zàèé\' ]+)\)?/', '$2', $name);
     if (preg_match('/[0-9]{1,2}[a-z]{0,2}/', $surname)) $surname = '';
 
-    return array(
+    $photos[$photo['id']] = array(
       'id'          => $photo['id'],
       'name'        => $name,
       'surname'     => $surname,
@@ -26,7 +27,14 @@ foreach ($photosets as $photoset_id) {
       'created_at'  => new DateTime,
       'updated_at'  => new DateTime,
     );
-  });
+  }
+}
+
+$slice = array_chunk($photos, 100);
+foreach($slice as $key => $photos) {
+  if ($key == sizeof($slice) - 1) continue;
+  var_dump(sizeof($photos));
+  DB::table('photos')->insert($photos);
 }
 
 return $photos;
