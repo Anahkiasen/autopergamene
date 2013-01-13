@@ -6,8 +6,6 @@ php:
 
 before_install:
   - composer install
-  - rm -rf vendor/meido/html
-  - git clone git://github.com/Anahkiasen/html.git vendor/meido/html
   - php artisan asset:publish anahkiasen/cerberus
 
 script: phpunit
