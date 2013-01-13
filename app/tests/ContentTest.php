@@ -74,6 +74,13 @@ class ContentTest extends Cerberus\Scrutiny
     $this->assertNthItemsExist($crawler, 39, '.tableau img');
   }
 
+  public function testCanLoadPhotosets()
+  {
+    $crawler = $this->getPage('category/memorabilia');
+
+    $this->assertNthItemsExist($crawler, 32, '.collection img');
+  }
+
   public function testNovelsAreRenderedCorrectly()
   {
     $crawler = $this->getPage('category/les-fleurs-davril/a-lombre-dun-chene');
