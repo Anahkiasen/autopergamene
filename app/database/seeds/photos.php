@@ -30,11 +30,7 @@ foreach ($photosets as $photoset_id) {
   }
 }
 
-$slice = array_chunk($photos, 100);
-foreach($slice as $key => $photos) {
-  if ($key == sizeof($slice) - 1) continue;
-  var_dump(sizeof($photos));
-  DB::table('photos')->insert($photos);
-}
+$photos = array_values($photos);
+$photos = array_slice($photos, 0, 999 / sizeof($photos[0]));
 
 return $photos;
