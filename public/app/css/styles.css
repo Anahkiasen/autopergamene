@@ -562,10 +562,12 @@ footer {
     padding: 1rem; }
   .articles article h3 {
     font-weight: 500;
+    text-transform: uppercase;
     font-size: 20px;
     font-size: 1.27202rem;
     line-height: 36px;
-    line-height: 2.25rem; }
+    line-height: 2.25rem;
+    line-height: 1; }
 
 .about aside {
   width: 100%;
