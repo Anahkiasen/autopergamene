@@ -32,6 +32,10 @@ foreach ($photosets as $photoset_id) {
 
 // Slice for SQLite
 $photos = array_values($photos);
-$photos = array_slice($photos, 0, 999 / sizeof($photos[0]));
+$slicer = floor(999 / sizeof($photos[0]));
+$slices = array_chunk($photos, $slicer);
+foreach ($slices as $slice) {
+  DB::table('photos')->insert($slice);
+}
 
-return $photos;
+return [$photos[0]];

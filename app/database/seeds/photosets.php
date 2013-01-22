@@ -1,5 +1,9 @@
 <?php
 
+// Run photos seeds again
+DB::table('photos')->delete();
+include 'photos.php';
+
 // Get all collections from my Flickr user
 $sets = Flickering::photosetsGetList('31667913@N06');
 

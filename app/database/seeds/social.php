@@ -24,6 +24,5 @@ return Arrays::each($_social, function($social) {
     'link'       => $link,
     'created_at' => new DateTime,
     'updated_at' => new DateTime,
-    ];
-  }
+  ];
 });

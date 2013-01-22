@@ -37,7 +37,7 @@ return Arrays::each($novels, function($novel) {
   return [
     'id'          => String::slugify($name),
     'name'        => $name,
-    'description' => $summary
+    'description' => $summary,
     'image'       => String::slugify($name).'.jpg',
     'created_at'  => DateTime::createFromFormat('Y-m-d', $date),
     'updated_at'  => DateTime::createFromFormat('Y-m-d', $date),
