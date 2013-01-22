@@ -108,7 +108,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
 		'ExpressiveDateServiceProvider',
-		'Cerberus\Providers\CerberusServiceProvider',
+		'Cerberus\CerberusServiceProvider',
 		'Basset\BassetServiceProvider',
 		'Glow\GlowServiceProvider',
 
