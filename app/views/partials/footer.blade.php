@@ -12,7 +12,7 @@
   </section>
 
   <section class='colophon'>
-    Sources en {{ HTML::toBlank('https://bitbucket.org/Anahkiasen/autopergamene', 'libre consultation') }}
+    Sources en {{ HTML::toBlank('https://github.com/Anahkiasen/autopergamene', 'libre consultation') }}
   </section>
 
 </footer>
