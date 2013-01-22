@@ -5,3 +5,4 @@ composer.lock
 composer.phar
 public/packages
 public/cache/*.jpg
+sftp-config.json
