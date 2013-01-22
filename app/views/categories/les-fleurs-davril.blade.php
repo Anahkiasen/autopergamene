@@ -12,7 +12,7 @@
   <ul class='fixed nav'>
     @foreach($novels as $novel)
       <li>
-        {{ HTML::to('#' .$novel->slug, $novel->name) }}
+        <a href="#{{ $novel->id }}">{{ $novel->name }}</a>
       </li>
     @endforeach
   </ul>
@@ -20,7 +20,7 @@
   <hr />
 
   @foreach($novels as $novel)
-    <article class='novel-summary' id='{{ $novel->slug }}'>
+    <article class='novel-summary' id='{{ $novel->id }}'>
       <h2>{{ $novel->name }}</h2>
       <figure class='cover' style='background-image: url({{ $novel->image }})'></figure>
       <p><strong>Publiée le :</strong> {{ $novel->date_of_creation }}</p>
