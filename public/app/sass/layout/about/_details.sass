@@ -4,10 +4,10 @@
 
 .about-more
   +reset-columns
+  +rem(margin-top, 1rem)
   @extend %container-wide
   @extend %hidden
   clear: both
-  +rem(margin-top, 1rem)
 
   &.open
     @extend %reveal
@@ -17,10 +17,10 @@
   h3
     +border-top-radius(3px)
     +double-shadow(2px)
+    +rem(padding, 0.5rem 0)
     @extend %font-size-normal
     @extend %light-accent-block
     font-weight: 400
-    +rem(padding, 0.5rem 0)
 
   // Lists --------------------------------------------------------- /
 
