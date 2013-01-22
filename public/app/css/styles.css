@@ -265,6 +265,8 @@ a.back, .about .about-more h3 {
     margin-top: 0.5rem;
     text-transform: none; }
   @media (max-width: 768px) {
+    .categories figure:hover, .portfolio .collection:hover, .portfolio .support:hover, .articles article:hover, .portfolio .repository figure:hover {
+      background-color: rgba(0, 0, 0, 0.1); }
     .categories figure img, .portfolio .collection img, .portfolio .support img, .articles article img, .portfolio .repository figure img {
       width: 23.72881%;
       float: left;
