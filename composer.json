@@ -1,23 +1,33 @@
 {
-	"require": {
-		"laravel/framework": "4.0.*",
-		"anahkiasen/underscore-php": "dev-master",
-		"jasonlewis/basset": "dev-master",
-		"jasonlewis/expressive-date": "dev-master",
-		"anahkiasen/cerberus": "dev-master",
-		"imagine/Imagine": "dev-master",
-		"dflydev/markdown": "dev-master",
-		"anahkiasen/glow": "dev-master"
-	},
-	"autoload": {
-		"classmap": [
-			"app/commands",
-			"app/controllers",
-			"app/libraries",
-			"app/models",
-			"app/database/migrations",
-			"app/tests/TestCase.php"
-		]
-	},
-	"minimum-stability": "dev"
+  "name": "anahkiasen/autopergamene",
+  "description": "Personnal portfolio",
+  "homepage": "http://autopergamene.eu",
+  "license": "CC-BY-NC-ND-3.0",
+  "authors": [
+    {
+      "name": "Maxime Fabre",
+      "email": "ehtnam6@gmail.com"
+    }
+  ],
+  "require": {
+    "laravel/framework": "4.0.*",
+    "anahkiasen/cerberus": "dev-master",
+    "anahkiasen/glow": "dev-master",
+    "anahkiasen/underscore-php": "dev-master",
+    "dflydev/markdown": "dev-master",
+    "imagine/Imagine": "dev-master",
+    "jasonlewis/basset": "dev-master",
+    "jasonlewis/expressive-date": "dev-master"
+  },
+  "autoload": {
+    "classmap": [
+      "app/commands",
+      "app/controllers",
+      "app/libraries",
+      "app/models",
+      "app/database/migrations",
+      "app/tests/TestCase.php"
+    ]
+  },
+  "minimum-stability": "dev"
 }
