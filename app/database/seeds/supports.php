@@ -9,9 +9,11 @@ $supports = [
 ];
 
 return Arrays::each($supports, function($support) {
+  list($slug, $name) = $support;
+
   return [
-    'id'         => $support[0],
-    'name'       => $support[1],
+    'id'         => $slug,
+    'name'       => $name,
     'created_at' => new DateTime,
     'updated_at' => new DateTime,
   ];

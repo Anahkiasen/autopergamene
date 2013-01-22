@@ -41,12 +41,14 @@ $illustrations = [
 ];
 
 return Arrays::each($illustrations, function($illustration) {
+  list ($name, $description, $category) = $illustration;
+
   return [
-    'name'       => $illustration[0],
-    'media'      => $illustration[1],
-    'image'      => String::slugify($illustration[0]).'.jpg',
-    'support_id' => $illustration[2],
+    'name'       => $name,
+    'media'      => $description,
+    'image'      => String::slugify($name).'.jpg',
     'thumbnail'  => isset($illustration[3]) ? 1 : 0,
+    'support_id' => $category,
     'created_at' => new DateTime,
     'updated_at' => new DateTime,
   ];

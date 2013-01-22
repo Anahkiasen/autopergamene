@@ -32,12 +32,14 @@ $novels = [
 ];
 
 return Arrays::each($novels, function($novel) {
+  list($name, $date, $summary) = $novel;
+
   return [
-    'id'          => String::slugify($novel[0]),
-    'name'        => $novel[0],
-    'image'       => String::slugify($novel[0]).'.jpg',
-    'created_at'  => DateTime::createFromFormat('Y-m-d', $novel[1]),
-    'updated_at'  => DateTime::createFromFormat('Y-m-d', $novel[1]),
-    'description' => $novel[2]
+    'id'          => String::slugify($name),
+    'name'        => $name,
+    'description' => $summary
+    'image'       => String::slugify($name).'.jpg',
+    'created_at'  => DateTime::createFromFormat('Y-m-d', $date),
+    'updated_at'  => DateTime::createFromFormat('Y-m-d', $date),
   ];
 });

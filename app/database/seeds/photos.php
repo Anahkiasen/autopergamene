@@ -30,6 +30,7 @@ foreach ($photosets as $photoset_id) {
   }
 }
 
+// Slice for SQLite
 $photos = array_values($photos);
 $photos = array_slice($photos, 0, 999 / sizeof($photos[0]));
 

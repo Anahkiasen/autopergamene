@@ -18,11 +18,13 @@ $repositories = [
 
 // Format data
 return Arrays::each($repositories, function($repository) {
+  list($name, $content, $tags, $link) = $repository;
+
   return [
-    'name'    => $repository[0],
-    'content' => $repository[1],
-    'tags'    => $repository[2],
-    'link'    => $repository[3],
+    'name'    => $name,
+    'content' => $content,
+    'tags'    => $tags,
+    'link'    => $link,
     'created_at' => new DateTime,
     'updated_at' => new DateTime,
   ];

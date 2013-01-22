@@ -14,11 +14,13 @@ $categories = [
 
 // Format data
 return Arrays::each($categories, function($category) {
+  list($name, $description, $link) = $category;
+
   return [
-    'id'          => String::slugify($category[0]),
-    'name'        => $category[0],
-    'description' => $category[1],
-    'link'        => $category[2],
+    'id'          => String::slugify($name),
+    'name'        => $name,
+    'description' => $description,
+    'link'        => $link,
     'created_at'  => new DateTime,
     'updated_at'  => new DateTime,
   ];

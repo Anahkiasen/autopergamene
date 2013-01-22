@@ -22,10 +22,12 @@ $tracks = [
 ];
 
 return Arrays::each($tracks, function($track) {
+  list($name, $id, $movements) = $track;
+
   return [
-    'name'       => $track[0],
-    'soundcloud' => $track[1],
-    'movements'  => $track[2],
+    'name'       => $name,
+    'soundcloud' => $id,
+    'movements'  => $movements,
     'created_at' => new DateTime,
     'updated_at' => new DateTime,
   ];
