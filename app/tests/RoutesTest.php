@@ -39,6 +39,16 @@ class RoutesTest extends Cerberus\Scrutiny
     $this->assertIsPage('', 'Autopergamene');
   }
 
+  public function testPathsToStylesAreCorrect()
+  {
+    $page   = $this->getPage('');
+    $styles = $page->filter('link')->extract('href');
+    $styles = str_replace('http://:/', 'http://autopergamene.eu/', $styles[2]);
+
+    $styles = (bool) file_get_contents($styles);
+    $this->assertTrue($styles);
+  }
+
   /**
    * @dataProvider provideCategories
    */
