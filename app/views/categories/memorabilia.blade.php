@@ -16,7 +16,7 @@
     @foreach($photosets as $photoset)
       <figure class='collection'>
         <a href='{{ URL::route('photoset', array('id' => $photoset->slug)) }}'>
-          {{ $photoset->thumbnail }}
+          {{ HTML::image($photoset->thumbnail->large_square, $photoset->name) }}
           <figcaption>
             <h3>{{ $photoset->name }}</h3>
             <h4>{{ $photoset->date_of_creation }}</h4>

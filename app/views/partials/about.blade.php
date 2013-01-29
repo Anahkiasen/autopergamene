@@ -3,7 +3,7 @@
   {{-- Header image --}}
   <aside></aside>
 
-  {{-- About me -}}
+  {{-- About me --}}
   <article class='biography'>
 
     {{-- Summary --}}

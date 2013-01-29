@@ -31,6 +31,6 @@ class Tableau extends Base
    */
   public function __toString()
   {
-    return HTML::image($this->image);
+    return HTML::image($this->image, $this->name);
   }
 }

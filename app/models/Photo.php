@@ -63,8 +63,13 @@ class Photo extends Eloquent
     return Number::paddingLeft($key, 2);
   }
 
+  /**
+   * Render the photo
+   *
+   * @return string
+   */
   public function __toString()
   {
-    return HTML::image($this->large_square);
+    return HTML::image($this->large_square, $this->surname);
   }
 }

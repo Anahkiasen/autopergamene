@@ -16,11 +16,12 @@ class Illustration extends Eloquent
   /**
    * Get a thumb of the illustration
    */
-  public function thumb($folder)
+  public function thumb($folder, $name = null)
   {
     $image = Thumb::square($folder.$this->image);
+    if (!$name) $name = $this->name;
 
-    return HTML::image($image);
+    return HTML::image($image, $name);
   }
 
   /**
@@ -28,6 +29,6 @@ class Illustration extends Eloquent
    */
   public function image($folder)
   {
-    return HTML::image($folder.$this->image);
+    return HTML::image($folder.$this->image, $this->name);
   }
 }
