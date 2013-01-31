@@ -3,7 +3,6 @@ use dflydev\markdown\MarkdownParser;
 
 class Novel extends Base
 {
-  protected $table = 'novels';
 
   // Attributes ---------------------------------------------------- /
 

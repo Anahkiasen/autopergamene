@@ -1,8 +1,6 @@
 <?php
 class Photo extends Eloquent
 {
-  protected $table = 'photos';
-
   /**
    * Aliases for sizes
    * @var array

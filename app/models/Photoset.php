@@ -1,9 +1,6 @@
 <?php
 class Photoset extends Base
 {
-
-  protected $table = 'photosets';
-
   // Relationships ------------------------------------------------- /
 
   public function photos()

@@ -2,8 +2,6 @@
 class Illustration extends Eloquent
 {
 
-  protected $table = 'illustrations';
-
   // Relationships ------------------------------------------------- /
 
   public function support()

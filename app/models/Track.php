@@ -7,8 +7,6 @@ class Track extends Eloquent
    */
   private static $color = 'ea2c46';
 
-  protected $table = 'tracks';
-
   // Attributes ---------------------------------------------------- /
 
   /**

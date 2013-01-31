@@ -1,9 +1,6 @@
 <?php
 class Support extends Eloquent
 {
-
-  protected $table = 'supports';
-
   // Relationships ------------------------------------------------- /
 
   public function illustrations()
