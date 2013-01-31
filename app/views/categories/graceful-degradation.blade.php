@@ -20,9 +20,16 @@
   @include('articles')
 
   <h2>Les projets</h2>
-  <p>Les liens pointent soit sur Github vers la source, soit vers le site du projet</p>
+  <p>Les liens pointent soit sur Github vers la source, soit vers le site du projet.</p>
 
   @foreach($repositories as $repository)
+    @if($repository->master == 0 and !isset($title))
+      <h2>{{ $title = 'Projets en collaboration' }}</h2>
+      <p>
+        Ci-dessous des projets que je n'ai pas initiés mais sur lesquels à force de contributions je suis passé collaborateur.
+      </p>
+    @endif
+
     <article class='repository'>
       <a href='{{ $repository->link }}' target='_blank'>
         <figure>

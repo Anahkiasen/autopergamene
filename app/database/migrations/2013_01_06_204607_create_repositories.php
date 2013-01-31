@@ -11,6 +11,7 @@ class CreateRepositories extends Migration
       $table->text('content');
       $table->string('tags');
       $table->string('link');
+      $table->boolean('master');
       $table->timestamps();
     });
   }

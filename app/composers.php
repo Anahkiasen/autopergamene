@@ -37,7 +37,7 @@ View::composer('categories.les-fleurs-davril', function($event) {
 });
 
 View::composer('categories.graceful-degradation', function($event) {
-  $event->view->repositories = DB::table('repositories')->get();
+  $event->view->repositories = DB::table('repositories')->orderBy('master', 'desc')->get();
 });
 
 View::composer('categories.today-is-sunday', function($event) {
