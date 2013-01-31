@@ -83,7 +83,7 @@ class ContentTest extends Cerberus\Scrutiny
 
   public function testNovelsAreRenderedCorrectly()
   {
-    $crawler = $this->getPage('category/les-fleurs-davril/a-lombre-dun-chene');
+    $crawler = $this->getPage('category/les-fleurs-davril/story/a-lombre-dun-chene');
 
     $this->assertTagContains($crawler, 'h3', '0');
   }
