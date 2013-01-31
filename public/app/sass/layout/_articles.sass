@@ -3,14 +3,29 @@
 //////////////////////////////////////////////////////////////////////
 
 .articles
-  @extend %hidden
   +rem(margin-top, 1rem)
+  @extend %hidden
 
   &.open
     @extend %reveal
 
   article
-    @extend %responsive-category
+    @extend %transition
+    +rem(padding, 0 0 2rem 1rem)
+    border-left: 3px solid grey(75)
+    position: relative
+
+    blockquote, h3
+      @extend %transition
+
+    datetime, h3
+      color: grey(40)
+
+    datetime
+      font-style: italic
+      position: absolute
+      right: 0
+      top: 0
 
     blockquote
       +rem(margin, 0.5rem 0 0)
@@ -18,7 +33,14 @@
 
     h3
       @extend %font-base
-      font-weight: 500
+      font-weight: 600
       text-transform: uppercase
       +font-size(ms(0.5))
       line-height: 1
+
+    &:hover
+      border-left-color: $color-accent
+      h3
+        color: $color-accent
+      blockquote
+        background: fade(black, 10)
