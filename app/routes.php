@@ -57,7 +57,7 @@ Route::any('category/illustration/support/{id}', array(
 
 // Display a novel ------------------------------------------------- /
 
-Route::any('category/les-fleurs-davril/{id}', array(
+Route::any('category/les-fleurs-davril/story/{id}', array(
   'as' => 'novel',
   'do' => function($slug) {
     $novel = Novel::find($slug);
