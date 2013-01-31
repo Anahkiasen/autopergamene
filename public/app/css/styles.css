@@ -736,7 +736,7 @@ footer {
   .article article .image-wrap, .article article .about aside, .about .article article aside, .novel article .image-wrap, .novel article .about aside, .about .novel article aside {
     margin: 16px 0;
     margin: 1rem 0;
-    display: block;
+    display: inline-block;
     width: auto; }
   .article article del, .novel article del {
     text-decoration: none; }
