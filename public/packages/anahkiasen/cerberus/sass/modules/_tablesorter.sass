@@ -1,0 +1,19 @@
+//////////////////////////////////////////////////////////////////////
+////////////////////// TABLESORTER ACTIVE STATE //////////////////////
+//////////////////////////////////////////////////////////////////////
+
+th
+  cursor: pointer
+  text-align: center
+  &:hover
+    background-color: $grayLighter
+  &.tablesorter-headerDesc,
+  &.tablesorter-headerAsc
+    background-color: $blueDark
+    color: white
+  &.tablesorter-headerAsc div:before
+    content: '\25B2'
+    margin-right: 5px
+  &.tablesorter-headerDesc div:before
+    content: '\25BC'
+    margin-right: 5px

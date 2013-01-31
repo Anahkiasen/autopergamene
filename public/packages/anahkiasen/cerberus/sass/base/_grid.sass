@@ -1,0 +1,47 @@
+//////////////////////////////////////////////////////////////////////
+//////////////////////// GRID SYSTEM AND SUSY ////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+// SUSY import ----------------------------------------------------- /
+
+@import susy
+
+// Responsive design ----------------------------------------------- /
+
+$wider   : 1500px
+$wide    : 1200px
+$desktop : 980px
+$tablet  : 768px
+$mobile  : 480px
+$mini    : 300px
+
+// Define a wide container ----------------------------------------- /
+
+=container-wide
+  +container
+  max-width: 100%
+  padding: 0
+
+// Define a number of items per row -------------------------------- /
+
+=per-row($perRow, $numberColumns: $total-columns, $padding: false, $last: false)
+  $span: $numberColumns / $perRow
+  +span-columns($span, $numberColumns, $padding)
+  @if $last
+    +nth-omega
+  @else
+    +nth-omega(#{$perRow}n, of-type)
+
+// Breakpoint helpers ---------------------------------------------- /
+
+=from-to($from, $to)
+  +at-breakpoint($from $total-columns $to)
+    @content
+
+=to($to)
+  +at-breakpoint(0 $total-columns $to)
+    @content
+
+=from($from)
+  +at-breakpoint($from $total-columns)
+    @content
