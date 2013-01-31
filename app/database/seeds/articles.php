@@ -18,6 +18,12 @@ foreach($_articles as $article) {
 
   if (!$category_id) continue;
 
+  // Strip some stuff in the titles
+  $title = $article->title->__toString();
+  $title = str_replace('[Musique] ', null, $title);
+  $title = str_replace('[Photos] ', null, $title);
+  $title = str_replace('[Compo] ', null, $title);
+
   // Date
   $date = $article->pubDate;
   $date = new DateTime($date);
@@ -27,7 +33,7 @@ foreach($_articles as $article) {
     'category_id' => $category_id,
     'content'     => trim($article->content->__toString()),
     'summary'     => trim($article->description->__toString()),
-    'name'        => $article->title->__toString(),
+    'name'        => $title,
     'created_at'  => $date,
     'updated_at'  => $date,
   );
