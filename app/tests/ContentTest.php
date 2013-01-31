@@ -57,7 +57,7 @@ class ContentTest extends Cerberus\Scrutiny
   {
     $crawler = $this->getPage('category/graceful-degradation');
 
-    $this->assertNthItemsExist($crawler, 4, '.repository');
+    $this->assertNthItemsExist($crawler, 6, '.repository');
   }
 
   public function testCanLoadNovels()
