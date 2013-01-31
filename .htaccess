@@ -255,7 +255,7 @@ FileETag None
 <IfModule mod_rewrite.c>
   Options +FollowSymlinks
   RewriteEngine On
-  RewriteRule ^(.*).(css|js|jpg|jpeg)$ /public/$1.$2 [L]
+  RewriteRule ^(.*).(css|js|jpg|jpeg|svg)$ /public/$1.$2 [L]
   RewriteRule ^(.*)$ /public/index.php/$1
 </IfModule>
 
