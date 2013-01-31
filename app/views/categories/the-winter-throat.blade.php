@@ -9,6 +9,8 @@
   </p>
   <p>J'espère que vous aussi aurez le plaisir de vous imaginer ce que vous voulez en les écoutant.</p>
 
+  @include('articles')
+
   @foreach($tracks as $track)
     <article>
       <h3>{{ $track->name }}</h3>
