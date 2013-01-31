@@ -8,11 +8,15 @@ foreach($_articles as $article) {
 
   // Category
   $category = (array) $article->category;
+  if (!$category) continue;
+
+  $category_id = null;
   $category = $category[0]->__toString();
   if ($category == 'Webdesign') $category_id = 'graceful-degradation';
   elseif ($category == 'Photographies') $category_id = 'memorabilia';
+  elseif ($category == 'Musique') $category_id = 'the-winter-throat';
 
-  if (!isset($category_id)) continue;
+  if (!$category_id) continue;
 
   // Date
   $date = $article->pubDate;
