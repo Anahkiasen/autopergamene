@@ -9,6 +9,7 @@ class CreateArticles extends Migration
       $table->increments('id');
       $table->string('name');
       $table->string('summary');
+      $table->string('tags');
       $table->text('content');
       $table->integer('category_id');
       $table->timestamps();

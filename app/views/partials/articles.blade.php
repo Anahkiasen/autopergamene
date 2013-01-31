@@ -8,6 +8,11 @@
           <h3>{{ $article->name }}</h3>
           <datetime>publié le {{ $article->created_at }}</datetime>
           <blockquote>{{ $article->summary }}</blockquote>
+          @if ($article->tags)
+            <p class='block-light'>
+              <strong>tags :</strong> {{ $article->tags }}
+            </p>
+          @endif
         </a>
       </article>
     @endforeach
