@@ -21,7 +21,7 @@ class Support extends Eloquent
   /**
    * Get the folder of this support's illustrations
    */
-  public function getFolder()
+  public function giveFolder()
   {
     return 'app/img/illustrations/'.$this->id.'/';
   }

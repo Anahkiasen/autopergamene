@@ -8,7 +8,7 @@ class Tableau extends Base
   /**
    * Get full path to the image
    */
-  public function getImage()
+  public function giveImage()
   {
     $image = String::slugify($this->name).'.jpg';
 
@@ -18,7 +18,7 @@ class Tableau extends Base
   /**
    * Get formatted creation date
    */
-  public function getCreatedAt()
+  public function giveCreatedAt()
   {
     $date = $this->getOriginal('created_at');
     $date = new DateTime($date);

@@ -1,6 +1,2 @@
 <?php
-
-class Article extends Eloquent
-{
-  protected $table = 'articles';
-}
+class Article extends Eloquent {}

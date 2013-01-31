@@ -18,7 +18,7 @@ class Base extends Eloquent
    *
    * @return string Y-m-d created_at field
    */
-  public function getDateOfCreation()
+  public function giveDateOfCreation()
   {
     $date = $this->created_at;
     $date = String::find($date, '-') ? new DateTime($date) : DateTime::createFromFormat('U', $date);

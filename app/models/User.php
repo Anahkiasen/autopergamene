@@ -23,7 +23,7 @@ class User extends Eloquent implements UserInterface {
 	 *
 	 * @return mixed
 	 */
-	public function getAuthIdentifier()
+	public function giveAuthIdentifier()
 	{
 		return $this->getKey();
 	}
@@ -33,7 +33,7 @@ class User extends Eloquent implements UserInterface {
 	 *
 	 * @return string
 	 */
-	public function getAuthPassword()
+	public function giveAuthPassword()
 	{
 		return $this->password;
 	}

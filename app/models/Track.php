@@ -14,7 +14,7 @@ class Track extends Eloquent
   /**
    * Return the URL to the Soundcloud API
    */
-  public function getSoundcloud()
+  public function giveSoundcloud()
   {
     $track = $this->getOriginal('soundcloud');
     $track = 'http://api.soundcloud.com/tracks/' .$track;
@@ -25,7 +25,7 @@ class Track extends Eloquent
   /**
    * Format movements for display
    */
-  public function getMovements()
+  public function giveMovements()
   {
     $movements = $this->getOriginal('movements');
 

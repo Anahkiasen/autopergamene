@@ -10,7 +10,7 @@ class Novel extends Base
   /**
    * Get the quotation with linebreaks
    */
-  public function getDescription()
+  public function giveDescription()
   {
     return nl2br($this->getOriginal('description'));
   }
@@ -18,7 +18,7 @@ class Novel extends Base
   /**
    * Get full path to the image
    */
-  public function getImage()
+  public function giveImage()
   {
     $image = $this->getOriginal('image');
 
@@ -28,7 +28,7 @@ class Novel extends Base
   /**
    * Get the novel's text
    */
-  public function getContent()
+  public function giveContent()
   {
     // Get novel if it exists
     $text = __DIR__.'/../database/novels/'.$this->id.'.md';
