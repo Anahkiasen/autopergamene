@@ -6,7 +6,7 @@
       <article>
         <a href='{{ URL::route('article', array('slug' => $category->id, 'id' => $article->id)) }}'>
           <h3>{{ $article->name }}</h3>
-          <datetime>publié le {{ $article->created_at }}</datetime>
+          <datetime>{{ $article->created_at }}</datetime>
           <blockquote>{{ $article->summary }}</blockquote>
           @if ($article->tags)
             <p class='block-light'>

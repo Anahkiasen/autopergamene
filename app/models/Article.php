@@ -15,4 +15,17 @@ class Article extends Eloquent
 
     return implode(', ', $tags);
   }
+
+  /**
+   * Human-er date for articles
+   *
+   * @return string
+   */
+  public function giveCreatedAt()
+  {
+    $date = $this->getOriginal('created_at');
+    $date = new DateTime($date);
+
+    return $date->format('m/d/y');
+  }
 }
