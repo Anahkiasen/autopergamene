@@ -9,38 +9,48 @@
   &.open
     @extend %reveal
 
+  $border-color: grey(75)
+
+  // Articles ------------------------------------------------------ /
+
   article
     @extend %transition
-    +rem(padding, 0 0 2rem 1rem)
-    border-left: 3px solid grey(75)
+    margin: 0
+    +rem(padding, 0 0 2rem 0)
     position: relative
 
     blockquote, h3
       @extend %transition
 
-    datetime, h3
-      color: grey(40)
-
     datetime
-      font-style: italic
-      position: absolute
-      right: 0
-      top: 0
+      @extend %transition
+      color: $border-color
 
     blockquote
       +rem(margin, 0.5rem 0 0)
-      +rem(padding, 1rem)
 
     h3
-      @extend %font-base
-      font-weight: 600
-      text-transform: uppercase
-      +font-size(ms(0.5))
-      line-height: 1
+      +font-size(1.25rem)
+      @extend %strict-title
 
     &:hover
       border-left-color: $color-accent
-      h3
+      h3, datetime
         color: $color-accent
       blockquote
         background: fade(black, 10)
+
+    // Responsive -------------------------------------------------- /
+
+    +from($tablet)
+      +rem(margin-left, 2rem)
+      +rem(padding-left, 1rem)
+      border-left: 3px solid $border-color
+      blockquote
+        +rem(padding, 1rem)
+      datetime
+        +rem(font-size, 1.5rem)
+        +rotate(-90deg)
+        position: absolute
+        left: -4rem
+        top: 3rem

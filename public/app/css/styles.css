@@ -1,7 +1,3 @@
-/*
-  Mixins are slightly modified from Benjamin Doherty's first implementations: http://gist.github.com/377912
-  rgba-background mixin can now be passed an option $dir variable
-*/
 .categories figure, .portfolio .collection, .portfolio .support, .portfolio .repository figure, .categories figure figcaption, .portfolio .collection figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption, .portfolio .illustration, .portfolio .tableau, .portfolio .photoset figure, .article article .wp-caption, .novel article .wp-caption, .about p {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -46,7 +42,7 @@ ul.fixed, .about .about-more ul, .novel article ul {
     margin: 0;
     padding: 0; }
 
-.categories figure, .portfolio .collection, .portfolio .support, .portfolio .repository figure, .articles, .about .about-more, .image-wrap, .about aside, .articles article, .articles article blockquote, .articles .novel article ul, .novel .articles article ul, .articles article h3, .about .about-biography {
+.categories figure, .portfolio .collection, .portfolio .support, .portfolio .repository figure, .articles, .about .about-more, .image-wrap, .about aside, .articles article, .articles article blockquote, .articles .novel article ul, .novel .articles article ul, .articles article h3, .articles article datetime, .about .about-biography {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -120,7 +116,7 @@ h1, h2, h3, h4 {
   margin: 0;
   padding: 0; }
 
-a.block, a.back, span.block, .categories figure h4, .portfolio .collection h4, .portfolio .support h4, .portfolio .repository figure h4, .portfolio .novel-summary h2, .portfolio .photoset figure h3, .articles article h3, .about h2, .about h3, .about h4, .article article .wp-caption p, .novel article .wp-caption p, .article article h1, .novel article h1 {
+.articles article h3, a.block, a.back, span.block, .categories figure h4, .portfolio .collection h4, .portfolio .support h4, .portfolio .repository figure h4, .portfolio .novel-summary h2, .portfolio .photoset figure h3, .about h2, .about h3, .about h4, .article article .wp-caption p, .novel article .wp-caption p, .article article h1, .novel article h1 {
   font-family: "adelle", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
   text-transform: lowercase; }
@@ -156,6 +152,11 @@ a.block, a.back, span.block, .categories figure h4, .portfolio .collection h4, .
   color: #666666;
   text-align: center;
   text-shadow: 0 0.1em 0 #e6e6e6; }
+
+.articles article h3 {
+  color: #666666;
+  font-weight: 600;
+  text-transform: uppercase; }
 
 #container, .error, .portfolio, .article, .novel {
   padding: 32px;
@@ -235,7 +236,7 @@ a.block, a.back, span.block {
   margin-right: 0; }
   @media (min-width: 980px) {
     .portfolio blockquote, .portfolio .novel article ul, .novel article .portfolio ul, .article article blockquote, .article .novel article ul, .novel .article article ul, .novel article blockquote, .novel article ul {
-      background-image: url('../img/quotes.png?1358883193');
+      background-image: url('../img/quotes.png?1359710590');
       background-position: 16px 16px;
       background-position: 1rem 1rem;
       background-repeat: no-repeat;
@@ -561,36 +562,47 @@ footer {
   margin-top: 16px;
   margin-top: 1rem; }
   .articles article {
-    padding: 0 0 32px 16px;
-    padding: 0 0 2rem 1rem;
-    border-left: 3px solid #bfbfbf;
+    margin: 0;
+    padding: 0 0 32px 0;
+    padding: 0 0 2rem 0;
     position: relative; }
-    .articles article datetime, .articles article h3 {
-      color: #666666; }
     .articles article datetime {
-      font-style: italic;
-      position: absolute;
-      right: 0;
-      top: 0; }
+      color: #bfbfbf; }
     .articles article blockquote, .articles .novel article ul, .novel .articles article ul {
       margin: 8px 0 0;
-      margin: 0.5rem 0 0;
-      padding: 16px;
-      padding: 1rem; }
+      margin: 0.5rem 0 0; }
     .articles article h3 {
-      font-weight: 600;
-      text-transform: uppercase;
       font-size: 20px;
-      font-size: 1.27202rem;
-      line-height: 36px;
-      line-height: 2.25rem;
-      line-height: 1; }
+      font-size: 1.25rem;
+      line-height: 24px;
+      line-height: 1.5rem; }
     .articles article:hover {
       border-left-color: #ea2c46; }
-      .articles article:hover h3 {
+      .articles article:hover h3, .articles article:hover datetime {
         color: #ea2c46; }
       .articles article:hover blockquote, .articles .novel article:hover ul, .novel .articles article:hover ul {
         background: rgba(0, 0, 0, 0.1); }
+    @media (min-width: 768px) {
+      .articles article {
+        margin-left: 32px;
+        margin-left: 2rem;
+        padding-left: 16px;
+        padding-left: 1rem;
+        border-left: 3px solid #bfbfbf; }
+        .articles article blockquote, .articles .novel article ul, .novel .articles article ul {
+          padding: 16px;
+          padding: 1rem; }
+        .articles article datetime {
+          font-size: 24px;
+          font-size: 1.5rem;
+          -webkit-transform: rotate(-90deg);
+          -moz-transform: rotate(-90deg);
+          -ms-transform: rotate(-90deg);
+          -o-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+          position: absolute;
+          left: -4rem;
+          top: 3rem; } }
 
 .about aside {
   width: 100%;
@@ -598,7 +610,7 @@ footer {
   height: 20rem;
   margin-bottom: 16px;
   margin-bottom: 1rem;
-  background-image: url('../img/maxime-fabre.jpg?1358883193'); }
+  background-image: url('../img/maxime-fabre.jpg?1359710590'); }
   @media (min-width: 980px) and (max-width: 1200px) {
     .about aside {
       height: 400px;
