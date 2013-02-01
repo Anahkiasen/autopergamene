@@ -13,15 +13,12 @@ class ContentTest extends Cerberus\Scrutiny
     );
   }
 
-  public function provideExternalHomeLinks()
-  {
-    return array(
-      array('Le Soulèvement'),
-      array('Le blog'),
-    );
-  }
+  protected $externalCategories = array(
+    'Le Soulèvement',
+    'Le blog',
+  );
 
-  // Tests --------------------------------------------------------- /
+  // Homepage ------------------------------------------------------ /
 
   public function testFooterIsProperlyLoaded()
   {
@@ -41,6 +38,23 @@ class ContentTest extends Cerberus\Scrutiny
     $targets = $crawler->filter('.social a')->extract('target');
     $this->assertContains('_blank', Arrays::unique($targets));
   }
+
+  public function testExternalLinksAreTargetBlank()
+  {
+    $crawler = $this->getPage();
+
+    $categories = $crawler->filter('.categories a');
+    foreach ($categories as $category) {
+      $categoryName  = $category->childNodes->item(2)->firstChild->nodeValue;
+      $linkBlank     = $category->hasAttribute('target');
+      $shouldBeBlank = in_array($categoryName, $this->externalCategories);
+
+      $this->assertEquals($shouldBeBlank, $linkBlank);
+    }
+
+  }
+
+  // Categories ---------------------------------------------------- /
 
   /**
    * @dataProvider provideCategoriesWithArticles
