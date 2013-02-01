@@ -236,7 +236,7 @@ a.block, a.back, span.block {
   margin-right: 0; }
   @media (min-width: 980px) {
     .portfolio blockquote, .portfolio .novel article ul, .novel article .portfolio ul, .article article blockquote, .article .novel article ul, .novel .article article ul, .novel article blockquote, .novel article ul {
-      background-image: url('../img/quotes.png?1359710590');
+      background-image: url('../img/quotes.png?1359737642');
       background-position: 16px 16px;
       background-position: 1rem 1rem;
       background-repeat: no-repeat;
@@ -610,7 +610,7 @@ footer {
   height: 20rem;
   margin-bottom: 16px;
   margin-bottom: 1rem;
-  background-image: url('../img/maxime-fabre.jpg?1359710590'); }
+  background-image: url('../img/maxime-fabre.jpg?1359737642'); }
   @media (min-width: 980px) and (max-width: 1200px) {
     .about aside {
       height: 400px;
@@ -726,7 +726,7 @@ footer {
     text-align: center; }
   .article article .wp-caption a, .novel article .wp-caption a {
     border: none; }
-  .article article .wp-caption a + a img, .novel article .wp-caption a + a img {
+  .article article .wp-caption a + a > img, .novel article .wp-caption a + a > img {
     width: 50%; }
   .article article .wp-caption p, .novel article .wp-caption p {
     font-weight: 500;
@@ -777,6 +777,14 @@ footer {
   line-height: 4.5rem;
   margin-bottom: 32px;
   margin-bottom: 2rem; }
+  @media (max-width: 768px) {
+    .novel h1 {
+      font-size: 40px;
+      font-size: 2.5rem;
+      line-height: 48px;
+      line-height: 3rem;
+      margin-bottom: 16px;
+      margin-bottom: 1rem; } }
 .novel article h3 {
   text-align: center;
   margin: 1rem; }
@@ -792,6 +800,10 @@ footer {
     content: "-";
     padding-right: 16px;
     padding-right: 1rem; }
+  @media (max-width: 768px) {
+    .novel article ul {
+      padding: 16px;
+      padding: 1rem; } }
 .novel .alert {
   margin: 32px 0;
   margin: 2rem 0; }
