@@ -8,8 +8,8 @@
  * Base required assets for all pages
  */
 Basset::collection('application', function($collection) {
-  $collection->add('components/normalize/normalize.css')->apply('CssMin');;
-  $collection->add('app/css/styles.css')->apply('UriRewrite')->apply('CssMin');;
+  $collection->add('components/normalize/normalize.css')->apply('CssMin');
+  $collection->add('app/css/styles.css');
 
   $collection->add('app/js/scripts.js')->apply('JsMin');
 });
@@ -43,5 +43,5 @@ Basset::collection('affixed', function($collection) {
   $collection->add('components/jquery/jquery.min.js');
   $collection->add('components/bootstrap/js/bootstrap-affix.js');
   $collection->add('components/bootstrap/js/bootstrap-scrollspy.js');
-  $collection->add('app/js/affixed.js');
-})->apply('JsMin');
+  $collection->add('app/js/affixed.js')->apply('JsMin');
+});
