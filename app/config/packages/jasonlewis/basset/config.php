@@ -148,6 +148,9 @@ return array(
   |
   */
 
-  'filters' => array()
+  'filters' => array(
+    'CssMin' => 'CssMinFilter',
+    'JsMin'  => 'PackerFilter',
+  ),
 
 );
