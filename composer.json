@@ -14,12 +14,12 @@
     "anahkiasen/cerberus": "dev-master",
     "anahkiasen/glow": "dev-master",
     "anahkiasen/underscore-php": "dev-master",
+    "cssmin/cssmin": "*",
     "dflydev/markdown": "dev-master",
     "imagine/Imagine": "dev-master",
     "jasonlewis/basset": "dev-master",
     "jasonlewis/expressive-date": "dev-master",
     "joliclic/javascript-packer": "*",
-    "cssmin/cssmin": "*"
   },
   "repositories": [
     {
