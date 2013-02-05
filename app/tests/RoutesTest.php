@@ -91,4 +91,15 @@ class RoutesTest extends Cerberus\Scrutiny
     $url = 'basset/compile';
     $this->assertIsPage($url, 'Artisan');
   }
+
+  public function testCompiledAssetsPathAreCorrect()
+  {
+    $stylesheet = glob(__DIR__.'/../../public/assets/application*.css');
+    $stylesheet = File::get($stylesheet[0]);
+
+    preg_match("#url\('([a-z/]+)maxime-fabre.jpg#", $stylesheet, $matches);
+    $image = __DIR__.'/../..'.$matches[1].'maxime-fabre.jpg';
+
+    $this->assertTrue(file_exists($image));
+  }
 }
