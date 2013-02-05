@@ -29,9 +29,12 @@ Basset::collection('modernizr', function($collection) {
 Basset::collection('article', function($collection) {
   $collection->add('components/rainbow/themes/tomorrow-night.css')->apply('CssMin');
 
-  $collection->add('components/rainbow/js/rainbow.min.js')->apply('JsMin');
-  $collection->add('components/rainbow/js/language/generic.js')->apply('JsMin');
-  $collection->add('components/rainbow/js/language/php.js')->apply('JsMin');
+  $collection->directory('name: rainbow', function($collection) {
+    $collection->add('rainbow.min.js');
+    $collection->add('language/generic.js');
+    $collection->add('language/php.js');
+  })->apply('JsMin');
+
   $collection->add('app/js/article.js')->apply('JsMin');
 });
 
