@@ -16,10 +16,6 @@ View::composer('about', function($event) {
   $event->view->work = ExpressiveDate::make('October 1st, 2009', $timezone)->getDifferenceInYears($today);
 });
 
-View::composer('categories', function($event) {
-  $event->view->categories = Category::orderBy('order', 'asc')->get();
-});
-
 //////////////////////////////////////////////////////////////////////
 /////////////////////////// PAGE COMPOSERS ///////////////////////////
 //////////////////////////////////////////////////////////////////////

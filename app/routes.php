@@ -12,9 +12,7 @@ View::addLocation(__DIR__.'/views/categories/subcategories');
 /////////////////////////////// ROUTES ///////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-Route::any('/', function() {
-  return View::make('home');
-});
+Route::any('/', 'CategoriesController@getCategories');
 
 // Display a category ---------------------------------------------- /
 

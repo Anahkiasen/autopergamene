@@ -4,8 +4,20 @@
  *
  * Handles Articles display
  */
+use Repositories\ArticleRepository;
+
 class ArticlesController extends BaseController
 {
+  /**
+   * Bind dependencies
+   *
+   * @param ArticleRepository $articles
+   */
+  public function __construct(ArticleRepository $articles)
+  {
+    $this->articles = $articles;
+  }
+
   /**
    * Display an article
    *
@@ -16,7 +28,7 @@ class ArticlesController extends BaseController
    */
   public function getArticle($categorySlug, $articleSlug)
   {
-    $article = Article::where('slug', $articleSlug)->first();
+    $article = $this->articles->getBySlug($articleSlug);
 
     return View::make('article')
       ->with('category', $article->category)

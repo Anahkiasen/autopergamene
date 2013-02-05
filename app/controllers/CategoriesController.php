@@ -4,8 +4,28 @@
  *
  * Dispatches to various Category places
  */
+use Repositories\CategoryRepository;
+
 class CategoriesController extends BaseController
 {
+  /**
+   * Bind dependencies
+   *
+   * @param CategoryRepository $categoriesRepository
+   */
+  public function __construct(CategoryRepository $categoriesRepository)
+  {
+    $this->categories = $categoriesRepository;
+  }
+
+  public function getCategories()
+  {
+    $categories = $this->categories->getOrdered();
+
+    return View::make('home')
+      ->with('categories', $categories);
+  }
+
   /**
    * Displays a Category
    *
@@ -15,7 +35,7 @@ class CategoriesController extends BaseController
    */
   public function getCategory($categorySlug)
   {
-    $category = Category::find($categorySlug);
+    $category = $this->categories->getBySlug($categorySlug);
 
     return View::make('categories.'.$categorySlug)
       ->with('category', $category);
@@ -31,7 +51,7 @@ class CategoriesController extends BaseController
   public function getAlbum($albumSlug)
   {
     $photoset = Photoset::where('slug', $albumSlug)->first();
-    $category = Category::find('memorabilia');
+    $category = $this->categories->getPhotosCategory();
 
     return View::make('photoset')
       ->with('category', $category)
@@ -48,7 +68,7 @@ class CategoriesController extends BaseController
   public function getSupport($supportSlug)
   {
     $support  = Support::with('illustrations')->find($supportSlug);
-    $category = Category::find('illustration');
+    $category = $this->categories->getIllustrationsCategory();
 
     return View::make('support')
       ->with('category', $category)
@@ -64,7 +84,7 @@ class CategoriesController extends BaseController
    */
   public function getStory($storySlug)
   {
-    $category = Category::find('les-fleurs-davril');
+    $category = $this->categories->getStoriesCategory();
     $story = Story::find($storySlug);
 
     return View::make('story')
