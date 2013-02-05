@@ -1,8 +1,9 @@
 .DS_Store
 .sass-cache
 /vendor
+app/storage/database
 composer.lock
 composer.phar
-app/storage/database
+public/assets
 public/cache/*.jpg
 sftp-config.json
