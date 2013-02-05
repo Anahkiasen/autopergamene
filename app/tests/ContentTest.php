@@ -39,6 +39,33 @@ class ContentTest extends Cerberus\Scrutiny
     $this->assertContains('_blank', Arrays::unique($targets));
   }
 
+  public function testCategoriesAreLoaded()
+  {
+    $crawler = $this->getPage();
+    $this->assertNthItemsExist($crawler, 8, '.categories h3');
+  }
+
+  public function testCategoriesAreLoadedInCorrectOrder()
+  {
+    $crawler = $this->getPage();
+    $categories = $crawler->filter('.categories h3')->each(function($node) {
+      return $node->nodeValue;
+    });
+
+    $categoriesOrder = array(
+      "Memorabilia",
+      "Graceful Degradation",
+      "The Winter Throat",
+      "Les Fleurs d'Avril",
+      "Le Soulèvement",
+      "Today is Sunday",
+      "Illustration",
+      "Le blog",
+    );
+
+    $this->assertEquals($categoriesOrder, $categories);
+  }
+
   public function testExternalLinksAreTargetBlank()
   {
     $crawler = $this->getPage();
