@@ -62,7 +62,9 @@ return array(
   |
   */
 
-  'directories' => array(),
+  'directories' => array(
+    'rainbow' => 'components/rainbow/js',
+  ),
 
   /*
   |--------------------------------------------------------------------------
@@ -150,7 +152,7 @@ return array(
 
   'filters' => array(
     'CssMin' => 'CssMinFilter',
-    'JsMin'  => 'PackerFilter',
+    'JsMin'  => 'GoogleClosure\CompilerApiFilter',
   ),
 
 );
