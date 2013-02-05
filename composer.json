@@ -14,23 +14,12 @@
     "anahkiasen/cerberus": "dev-master",
     "anahkiasen/glow": "dev-master",
     "anahkiasen/underscore-php": "dev-master",
-    "cssmin/cssmin": "*",
     "dflydev/markdown": "dev-master",
     "imagine/Imagine": "dev-master",
     "jasonlewis/basset": "dev-master",
-    "jasonlewis/expressive-date": "dev-master"
+    "jasonlewis/expressive-date": "dev-master",
+    "natxet/CssMin": "dev-master"
   },
-  "repositories": [
-    {
-      "type": "package",
-      "package": {
-        "name": "cssmin/cssmin",
-        "version": "3.0.1",
-        "dist": { "url": "http://cssmin.googlecode.com/files/cssmin-v3.0.1.php", "type": "file" },
-        "autoload": { "classmap": [ "cssmin-v3.0.1.php" ] }
-      }
-    }
-  ],
   "autoload": {
     "classmap": [
       "app/commands",
