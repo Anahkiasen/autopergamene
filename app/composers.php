@@ -45,7 +45,5 @@ View::composer('categories.today-is-sunday', function($event) {
 });
 
 View::composer('categories.illustration', function($event) {
-  $event->view->supports = Support::with(array('thumbnail' => function($query) {
-    return $query->where('thumbnail', 1);
-  }))->get();
+  $event->view->supports = Support::with('thumbnail')->get();
 });

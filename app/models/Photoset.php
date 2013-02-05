@@ -20,9 +20,6 @@ class Photoset extends Base
    */
   public static function latest()
   {
-    return static::with(array(
-      'thumbnail' => function($query) {
-        return $query->where('thumbnail', 1);
-      }))->orderBy('created_at', 'desc')->get();
+    return static::with('thumbnail')->orderBy('created_at', 'desc')->get();
   }
 }
