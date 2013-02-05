@@ -1,6 +1,7 @@
 <?php
 
 use Underscore\Parse;
+use Underscore\Types\String;
 
 $_articles = file_get_contents('http://blogs.wefrag.com/Anahkiasen/feed/');
 $_articles = str_replace('content:encoded', 'content', $_articles);
@@ -38,6 +39,7 @@ foreach($_articles as $article) {
   // Article
   $articles[] = array(
     'category_id' => $category_id,
+    'slug'        => String::slug($title),
     'content'     => trim($article->content->__toString()),
     'summary'     => trim($article->description->__toString()),
     'tags'        => $tags,

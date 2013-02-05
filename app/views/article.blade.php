@@ -1,7 +1,7 @@
 @extends('global')
 
 @section('title')
-  {{ $article->name }} -
+  {{ $article->name }} - Les articles -
 @stop
 
 @section('css')

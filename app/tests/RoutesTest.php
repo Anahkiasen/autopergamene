@@ -76,8 +76,8 @@ class RoutesTest extends Cerberus\Scrutiny
 
   public function testCanDisplayArticles()
   {
-    $url = 'category/graceful-degradation/articles/7';
-    $this->assertIsPage($url, 'Workflow I : Les préprocesseurs (LESS, SASS, CoffeeScript, HAML etc)');
+    $url = 'category/graceful-degradation/articles/lost-and-found';
+    $this->assertIsPage($url, 'Lost and found');
   }
 
   public function testCanDisplayPhotoset()

@@ -4,7 +4,7 @@
   @if($category->articles)
     @foreach($category->articles as $article)
       <article>
-        <a href='{{ URL::route('article', array('slug' => $category->id, 'id' => $article->id)) }}'>
+        <a href='{{ URL::route('article', array('slug' => $category->id, 'articleSlug' => $article->slug)) }}'>
           <h3>{{ $article->name }}</h3>
           <datetime>{{ $article->created_at }}</datetime>
           <blockquote>{{ $article->summary }}</blockquote>

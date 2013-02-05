@@ -1,4 +1,5 @@
 <?php
+ini_set('memory_limit', '64M');
 use Underscore\Types\String;
 
 class ContentTest extends Cerberus\Scrutiny
