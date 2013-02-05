@@ -17,7 +17,7 @@ View::composer('about', function($event) {
 });
 
 View::composer('categories', function($event) {
-  $event->view->categories = Category::all();
+  $event->view->categories = Category::orderBy('order', 'asc')->get();
 });
 
 //////////////////////////////////////////////////////////////////////

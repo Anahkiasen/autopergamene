@@ -10,6 +10,7 @@ class CreateCategories extends Migration
       $table->string('name');
       $table->string('description');
       $table->string('link');
+      $table->integer('order');
       $table->timestamps();
     });
   }

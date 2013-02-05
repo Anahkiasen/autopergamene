@@ -13,7 +13,7 @@ $categories = [
 ];
 
 // Format data
-return Arrays::each($categories, function($category) {
+return Arrays::each($categories, function($category, $key) {
   list($name, $description, $link) = $category;
 
   return [
@@ -21,6 +21,7 @@ return Arrays::each($categories, function($category) {
     'name'        => $name,
     'description' => $description,
     'link'        => $link,
+    'order'       => $key,
     'created_at'  => new DateTime,
     'updated_at'  => new DateTime,
   ];
