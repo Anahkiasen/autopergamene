@@ -19,7 +19,7 @@
     "imagine/Imagine": "dev-master",
     "jasonlewis/basset": "dev-master",
     "jasonlewis/expressive-date": "dev-master",
-    "joliclic/javascript-packer": "*",
+    "joliclic/javascript-packer": "*"
   },
   "repositories": [
     {
