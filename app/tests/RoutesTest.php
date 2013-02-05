@@ -85,4 +85,10 @@ class RoutesTest extends Cerberus\Scrutiny
     $url = 'category/memorabilia/album/la-page-blanche';
     $this->assertIsPage($url, 'La Page Blanche');
   }
+
+  public function testCanCompileAssets()
+  {
+    $url = 'basset/compile';
+    $this->assertIsPage($url, 'Artisan');
+  }
 }
