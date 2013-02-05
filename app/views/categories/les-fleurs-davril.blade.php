@@ -23,7 +23,7 @@
     <article class='novel-summary' id='{{ $novel->id }}'>
       <h2>{{ $novel->name }}</h2>
       <figure class='cover' style='background-image: url({{ $novel->image }})'></figure>
-      <p><strong>Publiée le :</strong> {{ $novel->date_of_creation }}</p>
+      <p><strong>Publiée le :</strong> {{ $novel->created_at }}</p>
       <blockquote>{{ $novel->description }}</blockquote>
       {{ HTML::blockLink(route('novel', array('id' => $novel->id)), 'Lire la nouvelle') }}
     </article>

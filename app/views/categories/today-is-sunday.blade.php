@@ -18,7 +18,7 @@
         {{ $tableau }}
       </div>
       <figcaption>
-        <strong>Publiée le : {{ $tableau->date_of_creation }}</strong>
+        <strong>Publiée le : {{ $tableau->created_at }}</strong>
       </figcaption>
     </figure>
   @endforeach

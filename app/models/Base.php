@@ -14,13 +14,11 @@ class Base extends Eloquent
   // Attributes ---------------------------------------------------- /
 
   /**
-   * Get formatted date of creations
-   *
-   * @return string Y-m-d created_at field
+   * Get formatted creation date
    */
-  public function giveDateOfCreation()
+  public function giveCreatedAt()
   {
-    $date = $this->created_at;
+    $date = $this->getOriginal('created_at');
     $date = String::find($date, '-') ? new DateTime($date) : DateTime::createFromFormat('U', $date);
 
     return $date->format('Y-m-d');

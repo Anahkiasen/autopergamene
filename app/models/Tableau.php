@@ -16,17 +16,6 @@ class Tableau extends Base
   }
 
   /**
-   * Get formatted creation date
-   */
-  public function giveCreatedAt()
-  {
-    $date = $this->getOriginal('created_at');
-    $date = new DateTime($date);
-
-    return $date->format('Y-m-d');
-  }
-
-  /**
    * Prints out a tableau
    */
   public function __toString()
