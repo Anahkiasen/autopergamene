@@ -80,3 +80,16 @@ Route::any('category/memorabilia/album/{id}', array(
       ->with('category', $category)
       ->with('photoset', $photoset);
 }));
+
+//////////////////////////////////////////////////////////////////////
+//////////////////////////// MAINTENANCE /////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+// Recompile local assets ------------------------------------------ /
+
+Route::any('basset/compile', function() {
+  Artisan::call('basset:compile', array(), new ViewOutput());
+
+  return View::make('artisan')
+    ->with('results', ViewOutput::getResults());
+});
