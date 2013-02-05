@@ -1,6 +1,6 @@
 <?php
 
-$novels = [
+$stories = [
   ["Les fleurs d'avril", "2007-11-02",
     "Anonyme était son nom, était son prénom. Juste un inconnu assis dans son salon, à contempler les crépitements du feu qui s’agitait dans l’âtre et faisait danser les ombres de la pièce sombre. À travers la fenêtre ne s’apercevaient que les évanescentes silhouettes des immeubles dans la nuit, perdues dans cette petite ville qu’un lourd orage avait enténébrée de ses grands voiles de nuages noirs.
     Tel un tapis malveillant dans le ciel ne laissant filtrer que quelques jets de foudre, pareils à de brèves lueurs dans la pénombre ; élançant dans l’océan ébène d’obscurité, quelques vifs éclairs qui serpentaient le ciel et guidaient les démons de minuit à travers le morne dédale des immeubles."],
@@ -31,8 +31,8 @@ $novels = [
        D’un revers de rayon le soleil projeta la vaste ombre d’un arbre sur eux ; et leurs silhouettes comme évanouies dans le trouble des blés, ils s’embrassèrent sous le brasier d’un ciel d’où dans la quiétude s’élevait, l’aube enfin."],
 ];
 
-return Arrays::each($novels, function($novel) {
-  list($name, $date, $summary) = $novel;
+return Arrays::each($stories, function($story) {
+  list($name, $date, $summary) = $story;
 
   return [
     'id'          => String::slugify($name),

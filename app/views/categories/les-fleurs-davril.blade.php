@@ -10,22 +10,22 @@
   </p>
 
   <ul class='fixed nav'>
-    @foreach($novels as $novel)
+    @foreach($stories as $story)
       <li>
-        <a href="#{{ $novel->id }}">{{ $novel->name }}</a>
+        <a href="#{{ $story->id }}">{{ $story->name }}</a>
       </li>
     @endforeach
   </ul>
 
   <hr />
 
-  @foreach($novels as $novel)
-    <article class='novel-summary' id='{{ $novel->id }}'>
-      <h2>{{ $novel->name }}</h2>
-      <figure class='cover' style='background-image: url({{ $novel->image }})'></figure>
-      <p><strong>Publiée le :</strong> {{ $novel->created_at }}</p>
-      <blockquote>{{ $novel->description }}</blockquote>
-      {{ HTML::blockLink(route('novel', array('id' => $novel->id)), 'Lire la nouvelle') }}
+  @foreach($stories as $story)
+    <article class='novel-summary' id='{{ $story->id }}'>
+      <h2>{{ $story->name }}</h2>
+      <figure class='cover' style='background-image: url({{ $story->image }})'></figure>
+      <p><strong>Publiée le :</strong> {{ $story->created_at }}</p>
+      <blockquote>{{ $story->description }}</blockquote>
+      {{ HTML::blockLink(route('story', array('id' => $story->id)), 'Lire la nouvelle') }}
     </article>
   @endforeach
 @stop

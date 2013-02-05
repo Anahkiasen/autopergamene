@@ -56,19 +56,19 @@ class CategoriesController extends BaseController
   }
 
   /**
-   * Display a Novel
+   * Display a Story
    *
-   * @param string $storySlug The Novel slug
+   * @param string $storySlug The Story slug
    *
-   * @return View novel
+   * @return View story
    */
   public function getStory($storySlug)
   {
     $category = Category::find('les-fleurs-davril');
-    $novel = Novel::find($storySlug);
+    $story = Story::find($storySlug);
 
-    return View::make('novel')
+    return View::make('story')
       ->with('category', $category)
-      ->with('novel', $novel);
+      ->with('story', $story);
   }
 }

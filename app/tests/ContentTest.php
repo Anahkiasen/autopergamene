@@ -102,7 +102,7 @@ class ContentTest extends Cerberus\Scrutiny
     $this->assertNthItemsExist($crawler, 6, '.repository');
   }
 
-  public function testCanLoadNovels()
+  public function testCanLoadStories()
   {
     $crawler = $this->getPage('category/les-fleurs-davril');
 
@@ -123,7 +123,7 @@ class ContentTest extends Cerberus\Scrutiny
     $this->assertNthItemsExist($crawler, 32, '.collection img');
   }
 
-  public function testNovelsAreRenderedCorrectly()
+  public function testStoriesAreRenderedCorrectly()
   {
     $crawler = $this->getPage('category/les-fleurs-davril/story/a-lombre-dun-chene');
 

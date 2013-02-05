@@ -1,11 +1,11 @@
 <?php
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNovels extends Migration
+class CreateStories extends Migration
 {
   public function up()
   {
-    Schema::create('novels', function($table) {
+    Schema::create('stories', function($table) {
       $table->string('id');
       $table->string('name');
       $table->text('description');
@@ -16,6 +16,6 @@ class CreateNovels extends Migration
 
   public function down()
   {
-    Schema::drop('novels');
+    Schema::drop('stories');
   }
 }

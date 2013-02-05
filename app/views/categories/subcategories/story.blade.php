@@ -1,7 +1,7 @@
 @extends('global')
 
 @section('title')
-  {{ $novel->name }} -
+  {{ $story->name }} -
 @stop
 
 @section('css')
@@ -15,13 +15,13 @@
 
 @section('layout')
   <section class='novel'>
-    <h1>{{ $novel->name }}</h1>
-    <figure class='cover' style='background-image: url({{ $novel->image }})'></figure>
-    @if ($novel->content)
+    <h1>{{ $story->name }}</h1>
+    <figure class='cover' style='background-image: url({{ $story->image }})'></figure>
+    @if ($story->content)
       <article>
-        {{ $novel->content }}
+        {{ $story->content }}
         <blockquote>
-          <strong>Publié le : {{ $novel->created_at }}</strong>
+          <strong>Publié le : {{ $story->created_at }}</strong>
         </blockquote>
       </article>
     @else

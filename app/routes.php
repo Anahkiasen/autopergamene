@@ -38,10 +38,10 @@ Route::any('category/illustration/support/{id}', array(
   'as'   => 'support',
   'uses' => 'CategoriesController@getSupport'));
 
-// Display a novel ------------------------------------------------- /
+// Display a story ------------------------------------------------- /
 
 Route::any('category/les-fleurs-davril/story/{id}', array(
-  'as'   => 'novel',
+  'as'   => 'story',
   'uses' => 'CategoriesController@getStory'));
 
 // Display a photoset ---------------------------------------------- /

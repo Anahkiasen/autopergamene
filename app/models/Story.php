@@ -1,7 +1,7 @@
 <?php
 use dflydev\markdown\MarkdownParser;
 
-class Novel extends Base
+class Story extends Base
 {
 
   // Attributes ---------------------------------------------------- /
@@ -25,11 +25,11 @@ class Novel extends Base
   }
 
   /**
-   * Get the novel's text
+   * Get the Story's text
    */
   public function giveContent()
   {
-    // Get novel if it exists
+    // Get story if it exists
     $text = __DIR__.'/../database/novels/'.$this->id.'.md';
     if (File::exists($text)) $text = File::get($text);
     else return false;

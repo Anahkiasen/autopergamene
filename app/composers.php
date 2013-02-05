@@ -33,7 +33,7 @@ View::composer('categories.memorabilia', function($event) {
 });
 
 View::composer('categories.les-fleurs-davril', function($event) {
-  $event->view->novels = Novel::latest();
+  $event->view->stories = Story::latest();
 });
 
 View::composer('categories.graceful-degradation', function($event) {
