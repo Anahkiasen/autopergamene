@@ -41,7 +41,7 @@ $app->instance('path.base', __DIR__);
 
 $env = $app->detectEnvironment(array(
 
-  'local'      => array('localhost'),
+  'local'      => array('localhost', '127.0.0.1'),
   'production' => array('autopergamene.eu'),
 
 ));
