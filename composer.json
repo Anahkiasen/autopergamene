@@ -17,14 +17,35 @@
     "dflydev/markdown": "dev-master",
     "imagine/Imagine": "dev-master",
     "jasonlewis/basset": "dev-master",
-    "jasonlewis/expressive-date": "dev-master"
+    "jasonlewis/expressive-date": "dev-master",
+    "joliclic/javascript-packer": "*",
+    "cssmin/cssmin": "*"
   },
+  "repositories": [
+    {
+      "type": "package",
+      "package": {
+        "name": "cssmin/cssmin",
+        "version": "3.0.1",
+        "dist": { "url": "http://cssmin.googlecode.com/files/cssmin-v3.0.1.php", "type": "file" },
+        "autoload": { "classmap": [ "cssmin-v3.0.1.php" ] }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "joliclic/javascript-packer",
+        "version": "1.1",
+        "dist": { "url": "http://joliclic.free.fr/php/javascript-packer/telechargement.php?id=2&action=telecharger", "type": "zip" },
+        "autoload": { "classmap": [ "class.JavaScriptPacker.php" ] }
+      }
+    }
+  ],
   "autoload": {
     "classmap": [
       "app/commands",
       "app/controllers",
       "app/libraries",
-      "app/libraries/minifiers",
       "app/models",
       "app/database/migrations",
       "app/tests/TestCase.php"
