@@ -18,12 +18,9 @@ Route::any('/', function() {
 
 // Display a category ---------------------------------------------- /
 
-Route::any('category/{slug}', array('as' => 'category', 'do' => function($slug) {
-  $category = Category::find($slug);
-
-  return View::make('categories.'.$slug)
-    ->with('category', $category);
-}));
+Route::any('category/{slug}', array(
+  'as'   => 'category',
+  'uses' => 'CategoriesController@getCategory'));
 
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// SUBROUTES //////////////////////////////
@@ -31,55 +28,27 @@ Route::any('category/{slug}', array('as' => 'category', 'do' => function($slug) 
 
 // Display an article ---------------------------------------------- /
 
-Route::any('category/{slug}/articles/{articleSlug}', array(
-  'as' => 'article',
-  'do' => function($slug, $articleSlug) {
-    $category = Category::find($slug);
-    $article = Article::where('slug', $articleSlug)->first();
-
-    return View::make('article')
-      ->with('category', $category)
-      ->with('article', $article);
-}));
+Route::any('category/{categorySlug}/articles/{articleSlug}', array(
+  'as'   => 'article',
+  'uses' => 'ArticlesController@getArticle'));
 
 // Display a support ----------------------------------------------- /
 
 Route::any('category/illustration/support/{id}', array(
-  'as' => 'support',
-  'do' => function($slug) {
-    $support  = Support::with('illustrations')->find($slug);
-    $category = Category::find('illustration');
-
-    return View::make('support')
-      ->with('category', $category)
-      ->with('support', $support);
-}));
+  'as'   => 'support',
+  'uses' => 'CategoriesController@getSupport'));
 
 // Display a novel ------------------------------------------------- /
 
 Route::any('category/les-fleurs-davril/story/{id}', array(
-  'as' => 'novel',
-  'do' => function($slug) {
-    $novel = Novel::find($slug);
-    $category = Category::find('les-fleurs-davril');
-
-    return View::make('novel')
-      ->with('category', $category)
-      ->with('novel', $novel);
-}));
+  'as'   => 'novel',
+  'uses' => 'CategoriesController@getStory'));
 
 // Display a photoset ---------------------------------------------- /
 
 Route::any('category/memorabilia/album/{id}', array(
-  'as' => 'photoset',
-  'do' => function($slug) {
-    $photoset = Photoset::where('slug', $slug)->first();
-    $category = Category::find('memorabilia');
-
-    return View::make('photoset')
-      ->with('category', $category)
-      ->with('photoset', $photoset);
-}));
+  'as'   => 'photoset',
+  'uses' => 'CategoriesController@getAlbum'));
 
 //////////////////////////////////////////////////////////////////////
 //////////////////////////// MAINTENANCE /////////////////////////////
@@ -87,7 +56,7 @@ Route::any('category/memorabilia/album/{id}', array(
 
 // Recompile local assets ------------------------------------------ /
 
-Route::any('basset/compile', function() {
+Route::get('basset/compile', function() {
   Artisan::call('basset:compile', array(), new ViewOutput());
 
   return View::make('artisan')

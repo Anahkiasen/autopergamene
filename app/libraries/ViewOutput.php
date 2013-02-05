@@ -1,11 +1,18 @@
 <?php
-class ViewOutput extends Symfony\Component\Console\Output\Output
+/**
+ * ViewOutput
+ *
+ * Basic View output for Symfony Console
+ */
+use Symfony\Component\Console\Output\Output;
+
+class ViewOutput extends Output
 {
   /**
    * The messages in memory
    * @var array
    */
-  static $compilation = array();
+  private static $compilation = array();
 
   /**
    * Write a message
@@ -27,6 +34,8 @@ class ViewOutput extends Symfony\Component\Console\Output\Output
    */
   public static function getResults()
   {
-    return trim(implode('<br />', static::$compilation));
+    $results = implode('<br />', static::$compilation);
+
+    return trim($results);
   }
 }

@@ -3,6 +3,28 @@ use Underscore\Parse;
 
 class Article extends Eloquent
 {
+
+  // Relationships ------------------------------------------------- /
+
+  public function category()
+  {
+    return $this->belongsTo('Category');
+  }
+
+  // Attributes ---------------------------------------------------- /
+
+  /**
+   * Get the link to the Article
+   *
+   * @return string
+   */
+  public function giveLink()
+  {
+    return URL::route('article', array(
+      'categorySlug' => $this->category->id,
+      'articleSlug'  => $this->slug));
+  }
+
   /**
    * Get the imploded tags of the article
    *
