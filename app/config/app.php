@@ -188,7 +188,7 @@ return array(
 
 		// Other packages
 		'Basset'     => 'Basset\Facades\Basset',
-		'Flickering' => 'Flickering\Flickering',
+		'Flickering' => 'Flickering\Facades\Flickering',
 
 	),
 

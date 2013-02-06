@@ -2,14 +2,13 @@
 
 // Get all collections from my Flickr user
 $photos = array();
-$sets = Flickering::photosetsGetList('31667913@N06');
-$photosets = Arrays::each($sets->results()->photoset, function($photoset) { return $photoset['id']; });
+$photosets = Flickering::photosetsGetList('31667913@N06')->getResults()->get('photoset');
+$photosets = Arrays::pluck($photosets, 'id');
 
 foreach ($photosets as $photoset_id) {
 
   // Get all photos from this set
-  $_photos = Flickering::photosetsGetPhotos($photoset_id);
-  $_photos = $_photos->results()->photo;
+  $_photos = Flickering::photosetsGetPhotos($photoset_id)->getResults()->get('photo');
 
   // Get all sets ids from there
   foreach($_photos as $key => $photo) {

@@ -5,9 +5,8 @@ DB::table('photos')->delete();
 include 'photos.php';
 
 // Get all collections from my Flickr user
-$sets = Flickering::photosetsGetList('31667913@N06');
-
-return Arrays::each($sets->results()->photoset, function($photoset) {
+$photosets = Flickering::photosetsGetList('31667913@N06')->getResults()->get('photoset');
+return Arrays::each($photosets, function($photoset) {
   return [
     'id'         => $photoset['id'],
     'name'       => $photoset['title']['_content'],
