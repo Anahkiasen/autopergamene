@@ -18,6 +18,11 @@ class CategoriesController extends BaseController
     $this->categories = $categoriesRepository;
   }
 
+  /**
+   * Display all categories
+   *
+   * @return View home
+   */
   public function getCategories()
   {
     $categories = $this->categories->getOrdered();

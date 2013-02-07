@@ -55,10 +55,7 @@ App::error(function(Exception $exception, $code)
 |--------------------------------------------------------------------------|
 */
 
-$key    = Config::get('flickering.key');
-$secret = Config::get('flickering.secret');
-
-Flickering::handshake($key, $secret);
+Flickering::handshake('30de750088fe29573e0fb8bcdefbd473', 'c700f167e4f9a162');
 
 /*
 |--------------------------------------------------------------------------
