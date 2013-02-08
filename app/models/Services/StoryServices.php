@@ -32,7 +32,6 @@ class StoryServices
   public function getMarkdownOf($slug)
   {
     $markdown = __DIR__.'/../../database/novels/'.$slug.'.md';
-    var_dump($markdown);
 
     if (File::exists($markdown)) $markdown = File::get($markdown);
     else $markdown = null;
