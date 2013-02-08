@@ -24,7 +24,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 *
 	 * @return mixed
 	 */
-	public function setAuthIdentifierAttribute()
+	public function getAuthIdentifierAttribute()
 	{
 		return $this->getKey();
 	}
@@ -34,7 +34,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 *
 	 * @return string
 	 */
-	public function setAuthPasswordAttribute()
+	public function getAuthPasswordAttribute()
 	{
 		return $this->password;
 	}

@@ -8,7 +8,7 @@ class Tableau extends Base
   /**
    * Get full path to the image
    */
-  public function setImageAttribute()
+  public function getImageAttribute()
   {
     $image = String::slugify($this->name).'.jpg';
 

@@ -22,7 +22,7 @@ class Category extends Eloquent
   /**
    * Get a link to the category's content
    */
-  public function setLinkAttribute()
+  public function getLinkAttribute()
   {
     // External link
     $link = $this->getOriginal('link');
@@ -34,7 +34,7 @@ class Category extends Eloquent
   /**
    * Get the category's thumb
    */
-  public function setThumbAttribute()
+  public function getThumbAttribute()
   {
     return HTML::image('app/img/categories/'.$this->id.'.jpg', $this->name);
   }
