@@ -18,7 +18,7 @@ class Article extends Eloquent
    *
    * @return string
    */
-  public function giveLink()
+  public function setLinkAttribute()
   {
     return URL::route('article', array(
       'categorySlug' => $this->category->id,
@@ -30,7 +30,7 @@ class Article extends Eloquent
    *
    * @return string
    */
-  public function giveTags()
+  public function setTagsAttribute()
   {
     $tags = $this->getOriginal('tags');
     $tags = Parse::fromJSON($tags);
@@ -43,7 +43,7 @@ class Article extends Eloquent
    *
    * @return string
    */
-  public function giveCreatedAt()
+  public function setCreatedAtAttribute()
   {
     $date = $this->getOriginal('created_at');
     $date = new DateTime($date);

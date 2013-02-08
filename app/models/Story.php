@@ -7,7 +7,7 @@ class Story extends Base
   /**
    * Get the quotation with linebreaks
    */
-  public function giveDescription()
+  public function setDescriptionAttribute()
   {
     return nl2br($this->getOriginal('description'));
   }
@@ -15,7 +15,7 @@ class Story extends Base
   /**
    * Get full path to the image
    */
-  public function giveImage()
+  public function setImageAttribute()
   {
     $image = $this->getOriginal('image');
 
@@ -25,7 +25,7 @@ class Story extends Base
   /**
    * Get the Story's text
    */
-  public function giveContent()
+  public function setContentAttribute()
   {
     // Get story if it exists
     $storyService = App::make('Services\StoryServices');

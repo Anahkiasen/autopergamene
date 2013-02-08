@@ -16,7 +16,7 @@ class Base extends Eloquent
   /**
    * Get formatted creation date
    */
-  public function giveCreatedAt()
+  public function setCreatedAtAttribute()
   {
     $date = $this->getOriginal('created_at');
     $date = String::find($date, '-') ? new DateTime($date) : DateTime::createFromFormat('U', $date);
