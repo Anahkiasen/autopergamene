@@ -15,7 +15,7 @@
     <article>
       <h3>{{ $track->name }}</h3>
       <iframe width='100%' height='166' frameborder='no' src="{{ $track->soundcloud }}"></iframe>
-      <dl>{{ $track->movements }}</dl>
+      <dl>{{{ $track->movements }}}</dl>
     </article>
   @endforeach
 @stop

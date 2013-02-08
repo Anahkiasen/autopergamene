@@ -6,7 +6,7 @@
 
 @section('navigation')
   @parent
-  {{ HTML::backLink('category/memorabilia', 'Retour aux albums') }}
+  {{{ HTML::backLink('category/memorabilia', 'Retour aux albums') }}}
 @stop
 
 @section('content')
@@ -21,7 +21,7 @@
         </figcaption>
         <div class='image-wrap'>
           <h3>{{ $photo->index($key) }}</h3>
-          {{ HTML::image($photo->medium_large, $photo->name) }}
+          {{{ HTML::image($photo->medium_large, $photo->name) }}}
         </div>
       </figure>
     @endforeach

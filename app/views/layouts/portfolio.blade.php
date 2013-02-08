@@ -5,7 +5,7 @@
 @stop
 
 @section('navigation')
-  {{ HTML::homeLink() }}
+  {{{ HTML::homeLink() }}}
 @stop
 
 @section('layout')

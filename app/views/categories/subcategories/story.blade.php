@@ -5,12 +5,12 @@
 @stop
 
 @section('css')
-  {{ Basset::show('article.css') }}
+  {{{ Basset::show('article.css') }}}
 @stop
 
 @section('navigation')
-  {{ HTML::homeLink() }}
-  {{ HTML::backLink(route('category', array('slug' => $category->id)), 'Retour à '.$category->name) }}
+  {{{ HTML::homeLink() }}}
+  {{{ HTML::backLink(route('category', array('slug' => $category->id)), 'Retour à '.$category->name) }}}
 @stop
 
 @section('layout')
@@ -19,7 +19,7 @@
     <figure class='cover' style='background-image: url({{ $story->image }})'></figure>
     @if ($story->content)
       <article>
-        {{ $story->content }}
+        {{{ $story->content }}}
         <blockquote>
           <strong>Publié le : {{ $story->created_at }}</strong>
         </blockquote>

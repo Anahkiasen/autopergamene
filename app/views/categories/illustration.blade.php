@@ -14,7 +14,7 @@
     @endunless
     <figure class='support'>
       <a href='{{ URL::route('support', array('id' => $support->id)) }}'>
-        {{ $support->thumbnail->thumb($support->folder, $support->name) }}
+        {{{ $support->thumbnail->thumb($support->folder, $support->name) }}}
         <figcaption>
           <h3>{{ $support->name }}</h3>
         </figcaption>

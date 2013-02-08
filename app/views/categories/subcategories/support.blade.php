@@ -6,7 +6,7 @@
 
 @section('navigation')
   @parent
-  {{ HTML::backLink('category/illustration', 'Retour aux supports') }}
+  {{{ HTML::backLink('category/illustration', 'Retour aux supports') }}}
 @stop
 
 @section('content')
@@ -14,7 +14,7 @@
     <figure class='illustration'>
       <h2>{{ $illustration->name }}</h2>
       <div class='image-wrap'>
-        {{ $illustration->image($support->folder) }}
+        {{{ $illustration->image($support->folder) }}}
       </div>
       @if($illustration->media)
         <figcaption>{{ $illustration->media }}</figcaption>

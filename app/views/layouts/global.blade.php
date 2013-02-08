@@ -5,14 +5,14 @@
       @yield('title')
       Autopergamene
     </title>
-    {{ HTML::favicon('app/img/favicon.jpg') }}
-    {{ HTML::responsiveTags() }}
+    {{{ HTML::favicon('app/img/favicon.jpg') }}}
+    {{{ HTML::responsiveTags() }}}
 
-    {{ Basset::show('application.css') }}
+    {{{ Basset::show('application.css') }}}
 
     {{-- Modernizr --}}
-    {{ HTML::script('glow.js') }}
-    {{ Basset::show('modernizr.js') }}
+    {{{ HTML::script('glow.js') }}}
+    {{{ Basset::show('modernizr.js') }}}
     @yield('css')
   </head>
   <body>
@@ -31,7 +31,7 @@
 
     <script type="text/javascript" src="//use.typekit.net/enr5hww.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-    {{ Basset::show('application.js') }}
+    {{{ Basset::show('application.js') }}}
     @yield('js')
 
     <script type="text/javascript">
