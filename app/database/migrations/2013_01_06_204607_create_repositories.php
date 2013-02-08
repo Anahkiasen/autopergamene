@@ -7,10 +7,13 @@ class CreateRepositories extends Migration
   {
     Schema::create('repositories', function($table) {
       $table->increments('id');
+
       $table->string('name');
       $table->text('content');
       $table->string('tags');
       $table->string('link');
+
+      $table->integer('order');
       $table->boolean('master');
       $table->timestamps();
     });
