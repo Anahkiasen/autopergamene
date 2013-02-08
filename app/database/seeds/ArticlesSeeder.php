@@ -3,12 +3,12 @@ use Underscore\Parse;
 use Underscore\Types\Arrays;
 use Underscore\Types\String;
 
-class ArticlesSeeder extends Seeder
+class ArticlesSeeder extends BaseSeed
 {
   /**
    * Seed articles
    */
-  public function run()
+  public function getSeeds()
   {
     foreach($this->getArticlesFeed() as $article) {
 
@@ -43,7 +43,7 @@ class ArticlesSeeder extends Seeder
       );
     }
 
-    Article::insert($articles);
+    return $articles;
   }
 
   ////////////////////////////////////////////////////////////////////
