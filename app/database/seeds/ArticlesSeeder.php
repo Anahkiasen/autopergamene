@@ -13,12 +13,12 @@ class ArticlesSeeder extends Seeder
     foreach($this->getArticlesFeed() as $article) {
 
       // Category
-      $category = (array) $article->category;
-      $category_id = $this->getCategoryOf($category);
+      $categories = (array) $article->category;
+      $category_id = $this->getCategoryOf($categories);
       if (!$category_id) continue;
 
       // Tags
-      $tags = Arrays::from($category)->removeFirst()->each(function($tag) {
+      $tags = Arrays::from($categories)->removeFirst()->each(function($tag) {
         return (string) $tag;
       })->toJSON();
 
