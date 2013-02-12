@@ -2,7 +2,6 @@
 .sass-cache
 /vendor
 app/storage/database
-composer.lock
 composer.phar
 public/assets
 public/cache/*.jpg
