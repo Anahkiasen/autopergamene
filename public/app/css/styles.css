@@ -224,7 +224,7 @@ a.block, a.back, span.block {
     background-color: #f17283; }
 
 .portfolio blockquote, .portfolio .novel article ul, .novel article .portfolio ul, .article article blockquote, .article .novel article ul, .novel .article article ul, .novel article blockquote, .novel article ul, .categories figure, .portfolio .collection, .portfolio .support, .portfolio .repository figure, .portfolio .illustration, .portfolio .tableau, .portfolio .photoset figure, .article article .wp-caption, .novel article .wp-caption, .portfolio .illustration figcaption, .portfolio .tableau figcaption, dl, .portfolio p, .about p, .about .about-more ul, .article article del, .novel article del, .novel .alert {
-  background-color: rgba(0, 0, 0, 0.05);
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNi4AUAABYAEFIOBzYAAAAASUVORK5CYII=');
   color: #333333;
   padding: 12px;
   padding: 0.75rem;
@@ -236,7 +236,7 @@ a.block, a.back, span.block {
   margin-right: 0; }
   @media (min-width: 980px) {
     .portfolio blockquote, .portfolio .novel article ul, .novel article .portfolio ul, .article article blockquote, .article .novel article ul, .novel .article article ul, .novel article blockquote, .novel article ul {
-      background-image: url('../img/quotes.png?1359737642');
+      background-image: url('../img/quotes.png?1360744638');
       background-position: 16px 16px;
       background-position: 1rem 1rem;
       background-repeat: no-repeat;
@@ -256,7 +256,7 @@ a.back, .about .about-more h3 {
   padding: 16px;
   padding: 1rem; }
   .categories figure:active, .portfolio .collection:active, .portfolio .support:active, .portfolio .repository figure:active {
-    background-color: rgba(0, 0, 0, 0.1); }
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNikAIAACMAHf9yvGMAAAAASUVORK5CYII='); }
   .categories figure figcaption, .portfolio .collection figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption {
     padding-left: 16px;
     padding-left: 1rem; }
@@ -271,7 +271,7 @@ a.back, .about .about-more h3 {
     text-transform: none; }
   @media (max-width: 768px) {
     .categories figure:hover, .portfolio .collection:hover, .portfolio .support:hover, .portfolio .repository figure:hover {
-      background-color: rgba(0, 0, 0, 0.1); }
+      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNikAIAACMAHf9yvGMAAAAASUVORK5CYII='); }
     .categories figure img, .portfolio .collection img, .portfolio .support img, .portfolio .repository figure img {
       width: 23.72881%;
       float: left;
@@ -391,7 +391,7 @@ a.back, .about .about-more h3 {
       height: 20rem; } }
 
 .portfolio .illustration, .portfolio .tableau, .portfolio .photoset figure, .article article .wp-caption, .novel article .wp-caption {
-  background-color: rgba(0, 0, 0, 0.03);
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNi4AAAABEAC43pSewAAAAASUVORK5CYII=');
   padding: 16px;
   padding: 1rem;
   margin: 16px 0;
@@ -509,7 +509,7 @@ footer {
     margin-top: 1rem; }
 
 .portfolio {
-  background-color: rgba(255, 255, 255, 0.5); }
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6Xw8AAoYBgRDEVrUAAAAASUVORK5CYII='); }
   .portfolio h1 {
     margin: 16px 0;
     margin: 1rem 0;
@@ -581,6 +581,7 @@ footer {
       .articles article:hover h3, .articles article:hover datetime {
         color: #ea2c46; }
       .articles article:hover blockquote, .articles .novel article:hover ul, .novel .articles article:hover ul {
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNikAIAACMAHf9yvGMAAAAASUVORK5CYII=');
         background: rgba(0, 0, 0, 0.1); }
     @media (min-width: 768px) {
       .articles article {
@@ -610,7 +611,7 @@ footer {
   height: 20rem;
   margin-bottom: 16px;
   margin-bottom: 1rem;
-  background-image: url('../img/maxime-fabre.jpg?1359737642'); }
+  background-image: url('../img/maxime-fabre.jpg?1360744638'); }
   @media (min-width: 980px) and (max-width: 1200px) {
     .about aside {
       height: 400px;
@@ -721,7 +722,7 @@ footer {
   text-transform: lowercase; }
 
 .article, .novel {
-  background-color: rgba(255, 255, 255, 0.5); }
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6Xw8AAoYBgRDEVrUAAAAASUVORK5CYII='); }
   .article h1, .novel h1 {
     text-align: center; }
   .article article .wp-caption a, .novel article .wp-caption a {
