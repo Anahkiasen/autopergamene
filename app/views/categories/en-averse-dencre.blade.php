@@ -10,12 +10,12 @@
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   </p>
 
-  @include('navigation', array('links' => $categories))
+  @include('navigation', array('links' => $categoriesList))
 
-  @foreach ($categories as $category)
-    <h2 id="{{ $category->id }}">{{ $category->name }}</h2>
+  @foreach ($categoriesList as $categoryBlock)
+    <h2 id="{{ $categoryBlock->id }}">{{ $categoryBlock->name }}</h2>
     <section class='articles'>
-      @each('article-block', $category->articles, 'article')
+      @each('article-block', $categoryBlock->articles, 'article')
     </section>
   @endforeach
 @stop
