@@ -1,23 +1,13 @@
 @extends('portfolio')
 
 @section('content')
-  <h1>Les Fleurs d'Avril</h1>
-
   <p>
     Ci-dessous des nouvelles écrites entre 2007 et 2010, toutes dans un registre plutôt sombre et un style ampoulé qui m'a souvent été reproché.
     Malgré cela ce portfolio ne serait complet si ces textes n'y étaient présents. Leur longueur varie, leur qualité aussi — mes compétences s'étant
     améliorées à mesure que j'écrivais.
   </p>
 
-  <ul class='fixed nav'>
-    @foreach($stories as $story)
-      <li>
-        <a href="#{{ $story->id }}">{{ $story->name }}</a>
-      </li>
-    @endforeach
-  </ul>
-
-  <hr />
+  @include('navigation', array('links' => $stories))
 
   @foreach($stories as $story)
     <article class='novel-summary' id='{{ $story->id }}'>

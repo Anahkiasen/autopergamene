@@ -1,8 +1,6 @@
 @extends('portfolio')
 
 @section('content')
-  <h1>Today is Sunday</h1>
-
   <p>
     Un ensemble de tableaux à tendances relativement sombres.
     Faits à l'époque sur le {{{ HTML::toBlank('http://store.steampowered.com/app/4000/', "Garry's Mod") }}}, ils représentent en quelque sorte mes

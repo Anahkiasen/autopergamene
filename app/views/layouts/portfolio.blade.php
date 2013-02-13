@@ -10,6 +10,7 @@
 
 @section('layout')
   <section class='portfolio'>
+    <h1>{{ $category->name }}</h1>
     @yield('content')
   </section>
 @stop

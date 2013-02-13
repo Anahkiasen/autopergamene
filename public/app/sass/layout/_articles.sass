@@ -4,7 +4,9 @@
 
 .articles
   +rem(margin-top, 1rem)
-  @extend %hidden
+
+  &.hidden
+    @extend %hidden
 
   &.open
     @extend %reveal

@@ -1,8 +1,6 @@
 @extends('portfolio')
 
 @section('content')
-  <h1>Graceful degradation</h1>
-
   <p>
     Un ensemble de projets ou librairies développées au fur et à mesure de mon travail.
     En majorité des bundles pour le framework {{{ HTML::toBlank('http://laravel.com', 'Laravel') }}}
@@ -17,7 +15,7 @@
     les standards du {{{ HTML::toBlank('https://github.com/php-fig/fig-standards', 'PSR') }}} et tirent partie des dernières avancées en terme d'OOP (namespaces, magic methods, etc).
   </p>
 
-  @include('articles')
+  @include('articles-list')
 
   <h2>Les projets</h2>
   <p>Les liens pointent soit sur Github vers la source, soit vers le site du projet.</p>

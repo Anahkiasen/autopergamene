@@ -42,7 +42,7 @@ ul.fixed, .about .about-more ul, .novel article ul {
     margin: 0;
     padding: 0; }
 
-.categories figure, .portfolio .collection, .portfolio .support, .portfolio .repository figure, .articles, .about .about-more, .image-wrap, .about aside, .articles article, .articles article blockquote, .articles .novel article ul, .novel .articles article ul, .articles article h3, .articles article datetime, .about .about-biography {
+.categories figure, .portfolio .collection, .portfolio .support, .portfolio .repository figure, .articles.hidden, .about .about-more, .image-wrap, .about aside, .articles article, .articles article blockquote, .articles .novel article ul, .novel .articles article ul, .articles article h3, .articles article datetime, .about .about-biography {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -368,7 +368,7 @@ a.back, .about .about-more h3 {
       line-height: 36px;
       line-height: 2.25rem; } }
 
-.articles, .about .about-more {
+.articles.hidden, .about .about-more {
   height: 0;
   opacity: 0;
   filter: alpha(opacity=0);
@@ -419,7 +419,8 @@ ul.fixed {
   -webkit-column-count: 4;
   -moz-column-count: 4;
   column-count: 4;
-  margin: 0; }
+  margin: 0;
+  z-index: 50; }
   ul.fixed li {
     margin-right: -5px;
     margin-right: -0.3rem;

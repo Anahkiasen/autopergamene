@@ -1,8 +1,6 @@
 @extends('portfolio')
 
 @section('content')
-  <h1>Illustration</h1>
-
   <p>
     Sur cette page sont entreposées toutes les illustrations, dessins et consors que j'ai pu faire entre deux. Cela va de la peinture digitale au dessin au fusain, au rendu 3D en passant par l'illustration vectorielle.
   </p>

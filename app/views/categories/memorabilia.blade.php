@@ -2,14 +2,12 @@
 
 @section('content')
   <section class='memorabilia'>
-    <h1>Memorabilia</h1>
-
     <p>
       J'ai commencé à faire de la photographie il y a quelques temsp déjà. Ma raison était alors purement préventive — j'allais entrer en école de
       communication visuelle et m'étais dit que la photographie en serait un prérequis. Mes premières images étaient de ce qui m'entouraient — objets et personnes —
     </p>
 
-    @include('partials.articles')
+    @include('articles-list')
 
     <h2>Les albums</h2>
 

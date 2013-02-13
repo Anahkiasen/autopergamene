@@ -42,7 +42,7 @@ class CategoriesController extends BaseController
   {
     $category = $this->categories->getBySlug($categorySlug);
 
-    return View::make('categories.'.$categorySlug)
+    return View::make($categorySlug)
       ->with('category', $category);
   }
 

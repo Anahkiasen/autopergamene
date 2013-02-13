@@ -20,26 +20,33 @@ View::composer('about', function($view) {
 /////////////////////////// PAGE COMPOSERS ///////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-View::composer('categories.the-winter-throat', function($view) {
+View::composer('en-averse-dencre', function($view) {
+  $categories = Category::with('articles')->orderBy('order', 'asc')->get();
+  $view->categories = Arrays::filter($categories->all(), function($category) {
+    return !$category->articles->isEmpty();
+  });
+});
+
+View::composer('the-winter-throat', function($view) {
   $view->tracks = Track::all();
 });
 
-View::composer('categories.memorabilia', function($view) {
+View::composer('memorabilia', function($view) {
   $view->photosets = Photoset::latest();
 });
 
-View::composer('categories.les-fleurs-davril', function($view) {
+View::composer('les-fleurs-davril', function($view) {
   $view->stories = Story::latest();
 });
 
-View::composer('categories.graceful-degradation', function($view) {
+View::composer('graceful-degradation', function($view) {
   $view->repositories = DB::table('repositories')->orderBy('master', 'desc')->orderBy('order', 'asc')->get();
 });
 
-View::composer('categories.today-is-sunday', function($view) {
+View::composer('today-is-sunday', function($view) {
   $view->tableaux = Tableau::latest();
 });
 
-View::composer('categories.illustration', function($view) {
+View::composer('illustration', function($view) {
   $view->supports = Support::with('thumbnail')->get();
 });

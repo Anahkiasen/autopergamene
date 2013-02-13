@@ -6,6 +6,8 @@
 
 View::addLocation(__DIR__.'/views/layouts');
 View::addLocation(__DIR__.'/views/partials');
+View::addLocation(__DIR__.'/views/partials/articles-list');
+View::addLocation(__DIR__.'/views/categories');
 View::addLocation(__DIR__.'/views/categories/subcategories');
 
 //////////////////////////////////////////////////////////////////////
