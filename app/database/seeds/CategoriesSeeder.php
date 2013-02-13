@@ -37,7 +37,7 @@ class CategoriesSeeder extends BaseSeed
       ['Le Soulèvement', 'Webcomic post-apocalpytique', 'http://the8day.info/OVAP/'],
       ['Today is Sunday', 'Tableaux surréalistes', ''],
       ['Illustration', 'Dessins et peinture digitale', ''],
-      ['Le blog', 'Blog personnel', 'http://blogs.wefrag.com/Anahkiasen/'],
+      ['En averse d\'encre', 'Divers articles', ''],
     ];
   }
 }
