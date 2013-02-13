@@ -16,7 +16,6 @@ class ContentTest extends Cerberus\Scrutiny
 
   protected $externalCategories = array(
     'Le Soulèvement',
-    'Le blog',
   );
 
   // Homepage ------------------------------------------------------ /
@@ -61,7 +60,7 @@ class ContentTest extends Cerberus\Scrutiny
       "Le Soulèvement",
       "Today is Sunday",
       "Illustration",
-      "Le blog",
+      "En averse d'encre",
     );
 
     $this->assertEquals($categoriesOrder, $categories);
