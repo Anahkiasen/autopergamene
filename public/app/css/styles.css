@@ -136,13 +136,13 @@ h1, h2, h3, h4 {
   line-height: 24px;
   line-height: 1.5rem; }
 
-.categories figure h3, .portfolio .collection h3, .portfolio .support h3, .portfolio .repository figure h3, .portfolio h3, .about h2, .article article .wp-caption p, .novel article .wp-caption p, .article article h2, .novel article h2 {
+.categories figure h3, .portfolio .collection h3, .portfolio .support h3, .portfolio .repository figure h3, header h1, .portfolio h3, .about h2, .article article .wp-caption p, .novel article .wp-caption p, .article article h2, .novel article h2 {
   font-size: 26px;
   font-size: 1.61803rem;
   line-height: 36px;
   line-height: 2.25rem; }
 
-.portfolio .illustration h2, .portfolio .tableau h2, .portfolio .photoset figure h2, header h1, .portfolio h1, .portfolio .photoset figure h3 {
+.portfolio .illustration h2, .portfolio .tableau h2, .portfolio .photoset figure h2, .portfolio h1, .portfolio .photoset figure h3 {
   font-size: 42px;
   font-size: 2.61803rem;
   line-height: 48px;
@@ -236,7 +236,7 @@ a.block, a.back, span.block {
   margin-right: 0; }
   @media (min-width: 980px) {
     .portfolio blockquote, .portfolio .novel article ul, .novel article .portfolio ul, .article article blockquote, .article .novel article ul, .novel .article article ul, .novel article blockquote, .novel article ul {
-      background-image: url('../img/quotes.png?1360744638');
+      background-image: url('../img/quotes.png?1358883193');
       background-position: 16px 16px;
       background-position: 1rem 1rem;
       background-repeat: no-repeat;
@@ -482,14 +482,14 @@ dl dt {
   font-weight: bold; }
 
 header {
-  padding: 12px 0;
-  padding: 0.75rem 0; }
+  padding: 8px 0 12px;
+  padding: 0.5rem 0 0.75rem; }
   header h1 {
     text-transform: lowercase; }
   @media (min-width: 980px) {
     header {
-      padding: 24px 0;
-      padding: 1.5rem 0; }
+      padding-bottom: 24px;
+      padding-bottom: 1.5rem; }
       header h1 {
         font-size: 68px;
         font-size: 4.23607rem;
@@ -611,7 +611,7 @@ footer {
   height: 20rem;
   margin-bottom: 16px;
   margin-bottom: 1rem;
-  background-image: url('../img/maxime-fabre.jpg?1360744638'); }
+  background-image: url('../img/maxime-fabre.jpg?1358883193'); }
   @media (min-width: 980px) and (max-width: 1200px) {
     .about aside {
       height: 400px;

@@ -5,14 +5,14 @@
 header
 
   @extend %accent-block
-  +rem(padding, 0.75rem 0)
+  +rem(padding, 0.5rem 0 0.75rem)
 
   h1
     @extend %font-light
-    @extend %font-size-large
+    @extend %font-size-medium
     text-transform: lowercase
 
   +from($desktop)
-    +rem(padding, 1.5rem 0)
+    +rem(padding-bottom, 1.5rem)
     h1
       +font-size($xlarge)
