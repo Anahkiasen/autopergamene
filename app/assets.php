@@ -18,6 +18,7 @@ Basset::collection('application', function($collection) {
  * Polyfill scripts
  */
 Basset::collection('modernizr', function($collection) {
+  $collection->add('components/respond/respond.min.js');
   $collection->add('components/modernizr/modernizr.min.js');
   $collection->add('app/js/polyfill.js');
 })->apply('JsMin');
