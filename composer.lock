@@ -1,5 +1,5 @@
 {
-    "hash": "0fed4b697c7b83524455ca578ab2bb10",
+    "hash": "fcfb82714dae1f736da32ce196dd6a78",
     "packages": [
         {
             "name": "anahkiasen/cerberus",
@@ -16,9 +16,9 @@
                 "shasum": ""
             },
             "require": {
+                "php": ">=5.3.0",
                 "imagine/imagine": "dev-master",
-                "meido/html": "1.1.*",
-                "php": ">=5.3.0"
+                "meido/html": "1.1.*"
             },
             "require-dev": {
                 "mockery/mockery": "dev-master"
@@ -57,13 +57,13 @@
                 "shasum": ""
             },
             "require": {
+                "php": ">=5.3.0",
+                "illuminate/support": "dev-master",
                 "anahkiasen/underscore-php": "dev-master",
                 "illuminate/cache": "dev-master",
                 "illuminate/config": "dev-master",
                 "illuminate/http": "dev-master",
-                "illuminate/support": "dev-master",
                 "opauth/flickr": "dev-master",
-                "php": ">=5.3.0",
                 "themattharris/tmhoauth": "dev-master"
             },
             "require-dev": {
@@ -88,9 +88,9 @@
             ],
             "description": "A modern interface for the Flickr API",
             "keywords": [
+                "php",
                 "api",
-                "flickr",
-                "php"
+                "flickr"
             ]
         },
         {
@@ -108,8 +108,8 @@
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "4.0.x",
-                "php": ">=5.3.0"
+                "php": ">=5.3.0",
+                "illuminate/support": "4.0.x"
             },
             "time": "2013-01-11 19:15:45",
             "type": "library",
@@ -141,8 +141,8 @@
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "dev-master",
-                "php": ">=5.3.0"
+                "php": ">=5.3.0",
+                "illuminate/support": "dev-master"
             },
             "time": "2013-02-11 14:51:53",
             "type": "library",
@@ -264,10 +264,10 @@
             "description": "Image processing for PHP 5.3",
             "homepage": "http://imagine.readthedocs.org/",
             "keywords": [
-                "drawing",
-                "graphics",
                 "image manipulation",
-                "image processing"
+                "image processing",
+                "drawing",
+                "graphics"
             ]
         },
         {
@@ -305,8 +305,8 @@
             "description": "A compatibility library for the proposed simplified password hashing algorithm: https://wiki.php.net/rfc/password_hash",
             "homepage": "https://github.com/ircmaxell/password_compat",
             "keywords": [
-                "hashing",
-                "password"
+                "password",
+                "hashing"
             ]
         },
         {
@@ -324,14 +324,14 @@
                 "shasum": ""
             },
             "require": {
+                "php": ">=5.3.0",
+                "kriswallsmith/assetic": "1.*",
                 "illuminate/config": "4.*",
                 "illuminate/container": "4.*",
                 "illuminate/filesystem": "4.*",
                 "illuminate/http": "4.*",
                 "illuminate/routing": "4.*",
-                "illuminate/support": "4.*",
-                "kriswallsmith/assetic": "1.*",
-                "php": ">=5.3.0"
+                "illuminate/support": "4.*"
             },
             "require-dev": {
                 "mockery/mockery": "0.7.*"
@@ -402,8 +402,8 @@
             ],
             "description": "A fluent extension to PHPs DateTime class.",
             "keywords": [
-                "date",
-                "time"
+                "time",
+                "date"
             ]
         },
         {
@@ -421,27 +421,27 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.1",
-                "symfony/process": ">=2.1.0,<2.3-dev"
+                "symfony/process": ">=2.1.0,<2.3-dev",
+                "php": ">=5.3.1"
             },
             "require-dev": {
-                "cssmin/cssmin": "*",
-                "joliclic/javascript-packer": "*",
-                "kamicane/packager": "*",
+                "twig/twig": ">=1.6.0,<2.0",
                 "leafo/lessphp": "*",
                 "leafo/scssphp": "*",
-                "leafo/scssphp-compass": "*",
-                "mrclay/minify": "*",
-                "phpunit/phpunit": "3.7.*",
                 "ptachoire/cssembed": "*",
-                "twig/twig": ">=1.6.0,<2.0"
+                "leafo/scssphp-compass": "*",
+                "cssmin/cssmin": "*",
+                "mrclay/minify": "*",
+                "kamicane/packager": "*",
+                "joliclic/javascript-packer": "*",
+                "phpunit/phpunit": "3.7.*"
             },
             "suggest": {
+                "twig/twig": "Assetic provides the integration with the Twig templating engine",
                 "leafo/lessphp": "Assetic provides the integration with the lessphp LESS compiler",
                 "leafo/scssphp": "Assetic provides the integration with the scssphp SCSS compiler",
-                "leafo/scssphp-compass": "Assetic provides the integration with the SCSS compass plugin",
                 "ptachoire/cssembed": "Assetic provides the integration with phpcssembed to embed data uris",
-                "twig/twig": "Assetic provides the integration with the Twig templating engine"
+                "leafo/scssphp-compass": "Assetic provides the integration with the SCSS compass plugin"
             },
             "time": "2013-02-11 18:18:06",
             "type": "library",
@@ -483,19 +483,16 @@
             "source": {
                 "type": "git",
                 "url": "http://github.com/laravel/framework",
-                "reference": "17773963ec767a2142b44b92f1e27565dccbaed6"
+                "reference": "0ab4b331a1b2dcd07d8ba85c60288a44f272803b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/17773963ec767a2142b44b92f1e27565dccbaed6",
-                "reference": "17773963ec767a2142b44b92f1e27565dccbaed6",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/0ab4b331a1b2dcd07d8ba85c60288a44f272803b",
+                "reference": "0ab4b331a1b2dcd07d8ba85c60288a44f272803b",
                 "shasum": ""
             },
             "require": {
-                "ext-mcrypt": "*",
-                "ircmaxell/password-compat": "1.0.*",
                 "monolog/monolog": "1.3.*",
-                "php": ">=5.3.7",
                 "swiftmailer/swiftmailer": "4.3.*",
                 "symfony/browser-kit": "2.2.*",
                 "symfony/console": "2.2.*",
@@ -507,7 +504,11 @@
                 "symfony/http-kernel": "2.2.*",
                 "symfony/process": "2.2.*",
                 "symfony/routing": "2.2.*",
-                "symfony/translation": "2.2.*"
+                "symfony/translation": "2.2.*",
+                "ircmaxell/password-compat": "1.0.*",
+                "ext-mcrypt": "*",
+                "php": ">=5.3.7",
+                "patchwork/utf8": "1.0.*"
             },
             "replace": {
                 "illuminate/auth": "self.version",
@@ -538,10 +539,10 @@
                 "illuminate/workbench": "self.version"
             },
             "require-dev": {
-                "aws/aws-sdk-php": "2.1.*",
-                "mockery/mockery": "0.7.2"
+                "mockery/mockery": "0.7.2",
+                "aws/aws-sdk-php": "2.1.*"
             },
-            "time": "2013-02-13 04:17:29",
+            "time": "2013-02-13 20:29:04",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -590,9 +591,9 @@
                 "shasum": ""
             },
             "require": {
+                "php": ">=5.3.0",
                 "illuminate/routing": "4.0.x",
-                "illuminate/support": "4.0.x",
-                "php": ">=5.3.0"
+                "illuminate/support": "4.0.x"
             },
             "require-dev": {
                 "mockery/mockery": "0.7.2"
@@ -632,16 +633,16 @@
                 "psr/log": ">=1.0,<2.0"
             },
             "require-dev": {
-                "doctrine/couchdb": "dev-master",
                 "mlehner/gelf-php": "1.0.*",
-                "raven/raven": "0.3.*"
+                "raven/raven": "0.3.*",
+                "doctrine/couchdb": "dev-master"
             },
             "suggest": {
+                "mlehner/gelf-php": "Allow sending log messages to a GrayLog2 server",
+                "raven/raven": "Allow sending log messages to a Sentry server",
                 "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
                 "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
-                "ext-mongo": "Allow sending log messages to a MongoDB server",
-                "mlehner/gelf-php": "Allow sending log messages to a GrayLog2 server",
-                "raven/raven": "Allow sending log messages to a Sentry server"
+                "ext-mongo": "Allow sending log messages to a MongoDB server"
             },
             "time": "2013-01-11 10:23:20",
             "type": "library",
@@ -732,8 +733,8 @@
                 "shasum": ""
             },
             "require": {
-                "opauth/opauth": ">=0.2.0",
-                "php": ">=5.2.0"
+                "php": ">=5.2.0",
+                "opauth/opauth": ">=0.2.0"
             },
             "time": "2012-11-03 00:06:09",
             "type": "library",
@@ -755,10 +756,10 @@
             "description": "Flickr strategy for Opauth",
             "homepage": "http://opauth.org",
             "keywords": [
-                "auth",
                 "authentication",
-                "flickr",
-                "opauth"
+                "auth",
+                "opauth",
+                "flickr"
             ],
             "support": {
                 "source": "https://github.com/pocket7878/opauth-flickr/tree/master",
@@ -771,12 +772,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/uzyn/opauth.git",
-                "reference": "de0a2acac178c21f0cae400a7ebfae6cd669ee76"
+                "reference": "c78915608658d5f25c20eecf771082e5317a4a36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/uzyn/opauth/zipball/de0a2acac178c21f0cae400a7ebfae6cd669ee76",
-                "reference": "de0a2acac178c21f0cae400a7ebfae6cd669ee76",
+                "url": "https://api.github.com/repos/uzyn/opauth/zipball/c78915608658d5f25c20eecf771082e5317a4a36",
+                "reference": "c78915608658d5f25c20eecf771082e5317a4a36",
                 "shasum": ""
             },
             "require": {
@@ -787,7 +788,7 @@
                 "opauth/google": "Allows Google authentication",
                 "opauth/twitter": "Allows Twitter authentication"
             },
-            "time": "2013-01-29 23:37:08",
+            "time": "2013-02-13 16:47:31",
             "type": "library",
             "autoload": {
                 "classmap": [
@@ -808,14 +809,58 @@
             "description": "Multi-provider authentication framework for PHP",
             "homepage": "http://opauth.org",
             "keywords": [
-                "Authentication",
                 "OpenId",
-                "auth",
-                "facebook",
-                "google",
+                "Authentication",
                 "oauth",
-                "omniauth",
-                "twitter"
+                "twitter",
+                "google",
+                "facebook",
+                "auth",
+                "omniauth"
+            ]
+        },
+        {
+            "name": "patchwork/utf8",
+            "version": "v1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nicolas-grekas/Patchwork-UTF8.git",
+                "reference": "v1.0.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/nicolas-grekas/Patchwork-UTF8/archive/v1.0.4.zip",
+                "reference": "v1.0.4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "time": "2012-12-13 08:48:39",
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "bootup.utf8.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "(Apache-2.0 or GPL-2.0)"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "UTF-8 strings handling for PHP 5.3: portable, performant and extended",
+            "homepage": "https://github.com/nicolas-grekas/Patchwork-UTF8",
+            "keywords": [
+                "i18n",
+                "utf8",
+                "utf-8",
+                "unicode"
             ]
         },
         {
@@ -925,8 +970,8 @@
                 "symfony/dom-crawler": ">=2.0,<3.0"
             },
             "require-dev": {
-                "symfony/css-selector": ">=2.0,<3.0",
-                "symfony/process": ">=2.0,<3.0"
+                "symfony/process": ">=2.0,<3.0",
+                "symfony/css-selector": ">=2.0,<3.0"
             },
             "suggest": {
                 "symfony/process": "2.2.*"
@@ -1281,9 +1326,9 @@
             },
             "require-dev": {
                 "symfony/browser-kit": "2.2.*",
+                "symfony/console": "2.2.*",
                 "symfony/class-loader": ">=2.1,<3.0",
                 "symfony/config": ">=2.0,<3.0",
-                "symfony/console": "2.2.*",
                 "symfony/dependency-injection": ">=2.0,<3.0",
                 "symfony/finder": ">=2.0,<3.0",
                 "symfony/process": ">=2.0,<3.0",
@@ -1393,15 +1438,15 @@
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "doctrine/common": ">=2.2,<3.0",
                 "psr/log": ">=1.0,<2.0",
+                "doctrine/common": ">=2.2,<3.0",
                 "symfony/config": ">=2.2,<2.3-dev",
                 "symfony/yaml": ">=2.0,<3.0"
             },
             "suggest": {
-                "doctrine/common": "~2.2",
                 "symfony/config": "2.2.*",
-                "symfony/yaml": "2.2.*"
+                "symfony/yaml": "2.2.*",
+                "doctrine/common": "~2.2"
             },
             "time": "2013-02-11 11:24:47",
             "type": "library",
