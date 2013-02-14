@@ -21,10 +21,7 @@ View::composer('about', function($view) {
 //////////////////////////////////////////////////////////////////////
 
 View::composer('en-averse-dencre', function($view) {
-  $categories = Category::with('articles')->orderBy('order', 'asc')->get();
-  $view->categoriesList = Arrays::filter($categories->all(), function($category) {
-    return !$category->articles->isEmpty();
-  });
+  $view->articles = Article::latest();
 });
 
 View::composer('the-winter-throat', function($view) {

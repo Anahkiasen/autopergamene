@@ -7,14 +7,9 @@
     {{{ HTML::toBlank('http://blogs.wefrag.com/Anahkiasen/', 'blog personnel') }}}.
   </p>
 
-  @include('navigation', array('links' => $categoriesList))
-
-  @foreach ($categoriesList as $categoryBlock)
-    <h2 id="{{ $categoryBlock->id }}">{{ $categoryBlock->name }}</h2>
-    <section class='articles'>
-      @each('article-block', $categoryBlock->articles, 'article')
-    </section>
-  @endforeach
+  <section class='articles'>
+    @each('article-block', $articles, 'article')
+  </section>
 @stop
 
 @section('js')
