@@ -2,12 +2,9 @@
 
 @section('content')
   <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    Un ensemble d'articles sur les sujets qui me passionnent : le web, la photographie, la musique, et j'en passe.<br />
+    Tous sont trouvables dans leurs catégories respectives mais sont rassemblés ici. Ils proviennent à l'origine de mon
+    {{{ HTML::toBlank('http://blogs.wefrag.com/Anahkiasen/', 'blog personnel') }}}.
   </p>
 
   @include('navigation', array('links' => $categoriesList))
