@@ -54,16 +54,14 @@
       +span-columns(10 omega)
 
   +from($desktop)
-    %thisOpacity100
-      +opacity(100)
     +opacity(25)
     h4
       +opacity(0)
     &:hover
-      @extend %thisOpacity100
+      +opacity(100)
       h4
         +transition(all .3s)
-        @extend %thisOpacity100
+        +opacity(100)
 
   +from-to($desktop, $wide)
     img
