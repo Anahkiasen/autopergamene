@@ -15,4 +15,4 @@
 	url = git://github.com/eligrey/classList.js.git
 [submodule "public/components/respond"]
 	path = public/components/respond
-	url = git@github.com:scottjehl/Respond.git
+	url = git://github.com/scottjehl/Respond.git
