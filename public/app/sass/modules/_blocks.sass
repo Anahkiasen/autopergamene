@@ -88,7 +88,7 @@
 
 %light-accent-block
   @extend %accent-block
-  background-color: $light-color-accent
+  background-color: $color-accent--light
   text-shadow: 0 .15em 0 fade(black, 25)
 
 @import category
@@ -98,10 +98,10 @@
 %hidden
   @extend %transition
   height: 0
-  +opacity(0)
+  @extend %opacity0
   overflow: hidden
 
 %reveal
   height: 100%
   max-height: auto
-  +opacity(100)
+  @extend %opacity100

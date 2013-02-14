@@ -16,9 +16,9 @@
   // Articles ------------------------------------------------------ /
 
   article
+    +rem(padding, 0 0 2rem 0)
     @extend %transition
     margin: 0
-    +rem(padding, 0 0 2rem 0)
     position: relative
 
     blockquote, h3
@@ -28,7 +28,7 @@
       @extend %transition
       color: $border-color
       &.absolute
-        +opacity(0)
+        @extend %opacity0
 
     blockquote
       +rem(margin, 0.5rem 0 0)
@@ -39,27 +39,33 @@
 
     &:hover
       border-left-color: $color-accent
+
+      // Switch date format
       h3, datetime
         color: $color-accent
       datetime.relative
-        +opacity(0)
+        @extend %opacity0
       datetime.absolute
-        +opacity(100)
+        @extend %opacity100
+
       blockquote
         +rgba-background-inline(black, .10)
 
     // Responsive -------------------------------------------------- /
 
     +from($tablet)
+
       +rem(margin-left, 2rem)
       +rem(padding-left, 1rem)
       border-left: 3px solid $border-color
+
       blockquote
         +rem(padding, 1rem)
+
       datetime
         +rem(font-size, 1.5rem)
         +rotate(-90deg)
-        position: absolute
-        top: 3rem
         left: -4rem
         min-width: 5.5rem
+        position: absolute
+        top: 3rem
