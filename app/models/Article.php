@@ -50,7 +50,7 @@ class Article extends Base
       'months' => 'mois',
       'weeks' => 'sem.',
       'week' => 'sem.',
-      'years' => 'an(s)',
+      'years' => 'ans',
       'year' => 'an',
     ));
   }
