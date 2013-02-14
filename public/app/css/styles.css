@@ -576,8 +576,10 @@ footer {
     .portfolio .repository figure {
       min-height: 240px;
       min-height: 15rem; } }
-  .portfolio .repository figure:hover h3, .portfolio .repository figure:hover h4 {
-    color: white; }
+  .portfolio .repository figure:hover {
+    background-color: #ea2c46; }
+    .portfolio .repository figure:hover h3, .portfolio .repository figure:hover h4 {
+      color: white; }
   .portfolio .photoset figure {
     position: relative; }
     .portfolio .photoset figure h2 {
