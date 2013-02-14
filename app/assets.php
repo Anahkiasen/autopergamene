@@ -36,7 +36,7 @@ Basset::collection('article', function($collection) {
     $collection->add('language/php.js');
   });
 
-  $collection->add('app/js/article.js')->apply('JsMin');
+  $collection->add('app/js/article.js');
 });
 
 //////////////////////////////////////////////////////////////////////
