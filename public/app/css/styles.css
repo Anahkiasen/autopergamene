@@ -45,7 +45,7 @@ footer .footer-container {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1; }
 
-ul.fixed, footer .social, .about .about-more ul, .novel article ul, ul.fixed li, footer .social li, .about .about-more ul li, .novel article ul li, h1, h2, h3, h4, a.back, dl dt, dl dd, .portfolio .novel-summary h2, .portfolio .photoset figure h3, .articles article, .article article blockquote p, .article .novel article ul p, .novel .article article ul p, .novel article blockquote p, .novel article ul p {
+ul.fixed, footer .social, .about .about-more ul, .novel article ul, ul.fixed li, footer .social li, .about .about-more ul li, .novel article ul li, h1, h2, h3, h4, .portfolio .illustration figcaption, .portfolio .tableau figcaption, a.back, dl dt, dl dd, .portfolio .novel-summary h2, .portfolio .photoset figure h2, .portfolio .photoset figure h3, .articles article, .article article blockquote p, .article .novel article ul p, .novel .article article ul p, .novel article blockquote p, .novel article ul p {
   margin: 0; }
 
 ul.fixed, footer .social, .about .about-more ul, .novel article ul, ul.fixed li, footer .social li, .about .about-more ul li, .novel article ul li, h1, h2, h3, h4, body {
@@ -163,7 +163,7 @@ h1, h2, h3, h4 {
   line-height: 48px;
   line-height: 3rem; }
 
-.categories figure, .portfolio .collection, .portfolio .support, .portfolio .repository figure, .portfolio .novel-summary, .portfolio .novel-summary h2, .portfolio .repository h3, .about aside, .about h4, .about article {
+.categories figure, .portfolio .collection, .portfolio .support, .portfolio .repository figure, .portfolio .illustration figcaption, .portfolio .tableau figcaption, .portfolio .novel-summary, .portfolio .novel-summary h2, .portfolio .repository h3, .portfolio .photoset figure h2, .about aside, .about h4, .about article {
   margin-bottom: 16px;
   margin-bottom: 1rem; }
 
@@ -417,9 +417,7 @@ a.block, a.back, span.block {
       max-width: 75%; } }
 
 .portfolio .illustration figcaption, .portfolio .tableau figcaption {
-  font-style: italic;
-  margin-top: 16px;
-  margin-top: 1rem; }
+  font-style: italic; }
 .portfolio .illustration h2, .portfolio .tableau h2 {
   margin: 0 0 16px;
   margin: 0 0 1rem; }
@@ -582,9 +580,6 @@ footer {
       color: white; }
   .portfolio .photoset figure {
     position: relative; }
-    .portfolio .photoset figure h2 {
-      margin: 0 0 16px;
-      margin: 0 0 1rem; }
     .portfolio .photoset figure h3 {
       bottom: 8px;
       bottom: 0.5rem;

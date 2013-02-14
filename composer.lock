@@ -131,20 +131,20 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git://github.com/Anahkiasen/underscore-php.git",
-                "reference": "edf8bdc0b01410bba4f1d5b4485d90b9bc26c8dc"
+                "url": "https://github.com/Anahkiasen/underscore-php.git",
+                "reference": "63e301b81975da8306b4c396331033e6e5cc03d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Anahkiasen/underscore-php/zipball/edf8bdc0b01410bba4f1d5b4485d90b9bc26c8dc",
-                "reference": "edf8bdc0b01410bba4f1d5b4485d90b9bc26c8dc",
+                "url": "https://api.github.com/repos/Anahkiasen/underscore-php/zipball/63e301b81975da8306b4c396331033e6e5cc03d2",
+                "reference": "63e301b81975da8306b4c396331033e6e5cc03d2",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0",
-                "illuminate/support": "dev-master"
+                "illuminate/support": "4.0.x"
             },
-            "time": "2013-02-14 15:05:32",
+            "time": "2013-02-14 23:04:31",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -481,13 +481,13 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "http://github.com/laravel/framework",
-                "reference": "b23ddd118713f0263b6aa189c672e9deb929847f"
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "26fe900448315725d78a6676daff05708da78c9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/b23ddd118713f0263b6aa189c672e9deb929847f",
-                "reference": "b23ddd118713f0263b6aa189c672e9deb929847f",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/26fe900448315725d78a6676daff05708da78c9e",
+                "reference": "26fe900448315725d78a6676daff05708da78c9e",
                 "shasum": ""
             },
             "require": {
@@ -506,8 +506,8 @@
                 "symfony/translation": "2.2.*",
                 "ircmaxell/password-compat": "1.0.*",
                 "ext-mcrypt": "*",
-                "php": ">=5.3.7",
-                "patchwork/utf8": "1.0.*"
+                "patchwork/utf8": "1.0.*",
+                "php": ">=5.3.0"
             },
             "replace": {
                 "illuminate/auth": "self.version",
@@ -541,7 +541,7 @@
                 "mockery/mockery": "0.7.2",
                 "aws/aws-sdk-php": "2.1.*"
             },
-            "time": "2013-02-14 14:45:12",
+            "time": "2013-02-14 22:56:48",
             "type": "library",
             "extra": {
                 "branch-alias": {
