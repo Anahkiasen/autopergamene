@@ -127,7 +127,7 @@ return array(
   |
   */
 
-  'production_environment' => false,
+  'production_environment' => 'production',
 
   /*
   |--------------------------------------------------------------------------
