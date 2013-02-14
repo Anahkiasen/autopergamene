@@ -4,7 +4,7 @@
 
 // Responsive containers ------------------------------------------- /
 
-%body
+%responsive-body
   @extend %container-wide
   +rem(padding, 2rem)
 
@@ -20,7 +20,7 @@
   +from($wider)
     width: 60%
 
-%content
+%responsive-content
   +from-to($desktop, $wide)
     +per-row(2)
 

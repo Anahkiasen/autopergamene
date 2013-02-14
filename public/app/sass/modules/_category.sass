@@ -54,14 +54,16 @@
       +span-columns(10 omega)
 
   +from($desktop)
+    %thisOpacity100
+      +opacity(100)
     +opacity(25)
     h4
       +opacity(0)
     &:hover
-      +opacity(100)
+      @extend %thisOpacity100
       h4
         +transition(all .3s)
-        +opacity(100)
+        @extend %thisOpacity100
 
   +from-to($desktop, $wide)
     img
@@ -82,9 +84,11 @@
 
   +from-to($tablet, $desktop)
     +per-row(2)
+
   +from-to($desktop, $wide)
     figcaption
       margin-top: 5%
+
   +from($desktop)
     width: 80%
     +skewY(-3deg)
@@ -106,4 +110,4 @@
 
 %category--responsive
   @extend %category
-  @extend %content
+  @extend %responsive-content
