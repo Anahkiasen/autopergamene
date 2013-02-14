@@ -48,8 +48,8 @@ class Article extends Base
       ->replace('months', 'mois')
       ->replace('weeks', 'sem.')
       ->replace('week', 'sem.')
-      ->replace('years', 'an(s)');
-      ->replace('year', 'an')
+      ->replace('years', 'an(s)')
+      ->replace('year', 'an');
 
     return $date->obtain();
   }
