@@ -1,7 +1,7 @@
 <?php
 use Underscore\Parse;
 
-class Article extends Eloquent
+class Article extends Base
 {
 
   // Relationships ------------------------------------------------- /
