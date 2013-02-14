@@ -35,7 +35,7 @@
         <article class='social'>
           <h3>Me trouver</h3>
           <ul>
-            @foreach($social as $service)
+            @foreach($services as $service)
               <li>
                 {{{ HTML::image('app/svg/'.$service->icon, $service->name) }}} {{{ HTML::toBlank($service->link, $service->name) }}}
               </li>

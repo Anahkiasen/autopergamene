@@ -5,7 +5,7 @@
 //////////////////////////////////////////////////////////////////////
 
 View::composer('about', function($view) {
-  $view->social = Service::all();
+  $view->services = Service::all();
 
   // Get current time and timezone
   $timezone = new DateTimeZone('Europe/Paris');
