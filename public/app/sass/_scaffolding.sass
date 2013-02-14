@@ -9,7 +9,7 @@
   +establish-baseline(18px)
 
 body
-  padding: 0
+  @extend %reset-padding
   font-family: $font-base
   background-color: white
   background-image: inline-image('noise.png')
@@ -25,7 +25,7 @@ a
   &.back
     @extend %clickable-block
     @extend %light-accent-block
-    margin: 0
+    @extend %reset-margin
 
 span.block
   @extend %accent
@@ -44,7 +44,7 @@ strong
 dl
   @extend %light-block
   dt, dd
-    margin: 0
+    @extend %reset-margin
 
   dt
     +rem(margin-right, 1rem)

@@ -45,6 +45,12 @@ footer .footer-container {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1; }
 
+h1, h2, h3, h4, ul.fixed, a.back, dl dt, dl dd, .portfolio .photoset figure h3, .articles article, .article article blockquote p, .article .novel article ul p, .novel .article article ul p, .novel article blockquote p, .novel article ul p, .novel article ul {
+  margin: 0; }
+
+h1, h2, h3, h4, body {
+  padding: 0; }
+
 a {
   text-decoration: none; }
   a:hover {
@@ -128,9 +134,7 @@ ul.fixed, footer .social, .about .about-more ul, .novel article ul {
     border-radius: 0; }
 
 h1, h2, h3, h4 {
-  line-height: 1;
-  margin: 0;
-  padding: 0; }
+  line-height: 1; }
 
 .articles article h3, a.block, a.back, span.block, .categories figure h4, .portfolio .collection h4, .portfolio .support h4, .portfolio .repository figure h4, .portfolio .novel-summary h2, .portfolio .photoset figure h3, .about h2, .about h3, .about h4, .article article .wp-caption p, .novel article .wp-caption p, .article article h1, .novel article h1 {
   font-family: "adelle", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -431,7 +435,6 @@ ul.fixed {
   -webkit-column-count: 4;
   -moz-column-count: 4;
   column-count: 4;
-  margin: 0;
   z-index: 50; }
   ul.fixed li {
     margin-right: -5px;
@@ -472,7 +475,6 @@ html {
     font-size: 112.5%;
     line-height: 1.5em; } }
 body {
-  padding: 0;
   font-family: "adelle", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: white;
   background-image: url('data:image/png;base64,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'); }
@@ -481,14 +483,10 @@ a {
   border-bottom: 1px dotted black; }
   a:hover {
     color: #a01024; }
-  a.back {
-    margin: 0; }
 
 hr {
   clear: both; }
 
-dl dt, dl dd {
-  margin: 0; }
 dl dt {
   margin-right: 16px;
   margin-right: 1rem;
@@ -601,7 +599,6 @@ footer {
       bottom: 5px;
       color: rgba(255, 255, 255, 0.2);
       left: 10px;
-      margin: 0;
       position: absolute;
       text-align: center; }
 
@@ -611,7 +608,6 @@ footer {
   .articles article {
     padding: 0 0 32px 0;
     padding: 0 0 2rem 0;
-    margin: 0;
     position: relative; }
     .articles article datetime {
       color: #bfbfbf; }
@@ -814,8 +810,6 @@ footer {
   .article article h2, .novel article h2 {
     margin: 16px 0;
     margin: 1rem 0; }
-  .article article blockquote p, .article .novel article ul p, .novel .article article ul p, .novel article blockquote p, .novel article ul p {
-    margin: 0; }
   .article article p, .novel article p {
     text-align: justify; }
 
@@ -841,7 +835,6 @@ footer {
   text-indent: 48px;
   text-indent: 3rem; }
 .novel article ul {
-  margin: 0;
   padding: 32px;
   padding: 2rem;
   font-style: normal; }

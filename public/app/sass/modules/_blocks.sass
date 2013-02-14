@@ -96,12 +96,16 @@
 // Animations ------------------------------------------------------ /
 
 %hidden
+  @extend %opacity0
   @extend %transition
   height: 0
-  @extend %opacity0
   overflow: hidden
 
 %reveal
+  @extend %opacity100
   height: 100%
   max-height: auto
+
+%open
   @extend %opacity100
+  display: block
