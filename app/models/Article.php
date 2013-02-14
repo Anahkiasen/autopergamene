@@ -42,16 +42,17 @@ class Article extends Base
   {
     $date = $this->getOriginal('created_at');
     $date = new ExpressiveDate($date, new DateTimeZone('Europe/Paris'));
-    $date = String::from($date->getRelativeDate())
-      ->remove('ago')
-      ->replace('days', 'jour(s)')
-      ->replace('months', 'mois')
-      ->replace('weeks', 'sem.')
-      ->replace('week', 'sem.')
-      ->replace('years', 'an(s)')
-      ->replace('year', 'an');
+    $date = $date->getRelativeDate();
 
-    return $date->obtain();
+    return strtr($date, array(
+      'ago' => null,
+      'days' => 'jour(s)',
+      'months' => 'mois',
+      'weeks' => 'sem.',
+      'week' => 'sem.',
+      'years' => 'an(s)',
+      'year' => 'an',
+    ));
   }
 
   /**
