@@ -24,15 +24,15 @@ class ServicesSeeder extends BaseSeed
   {
     return [
       ['Mail'      , 'ehtnam6@gmail.com'],
-      ['Facebook'  , 'http://www.facebook.com/anahkiasen'],
-      ['Twitter'   , 'https://twitter.com/#!/anahkiasen'],
-      ['Github'    , 'https://github.com/anahkiasen'],
-      ['Flickr'    , 'http://www.flickr.com/photos/anahkiasen'],
-      ['Last.fm'   , 'http://www.last.fm/user/anahkiasen'],
+      ['Facebook'  , 'http://facebook.com/anahkiasen'],
+      ['Twitter'   , 'http://twitter.com/anahkiasen'],
+      ['Github'    , 'http://github.com/anahkiasen'],
+      ['Flickr'    , 'http://flickr.com/photos/anahkiasen'],
+      ['Last.fm'   , 'http://last.fm/user/anahkiasen'],
       ['Steam'     , 'http://steamcommunity.com/id/anahkiasen'],
       ['Wordpress' , 'http://blogs.wefrag.com/anahkiasen'],
       ['SoundCloud', 'http://soundcloud.com/anahkiasen'],
-      ['YouTube'   , 'http://www.youtube.com/user/Ehtnam6'],
+      ['YouTube'   , 'http://youtube.com/user/Ehtnam6'],
     ];
   }
 }
