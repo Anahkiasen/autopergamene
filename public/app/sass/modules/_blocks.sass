@@ -44,14 +44,19 @@
 
 // Accent blocks --------------------------------------------------- /
 
-%block--accent
+%block-accent
   background-color: $color-accent
   border: none
   color: white
   text-align: center
 
-%block--clickable
-  @extend %block--accent
+%block-accent--light
+  @extend %block-accent
+  background-color: $color-accent--light
+  text-shadow: 0 .15em 0 fade(black, 25)
+
+%block-accent--clickable
+  @extend %block-accent
   @extend %block--wide
   @extend %font-base
   @extend %font-size-normal
@@ -85,11 +90,6 @@
     background-size: 10%
     +rem(margin, 2rem 10%)
     +rem(padding, 2rem)
-
-%light-accent-block
-  @extend %block--accent
-  background-color: $color-accent--light
-  text-shadow: 0 .15em 0 fade(black, 25)
 
 @import category
 

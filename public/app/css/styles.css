@@ -221,11 +221,15 @@ hr {
   margin: 16px 0;
   margin: 1rem 0; }
 
-a.block, a.back, span.block, .about .about-more h3, ul.fixed, ul.fixed li, header, footer, .portfolio .repository figure:hover {
+a.back, .about .about-more h3, a.block, span.block, ul.fixed, ul.fixed li, header, footer, .portfolio .repository figure:hover {
   background-color: #ea2c46;
   border: none;
   color: white;
   text-align: center; }
+
+a.back, .about .about-more h3 {
+  background-color: #f38997;
+  text-shadow: 0 0.15em 0 rgba(0, 0, 0, 0.25); }
 
 a.block, a.back, span.block {
   clear: both;
@@ -260,10 +264,6 @@ a.block, a.back, span.block {
       margin: 2rem 10%;
       padding: 32px;
       padding: 2rem; } }
-
-a.back, .about .about-more h3 {
-  background-color: #f38997;
-  text-shadow: 0 0.15em 0 rgba(0, 0, 0, 0.25); }
 
 .categories figure, .portfolio .collection, .portfolio .support, .portfolio .repository figure {
   margin-bottom: 16px;

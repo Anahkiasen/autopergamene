@@ -3,14 +3,14 @@
   &:hover
     @extend %opacity75
 
-%cover
+%image-cover
   background-position: center
   background-size: cover
   +rem(height, 15rem)
   +from($wide)
     +rem(height, 20rem)
 
-%captioned
+%image-captioned
   @extend %border-box
   @extend %block--light
   background-image: rgba-inline(black, .03)
@@ -23,8 +23,8 @@
     .image-wrap
       max-width: 75%
 
-%polaroid
-  @extend %captioned
+%image-captioned--polaroid
+  @extend %image-captioned
 
   figcaption
     @extend %block--light

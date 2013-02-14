@@ -20,16 +20,15 @@ a
   border-bottom: 1px dotted black
   &:hover
     color: $color-accent--dark
-  &.block
-    @extend %block--clickable
+  &.block, &.back
+    @extend %block-accent--clickable
   &.back
-    @extend %block--clickable
-    @extend %light-accent-block
+    @extend %block-accent--light
     @extend %reset-margin
 
 span.block
   @extend %accent
-  @extend %block--clickable
+  @extend %block-accent--clickable
 
 hr
   @extend %lips
