@@ -6,6 +6,7 @@
     Tous sont trouvables dans leurs catégories respectives mais sont rassemblés ici. Ils proviennent à l'origine de mon
     {{{ HTML::toBlank('http://blogs.wefrag.com/Anahkiasen/', 'blog personnel') }}}.
   </p>
+  {{{ HTML::blockLink('http://blogs.wefrag.com/Anahkiasen/', 'Accéder au blog "Out through the winter throat"', array('target' => '_blank')) }}}
   <hr />
 
   <section class='articles'>

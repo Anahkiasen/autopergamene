@@ -10,8 +10,9 @@ HTML::macro('backLink', function($url, $text) {
 /**
  * A link with the block link
  */
-HTML::macro('blockLink', function($url, $text) {
-  return HTML::to($url, $text, array('class' => 'block'));
+HTML::macro('blockLink', function($url, $text, $attributes = array()) {
+  $attributes['class'] = 'block';
+  return HTML::to($url, $text, $attributes);
 });
 
 /**
