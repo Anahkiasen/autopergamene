@@ -7,7 +7,7 @@
     <ul class='social'>
       @foreach ($services as $service)
         <li>
-          <a href='{{ $service->link }}'>
+          <a target='_blank' href='{{ $service->link }}'>
             {{ $service->linkName }}/<span class='name'>anahkiasen</span>
           </a>
         </li>
