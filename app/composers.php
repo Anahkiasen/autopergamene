@@ -16,6 +16,10 @@ View::composer('about', function($view) {
   $view->work = ExpressiveDate::make('October 1st, 2009', $timezone)->getDifferenceInYears($today);
 });
 
+View::composer('footer', function($view) {
+  $view->services = Service::where('name', '!=', 'Mail')->where('name', '!=', 'YouTube')->get();
+});
+
 //////////////////////////////////////////////////////////////////////
 /////////////////////////// PAGE COMPOSERS ///////////////////////////
 //////////////////////////////////////////////////////////////////////

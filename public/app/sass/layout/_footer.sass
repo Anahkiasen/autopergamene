@@ -9,12 +9,47 @@ footer
   +rem(padding, 1rem)
   text-transform: lowercase
 
-  // Links
+  hr
+    width: 50%
+    +rem(margin, 1rem auto)
+    border-color: fade($dark-color-accent, 25)
+    +box-shadow(0 1px 0 0 fade(white, 15))
+
+  .footer-container
+    @extend %container
+
+  .colophon, .social
+    +span-columns(6)
+
   a
     color: $dark-color-accent
-    &:hover
-      color: white
+  a:hover
+    color: white
 
-  // Sections
+  // Social services ----------------------------------------------- /
+
+  .social
+    @extend %reset-list
+    text-align: right
+    li
+      .name
+        color: white
+
+  // Colophon ------------------------------------------------------ /
+
   .colophon
-    +rem(margin-top, 1rem)
+    +omega
+    text-align: left
+    p:first-child
+      margin-top: 0
+
+  // Responsive ---------------------------------------------------- /
+
+  +to($tablet)
+    +font-size($tiny)
+    line-height: 1.25
+    .colophon, .social
+      +rem(margin-top, 1rem)
+      +reset-columns
+      text-align: right
+      width: 100%
