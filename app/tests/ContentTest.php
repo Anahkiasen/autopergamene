@@ -32,7 +32,7 @@ class ContentTest extends Cerberus\Scrutiny
     $crawler = $this->getPage();
 
     // Check number of social networks
-    $this->assertNthItemsExist($crawler, 10, '.social li');
+    $this->assertNthItemsExist($crawler, 10, '.about .social li');
 
     // Check if there are all external
     $targets = $crawler->filter('.social a')->extract('target');
