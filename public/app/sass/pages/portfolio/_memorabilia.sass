@@ -21,12 +21,12 @@
       +rem(margin, 0 0 1rem)
 
     h3
-      $offset: 10px
+      $offset: 1rem
+      +rem(bottom, $offset / 2)
+      +rem(left, $offset)
       @extend %font-base
       @extend %font-size-large
-      bottom: $offset / 2
-      color: fade(white, 20)
-      left: $offset
       @extend %reset-margin
+      color: fade(white, 20)
       position: absolute
       text-align: center

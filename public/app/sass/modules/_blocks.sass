@@ -27,11 +27,14 @@
   +from($wide)
     +per-row(3)
 
+%wide
+  width: 100%
+
 // Typography ------------------------------------------------------ /
 
 %block--wide
+  @extend %wide
   display: block
-  width: 100%
 
 %accent
   color: $color-accent

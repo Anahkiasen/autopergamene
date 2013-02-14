@@ -11,13 +11,13 @@
     +rem(height, 20rem)
 
 %image-captioned
-  @extend %border-box
-  @extend %block-light
-  background-image: rgba-inline(black, .03)
-  +rem(padding, 1rem)
   +rem(margin, 1rem 0)
+  +rem(padding, 1rem)
+  @extend %block-light
+  @extend %border-box
+  @extend %wide
+  background-image: rgba-inline(black, .03)
   text-align: center
-  width: 100%
 
   +from($desktop)
     .image-wrap
