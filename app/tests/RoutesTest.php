@@ -61,6 +61,9 @@ class RoutesTest extends Cerberus\Scrutiny
 
     $url = 'category/'.String::slugify($categoryName);
     $this->assertIsPage($url, $categoryName);
+
+    $page = $this->getPage($url);
+    $this->assertEquals($categoryName, $page->filter('.portfolio h1')->text());
   }
 
   // Subroutes ----------------------------------------------------- /
