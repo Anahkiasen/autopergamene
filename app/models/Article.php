@@ -38,6 +38,22 @@ class Article extends Base
     return implode(', ', $tags);
   }
 
+  public function getRelativeDateAttribute()
+  {
+    $date = $this->getOriginal('created_at');
+    $date = new ExpressiveDate($date, new DateTimeZone('Europe/Paris'));
+    $date = String::from($date->getRelativeDate())
+      ->remove('ago')
+      ->replace('days', 'jour(s)')
+      ->replace('months', 'mois')
+      ->replace('weeks', 'sem.')
+      ->replace('week', 'sem.')
+      ->replace('years', 'an(s)');
+      ->replace('year', 'an')
+
+    return $date->obtain();
+  }
+
   /**
    * Human-er date for articles
    *
