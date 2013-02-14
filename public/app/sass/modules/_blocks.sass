@@ -29,7 +29,7 @@
 
 // Typography ------------------------------------------------------ /
 
-%wide-block
+%block--wide
   display: block
   width: 100%
 
@@ -44,15 +44,15 @@
 
 // Accent blocks --------------------------------------------------- /
 
-%accent-block
+%block--accent
   background-color: $color-accent
   border: none
   color: white
   text-align: center
 
-%clickable-block
-  @extend %accent-block
-  @extend %wide-block
+%block--clickable
+  @extend %block--accent
+  @extend %block--wide
   @extend %font-base
   @extend %font-size-normal
   clear: both
@@ -66,14 +66,14 @@
 
 // Light blocks ---------------------------------------------------- /
 
-%light-block
+%block--light
   background: rgba-inline(black, .05)
   color: grey(20)
   +rem(padding, 0.75rem)
   text-align: justify
 
 %quotation
-  @extend %light-block
+  @extend %block--light
   font-style: italic
   margin-left: 0
   margin-right: 0
@@ -87,7 +87,7 @@
     +rem(padding, 2rem)
 
 %light-accent-block
-  @extend %accent-block
+  @extend %block--accent
   background-color: $color-accent--light
   text-shadow: 0 .15em 0 fade(black, 25)
 

@@ -10,15 +10,15 @@
   // Main title ---------------------------------------------------- /
 
   h2
+    +font-size($xlarge)
+    +rem(margin-bottom, 2rem)
     @extend %accent
     @extend %font-light
-    +font-size($xlarge)
     font-weight: 100
-    +rem(margin-bottom, 2rem)
     text-align: center
     text-transform: lowercase
 
   // Categories ---------------------------------------------------- /
 
   figure
-    @extend %giant-category
+    @extend %category--giant

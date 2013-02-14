@@ -21,15 +21,15 @@ a
   &:hover
     color: $color-accent--dark
   &.block
-    @extend %clickable-block
+    @extend %block--clickable
   &.back
-    @extend %clickable-block
+    @extend %block--clickable
     @extend %light-accent-block
     @extend %reset-margin
 
 span.block
   @extend %accent
-  @extend %clickable-block
+  @extend %block--clickable
 
 hr
   @extend %lips
@@ -42,7 +42,7 @@ strong
   @extend %accent
 
 dl
-  @extend %light-block
+  @extend %block--light
   dt, dd
     @extend %reset-margin
 

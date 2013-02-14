@@ -45,10 +45,10 @@ footer .footer-container {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1; }
 
-h1, h2, h3, h4, ul.fixed, a.back, dl dt, dl dd, .portfolio .photoset figure h3, .articles article, .article article blockquote p, .article .novel article ul p, .novel .article article ul p, .novel article blockquote p, .novel article ul p, .novel article ul {
+ul.fixed, footer .social, .about .about-more ul, .novel article ul, ul.fixed li, footer .social li, .about .about-more ul li, .novel article ul li, h1, h2, h3, h4, a.back, dl dt, dl dd, .portfolio .photoset figure h3, .articles article, .article article blockquote p, .article .novel article ul p, .novel .article article ul p, .novel article blockquote p, .novel article ul p {
   margin: 0; }
 
-h1, h2, h3, h4, body {
+ul.fixed, footer .social, .about .about-more ul, .novel article ul, ul.fixed li, footer .social li, .about .about-more ul li, .novel article ul li, h1, h2, h3, h4, body {
   padding: 0; }
 
 a {
@@ -57,12 +57,7 @@ a {
     text-decoration: none; }
 
 ul.fixed, footer .social, .about .about-more ul, .novel article ul {
-  list-style: none;
-  margin: 0;
-  padding: 0; }
-  ul.fixed li, footer .social li, .about .about-more ul li, .novel article ul li {
-    margin: 0;
-    padding: 0; }
+  list-style: none; }
 
 .categories figure, .portfolio .collection, .portfolio .support, .portfolio .repository figure, .articles.hidden, .about .about-more, .image-wrap, .about aside, .articles article, .articles article blockquote, .articles .novel article ul, .novel .articles article ul, .articles article h3, .articles article datetime, .about .about-biography {
   -webkit-transition: all 0.3s;
@@ -759,9 +754,9 @@ footer {
   font-size: 4.23607rem;
   line-height: 72px;
   line-height: 4.5rem;
-  font-weight: 100;
   margin-bottom: 32px;
   margin-bottom: 2rem;
+  font-weight: 100;
   text-align: center;
   text-transform: lowercase; }
 

@@ -7,7 +7,7 @@
 %category
 
   @extend %container-wide
-  @extend %light-block
+  @extend %block--light
   @extend %border-box
   @extend %transition
   +rem(margin-bottom, 1rem)
@@ -77,7 +77,7 @@
 
 // Giant categories ------------------------------------------------ /
 
-%giant-category
+%category--giant
   @extend %category
 
   +from-to($tablet, $desktop)
@@ -104,6 +104,6 @@
 
 // Responsive categories ------------------------------------------- /
 
-%responsive-category
+%category--responsive
   @extend %category
   @extend %content
