@@ -6,3 +6,4 @@ composer.phar
 public/assets
 public/cache/*.jpg
 sftp-config.json
+Thumbs.db
