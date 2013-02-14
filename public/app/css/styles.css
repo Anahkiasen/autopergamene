@@ -485,7 +485,7 @@ hr {
 dl dt {
   margin-right: 16px;
   margin-right: 1rem;
-  font-weight: bold; }
+  font-weight: 700; }
 
 header {
   padding: 8px 0 12px;
@@ -756,7 +756,6 @@ footer {
   line-height: 4.5rem;
   margin-bottom: 32px;
   margin-bottom: 2rem;
-  font-weight: 100;
   text-align: center;
   text-transform: lowercase; }
 
