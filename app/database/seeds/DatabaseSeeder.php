@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder {
 
     $this->call('ArticlesSeeder');
     $this->call('RepositoriesSeeder');
-    $this->call('SocialSeeder');
+    $this->call('ServicesSeeder');
     $this->call('StoriesSeeder');
     $this->call('TableauxSeeder');
     $this->call('TracksSeeder');

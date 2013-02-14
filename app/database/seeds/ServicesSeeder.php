@@ -1,5 +1,5 @@
 <?php
-class SocialSeeder extends BaseSeed
+class ServicesSeeder extends BaseSeed
 {
   public function getSeeds()
   {
@@ -24,15 +24,15 @@ class SocialSeeder extends BaseSeed
   {
     return [
       ['Mail'      , 'ehtnam6@gmail.com'],
-      ['Facebook'  , 'http://www.facebook.com/Anahkiasen'],
-      ['Github'    , 'https://github.com/Anahkiasen'],
-      ['Last.fm'   , 'http://www.last.fm/user/Anahkiasen'],
-      ['Steam'     , 'http://steamcommunity.com/id/Anahkiasen/'],
-      ['Wordpress' , 'http://blogs.wefrag.com/Anahkiasen/'],
-      ['YouTube'   , 'http://www.youtube.com/user/Ehtnam6'],
-      ['SoundCloud', 'http://soundcloud.com/anahkiasen'],
+      ['Facebook'  , 'http://www.facebook.com/anahkiasen'],
+      ['Twitter'   , 'https://twitter.com/#!/anahkiasen'],
+      ['Github'    , 'https://github.com/anahkiasen'],
       ['Flickr'    , 'http://www.flickr.com/photos/anahkiasen'],
-      ['Twitter'   , 'https://twitter.com/#!/Anahkiasen'],
+      ['Last.fm'   , 'http://www.last.fm/user/anahkiasen'],
+      ['Steam'     , 'http://steamcommunity.com/id/anahkiasen'],
+      ['Wordpress' , 'http://blogs.wefrag.com/anahkiasen'],
+      ['SoundCloud', 'http://soundcloud.com/anahkiasen'],
+      ['YouTube'   , 'http://www.youtube.com/user/Ehtnam6'],
     ];
   }
 }

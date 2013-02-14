@@ -1,11 +1,11 @@
 <?php
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSocial extends Migration
+class CreateServices extends Migration
 {
   public function up()
   {
-    Schema::create('social', function($table) {
+    Schema::create('services', function($table) {
       $table->increments('id');
       $table->string('name');
       $table->string('icon');
@@ -16,6 +16,6 @@ class CreateSocial extends Migration
 
   public function down()
   {
-    Schema::drop('social');
+    Schema::drop('services');
   }
 }
