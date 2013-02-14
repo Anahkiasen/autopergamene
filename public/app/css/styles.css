@@ -586,9 +586,9 @@ footer {
     .portfolio .photoset figure h3 {
       bottom: 8px;
       bottom: 0.5rem;
-      color: rgba(255, 255, 255, 0.2);
       left: 16px;
       left: 1rem;
+      color: rgba(255, 255, 255, 0.2);
       position: absolute;
       text-align: center; }
 
@@ -745,6 +745,7 @@ footer {
   line-height: 4.5rem;
   margin-bottom: 32px;
   margin-bottom: 2rem;
+  font-weight: 100;
   text-align: center;
   text-transform: lowercase; }
 
