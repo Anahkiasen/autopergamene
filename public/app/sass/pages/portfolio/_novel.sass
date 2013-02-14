@@ -3,11 +3,12 @@
 //////////////////////////////////////////////////////////////////////
 
 .novel-summary
-  +rem(margin-bottom, 1rem)
+  @extend %margin-underline
 
   h2
     @extend %font-base
-    +rem(margin, 0 0 1rem)
+    @extend %reset-margin
+    @extend %margin-underline
 
     +from($desktop)
       +font-size($large)

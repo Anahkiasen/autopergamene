@@ -14,12 +14,12 @@
     +rem(margin-bottom, 2rem)
     +to($tablet)
       +font-size(2.5rem)
-      +rem(margin-bottom, 1rem)
+      @extend %margin-underline
 
   article
     h3
       text-align: center
-      margin: 1rem
+      +rem(margin, 1rem)
     p
       +rem(text-indent, 3rem)
     ul
@@ -37,5 +37,5 @@
   // Novel not found ----------------------------------------------- /
 
   .alert
-    @extend %block--light
+    @extend %block-light
     +rem(margin, 2rem 0)
