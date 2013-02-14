@@ -4,21 +4,21 @@
   <aside></aside>
 
   {{-- About me --}}
-  <article class='biography'>
+  <article class='biography' itemscope itemtype='http://schema.org/Person'>
 
     {{-- Summary --}}
     <h2>
-      Maxime Fabre
+      <span itemprop='name'>Maxime Fabre</span>
       <span>{{ $age }} ans</span>
     </h2>
-    <h3>Webdesigner - Webdeveloper</h3>
-    <h4>Nice, France</h4>
+    <h3 itemprop='jobTitle'>Webdesigner - Webdeveloper</h3>
+    <h4 itemprop='address'>Nice, France</h4>
 
     {{-- Biography --}}
     <span class='block' data-show='.about-biography'>Qui je suis ?</span>
     <section class='about-biography'>
       <p>
-        Je travaille dans le web depuis bientôt {{ $work }} ans au {{{ HTML::toBlank('http://www.stappler.fr/', 'Principe de Stappler') }}}.
+        Je travaille dans le web depuis bientôt {{ $work }} ans au <span itemprop='worksFor'>{{{ HTML::toBlank('http://www.stappler.fr/', 'Principe de Stappler') }}}</span>.
         J'y ai fait mes premières incursions avec à peine quelques connaissances personnelles, puis de projet en projet c'est devenu ma passion. J'embrasse aujourd'hui la scène du web et tout ce qu'elle a de standards et d'enjeux – qu'il s'agisse des technologies et langages front-end (<strong>HTML5</strong>, <strong>CSS</strong> ou <strong>Javascript</strong>) ou back-end (<strong>PHP</strong>, <strong>Ruby</strong> avec maîtrise de l'<strong>OOP</strong> et de divers frameworks).
       </p>
       <p>
