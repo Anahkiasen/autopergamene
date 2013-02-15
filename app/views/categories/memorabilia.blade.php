@@ -9,18 +9,25 @@
 
     @include('articles-list')
 
-    <h2>Les albums</h2>
+    @foreach ($collections as $collection)
+      <article class='collection'>
+        <h2>{{ $collection->name }}</h2>
+        @if ($collection->description)
+          <p>{{ $collection->description }}</p>
+        @endif
 
-    @foreach($photosets as $photoset)
-      <figure class='collection'>
-        <a href='{{ URL::route('photoset', array('id' => $photoset->slug)) }}'>
-          {{{ HTML::image($photoset->thumbnail->large_square, $photoset->name) }}}
-          <figcaption>
-            <h3>{{ $photoset->name }}</h3>
-            <h4>{{ $photoset->created_at }}</h4>
-          </figcaption>
-        </a>
-      </figure>
+        @foreach ($collection->photosets as $photoset)
+          <figure class='photoset--list'>
+            <a href='{{ URL::route('photoset', array('id' => $photoset->slug)) }}'>
+              {{{ HTML::image($photoset->thumbnail->large_square, $photoset->name) }}}
+              <figcaption>
+                <h3>{{ $photoset->name }}</h3>
+                <h4>{{ $photoset->created_at }}</h4>
+              </figcaption>
+            </a>
+          </figure>
+        @endforeach
+      </article>
     @endforeach
   </section>
 @stop

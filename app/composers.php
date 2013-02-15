@@ -33,7 +33,7 @@ View::composer('the-winter-throat', function($view) {
 });
 
 View::composer('memorabilia', function($view) {
-  $view->photosets = Photoset::latest();
+  $view->collections = Collection::with('photosets')->orderBy('id', 'desc')->get();
 });
 
 View::composer('les-fleurs-davril', function($view) {
