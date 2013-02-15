@@ -1,6 +1,4 @@
 <?php
-use Illuminate\Database\Migrations\Migration;
-
 class CreateIllustrations extends Migration
 {
   public function up()

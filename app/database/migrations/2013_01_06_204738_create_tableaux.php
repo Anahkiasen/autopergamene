@@ -1,6 +1,4 @@
 <?php
-use Illuminate\Database\Migrations\Migration;
-
 class CreateTableaux extends Migration
 {
   public function up()

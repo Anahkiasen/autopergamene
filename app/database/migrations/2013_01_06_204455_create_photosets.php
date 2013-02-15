@@ -1,6 +1,4 @@
 <?php
-use Illuminate\Database\Migrations\Migration;
-
 class CreatePhotosets extends Migration
 {
   public function up()
@@ -9,6 +7,7 @@ class CreatePhotosets extends Migration
       $table->increments('id');
       $table->string('name');
       $table->string('slug');
+      $table->string('collection_id');
       $table->timestamps();
     });
   }
