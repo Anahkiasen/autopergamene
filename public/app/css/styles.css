@@ -1,4 +1,4 @@
-.categories figure, .portfolio .collection, .portfolio .support, .portfolio .repository figure, .categories figure figcaption, .portfolio .collection figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption, .portfolio .illustration, .portfolio .tableau, .portfolio .photoset figure, .article article .wp-caption, .novel article .wp-caption, .about p {
+.categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .categories figure figcaption, .portfolio .photoset--list figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption, .portfolio .illustration, .portfolio .tableau, .portfolio .photoset figure, .article article .wp-caption, .novel article .wp-caption, .about p {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
@@ -15,7 +15,7 @@ footer .footer-container {
     display: table;
     clear: both; }
 
-#container, .error, .portfolio, .article, .novel, .categories figure, .portfolio .collection, .portfolio .support, .portfolio .repository figure, .about, .about .about-more, .categories {
+#container, .error, .portfolio, .article, .novel, .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .about, .about .about-more, .categories {
   *zoom: 1;
   max-width: 59em;
   padding-left: 1em;
@@ -24,7 +24,7 @@ footer .footer-container {
   margin-right: auto;
   max-width: 100%;
   padding: 0; }
-  #container:after, .error:after, .portfolio:after, .article:after, .novel:after, .categories figure:after, .portfolio .collection:after, .portfolio .support:after, .portfolio .repository figure:after, .about:after, .about .about-more:after, .categories:after {
+  #container:after, .error:after, .portfolio:after, .article:after, .novel:after, .categories figure:after, .portfolio .photoset--list:after, .portfolio .support:after, .portfolio .repository figure:after, .about:after, .about .about-more:after, .categories:after {
     content: "";
     display: table;
     clear: both; }
@@ -59,7 +59,7 @@ a {
 ul.fixed, footer .social, .about .about-more ul, .novel article ul {
   list-style: none; }
 
-.categories figure, .portfolio .collection, .portfolio .support, .portfolio .repository figure, .articles.hidden, .about .about-more, .image-wrap, .about aside, .articles article, .articles article blockquote, .articles .novel article ul, .novel .articles article ul, .articles article h3, .articles article datetime, .about .about-biography {
+.categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .articles.hidden, .about .about-more, .image-wrap, .about aside, .articles article, .articles article blockquote, .articles .novel article ul, .novel .articles article ul, .articles article h3, .articles article datetime, .about .about-biography {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -131,12 +131,12 @@ ul.fixed, footer .social, .about .about-more ul, .novel article ul {
 h1, h2, h3, h4 {
   line-height: 1; }
 
-.articles article h3, a.block, a.back, span.block, .categories figure h4, .portfolio .collection h4, .portfolio .support h4, .portfolio .repository figure h4, .portfolio .novel-summary h2, .portfolio .photoset figure h3, .about h2, .about h3, .about h4, .article article .wp-caption p, .novel article .wp-caption p, .article article h1, .novel article h1 {
+.articles article h3, a.block, a.back, span.block, .categories figure h4, .portfolio .photoset--list h4, .portfolio .support h4, .portfolio .repository figure h4, .portfolio .novel-summary h2, .portfolio .photoset figure h3, .about h2, .about h3, .about h4, .article article .wp-caption p, .novel article .wp-caption p, .article article h1, .novel article h1 {
   font-family: "adelle", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
   text-transform: lowercase; }
 
-.categories figure h3, .portfolio .collection h3, .portfolio .support h3, .portfolio .repository figure h3, header h1, .portfolio h1, .categories h2, .article h1, .novel h1 {
+.categories figure h3, .portfolio .photoset--list h3, .portfolio .support h3, .portfolio .repository figure h3, header h1, .portfolio h1, .categories h2, .article h1, .novel h1 {
   font-family: "jubilat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 100; }
 
@@ -145,13 +145,13 @@ h1, h2, h3, h4 {
   font-weight: 400;
   text-transform: uppercase; }
 
-.about p, a.block, a.back, span.block, .categories figure h4, .portfolio .collection h4, .portfolio .support h4, .portfolio .repository figure h4, footer, .about .about-more h3 {
+.about p, a.block, a.back, span.block, .categories figure h4, .portfolio .photoset--list h4, .portfolio .support h4, .portfolio .repository figure h4, footer, .about .about-more h3 {
   font-size: 16px;
   font-size: 1rem;
   line-height: 24px;
   line-height: 1.5rem; }
 
-.categories figure h3, .portfolio .collection h3, .portfolio .support h3, .portfolio .repository figure h3, header h1, .portfolio h3, .about h2, .article article .wp-caption p, .novel article .wp-caption p, .article article h2, .novel article h2 {
+.categories figure h3, .portfolio .photoset--list h3, .portfolio .support h3, .portfolio .repository figure h3, header h1, .portfolio h3, .about h2, .article article .wp-caption p, .novel article .wp-caption p, .article article h2, .novel article h2 {
   font-size: 26px;
   font-size: 1.61803rem;
   line-height: 36px;
@@ -163,7 +163,7 @@ h1, h2, h3, h4 {
   line-height: 48px;
   line-height: 3rem; }
 
-.categories figure, .portfolio .collection, .portfolio .support, .portfolio .repository figure, .portfolio .illustration figcaption, .portfolio .tableau figcaption, .portfolio .novel-summary, .portfolio .novel-summary h2, .portfolio .repository h3, .portfolio .photoset figure h2, .about aside, .about h4, .about article {
+.categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .portfolio .illustration figcaption, .portfolio .tableau figcaption, .portfolio .novel-summary, .portfolio .novel-summary h2, .portfolio .repository h3, .portfolio .collection, .portfolio .photoset figure h2, .about aside, .about h4, .about article {
   margin-bottom: 16px;
   margin-bottom: 1rem; }
 
@@ -195,19 +195,19 @@ h1, h2, h3, h4 {
       width: 60%; } }
 
 @media (min-width: 980px) and (max-width: 1200px) {
-  .portfolio .collection, .portfolio .support, .portfolio .repository {
+  .portfolio .photoset--list, .portfolio .support, .portfolio .repository {
     width: 49.15254%;
     float: left;
     margin-right: 1.69492%; }
-    .portfolio .collection:nth-of-type(2n), .portfolio .support:nth-of-type(2n), .portfolio .repository:nth-of-type(2n) {
+    .portfolio .photoset--list:nth-of-type(2n), .portfolio .support:nth-of-type(2n), .portfolio .repository:nth-of-type(2n) {
       float: right;
       margin-right: 0; } }
 @media (min-width: 1200px) {
-  .portfolio .collection, .portfolio .support, .portfolio .repository {
+  .portfolio .photoset--list, .portfolio .support, .portfolio .repository {
     width: 32.20339%;
     float: left;
     margin-right: 1.69492%; }
-    .portfolio .collection:nth-of-type(3n), .portfolio .support:nth-of-type(3n), .portfolio .repository:nth-of-type(3n) {
+    .portfolio .photoset--list:nth-of-type(3n), .portfolio .support:nth-of-type(3n), .portfolio .repository:nth-of-type(3n) {
       float: right;
       margin-right: 0; } }
 
@@ -221,7 +221,7 @@ a, span.block, strong, dl dt, .about h2, .categories h2 {
   color: #ea2c46;
   font-weight: 500; }
 
-hr {
+hr, .portfolio .collection {
   border: none;
   border-bottom: 1px solid #f8bfc7;
   margin: 16px 0;
@@ -248,7 +248,7 @@ a.block, a.back, span.block {
   a.block:active, a.back:active, span.block:active {
     background-color: #f17283; }
 
-.portfolio blockquote, .portfolio .novel article ul, .novel article .portfolio ul, .article article blockquote, .article .novel article ul, .novel .article article ul, .novel article blockquote, .novel article ul, .categories figure, .portfolio .collection, .portfolio .support, .portfolio .repository figure, .portfolio .illustration, .portfolio .tableau, .portfolio .photoset figure, .article article .wp-caption, .novel article .wp-caption, .portfolio .illustration figcaption, .portfolio .tableau figcaption, dl, .portfolio p, .about p, .about .about-more ul, .article article del, .novel article del, .novel .alert {
+.portfolio blockquote, .portfolio .novel article ul, .novel article .portfolio ul, .article article blockquote, .article .novel article ul, .novel .article article ul, .novel article blockquote, .novel article ul, .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .portfolio .illustration, .portfolio .tableau, .portfolio .photoset figure, .article article .wp-caption, .novel article .wp-caption, .portfolio .illustration figcaption, .portfolio .tableau figcaption, dl, .portfolio p, .about p, .about .about-more ul, .article article del, .novel article del, .novel .alert {
   background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNi4AUAABYAEFIOBzYAAAAASUVORK5CYII=');
   color: #333333;
   padding: 12px;
@@ -261,7 +261,7 @@ a.block, a.back, span.block {
   margin-right: 0; }
   @media (min-width: 980px) {
     .portfolio blockquote, .portfolio .novel article ul, .novel article .portfolio ul, .article article blockquote, .article .novel article ul, .novel .article article ul, .novel article blockquote, .novel article ul {
-      background-image: url('../img/quotes.png?1358883193');
+      background-image: url('../img/quotes.png?1360744638');
       background-position: 16px 16px;
       background-position: 1rem 1rem;
       background-repeat: no-repeat;
@@ -271,54 +271,54 @@ a.block, a.back, span.block {
       padding: 32px;
       padding: 2rem; } }
 
-.categories figure, .portfolio .collection, .portfolio .support, .portfolio .repository figure {
+.categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure {
   padding: 16px;
   padding: 1rem; }
-  .categories figure:active, .portfolio .collection:active, .portfolio .support:active, .portfolio .repository figure:active {
+  .categories figure:active, .portfolio .photoset--list:active, .portfolio .support:active, .portfolio .repository figure:active {
     background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNikAIAACMAHf9yvGMAAAAASUVORK5CYII='); }
-  .categories figure figcaption, .portfolio .collection figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption {
+  .categories figure figcaption, .portfolio .photoset--list figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption {
     padding-left: 16px;
     padding-left: 1rem; }
-  .categories figure h3, .portfolio .collection h3, .portfolio .support h3, .portfolio .repository figure h3, .categories figure h4, .portfolio .collection h4, .portfolio .support h4, .portfolio .repository figure h4 {
+  .categories figure h3, .portfolio .photoset--list h3, .portfolio .support h3, .portfolio .repository figure h3, .categories figure h4, .portfolio .photoset--list h4, .portfolio .support h4, .portfolio .repository figure h4 {
     color: #333333;
     text-align: left; }
-  .categories figure h3, .portfolio .collection h3, .portfolio .support h3, .portfolio .repository figure h3 {
+  .categories figure h3, .portfolio .photoset--list h3, .portfolio .support h3, .portfolio .repository figure h3 {
     line-height: 1; }
-  .categories figure h4, .portfolio .collection h4, .portfolio .support h4, .portfolio .repository figure h4 {
+  .categories figure h4, .portfolio .photoset--list h4, .portfolio .support h4, .portfolio .repository figure h4 {
     margin-top: 8px;
     margin-top: 0.5rem;
     text-transform: none; }
   @media (max-width: 768px) {
-    .categories figure:hover, .portfolio .collection:hover, .portfolio .support:hover, .portfolio .repository figure:hover {
+    .categories figure:hover, .portfolio .photoset--list:hover, .portfolio .support:hover, .portfolio .repository figure:hover {
       background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNikAIAACMAHf9yvGMAAAAASUVORK5CYII='); }
-    .categories figure img, .portfolio .collection img, .portfolio .support img, .portfolio .repository figure img {
+    .categories figure img, .portfolio .photoset--list img, .portfolio .support img, .portfolio .repository figure img {
       width: 23.72881%;
       float: left;
       margin-right: 1.69492%; }
-    .categories figure figcaption, .portfolio .collection figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption {
+    .categories figure figcaption, .portfolio .photoset--list figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption {
       width: 74.57627%;
       float: right;
       margin-right: 0; } }
   @media (min-width: 768px) and (max-width: 980px) {
-    .categories figure img, .portfolio .collection img, .portfolio .support img, .portfolio .repository figure img {
+    .categories figure img, .portfolio .photoset--list img, .portfolio .support img, .portfolio .repository figure img {
       width: 15.25424%;
       float: left;
       margin-right: 1.69492%; }
-    .categories figure figcaption, .portfolio .collection figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption {
+    .categories figure figcaption, .portfolio .photoset--list figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption {
       width: 83.05085%;
       float: right;
       margin-right: 0; } }
   @media (min-width: 980px) {
-    .categories figure, .portfolio .collection, .portfolio .support, .portfolio .repository figure {
+    .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure {
       opacity: 0.25;
       filter: alpha(opacity=25); }
-      .categories figure h4, .portfolio .collection h4, .portfolio .support h4, .portfolio .repository figure h4 {
+      .categories figure h4, .portfolio .photoset--list h4, .portfolio .support h4, .portfolio .repository figure h4 {
         opacity: 0;
         filter: alpha(opacity=0); }
-      .categories figure:hover, .portfolio .collection:hover, .portfolio .support:hover, .portfolio .repository figure:hover {
+      .categories figure:hover, .portfolio .photoset--list:hover, .portfolio .support:hover, .portfolio .repository figure:hover {
         opacity: 1;
         filter: alpha(opacity=100); }
-        .categories figure:hover h4, .portfolio .collection:hover h4, .portfolio .support:hover h4, .portfolio .repository figure:hover h4 {
+        .categories figure:hover h4, .portfolio .photoset--list:hover h4, .portfolio .support:hover h4, .portfolio .repository figure:hover h4 {
           -webkit-transition: all 0.3s;
           -moz-transition: all 0.3s;
           -o-transition: all 0.3s;
@@ -326,20 +326,20 @@ a.block, a.back, span.block {
           opacity: 1;
           filter: alpha(opacity=100); } }
   @media (min-width: 980px) and (max-width: 1200px) {
-    .categories figure img, .portfolio .collection img, .portfolio .support img, .portfolio .repository figure img {
+    .categories figure img, .portfolio .photoset--list img, .portfolio .support img, .portfolio .repository figure img {
       width: 23.72881%;
       float: left;
       margin-right: 1.69492%; }
-    .categories figure figcaption, .portfolio .collection figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption {
+    .categories figure figcaption, .portfolio .photoset--list figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption {
       width: 74.57627%;
       float: right;
       margin-right: 0; } }
   @media (min-width: 1200px) {
-    .categories figure img, .portfolio .collection img, .portfolio .support img, .portfolio .repository figure img {
+    .categories figure img, .portfolio .photoset--list img, .portfolio .support img, .portfolio .repository figure img {
       width: 23.72881%;
       float: left;
       margin-right: 1.69492%; }
-    .categories figure figcaption, .portfolio .collection figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption {
+    .categories figure figcaption, .portfolio .photoset--list figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption {
       width: 74.57627%;
       float: right;
       margin-right: 0; } }
@@ -639,7 +639,7 @@ footer {
 .about aside {
   height: 320px;
   height: 20rem;
-  background-image: url('../img/maxime-fabre.jpg?1358883193'); }
+  background-image: url('../img/maxime-fabre.jpg?1360744638'); }
   @media (min-width: 980px) and (max-width: 1200px) {
     .about aside {
       height: 400px;
