@@ -26,3 +26,10 @@ unless Array::forEach
     while i < len
       fn.call scope, this[i], i, this
       ++i
+
+# Little helper function ------------------------------------------- /
+
+window.foreach = (elements, callback) ->
+  elements = document.querySelectorAll elements
+  elements = Array::slice.call elements, 0
+  elements.forEach callback

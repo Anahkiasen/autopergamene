@@ -38,4 +38,10 @@
     };
   }
 
+  window.foreach = function(elements, callback) {
+    elements = document.querySelectorAll(elements);
+    elements = Array.prototype.slice.call(elements, 0);
+    return elements.forEach(callback);
+  };
+
 }).call(this);
