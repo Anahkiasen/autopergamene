@@ -16,6 +16,7 @@
   </p>
 
   @include('articles-list')
+  <hr />
 
   <h2>Les projets</h2>
   <p>Les liens pointent soit sur Github vers la source, soit vers le site du projet.</p>

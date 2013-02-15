@@ -4,6 +4,7 @@
 
 .articles
   +rem(margin-top, 1rem)
+  @extend %lips
 
   &.hidden
     @extend %hidden
@@ -36,6 +37,7 @@
     h3
       +font-size(1.25rem)
       @extend %title-strict
+      color: grey(40)
 
     &:hover
       border-left-color: $color-accent

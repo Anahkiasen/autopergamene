@@ -42,8 +42,11 @@
 
 %lips
   border: none
-  border-bottom: 1px solid mix(white, $color-accent, 70)
-  +rem(margin, 1rem 0)
+  border-bottom: 1px solid grey(40)
+
+%lips--accent
+  @extend %lips
+  border-color: mix(white, $color-accent, 70)
 
 // Accent blocks --------------------------------------------------- /
 

@@ -1,13 +1,22 @@
 
 //////////////////////////////////////////////////////////////////////
-///////////////////////////+// MEMORABILIA ///////////////////////////
+////////////////////////////// MEMORABILIA ///////////////////////////
 //////////////////////////////////////////////////////////////////////
+
+.memorabilia .articles
+  border: none
 
 // Collections ----------------------------------------------------- /
 
 .collection
-  @extend %margin-underline
-  @extend %lips
+  +rem(margin-bottom, 2rem)
+  @extend %container-wide
+
+  h2
+    @extend %title-strict
+    border-bottom: 1px solid grey(80)
+    padding-bottom: 1rem
+
 
 // Photosets ------------------------------------------------------- /
 

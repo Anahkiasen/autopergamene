@@ -5,5 +5,3 @@
     @each('article-block', $category->articles, 'article')
   @endif
 </section>
-
-<hr />

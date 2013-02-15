@@ -15,7 +15,7 @@ footer .footer-container {
     display: table;
     clear: both; }
 
-#container, .error, .portfolio, .article, .novel, .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .about, .about .about-more, .categories {
+#container, .error, .portfolio, .article, .novel, .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .portfolio .collection, .about, .about .about-more, .categories {
   *zoom: 1;
   max-width: 59em;
   padding-left: 1em;
@@ -24,7 +24,7 @@ footer .footer-container {
   margin-right: auto;
   max-width: 100%;
   padding: 0; }
-  #container:after, .error:after, .portfolio:after, .article:after, .novel:after, .categories figure:after, .portfolio .photoset--list:after, .portfolio .support:after, .portfolio .repository figure:after, .about:after, .about .about-more:after, .categories:after {
+  #container:after, .error:after, .portfolio:after, .article:after, .novel:after, .categories figure:after, .portfolio .photoset--list:after, .portfolio .support:after, .portfolio .repository figure:after, .portfolio .collection:after, .about:after, .about .about-more:after, .categories:after {
     content: "";
     display: table;
     clear: both; }
@@ -131,7 +131,7 @@ ul.fixed, footer .social, .about .about-more ul, .novel article ul {
 h1, h2, h3, h4 {
   line-height: 1; }
 
-.articles article h3, a.block, a.back, span.block, .categories figure h4, .portfolio .photoset--list h4, .portfolio .support h4, .portfolio .repository figure h4, .portfolio .novel-summary h2, .portfolio .photoset figure h3, .about h2, .about h3, .about h4, .article article .wp-caption p, .novel article .wp-caption p, .article article h1, .novel article h1 {
+.portfolio .collection h2, .articles article h3, a.block, a.back, span.block, .categories figure h4, .portfolio .photoset--list h4, .portfolio .support h4, .portfolio .repository figure h4, .portfolio .novel-summary h2, .portfolio .photoset figure h3, .about h2, .about h3, .about h4, .article article .wp-caption p, .novel article .wp-caption p, .article article h1, .novel article h1 {
   font-family: "adelle", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
   text-transform: lowercase; }
@@ -163,7 +163,7 @@ h1, h2, h3, h4 {
   line-height: 48px;
   line-height: 3rem; }
 
-.categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .portfolio .illustration figcaption, .portfolio .tableau figcaption, .portfolio .novel-summary, .portfolio .novel-summary h2, .portfolio .repository h3, .portfolio .collection, .portfolio .photoset figure h2, .about aside, .about h4, .about article {
+.categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .portfolio .illustration figcaption, .portfolio .tableau figcaption, .portfolio .novel-summary, .portfolio .novel-summary h2, .portfolio .repository h3, .portfolio .photoset figure h2, .about aside, .about h4, .about article {
   margin-bottom: 16px;
   margin-bottom: 1rem; }
 
@@ -172,8 +172,7 @@ h1, h2, h3, h4 {
   text-align: center;
   text-shadow: 0 0.1em 0 #e6e6e6; }
 
-.articles article h3 {
-  color: #666666;
+.portfolio .collection h2, .articles article h3 {
   font-weight: 600;
   text-transform: uppercase; }
 
@@ -221,11 +220,12 @@ a, span.block, strong, dl dt, .about h2, .categories h2 {
   color: #ea2c46;
   font-weight: 500; }
 
-hr, .portfolio .collection {
+hr, a, .articles, .article article h1, .novel article h1 {
   border: none;
-  border-bottom: 1px solid #f8bfc7;
-  margin: 16px 0;
-  margin: 1rem 0; }
+  border-bottom: 1px solid #666666; }
+
+hr {
+  border-color: #f8bfc7; }
 
 a.back, .about .about-more h3, a.block, span.block, ul.fixed, ul.fixed li, header, footer, .portfolio .repository figure:hover {
   background-color: #ea2c46;
@@ -474,12 +474,12 @@ body {
   background-color: white;
   background-image: url('data:image/png;base64,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'); }
 
-a {
-  border-bottom: 1px dotted black; }
-  a:hover {
-    color: #a01024; }
+a:hover {
+  color: #a01024; }
 
 hr {
+  margin: 16px 0;
+  margin: 1rem 0;
   clear: both; }
 
 dl dt {
@@ -578,6 +578,14 @@ footer {
     background-color: #ea2c46; }
     .portfolio .repository figure:hover h3, .portfolio .repository figure:hover h4 {
       color: white; }
+  .portfolio .memorabilia .articles {
+    border: none; }
+  .portfolio .collection {
+    margin-bottom: 32px;
+    margin-bottom: 2rem; }
+    .portfolio .collection h2 {
+      border-bottom: 1px solid #cccccc;
+      padding-bottom: 1rem; }
   .portfolio .photoset figure {
     position: relative; }
     .portfolio .photoset figure h3 {
@@ -605,7 +613,8 @@ footer {
       font-size: 20px;
       font-size: 1.25rem;
       line-height: 24px;
-      line-height: 1.5rem; }
+      line-height: 1.5rem;
+      color: #666666; }
     .articles article:hover {
       border-left-color: #ea2c46; }
       .articles article:hover h3, .articles article:hover datetime {
@@ -782,7 +791,6 @@ footer {
     padding: 16px;
     padding: 1rem; }
   .article article h1, .novel article h1 {
-    border-bottom: 1px solid #4d4d4d;
     padding-bottom: 4px;
     padding-bottom: 0.25rem;
     text-align: left; }

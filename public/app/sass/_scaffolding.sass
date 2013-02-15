@@ -17,7 +17,7 @@ body
 a
   @extend %accent
   @extend %reset-link
-  border-bottom: 1px dotted black
+  @extend %lips
   &:hover
     color: $color-accent--dark
   &.block, &.back
@@ -31,7 +31,8 @@ span.block
   @extend %block-accent--clickable
 
 hr
-  @extend %lips
+  @extend %lips--accent
+  +rem(margin, 1rem 0)
   clear: both
 
 h1, h2, h3, h4
