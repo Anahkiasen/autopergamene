@@ -220,11 +220,11 @@ a, span.block, strong, dl dt, .about h2, .categories h2 {
   color: #ea2c46;
   font-weight: 500; }
 
-hr, a, .articles, .article article h1, .novel article h1 {
+hr, .articles, a, .article article h1, .novel article h1 {
   border: none;
   border-bottom: 1px solid #666666; }
 
-hr {
+hr, .articles {
   border-color: #f8bfc7; }
 
 a.back, .about .about-more h3, a.block, span.block, ul.fixed, ul.fixed li, header, footer, .portfolio .repository figure:hover {
@@ -578,8 +578,6 @@ footer {
     background-color: #ea2c46; }
     .portfolio .repository figure:hover h3, .portfolio .repository figure:hover h4 {
       color: white; }
-  .portfolio .memorabilia .articles {
-    border: none; }
   .portfolio .collection {
     margin-bottom: 32px;
     margin-bottom: 2rem; }
@@ -599,7 +597,9 @@ footer {
 
 .articles {
   margin-top: 16px;
-  margin-top: 1rem; }
+  margin-top: 1rem;
+  padding-bottom: 16px;
+  padding-bottom: 1rem; }
   .articles article {
     padding: 0 0 32px 0;
     padding: 0 0 2rem 0;
