@@ -119,7 +119,8 @@ class ContentTest extends Cerberus\Scrutiny
   {
     $crawler = $this->getPage('category/memorabilia');
 
-    $this->assertNthItemsExist($crawler, 32, '.collection img');
+    $this->assertNthItemsExist($crawler, 4, '.collection');
+    $this->assertNthItemsExist($crawler, 40, '.photoset--list img');
   }
 
   public function testStoriesAreRenderedCorrectly()
