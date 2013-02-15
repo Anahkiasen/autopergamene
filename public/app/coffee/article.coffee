@@ -1,15 +1,15 @@
-for image in document.querySelectorAll('p a img')
+document.querySelectorAll('p a img').forEach (image) ->
   image.parentNode.classList.add 'image-wrap'
 
-for image in document.querySelectorAll('img, div')
+document.querySelectorAll('img, div').forEach (image) ->
   image.removeAttribute('width')
   image.removeAttribute('height')
   image.removeAttribute('style')
 
-for code in document.querySelectorAll('p.code')
+document.querySelectorAll('p.code').forEach (code) ->
   code.innerHTML = '<pre>' + code.innerHTML + '</pre>'
 
-for pre in document.querySelectorAll('pre')
+document.querySelectorAll('pre').forEach (pre) ->
   content = pre.textContent
   Rainbow.color content, 'php', (highlighted) ->
     pre.innerHTML = highlighted
