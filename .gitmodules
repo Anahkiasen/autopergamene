@@ -16,3 +16,6 @@
 [submodule "public/components/respond"]
 	path = public/components/respond
 	url = git://github.com/scottjehl/Respond.git
+[submodule "public/components/lazyload"]
+	path = public/components/lazyload
+	url = git://github.com/tuupola/jquery_lazyload.git

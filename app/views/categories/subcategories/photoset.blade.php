@@ -21,9 +21,13 @@
         </figcaption>
         <div class='image-wrap'>
           <h3>{{ $photo->index($key) }}</h3>
-          {{{ HTML::image($photo->medium_large, $photo->name) }}}
+          {{{ HTML::lazyLoad($photo->medium_large, $photo->name) }}}
         </div>
       </figure>
     @endforeach
   </section>
+@stop
+
+@section('js')
+  {{{ Basset::show('lazyload.js') }}}
 @stop

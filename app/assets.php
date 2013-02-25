@@ -27,6 +27,12 @@ Basset::collection('modernizr', function($collection) {
 //////////////////////////// ARTICLE VIEW ////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+Basset::collection('lazyload', function($collection) {
+  $collection->add('components/jquery/jquery.min.js');
+  $collection->add('components/lazyload/jquery.lazyload.min.js');
+  $collection->add('app/js/lazyload.js');
+});
+
 Basset::collection('article', function($collection) {
   $collection->add('components/rainbow/themes/tomorrow-night.css')->apply('CssMin');
 

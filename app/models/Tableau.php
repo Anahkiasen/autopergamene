@@ -20,6 +20,6 @@ class Tableau extends Base
    */
   public function __toString()
   {
-    return HTML::image($this->image, $this->name);
+    return HTML::lazyLoad($this->image, $this->name);
   }
 }

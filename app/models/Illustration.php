@@ -27,6 +27,6 @@ class Illustration extends Eloquent
    */
   public function image($folder)
   {
-    return HTML::image($folder.$this->image, $this->name);
+    return HTML::lazyLoad($folder.$this->image, $this->name);
   }
 }

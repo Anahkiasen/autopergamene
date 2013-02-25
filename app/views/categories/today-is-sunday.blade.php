@@ -21,3 +21,7 @@
     </figure>
   @endforeach
 @stop
+
+@section('js')
+  {{{ Basset::show('lazyload.js') }}}
+@stop
