@@ -23,7 +23,6 @@
             "require-dev": {
                 "mockery/mockery": "dev-master"
             },
-            "time": "2013-02-25 16:13:16",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -40,7 +39,8 @@
                     "email": "ehtnam6@gmail.com"
                 }
             ],
-            "description": "Various helpers and classes for the Illuminate framework"
+            "description": "Various helpers and classes for the Illuminate framework",
+            "time": "2013-02-25 16:13:16"
         },
         {
             "name": "anahkiasen/flickering",
@@ -69,7 +69,6 @@
             "require-dev": {
                 "mockery/mockery": "dev-master"
             },
-            "time": "2013-02-08 11:11:34",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -91,7 +90,8 @@
                 "api",
                 "flickr",
                 "php"
-            ]
+            ],
+            "time": "2013-02-08 11:11:34"
         },
         {
             "name": "anahkiasen/glow",
@@ -111,7 +111,6 @@
                 "illuminate/support": "4.0.x",
                 "php": ">=5.3.0"
             },
-            "time": "2013-01-11 19:15:45",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -124,7 +123,8 @@
                     "name": "Maxime Fabre",
                     "email": "ehtnam6@gmail.com"
                 }
-            ]
+            ],
+            "time": "2013-01-11 19:15:45"
         },
         {
             "name": "anahkiasen/underscore-php",
@@ -132,26 +132,25 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Anahkiasen/underscore-php.git",
-                "reference": "08fd557fc01e57b1ef67e039b7f8060887c40186"
+                "reference": "e106a0df389d8f321496f94d2f38eff0556120c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Anahkiasen/underscore-php/zipball/08fd557fc01e57b1ef67e039b7f8060887c40186",
-                "reference": "08fd557fc01e57b1ef67e039b7f8060887c40186",
+                "url": "https://api.github.com/repos/Anahkiasen/underscore-php/zipball/e106a0df389d8f321496f94d2f38eff0556120c9",
+                "reference": "e106a0df389d8f321496f94d2f38eff0556120c9",
                 "shasum": ""
             },
             "require": {
                 "illuminate/support": "4.0.*@dev",
                 "php": ">=5.3.0"
             },
-            "time": "2013-02-14 23:26:58",
             "type": "library",
             "autoload": {
                 "psr-0": {
                     "Underscore": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -161,7 +160,8 @@
                     "email": "ehtnam6@gmail.com"
                 }
             ],
-            "description": "A redacted port of Underscore.js for PHP"
+            "description": "A redacted port of Underscore.js for PHP",
+            "time": "2013-02-27 14:01:46"
         },
         {
             "name": "dflydev/markdown",
@@ -180,7 +180,6 @@
             "require": {
                 "php": ">=5.3"
             },
-            "time": "2012-07-15 16:31:27",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -220,7 +219,8 @@
             "homepage": "http://github.com/dflydev/dflydev-markdown",
             "keywords": [
                 "markdown"
-            ]
+            ],
+            "time": "2012-07-15 16:31:27"
         },
         {
             "name": "imagine/Imagine",
@@ -242,7 +242,6 @@
             "require-dev": {
                 "sami/sami": "dev-master"
             },
-            "time": "2012-12-13 18:31:18",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -267,7 +266,8 @@
                 "graphics",
                 "image manipulation",
                 "image processing"
-            ]
+            ],
+            "time": "2012-12-13 18:31:18"
         },
         {
             "name": "ircmaxell/password-compat",
@@ -283,7 +283,6 @@
                 "reference": "v1.0.0",
                 "shasum": ""
             },
-            "time": "2013-01-14 16:49:31",
             "type": "library",
             "autoload": {
                 "files": [
@@ -306,7 +305,8 @@
             "keywords": [
                 "hashing",
                 "password"
-            ]
+            ],
+            "time": "2013-01-14 16:49:31"
         },
         {
             "name": "jasonlewis/basset",
@@ -335,7 +335,6 @@
             "require-dev": {
                 "mockery/mockery": "0.7.*"
             },
-            "time": "2013-01-12 14:37:01",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -358,7 +357,8 @@
             "keywords": [
                 "asset",
                 "basset"
-            ]
+            ],
+            "time": "2013-01-12 14:37:01"
         },
         {
             "name": "jasonlewis/expressive-date",
@@ -380,7 +380,6 @@
             "require-dev": {
                 "mockery/mockery": "0.7.*"
             },
-            "time": "2012-12-14 12:46:47",
             "type": "library",
             "autoload": {
                 "classmap": [
@@ -403,7 +402,8 @@
             "keywords": [
                 "date",
                 "time"
-            ]
+            ],
+            "time": "2012-12-14 12:46:47"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -442,7 +442,6 @@
                 "ptachoire/cssembed": "Assetic provides the integration with phpcssembed to embed data uris",
                 "twig/twig": "Assetic provides the integration with the Twig templating engine"
             },
-            "time": "2013-02-24 17:22:20",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -474,7 +473,8 @@
                 "assets",
                 "compression",
                 "minification"
-            ]
+            ],
+            "time": "2013-02-24 17:22:20"
         },
         {
             "name": "laravel/framework",
@@ -482,12 +482,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "fbb9d8ce40ff90b87853bed6a3e9b4312d1d8bb7"
+                "reference": "87d4c90009e7bfab3efc5b8f477f98af433c341d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/fbb9d8ce40ff90b87853bed6a3e9b4312d1d8bb7",
-                "reference": "fbb9d8ce40ff90b87853bed6a3e9b4312d1d8bb7",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/87d4c90009e7bfab3efc5b8f477f98af433c341d",
+                "reference": "87d4c90009e7bfab3efc5b8f477f98af433c341d",
                 "shasum": ""
             },
             "require": {
@@ -541,7 +541,6 @@
                 "aws/aws-sdk-php": "2.1.*",
                 "mockery/mockery": "0.7.2"
             },
-            "time": "2013-02-25 02:33:27",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -559,7 +558,7 @@
                     "Illuminate": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -573,7 +572,8 @@
             "keywords": [
                 "framework",
                 "laravel"
-            ]
+            ],
+            "time": "2013-02-27 05:31:46"
         },
         {
             "name": "meido/html",
@@ -594,7 +594,6 @@
                 "illuminate/support": "4.0.x",
                 "php": ">=5.3.0"
             },
-            "time": "2013-02-22 07:11:11",
             "type": "library",
             "autoload": {
                 "classmap": [
@@ -611,7 +610,8 @@
                     "email": "joniliciously@gmail.com"
                 }
             ],
-            "description": "A port of Laravel 3's HTML class"
+            "description": "A port of Laravel 3's HTML class",
+            "time": "2013-02-22 07:11:11"
         },
         {
             "name": "monolog/monolog",
@@ -643,7 +643,6 @@
                 "mlehner/gelf-php": "Allow sending log messages to a GrayLog2 server",
                 "raven/raven": "Allow sending log messages to a Sentry server"
             },
-            "time": "2013-01-11 10:23:20",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -673,7 +672,8 @@
                 "log",
                 "logging",
                 "psr-3"
-            ]
+            ],
+            "time": "2013-01-11 10:23:20"
         },
         {
             "name": "natxet/CssMin",
@@ -692,7 +692,6 @@
             "require": {
                 "php": ">=5.0"
             },
-            "time": "2012-02-22 09:15:20",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -715,7 +714,8 @@
             "keywords": [
                 "css",
                 "minify"
-            ]
+            ],
+            "time": "2012-02-22 09:15:20"
         },
         {
             "name": "opauth/flickr",
@@ -735,7 +735,6 @@
                 "opauth/opauth": ">=0.2.0",
                 "php": ">=5.2.0"
             },
-            "time": "2012-11-03 00:06:09",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -763,7 +762,8 @@
             "support": {
                 "source": "https://github.com/pocket7878/opauth-flickr/tree/master",
                 "issues": "https://github.com/pocket7878/opauth-flickr/issues"
-            }
+            },
+            "time": "2012-11-03 00:06:09"
         },
         {
             "name": "opauth/opauth",
@@ -787,7 +787,6 @@
                 "opauth/google": "Allows Google authentication",
                 "opauth/twitter": "Allows Twitter authentication"
             },
-            "time": "2013-02-13 16:47:31",
             "type": "library",
             "autoload": {
                 "classmap": [
@@ -816,7 +815,8 @@
                 "oauth",
                 "omniauth",
                 "twitter"
-            ]
+            ],
+            "time": "2013-02-13 16:47:31"
         },
         {
             "name": "patchwork/utf8",
@@ -835,7 +835,6 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-12-13 08:48:39",
             "type": "library",
             "autoload": {
                 "files": [
@@ -860,7 +859,8 @@
                 "unicode",
                 "utf-8",
                 "utf8"
-            ]
+            ],
+            "time": "2012-12-13 08:48:39"
         },
         {
             "name": "psr/log",
@@ -876,7 +876,6 @@
                 "reference": "1.0.0",
                 "shasum": ""
             },
-            "time": "2012-12-21 11:40:51",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -898,7 +897,8 @@
                 "log",
                 "psr",
                 "psr-3"
-            ]
+            ],
+            "time": "2012-12-21 11:40:51"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -917,7 +917,6 @@
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "2013-02-04 10:09:01",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -947,7 +946,8 @@
             "keywords": [
                 "mail",
                 "mailer"
-            ]
+            ],
+            "time": "2013-02-04 10:09:01"
         },
         {
             "name": "symfony/browser-kit",
@@ -975,7 +975,6 @@
             "suggest": {
                 "symfony/process": "2.2.*"
             },
-            "time": "2013-02-23 06:46:07",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1002,7 +1001,8 @@
                 }
             ],
             "description": "Symfony BrowserKit Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-02-23 06:46:07"
         },
         {
             "name": "symfony/console",
@@ -1022,7 +1022,6 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-01-24 15:55:08",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1049,7 +1048,8 @@
                 }
             ],
             "description": "Symfony Console Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-01-24 15:55:08"
         },
         {
             "name": "symfony/css-selector",
@@ -1069,7 +1069,6 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-01-17 15:25:59",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1096,7 +1095,8 @@
                 }
             ],
             "description": "Symfony CssSelector Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-01-17 15:25:59"
         },
         {
             "name": "symfony/dom-crawler",
@@ -1122,7 +1122,6 @@
             "suggest": {
                 "symfony/css-selector": "2.2.*"
             },
-            "time": "2013-02-23 06:46:07",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1149,7 +1148,8 @@
                 }
             ],
             "description": "Symfony DomCrawler Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-02-23 06:46:07"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -1176,7 +1176,6 @@
                 "symfony/dependency-injection": "2.2.*",
                 "symfony/http-kernel": "2.2.*"
             },
-            "time": "2013-02-11 11:26:43",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1203,7 +1202,8 @@
                 }
             ],
             "description": "Symfony EventDispatcher Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-02-11 11:26:43"
         },
         {
             "name": "symfony/finder",
@@ -1212,18 +1212,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Finder.git",
-                "reference": "v2.2.0-RC3"
+                "reference": "de619133880194ef97664adb8ad635d8855f66bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Finder/zipball/v2.2.0-RC3",
-                "reference": "v2.2.0-RC3",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/de619133880194ef97664adb8ad635d8855f66bd",
+                "reference": "de619133880194ef97664adb8ad635d8855f66bd",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-02-04 12:41:13",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1235,7 +1234,7 @@
                     "Symfony\\Component\\Finder\\": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1250,7 +1249,8 @@
                 }
             ],
             "description": "Symfony Finder Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-02-26 16:36:31"
         },
         {
             "name": "symfony/http-foundation",
@@ -1259,18 +1259,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpFoundation.git",
-                "reference": "v2.2.0-RC3"
+                "reference": "05436cd1d542f21da6ee67857cf88224e5f3acb1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/v2.2.0-RC3",
-                "reference": "v2.2.0-RC3",
+                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/05436cd1d542f21da6ee67857cf88224e5f3acb1",
+                "reference": "05436cd1d542f21da6ee67857cf88224e5f3acb1",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-02-23 06:46:07",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1285,7 +1284,7 @@
                     "Symfony/Component/HttpFoundation/Resources/stubs"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1300,7 +1299,8 @@
                 }
             ],
             "description": "Symfony HttpFoundation Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-02-26 09:42:13"
         },
         {
             "name": "symfony/http-kernel",
@@ -1309,12 +1309,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpKernel.git",
-                "reference": "9d4d5faa155758271dbad73c392afb7cfac12c3e"
+                "reference": "dbdaeb9c849a5eadc552cb0b8c61cfc72d1d8b4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/9d4d5faa155758271dbad73c392afb7cfac12c3e",
-                "reference": "9d4d5faa155758271dbad73c392afb7cfac12c3e",
+                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/dbdaeb9c849a5eadc552cb0b8c61cfc72d1d8b4c",
+                "reference": "dbdaeb9c849a5eadc552cb0b8c61cfc72d1d8b4c",
                 "shasum": ""
             },
             "require": {
@@ -1342,7 +1342,6 @@
                 "symfony/dependency-injection": "2.2.*",
                 "symfony/finder": "2.2.*"
             },
-            "time": "2013-02-24 13:09:41",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1354,7 +1353,7 @@
                     "Symfony\\Component\\HttpKernel\\": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1369,7 +1368,8 @@
                 }
             ],
             "description": "Symfony HttpKernel Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-02-25 17:19:31"
         },
         {
             "name": "symfony/process",
@@ -1389,7 +1389,6 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-02-18 21:28:10",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1416,7 +1415,8 @@
                 }
             ],
             "description": "Symfony Process Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-02-18 21:28:10"
         },
         {
             "name": "symfony/routing",
@@ -1447,7 +1447,6 @@
                 "symfony/config": "2.2.*",
                 "symfony/yaml": "2.2.*"
             },
-            "time": "2013-02-11 11:24:47",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1474,7 +1473,8 @@
                 }
             ],
             "description": "Symfony Routing Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-02-11 11:24:47"
         },
         {
             "name": "symfony/translation",
@@ -1502,7 +1502,6 @@
                 "symfony/config": "2.2.*",
                 "symfony/yaml": "2.2.*"
             },
-            "time": "2013-02-08 16:10:57",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1529,7 +1528,8 @@
                 }
             ],
             "description": "Symfony Translation Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-02-08 16:10:57"
         },
         {
             "name": "themattharris/tmhoauth",
@@ -1549,7 +1549,6 @@
                 "ext-curl": "*",
                 "php": ">=5.3.0"
             },
-            "time": "2013-02-20 15:57:52",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -1571,10 +1570,13 @@
             "keywords": [
                 "oauth",
                 "twitter"
-            ]
+            ],
+            "time": "2013-02-20 15:57:52"
         }
     ],
-    "packages-dev": null,
+    "packages-dev": [
+
+    ],
     "aliases": [
 
     ],

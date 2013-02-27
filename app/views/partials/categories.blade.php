@@ -4,7 +4,7 @@
   @foreach($categories as $category)
     <figure>
       <a href='{{ $category->link }}' @if($category->isExternal()) target='_blank' @endif>
-        {{{ $category->thumb }}}
+        {{ $category->thumb }}
         <figcaption>
           <h3>{{ $category->name }}</h3>
           <h4>{{ $category->description }}</h4>
