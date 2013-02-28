@@ -519,9 +519,10 @@ footer {
     float: left;
     margin-right: 1.69492%; }
   footer a {
-    color: #a01024; }
-  footer a:hover {
-    color: white; }
+    color: #a01024;
+    border: none; }
+    footer a:hover {
+      color: white; }
   footer .social {
     text-align: right; }
     footer .social li .name {
