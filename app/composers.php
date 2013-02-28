@@ -41,7 +41,7 @@ View::composer('les-fleurs-davril', function($view) {
 });
 
 View::composer('graceful-degradation', function($view) {
-  $view->repositories = DB::table('repositories')->orderBy('master', 'desc')->orderBy('order', 'asc')->get();
+  $view->repositories = Repository::orderBy('master', 'desc')->orderBy('order', 'asc')->get();
 });
 
 View::composer('today-is-sunday', function($view) {

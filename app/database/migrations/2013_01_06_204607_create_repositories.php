@@ -9,7 +9,9 @@ class CreateRepositories extends Migration
       $table->string('name');
       $table->text('content');
       $table->string('tags');
-      $table->string('link');
+
+      $table->string('vendor');
+      $table->string('package');
 
       $table->integer('order');
       $table->boolean('master');

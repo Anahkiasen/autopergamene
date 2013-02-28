@@ -35,6 +35,7 @@
           <h4>{{ $repository->content }}</h4>
         </figure>
         <p><strong>tags :</strong> {{ $repository->tags }}</p>
+        <p>{{ $repository->status }} {{ $repository->getButton('watch') }} {{ $repository->getButton('fork') }}</p>
       </a>
     </article>
   @endforeach

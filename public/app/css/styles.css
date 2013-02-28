@@ -33,7 +33,7 @@ footer .footer-container {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0; }
 
-.portfolio .repository figure + p {
+.portfolio .repository {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=25);
   opacity: 0.25; }
 
@@ -41,7 +41,7 @@ footer .footer-container {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
   opacity: 0.75; }
 
-.articles.open, .about .about-biography.open, .about .about-more.open, .portfolio .repository figure:hover + p, .articles article:hover datetime.absolute {
+.articles.open, .about .about-biography.open, .about .about-more.open, .portfolio .repository:hover, .articles article:hover datetime.absolute {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1; }
 
@@ -227,7 +227,7 @@ hr, .articles, a, .article article h1, .novel article h1 {
 hr, .articles {
   border-color: #f8bfc7; }
 
-a.back, .about .about-more h3, a.block, span.block, ul.fixed, ul.fixed li, header, footer, .portfolio .repository figure:hover {
+a.back, .about .about-more h3, a.block, span.block, ul.fixed, ul.fixed li, header, footer, .portfolio .repository:hover figure {
   background-color: #ea2c46;
   border: none;
   color: white;
@@ -570,14 +570,16 @@ footer {
       line-height: 3rem;
       margin-top: 32px;
       margin-top: 2rem; } }
+  .portfolio .repository:hover figure {
+    background-color: #ea2c46; }
+    .portfolio .repository:hover figure h3, .portfolio .repository:hover figure h4 {
+      color: white; }
+  .portfolio .repository .build {
+    margin-right: 0.5rem; }
   @media (min-width: 1200px) {
     .portfolio .repository figure {
       min-height: 240px;
       min-height: 15rem; } }
-  .portfolio .repository figure:hover {
-    background-color: #ea2c46; }
-    .portfolio .repository figure:hover h3, .portfolio .repository figure:hover h4 {
-      color: white; }
   .portfolio .collection {
     margin-bottom: 32px;
     margin-bottom: 2rem; }
