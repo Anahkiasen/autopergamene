@@ -1,6 +1,11 @@
 <?php
 class Repository extends Eloquent
 {
+  public function getLinkAttribute()
+  {
+    return 'https://github.com/' .$this->vendor. '/'.$this->package;
+  }
+
   public function getStatusAttribute()
   {
     $image = 'https://secure.travis-ci.org/' .$this->vendor. '/' .$this->package. '.png';
