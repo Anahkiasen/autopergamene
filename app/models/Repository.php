@@ -1,11 +1,28 @@
 <?php
 class Repository extends Eloquent
 {
+  public function getAuthorAttribute()
+  {
+    $link = 'https://github.com/' .$this->vendor;
+
+    return HTML::toBlank($link, ucfirst($this->vendor));
+  }
+
+  /**
+   * Get link to the Github page
+   *
+   * @return string
+   */
   public function getLinkAttribute()
   {
     return 'https://github.com/' .$this->vendor. '/'.$this->package;
   }
 
+  /**
+   * Get Travis status
+   *
+   * @return string
+   */
   public function getStatusAttribute()
   {
     $image = 'https://secure.travis-ci.org/' .$this->vendor. '/' .$this->package. '.png';
@@ -13,6 +30,13 @@ class Repository extends Eloquent
     return HTML::image($image, 'Travis status', array('class' => 'build'));
   }
 
+  /**
+   * Get Github buttons
+   *
+   * @param string $type Type of button
+   *
+   * @return string
+   */
   public function getButton($type)
   {
     return '<iframe src="http://ghbtns.com/github-btn.html?'.

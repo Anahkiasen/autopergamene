@@ -51,7 +51,7 @@ class RepositoriesSeeder extends BaseSeed
         'php, css framework, twitter bootstrap', 'patricktalmadge', 'bootstrapper', false],
       ['Mongovel',
         "Un wrapper pour Laravel autour du driver PHP de MongoDB pour rendre ce dernier plus similaire à Eloquent",
-        'php, laravel, mongodb', 'juien-c', 'mongovel', false],
+        'php, laravel, mongodb', 'julien-c', 'mongovel', false],
       ['Menu',
         "Une bibliothèque pour gérer et générer des menus, des plus simples aux plus complexes",
         'php, menu', 'Vespakoen', 'laravel-menu', false],

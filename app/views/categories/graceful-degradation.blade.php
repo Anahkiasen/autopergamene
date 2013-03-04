@@ -21,7 +21,7 @@
   <p>Les liens pointent soit sur Github vers la source, soit vers le site du projet.</p>
 
   @foreach($repositories as $repository)
-    @if($repository->master == 0 and !isset($title))
+    @if(!$repository->master and !isset($title))
       <h2>{{ $title = 'Projets en collaboration' }}</h2>
       <p>
         Ci-dessous des projets que je n'ai pas initiés mais sur lesquels à force de contributions je suis passé collaborateur.
@@ -34,6 +34,9 @@
           <h3>{{ $repository->name }}</h3>
           <h4>{{ $repository->content }}</h4>
         </figure>
+        @unless ($repository->master)
+          <p><strong>par</strong> {{ $repository->author }}</p>
+        @endunless
         <p><strong>tags :</strong> {{ $repository->tags }}</p>
         <p>{{ $repository->status }} {{ $repository->getButton('watch') }} {{ $repository->getButton('fork') }}</p>
       </a>

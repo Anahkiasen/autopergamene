@@ -56,7 +56,7 @@ class RoutesTest extends Cerberus\Scrutiny
   {
     // Temporary fix to thumb generation problems
     if ($categoryName == 'Illustration') {
-      //$this->setExpectedException('Imagine\Exception\RuntimeException');
+      $this->setExpectedException('Imagine\Exception\RuntimeException');
     }
 
     $url = 'category/'.String::slugify($categoryName);

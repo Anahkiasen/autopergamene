@@ -1,5 +1,5 @@
 {
-    "hash": "0fed4b697c7b83524455ca578ab2bb10",
+    "hash": "fcfb82714dae1f736da32ce196dd6a78",
     "packages": [
         {
             "name": "anahkiasen/cerberus",
@@ -98,7 +98,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Anahkiasen/glow.git",
+                "url": "git://github.com/Anahkiasen/glow.git",
                 "reference": "01e5cf11525324d2614bd9842f3e2ff9e2f6fdf2"
             },
             "dist": {
@@ -132,16 +132,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Anahkiasen/underscore-php.git",
-                "reference": "e106a0df389d8f321496f94d2f38eff0556120c9"
+                "reference": "15229b22dc2302ea1d56a7a74f254925dfd0ac32"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Anahkiasen/underscore-php/zipball/e106a0df389d8f321496f94d2f38eff0556120c9",
-                "reference": "e106a0df389d8f321496f94d2f38eff0556120c9",
+                "url": "https://api.github.com/repos/Anahkiasen/underscore-php/zipball/15229b22dc2302ea1d56a7a74f254925dfd0ac32",
+                "reference": "15229b22dc2302ea1d56a7a74f254925dfd0ac32",
                 "shasum": ""
             },
             "require": {
                 "illuminate/support": "4.0.*@dev",
+                "patchwork/utf8": "1.0.*",
                 "php": ">=5.3.0"
             },
             "type": "library",
@@ -161,7 +162,7 @@
                 }
             ],
             "description": "A redacted port of Underscore.js for PHP",
-            "time": "2013-02-27 14:01:46"
+            "time": "2013-03-04 21:51:10"
         },
         {
             "name": "dflydev/markdown",
@@ -227,7 +228,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/avalanche123/Imagine.git",
+                "url": "https://github.com/avalanche123/Imagine",
                 "reference": "v0.4.1"
             },
             "dist": {
@@ -313,7 +314,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jasonlewis/basset.git",
+                "url": "https://github.com/jasonlewis/basset",
                 "reference": "b5dd8228474ffd8a439234832e83e23531e7f8bf"
             },
             "dist": {
@@ -365,7 +366,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jasonlewis/expressive-date.git",
+                "url": "https://github.com/jasonlewis/expressive-date",
                 "reference": "v1.0.1"
             },
             "dist": {
@@ -482,12 +483,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "3c2d88bf460fd99d4b9b2f128631ade713765496"
+                "reference": "a0a805c8896d4de648cb9438233bbcda66a17a2b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/3c2d88bf460fd99d4b9b2f128631ade713765496",
-                "reference": "3c2d88bf460fd99d4b9b2f128631ade713765496",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/a0a805c8896d4de648cb9438233bbcda66a17a2b",
+                "reference": "a0a805c8896d4de648cb9438233bbcda66a17a2b",
                 "shasum": ""
             },
             "require": {
@@ -574,7 +575,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-03-03 21:57:58"
+            "time": "2013-03-04 22:59:54"
         },
         {
             "name": "meido/html",
@@ -681,7 +682,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/natxet/CssMin.git",
+                "url": "git://github.com/natxet/CssMin.git",
                 "reference": "ef023b701821e73858f6af457f5fdef96cf9cd4d"
             },
             "dist": {
@@ -771,12 +772,12 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/opauth/opauth.git",
+                "url": "git://github.com/uzyn/opauth.git",
                 "reference": "c78915608658d5f25c20eecf771082e5317a4a36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/opauth/opauth/zipball/c78915608658d5f25c20eecf771082e5317a4a36",
+                "url": "https://api.github.com/repos/uzyn/opauth/zipball/c78915608658d5f25c20eecf771082e5317a4a36",
                 "reference": "c78915608658d5f25c20eecf771082e5317a4a36",
                 "shasum": ""
             },
@@ -906,7 +907,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/swiftmailer/swiftmailer.git",
+                "url": "git://github.com/swiftmailer/swiftmailer.git",
                 "reference": "b6bfc8f7f8ae5dac7883885ee323dc3b53ab7d21"
             },
             "dist": {
