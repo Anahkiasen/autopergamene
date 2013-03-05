@@ -483,12 +483,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "dc92efb5b717ea8f6ac4a643ae32a1b3fd45beff"
+                "reference": "5e1fd17b4b1f64659799fa07076e1e4d7a67ea8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/dc92efb5b717ea8f6ac4a643ae32a1b3fd45beff",
-                "reference": "dc92efb5b717ea8f6ac4a643ae32a1b3fd45beff",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/5e1fd17b4b1f64659799fa07076e1e4d7a67ea8d",
+                "reference": "5e1fd17b4b1f64659799fa07076e1e4d7a67ea8d",
                 "shasum": ""
             },
             "require": {
@@ -575,7 +575,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-03-05 05:22:59"
+            "time": "2013-03-05 14:14:35"
         },
         {
             "name": "meido/html",
