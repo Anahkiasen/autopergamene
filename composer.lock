@@ -1,5 +1,5 @@
 {
-    "hash": "fcfb82714dae1f736da32ce196dd6a78",
+    "hash": "0fed4b697c7b83524455ca578ab2bb10",
     "packages": [
         {
             "name": "anahkiasen/cerberus",
@@ -98,7 +98,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git://github.com/Anahkiasen/glow.git",
+                "url": "https://github.com/Anahkiasen/glow.git",
                 "reference": "01e5cf11525324d2614bd9842f3e2ff9e2f6fdf2"
             },
             "dist": {
@@ -228,7 +228,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/avalanche123/Imagine",
+                "url": "https://github.com/avalanche123/Imagine.git",
                 "reference": "v0.4.1"
             },
             "dist": {
@@ -314,7 +314,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jasonlewis/basset",
+                "url": "https://github.com/jasonlewis/basset.git",
                 "reference": "b5dd8228474ffd8a439234832e83e23531e7f8bf"
             },
             "dist": {
@@ -366,7 +366,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jasonlewis/expressive-date",
+                "url": "https://github.com/jasonlewis/expressive-date.git",
                 "reference": "v1.0.1"
             },
             "dist": {
@@ -483,12 +483,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "a0a805c8896d4de648cb9438233bbcda66a17a2b"
+                "reference": "dc92efb5b717ea8f6ac4a643ae32a1b3fd45beff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/a0a805c8896d4de648cb9438233bbcda66a17a2b",
-                "reference": "a0a805c8896d4de648cb9438233bbcda66a17a2b",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/dc92efb5b717ea8f6ac4a643ae32a1b3fd45beff",
+                "reference": "dc92efb5b717ea8f6ac4a643ae32a1b3fd45beff",
                 "shasum": ""
             },
             "require": {
@@ -575,7 +575,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-03-04 22:59:54"
+            "time": "2013-03-05 05:22:59"
         },
         {
             "name": "meido/html",
@@ -682,7 +682,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git://github.com/natxet/CssMin.git",
+                "url": "https://github.com/natxet/CssMin.git",
                 "reference": "ef023b701821e73858f6af457f5fdef96cf9cd4d"
             },
             "dist": {
@@ -772,12 +772,12 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git://github.com/uzyn/opauth.git",
+                "url": "https://github.com/opauth/opauth.git",
                 "reference": "c78915608658d5f25c20eecf771082e5317a4a36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/uzyn/opauth/zipball/c78915608658d5f25c20eecf771082e5317a4a36",
+                "url": "https://api.github.com/repos/opauth/opauth/zipball/c78915608658d5f25c20eecf771082e5317a4a36",
                 "reference": "c78915608658d5f25c20eecf771082e5317a4a36",
                 "shasum": ""
             },
@@ -907,7 +907,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git://github.com/swiftmailer/swiftmailer.git",
+                "url": "https://github.com/swiftmailer/swiftmailer.git",
                 "reference": "b6bfc8f7f8ae5dac7883885ee323dc3b53ab7d21"
             },
             "dist": {
