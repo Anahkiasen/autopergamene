@@ -115,6 +115,7 @@ return array(
 		'Cerberus\CerberusServiceProvider',
 		'Basset\BassetServiceProvider',
 		'Glow\GlowServiceProvider',
+		'Illuminage\IlluminageServiceProvider',
 
 	),
 
@@ -189,7 +190,7 @@ return array(
 
 		// Cerberus
 		'HTML'       => 'Cerberus\Facades\HTML',
-		'Thumb'      => 'Cerberus\Facades\Thumb',
+		'Thumb'      => 'Illuminage\Thumb',
 
 		// Other packages
 		'Basset'     => 'Basset\Facades\Basset',

@@ -1,5 +1,5 @@
 {
-    "hash": "0fed4b697c7b83524455ca578ab2bb10",
+    "hash": "fea0f9c13c5ae9b05c5c5b424f2180cd",
     "packages": [
         {
             "name": "anahkiasen/cerberus",
@@ -7,17 +7,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Anahkiasen/cerberus.git",
-                "reference": "e87b6eeb80d2edef803f69157ca0323cad013c4f"
+                "reference": "6ba21aaa31e0fd8b1241844a65aa72cb800ae010"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Anahkiasen/cerberus/zipball/e87b6eeb80d2edef803f69157ca0323cad013c4f",
-                "reference": "e87b6eeb80d2edef803f69157ca0323cad013c4f",
+                "url": "https://api.github.com/repos/Anahkiasen/cerberus/zipball/6ba21aaa31e0fd8b1241844a65aa72cb800ae010",
+                "reference": "6ba21aaa31e0fd8b1241844a65aa72cb800ae010",
                 "shasum": ""
             },
             "require": {
-                "imagine/imagine": "dev-master",
-                "meido/html": "1.1.*",
+                "anahkiasen/illuminage": "dev-master",
+                "laravelbook/laravel4-powerpack": "dev-master",
                 "php": ">=5.3.0"
             },
             "require-dev": {
@@ -40,7 +40,7 @@
                 }
             ],
             "description": "Various helpers and classes for the Illuminate framework",
-            "time": "2013-02-25 16:13:16"
+            "time": "2013-03-08 08:59:56"
         },
         {
             "name": "anahkiasen/flickering",
@@ -120,11 +120,95 @@
             "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
-                    "name": "Maxime Fabre",
+                    "name": "Anahkiasen",
                     "email": "ehtnam6@gmail.com"
                 }
             ],
             "time": "2013-01-11 19:15:45"
+        },
+        {
+            "name": "anahkiasen/html-object",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Anahkiasen/html-object.git",
+                "reference": "98f1cd0326969e235a52e486f91d29c9fcc1695f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Anahkiasen/html-object/zipball/98f1cd0326969e235a52e486f91d29c9fcc1695f",
+                "reference": "98f1cd0326969e235a52e486f91d29c9fcc1695f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "HtmlObject": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anahkiasen",
+                    "email": "ehtnam6@gmail.com"
+                }
+            ],
+            "description": "A set of classes to create and manipulate HTML objects abstractions",
+            "time": "2013-03-06 13:01:25"
+        },
+        {
+            "name": "anahkiasen/illuminage",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Anahkiasen/illuminage.git",
+                "reference": "2f99a81468d2fca40d3abc880f84242d31cc27a3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Anahkiasen/illuminage/zipball/2f99a81468d2fca40d3abc880f84242d31cc27a3",
+                "reference": "2f99a81468d2fca40d3abc880f84242d31cc27a3",
+                "shasum": ""
+            },
+            "require": {
+                "anahkiasen/html-object": "dev-master",
+                "illuminate/support": "4.0.x",
+                "imagine/imagine": "dev-develop",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Illuminage": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anahkiasen",
+                    "email": "ehtnam6@gmail.com"
+                }
+            ],
+            "description": "Wrapper for the Imagine library to hook into the Laravel framework",
+            "keywords": [
+                "images",
+                "imagine",
+                "laravel",
+                "thumb"
+            ],
+            "time": "2013-03-06 14:35:42"
         },
         {
             "name": "anahkiasen/underscore-php",
@@ -157,7 +241,7 @@
             ],
             "authors": [
                 {
-                    "name": "Maxime Fabre",
+                    "name": "Anahkiasen",
                     "email": "ehtnam6@gmail.com"
                 }
             ],
@@ -225,16 +309,16 @@
         },
         {
             "name": "imagine/Imagine",
-            "version": "dev-master",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/avalanche123/Imagine.git",
-                "reference": "v0.4.1"
+                "reference": "990b7bac87b5ac1f47a40e860eef7ca67a6e4396"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/avalanche123/Imagine/zipball/v0.4.1",
-                "reference": "v0.4.1",
+                "url": "https://api.github.com/repos/avalanche123/Imagine/zipball/990b7bac87b5ac1f47a40e860eef7ca67a6e4396",
+                "reference": "990b7bac87b5ac1f47a40e860eef7ca67a6e4396",
                 "shasum": ""
             },
             "require": {
@@ -242,6 +326,11 @@
             },
             "require-dev": {
                 "sami/sami": "dev-master"
+            },
+            "suggest": {
+                "ext-gd": "to use the GD implementation",
+                "ext-gmagick": "to use the Gmagick implementation",
+                "ext-imagick": "to use the Imagick implementation"
             },
             "type": "library",
             "autoload": {
@@ -268,7 +357,7 @@
                 "image manipulation",
                 "image processing"
             ],
-            "time": "2012-12-13 18:31:18"
+            "time": "2013-02-05 00:59:16"
         },
         {
             "name": "ircmaxell/password-compat",
@@ -297,7 +386,7 @@
             "authors": [
                 {
                     "name": "Anthony Ferrara",
-                    "email": "ircmaxell@php.net",
+                    "email": "ircmaxell@ircmaxell.com",
                     "homepage": "http://blog.ircmaxell.com"
                 }
             ],
@@ -412,12 +501,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kriswallsmith/assetic.git",
-                "reference": "v1.1.0-alpha4"
+                "reference": "fcee205a5a3a859c009d976ba3acfe67958e912c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/v1.1.0-alpha4",
-                "reference": "v1.1.0-alpha4",
+                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/fcee205a5a3a859c009d976ba3acfe67958e912c",
+                "reference": "fcee205a5a3a859c009d976ba3acfe67958e912c",
                 "shasum": ""
             },
             "require": {
@@ -475,7 +564,7 @@
                 "compression",
                 "minification"
             ],
-            "time": "2013-02-24 17:22:20"
+            "time": "2013-03-05 17:56:54"
         },
         {
             "name": "laravel/framework",
@@ -483,12 +572,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "5e1fd17b4b1f64659799fa07076e1e4d7a67ea8d"
+                "reference": "d08afd0b5f6fee4eef47832c85f4070258cc1958"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/5e1fd17b4b1f64659799fa07076e1e4d7a67ea8d",
-                "reference": "5e1fd17b4b1f64659799fa07076e1e4d7a67ea8d",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/d08afd0b5f6fee4eef47832c85f4070258cc1958",
+                "reference": "d08afd0b5f6fee4eef47832c85f4070258cc1958",
                 "shasum": ""
             },
             "require": {
@@ -575,45 +664,57 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-03-05 14:14:35"
+            "time": "2013-03-08 05:24:04"
         },
         {
-            "name": "meido/html",
-            "version": "v1.1.2",
+            "name": "laravelbook/laravel4-powerpack",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/meido/html.git",
-                "reference": "v1.1.2"
+                "url": "https://github.com/laravelbook/laravel4-powerpack.git",
+                "reference": "2a28be7379d937a4549aeac9f860c651d1cf09e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/meido/html/zipball/v1.1.2",
-                "reference": "v1.1.2",
+                "url": "https://api.github.com/repos/laravelbook/laravel4-powerpack/zipball/2a28be7379d937a4549aeac9f860c651d1cf09e7",
+                "reference": "2a28be7379d937a4549aeac9f860c651d1cf09e7",
                 "shasum": ""
             },
             "require": {
                 "illuminate/routing": "4.0.x",
                 "illuminate/support": "4.0.x",
-                "php": ">=5.3.0"
+                "php": ">=5.3.0",
+                "raveren/kint": "dev-master"
             },
             "type": "library",
             "autoload": {
-                "classmap": [
-                    "src/migrations"
-                ],
                 "psr-0": {
-                    "Meido\\HTML": "src/"
+                    "LaravelBook\\Laravel4Powerpack": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
             "authors": [
                 {
-                    "name": "Joni Chandra",
-                    "email": "joniliciously@gmail.com"
+                    "name": "Max Ehsan",
+                    "email": "contact@laravelbook.com",
+                    "homepage": "http://laravelbook.com/",
+                    "role": "Maintainer"
                 }
             ],
-            "description": "A port of Laravel 3's HTML class",
-            "time": "2013-02-22 07:11:11"
+            "description": "Port of Laravel 3's HTML, Form and Str classes",
+            "homepage": "http://laravelbook.com/",
+            "keywords": [
+                "form",
+                "framework",
+                "html",
+                "laravel",
+                "string",
+                "support"
+            ],
+            "time": "2013-02-27 10:15:26"
         },
         {
             "name": "monolog/monolog",
@@ -903,6 +1004,52 @@
             "time": "2012-12-21 11:40:51"
         },
         {
+            "name": "raveren/kint",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/raveren/kint.git",
+                "reference": "654e6692406279e42e13e4510017fe433b1f85aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/raveren/kint/zipball/654e6692406279e42e13e4510017fe433b1f85aa",
+                "reference": "654e6692406279e42e13e4510017fe433b1f85aa",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "Kint.class.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rokas Šleinius",
+                    "homepage": "https://github.com/raveren"
+                },
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/raveren/kint/contributors"
+                }
+            ],
+            "description": "Kint - debugging helper for PHP developers",
+            "homepage": "https://github.com/raveren/kint",
+            "keywords": [
+                "debug",
+                "kint",
+                "php"
+            ],
+            "time": "2013-03-06 19:02:43"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "dev-master",
             "source": {
@@ -1013,12 +1160,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "7dc8d04604e6592665132e503aafde729eaf5611"
+                "reference": "be71bd97884c5222a80f3532c158d3777f276d1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/7dc8d04604e6592665132e503aafde729eaf5611",
-                "reference": "7dc8d04604e6592665132e503aafde729eaf5611",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/be71bd97884c5222a80f3532c158d3777f276d1e",
+                "reference": "be71bd97884c5222a80f3532c158d3777f276d1e",
                 "shasum": ""
             },
             "require": {
@@ -1051,7 +1198,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2013-03-01 14:42:44"
+            "time": "2013-03-06 17:38:49"
         },
         {
             "name": "symfony/css-selector",
@@ -1214,12 +1361,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Finder.git",
-                "reference": "v2.2.0"
+                "reference": "e8f66023ee434036569eac348c20b5a43c23c2ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Finder/zipball/v2.2.0",
-                "reference": "v2.2.0",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/e8f66023ee434036569eac348c20b5a43c23c2ac",
+                "reference": "e8f66023ee434036569eac348c20b5a43c23c2ac",
                 "shasum": ""
             },
             "require": {
@@ -1252,7 +1399,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "http://symfony.com",
-            "time": "2013-02-28 14:06:36"
+            "time": "2013-03-06 19:43:20"
         },
         {
             "name": "symfony/http-foundation",
@@ -1311,12 +1458,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpKernel.git",
-                "reference": "0f00a19f8ed753d97ff49ffceda04e5878ad9d3d"
+                "reference": "d003a3155c0987e34d9c21efccee4028c9bb5acc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/0f00a19f8ed753d97ff49ffceda04e5878ad9d3d",
-                "reference": "0f00a19f8ed753d97ff49ffceda04e5878ad9d3d",
+                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/d003a3155c0987e34d9c21efccee4028c9bb5acc",
+                "reference": "d003a3155c0987e34d9c21efccee4028c9bb5acc",
                 "shasum": ""
             },
             "require": {
@@ -1371,7 +1518,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "http://symfony.com",
-            "time": "2013-03-01 10:42:10"
+            "time": "2013-03-06 17:38:49"
         },
         {
             "name": "symfony/process",
@@ -1427,12 +1574,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Routing.git",
-                "reference": "v2.2.0-RC3"
+                "reference": "3a97436e581bae44d0eec454a74bbb4f93593e78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Routing/zipball/v2.2.0-RC3",
-                "reference": "v2.2.0-RC3",
+                "url": "https://api.github.com/repos/symfony/Routing/zipball/3a97436e581bae44d0eec454a74bbb4f93593e78",
+                "reference": "3a97436e581bae44d0eec454a74bbb4f93593e78",
                 "shasum": ""
             },
             "require": {
@@ -1476,7 +1623,7 @@
             ],
             "description": "Symfony Routing Component",
             "homepage": "http://symfony.com",
-            "time": "2013-02-11 11:24:47"
+            "time": "2013-03-06 19:31:19"
         },
         {
             "name": "symfony/translation",
@@ -1587,9 +1734,9 @@
         "anahkiasen/cerberus": 20,
         "anahkiasen/flickering": 20,
         "anahkiasen/glow": 20,
+        "anahkiasen/illuminage": 20,
         "anahkiasen/underscore-php": 20,
         "dflydev/markdown": 20,
-        "imagine/imagine": 20,
         "jasonlewis/basset": 20,
         "jasonlewis/expressive-date": 20,
         "natxet/cssmin": 20

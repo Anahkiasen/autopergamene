@@ -16,10 +16,10 @@ class Illustration extends Eloquent
    */
   public function thumb($folder, $name = null)
   {
-    $image = Thumb::square($folder.$this->image);
+    $image = Thumb::square($folder.$this->image, 200);
     if (!$name) $name = $this->name;
 
-    return HTML::image($image, $name);
+    return $image->alt($name);
   }
 
   /**
