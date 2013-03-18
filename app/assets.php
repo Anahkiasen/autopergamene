@@ -8,7 +8,7 @@
  * Base required assets for all pages
  */
 Basset::collection('application', function($collection) {
-  $collection->add('components/normalize/normalize.css')->apply('CssMin');
+  $collection->add('components/normalize-css/normalize.css')->apply('CssMin');
   $collection->add('app/css/styles.css')->apply('UriRewriteFilter')->apply('CssMin');
 
   $collection->add('app/js/scripts.js');
@@ -29,7 +29,7 @@ Basset::collection('modernizr', function($collection) {
 
 Basset::collection('lazyload', function($collection) {
   $collection->add('components/jquery/jquery.min.js');
-  $collection->add('components/lazyload/jquery.lazyload.min.js');
+  $collection->add('components/jquery.lazyload/jquery.lazyload.min.js');
   $collection->add('app/js/lazyload.js');
 });
 
