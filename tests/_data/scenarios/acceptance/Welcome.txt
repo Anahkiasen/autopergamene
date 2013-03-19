@@ -1,0 +1,4 @@
+I WANT TO CHECK IF HOMEPAGE WORKS
+
+I am on page "/"
+I see "maxime fabre 23 ans"

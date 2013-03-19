@@ -10,3 +10,6 @@ Failed asserting that response contains "home". Response was saved to 'log' dire
 [2013-03-19 13:59:25] WelcomeCept.php.INFO: am on page "/" [] []
 [2013-03-19 13:59:25] WelcomeCept.php.INFO: see "maxime fabre 23 ans" [] []
 [2013-03-19 13:59:25] WelcomeCept.php.INFO: PASSED [] []
+[2013-03-19 14:11:09] WelcomeCept.php.INFO: am on page "/" [] []
+[2013-03-19 14:11:09] WelcomeCept.php.INFO: see "maxime fabre 23 ans" [] []
+[2013-03-19 14:11:09] WelcomeCept.php.INFO: PASSED [] []
