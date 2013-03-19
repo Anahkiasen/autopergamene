@@ -1,0 +1,12 @@
+[2013-03-19 13:56:58] WelcomeCept.php.INFO: am on page "/" [] []
+[2013-03-19 13:56:58] WelcomeCept.php.INFO: see "Home" [] []
+[2013-03-19 13:56:58] WelcomeCept.php.ALERT: 'Home' in page..
+Failed asserting that response contains "home". Response was saved to 'log' directory. [] []
+[2013-03-19 13:56:58] WelcomeCept.php.INFO: # FAILED # [] []
+[2013-03-19 13:56:58] WelcomeCept.php.INFO: PASSED [] []
+[2013-03-19 13:57:25] WelcomeCept.php.INFO: am on page "/" [] []
+[2013-03-19 13:57:25] WelcomeCept.php.INFO: see "maxime fabre 23 ans" [] []
+[2013-03-19 13:57:25] WelcomeCept.php.INFO: PASSED [] []
+[2013-03-19 13:59:25] WelcomeCept.php.INFO: am on page "/" [] []
+[2013-03-19 13:59:25] WelcomeCept.php.INFO: see "maxime fabre 23 ans" [] []
+[2013-03-19 13:59:25] WelcomeCept.php.INFO: PASSED [] []
