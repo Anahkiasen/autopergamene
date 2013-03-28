@@ -7,7 +7,7 @@ Modernizr.load [
 
 # Legacy addEventListener ------------------------------------------ /
 
-addEvent = (->
+window.addEvent = (->
   if document.addEventListener
     return (el, type, fn) ->
       el.addEventListener type, fn, false
