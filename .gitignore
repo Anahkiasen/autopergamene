@@ -1,10 +1,11 @@
-.DS_Store
-.sass-cache
-/bootstrap/compiled.php
 /vendor
+
 app/storage/database
-composer.phar
+
 public/assets
 public/cache/*.jpg
+
+.DS_Store
+.sass-cache
 sftp-config.json
 Thumbs.db
