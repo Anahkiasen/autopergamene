@@ -1,7 +1,8 @@
 <?php
 use Underscore\Types\String;
 
-class DatabaseSeeder extends Seeder {
+class DatabaseSeeder extends Seeder
+{
 
 	/**
 	 * Run the database seeds.
@@ -10,21 +11,23 @@ class DatabaseSeeder extends Seeder {
 	 */
 	public function run()
 	{
-    $this->call('CategoriesSeeder');
+		Eloquent::unguard();
 
-    $this->call('SupportsSeeder');
-    $this->call('IllustrationsSeeder');
+		$this->call('CategoriesSeeder');
 
-    $this->call('PhotosetsSeeder');
-    $this->call('CollectionsSeeder');
-    $this->call('PhotosSeeder');
+		$this->call('SupportsSeeder');
+		$this->call('IllustrationsSeeder');
 
-    $this->call('ArticlesSeeder');
-    $this->call('RepositoriesSeeder');
-    $this->call('ServicesSeeder');
-    $this->call('StoriesSeeder');
-    $this->call('TableauxSeeder');
-    $this->call('TracksSeeder');
+		$this->call('PhotosetsSeeder');
+		$this->call('CollectionsSeeder');
+		$this->call('PhotosSeeder');
+
+		$this->call('ArticlesSeeder');
+		$this->call('RepositoriesSeeder');
+		$this->call('ServicesSeeder');
+		$this->call('StoriesSeeder');
+		$this->call('TableauxSeeder');
+		$this->call('TracksSeeder');
 	}
 
 }
