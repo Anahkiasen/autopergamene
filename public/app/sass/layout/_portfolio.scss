@@ -5,7 +5,7 @@
 .portfolio {
 
   @extend %responsive-body;
-  background-image: rgba-inline(white, 0.5);
+  @include rgba-background-inline(rgba(white, 0.5));
 
   // Titles -------------------------------------------------------- /
 

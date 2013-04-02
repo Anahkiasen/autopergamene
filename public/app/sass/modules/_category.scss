@@ -14,7 +14,7 @@
   @include rem(padding, 1rem);
 
   &:active {
-    background: rgba-inline(black, 0.1);
+    @include rgba-background-inline(rgba(black, 0.1));
   }
 
   // Titles ------------------------------------------------------ /
@@ -43,7 +43,7 @@
 
   @include to($tablet) {
     &:hover {
-      background: rgba-inline(black, 0.1);
+      @include rgba-background-inline(rgba(black, 0.1));
     }
     img {
       @include span-columns(3);

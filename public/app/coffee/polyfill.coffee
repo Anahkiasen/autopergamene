@@ -18,18 +18,13 @@ window.addEvent = (->
 
 # Array::forEach --------------------------------------------------- /
 
-unless Array::forEach
-  Array::forEach = (fn, scope) ->
-    i = 0
-    len = @length
-
-    while i < len
-      fn.call scope, this[i], i, this
-      ++i
+unless Array::forEach then Array::forEach = (fn, scope) ->
+  for item in [0...@length] by 1
+    fn.call(scope, this[item], item, this)
 
 # Little helper function ------------------------------------------- /
 
-window.foreach = (elements, callback) ->
+@foreach = (elements, callback) ->
   elements = document.querySelectorAll elements
   elements = Array::slice.call elements, 0
   elements.forEach callback

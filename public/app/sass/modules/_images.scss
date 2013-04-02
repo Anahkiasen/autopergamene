@@ -24,7 +24,7 @@
   @extend %block-light;
   @extend %border-box;
   @extend %wide;
-  background-image: rgba-inline(black, 0.03);
+  @include rgba-background-inline(rgba(black, 0.03));
   text-align: center;
   @include from($desktop) {
     .image-wrap {

@@ -253,7 +253,8 @@ a.block, a.back, span.block {
     background-color: #f17283; }
 
 .portfolio blockquote, .article article blockquote, .novel article blockquote, .novel article ul, .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .portfolio .illustration, .portfolio .tableau, .portfolio .photoset figure, .article article .wp-caption, .novel article .wp-caption, .portfolio .illustration figcaption, .portfolio .tableau figcaption, dl, .portfolio p, .about p, .about .about-more ul, .article article del, .novel article del, .novel .alert {
-  background: rgba-inline(black, 0.05);
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNi4AUAABYAEFIOBzYAAAAASUVORK5CYII=');
+  background: rgba(0, 0, 0, 0.05);
   color: #333333;
   padding: 12px;
   padding: 0.75rem;
@@ -279,7 +280,8 @@ a.block, a.back, span.block {
   padding: 16px;
   padding: 1rem; }
   .categories figure:active, .portfolio .photoset--list:active, .portfolio .support:active, .portfolio .repository figure:active {
-    background: rgba-inline(black, 0.1); }
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNikAIAACMAHf9yvGMAAAAASUVORK5CYII=');
+    background: rgba(0, 0, 0, 0.1); }
   .categories figure figcaption, .portfolio .photoset--list figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption {
     padding-left: 16px;
     padding-left: 1rem; }
@@ -294,7 +296,8 @@ a.block, a.back, span.block {
     text-transform: none; }
   @media (max-width: 768px) {
     .categories figure:hover, .portfolio .photoset--list:hover, .portfolio .support:hover, .portfolio .repository figure:hover {
-      background: rgba-inline(black, 0.1); }
+      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNikAIAACMAHf9yvGMAAAAASUVORK5CYII=');
+      background: rgba(0, 0, 0, 0.1); }
     .categories figure img, .portfolio .photoset--list img, .portfolio .support img, .portfolio .repository figure img {
       width: 23.72881%;
       float: left;
@@ -414,7 +417,8 @@ a.block, a.back, span.block {
   margin: 1rem 0;
   padding: 16px;
   padding: 1rem;
-  background-image: rgba-inline(black, 0.03);
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNi4AAAABEAC43pSewAAAAASUVORK5CYII=');
+  background: rgba(0, 0, 0, 0.03);
   text-align: center; }
   @media (min-width: 980px) {
     .portfolio .illustration .image-wrap, .portfolio .tableau .image-wrap, .portfolio .photoset figure .image-wrap, .article article .wp-caption .image-wrap, .novel article .wp-caption .image-wrap, .portfolio .illustration .about aside, .about .portfolio .illustration aside, .portfolio .tableau .about aside, .about .portfolio .tableau aside, .portfolio .photoset figure .about aside, .about .portfolio .photoset figure aside, .article article .wp-caption .about aside, .about .article article .wp-caption aside, .novel article .wp-caption .about aside, .about .novel article .wp-caption aside {
@@ -554,7 +558,8 @@ footer {
         width: 100%; } }
 
 .portfolio {
-  background-image: rgba-inline(white, 0.5); }
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6Xw8AAoYBgRDEVrUAAAAASUVORK5CYII=');
+  background: rgba(255, 255, 255, 0.5); }
   .portfolio h1 {
     margin: 16px 0;
     margin: 1rem 0;
@@ -763,7 +768,8 @@ footer {
   text-transform: lowercase; }
 
 .article, .novel {
-  background-image: rgba-inline(white, 0.5); }
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6Xw8AAoYBgRDEVrUAAAAASUVORK5CYII=');
+  background: rgba(255, 255, 255, 0.5); }
   .article h1, .novel h1 {
     text-align: center; }
   .article article .wp-caption a, .novel article .wp-caption a {

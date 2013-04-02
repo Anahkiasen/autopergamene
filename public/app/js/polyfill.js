@@ -26,20 +26,17 @@
 
   if (!Array.prototype.forEach) {
     Array.prototype.forEach = function(fn, scope) {
-      var i, len, _results;
+      var item, _i, _ref, _results;
 
-      i = 0;
-      len = this.length;
       _results = [];
-      while (i < len) {
-        fn.call(scope, this[i], i, this);
-        _results.push(++i);
+      for (item = _i = 0, _ref = this.length; _i < _ref; item = _i += 1) {
+        _results.push(fn.call(scope, this[item], item, this));
       }
       return _results;
     };
   }
 
-  window.foreach = function(elements, callback) {
+  this.foreach = function(elements, callback) {
     elements = document.querySelectorAll(elements);
     elements = Array.prototype.slice.call(elements, 0);
     return elements.forEach(callback);
