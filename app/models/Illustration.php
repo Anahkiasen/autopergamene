@@ -1,5 +1,5 @@
 <?php
-class Illustration extends Eloquent
+class Illustration extends Base
 {
 
   // Relationships ------------------------------------------------- /

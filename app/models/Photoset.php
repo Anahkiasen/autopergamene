@@ -10,7 +10,7 @@ class Photoset extends Base
 
   public function thumbnail()
   {
-    return $this->hasOne('Photo')->where('thumbnail', 1);
+    return $this->hasOne('Photo')->thumbnails();
   }
 
   // Fetchers ------------------------------------------------------ /

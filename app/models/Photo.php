@@ -1,5 +1,5 @@
 <?php
-class Photo extends Eloquent
+class Photo extends Base
 {
   /**
    * Aliases for sizes

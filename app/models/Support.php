@@ -1,5 +1,5 @@
 <?php
-class Support extends Eloquent
+class Support extends Base
 {
   // Relationships ------------------------------------------------- /
 
@@ -10,7 +10,7 @@ class Support extends Eloquent
 
   public function thumbnail()
   {
-    return $this->hasOne('Illustration')->where('thumbnail', 1);
+    return $this->hasOne('Illustration')->thumbnails();
   }
 
   // Attributes ---------------------------------------------------- /
