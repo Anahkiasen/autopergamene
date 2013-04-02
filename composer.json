@@ -19,8 +19,7 @@
     "dflydev/markdown": "dev-master",
     "jasonlewis/basset": "dev-master",
     "jasonlewis/expressive-date": "dev-master",
-    "natxet/CssMin": "dev-master",
-    "Codeception/Codeception": "dev-master"
+    "natxet/CssMin": "dev-master"
   },
   "repositories": [
     {
