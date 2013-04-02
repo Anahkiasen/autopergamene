@@ -48,7 +48,7 @@
             <li>HTML5</li>
             <li>CSS3 – LESS et SASS</li>
             <li>Javascript – Coffeescript</li>
-            <li>PHP 5.4+ et SQL/SQLite</li>
+            <li>PHP 5.4+, MySQL/SQLite, MongoDB</li>
             <li>ActionScript 2</li>
           </ul>
         </article>
