@@ -6,9 +6,9 @@ class Base extends Eloquent
   /**
    * Get tableaux by latest first
    */
-  public static function latest()
+  public static function scopeLatest($query)
   {
-    return static::orderBy('created_at', 'desc')->get();
+    return $query->orderBy('created_at', 'desc');
   }
 
   // Attributes ---------------------------------------------------- /

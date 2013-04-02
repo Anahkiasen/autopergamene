@@ -1,13 +1,12 @@
 {
-  "name": "autopergamene",
-  "version": "0.0.0",
+  "name": "Autopergamene",
   "dependencies": {
-    "bootstrap": "~2.3.1",
+    "bootstrap": "latest",
     "classlist": "https://github.com/eligrey/classList.js.git",
-    "jquery": "~1.9.1",
-    "jquery.lazyload": "~1.8.4",
-    "normalize-css": "~2.1.0",
-    "respond": "~1.2.0",
+    "jquery": "latest",
+    "jquery.lazyload": "latest",
+    "normalize-css": "latest",
+    "respond": "latest",
     "rainbow": "https://github.com/ccampbell/rainbow.git#~1.1.9"
   }
 }

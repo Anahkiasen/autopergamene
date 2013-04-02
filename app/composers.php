@@ -25,7 +25,7 @@ View::composer('footer', function($view) {
 //////////////////////////////////////////////////////////////////////
 
 View::composer('en-averse-dencre', function($view) {
-  $view->articles = Article::latest();
+  $view->articles = Article::latest()->get();
 });
 
 View::composer('the-winter-throat', function($view) {
@@ -37,7 +37,7 @@ View::composer('memorabilia', function($view) {
 });
 
 View::composer('les-fleurs-davril', function($view) {
-  $view->stories = Story::latest();
+  $view->stories = Story::latest()->get();
 });
 
 View::composer('graceful-degradation', function($view) {
@@ -45,7 +45,7 @@ View::composer('graceful-degradation', function($view) {
 });
 
 View::composer('today-is-sunday', function($view) {
-  $view->tableaux = Tableau::latest();
+  $view->tableaux = Tableau::latest()->get();
 });
 
 View::composer('illustration', function($view) {
