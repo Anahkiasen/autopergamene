@@ -9,6 +9,7 @@
   }
 
   // Text styles --------------------------------------------------- /
+
   h1 {
     @include font-size(4rem);
     @include rem(margin-bottom, 2rem);

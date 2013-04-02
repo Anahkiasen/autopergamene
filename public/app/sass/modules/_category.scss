@@ -5,16 +5,20 @@
 // Categories ------------------------------------------------------ /
 
 %category {
+
   @extend %container-wide;
   @extend %block-light;
   @extend %border-box;
   @extend %transition;
   @extend %margin-underline;
   @include rem(padding, 1rem);
+
   &:active {
     background: rgba-inline(black, 0.1);
   }
+
   // Titles ------------------------------------------------------ /
+
   figcaption {
     @extend %border-box;
     @include rem(padding-left, 1rem);
@@ -34,7 +38,9 @@
     @include rem(margin-top, 0.5rem);
     text-transform: none;
   }
+
   // Responsive ---------------------------------------------------- /
+
   @include to($tablet) {
     &:hover {
       background: rgba-inline(black, 0.1);
@@ -92,6 +98,7 @@
 // Giant categories ------------------------------------------------ /
 
 %category--giant {
+
   @extend %category;
   @include from-to($tablet, $desktop) {
     @include per-row(2);

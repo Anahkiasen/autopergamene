@@ -15,11 +15,13 @@
     @include rem(margin, 1rem 0);
     text-align: center;
   }
+
   h2 {
     clear: both;
     @include rem(margin, 1rem 0);
     text-align: center;
   }
+
   h3 {
     @extend %font-size-medium;
     @include rem(margin-bottom, 0.25rem);
@@ -30,9 +32,11 @@
   p {
     @extend %block-light;
   }
+
   blockquote {
     @extend %block-light--quotation;
   }
+
   figure {
     @extend %wide-image;
   }
