@@ -13,6 +13,7 @@
     "laravel/framework": "4.0.*",
     "anahkiasen/cerberus": "dev-master",
     "anahkiasen/flickering": "dev-master",
+    "anahkiasen/flatten": "dev-develop",
     "anahkiasen/glow": "dev-master",
     "anahkiasen/illuminage": "dev-master",
     "anahkiasen/underscore-php": "dev-master",

@@ -105,6 +105,7 @@ return array(
 		'Basset\BassetServiceProvider',
 		'Glow\GlowServiceProvider',
 		'Illuminage\IlluminageServiceProvider',
+		'Flatten\FlattenServiceProvider',
 
 	),
 
