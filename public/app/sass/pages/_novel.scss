@@ -1,0 +1,51 @@
+//////////////////////////////////////////////////////////////////////
+////////////////////////////// NOVEL VIEW ////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+.novel {
+
+  figure {
+    @extend %image-cover;
+  }
+
+  // Text styles --------------------------------------------------- /
+  h1 {
+    @include font-size(4rem);
+    @include rem(margin-bottom, 2rem);
+    @include to($tablet) {
+      @include font-size(2.5rem);
+      @include rem(margin-bottom, 1rem);
+    }
+  }
+  article {
+    h3 {
+      text-align: center;
+      @include rem(margin, 1rem);
+    }
+    p {
+      @include rem(text-indent, 3rem);
+    }
+    ul {
+      @extend %block-light--quotation;
+      @extend %reset-list;
+      @extend %reset-margin;
+      @include rem(padding, 2rem);
+      font-style: normal;
+      li:before {
+        content: "-";
+        @include rem(padding-right, 1rem);
+      }
+      @include to($tablet) {
+        @include rem(padding, 1rem);
+      }
+    }
+  }
+
+  // Novel not found ----------------------------------------------- /
+
+  .alert {
+    @extend %block-light;
+    @include rem(margin, 2rem 0);
+  }
+
+}

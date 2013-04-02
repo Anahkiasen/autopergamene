@@ -1,0 +1,34 @@
+//////////////////////////////////////////////////////////////////////
+///////////////////////// GRACEFUL DEGRADATION ///////////////////////
+//////////////////////////////////////////////////////////////////////
+
+.repository {
+
+  @extend %responsive-content;
+  @extend %opacity25;
+
+  &:hover {
+    @extend %opacity100;
+    figure {
+      @extend %block-accent;
+      background-color: $color-accent;
+      h3, h4 {
+        color: white;
+      }
+    }
+  }
+
+  h3 {
+    @extend %margin-underline;
+  }
+  .build {
+    margin-right: 0.5rem;
+  }
+  figure {
+    @extend %category;
+    @include from($wide) {
+      @include rem(min-height, 15rem);
+    }
+  }
+
+}

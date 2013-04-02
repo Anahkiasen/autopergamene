@@ -1,0 +1,47 @@
+//////////////////////////////////////////////////////////////////////
+////////////////////////////// MEMORABILIA ///////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+// Collections ----------------------------------------------------- /
+
+.collection {
+  @include rem(margin-bottom, 2rem);
+  @extend %container-wide;
+  h2 {
+    @extend %title-strict;
+    border-bottom: 1px solid grey(80);
+    padding-bottom: 1rem;
+  }
+}
+
+// Photosets ------------------------------------------------------- /
+
+.photoset--list {
+  @extend %category--responsive;
+}
+
+// Inside a photoset ----------------------------------------------- /
+
+.photoset {
+  figure {
+    @extend %image-captioned;
+    @extend %wide-image;
+    position: relative;
+    h2 {
+      @extend %title-condensed;
+      @extend %reset-margin;
+      @extend %margin-underline;
+    }
+    h3 {
+      $offset: 1rem;
+      @include rem(bottom, $offset / 2);
+      @include rem(left, $offset);
+      @extend %font-base;
+      @extend %font-size-large;
+      @extend %reset-margin;
+      color: fade(white, 20);
+      position: absolute;
+      text-align: center;
+    }
+  }
+}

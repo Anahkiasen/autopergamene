@@ -1,0 +1,70 @@
+//////////////////////////////////////////////////////////////////////
+//////////////////////////// PLACEHOLDERS ////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+// Resets ---------------------------------------------------------- /
+
+%reset-title {
+  line-height: 1;
+  @extend %reset-margin;
+  @extend %reset-padding;
+}
+
+%reset-text {
+  @extend %font-size-normal;
+}
+
+// Font stacks ----------------------------------------------------- /
+
+%font-base {
+  font-family: $font-base;
+  font-weight: 400;
+  text-transform: lowercase;
+}
+
+%font-light {
+  font-family: $font-light;
+  font-weight: 100;
+}
+
+%font-condensed {
+  font-family: $font-condensed;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+// Font sizes ------------------------------------------------------ /
+
+%font-size-normal {
+  @include font-size($normal);
+}
+
+%font-size-medium {
+  @include font-size($medium);
+}
+
+%font-size-large {
+  @include font-size($large);
+}
+
+// Margins --------------------------------------------------------- /
+
+%margin-underline {
+  @include rem(margin-bottom, 1rem);
+}
+
+// Font styles ----------------------------------------------------- /
+
+%title-condensed {
+  @extend %font-condensed;
+  @extend %font-size-large;
+  color: grey(40);
+  text-align: center;
+  text-shadow: 0 0.1em 0 grey(90);
+}
+
+%title-strict {
+  @extend %font-base;
+  font-weight: 600;
+  text-transform: uppercase;
+}

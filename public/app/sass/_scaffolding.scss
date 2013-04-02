@@ -1,0 +1,71 @@
+//////////////////////////////////////////////////////////////////////
+//////////////////////////// SCAFFOLDING /////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+// Typography baseline --------------------------------------------- /
+
+@include establish-baseline(16px);
+
+@include to($tablet) {
+  @include establish-baseline(18px);
+}
+
+
+body {
+  @extend %reset-padding;
+  font-family: $font-base;
+  background-color: white;
+  background-image: inline-image("noise.png");
+}
+
+a {
+  @extend %accent;
+  @extend %reset-link;
+  @extend %lips;
+  &:hover {
+    color: $color-accent--dark;
+  }
+  &.block, &.back {
+    @extend %block-accent--clickable;
+  }
+  &.back {
+    @extend %block-accent--light;
+    @extend %reset-margin;
+  }
+}
+
+span.block {
+  @extend %accent;
+  @extend %block-accent--clickable;
+}
+
+hr {
+  @extend %lips--accent;
+  @include rem(margin, 1rem 0);
+  clear: both;
+}
+
+h1, h2, h3, h4 {
+  @extend %reset-title;
+}
+
+strong {
+  @extend %accent;
+}
+
+dl {
+  @extend %block-light;
+
+  dt, dd {
+    @extend %reset-margin;
+  }
+  dt {
+    @include rem(margin-right, 1rem);
+    @extend %accent;
+    font-weight: 700;
+  }
+}
+
+ul.fixed {
+  @extend %affixed;
+}

@@ -1,0 +1,135 @@
+//////////////////////////////////////////////////////////////////////
+/////////////////////////// CATEGORY MODULE //////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+// Categories ------------------------------------------------------ /
+
+%category {
+  @extend %container-wide;
+  @extend %block-light;
+  @extend %border-box;
+  @extend %transition;
+  @extend %margin-underline;
+  @include rem(padding, 1rem);
+  &:active {
+    background: rgba-inline(black, 0.1);
+  }
+  // Titles ------------------------------------------------------ /
+  figcaption {
+    @extend %border-box;
+    @include rem(padding-left, 1rem);
+  }
+  h3, h4 {
+    color: grey(20);
+    text-align: left;
+  }
+  h3 {
+    @extend %font-light;
+    @extend %font-size-medium;
+    line-height: 1;
+  }
+  h4 {
+    @extend %font-base;
+    @extend %font-size-normal;
+    @include rem(margin-top, 0.5rem);
+    text-transform: none;
+  }
+  // Responsive ---------------------------------------------------- /
+  @include to($tablet) {
+    &:hover {
+      background: rgba-inline(black, 0.1);
+    }
+    img {
+      @include span-columns(3);
+    }
+    figcaption {
+      @include span-columns(9 omega);
+    }
+  }
+
+  @include from-to($tablet, $desktop) {
+    img {
+      @include span-columns(2);
+    }
+    figcaption {
+      @include span-columns(10 omega);
+    }
+  }
+
+  @include from($desktop) {
+    @include opacity(25);
+    h4 {
+      @include opacity(0);
+    }
+    &:hover {
+      @include opacity(100);
+      h4 {
+        @include transition(all 0.3s);
+        @include opacity(100);
+      }
+    }
+  }
+
+  @include from-to($desktop, $wide) {
+    img {
+      @include span-columns(3);
+    }
+    figcaption {
+      @include span-columns(9 omega);
+    }
+  }
+
+  @include from($wide) {
+    img {
+      @include span-columns(3);
+    }
+    figcaption {
+      @include span-columns(9 omega);
+    }
+  }
+}
+
+// Giant categories ------------------------------------------------ /
+
+%category--giant {
+  @extend %category;
+  @include from-to($tablet, $desktop) {
+    @include per-row(2);
+  }
+
+  @include from-to($desktop, $wide) {
+    figcaption {
+      margin-top: 5%;
+    }
+  }
+
+  @include from($desktop) {
+    width: 80%;
+    @include skewY(-3deg);
+    position: relative;
+    left: 10%;
+    &:hover {
+      left: 0;
+      @include skewY(0deg);
+    }
+    figcaption {
+      margin-top: 6%;
+    }
+    h3, h4 {
+      font-weight: 100;
+    }
+    h3 {
+      @include font-size($large);
+    }
+    h4 {
+      @include font-size($medium);
+    }
+  }
+}
+
+// Responsive categories ------------------------------------------- /
+
+%category--responsive {
+  @extend %category;
+  @extend %responsive-content;
+}

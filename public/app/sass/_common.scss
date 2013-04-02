@@ -4,29 +4,29 @@
 
 // Framework ------------------------------------------------------- /
 
-@import ../../packages/anahkiasen/cerberus/import
-@import ../../packages/anahkiasen/cerberus/images
+@import "../../packages/anahkiasen/cerberus/import";
+@import "../../packages/anahkiasen/cerberus/images";
 
 // Variables --------------------------------------------------------- /
 
-@import variables/fonts
-@import variables/colors
+@import "variables/fonts";
+@import "variables/colors";
 
-$image-wrap-border-radius: 0
+$image-wrap-border-radius: 0;
 
 // Modules --------------------------------------------------------- /
 
-@import modules/typography
-@import modules/blocks
-@import modules/images
-@import modules/affixed
+@import "modules/typography";
+@import "modules/blocks";
+@import "modules/images";
+@import "modules/affixed";
 
 // Scaffolding ----------------------------------------------------- /
 
-@import scaffolding
+@import "scaffolding";
 
 // Layout ---------------------------------------------------------- /
 
-@import layout/header
-@import layout/container
-@import layout/footer
+@import "layout/header";
+@import "layout/container";
+@import "layout/footer";

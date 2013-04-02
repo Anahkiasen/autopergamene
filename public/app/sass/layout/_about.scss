@@ -2,10 +2,12 @@
 /////////////////////////// ABOUT ME BLOCK ///////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-.about
-  @extend %container-wide
+.about {
 
-  @import about/header
-  @import about/about
-  @import about/biography
-  @import about/details
+  @extend %container-wide;
+  @import "about/header";
+  @import "about/about";
+  @import "about/biography";
+  @import "about/details";
+
+}

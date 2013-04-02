@@ -2,20 +2,26 @@
 /////////////////////////// ABOUT BIOGRAPHY //////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-.about-biography
-  @extend %transition
+.about-biography {
 
-  &.open
-    @extend %reveal
+  @extend %transition;
+
+  &.open {
+    @extend %reveal;
+  }
 
   // Responsive ---------------------------------------------------- /
 
-  +from($tablet)
-    +container-wide
-    p
-      +per-row(3)
+  @include from($tablet) {
+    @include container-wide;
+    p {
+      @include per-row(3);
+    }
+  }
 
-  +to($desktop)
-    height: 0
-    +opacity(0)
-    overflow: hidden
+  @include to($desktop) {
+    height: 0;
+    @include opacity(0);
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,65 @@
+//////////////////////////////////////////////////////////////////////
+/////////////////////////////// FOOTER ///////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+footer {
+
+  @extend %block-accent;
+  @extend %font-size-normal;
+  @include rem(padding, 1rem);
+  text-transform: lowercase;
+
+  hr {
+    width: 50%;
+    @include rem(margin, 1rem auto);
+    border-color: fade($color-accent--dark, 25);
+    @include box-shadow(0 1px 0 0 fade(white, 15));
+  }
+  .footer-container {
+    @extend %container;
+  }
+  .colophon, .social {
+    @include span-columns(6);
+  }
+  a {
+    color: $color-accent--dark;
+    border: none;
+    &:hover {
+      color: white;
+    }
+  }
+
+  // Social services ----------------------------------------------- /
+
+  .social {
+    @extend %reset-list;
+    text-align: right;
+    li {
+      .name {
+        color: white;
+      }
+    }
+  }
+
+  // Colophon ------------------------------------------------------ /
+
+  .colophon {
+    @include omega;
+    text-align: left;
+    p:first-child {
+      margin-top: 0;
+    }
+  }
+
+  // Responsive ---------------------------------------------------- /
+
+  @include to($tablet) {
+    @include font-size($tiny);
+    .colophon, .social {
+      @include rem(margin-top, 1rem);
+      @include reset-columns;
+      text-align: right;
+      width: 100%;
+    }
+  }
+}

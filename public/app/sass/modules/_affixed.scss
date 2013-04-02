@@ -1,0 +1,44 @@
+//////////////////////////////////////////////////////////////////////
+///////////////////////// AFFIXED NAVIGATION /////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+%affixed {
+  // Base definition
+  @include column-count(4);
+  @extend %block-accent;
+  @extend %reset-list;
+  @extend %reset-margin;
+  z-index: 50;
+  // Links --------------------------------------------------------- /
+  li {
+    @extend %block-accent;
+    @include rem(margin-right, -0.3rem);
+    @include rem(padding, 0.25rem 0.5rem);
+    &:hover, &.active {
+      background-color: $color-accent--light;
+    }
+  }
+  a {
+    @include rem(font-size, 0.8rem);
+    border: none;
+    color: white;
+    text-transform: lowercase;
+  }
+  // Responsive ---------------------------------------------------- /
+  @include to($desktop) {
+    display: none;
+  }
+
+  // Active -------------------------------------------------------- /
+  &.affix {
+    @include box-shadow(0 1rem 0 fade($color-accent, 10));
+    @include column-count(1);
+    left: 0;
+    position: fixed;
+    top: 0;
+    @extend %wide;
+    li {
+      display: inline-block;
+    }
+  }
+}

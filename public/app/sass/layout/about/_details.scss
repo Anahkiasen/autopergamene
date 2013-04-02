@@ -1,0 +1,52 @@
+//////////////////////////////////////////////////////////////////////
+//////////////////////////// ABOUT DETAILS ///////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+.about-more {
+
+  @include reset-columns;
+  @include rem(margin-top, 1rem);
+  @extend %container-wide;
+  @extend %hidden;
+  clear: both;
+  &.open {
+    @extend %reveal;
+  }
+
+  // Titles -------------------------------------------------------- /
+
+  h3 {
+    @include border-top-radius(3px);
+    @include double-shadow(2px);
+    @include rem(padding, 0.5rem 0);
+    @extend %font-size-normal;
+    @extend %block-accent--light;
+    font-weight: 400;
+  }
+
+  // Lists --------------------------------------------------------- /
+
+  ul {
+    @extend %block-light;
+    @extend %reset-list;
+    li {
+      text-align: left;
+    }
+  }
+
+  // Responsive ---------------------------------------------------- /
+
+  @include to($tablet) {
+    ul {
+      @include column-count(2);
+    }
+  }
+
+  @include from($tablet) {
+    @include container-wide;
+    article {
+      @include per-row(4);
+    }
+  }
+
+}

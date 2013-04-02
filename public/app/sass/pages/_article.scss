@@ -1,0 +1,98 @@
+//////////////////////////////////////////////////////////////////////
+//////////////////////////// ARTICLE VIEW ////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+.article, .novel {
+
+  @extend %responsive-body;
+  background-image: rgba-inline(white, 0.5);
+
+  // Titles -------------------------------------------------------- /
+
+  h1 {
+    @extend %font-light;
+    text-align: center;
+  }
+  article {
+
+    // Image styles ------------------------------------------------ /
+
+    .wp-caption {
+      @extend %image-captioned;
+      a {
+        border: none;
+      }
+      a + a > img {
+        width: 50%;
+      }
+      p {
+        @extend %font-base;
+        @extend %font-size-medium;
+        font-weight: 500;
+        @include rem(margin, 0.5rem 0 0);
+        text-align: center;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      &.wide {
+        @extend %wide;
+      }
+      &.alignleft {
+        float: left;
+        @include rem(margin-right, 1rem);
+        width: 20%;
+      }
+      &.aligncenter {
+        display: block;
+        margin: auto;
+      }
+    }
+
+    .image-wrap {
+      @include rem(margin, 1rem 0);
+      display: inline-block;
+      width: auto;
+    }
+
+    // Special blocks ---------------------------------------------- /
+
+    del {
+      @extend %block-light;
+      @extend %block--wide;
+      text-decoration: none;
+      strong {
+        color: grey(30);
+      }
+    }
+
+    pre {
+      @include rem(padding, 1rem);
+    }
+
+    // Article body ------------------------------------------------ /
+
+    h1 {
+      @extend %font-base;
+      @extend %lips;
+      @include rem(padding-bottom, 0.25rem);
+      text-align: left;
+    }
+    h2 {
+      @extend %font-size-medium;
+      @include rem(margin, 1rem 0);
+    }
+
+    blockquote {
+      @extend %block-light--quotation;
+      p {
+        @extend %reset-margin;
+      }
+    }
+
+    p {
+      text-align: justify;
+    }
+  }
+}

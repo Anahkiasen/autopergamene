@@ -2,23 +2,28 @@
 /////////////////////////// PORTFOLIO HOME ///////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-@import ../layout/about
+@import "../layout/about";
 
-.categories
-  @extend %container-wide
+.categories {
+
+  @extend %container-wide;
 
   // Main title ---------------------------------------------------- /
 
-  h2
-    +font-size($xlarge)
-    +rem(margin-bottom, 2rem)
-    @extend %accent
-    @extend %font-light
-    font-weight: 100
-    text-align: center
-    text-transform: lowercase
+  h2 {
+    @include font-size($xlarge);
+    @include rem(margin-bottom, 2rem);
+    @extend %accent;
+    @extend %font-light;
+    font-weight: 100;
+    text-align: center;
+    text-transform: lowercase;
+  }
 
   // Categories ---------------------------------------------------- /
 
-  figure
-    @extend %category--giant
+  figure {
+    @extend %category--giant;
+  }
+
+}

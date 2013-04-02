@@ -1,0 +1,80 @@
+//////////////////////////////////////////////////////////////////////
+/////////////////////////// LINKED ARTICLES //////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+.articles {
+
+  @include rem(margin-top, 1rem);
+  @include rem(padding-bottom, 1rem);
+  @extend %lips--accent;
+
+  &.hidden {
+    @extend %hidden;
+  }
+  &.open {
+    @extend %reveal;
+  }
+  $border-color: grey(75);
+
+  // Articles ------------------------------------------------------ /
+
+  article {
+    @include rem(padding, 0 0 2rem 0);
+    @extend %transition;
+    @extend %reset-margin;
+    position: relative;
+    blockquote, h3 {
+      @extend %transition;
+    }
+    datetime {
+      @extend %transition;
+      color: $border-color;
+      &.absolute {
+        @extend %opacity0;
+      }
+    }
+    blockquote {
+      @include rem(margin, 0.5rem 0 0);
+    }
+    h3 {
+      @include font-size(1.25rem);
+      @extend %title-strict;
+      color: grey(40);
+    }
+    &:hover {
+      border-left-color: $color-accent;
+      // Switch date format
+      h3, datetime {
+        color: $color-accent;
+      }
+      datetime.relative {
+        @extend %opacity0;
+      }
+      datetime.absolute {
+        @extend %opacity100;
+      }
+      blockquote {
+        @include rgba-background-inline(rgba(black, 0.1));
+      }
+    }
+
+    // Responsive -------------------------------------------------- /
+
+    @include from($tablet) {
+      @include rem(margin-left, 2rem);
+      @include rem(padding-left, 1rem);
+      border-left: 3px solid $border-color;
+      blockquote {
+        @include rem(padding, 1rem);
+      }
+      datetime {
+        @include rem(font-size, 1.5rem);
+        @include rotate(-90deg);
+        left: -4rem;
+        min-width: 5.5rem;
+        position: absolute;
+        top: 3rem;
+      }
+    }
+  }
+}
