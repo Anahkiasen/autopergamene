@@ -4,7 +4,7 @@
  * A link with the .back class
  */
 HTML::macro('backLink', function($url, $text) {
-  return HTML::to($url, $text, array('class' => 'back'));
+  return HTML::link($url, $text, array('class' => 'back'));
 });
 
 /**
@@ -12,19 +12,19 @@ HTML::macro('backLink', function($url, $text) {
  */
 HTML::macro('blockLink', function($url, $text, $attributes = array()) {
   $attributes['class'] = 'block';
-  return HTML::to($url, $text, $attributes);
+  return HTML::link($url, $text, $attributes);
 });
 
 /**
  * A link back home
  */
 HTML::macro('homeLink', function() {
-  return HTML::toHome("Retour à l'accueil", array('class' => 'back'));
+  return HTML::linkHome("Retour à l'accueil", array('class' => 'back'));
 });
 
 /**
  * Lazy loaded image
  */
 HTML::macro('lazyLoad', function($image, $alt) {
-  return '<img src="http://placehold.it/350&text=Chargement..." data-original="' .URL::asset($image). '" alt="' .$alt. '" >';
+  return HTML::image('http://placehold.it/350&text=Chargement...', $alt, array('data-original' => URL::asset($image)));
 });

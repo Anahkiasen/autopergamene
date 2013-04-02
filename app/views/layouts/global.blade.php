@@ -11,7 +11,7 @@
     {{ Basset::show('application.css') }}
 
     {{-- Modernizr --}}
-    {{ HTML::script('glow.js') }}
+    <script src="{{ URL::asset('glow.js') }}"></script>
     {{ Basset::show('modernizr.js') }}
     @yield('css')
   </head>

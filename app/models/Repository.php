@@ -5,7 +5,7 @@ class Repository extends Eloquent
   {
     $link = 'https://github.com/' .$this->vendor;
 
-    return HTML::toBlank($link, ucfirst($this->vendor));
+    return HTML::linkBlank($link, ucfirst($this->vendor));
   }
 
   /**

@@ -3,7 +3,7 @@
 @section('content')
   <p>
     Un ensemble de tableaux à tendances relativement sombres.
-    Faits à l'époque sur le {{ HTML::toBlank('http://store.steampowered.com/app/4000/', "Garry's Mod") }}, ils représentent en quelque sorte mes
+    Faits à l'époque sur le {{ HTML::linkBlank('http://store.steampowered.com/app/4000/', "Garry's Mod") }}, ils représentent en quelque sorte mes
     premiers pas dans la photographie dans laquelle je me lancerai quelques temps plus tards.
   </p>
 
