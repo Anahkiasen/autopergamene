@@ -5,6 +5,7 @@ php:
   - 5.4
 
 before_install:
+  - bower install
   - composer install
   - php artisan asset:publish anahkiasen/cerberus
 
