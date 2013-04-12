@@ -668,7 +668,7 @@ class Application extends Container implements HttpKernelInterface
      */
     public static function getBootstrapFile()
     {
-        return 'C:\\Users\\Maxime\\Dropbox\\WEB DESIGN\\autopergamene\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation' . '/start.php';
+        return '/Applications/MAMP/htdocs/autopergamene/vendor/laravel/framework/src/Illuminate/Foundation' . '/start.php';
     }
     /**
      * Register the aliased class loader.
@@ -1184,32 +1184,6 @@ class Request extends \Symfony\Component\HttpFoundation\Request
     public function instance()
     {
         return $this;
-    }
-    /**
-     * Setup the path info for a locale based URI.
-     *
-     * @param  array   $locales
-     * @return string
-     */
-    public function handleUriLocales(array $locales)
-    {
-        $path = $this->getPathInfo();
-        foreach ($locales as $locale) {
-            if (preg_match("#^\\/{$locale}(?:\$|/)#i", $path)) {
-                return $this->removeLocaleFromUri($locale);
-            }
-        }
-    }
-    /**
-     * Remove the given locale from the URI.
-     *
-     * @param  string  $locale
-     * @return string
-     */
-    protected function removeLocaleFromUri($locale)
-    {
-        $this->pathInfo = '/' . ltrim(substr($this->getPathInfo(), strlen($locale) + 1), '/');
-        return $locale;
     }
     /**
      * Get the root URL for the application.
@@ -1984,16 +1958,6 @@ class Request
         }
     }
     /**
-     * Trusts $_SERVER entries coming from proxies.
-     *
-     * @deprecated Deprecated since version 2.0, to be removed in 2.3. Use setTrustedProxies instead.
-     */
-    public static function trustProxyData()
-    {
-        trigger_error('trustProxyData() is deprecated since version 2.0 and will be removed in 2.3. Use setTrustedProxies() instead.', E_USER_DEPRECATED);
-        self::$trustProxy = true;
-    }
-    /**
      * Sets a list of trusted proxies.
      *
      * You should only list the reverse proxies that you manage directly.
@@ -2039,18 +2003,6 @@ class Request
             throw new \InvalidArgumentException(sprintf('Unable to set the trusted header name for key "%s".', $key));
         }
         self::$trustedHeaders[$key] = $value;
-    }
-    /**
-     * Returns true if $_SERVER entries coming from proxies are trusted,
-     * false otherwise.
-     *
-     * @return boolean
-     *
-     * @deprecated Deprecated since version 2.2, to be removed in 2.3. Use getTrustedProxies instead.
-     */
-    public static function isProxyTrusted()
-    {
-        return self::$trustProxy;
     }
     /**
      * Normalizes a query string.
@@ -2862,28 +2814,6 @@ class Request
     public function isXmlHttpRequest()
     {
         return 'XMLHttpRequest' == $this->headers->get('X-Requested-With');
-    }
-    /**
-     * Splits an Accept-* HTTP header.
-     *
-     * @param string $header Header to split
-     *
-     * @return array Array indexed by the values of the Accept-* header in preferred order
-     *
-     * @deprecated Deprecated since version 2.2, to be removed in 2.3.
-     */
-    public function splitHttpAcceptHeader($header)
-    {
-        trigger_error('splitHttpAcceptHeader() is deprecated since version 2.2 and will be removed in 2.3.', E_USER_DEPRECATED);
-        $headers = array();
-        foreach (AcceptHeader::fromString($header)->all() as $item) {
-            $key = $item->getValue();
-            foreach ($item->getAttributes() as $name => $value) {
-                $key .= sprintf(';%s=%s', $name, $value);
-            }
-            $headers[$key] = $item->getQuality();
-        }
-        return $headers;
     }
     /*
      * The following methods are derived from code of the Zend Framework (1.10dev - 2010-01-24)
@@ -3998,7 +3928,10 @@ abstract class ServiceProvider
 namespace Illuminate\Exception;
 
 use Closure;
+use Whoops\Handler\PrettyPageHandler;
+use Whoops\Handler\JsonResponseHandler;
 use Illuminate\Support\ServiceProvider;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Debug\ErrorHandler;
 use Symfony\Component\HttpKernel\Debug\ExceptionHandler as KernelHandler;
 class ExceptionServiceProvider extends ServiceProvider
@@ -4032,6 +3965,7 @@ class ExceptionServiceProvider extends ServiceProvider
             return new Handler();
         });
         $this->registerExceptionHandler();
+        $this->registerWhoops();
     }
     /**
      * Register the HttpKernel error and exception handlers.
@@ -4055,9 +3989,9 @@ class ExceptionServiceProvider extends ServiceProvider
      */
     protected function registerExceptionHandler()
     {
-        $app = $this->app;
-        $app['exception.function'] = function () use($app) {
-            return function ($exception) use($app) {
+        list($me, $app) = array($this, $this->app);
+        $app['exception.function'] = function () use($me, $app) {
+            return function ($exception) use($me, $app) {
                 $response = $app['exception']->handle($exception);
                 // If one of the custom error handlers returned a response, we will send that
                 // response back to the client after preparing it. This allows a specific
@@ -4066,7 +4000,7 @@ class ExceptionServiceProvider extends ServiceProvider
                     $response = $app->prepareResponse($response, $app['request']);
                     $response->send();
                 } else {
-                    $app['kernel.exception']->handle($exception);
+                    $me->displayException($exception);
                 }
             };
         };
@@ -4083,6 +4017,87 @@ class ExceptionServiceProvider extends ServiceProvider
             set_exception_handler(array(new StubShutdownHandler($app), 'handle'));
             $app['kernel.error']->handleFatal();
         });
+    }
+    /**
+     * Register the Whoops error display service.
+     *
+     * @return void
+     */
+    protected function registerWhoops()
+    {
+        $this->registerWhoopsHandler();
+        $this->app['whoops'] = $this->app->share(function ($app) {
+            $whoops = new \Whoops\Run();
+            $whoops->allowQuit(false);
+            return $whoops->pushHandler($app['whoops.handler']);
+        });
+    }
+    /**
+     * Register the Whoops handler for the request.
+     *
+     * @return void
+     */
+    protected function registerWhoopsHandler()
+    {
+        if ($this->app['request']->ajax() or $this->app->runningInConsole()) {
+            $this->app['whoops.handler'] = function () {
+                return new JsonResponseHandler();
+            };
+        } else {
+            $this->registerPrettyWhoopsHandler();
+        }
+    }
+    /**
+     * Register the "pretty" Whoops handler.
+     *
+     * @return void
+     */
+    protected function registerPrettyWhoopsHandler()
+    {
+        $me = $this;
+        $this->app['whoops.handler'] = function () use($me) {
+            $handler = new PrettyPageHandler();
+            if (!is_null($path = $me->resourcePath())) {
+                $handler->setResourcesPath($path);
+            }
+            return $handler;
+        };
+    }
+    /**
+     * Get the resource path for Whoops.
+     *
+     * @return string
+     */
+    public function resourcePath()
+    {
+        if (is_dir($path = $this->app['path.base'] . '/vendor/laravel/framework/src/Illuminate/Exception/resources')) {
+            return $path;
+        }
+    }
+    /**
+     * Display the given exception.
+     *
+     * @param  \Exception  $exception
+     * @return void
+     */
+    public function displayException($exception)
+    {
+        if ($this->app['config']['app.debug']) {
+            return $this->displayWhoopsException($exception);
+        }
+        $this->app['kernel.exception']->handle($exception);
+    }
+    /**
+     * Display a exception using the Whoops library.
+     *
+     * @param  \Exception  $exception
+     * @return void
+     */
+    protected function displayWhoopsException($exception)
+    {
+        ob_start();
+        $this->app['whoops']->handleException($exception);
+        with(new Response(ob_get_clean(), 500))->send();
     }
     /**
      * Set the given Closure as the exception handler.
@@ -4618,9 +4633,9 @@ class Str
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Symfony\Component\HttpKernel\Debug;
+namespace Symfony\Component\Debug;
 
-use Symfony\Component\HttpKernel\Exception\FatalErrorException;
+use Symfony\Component\Debug\Exception\FatalErrorException;
 use Psr\Log\LoggerInterface;
 /**
  * ErrorHandler.
@@ -4636,7 +4651,7 @@ class ErrorHandler
     /** @var LoggerInterface */
     private static $logger;
     /**
-     * Register the error handler.
+     * Registers the error handler.
      *
      * @param integer $level The level at which the conversion to Exception is done (null to use the error_reporting() value and 0 to disable)
      *
@@ -4670,7 +4685,14 @@ class ErrorHandler
         }
         if ($level & (E_USER_DEPRECATED | E_DEPRECATED)) {
             if (null !== self::$logger) {
-                $stack = version_compare(PHP_VERSION, '5.4', '<') ? array_slice(debug_backtrace(false), 0, 10) : debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 10);
+                if (version_compare(PHP_VERSION, '5.4', '<')) {
+                    $stack = array_map(function ($row) {
+                        unset($row['args']);
+                        return $row;
+                    }, array_slice(debug_backtrace(false), 0, 10));
+                } else {
+                    $stack = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 10);
+                }
                 self::$logger->warning($message, array('type' => self::TYPE_DEPRECATION, 'stack' => $stack));
             }
             return true;
@@ -4702,6 +4724,28 @@ class ErrorHandler
             $exceptionHandler[0]->handle($exception);
         }
     }
+}
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+namespace Symfony\Component\HttpKernel\Debug;
+
+use Symfony\Component\Debug\ErrorHandler as DebugErrorHandler;
+/**
+ * ErrorHandler.
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ *
+ * @deprecated Deprecated in 2.3, to be removed in 3.0. Use the same class from the Debug component instead.
+ */
+class ErrorHandler extends DebugErrorHandler
+{
+    
 }
 namespace Illuminate\Config;
 
@@ -7658,49 +7702,11 @@ class RouteCollection implements \IteratorAggregate, \Countable
      * @var array
      */
     private $resources = array();
-    /**
-     * @var string
-     * @deprecated since version 2.2, will be removed in 2.3
-     */
-    private $prefix = '';
-    /**
-     * @var RouteCollection|null
-     * @deprecated since version 2.2, will be removed in 2.3
-     */
-    private $parent;
     public function __clone()
     {
         foreach ($this->routes as $name => $route) {
             $this->routes[$name] = clone $route;
         }
-    }
-    /**
-     * Gets the parent RouteCollection.
-     *
-     * @return RouteCollection|null The parent RouteCollection or null when it's the root
-     *
-     * @deprecated since version 2.2, will be removed in 2.3
-     */
-    public function getParent()
-    {
-        trigger_error('getParent() is deprecated since version 2.2 and will be removed in 2.3. There is no substitution ' . 'because RouteCollection is not tree structure anymore.', E_USER_DEPRECATED);
-        return $this->parent;
-    }
-    /**
-     * Gets the root RouteCollection.
-     *
-     * @return RouteCollection The root RouteCollection
-     *
-     * @deprecated since version 2.2, will be removed in 2.3
-     */
-    public function getRoot()
-    {
-        trigger_error('getRoot() is deprecated since version 2.2 and will be removed in 2.3. There is no substitution ' . 'because RouteCollection is not tree structure anymore.', E_USER_DEPRECATED);
-        $parent = $this;
-        while ($parent->getParent()) {
-            $parent = $parent->getParent();
-        }
-        return $parent;
     }
     /**
      * Gets the current RouteCollection as an Iterator that includes all routes.
@@ -7760,20 +7766,11 @@ class RouteCollection implements \IteratorAggregate, \Countable
     /**
      * Removes a route or an array of routes by name from the collection
      *
-     * For BC it's also removed from the root, which will not be the case in 2.3
-     * as the RouteCollection won't be a tree structure.
-     *
      * @param string|array $name The route name or an array of route names
      */
     public function remove($name)
     {
-        // just for BC
-        $root = $this;
-        while ($root->parent) {
-            $root = $root->parent;
-        }
         foreach ((array) $name as $n) {
-            unset($root->routes[$n]);
             unset($this->routes[$n]);
         }
     }
@@ -7787,31 +7784,6 @@ class RouteCollection implements \IteratorAggregate, \Countable
      */
     public function addCollection(RouteCollection $collection)
     {
-        // This is to keep BC for getParent() and getRoot(). It does not prevent
-        // infinite loops by recursive referencing. But we don't need that logic
-        // anymore as the tree logic has been deprecated and we are just widening
-        // the accepted range.
-        $collection->parent = $this;
-        // this is to keep BC
-        $numargs = func_num_args();
-        if ($numargs > 1) {
-            trigger_error('addCollection() should only be used with a single parameter. The params $prefix, $defaults, $requirements and $options ' . 'are deprecated since version 2.2 and will be removed in 2.3. Use addPrefix() and addOptions() instead.', E_USER_DEPRECATED);
-            $collection->addPrefix($this->prefix . func_get_arg(1));
-            if ($numargs > 2) {
-                $collection->addDefaults(func_get_arg(2));
-                if ($numargs > 3) {
-                    $collection->addRequirements(func_get_arg(3));
-                    if ($numargs > 4) {
-                        $collection->addOptions(func_get_arg(4));
-                    }
-                }
-            }
-        } else {
-            // the sub-collection must have the prefix of the parent (current instance) prepended because it does not
-            // necessarily already have it applied (depending on the order RouteCollections are added to each other)
-            // this will be removed when the BC layer for getPrefix() is removed
-            $collection->addPrefix($this->prefix);
-        }
         // we need to remove all routes with the same names first because just replacing them
         // would not place the new route at the end of the merged array
         foreach ($collection->all() as $name => $route) {
@@ -7835,33 +7807,11 @@ class RouteCollection implements \IteratorAggregate, \Countable
         if ('' === $prefix) {
             return;
         }
-        // a prefix must start with a single slash and must not end with a slash
-        $this->prefix = '/' . $prefix . $this->prefix;
-        // this is to keep BC
-        if (func_num_args() > 3) {
-            trigger_error('The fourth parameter ($options) of addPrefix() is deprecated since version 2.2 and will be removed in 2.3. ' . 'Use addOptions() instead.', E_USER_DEPRECATED);
-            $options = func_get_arg(3);
-        } else {
-            $options = array();
-        }
         foreach ($this->routes as $route) {
             $route->setPath('/' . $prefix . $route->getPath());
             $route->addDefaults($defaults);
             $route->addRequirements($requirements);
-            $route->addOptions($options);
         }
-    }
-    /**
-     * Returns the prefix that may contain placeholders.
-     *
-     * @return string The prefix
-     *
-     * @deprecated since version 2.2, will be removed in 2.3
-     */
-    public function getPrefix()
-    {
-        trigger_error('getPrefix() is deprecated since version 2.2 and will be removed in 2.3. The method suggests that ' . 'all routes in the collection would have this prefix, which is not necessarily true.', E_USER_DEPRECATED);
-        return $this->prefix;
     }
     /**
      * Sets the host pattern on all routes.
@@ -8425,6 +8375,7 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
     public function fill(array $attributes)
     {
         foreach ($attributes as $key => $value) {
+            $key = $this->removeTableFromKey($key);
             // The developers may choose to place some attributes in the "fillable"
             // array, which means only those attributes may be set through mass
             // assignment to the model, and all others will just be ignored.
@@ -8445,13 +8396,11 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
      */
     public function newInstance($attributes = array(), $exists = false)
     {
-        static::unguard();
         // This method just provides a convenient way for us to generate fresh model
         // instances of this current model. It is particularly useful during the
         // hydration of new objects via the Eloquent query builder instances.
         $model = new static((array) $attributes);
         $model->exists = $exists;
-        static::reguard();
         return $model;
     }
     /**
@@ -8532,6 +8481,17 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
             return $model;
         }
         throw new ModelNotFoundException();
+    }
+    /**
+     * Eager load relations on the model.
+     *
+     * @param  dynamic  string
+     * @return void
+     */
+    public function load()
+    {
+        $query = $this->newQuery()->with(func_get_args());
+        $query->eagerLoadRelations(array($this));
     }
     /**
      * Being querying a model with eager loading.
@@ -8741,7 +8701,9 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
     public function delete()
     {
         if ($this->exists) {
-            $this->fireModelEvent('deleting', false);
+            if ($this->fireModelEvent('deleting') === false) {
+                return false;
+            }
             // Here, we'll touch the owning models, verifying these timestamps get updated
             // for the models. This will allow any caching to get broken on the parents
             // by the timestamp. Then we will go ahead and delete the model instance.
@@ -8920,6 +8882,7 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
             // convenience. Then we will just continue saving the model instances.
             if ($this->timestamps) {
                 $this->updateTimestamps();
+                $dirty = $this->getDirty();
             }
             // Once we have run the update operation, we will fire the "updated" event for
             // this model instance. This will allow developers to hook into these after
@@ -8940,9 +8903,9 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
         if ($this->fireModelEvent('creating') === false) {
             return false;
         }
-        // First we need to create a fresh query instance and touch the creation and
-        // update timestamp on the model which are maintained by us for developer
-        // convenience. Then we will just continue saving the model instances.
+        // First we'll need to create a fresh query instance and touch the creation and
+        // update timestamps on this model, which are maintained by us for developer
+        // convenience. After, we will just continue saving these model instances.
         if ($this->timestamps) {
             $this->updateTimestamps();
         }
@@ -9343,6 +9306,19 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
     public function totallyGuarded()
     {
         return count($this->fillable) == 0 and $this->guarded == array('*');
+    }
+    /**
+     * Remove the table name from a given key.
+     *
+     * @param  string  $key
+     * @return string
+     */
+    protected function removeTableFromKey($key)
+    {
+        if (!str_contains($key, '.')) {
+            return $key;
+        }
+        return last(explode('.', $key));
     }
     /**
      * Get the relationships that are touched on save.
@@ -11413,6 +11389,36 @@ class Encrypter
         }
         mt_srand();
         return MCRYPT_RAND;
+    }
+    /**
+     * Set the encryption key.
+     *
+     * @param  string  $key
+     * @return void
+     */
+    public function setKey($key)
+    {
+        $this->key = $key;
+    }
+    /**
+     * Set the encryption cipher.
+     *
+     * @param  string  $cipher
+     * @return void
+     */
+    public function setCipher($cipher)
+    {
+        $this->cipher = $cipher;
+    }
+    /**
+     * Set the encryption mode.
+     *
+     * @param  string  $mode
+     * @return void
+     */
+    public function setMode($model)
+    {
+        $this->mode = $mode;
     }
 }
 namespace Illuminate\Support\Facades;
@@ -14527,7 +14533,7 @@ class MessageBag implements ArrayableInterface, Countable, JsonableInterface, Me
      *
      * @var string
      */
-    protected $format = '<span class="help-inline">:message</span>';
+    protected $format = ':message';
     /**
      * Create a new message bag instance.
      *
@@ -14772,6 +14778,7 @@ class RequestContext
     private $scheme;
     private $httpPort;
     private $httpsPort;
+    private $queryString;
     /**
      * @var array
      */
@@ -14779,17 +14786,18 @@ class RequestContext
     /**
      * Constructor.
      *
-     * @param string  $baseUrl   The base URL
-     * @param string  $method    The HTTP method
-     * @param string  $host      The HTTP host name
-     * @param string  $scheme    The HTTP scheme
-     * @param integer $httpPort  The HTTP port
-     * @param integer $httpsPort The HTTPS port
-     * @param string  $path      The path
+     * @param string  $baseUrl      The base URL
+     * @param string  $method       The HTTP method
+     * @param string  $host         The HTTP host name
+     * @param string  $scheme       The HTTP scheme
+     * @param integer $httpPort     The HTTP port
+     * @param integer $httpsPort    The HTTPS port
+     * @param string  $path         The path
+     * @param string  $queryString  The query string
      *
      * @api
      */
-    public function __construct($baseUrl = '', $method = 'GET', $host = 'localhost', $scheme = 'http', $httpPort = 80, $httpsPort = 443, $path = '/')
+    public function __construct($baseUrl = '', $method = 'GET', $host = 'localhost', $scheme = 'http', $httpPort = 80, $httpsPort = 443, $path = '/', $queryString = '')
     {
         $this->baseUrl = $baseUrl;
         $this->method = strtoupper($method);
@@ -14798,6 +14806,7 @@ class RequestContext
         $this->httpPort = $httpPort;
         $this->httpsPort = $httpsPort;
         $this->pathInfo = $path;
+        $this->queryString = $queryString;
     }
     public function fromRequest(Request $request)
     {
@@ -14808,6 +14817,7 @@ class RequestContext
         $this->setScheme($request->getScheme());
         $this->setHttpPort($request->isSecure() ? $this->httpPort : $request->getPort());
         $this->setHttpsPort($request->isSecure() ? $request->getPort() : $this->httpsPort);
+        $this->setQueryString($request->server->get('QUERY_STRING'));
     }
     /**
      * Gets the base URL.
@@ -14948,6 +14958,26 @@ class RequestContext
     public function setHttpsPort($httpsPort)
     {
         $this->httpsPort = $httpsPort;
+    }
+    /**
+     * Gets the query string.
+     *
+     * @return string The query string
+     */
+    public function getQueryString()
+    {
+        return $this->queryString;
+    }
+    /**
+     * Sets the query string.
+     *
+     * @param string $queryString The query string
+     *
+     * @api
+     */
+    public function setQueryString($queryString)
+    {
+        $this->queryString = $queryString;
     }
     /**
      * Returns the parameters.
@@ -16217,7 +16247,7 @@ class Response
     public function setContent($content)
     {
         if (null !== $content && !is_string($content) && !is_numeric($content) && !is_callable(array($content, '__toString'))) {
-            throw new \UnexpectedValueException('The Response content must be a string or object implementing __toString(), "' . gettype($content) . '" given.');
+            throw new \UnexpectedValueException(sprintf('The Response content must be a string or object implementing __toString(), "%s" given.', gettype($content)));
         }
         $this->content = (string) $content;
         return $this;
