@@ -642,11 +642,21 @@ class Application extends Container implements HttpKernelInterface
      * Create the request for the application.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Htto\Request
+     * @return \Illuminate\Http\Request
      */
     protected function createRequest(Request $request = null)
     {
         return $request ?: Request::createFromGlobals();
+    }
+    /**
+     * Set the application request for the console environment.
+     *
+     * @return void
+     */
+    public function setRequestForConsoleEnvironment()
+    {
+        $url = $this['config']->get('app.url', 'http://localhost');
+        $this['request'] = Request::create($url, 'GET', array(), array(), array(), $_SERVER);
     }
     /**
      * Bind the installation paths to the application.
@@ -2135,6 +2145,28 @@ class Request
         $this->session = $session;
     }
     /**
+     * Returns the client IP addresses.
+     *
+     * @return array The client IP addresses
+     *
+     * @see getClientIp()
+     */
+    public function getClientIps()
+    {
+        $ip = $this->server->get('REMOTE_ADDR');
+        if (!self::$trustProxy) {
+            return array($ip);
+        }
+        if (!self::$trustedHeaders[self::HEADER_CLIENT_IP] || !$this->headers->has(self::$trustedHeaders[self::HEADER_CLIENT_IP])) {
+            return array($ip);
+        }
+        $clientIps = array_map('trim', explode(',', $this->headers->get(self::$trustedHeaders[self::HEADER_CLIENT_IP])));
+        $clientIps[] = $ip;
+        $trustedProxies = self::$trustProxy && !self::$trustedProxies ? array($ip) : self::$trustedProxies;
+        $clientIps = array_diff($clientIps, $trustedProxies);
+        return $clientIps;
+    }
+    /**
      * Returns the client IP address.
      *
      * This method can read the client IP address from the "X-Forwarded-For" header
@@ -2149,24 +2181,15 @@ class Request
      *
      * @return string The client IP address
      *
+     * @see getClientIps()
      * @see http://en.wikipedia.org/wiki/X-Forwarded-For
      *
      * @api
      */
     public function getClientIp()
     {
-        $ip = $this->server->get('REMOTE_ADDR');
-        if (!self::$trustProxy) {
-            return $ip;
-        }
-        if (!self::$trustedHeaders[self::HEADER_CLIENT_IP] || !$this->headers->has(self::$trustedHeaders[self::HEADER_CLIENT_IP])) {
-            return $ip;
-        }
-        $clientIps = array_map('trim', explode(',', $this->headers->get(self::$trustedHeaders[self::HEADER_CLIENT_IP])));
-        $clientIps[] = $ip;
-        $trustedProxies = self::$trustProxy && !self::$trustedProxies ? array($ip) : self::$trustedProxies;
-        $clientIps = array_diff($clientIps, $trustedProxies);
-        return array_pop($clientIps);
+        $ipAddresses = $this->getClientIps();
+        return array_pop($ipAddresses);
     }
     /**
      * Returns current script name.
@@ -3766,6 +3789,1100 @@ class HeaderBag implements \IteratorAggregate, \Countable
         return $cacheControl;
     }
 }
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+namespace Symfony\Component\HttpFoundation\Session;
+
+use Symfony\Component\HttpFoundation\Session\Storage\SessionStorageInterface;
+use Symfony\Component\HttpFoundation\Session\Attribute\AttributeBag;
+use Symfony\Component\HttpFoundation\Session\Attribute\AttributeBagInterface;
+use Symfony\Component\HttpFoundation\Session\Flash\FlashBag;
+use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
+use Symfony\Component\HttpFoundation\Session\SessionBagInterface;
+use Symfony\Component\HttpFoundation\Session\Storage\NativeSessionStorage;
+/**
+ * Session.
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ * @author Drak <drak@zikula.org>
+ *
+ * @api
+ */
+class Session implements SessionInterface, \IteratorAggregate, \Countable
+{
+    /**
+     * Storage driver.
+     *
+     * @var SessionStorageInterface
+     */
+    protected $storage;
+    /**
+     * @var string
+     */
+    private $flashName;
+    /**
+     * @var string
+     */
+    private $attributeName;
+    /**
+     * Constructor.
+     *
+     * @param SessionStorageInterface $storage    A SessionStorageInterface instance.
+     * @param AttributeBagInterface   $attributes An AttributeBagInterface instance, (defaults null for default AttributeBag)
+     * @param FlashBagInterface       $flashes    A FlashBagInterface instance (defaults null for default FlashBag)
+     */
+    public function __construct(SessionStorageInterface $storage = null, AttributeBagInterface $attributes = null, FlashBagInterface $flashes = null)
+    {
+        $this->storage = $storage ?: new NativeSessionStorage();
+        $attributes = $attributes ?: new AttributeBag();
+        $this->attributeName = $attributes->getName();
+        $this->registerBag($attributes);
+        $flashes = $flashes ?: new FlashBag();
+        $this->flashName = $flashes->getName();
+        $this->registerBag($flashes);
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function start()
+    {
+        return $this->storage->start();
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function has($name)
+    {
+        return $this->storage->getBag($this->attributeName)->has($name);
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function get($name, $default = null)
+    {
+        return $this->storage->getBag($this->attributeName)->get($name, $default);
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function set($name, $value)
+    {
+        $this->storage->getBag($this->attributeName)->set($name, $value);
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function all()
+    {
+        return $this->storage->getBag($this->attributeName)->all();
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function replace(array $attributes)
+    {
+        $this->storage->getBag($this->attributeName)->replace($attributes);
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function remove($name)
+    {
+        return $this->storage->getBag($this->attributeName)->remove($name);
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function clear()
+    {
+        $this->storage->getBag($this->attributeName)->clear();
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function isStarted()
+    {
+        return $this->storage->isStarted();
+    }
+    /**
+     * Returns an iterator for attributes.
+     *
+     * @return \ArrayIterator An \ArrayIterator instance
+     */
+    public function getIterator()
+    {
+        return new \ArrayIterator($this->storage->getBag($this->attributeName)->all());
+    }
+    /**
+     * Returns the number of attributes.
+     *
+     * @return int The number of attributes
+     */
+    public function count()
+    {
+        return count($this->storage->getBag($this->attributeName)->all());
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function invalidate($lifetime = null)
+    {
+        $this->storage->clear();
+        return $this->migrate(true, $lifetime);
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function migrate($destroy = false, $lifetime = null)
+    {
+        return $this->storage->regenerate($destroy, $lifetime);
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function save()
+    {
+        $this->storage->save();
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function getId()
+    {
+        return $this->storage->getId();
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function setId($id)
+    {
+        $this->storage->setId($id);
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function getName()
+    {
+        return $this->storage->getName();
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function setName($name)
+    {
+        $this->storage->setName($name);
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function getMetadataBag()
+    {
+        return $this->storage->getMetadataBag();
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function registerBag(SessionBagInterface $bag)
+    {
+        $this->storage->registerBag($bag);
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function getBag($name)
+    {
+        return $this->storage->getBag($name);
+    }
+    /**
+     * Gets the flashbag interface.
+     *
+     * @return FlashBagInterface
+     */
+    public function getFlashBag()
+    {
+        return $this->getBag($this->flashName);
+    }
+}
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+namespace Symfony\Component\HttpFoundation\Session\Storage;
+
+use Symfony\Component\HttpFoundation\Session\SessionBagInterface;
+use Symfony\Component\HttpFoundation\Session\Storage\MetadataBag;
+use Symfony\Component\HttpFoundation\Session\Storage\Proxy\NativeProxy;
+use Symfony\Component\HttpFoundation\Session\Storage\Proxy\AbstractProxy;
+use Symfony\Component\HttpFoundation\Session\Storage\Proxy\SessionHandlerProxy;
+/**
+ * This provides a base class for session attribute storage.
+ *
+ * @author Drak <drak@zikula.org>
+ */
+class NativeSessionStorage implements SessionStorageInterface
+{
+    /**
+     * Array of SessionBagInterface
+     *
+     * @var SessionBagInterface[]
+     */
+    protected $bags;
+    /**
+     * @var Boolean
+     */
+    protected $started = false;
+    /**
+     * @var Boolean
+     */
+    protected $closed = false;
+    /**
+     * @var AbstractProxy
+     */
+    protected $saveHandler;
+    /**
+     * @var MetadataBag
+     */
+    protected $metadataBag;
+    /**
+     * Constructor.
+     *
+     * Depending on how you want the storage driver to behave you probably
+     * want to override this constructor entirely.
+     *
+     * List of options for $options array with their defaults.
+     * @see http://php.net/session.configuration for options
+     * but we omit 'session.' from the beginning of the keys for convenience.
+     *
+     * ("auto_start", is not supported as it tells PHP to start a session before
+     * PHP starts to execute user-land code. Setting during runtime has no effect).
+     *
+     * cache_limiter, "nocache" (use "0" to prevent headers from being sent entirely).
+     * cookie_domain, ""
+     * cookie_httponly, ""
+     * cookie_lifetime, "0"
+     * cookie_path, "/"
+     * cookie_secure, ""
+     * entropy_file, ""
+     * entropy_length, "0"
+     * gc_divisor, "100"
+     * gc_maxlifetime, "1440"
+     * gc_probability, "1"
+     * hash_bits_per_character, "4"
+     * hash_function, "0"
+     * name, "PHPSESSID"
+     * referer_check, ""
+     * serialize_handler, "php"
+     * use_cookies, "1"
+     * use_only_cookies, "1"
+     * use_trans_sid, "0"
+     * upload_progress.enabled, "1"
+     * upload_progress.cleanup, "1"
+     * upload_progress.prefix, "upload_progress_"
+     * upload_progress.name, "PHP_SESSION_UPLOAD_PROGRESS"
+     * upload_progress.freq, "1%"
+     * upload_progress.min-freq, "1"
+     * url_rewriter.tags, "a=href,area=href,frame=src,form=,fieldset="
+     *
+     * @param array       $options Session configuration options.
+     * @param object      $handler SessionHandlerInterface.
+     * @param MetadataBag $metaBag MetadataBag.
+     */
+    public function __construct(array $options = array(), $handler = null, MetadataBag $metaBag = null)
+    {
+        ini_set('session.cache_limiter', '');
+        // disable by default because it's managed by HeaderBag (if used)
+        ini_set('session.use_cookies', 1);
+        if (version_compare(phpversion(), '5.4.0', '>=')) {
+            session_register_shutdown();
+        } else {
+            register_shutdown_function('session_write_close');
+        }
+        $this->setMetadataBag($metaBag);
+        $this->setOptions($options);
+        $this->setSaveHandler($handler);
+    }
+    /**
+     * Gets the save handler instance.
+     *
+     * @return AbstractProxy
+     */
+    public function getSaveHandler()
+    {
+        return $this->saveHandler;
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function start()
+    {
+        if ($this->started && !$this->closed) {
+            return true;
+        }
+        // catch condition where session was started automatically by PHP
+        if (!$this->started && !$this->closed && $this->saveHandler->isActive() && $this->saveHandler->isSessionHandlerInterface()) {
+            $this->loadSession();
+            return true;
+        }
+        if (ini_get('session.use_cookies') && headers_sent()) {
+            throw new \RuntimeException('Failed to start the session because headers have already been sent.');
+        }
+        // start the session
+        if (!session_start()) {
+            throw new \RuntimeException('Failed to start the session');
+        }
+        $this->loadSession();
+        if (!$this->saveHandler->isWrapper() && !$this->saveHandler->isSessionHandlerInterface()) {
+            $this->saveHandler->setActive(false);
+        }
+        return true;
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function getId()
+    {
+        if (!$this->started) {
+            return '';
+        }
+        return $this->saveHandler->getId();
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function setId($id)
+    {
+        $this->saveHandler->setId($id);
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function getName()
+    {
+        return $this->saveHandler->getName();
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function setName($name)
+    {
+        $this->saveHandler->setName($name);
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function regenerate($destroy = false, $lifetime = null)
+    {
+        if (null !== $lifetime) {
+            ini_set('session.cookie_lifetime', $lifetime);
+        }
+        if ($destroy) {
+            $this->metadataBag->stampNew();
+        }
+        return session_regenerate_id($destroy);
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function save()
+    {
+        session_write_close();
+        if (!$this->saveHandler->isWrapper() && !$this->getSaveHandler()->isSessionHandlerInterface()) {
+            $this->saveHandler->setActive(false);
+        }
+        $this->closed = true;
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function clear()
+    {
+        // clear out the bags
+        foreach ($this->bags as $bag) {
+            $bag->clear();
+        }
+        // clear out the session
+        $_SESSION = array();
+        // reconnect the bags to the session
+        $this->loadSession();
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function registerBag(SessionBagInterface $bag)
+    {
+        $this->bags[$bag->getName()] = $bag;
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function getBag($name)
+    {
+        if (!isset($this->bags[$name])) {
+            throw new \InvalidArgumentException(sprintf('The SessionBagInterface %s is not registered.', $name));
+        }
+        if ($this->saveHandler->isActive() && !$this->started) {
+            $this->loadSession();
+        } elseif (!$this->started) {
+            $this->start();
+        }
+        return $this->bags[$name];
+    }
+    /**
+     * Sets the MetadataBag.
+     *
+     * @param MetadataBag $metaBag
+     */
+    public function setMetadataBag(MetadataBag $metaBag = null)
+    {
+        if (null === $metaBag) {
+            $metaBag = new MetadataBag();
+        }
+        $this->metadataBag = $metaBag;
+    }
+    /**
+     * Gets the MetadataBag.
+     *
+     * @return MetadataBag
+     */
+    public function getMetadataBag()
+    {
+        return $this->metadataBag;
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function isStarted()
+    {
+        return $this->started;
+    }
+    /**
+     * Sets session.* ini variables.
+     *
+     * For convenience we omit 'session.' from the beginning of the keys.
+     * Explicitly ignores other ini keys.
+     *
+     * @param array $options Session ini directives array(key => value).
+     *
+     * @see http://php.net/session.configuration
+     */
+    public function setOptions(array $options)
+    {
+        $validOptions = array_flip(array('cache_limiter', 'cookie_domain', 'cookie_httponly', 'cookie_lifetime', 'cookie_path', 'cookie_secure', 'entropy_file', 'entropy_length', 'gc_divisor', 'gc_maxlifetime', 'gc_probability', 'hash_bits_per_character', 'hash_function', 'name', 'referer_check', 'serialize_handler', 'use_cookies', 'use_only_cookies', 'use_trans_sid', 'upload_progress.enabled', 'upload_progress.cleanup', 'upload_progress.prefix', 'upload_progress.name', 'upload_progress.freq', 'upload_progress.min-freq', 'url_rewriter.tags'));
+        foreach ($options as $key => $value) {
+            if (isset($validOptions[$key])) {
+                ini_set('session.' . $key, $value);
+            }
+        }
+    }
+    /**
+     * Registers save handler as a PHP session handler.
+     *
+     * To use internal PHP session save handlers, override this method using ini_set with
+     * session.save_handler and session.save_path e.g.
+     *
+     *     ini_set('session.save_handler', 'files');
+     *     ini_set('session.save_path', /tmp');
+     *
+     * @see http://php.net/session-set-save-handler
+     * @see http://php.net/sessionhandlerinterface
+     * @see http://php.net/sessionhandler
+     *
+     * @param object $saveHandler Default null means NativeProxy.
+     */
+    public function setSaveHandler($saveHandler = null)
+    {
+        // Wrap $saveHandler in proxy
+        if (!$saveHandler instanceof AbstractProxy && $saveHandler instanceof \SessionHandlerInterface) {
+            $saveHandler = new SessionHandlerProxy($saveHandler);
+        } elseif (!$saveHandler instanceof AbstractProxy) {
+            $saveHandler = new NativeProxy();
+        }
+        $this->saveHandler = $saveHandler;
+        if ($this->saveHandler instanceof \SessionHandlerInterface) {
+            if (version_compare(phpversion(), '5.4.0', '>=')) {
+                session_set_save_handler($this->saveHandler, false);
+            } else {
+                session_set_save_handler(array($this->saveHandler, 'open'), array($this->saveHandler, 'close'), array($this->saveHandler, 'read'), array($this->saveHandler, 'write'), array($this->saveHandler, 'destroy'), array($this->saveHandler, 'gc'));
+            }
+        }
+    }
+    /**
+     * Load the session with attributes.
+     *
+     * After starting the session, PHP retrieves the session from whatever handlers
+     * are set to (either PHP's internal, or a custom save handler set with session_set_save_handler()).
+     * PHP takes the return value from the read() handler, unserializes it
+     * and populates $_SESSION with the result automatically.
+     *
+     * @param array|null $session
+     */
+    protected function loadSession(array &$session = null)
+    {
+        if (null === $session) {
+            $session =& $_SESSION;
+        }
+        $bags = array_merge($this->bags, array($this->metadataBag));
+        foreach ($bags as $bag) {
+            $key = $bag->getStorageKey();
+            $session[$key] = isset($session[$key]) ? $session[$key] : array();
+            $bag->initialize($session[$key]);
+        }
+        $this->started = true;
+        $this->closed = false;
+    }
+}
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+namespace Symfony\Component\HttpFoundation\Session\Attribute;
+
+/**
+ * This class relates to session attribute storage
+ */
+class AttributeBag implements AttributeBagInterface, \IteratorAggregate, \Countable
+{
+    private $name = 'attributes';
+    /**
+     * @var string
+     */
+    private $storageKey;
+    /**
+     * @var array
+     */
+    protected $attributes = array();
+    /**
+     * Constructor.
+     *
+     * @param string $storageKey The key used to store attributes in the session.
+     */
+    public function __construct($storageKey = '_sf2_attributes')
+    {
+        $this->storageKey = $storageKey;
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function initialize(array &$attributes)
+    {
+        $this->attributes =& $attributes;
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function getStorageKey()
+    {
+        return $this->storageKey;
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function has($name)
+    {
+        return array_key_exists($name, $this->attributes);
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function get($name, $default = null)
+    {
+        return array_key_exists($name, $this->attributes) ? $this->attributes[$name] : $default;
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function set($name, $value)
+    {
+        $this->attributes[$name] = $value;
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function all()
+    {
+        return $this->attributes;
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function replace(array $attributes)
+    {
+        $this->attributes = array();
+        foreach ($attributes as $key => $value) {
+            $this->set($key, $value);
+        }
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function remove($name)
+    {
+        $retval = null;
+        if (array_key_exists($name, $this->attributes)) {
+            $retval = $this->attributes[$name];
+            unset($this->attributes[$name]);
+        }
+        return $retval;
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function clear()
+    {
+        $return = $this->attributes;
+        $this->attributes = array();
+        return $return;
+    }
+    /**
+     * Returns an iterator for attributes.
+     *
+     * @return \ArrayIterator An \ArrayIterator instance
+     */
+    public function getIterator()
+    {
+        return new \ArrayIterator($this->attributes);
+    }
+    /**
+     * Returns the number of attributes.
+     *
+     * @return int The number of attributes
+     */
+    public function count()
+    {
+        return count($this->attributes);
+    }
+}
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+namespace Symfony\Component\HttpFoundation\Session\Flash;
+
+use Symfony\Component\HttpFoundation\Session\SessionBagInterface;
+/**
+ * FlashBagInterface.
+ *
+ * @author Drak <drak@zikula.org>
+ */
+interface FlashBagInterface extends SessionBagInterface
+{
+    /**
+     * Adds a flash message for type.
+     *
+     * @param string $type
+     * @param string $message
+     */
+    public function add($type, $message);
+    /**
+     * Registers a message for a given type.
+     *
+     * @param string       $type
+     * @param string|array $message
+     */
+    public function set($type, $message);
+    /**
+     * Gets flash messages for a given type.
+     *
+     * @param string $type    Message category type.
+     * @param array  $default Default value if $type does not exist.
+     *
+     * @return array
+     */
+    public function peek($type, array $default = array());
+    /**
+     * Gets all flash messages.
+     *
+     * @return array
+     */
+    public function peekAll();
+    /**
+     * Gets and clears flash from the stack.
+     *
+     * @param string $type
+     * @param array  $default Default value if $type does not exist.
+     *
+     * @return array
+     */
+    public function get($type, array $default = array());
+    /**
+     * Gets and clears flashes from the stack.
+     *
+     * @return array
+     */
+    public function all();
+    /**
+     * Sets all flash messages.
+     */
+    public function setAll(array $messages);
+    /**
+     * Has flash messages for a given type?
+     *
+     * @param string $type
+     *
+     * @return boolean
+     */
+    public function has($type);
+    /**
+     * Returns a list of all defined types.
+     *
+     * @return array
+     */
+    public function keys();
+}
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+namespace Symfony\Component\HttpFoundation\Session\Flash;
+
+/**
+ * AutoExpireFlashBag flash message container.
+ *
+ * @author Drak <drak@zikula.org>
+ */
+class AutoExpireFlashBag implements FlashBagInterface
+{
+    private $name = 'flashes';
+    /**
+     * Flash messages.
+     *
+     * @var array
+     */
+    private $flashes = array();
+    /**
+     * The storage key for flashes in the session
+     *
+     * @var string
+     */
+    private $storageKey;
+    /**
+     * Constructor.
+     *
+     * @param string $storageKey The key used to store flashes in the session.
+     */
+    public function __construct($storageKey = '_sf2_flashes')
+    {
+        $this->storageKey = $storageKey;
+        $this->flashes = array('display' => array(), 'new' => array());
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function initialize(array &$flashes)
+    {
+        $this->flashes =& $flashes;
+        // The logic: messages from the last request will be stored in new, so we move them to previous
+        // This request we will show what is in 'display'.  What is placed into 'new' this time round will
+        // be moved to display next time round.
+        $this->flashes['display'] = array_key_exists('new', $this->flashes) ? $this->flashes['new'] : array();
+        $this->flashes['new'] = array();
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function add($type, $message)
+    {
+        $this->flashes['new'][$type][] = $message;
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function peek($type, array $default = array())
+    {
+        return $this->has($type) ? $this->flashes['display'][$type] : $default;
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function peekAll()
+    {
+        return array_key_exists('display', $this->flashes) ? (array) $this->flashes['display'] : array();
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function get($type, array $default = array())
+    {
+        $return = $default;
+        if (!$this->has($type)) {
+            return $return;
+        }
+        if (isset($this->flashes['display'][$type])) {
+            $return = $this->flashes['display'][$type];
+            unset($this->flashes['display'][$type]);
+        }
+        return $return;
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function all()
+    {
+        $return = $this->flashes['display'];
+        $this->flashes = array('new' => array(), 'display' => array());
+        return $return;
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function setAll(array $messages)
+    {
+        $this->flashes['new'] = $messages;
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function set($type, $messages)
+    {
+        $this->flashes['new'][$type] = (array) $messages;
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function has($type)
+    {
+        return array_key_exists($type, $this->flashes['display']) && $this->flashes['display'][$type];
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function keys()
+    {
+        return array_keys($this->flashes['display']);
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function getStorageKey()
+    {
+        return $this->storageKey;
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function clear()
+    {
+        return $this->all();
+    }
+}
+namespace Illuminate\Session;
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
+/**
+ * AutoExpireFlashBag flash message container.
+ *
+ * @author Drak <drak@zikula.org>
+ */
+class FlashBag implements FlashBagInterface
+{
+    private $name = 'flashes';
+    /**
+     * Flash messages.
+     *
+     * @var array
+     */
+    private $flashes = array();
+    /**
+     * The storage key for flashes in the session
+     *
+     * @var string
+     */
+    private $storageKey;
+    /**
+     * Constructor.
+     *
+     * @param string $storageKey The key used to store flashes in the session.
+     */
+    public function __construct($storageKey = '_sf2_flashes')
+    {
+        $this->storageKey = $storageKey;
+        $this->flashes = array('display' => array(), 'new' => array());
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function initialize(array &$flashes)
+    {
+        $this->flashes =& $flashes;
+        // The logic: messages from the last request will be stored in new, so we move them to previous
+        // This request we will show what is in 'display'.  What is placed into 'new' this time round will
+        // be moved to display next time round.
+        $this->flashes['display'] = array_key_exists('new', $this->flashes) ? $this->flashes['new'] : array();
+        $this->flashes['new'] = array();
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function add($type, $message)
+    {
+        $this->flashes['new'][$type][] = $message;
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function peek($type, array $default = array())
+    {
+        $value = $this->has($type) ? $this->flashes['display'][$type] : $default;
+        return $value ?: $this->peekNew($type, $default);
+    }
+    /**
+     * Peek a "new" value from the flash bag.
+     *
+     * @param  string  $type
+     * @param  array   $default
+     * @return array
+     */
+    public function peekNew($type, array $default = array())
+    {
+        return $this->hasNew($type) ? $this->flashes['new'][$type] : $default;
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function peekAll()
+    {
+        return array_key_exists('display', $this->flashes) ? (array) $this->flashes['display'] : array();
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function get($type, array $default = array())
+    {
+        $return = $default;
+        if (!$this->has($type)) {
+            return $return;
+        }
+        if (isset($this->flashes['display'][$type])) {
+            $return = $this->flashes['display'][$type];
+            unset($this->flashes['display'][$type]);
+        }
+        return $return;
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function all()
+    {
+        $return = array_merge($this->flashes['display'], $this->flashes['new']);
+        $this->flashes = array('new' => array(), 'display' => array());
+        return $return;
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function setAll(array $messages)
+    {
+        $this->flashes['new'] = $messages;
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function set($type, $messages)
+    {
+        $this->flashes['new'][$type] = array($messages);
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function has($type)
+    {
+        return array_key_exists($type, $this->flashes['display']) && $this->flashes['display'][$type];
+    }
+    /**
+     * Determine if the flash has a "new" item.
+     *
+     * @param  string  $type
+     * @return bool
+     */
+    public function hasNew($type)
+    {
+        return array_key_exists($type, $this->flashes['new']) && $this->flashes['new'][$type];
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function keys()
+    {
+        return array_keys($this->flashes['display']);
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function getStorageKey()
+    {
+        return $this->storageKey;
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function clear()
+    {
+        return $this->all();
+    }
+}
 namespace Illuminate\Support;
 
 use ReflectionClass;
@@ -4056,7 +5173,7 @@ class ExceptionServiceProvider extends ServiceProvider
     {
         $me = $this;
         $this->app['whoops.handler'] = function () use($me) {
-            $handler = new PrettyPageHandler();
+            with($handler = new PrettyPageHandler())->setEditor('sublime');
             if (!is_null($path = $me->resourcePath())) {
                 $handler->setResourcesPath($path);
             }
@@ -6175,14 +7292,7 @@ class SessionServiceProvider extends ServiceProvider
             // creation of the various session drivers when they are needed by the
             // application instance, and will resolve them on a lazy load basis.
             $manager = $app['session.manager'];
-            $driver = $manager->driver();
-            $config = $app['config']['session'];
-            // Once we get an instance of the session driver, we need to set a few of
-            // the session options based on the application configuration, such as
-            // the session lifetime and the sweeper lottery configuration value.
-            $driver->setLifetime($config['lifetime']);
-            $driver->setSweepLottery($config['lottery']);
-            return $driver;
+            return $manager->driver();
         });
     }
     /**
@@ -6198,55 +7308,33 @@ class SessionServiceProvider extends ServiceProvider
         // and after events to do all stuff for us. This will manage the loading
         // the session "payloads", as well as writing them after each request.
         if (!is_null($config['driver'])) {
-            $this->registerBootingEvent($app);
-            $this->registerCloseEvent($app, $config);
+            $this->registerBootingEvent();
+            $this->registerCloseEvent();
         }
     }
     /**
      * Register the session booting event.
      *
-     * @param  \Illuminate\Foundation\Application  $app
      * @return void
      */
-    protected function registerBootingEvent($app)
+    protected function registerBootingEvent()
     {
-        $app->booting(function ($app) {
-            $app['session']->start($app['cookie'], $app['config']['session.cookie']);
+        $app = $this->app;
+        $this->app->booting(function ($app) use($app) {
+            $app['session']->start();
         });
     }
     /**
      * Register the session close event.
      *
-     * @param  \Illuminate\Foundation\Application  $app
-     * @param  array $config
      * @return void
      */
-    protected function registerCloseEvent($app, $config)
-    {
-        $me = $this;
-        $app->close(function ($request, $response) use($me, $app, $config) {
-            $session = $app['session'];
-            // Once we finish the session handling for the request, we will need to get a
-            // cookie that we can attach to the response from the application. This is
-            // used to identify the session on future requests into the application.
-            $session->finish($response, $config['lifetime']);
-            $cookie = $me->makeCookie($session, $config);
-            if (!is_null($cookie)) {
-                $response->headers->setCookie($cookie);
-            }
-        });
-    }
-    /**
-     * Create a session cookie based on the given config.
-     *
-     * @param  \Illuminate\Session\Store  $session
-     * @param  array  $config
-     * @return Symfony\Component\HttpFoundation\Cookie
-     */
-    public function makeCookie($session, $config)
+    protected function registerCloseEvent()
     {
         $app = $this->app;
-        return $session->getCookie($app['cookie'], $config['cookie'], $config['lifetime'], $config['path'], $config['domain']);
+        $this->app->close(function () use($app) {
+            $app['session']->save();
+        });
     }
 }
 namespace Illuminate\View;
@@ -7524,7 +8612,10 @@ class Router
      */
     public function currentRouteAction()
     {
-        return $this->currentRoute->getOption('_uses');
+        $currentRoute = $this->currentRoute;
+        if (!is_null($currentRoute)) {
+            return $currentRoute->getOption('_uses');
+        }
     }
     /**
      * Determine if the current route uses a given controller action.
@@ -8715,80 +9806,80 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
     /**
      * Register a saving model event with the dispatcher.
      *
-     * @param  Closure  $callback
+     * @param  Closure|string  $callback
      * @return void
      */
-    public static function saving(Closure $callback)
+    public static function saving($callback)
     {
         static::registerModelEvent('saving', $callback);
     }
     /**
      * Register a saved model event with the dispatcher.
      *
-     * @param  Closure  $callback
+     * @param  Closure|string  $callback
      * @return void
      */
-    public static function saved(Closure $callback)
+    public static function saved($callback)
     {
         static::registerModelEvent('saved', $callback);
     }
     /**
      * Register an updating model event with the dispatcher.
      *
-     * @param  Closure  $callback
+     * @param  Closure|string  $callback
      * @return void
      */
-    public static function updating(Closure $callback)
+    public static function updating($callback)
     {
         static::registerModelEvent('updating', $callback);
     }
     /**
      * Register an updated model event with the dispatcher.
      *
-     * @param  Closure  $callback
+     * @param  Closure|string  $callback
      * @return void
      */
-    public static function updated(Closure $callback)
+    public static function updated($callback)
     {
         static::registerModelEvent('updated', $callback);
     }
     /**
      * Register a creating model event with the dispatcher.
      *
-     * @param  Closure  $callback
+     * @param  Closure|string  $callback
      * @return void
      */
-    public static function creating(Closure $callback)
+    public static function creating($callback)
     {
         static::registerModelEvent('creating', $callback);
     }
     /**
      * Register a created model event with the dispatcher.
      *
-     * @param  Closure  $callback
+     * @param  Closure|string  $callback
      * @return void
      */
-    public static function created(Closure $callback)
+    public static function created($callback)
     {
         static::registerModelEvent('created', $callback);
     }
     /**
      * Register a deleting model event with the dispatcher.
      *
-     * @param  Closure  $callback
+     * @param  Closure|string  $callback
      * @return void
      */
-    public static function deleting(Closure $callback)
+    public static function deleting($callback)
     {
         static::registerModelEvent('deleting', $callback);
     }
     /**
      * Register a deleted model event with the dispatcher.
      *
-     * @param  Closure  $callback
+     * @param  Closure|string  $callback
      * @return void
      */
-    public static function deleted(Closure $callback)
+    public static function deleted($callback)
     {
         static::registerModelEvent('deleted', $callback);
     }
@@ -8796,10 +9887,10 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
      * Register a model event with the dispatcher.
      *
      * @param  string   $event
-     * @param  Closure  $callback
+     * @param  Closure|string  $callback
      * @return void
      */
-    protected static function registerModelEvent($event, Closure $callback)
+    protected static function registerModelEvent($event, $callback)
     {
         if (isset(static::$dispatcher)) {
             $name = get_called_class();
@@ -10160,216 +11251,49 @@ class ConnectionFactory
 }
 namespace Illuminate\Session;
 
-use Closure;
-use ArrayAccess;
-use Illuminate\Support\Str;
-use Illuminate\Cookie\CookieJar;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Illuminate\Support\Contracts\SessionStoreInterface;
-abstract class Store implements ArrayAccess
+use Symfony\Component\HttpFoundation\Session\Session as SymfonySession;
+class Store extends SymfonySession
 {
     /**
-     * The current session payload.
-     *
-     * @var array
+     * {@inheritdoc}
      */
-    protected $session;
+    public function start()
+    {
+        parent::start();
+        if (!$this->has('_token')) {
+            $this->put('_token', str_random(40));
+        }
+    }
     /**
-     * Indicates if the session already existed.
-     *
-     * @var bool
+     * {@inheritdoc}
      */
-    protected $exists = true;
+    public function has($name)
+    {
+        return parent::has($name) or $this->hasFlash($name);
+    }
     /**
-     * The session lifetime in minutes.
-     *
-     * @var int
+     * {@inheritdoc}
      */
-    protected $lifetime = 120;
+    public function get($name, $default = null)
+    {
+        if (!is_null($value = parent::get($name))) {
+            return $value;
+        }
+        $flash = $this->getFlashBag()->peek($name);
+        return count($flash) > 0 ? $flash[0] : value($default);
+    }
     /**
-     * The chances of hitting the sweeper lottery.
+     * Determine if the session has a flash item.
      *
-     * @var array
-     */
-    protected $sweep = array(2, 100);
-    /**
-     * The session cookie options array.
-     *
-     * @var array
-     */
-    protected $cookie = array('name' => 'illuminate_session', 'path' => '/', 'domain' => null, 'secure' => false, 'http_only' => true);
-    /**
-     * Retrieve a session payload from storage.
-     *
-     * @param  string  $id
-     * @return array|null
-     */
-    public abstract function retrieveSession($id);
-    /**
-     * Create a new session in storage.
-     *
-     * @param  string  $id
-     * @param  array   $session
-     * @param  Symfony\Component\HttpFoundation\Response  $response
-     * @return void
-     */
-    public abstract function createSession($id, array $session, Response $response);
-    /**
-     * Update an existing session in storage.
-     *
-     * @param  string  $id
-     * @param  array   $session
-     * @param  Symfony\Component\HttpFoundation\Response  $response
-     * @return void
-     */
-    public abstract function updateSession($id, array $session, Response $response);
-    /**
-     * Load the session for the request.
-     *
-     * @param  \Illuminate\Cookie\CookieJar  $cookies
      * @param  string  $name
-     * @return void
-     */
-    public function start(CookieJar $cookies, $name)
-    {
-        $id = $cookies->get($name);
-        // If the session ID was available via the request cookies we'll just retrieve
-        // the session payload from the driver and check the given session to make
-        // sure it's valid. All the data fetching is implemented by the driver.
-        if (!is_null($id)) {
-            $session = $this->retrieveSession($id);
-        }
-        // If the session is not valid, we will create a new payload and will indicate
-        // that the session has not yet been created. These freshly created session
-        // payloads will be given a fresh session ID so there are not collisions.
-        if (!isset($session) or $this->isInvalid($session)) {
-            $this->exists = false;
-            $session = $this->createFreshSession();
-        }
-        // Once the session payloads have been created or loaded we will set it to an
-        // internal values that are managed by the driver. The values are not sent
-        // back into storage until the sessions are closed after these requests.
-        $this->session = $session;
-    }
-    /**
-     * Create a fresh session payload.
-     *
-     * @return array
-     */
-    protected function createFreshSession()
-    {
-        $flash = $this->createData();
-        return array('id' => $this->createSessionID(), 'data' => $flash);
-    }
-    /**
-     * Create a new, empty session data array.
-     *
-     * @return array
-     */
-    protected function createData()
-    {
-        $token = $this->createSessionID();
-        return array('_token' => $token, ':old:' => array(), ':new:' => array());
-    }
-    /**
-     * Generate a new, random session ID.
-     *
-     * @return string
-     */
-    protected function createSessionID()
-    {
-        return Str::random(40);
-    }
-    /**
-     * Determine if the given session is invalid.
-     *
-     * @param  array  $session
      * @return bool
      */
-    protected function isInvalid($session)
+    public function hasFlash($name)
     {
-        if (!is_array($session)) {
-            return true;
-        }
-        return $this->isExpired($session);
+        return !is_null($this->getFlashBag()->peek($name));
     }
     /**
-     * Determine if the given session is expired.
-     *
-     * @param  array  $session
-     * @return bool
-     */
-    protected function isExpired($session)
-    {
-        if ($this->lifetime == 0) {
-            return false;
-        }
-        return time() - $session['last_activity'] > $this->lifetime * 60;
-    }
-    /**
-     * Get the full array of session data, including flash data.
-     *
-     * @return array
-     */
-    public function all()
-    {
-        return $this->session['data'];
-    }
-    /**
-     * Determine if the session contains a given item.
-     *
-     * @param  string  $key
-     * @return bool
-     */
-    public function has($key)
-    {
-        return !is_null($this->get($key));
-    }
-    /**
-     * Get the requested item from the session.
-     *
-     * @param  string  $key
-     * @param  mixed   $default
-     * @return mixed
-     */
-    public function get($key, $default = null)
-    {
-        $me = $this;
-        // First we will check for the value in the general session data and if it
-        // is not present in that array we'll check the session flash datas to
-        // get the data from there. If neither is there we give the default.
-        $data = $this->session['data'];
-        return array_get($data, $key, function () use($me, $key, $default) {
-            return $me->getFlash($key, $default);
-        });
-    }
-    /**
-     * Get the request item from the flash data.
-     *
-     * @param  string  $key
-     * @param  mixed   $default
-     * @return mixed
-     */
-    public function getFlash($key, $default = null)
-    {
-        $data = $this->session['data'];
-        // Session flash data is only persisted for the next request into the app
-        // which makes it convenient for temporary status messages or various
-        // other strings. We'll check all of this flash data for the items.
-        if ($value = array_get($data, ":new:.{$key}")) {
-            return $value;
-        }
-        // The "old" flash data are the data flashed during the previous request
-        // while the "new" data is the data flashed during the course of this
-        // current request. Usually developers will be retrieving the olds.
-        if ($value = array_get($data, ":old:.{$key}")) {
-            return $value;
-        }
-        return value($default);
-    }
-    /**
-     * Determine if the old input contains an item.
+     * Determine if the session contains old input.
      *
      * @param  string  $key
      * @return bool
@@ -10387,7 +11311,7 @@ abstract class Store implements ArrayAccess
      */
     public function getOldInput($key = null, $default = null)
     {
-        $input = $this->get('__old_input', array());
+        $input = $this->getFlashBag()->peek('_old_input');
         // Input that is flashed to the session can be easily retrieved by the
         // developer, making repopulating old forms and the like much more
         // convenient, since the request's previous input is available.
@@ -10403,6 +11327,15 @@ abstract class Store implements ArrayAccess
      */
     public function getToken()
     {
+        return $this->token();
+    }
+    /**
+     * Get the CSRF token value.
+     *
+     * @return string
+     */
+    public function token()
+    {
         return $this->get('_token');
     }
     /**
@@ -10414,7 +11347,7 @@ abstract class Store implements ArrayAccess
      */
     public function put($key, $value)
     {
-        array_set($this->session['data'], $key, $value);
+        $this->set($key, $value);
     }
     /**
      * Flash a key / value pair to the session.
@@ -10425,7 +11358,7 @@ abstract class Store implements ArrayAccess
      */
     public function flash($key, $value)
     {
-        array_set($this->session['data'][':new:'], $key, $value);
+        $this->getFlashBag()->set($key, $value);
     }
     /**
      * Flash an input array to the session.
@@ -10435,7 +11368,7 @@ abstract class Store implements ArrayAccess
      */
     public function flashInput(array $value)
     {
-        return $this->flash('__old_input', $value);
+        return $this->flash('_old_input', $value);
     }
     /**
      * Keep all of the session flash data from expiring.
@@ -10444,9 +11377,9 @@ abstract class Store implements ArrayAccess
      */
     public function reflash()
     {
-        $old = $this->session['data'][':old:'];
-        $new = $this->session['data'][':new:'];
-        $this->session['data'][':new:'] = array_merge($new, $old);
+        foreach ($this->getFlashBag()->peekAll() as $key => $value) {
+            $this->getFlashBag()->set($key, $value);
+        }
     }
     /**
      * Keep a session flash item from expiring.
@@ -10456,8 +11389,8 @@ abstract class Store implements ArrayAccess
      */
     public function keep($keys)
     {
-        foreach ((array) $keys as $key) {
-            $this->flash($key, $this->get($key));
+        foreach (array_only($this->getFlashBag()->peekAll(), $keys) as $key => $value) {
+            $this->getFlashBag()->set($key, $value);
         }
     }
     /**
@@ -10468,7 +11401,7 @@ abstract class Store implements ArrayAccess
      */
     public function forget($key)
     {
-        array_forget($this->session['data'], $key);
+        return $this->remove($key);
     }
     /**
      * Remove all of the items from the session.
@@ -10477,7 +11410,7 @@ abstract class Store implements ArrayAccess
      */
     public function flush()
     {
-        $this->session['data'] = $this->createData();
+        return $this->clear();
     }
     /**
      * Generate a new session identifier.
@@ -10486,259 +11419,77 @@ abstract class Store implements ArrayAccess
      */
     public function regenerate()
     {
-        $this->exists = false;
-        return $this->session['id'] = $this->createSessionID();
-    }
-    /**
-     * Finish the session handling for the request.
-     *
-     * @param  Symfony\Component\HttpFoundation\Response  $response
-     * @param  int  $lifetime
-     * @return void
-     */
-    public function finish(Response $response, $lifetime)
-    {
-        $time = $this->getCurrentTime();
-        // First we will set the last activity timestamp on the session and age the
-        // session flash data so the old data is gone when subsequent calls into
-        // the application are made. Then we'll call the driver store methods.
-        $this->session['last_activity'] = $time;
-        $id = $this->getSessionID();
-        $this->ageFlashData();
-        // We'll distinguish between updating and creating sessions since it might
-        // matter to the driver. Most drivers will probably be able to use the
-        // same code regardless of whether the session is new or not though.
-        if ($this->exists) {
-            $this->updateSession($id, $this->session, $response);
-        } else {
-            $this->createSession($id, $this->session, $response);
-        }
-        // If this driver implements the "Sweeper" interface and hits the sweepers
-        // lottery we will sweep sessions from storage that are expired so the
-        // storage spot does not get junked up with expired session storage.
-        if ($this instanceof Sweeper and $this->hitsLottery()) {
-            $this->sweep($time - $this->lifetime * 60);
-        }
-    }
-    /**
-     * Age the session flash data.
-     *
-     * @return void
-     */
-    protected function ageFlashData()
-    {
-        $this->session['data'][':old:'] = $this->session['data'][':new:'];
-        $this->session['data'][':new:'] = array();
-    }
-    /**
-     * Get the current timestamp.
-     *
-     * @return int
-     */
-    protected function getCurrentTime()
-    {
-        return time();
-    }
-    /**
-     * Determine if the request hits the sweeper lottery.
-     *
-     * @return bool
-     */
-    public function hitsLottery()
-    {
-        return mt_rand(1, $this->sweep[1]) <= $this->sweep[0];
-    }
-    /**
-     * Write the session cookie to the response.
-     *
-     * @param  \Illuminate\Cookie\CookieJar  $cookie
-     * @param  string  $name
-     * @param  int     $lifetime
-     * @param  string  $path
-     * @param  string  $domain
-     * @return void
-     */
-    public function getCookie(CookieJar $cookie, $name, $lifetime, $path, $domain)
-    {
-        return $cookie->make($name, $this->getSessionId(), $lifetime, $path, $domain);
-    }
-    /**
-     * Get the session payload.
-     *
-     * @var array
-     */
-    public function getSession()
-    {
-        return $this->session;
-    }
-    /**
-     * Set the entire session payload.
-     *
-     * @param  array  $session
-     * @return void
-     */
-    public function setSession($session)
-    {
-        $this->session = $session;
-    }
-    /**
-     * Get the current session ID.
-     *
-     * @return string
-     */
-    public function getSessionID()
-    {
-        if (isset($this->session['id'])) {
-            return $this->session['id'];
-        }
-    }
-    /**
-     * Get the session's last activity UNIX timestamp.
-     *
-     * @return int
-     */
-    public function getLastActivity()
-    {
-        if (isset($this->session['last_activity'])) {
-            return $this->session['last_activity'];
-        }
-    }
-    /**
-     * Determine if the session exists in storage.
-     *
-     * @return bool
-     */
-    public function sessionExists()
-    {
-        return $this->exists;
-    }
-    /**
-     * Set the existence of the session.
-     *
-     * @param  bool  $value
-     * @return void
-     */
-    public function setExists($value)
-    {
-        $this->exists = $value;
-    }
-    /**
-     * Set the session cookie name.
-     *
-     * @param  string  $name
-     * @return void
-     */
-    public function setCookieName($name)
-    {
-        return $this->setCookieOption('name', $name);
-    }
-    /**
-     * Get the given cookie option.
-     *
-     * @param  string  $option
-     * @return mixed
-     */
-    public function getCookieOption($option)
-    {
-        return $this->cookie[$option];
-    }
-    /**
-     * Set the given cookie option.
-     *
-     * @param  string  $option
-     * @param  mixed   $value
-     * @return void
-     */
-    public function setCookieOption($option, $value)
-    {
-        $this->cookie[$option] = $value;
-    }
-    /**
-     * Set the session lifetime.
-     *
-     * @param  int   $minutes
-     * @return void
-     */
-    public function setLifetime($minutes)
-    {
-        $this->lifetime = $minutes;
-    }
-    /**
-     * Set the chances of hitting the Sweeper lottery.
-     *
-     * @param  array  $values
-     * @return void
-     */
-    public function setSweepLottery(array $values)
-    {
-        $this->sweep = $values;
-    }
-    /**
-     * Determine if the given offset exists.
-     *
-     * @param  string  $key
-     * @return bool
-     */
-    public function offsetExists($key)
-    {
-        return $this->has($key);
-    }
-    /**
-     * Get the value at a given offset.
-     *
-     * @param  string  $key
-     * @return mixed
-     */
-    public function offsetGet($key)
-    {
-        return $this->get($key);
-    }
-    /**
-     * Store a value at the given offset.
-     *
-     * @param  string  $key
-     * @param  mixed   $value
-     * @return void
-     */
-    public function offsetSet($key, $value)
-    {
-        return $this->put($key, $value);
-    }
-    /**
-     * Remove the value at a given offset.
-     *
-     * @param  string  $key
-     * @return void
-     */
-    public function offsetUnset($key)
-    {
-        $this->forget($key);
+        return $this->migrate();
     }
 }
 namespace Illuminate\Session;
 
 use Illuminate\Support\Manager;
+use Symfony\Component\HttpFoundation\Session\Storage\NativeSessionStorage;
+use Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage;
+use Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler;
+use Symfony\Component\HttpFoundation\Session\Storage\Handler\NullSessionHandler;
+use Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler;
 class SessionManager extends Manager
 {
     /**
-     * Create an instance of the cookie session driver.
+     * Call a custom driver creator.
      *
-     * @return \Illuminate\Session\CookieStore
+     * @param  string  $driver
+     * @return mixed
      */
-    protected function createCookieDriver()
+    protected function callCustomCreator($driver)
     {
-        $payload = $this->app['config']->get('session.payload', 'illuminate_payload');
-        return new CookieStore($this->app['cookie'], $payload);
+        return $this->buildSession(parent::callCustomCreator($driver));
     }
     /**
-     * Create an instance of the file session driver.
+     * Create an instance of the "array" session driver.
      *
-     * @return \Illuminate\Session\FileStore
+     * @return \Illuminate\Session\Store
      */
-    protected function createFileDriver()
+    protected function createArrayDriver()
+    {
+        return new Store(new MockArraySessionStorage(), null, new FlashBag());
+    }
+    /**
+     * Create an instance of the native session driver.
+     *
+     * @return Illuminate\Session\Session
+     */
+    protected function createNativeDriver()
     {
         $path = $this->app['config']['session.files'];
-        return new FileStore($this->app['files'], $path);
+        return $this->buildSession(new NativeFileSessionHandler($path));
+    }
+    /**
+     * Create an instance of the database session driver.
+     *
+     * @return \Illuminate\Session\Store
+     */
+    protected function createDatabaseDriver()
+    {
+        $connection = $this->getDatabaseConnection();
+        $table = $connection->getTablePrefix() . $this->app['config']['session.table'];
+        return $this->buildSession(new PdoSessionHandler($connection->getPdo(), $this->getDatabaseOptions($table)));
+    }
+    /**
+     * Get the database connection for the database driver.
+     *
+     * @return \Illuminate\Database\Connection
+     */
+    protected function getDatabaseConnection()
+    {
+        $connection = $this->app['config']['session.connection'];
+        return $this->app['db']->connection($connection);
+    }
+    /**
+     * Get the database session options.
+     *
+     * @return array
+     */
+    protected function getDatabaseOptions($table)
+    {
+        return array('db_table' => $table, 'db_id_col' => 'id', 'db_data_col' => 'payload', 'db_time_col' => 'last_activity');
     }
     /**
      * Create an instance of the APC session driver.
@@ -10777,43 +11528,36 @@ class SessionManager extends Manager
         return $this->createCacheBased('redis');
     }
     /**
-     * Create an instance of the "array" session driver.
-     *
-     * @return \Illuminate\Session\ArrayStore
-     */
-    protected function createArrayDriver()
-    {
-        return new ArrayStore($this->app['cache']->driver('array'));
-    }
-    /**
-     * Create an instance of the database session driver.
-     *
-     * @return \Illuminate\Session\DatabaseStore
-     */
-    protected function createDatabaseDriver()
-    {
-        $connection = $this->getDatabaseConnection();
-        $table = $this->app['config']['session.table'];
-        return new DatabaseStore($connection, $this->app['encrypter'], $table);
-    }
-    /**
-     * Get the database connection for the database driver.
-     *
-     * @return \Illuminate\Database\Connection
-     */
-    protected function getDatabaseConnection()
-    {
-        $connection = $this->app['config']['session.connection'];
-        return $this->app['db']->connection($connection);
-    }
-    /**
      * Create an instance of a cache driven driver.
      *
      * @return \Illuminate\Session\CacheDrivenStore
      */
     protected function createCacheBased($driver)
     {
-        return new CacheDrivenStore($this->app['cache']->driver($driver));
+        $minutes = $this->app['config']['session.lifetime'];
+        $handler = new CacheBasedSessionHandler($this->app['cache']->driver($driver), $minutes);
+        return $this->buildSession($handler);
+    }
+    /**
+     * Build the session instance.
+     *
+     * @param  \SessionHandlerInterface  $handler
+     * @return \Illuminate\Session\Store
+     */
+    protected function buildSession($handler)
+    {
+        $storage = new NativeSessionStorage($this->getOptions(), $handler);
+        return new Store($storage, null, new FlashBag());
+    }
+    /**
+     * Get the session options.
+     *
+     * @return array
+     */
+    protected function getOptions()
+    {
+        $config = $this->app['config']['session'];
+        return array('cookie_domain' => $config['domain'], 'cookie_lifetime' => $config['lifetime'] * 60, 'cookie_path' => $config['path'], 'gc_divisor' => $config['lottery'][1], 'gc_probability' => $config['lottery'][0], 'name' => $config['cookie']);
     }
     /**
      * Get the default session driver name.
@@ -10934,91 +11678,6 @@ abstract class Manager
     public function __call($method, $parameters)
     {
         return call_user_func_array(array($this->driver(), $method), $parameters);
-    }
-}
-namespace Illuminate\Session;
-
-use Illuminate\Cookie\CookieJar;
-use Symfony\Component\HttpFoundation\Response;
-class CookieStore extends Store
-{
-    /**
-     * The Illuminate cookie creator.
-     *
-     * @var \Illuminate\CookieJar
-     */
-    protected $cookies;
-    /**
-     * The name of the session payload cookie.
-     *
-     * @var string
-     */
-    protected $payload;
-    /**
-     * Create a new Cookie based session store.
-     *
-     * @param  \Illuminate\Cookie\CookieJar  $cookies
-     * @param  string  $payload
-     * @return void
-     */
-    public function __construct(CookieJar $cookies, $payload = 'illuminate_payload')
-    {
-        $this->cookies = $cookies;
-        $this->payload = $payload;
-    }
-    /**
-     * Retrieve a session payload from storage.
-     *
-     * @param  string  $id
-     * @return array|null
-     */
-    public function retrieveSession($id)
-    {
-        return unserialize($this->cookies->get($this->payload));
-    }
-    /**
-     * Create a new session in storage.
-     *
-     * @param  string  $id
-     * @param  array   $session
-     * @param  Symfony\Component\HttpFoundation\Response  $response
-     * @return void
-     */
-    public function createSession($id, array $session, Response $response)
-    {
-        $value = serialize($session);
-        $response->headers->setCookie($this->cookies->make($this->payload, $value));
-    }
-    /**
-     * Update an existing session in storage.
-     *
-     * @param  string  $id
-     * @param  array   $session
-     * @param  Symfony\Component\HttpFoundation\Response  $response
-     * @return void
-     */
-    public function updateSession($id, array $session, Response $response)
-    {
-        return $this->createSession($id, $session, $response);
-    }
-    /**
-     * Set the name of the session payload cookie.
-     *
-     * @param  string  $name
-     * @return void
-     */
-    public function setPayloadName($name)
-    {
-        $this->payload = $name;
-    }
-    /**
-     * Get the cookie jar instance.
-     *
-     * @return \Illuminate\Cookie\CookieJar
-     */
-    public function getCookieJar()
-    {
-        return $this->cookies;
     }
 }
 namespace Illuminate\Cookie;
@@ -14061,6 +14720,12 @@ class Environment
      */
     protected $shared = array();
     /**
+     * All of the registered view names.
+     *
+     * @var array
+     */
+    protected $names = array();
+    /**
      * The extension to engine bindings.
      *
      * @var array
@@ -14116,6 +14781,28 @@ class Environment
     {
         $path = $this->finder->find($view);
         return new View($this, $this->getEngineFromPath($path), $view, $path, $data);
+    }
+    /**
+     * Get a evaluated view contents for a named view.
+     *
+     * @param string $view
+     * @param mixed $data
+     * @return \Illuminate\View\View
+     */
+    public function of($view, $data = array())
+    {
+        return $this->make($this->names[$view], $data);
+    }
+    /**
+     * Register a named view.
+     *
+     * @param string $view
+     * @param string $name
+     * @return void
+     */
+    public function name($view, $name)
+    {
+        $this->names[$name] = $view;
     }
     /**
      * Determine if a given view exists.
@@ -14501,6 +15188,15 @@ class Environment
     public function getSections()
     {
         return $this->sections;
+    }
+    /**
+     * Get all of the registered named views in environment.
+     *
+     * @return array
+     */
+    public function getNames()
+    {
+        return $this->names;
     }
 }
 namespace Illuminate\Support\Contracts;

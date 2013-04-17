@@ -99,12 +99,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Anahkiasen/flickering.git",
-                "reference": "5050b206185f7f6639d2f9e065485a926152dbaf"
+                "reference": "ffa9a268abd1f051bd54d19fe06450483ba9e848"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Anahkiasen/flickering/zipball/5050b206185f7f6639d2f9e065485a926152dbaf",
-                "reference": "5050b206185f7f6639d2f9e065485a926152dbaf",
+                "url": "https://api.github.com/repos/Anahkiasen/flickering/zipball/ffa9a268abd1f051bd54d19fe06450483ba9e848",
+                "reference": "ffa9a268abd1f051bd54d19fe06450483ba9e848",
                 "shasum": ""
             },
             "require": {
@@ -132,7 +132,7 @@
             ],
             "authors": [
                 {
-                    "name": "Maxime Fabre",
+                    "name": "Anahkiasen",
                     "email": "ehtnam6@gmail.com"
                 }
             ],
@@ -142,7 +142,7 @@
                 "flickr",
                 "php"
             ],
-            "time": "2013-03-12 10:17:13"
+            "time": "2013-04-17 13:13:24"
         },
         {
             "name": "anahkiasen/glow",
@@ -1192,12 +1192,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "469f85234468aa923da0fcc9814a22d07b9b6b33"
+                "reference": "3d91fa88c8c9ee1d106ef541096bf018e67d5001"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/469f85234468aa923da0fcc9814a22d07b9b6b33",
-                "reference": "469f85234468aa923da0fcc9814a22d07b9b6b33",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/3d91fa88c8c9ee1d106ef541096bf018e67d5001",
+                "reference": "3d91fa88c8c9ee1d106ef541096bf018e67d5001",
                 "shasum": ""
             },
             "require": {
@@ -1288,7 +1288,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-04-17 06:10:13"
+            "time": "2013-04-17 15:45:16"
         },
         {
             "name": "monolog/monolog",

@@ -3,10 +3,10 @@
   "dependencies": {
     "bootstrap": "latest",
     "classlist": "https://github.com/eligrey/classList.js.git",
-    "jquery": "latest",
     "jquery.lazyload": "latest",
     "normalize-css": "latest",
     "respond": "latest",
-    "rainbow": "https://github.com/ccampbell/rainbow.git#~1.1.9"
+    "rainbow": "https://github.com/ccampbell/rainbow.git#~1.1.9",
+    "jquery": "1.9.1"
   }
 }
