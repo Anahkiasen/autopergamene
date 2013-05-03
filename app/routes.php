@@ -57,7 +57,7 @@ Route::any('category/memorabilia/album/{id}', array(
 // Recompile local assets ------------------------------------------ /
 
 Route::get('basset/compile', function() {
-  Artisan::call('basset:compile', array(), new ViewOutput());
+  Artisan::call('basset:build', array(), new ViewOutput());
 
   return View::make('artisan')
     ->with('results', ViewOutput::getResults());

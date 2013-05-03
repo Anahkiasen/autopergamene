@@ -194,10 +194,10 @@ return array(
 
 		// Cerberus
 		'HTML'       => 'Cerberus\Facades\HTML',
-		'Thumb'      => 'Illuminage\Thumb',
+		'Illuminage' => 'Illuminage\Facades\Illuminage',
 
 		// Other packages
-		'Basset'     => 'Basset\Facades\Basset',
+		'Basset'     => 'Basset\Facade',
 		'Flickering' => 'Flickering\Facades\Flickering',
 
 	),
