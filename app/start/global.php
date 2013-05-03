@@ -71,6 +71,21 @@ if (!File::exists($cache)) mkdir($cache);
 Flickering::handshake('30de750088fe29573e0fb8bcdefbd473', 'c700f167e4f9a162');
 
 /*
+| Maintenance Mode Handler
+|--------------------------------------------------------------------------
+|
+| The "down" Artisan command gives you the ability to put an application
+| into maintenance mode. Here, you will define what is displayed back
+| to the user if maintenace mode is in effect for this application.
+|
+*/
+
+App::down(function()
+{
+	return Response::make("Be right back!", 503);
+});
+
+/*
 |--------------------------------------------------------------------------
 | Require The Filters File
 |--------------------------------------------------------------------------
