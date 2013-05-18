@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Update repository
+git reset --hard
+git pull --rebase origin master
+
+# Update dependencies
+rm bootstrap/compiled.php
+composer install
+bower install
+
+# Recompile assets
+php artisan basset:build -f
