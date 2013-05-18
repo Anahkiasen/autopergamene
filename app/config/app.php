@@ -114,12 +114,10 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
-		'ExpressiveDateServiceProvider',
 		'Cerberus\CerberusServiceProvider',
 		'Basset\BassetServiceProvider',
-		'Glow\GlowServiceProvider',
 		'Illuminage\IlluminageServiceProvider',
-		'Flatten\FlattenServiceProvider',
+		// 'Flatten\FlattenServiceProvider',
 
 	),
 
@@ -197,6 +195,7 @@ return array(
 		'Illuminage' => 'Illuminage\Facades\Illuminage',
 
 		// Other packages
+		'Carbon'     => 'Carbon\Carbon',
 		'Basset'     => 'Basset\Facade',
 		'Flickering' => 'Flickering\Facades\Flickering',
 

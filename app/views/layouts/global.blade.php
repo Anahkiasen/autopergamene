@@ -9,9 +9,6 @@
     {{ HTML::responsiveTags() }}
 
     {{ Basset::show('application.css') }}
-
-    {{-- Modernizr --}}
-    <script src="{{ URL::asset('glow.js') }}"></script>
     {{ Basset::show('modernizr.js') }}
     @yield('css')
   </head>

@@ -1,2 +1,1 @@
-$('.image-wrap img').lazyload
-  effect : "fadeIn"
+$('.image-wrap img').lazyload effect : "fadeIn"

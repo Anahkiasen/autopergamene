@@ -102,11 +102,10 @@ ul.fixed, footer .social, .about .about-more ul, .novel article ul {
     -moz-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -6px 0 rgba(0, 0, 0, 0.6), inset 0 -7px 0 rgba(255, 255, 255, 0.3);
     box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -6px 0 rgba(0, 0, 0, 0.6), inset 0 -7px 0 rgba(255, 255, 255, 0.3); }
   .image-wrap.glossy:before, .about aside.glossy:before {
-    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0.4)), color-stop(100%, rgba(255, 255, 255, 0.15)));
     background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.15));
     background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.15));
     background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.15));
-    background-image: linear-gradient(top, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.15));
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.15));
     -webkit-border-top-right-radius: 7px;
     -moz-border-radius-topright: 7px;
     border-top-right-radius: 7px;
@@ -155,15 +154,15 @@ h1, h2, h3, h4 {
   line-height: 24px;
   line-height: 1.5rem; }
 
-.categories figure h3, .portfolio .photoset--list h3, .portfolio .support h3, .portfolio .repository figure h3, header h1, .portfolio h3, .about h2, .article article .wp-caption p, .novel article .wp-caption p, .article article h2, .novel article h2 {
-  font-size: 26px;
-  font-size: 1.61803rem;
+.categories figure h3, header h1, .portfolio h3, .about h2, .article article .wp-caption p, .novel article .wp-caption p, .article article h2, .novel article h2 {
+  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 36px;
   line-height: 2.25rem; }
 
 .portfolio .illustration h2, .portfolio .tableau h2, .portfolio .photoset figure h2, .portfolio h1, .portfolio .photoset figure h3 {
-  font-size: 42px;
-  font-size: 2.61803rem;
+  font-size: 40px;
+  font-size: 2.5rem;
   line-height: 48px;
   line-height: 3rem; }
 
@@ -266,7 +265,7 @@ a.block, a.back, span.block {
   margin-right: 0; }
   @media (min-width: 980px) {
     .portfolio blockquote, .article article blockquote, .novel article blockquote, .novel article ul {
-      background-image: url('../img/quotes.png?1364893022');
+      background-image: url('../img/quotes.png?1368881299');
       background-position: 16px 16px;
       background-position: 1rem 1rem;
       background-repeat: no-repeat;
@@ -384,13 +383,13 @@ a.block, a.back, span.block {
     .categories figure h3, .categories figure h4 {
       font-weight: 100; }
     .categories figure h3 {
-      font-size: 42px;
-      font-size: 2.61803rem;
+      font-size: 40px;
+      font-size: 2.5rem;
       line-height: 48px;
       line-height: 3rem; }
     .categories figure h4 {
-      font-size: 26px;
-      font-size: 1.61803rem;
+      font-size: 24px;
+      font-size: 1.5rem;
       line-height: 36px;
       line-height: 2.25rem; } }
 
@@ -506,7 +505,7 @@ header {
       padding: 1.5rem 0 1.5rem; }
       header h1 {
         font-size: 68px;
-        font-size: 4.23607rem;
+        font-size: 4.25rem;
         line-height: 72px;
         line-height: 4.5rem; } }
 
@@ -538,14 +537,14 @@ footer {
   footer .colophon {
     float: right;
     margin-right: 0;
-    #margin-left: -1em;
+    *margin-left: -1em;
     text-align: left; }
     footer .colophon p:first-child {
       margin-top: 0; }
   @media (max-width: 768px) {
     footer {
-      font-size: 13px;
-      font-size: 0.78615rem;
+      font-size: 12px;
+      font-size: 0.75rem;
       line-height: 24px;
       line-height: 1.5rem; }
       footer .colophon, footer .social {
@@ -574,8 +573,8 @@ footer {
     margin-bottom: 0.25rem; }
   @media (min-width: 980px) {
     .portfolio .novel-summary h2 {
-      font-size: 42px;
-      font-size: 2.61803rem;
+      font-size: 40px;
+      font-size: 2.5rem;
       line-height: 48px;
       line-height: 3rem;
       margin-top: 32px;
@@ -660,7 +659,7 @@ footer {
 .about aside {
   height: 320px;
   height: 20rem;
-  background-image: url('../img/maxime-fabre.jpg?1364893022'); }
+  background-image: url('../img/maxime-fabre.jpg?1368881299'); }
   @media (min-width: 980px) and (max-width: 1200px) {
     .about aside {
       height: 400px;
@@ -711,7 +710,7 @@ footer {
   float: none;
   width: auto;
   margin-right: auto;
-  #margin-left: auto;
+  *margin-left: auto;
   margin-top: 16px;
   margin-top: 1rem;
   clear: both; }
@@ -722,9 +721,9 @@ footer {
     -webkit-border-top-left-radius: 3px;
     -moz-border-radius-topleft: 3px;
     border-top-left-radius: 3px;
-    -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1), inset 0 -2px 0 rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1), inset 0 -2px 0 rgba(0, 0, 0, 0.2);
-    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1), inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1), inset -2px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1), inset -2px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1), inset -2px 0 rgba(0, 0, 0, 0.2);
     padding: 8px 0;
     padding: 0.5rem 0;
     font-weight: 400; }
@@ -758,7 +757,7 @@ footer {
 
 .categories h2 {
   font-size: 68px;
-  font-size: 4.23607rem;
+  font-size: 4.25rem;
   line-height: 72px;
   line-height: 4.5rem;
   margin-bottom: 32px;

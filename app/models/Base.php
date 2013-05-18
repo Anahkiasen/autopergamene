@@ -27,7 +27,7 @@ class Base extends Eloquent
   public function getCreatedAtAttribute()
   {
     $date = $this->getOriginal('created_at');
-    $date = String::find($date, '-') ? new DateTime($date) : DateTime::createFromFormat('U', $date);
+    $date = String::find($date, '-') ? new Carbon($date) : Carbon::createFromTimestamp($date);
 
     return $date->format('Y-m-d');
   }

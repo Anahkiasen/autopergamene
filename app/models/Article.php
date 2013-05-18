@@ -40,9 +40,8 @@ class Article extends Base
 
   public function getRelativeDateAttribute()
   {
-    $date = $this->getOriginal('created_at');
-    $date = new ExpressiveDate($date, new DateTimeZone('Europe/Paris'));
-    $date = $date->getRelativeDate();
+    list ($day, $month, $year) = explode('/', $this->created_at);
+    $date = Carbon::createFromDate('20'.$year, $month, $day)->diffForHumans();
 
     return strtr($date, array(
       'ago' => null,

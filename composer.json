@@ -12,22 +12,14 @@
   "require": {
     "laravel/framework": "4.0.*",
     "anahkiasen/cerberus": "dev-master",
-    "anahkiasen/flatten": "dev-develop",
     "anahkiasen/flickering": "dev-master",
-    "anahkiasen/glow": "dev-master",
     "anahkiasen/illuminage": "dev-master",
     "anahkiasen/underscore-php": "dev-master",
     "dflydev/markdown": "dev-master",
     "jasonlewis/basset": "dev-master",
-    "jasonlewis/expressive-date": "dev-master",
-    "natxet/CssMin": "dev-master"
+    "natxet/CssMin": "dev-master",
+    "opauth/flickr": "dev-master"
   },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/pocket7878/opauth-flickr.git"
-    }
-  ],
   "autoload": {
     "classmap": [
       "app/commands",

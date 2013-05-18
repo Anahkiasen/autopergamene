@@ -9,11 +9,11 @@ View::composer('about', function($view) {
 
   // Get current time and timezone
   $timezone = new DateTimeZone('Europe/Paris');
-  $today = ExpressiveDate::make(null, $timezone)->now();
+  $today = Carbon::now('Europe/Paris');
 
   // Calculating dates
-  $view->age = ExpressiveDate::make('March 2nd, 1990', $timezone)->getDifferenceInYears($today);
-  $view->work = ExpressiveDate::make('October 1st, 2009', $timezone)->getDifferenceInYears($today);
+  $view->age  = Carbon::createFromDate(1990, 3, 2)->diffInYears($today);
+  $view->work = Carbon::createFromDate(2009, 10, 1)->diffInYears($today);
 });
 
 View::composer('footer', function($view) {

@@ -1,8 +1,9 @@
+bootstrap/compiled.php
 /vendor
 
 app/storage/database
 
-public/assets
+public/builds
 public/cache/*.jpg
 
 .DS_Store
