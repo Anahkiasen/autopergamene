@@ -96,7 +96,7 @@ App::down(function()
 |
 */
 
-require __DIR__.'/../filters.php';
-require __DIR__.'/../assets.php';
-require __DIR__.'/../composers.php';
-require __DIR__.'/../macros.php';
+require app_path().'/filters.php';
+require app_path().'/assets.php';
+require app_path().'/composers.php';
+require app_path().'/macros.php';
