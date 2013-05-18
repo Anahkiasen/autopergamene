@@ -1,0 +1,334 @@
+//////////////////////////////////////////////////////////////////////
+///////////////////////////// FUNCTIONS //////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+// Shortcut for rgba() with a percentage-based $opacity
+@function fade($color, $opacity) {
+  @return rgba($color, $opacity / 100);
+}
+
+// Generate a grey on a lightness-scale from 0 to 100
+@function grey($lightness) {
+  @return lighten(black, $lightness);
+}
+
+//////////////////////////////////////////////////////////////////////
+////////////////////////////// MIXINS ////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+// CSS3 ------------------------------------------------------------ /
+
+// Changes the current selection color
+@mixin selectionColor($background, $color: white) {
+  @include selection {
+    background: $background;
+    color: $color;
+  }
+}
+
+// Add basic Webkit-only reflect
+@mixin reflect {
+  -webkit-box-reflect: below 0 -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(fade(white, 20)));
+}
+
+// Changes the current font-smoothing mode
+@mixin font-smoothing($smooth) {
+  @include experimental(font-smoothing, $smooth);
+}
+
+// Create a ribbon
+@mixin ribbon($color, $padding: 1em) {
+  @include background-image(linear-gradient(lighten($color, 10), darken($color, 10)));
+  @include box-shadow(rgba(black, 0.3) 0 1px 1px);
+  background-color: $color;
+  font-size: $padding * 2;
+  position: absolute;
+  text-align: center;
+  h1 {
+    font-size: $padding * 1.5;
+  }
+  &:before, &:after {
+    border: 1.5em solid darken($color, 5);
+    bottom: -1em;
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+  }
+  &:before {
+    @include box-shadow(1px 1px 1px rgba(black, 0.4));
+    left: -2em;
+    border: {
+      right-width: 1.5em;
+      left-color: transparent;
+    };
+  }
+  &:after {
+    @include box-shadow(-1px 1px 1px rgba(black, 0.4));
+    right: -2em;
+    border: {
+      left-width: 1.5em;
+      right-color: transparent;
+    };
+  }
+  .content {
+    color: darken($color, 20);
+    padding: $padding * 0.7 $padding;
+    text-shadow: lighten($color, 10) 0 1px 0;
+    &:before, &:after {
+      border: {
+        color: darken($color, 20) transparent transparent transparent;
+        style: solid;
+      };
+      bottom: -1em;
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: -2;
+    }
+    &:before {
+      border-width: 1em 0 0 1em;
+      left: 0;
+    }
+    &:after {
+      border-width: 1em 1em 0 0;
+      right: 0;
+    }
+  }
+  // Stitches ------ /
+  $stitchesSize: 3px;
+  $stitchesShadow: 2px $stitchesSize rgba(white, 0.2);
+  $stitchesWhite: 0 0 2px rgba(black, 0.3);
+  .stitches-top,
+  .stitches-bottom {
+    @include box-shadow($stitchesWhite, 0px $stitchesSize $stitchesShadow);
+    border-top: 1px dashed rgba(white, 0.2);
+  }
+  .stitches-top {
+    @include box-shadow($stitchesWhite, 0px -1 * $stitchesSize $stitchesShadow);
+    margin-top: 2px;
+  }
+  .stitches-bottom {
+    margin-bottom: 2px;
+  }
+}
+
+// Paper curl
+@mixin paper-curl($angleRaw: 10, $opacity: 0.5) {
+  $angle: unquote($angleRaw + "deg");
+  @include box-shadow(10px 10px 20px fade(black, 20));
+  &:before, &:after {
+    @include transform(skew(-$angle) rotate(-$angle));
+    @include box-shadow(0 6px 12px rgba(black, $opacity));
+    background: transparent;
+    bottom: $angleRaw * 4px;
+    content: " ";
+    height: 10px;
+    left: 12px;
+    position: absolute;
+    width: 40%;
+    z-index: -1;
+  }
+  &:after {
+    @include transform(skew($angle) rotate($angle));
+    left: auto;
+    right: 12px;
+  }
+}
+
+// Folded corners (triangles)
+@mixin folded-corners($size, $color, $offset: 0) {
+  position: relative;
+  &:before,
+  &:after {
+    border-bottom: $size solid transparent;
+    bottom: -$size + $offset;
+    content: "";
+    display: block;
+    height: 0;
+    position: absolute;
+    width: 0;
+    z-index: -5;
+  }
+  &:before {
+    border-right: $size solid $color;
+    left: -$offset;
+  }
+  &:after {
+    border-left: $size solid $color;
+    right: -$offset;
+  }
+}
+
+@function double-shadow($size: 2px, $blur: 0) {
+  @return 0 $size $blur fade(black, 10), inset 0 -$size $blur fade(black, 20);
+}
+
+@mixin double-shadow($size: 2px, $blur: 0) {
+  @include box-shadow(double-shadow($size, $blur));
+}
+
+// Gradients ------------------------------------------------------- /
+
+// Main mixin
+@mixin gradient-auto($color, $difference: $cerberus-gradient-span, $type: vertical, $borders: $cerberus-gradient-borders) {
+  @if $type == vertical {
+    @include gradient-vertical(lighten($color, $difference), darken($color, $difference));
+  }
+  @else if $type == vertical-inverse {
+    @include gradient-vertical(darken($color, $difference), lighten($color, $difference));
+  }
+  @else if $type == horizontal {
+    @include gradient-horizontal(lighten($color, $difference), darken($color, $difference));
+  }
+  @else if $type == horizontal-inverse {
+    @include gradient-horizontal(darken($color, $difference), lighten($color, $difference));
+  }
+  @else if $type == radial {
+    @include gradient-radial(lighten($color, $difference), darken($color, $difference));
+  }
+  // Borders
+  @if $borders > 0 {
+    border-top: $borders solid lighten($color, $difference + 10);
+    border-bottom: $borders solid darken($color, $difference + 10);
+  }
+}
+
+// Individual directional mixins
+@mixin gradient-auto-vertical($color, $difference: $cerberus-gradient-span, $borders: $cerberus-gradient-borders) {
+  @include gradient-auto($color, $difference, vertical, $borders);
+}
+
+@mixin gradient-auto-horizontal($color, $difference: $cerberus-gradient-span, $borders: $cerberus-gradient-borders) {
+  @include gradient-auto($color, $difference, horizontal, $borders);
+}
+
+@mixin gradient-auto-radial($color, $difference: $cerberus-gradient-span, $borders: $cerberus-gradient-borders) {
+  @include gradient-auto($color, $difference, radial, $borders);
+}
+
+// Utilities ------------------------------------------------------- /
+
+@mixin debug($mainBlock) {
+  body {
+    @include baseline-grid-background($base-line-height);
+  }
+  #{$mainBlock} {
+    @include grid-background($total-columns, $column-width, $gutter-width, $base-line-height, $grid-padding, $force_fluid: true);
+  }
+}
+
+// Transforms a table into a responsive table
+@mixin responsive-table($data-title: true) {
+  thead, tbody, th, tr, td {
+    display: block;
+    width: 100%;
+  }
+  @if $data-title {
+    thead {
+      display: none;
+    }
+    td:before {
+      position: absolute;
+      top: 3px;
+      left: 10px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+      text-align: left;
+      font-weight: 700;
+      content: attr(data-title);
+    }
+  }
+  th, td, td.id, td.action {
+    padding: ms(-2) 0;
+    @if $data-title {
+      width: 50%;
+      position: relative;
+      padding-left: 50%;
+      text-align: left;
+    }
+    @else {
+      width: 100%;
+    }
+  }
+}
+
+// Drops a text-shadow of a contrast color
+@mixin text-drop($color, $size: 2px) {
+  color: $color;
+  text-shadow: 0 $size 0 rgba(contrast-color($color), 0.5);
+}
+
+// Creates a beveling text-shadow
+@mixin bevel($size, $opacity: 20) {
+  text-shadow: 0 - $size 0 fade(black, $opacity), 0 $size 0 fade(white, $opacity);
+}
+
+// Loads a webfont using the +font-face mixin
+@mixin webfont($name, $font_path, $weight: normal, $style: normal) {
+  @include font-face($name, font-files("#{$font_path}.woff", "#{$font_path}.ttf", "#{$font_path}.otf", "#{$font_path}.svgz#FontAwesomeRegular", svg, "#{$font_path}.svg#FontAwesomeRegular", svg), "#{$font_path}.eot", $weight, $style);
+}
+
+// Percentage-based version of rba-background
+@mixin background-fade($color, $opacity) {
+  @include rgba-background($color, $opacity / 100);
+}
+
+// Padding mixins
+@mixin padding-h($padding) {
+  padding-left: $padding;
+  padding-right: $padding;
+}
+
+@mixin padding-v($padding) {
+  padding-bottom: $padding;
+  padding-top: $padding;
+}
+
+// Margin mixins
+@mixin margin-h($margin) {
+  margin-left: $margin;
+  margin-right: $margin;
+}
+
+@mixin margin-v($margin) {
+  margin-bottom: $margin;
+  margin-top: $margin;
+}
+
+//////////////////////////////////////////////////////////////////////
+///////////////////////// TWITTER BOOTSTRAP //////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+@mixin reset-bootstrap-icons {
+  [class^="icon-"],
+  [class*=" icon-"] {
+    background: none !important;
+    height: auto;
+    width: auto;
+    &:before {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin input-shadow($color) {
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="date"],
+  input[type="time"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"],
+  input[type="search"],
+  input[type="color"],
+  .uneditable-input {
+    &:focus {
+      border-color: rgba($color, 0.8);
+      @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($color, 0.6));
+    }
+  }
+}

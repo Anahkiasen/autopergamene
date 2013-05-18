@@ -1,0 +1,49 @@
+//////////////////////////////////////////////////////////////////////
+////////////////////////////// VARIABLES /////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+// Base font stack ------------------------------------------------- /
+
+$sans-font-family           : "Open Sans", "open-sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$serif-font-family          : "Droid Serif", "droid-serif", Georgia, "Times New Roman", Times, serif !default;
+
+// Third party options --------------------------------------------- /
+
+$round-to-nearest-half-line : true;
+$rhythm-unit                : 'rem' !default;
+
+// Base sizes  ----------------------------------------------------- /
+
+// Font size
+$base-font-size             : 16px !default;
+$base-size                  : 1rem !default;
+
+// Line height
+$line-height                : 1.5 !default;
+$base-line-height           : $base-font-size * $line-height;
+
+//////////////////////////////////////////////////////////////////////
+//////////////////////// SHORTCUTS AND ALIASES ///////////////////////
+//////////////////////////////////////////////////////////////////////
+
+// Base font sizes ------------------------------------------------- /
+
+$xxxsmall : 0.15rem;
+$xxsmall  : 0.25rem;
+$xsmall   : 0.4rem;
+$small    : 0.6rem;
+$tiny     : 0.75rem;
+$normal   : 1rem;
+$heavy    : 1.25rem;
+$medium   : 1.5rem;
+$large    : 2.5rem;
+$xlarge   : 4.25rem;
+$xxlarge  : 6.75rem;
+$xxxlarge : 11rem;
+
+// Related mixins -------------------------------------------------- /
+
+// Alias for +adjust-font-size-to
+@mixin font-size($font-size) {
+  @include adjust-font-size-to($font-size);
+}

@@ -1,0 +1,60 @@
+//////////////////////////////////////////////////////////////////////
+//////////////////////// CUSTOM IMAGES STYLES ////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+$image-wrap-border-radius: 7px !default;
+$image-wrap-depth: 7px !default;
+
+$image-wrap-depth: $image-wrap-depth * -1;
+
+// Main block ------------------------------------------------------ /
+
+.image-wrap {
+  display: inline-block;
+  max-width: 100%;
+  position: relative;
+  vertical-align: bottom;
+  &:after {
+    @include box-shadow(inset 0 0 1px fade(white, 40), inset 0 1px 0 fade(white, 40), 0 1px 2px fade(black, 30));
+    border-radius: $image-wrap-border-radius;
+    border: solid 1px #1b1b1b;
+    content: " ";
+    height: 100%;
+    left: -1px;
+    position: absolute;
+    top: -1px;
+    width: 100%;
+  }
+  img {
+    @include box-shadow(0 1px 2px fade(black, 40));
+    border-radius: $image-wrap-border-radius;
+    vertical-align: bottom;
+  }
+  // Image styles -------------------------------------------------- /
+  &.embossed:after {
+    @include box-shadow(inset 0 0 1px fade(black, 80), inset 0 1px 0 fade(white, 50), inset 0 $image-wrap-depth + 1px 0 fade(black, 60), inset 0 $image-wrap-depth 0 fade(white, 30));
+  }
+  &.glossy:before {
+    @include background-image(linear-gradient(top, fade(white, 40), fade(white, 15)));
+    @include border-top-radius($image-wrap-border-radius);
+    content: " ";
+    height: 50%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  &.soft-embossed:after {
+    @include box-shadow(inset 0 0 3px fade(black, 10), inset 0 1px 1px fade(white, 50), inset 0 -6px 2px fade(black, 60), inset 0 -8px 2px fade(white, 30));
+  }
+  &.cutout:after {
+    @include box-shadow(0 1px 0 fade(white, 20), inset 0 4px 5px fade(black, 60), inset 0 1px 2px fade(black, 60));
+  }
+  &.square {
+    &:after,
+    &:before,
+    img {
+      border-radius: 0;
+    }
+  }
+}

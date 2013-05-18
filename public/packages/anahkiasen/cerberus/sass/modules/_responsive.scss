@@ -1,0 +1,31 @@
+//////////////////////////////////////////////////////////////////////
+///////////////////////// RESPONSIVE HELPERS /////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+// Flatten out forms ----------------------------------------------- /
+
+.form-horizontal {
+  @include to($tablet) {
+    .control-label, .controls {
+      clear: both;
+      width: 100%;
+      margin-left: 0;
+    }
+    .control-label {
+      text-align: left;
+    }
+    .form-actions {
+      padding: ms(0);
+      text-align: center;
+      .btn {
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: ms(-1);
+        width: 100%;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
