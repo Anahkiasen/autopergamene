@@ -8,7 +8,6 @@ View::composer('about', function($view) {
   $view->services = Service::all();
 
   // Get current time and timezone
-  $timezone = new DateTimeZone('Europe/Paris');
   $today = Carbon::now('Europe/Paris');
 
   // Calculating dates
