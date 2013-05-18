@@ -44,13 +44,14 @@ class Article extends Base
     $date = Carbon::createFromDate('20'.$year, $month, $day)->diffForHumans();
 
     return strtr($date, array(
-      'ago' => null,
-      'days' => 'jour(s)',
-      'months' => 'mois',
-      'weeks' => 'sem.',
-      'week' => 'sem.',
-      'years' => 'ans',
-      'year' => 'an',
+      'from now' => null,
+      'ago'      => null,
+      'days'     => 'jour(s)',
+      'months'   => 'mois',
+      'weeks'    => 'sem.',
+      'week'     => 'sem.',
+      'years'    => 'ans',
+      'year'     => 'an',
     ));
   }
 
