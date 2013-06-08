@@ -2,157 +2,227 @@
 
 return array(
 
-  /*
-  |--------------------------------------------------------------------------
-  | Basset Handles
-  |--------------------------------------------------------------------------
-  |
-  | When requesting assets in development mode this is the key that routes
-  | will respond to.
-  |
-  */
+    /*
+    |--------------------------------------------------------------------------
+    | Collections
+    |--------------------------------------------------------------------------
+    |
+    | Basset is built around collections. A collection contains assets for
+    | your application. Collections can contain both stylesheets and
+    | javascripts.
+    |
+    | A default "application" collection is ready for immediate use. It makes
+    | a couple of assumptions about your directory structure.
+    |
+    | /public
+    |    /assets
+    |        /stylesheets
+    |            /less
+    |            /sass
+    |        /javascripts
+    |            /coffeescripts
+    |
+    | You can overwrite this collection or remove it by publishing the config.
+    |
+    */
 
-  'handles' => 'assets',
+    'collections' => array(),
 
-  /*
-  |--------------------------------------------------------------------------
-  | Relative Public Path
-  |--------------------------------------------------------------------------
-  |
-  | This is a relative path to your public directory from the application's
-  | base directory. For a default Laravel installation this is normally
-  | just public.
-  |
-  */
+    /*
+    |--------------------------------------------------------------------------
+    | Production Environment
+    |--------------------------------------------------------------------------
+    |
+    | Basset needs to know what your production environment is so that it can
+    | respond with the correct assets. When in production Basset will attempt
+    | to return any built collections. If a collection has not been built
+    | Basset will dynamically route to each asset in the collection and apply
+    | the filters.
+    |
+    | The last method can be very taxing so it's highly recommended that
+    | collections are built when deploying to a production environment.
+    |
+    | You can supply an array of production environment names if you need to.
+    |
+    */
 
-  'public' => 'public',
+    'production' => array('production', 'prod'),
 
-  /*
-  |--------------------------------------------------------------------------
-  | Compiling Path
-  |--------------------------------------------------------------------------
-  |
-  | When assets are statically compiled via the command line the generated
-  | files will be stored in this directory. The path is relative to the public
-  | directory you specified above.
-  |
-  | If the directory does not exist, Basset will attempt to create it.
-  |
-  */
+    /*
+    |--------------------------------------------------------------------------
+    | Build Path
+    |--------------------------------------------------------------------------
+    |
+    | When assets are built with Artisan they will be stored within a directory
+    | relative to the public directory.
+    |
+    | If the directory does not exist Basset will attempt to create it.
+    |
+    */
 
-  'compiling_path' => 'assets',
+    'build_path' => 'builds',
 
-  /*
-  |--------------------------------------------------------------------------
-  | Asset Directories
-  |--------------------------------------------------------------------------
-  |
-  | These named directories are used for quick reference as well as when
-  | searching for an asset. Assets are located by cascading through the array
-  | of directories until an asset with the matching name is found.
-  |
-  | Directories are relative from the root of your application.
-  |
-  | You can specifiy an absolute path to a directory by prefixing it with
-  | 'path: '.
-  |
-  | array(
-  |    'css' => 'path: /path/to/your/directory'
-  | )
-  |
-  */
+    /*
+    |--------------------------------------------------------------------------
+    | Node Paths
+    |--------------------------------------------------------------------------
+    |
+    | Many filters use Node to build assets. We recommend you install your
+    | Node modules locally at the root of your application, however you can
+    | specify additional paths to your modules.
+    |
+    */
 
-  'directories' => array(
-    'rainbow' => 'components/rainbow/js',
-  ),
+    'node_paths' => array(
 
-  /*
-  |--------------------------------------------------------------------------
-  | Asset Aliases
-  |--------------------------------------------------------------------------
-  |
-  | Similar to directories you can define names for assets that may be used
-  | in a number of collections.
-  |
-  | array(
-  |    'layout' => 'css/layout.css'
-  | )
-  |
-  | Aliased assets are checked first when adding an asset.
-  |
-  */
+        base_path().'/node_modules'
 
-  'assets' => array(),
+    ),
 
-  /*
-  |--------------------------------------------------------------------------
-  | Asset Collections
-  |--------------------------------------------------------------------------
-  |
-  | Define your collections in an array like so.
-  |
-  | array(
-  |   'website' => function($collection)
-  |  {
-  |    $collection->add('example.css');
-  |  }
-  | )
-  |
-  | This collection is now available at Basset::show('website.css')
-  |
-  */
+    /*
+    |--------------------------------------------------------------------------
+    | Gzip Built Collections
+    |--------------------------------------------------------------------------
+    |
+    | To get the most speed and compression out of Basset you can enable Gzip
+    | for every collection that is built via the command line. This is applied
+    | to both collection builds and development builds.
+    |
+    | You can use the --gzip switch for on-the-fly Gzipping of collections.
+    |
+    */
 
-  'collections' => array(),
+    'gzip' => false,
 
-  /*
-  |--------------------------------------------------------------------------
-  | Production Environment
-  |--------------------------------------------------------------------------
-  |
-  | Basset will attempt to detect your production environment and serve
-  | static assets. You can help Basset out in a number of ways to speed it up
-  | a bit.
-  |
-  | Set your actual production environment here and Basset will compare
-  | environments and serve the appropriate assets.
-  |
-  | Set to null or an empty string and Basset will try and detect your
-  | environment, this may deliver unexpected results.
-  |
-  | Set to false and Basset will always serve individual assets as it does in
-  | a development environment. Remember that filters will not be applied
-  | to the assets.
-  |
-  | Set to true to always serve static assets if available.
-  |
-  */
+    /*
+    |--------------------------------------------------------------------------
+    | Asset and Filter Aliases
+    |--------------------------------------------------------------------------
+    |
+    | You can define aliases for commonly used assets or filters.
+    | An example of an asset alias:
+    |
+    |   'layout' => 'stylesheets/layout/master.css'
+    |
+    | Filter aliases are slightly different. You can define a simple alias
+    | similar to an asset alias.
+    |
+    |   'YuiCss' => 'Yui\CssCompressorFilter'
+    |
+    | However if you want to pass in options to an aliased filter then define
+    | the alias as a nested array. The key should be the filter and the value
+    | should be a callback closure where you can set parameters for a filters
+    | constructor, etc.
+    |
+    |   'YuiCss' => array('Yui\CssCompressorFilter', function($filter)
+    |   {
+    |       $filter->setArguments('path/to/jar');
+    |   })
+    |
+    |
+    */
 
-  'production_environment' => 'production',
+    'aliases' => array(
 
-  /*
-  |--------------------------------------------------------------------------
-  | Named Filters
-  |--------------------------------------------------------------------------
-  |
-  | A named filter can be used to quickly apply a filter to a collection of
-  | assets.
-  |
-  |  'YuiCss' => 'Yui\CssCompressorFilter'
-  |
-  | If you'd like to specify options for a named filter you can define the
-  | filter as an array.
-  |
-  |  'YuiCss' => array(
-  |    'Yui\CssCompressorFilter' => array('/path/to/yuicompressor.jar')
-  |  )
-  |
-  | The filter can then be referenced by its name when applying filters.
-  |
-  */
+        'assets' => array(),
 
-  'filters' => array(
-    'CssMin' => 'CssMinFilter',
-    'JsMin'  => 'GoogleClosure\CompilerApiFilter',
-  ),
+        'filters' => array(
+
+            /*
+            |--------------------------------------------------------------------------
+            | Less Filter Alias
+            |--------------------------------------------------------------------------
+            |
+            | Filter is applied only when asset has a ".less" extension and it will
+            | attempt to find missing constructor arguments.
+            |
+            */
+
+            'Less' => array('LessFilter', function($filter)
+            {
+                $filter->whenAssetIs('.*\.less')->findMissingConstructorArgs();
+            }),
+
+            /*
+            |--------------------------------------------------------------------------
+            | Sass Filter Alias
+            |--------------------------------------------------------------------------
+            |
+            | Filter is applied only when asset has a ".sass" or ".scss" extension and
+            | it will attempt to find missing constructor arguments.
+            |
+            */
+
+            'Sass' => array('Sass\ScssFilter', function($filter)
+            {
+                $filter->whenAssetIs('.*\.(sass|scss)')->findMissingConstructorArgs();
+            }),
+
+            /*
+            |--------------------------------------------------------------------------
+            | CoffeeScript Filter Alias
+            |--------------------------------------------------------------------------
+            |
+            | Filter is applied only when asset has a ".coffee" extension and it will
+            | attempt to find missing constructor arguments.
+            |
+            */
+
+            'CoffeeScript' => array('CoffeeScriptFilter', function($filter)
+            {
+                $filter->whenAssetIs('.*\.coffee')->findMissingConstructorArgs();
+            }),
+
+            /*
+            |--------------------------------------------------------------------------
+            | CssMin Filter Alias
+            |--------------------------------------------------------------------------
+            |
+            | Filter is applied only when within the production environment and when
+            | the "CssMin" class exists.
+            |
+            */
+
+            'CssMin' => array('CssMinFilter', function($filter)
+            {
+                $filter->whenEnvironmentIs('production', 'prod')->whenClassExists('CssMin')->whenAssetIsStylesheet();
+            }),
+
+            /*
+            |--------------------------------------------------------------------------
+            | UglifyJs Filter Alias
+            |--------------------------------------------------------------------------
+            |
+            | Filter is applied only when within the production environment
+            |
+            */
+
+            'UglifyJs' => array('UglifyJs2Filter', function($filter)
+            {
+                $filter->whenEnvironmentIs('production', 'prod')->whenAssetIsJavascript();
+                $filter->setArgument('node_modules/uglify-js/bin/uglifyjs');
+                $filter->beforeFiltering(function($instance) {
+                    $instance->setCompress(true);
+                    $instance->setMangle(true);
+                });
+            }),
+
+            /*
+            |--------------------------------------------------------------------------
+            | UriRewrite Filter Alias
+            |--------------------------------------------------------------------------
+            |
+            | Filter gets a default argument of the path to the public directory.
+            |
+            */
+
+            'UriRewriteFilter' => array('UriRewriteFilter', function($filter)
+            {
+                $filter->setArguments(public_path());
+            })
+
+        )
+
+    )
 
 );
