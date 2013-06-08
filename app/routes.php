@@ -49,16 +49,3 @@ Route::any('category/les-fleurs-davril/story/{id}', array(
 Route::any('category/memorabilia/album/{id}', array(
   'as'   => 'photoset',
   'uses' => 'CategoriesController@getAlbum'));
-
-//////////////////////////////////////////////////////////////////////
-//////////////////////////// MAINTENANCE /////////////////////////////
-//////////////////////////////////////////////////////////////////////
-
-// Recompile local assets ------------------------------------------ /
-
-Route::get('basset/compile', function() {
-  Artisan::call('basset:build', array(), new ViewOutput());
-
-  return View::make('artisan')
-    ->with('results', ViewOutput::getResults());
-});
