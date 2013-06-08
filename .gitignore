@@ -10,3 +10,4 @@ public/cache/*.jpg
 .sass-cache
 sftp-config.json
 Thumbs.db
+Capfile
