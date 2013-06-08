@@ -1,4 +1,4 @@
-# logger.level = Logger::IMPORTANT
+logger.level = Logger::IMPORTANT
 
 set :application, "Autopergamene"
 set :repository,  "git://github.com/Anahkiasen/autopergamene.git"
@@ -29,33 +29,41 @@ default_run_options[:pty]   = true
 after "deploy:update", "deploy:cleanup"
 after "deploy:update", "deploy:create_symlink"
 
+STDOUT.sync
 namespace :deploy do
 
-	task :update do
-		update_code
-		symlink
-		composer
-		bower
-		basset
-	end
+  task :update do
+    info("Deploying")
+    update_code
+    composer
+    bower
+    basset
+  end
 
-	task :finalize_update do
-  	run "chmod -R +x #{current_release}/app/storage"
-  	run "chown -R www-data:www-data #{current_release}/app/storage"
-	end
+  task :finalize_update do
+    run "chmod -R +x #{current_release}/app/storage"
+    run "chown -R www-data:www-data #{current_release}/app/storage"
+  end
 
   # Package managers ----------------------------------------------- /
 
-	task :composer do
-		run "cd #{current_release};composer install"
-	end
+  task :composer do
+    info("Installing Composer dependencies")
+    run "cd #{current_release};composer install"
+  end
 
-	task :bower do
-		run "cd #{current_release};bower install"
-	end
+  task :bower do
+    info("Installing Bower components")
+    run "cd #{current_release};bower install"
+  end
 
-	task :basset do
-		run "cd #{current_release};php artisan basset:build -f --env=production"
-		run "cd #{current_release};php artisan basset --tidy-up"
-	end
+  task :basset do
+    info("Compiling assets")
+    run "cd #{current_release};php artisan basset:build -f --env=production"
+    run "cd #{current_release};php artisan basset --tidy-up"
+  end
+
+  def info(text)
+    print "#{text}.....\n".blue
+  end
 end
