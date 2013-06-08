@@ -47,11 +47,6 @@ namespace :deploy do
     info "Cleaning up old releases"
   end
 
-  task :migrate do
-    info "Running migrations"
-    run_in_folder "php artisan migrate:refresh --seed"
-  end
-
   task :finalize_update do
     info "Setting permissions"
     run "chmod -R +x #{current_release}/app/storage"

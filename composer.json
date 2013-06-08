@@ -26,6 +26,7 @@
       "app/controllers",
       "app/database/migrations",
       "app/database/seeds",
+      "app/libraries",
       "app/models",
       "app/models/Repositories",
       "app/models/Services",
