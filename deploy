@@ -11,4 +11,4 @@ bower install
 
 # Recompile assets
 php artisan basset:build -f --env=production
-php artisan --tidy-up
+php artisan basset --tidy-up
