@@ -64,6 +64,18 @@ return array(
 
     /*
     |--------------------------------------------------------------------------
+    | Debug
+    |--------------------------------------------------------------------------
+    |
+    | Enable debugging to have potential errors or problems encountered
+    | during operation logged to a rotating file setup.
+    |
+    */
+
+    'debug' => false,
+
+    /*
+    |--------------------------------------------------------------------------
     | Node Paths
     |--------------------------------------------------------------------------
     |
@@ -130,51 +142,6 @@ return array(
 
             /*
             |--------------------------------------------------------------------------
-            | Less Filter Alias
-            |--------------------------------------------------------------------------
-            |
-            | Filter is applied only when asset has a ".less" extension and it will
-            | attempt to find missing constructor arguments.
-            |
-            */
-
-            'Less' => array('LessFilter', function($filter)
-            {
-                $filter->whenAssetIs('.*\.less')->findMissingConstructorArgs();
-            }),
-
-            /*
-            |--------------------------------------------------------------------------
-            | Sass Filter Alias
-            |--------------------------------------------------------------------------
-            |
-            | Filter is applied only when asset has a ".sass" or ".scss" extension and
-            | it will attempt to find missing constructor arguments.
-            |
-            */
-
-            'Sass' => array('Sass\ScssFilter', function($filter)
-            {
-                $filter->whenAssetIs('.*\.(sass|scss)')->findMissingConstructorArgs();
-            }),
-
-            /*
-            |--------------------------------------------------------------------------
-            | CoffeeScript Filter Alias
-            |--------------------------------------------------------------------------
-            |
-            | Filter is applied only when asset has a ".coffee" extension and it will
-            | attempt to find missing constructor arguments.
-            |
-            */
-
-            'CoffeeScript' => array('CoffeeScriptFilter', function($filter)
-            {
-                $filter->whenAssetIs('.*\.coffee')->findMissingConstructorArgs();
-            }),
-
-            /*
-            |--------------------------------------------------------------------------
             | CssMin Filter Alias
             |--------------------------------------------------------------------------
             |
@@ -185,26 +152,22 @@ return array(
 
             'CssMin' => array('CssMinFilter', function($filter)
             {
-                $filter->whenEnvironmentIs('production', 'prod')->whenClassExists('CssMin')->whenAssetIsStylesheet();
+                $filter->whenProductionBuild()->whenAssetIsStylesheet()->whenClassExists('CssMin');
             }),
 
             /*
             |--------------------------------------------------------------------------
-            | UglifyJs Filter Alias
+            | JsMin Filter Alias
             |--------------------------------------------------------------------------
             |
-            | Filter is applied only when within the production environment
+            | Filter is applied only when within the production environment and when
+            | the "JsMin" class exists.
             |
             */
 
-            'UglifyJs' => array('UglifyJs2Filter', function($filter)
+            'JsMin' => array('JSMinFilter', function($filter)
             {
-                $filter->whenEnvironmentIs('production', 'prod')->whenAssetIsJavascript();
-                $filter->setArgument('node_modules/uglify-js/bin/uglifyjs');
-                $filter->beforeFiltering(function($instance) {
-                    $instance->setCompress(true);
-                    $instance->setMangle(true);
-                });
+                $filter->whenProductionBuild()->whenAssetIsJavascript()->whenClassExists('JSMin');
             }),
 
             /*
