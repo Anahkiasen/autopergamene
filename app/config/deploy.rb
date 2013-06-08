@@ -19,7 +19,6 @@ set :user, "root"
 set :ssh_options, {:forward_agent => true}
 
 # Options
-set :normalize_asset_timestamps, false
 ssh_options[:forward_agent] = true
 default_run_options[:pty]   = true
 
@@ -28,16 +27,21 @@ default_run_options[:pty]   = true
 ###
 
 after "deploy:update", "deploy:cleanup"
+after "deploy:update", "deploy:create_symlink"
 
 namespace :deploy do
 
 	task :update do
 		update_code
 		symlink
-		set_permissions
 		composer
 		bower
 		basset
+	end
+
+	task :finalize_update do
+  	run "chmod -R +x #{current_release}/app/storage"
+  	run "chown -R www-data:www-data #{current_release}/app/storage"
 	end
 
   # Package managers ----------------------------------------------- /
@@ -54,13 +58,4 @@ namespace :deploy do
 		run "cd #{current_release};php artisan basset:build -f --env=production"
 		run "cd #{current_release};php artisan basset --tidy-up"
 	end
-
-  task :symlink do
-    run "ln -nfs #{current_release} #{deploy_to}/production"
-  end
-
-  task :set_permissions do
-  	run "chmod -R +x #{current_release}/app/storage"
-  	run "chown -R www-data:www-data #{current_release}/app/storage"
-  end
 end
