@@ -38,6 +38,7 @@ namespace :deploy do
     composer
     bower
     basset
+    info("Cleaning up old releases")
   end
 
   task :finalize_update do
