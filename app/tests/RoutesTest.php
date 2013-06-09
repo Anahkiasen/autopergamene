@@ -43,7 +43,7 @@ class RoutesTest extends Cerberus\Scrutiny
   {
     $page   = $this->getPage('');
     $styles = $page->filter('link')->extract('href');
-    $styles = str_replace('http://:/', 'http://autopergamene.eu/', $styles[2]);
+    $styles = str_replace('http://localhost/', 'http://autopergamene.dev/', $styles[2]);
 
     $styles = (bool) file_get_contents($styles);
     $this->assertTrue($styles);
@@ -54,11 +54,6 @@ class RoutesTest extends Cerberus\Scrutiny
    */
   public function testCanDisplayCategories($categoryName)
   {
-    // Temporary fix to thumb generation problems
-    if ($categoryName == 'Illustration') {
-      //$this->setExpectedException('Imagine\Exception\RuntimeException');
-    }
-
     $url = 'category/'.String::slugify($categoryName);
     $this->assertIsPage($url, $categoryName);
 
@@ -89,19 +84,13 @@ class RoutesTest extends Cerberus\Scrutiny
     $this->assertIsPage($url, 'La Page Blanche');
   }
 
-  public function testCanCompileAssets()
-  {
-    $url = 'basset/compile';
-    $this->assertIsPage($url, 'Artisan');
-  }
-
   public function testCompiledAssetsPathAreCorrect()
   {
-    $stylesheet = glob(__DIR__.'/../../public/assets/application*.css');
+    $stylesheet = glob(__DIR__.'/../../public/builds/application/app/css/*.css');
     $stylesheet = File::get($stylesheet[0]);
 
     preg_match("#url\('([a-z/]+)maxime-fabre.jpg#", $stylesheet, $matches);
-    $image = __DIR__.'/../..'.$matches[1].'maxime-fabre.jpg';
+    $image = $this->app['path.public'].'/'.$matches[1].'maxime-fabre.jpg';
 
     $this->assertTrue(file_exists($image));
   }

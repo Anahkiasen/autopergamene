@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Anahkiasen/cerberus.git",
-                "reference": "16c2d56004f6363007db8e24d95df04deb9d673a"
+                "reference": "60031791c387d9c7c1f75c937a0a67d9ab38bb74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Anahkiasen/cerberus/zipball/16c2d56004f6363007db8e24d95df04deb9d673a",
-                "reference": "16c2d56004f6363007db8e24d95df04deb9d673a",
+                "url": "https://api.github.com/repos/Anahkiasen/cerberus/zipball/60031791c387d9c7c1f75c937a0a67d9ab38bb74",
+                "reference": "60031791c387d9c7c1f75c937a0a67d9ab38bb74",
                 "shasum": ""
             },
             "require": {
@@ -44,7 +44,7 @@
                 }
             ],
             "description": "Various helpers and classes for the Illuminate framework",
-            "time": "2013-06-09 00:26:45"
+            "time": "2013-06-09 01:07:27"
         },
         {
             "name": "anahkiasen/flickering",

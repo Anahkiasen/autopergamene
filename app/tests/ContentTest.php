@@ -4,6 +4,7 @@ use Underscore\Types\String;
 
 class ContentTest extends Cerberus\Scrutiny
 {
+
   // Data providers ------------------------------------------------ /
 
   public function provideCategoriesWithArticles()
@@ -49,7 +50,7 @@ class ContentTest extends Cerberus\Scrutiny
   {
     $crawler = $this->getPage();
     $categories = $crawler->filter('.categories h3')->each(function($node) {
-      return $node->nodeValue;
+      return utf8_decode($node->text());
     });
 
     $categoriesOrder = array(
@@ -70,14 +71,13 @@ class ContentTest extends Cerberus\Scrutiny
   {
     $crawler = $this->getPage();
 
-    $categories = $crawler->filter('.categories a');
-    foreach ($categories as $category) {
-      $categoryName  = $category->childNodes->item(2)->firstChild->nodeValue;
-      $linkBlank     = $category->hasAttribute('target');
+    $categories = $crawler->filter('.categories a')->each(function($category) {
+      $categoryName  = utf8_decode($category->filter('h3')->text());
+      $linkBlank     = (bool) $category->attr('target');
       $shouldBeBlank = in_array($categoryName, $this->externalCategories);
 
       $this->assertEquals($shouldBeBlank, $linkBlank);
-    }
+    });
 
   }
 
@@ -129,4 +129,5 @@ class ContentTest extends Cerberus\Scrutiny
 
     $this->assertTagContains($crawler, 'h3', '0');
   }
+
 }

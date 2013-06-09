@@ -21,8 +21,9 @@ class Illustration extends BaseModel
    */
   public function thumb($folder, $name = null)
   {
-    $image = Thumb::square($folder.$this->image, 200);
+    $image = Illuminage::square($folder.$this->image, 200);
     if (!$name) $name = $this->name;
+
     return $image->alt($name);
   }
 
