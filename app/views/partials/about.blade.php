@@ -37,7 +37,13 @@
           <ul>
             @foreach($services as $service)
               <li>
-                {{ HTML::image('app/svg/'.$service->icon, $service->name) }} {{ HTML::linkBlank($service->link, $service->name) }}
+                @if (str_contains($service->link, '@'))
+                  {{ HTML::image('app/svg/'.$service->icon, $service->name) }}
+                  {{ HTML::mailto($service->link, $service->name) }}
+                @else
+                  {{ HTML::image('app/svg/'.$service->icon, $service->name) }}
+                  {{ HTML::linkBlank($service->link, $service->name) }}
+                @endif
               </li>
             @endforeach
           </ul>
