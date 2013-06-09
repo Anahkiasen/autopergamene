@@ -37,7 +37,6 @@
     @extend %font-size-normal;
     @include rem(margin-top, 0.5rem);
     text-transform: none;
-    line-height: .25em;
   }
 
   // Responsive ---------------------------------------------------- /
@@ -131,6 +130,7 @@
     }
     h4 {
       @include font-size($font-size-medium);
+      line-height: .25em;
     }
   }
 }

@@ -290,8 +290,7 @@ span.block, a.block, a.back {
   .categories figure h4, .portfolio .photoset--list h4, .portfolio .support h4, .portfolio .repository figure h4 {
     margin-top: 8px;
     margin-top: 0.5rem;
-    text-transform: none;
-    line-height: .25em; }
+    text-transform: none; }
   @media (max-width: 768px) {
     .categories figure:hover, .portfolio .photoset--list:hover, .portfolio .support:hover, .portfolio .repository figure:hover {
       background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNikAIAACMAHf9yvGMAAAAASUVORK5CYII=');
@@ -390,7 +389,8 @@ span.block, a.block, a.back {
       font-size: 24px;
       font-size: 1.5rem;
       line-height: 36px;
-      line-height: 2.25rem; } }
+      line-height: 2.25rem;
+      line-height: .25em; } }
 
 .articles.hidden, .about .about-more {
   height: 0;
