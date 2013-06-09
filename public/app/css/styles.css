@@ -19,7 +19,7 @@ footer .footer-container {
     display: table;
     clear: both; }
 
-#container, .error, .portfolio, .article, .novel, .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .portfolio .collection, .about, .about .about-more, .categories {
+#container, .error, .portfolio, .article, .novel, .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .portfolio .collection, .categories, .about, .about .about-more {
   *zoom: 1;
   max-width: 59em;
   padding-left: 1em;
@@ -28,7 +28,7 @@ footer .footer-container {
   margin-right: auto;
   max-width: 100%;
   padding: 0; }
-  #container:after, .error:after, .portfolio:after, .article:after, .novel:after, .categories figure:after, .portfolio .photoset--list:after, .portfolio .support:after, .portfolio .repository figure:after, .portfolio .collection:after, .about:after, .about .about-more:after, .categories:after {
+  #container:after, .error:after, .portfolio:after, .article:after, .novel:after, .categories figure:after, .portfolio .photoset--list:after, .portfolio .support:after, .portfolio .repository figure:after, .portfolio .collection:after, .categories:after, .about:after, .about .about-more:after {
     content: "";
     display: table;
     clear: both; }
@@ -49,7 +49,7 @@ footer .footer-container {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1; }
 
-ul.fixed, footer .social, .about .about-more ul, .novel article ul, ul.fixed li, footer .social li, .about .about-more ul li, .novel article ul li, h1, h2, h3, h4, .portfolio .illustration figcaption, .portfolio .tableau figcaption, a.back, dl dt, dl dd, .portfolio .novel-summary h2, .portfolio .photoset figure h2, .portfolio .photoset figure h3, .articles article, .article article blockquote p, .novel article blockquote p {
+ul.fixed, footer .social, .about .about-more ul, .novel article ul, ul.fixed li, footer .social li, .about .about-more ul li, .novel article ul li, h1, h2, h3, h4, .portfolio .illustration figcaption, .portfolio .tableau figcaption, dl dt, dl dd, a.back, .portfolio .novel-summary h2, .portfolio .photoset figure h2, .portfolio .photoset figure h3, .articles article, .article article blockquote p, .novel article blockquote p {
   margin: 0; }
 
 ul.fixed, footer .social, .about .about-more ul, .novel article ul, ul.fixed li, footer .social li, .about .about-more ul li, .novel article ul li, h1, h2, h3, h4, body {
@@ -134,7 +134,7 @@ ul.fixed, footer .social, .about .about-more ul, .novel article ul {
 h1, h2, h3, h4 {
   line-height: 1; }
 
-.portfolio .collection h2, .articles article h3, a.block, a.back, span.block, .categories figure h4, .portfolio .photoset--list h4, .portfolio .support h4, .portfolio .repository figure h4, .portfolio .novel-summary h2, .portfolio .photoset figure h3, .about h2, .about h3, .about h4, .article article .wp-caption p, .novel article .wp-caption p, .article article h1, .novel article h1 {
+.portfolio .collection h2, .articles article h3, span.block, a.block, a.back, .categories figure h4, .portfolio .photoset--list h4, .portfolio .support h4, .portfolio .repository figure h4, .portfolio .novel-summary h2, .portfolio .photoset figure h3, .about h2, .about h3, .about h4, .article article .wp-caption p, .novel article .wp-caption p, .article article h1, .novel article h1 {
   font-family: "adelle", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
   text-transform: lowercase; }
@@ -148,7 +148,7 @@ h1, h2, h3, h4 {
   font-weight: 400;
   text-transform: uppercase; }
 
-.about p, a.block, a.back, span.block, .categories figure h4, .portfolio .photoset--list h4, .portfolio .support h4, .portfolio .repository figure h4, footer, .about .about-more h3 {
+.about p, span.block, a.block, a.back, .categories figure h4, .portfolio .photoset--list h4, .portfolio .support h4, .portfolio .repository figure h4, footer, .about .about-more h3 {
   font-size: 16px;
   font-size: 1rem;
   line-height: 24px;
@@ -213,13 +213,13 @@ h1, h2, h3, h4 {
       float: right;
       margin-right: 0; } }
 
-a.block, a.back, span.block, .article article del, .novel article del, .portfolio .illustration, .portfolio .tableau, .portfolio .photoset figure, .article article .wp-caption, .novel article .wp-caption, ul.affix.fixed, .about aside, .article article img.wide, .novel article img.wide {
+span.block, a.block, a.back, .article article del, .novel article del, .portfolio .illustration, .portfolio .tableau, .portfolio .photoset figure, .article article .wp-caption, .novel article .wp-caption, ul.affix.fixed, .about aside, .article article img.wide, .novel article img.wide {
   width: 100%; }
 
-a.block, a.back, span.block, .article article del, .novel article del {
+span.block, a.block, a.back, .article article del, .novel article del {
   display: block; }
 
-a, span.block, strong, dl dt, .about h2, .categories h2 {
+span.block, dl dt, a, strong, .categories h2, .about h2 {
   color: #ea2c46;
   font-weight: 500; }
 
@@ -230,7 +230,7 @@ hr, .articles, a, .article article h1, .novel article h1 {
 hr, .articles {
   border-color: #f8bfc7; }
 
-a.back, .about .about-more h3, a.block, span.block, ul.fixed, ul.fixed li, header, footer, .portfolio .repository:hover figure {
+a.back, .about .about-more h3, span.block, a.block, ul.fixed, ul.fixed li, header, footer, .portfolio .repository:hover figure {
   background-color: #ea2c46;
   border: none;
   color: white;
@@ -240,15 +240,15 @@ a.back, .about .about-more h3 {
   background-color: #f38997;
   text-shadow: 0 0.15em 0 rgba(0, 0, 0, 0.25); }
 
-a.block, a.back, span.block {
+span.block, a.block, a.back {
   clear: both;
   cursor: pointer;
   padding: 4px 0;
   padding: 0.25rem 0; }
-  a.block:hover, a.back:hover, span.block:hover {
+  span.block:hover, a.block:hover, a.back:hover {
     background-color: #ef5a6f;
     color: white; }
-  a.block:active, a.back:active, span.block:active {
+  span.block:active, a.block:active, a.back:active {
     background-color: #f17283; }
 
 .portfolio blockquote, .article article blockquote, .novel article blockquote, .novel article ul, .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .portfolio .illustration, .portfolio .tableau, .portfolio .photoset figure, .article article .wp-caption, .novel article .wp-caption, .portfolio .illustration figcaption, .portfolio .tableau figcaption, dl, .portfolio p, .about p, .about .about-more ul, .article article del, .novel article del, .novel .alert {
@@ -265,7 +265,7 @@ a.block, a.back, span.block {
   margin-right: 0; }
   @media (min-width: 980px) {
     .portfolio blockquote, .article article blockquote, .novel article blockquote, .novel article ul {
-      background-image: url('../img/quotes.png?1368881299');
+      background-image: url('../img/quotes.png?1370698833');
       background-position: 16px 16px;
       background-position: 1rem 1rem;
       background-repeat: no-repeat;
@@ -481,6 +481,11 @@ body {
   background-color: white;
   background-image: url('data:image/png;base64,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'); }
 
+dl dt {
+  margin-right: 16px;
+  margin-right: 1rem;
+  font-weight: 700; }
+
 a:hover {
   color: #a01024; }
 
@@ -488,11 +493,6 @@ hr {
   margin: 16px 0;
   margin: 1rem 0;
   clear: both; }
-
-dl dt {
-  margin-right: 16px;
-  margin-right: 1rem;
-  font-weight: 700; }
 
 header {
   padding: 12px 0;
@@ -656,10 +656,21 @@ footer {
           position: absolute;
           top: 3rem; } }
 
+.categories h2 {
+  font-size: 68px;
+  font-size: 4.25rem;
+  line-height: 72px;
+  line-height: 4.5rem;
+  margin-bottom: 32px;
+  margin-bottom: 2rem;
+  font-weight: 100;
+  text-align: center;
+  text-transform: lowercase; }
+
 .about aside {
   height: 320px;
   height: 20rem;
-  background-image: url('../img/maxime-fabre.jpg?1368881299'); }
+  background-image: url('../img/maxime-fabre.jpg?1370698833'); }
   @media (min-width: 980px) and (max-width: 1200px) {
     .about aside {
       height: 400px;
@@ -754,17 +765,6 @@ footer {
         .about .about-more article:nth-of-type(4n) {
           float: right;
           margin-right: 0; } }
-
-.categories h2 {
-  font-size: 68px;
-  font-size: 4.25rem;
-  line-height: 72px;
-  line-height: 4.5rem;
-  margin-bottom: 32px;
-  margin-bottom: 2rem;
-  font-weight: 100;
-  text-align: center;
-  text-transform: lowercase; }
 
 .article, .novel {
   background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6Xw8AAoYBgRDEVrUAAAAASUVORK5CYII=');

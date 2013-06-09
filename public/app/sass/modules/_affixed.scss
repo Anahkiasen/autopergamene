@@ -3,13 +3,16 @@
 //////////////////////////////////////////////////////////////////////
 
 %affixed {
+
   // Base definition
   @include column-count(4);
   @extend %block-accent;
   @extend %reset-list;
   @extend %reset-margin;
   z-index: 50;
+
   // Links --------------------------------------------------------- /
+
   li {
     @extend %block-accent;
     @include rem(margin-right, -0.3rem);
@@ -18,13 +21,16 @@
       background-color: $color-accent--light;
     }
   }
+
   a {
     @include rem(font-size, 0.8rem);
     border: none;
     color: white;
     text-transform: lowercase;
   }
+
   // Responsive ---------------------------------------------------- /
+
   @include to($desktop) {
     display: none;
   }

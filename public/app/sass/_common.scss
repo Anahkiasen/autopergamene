@@ -11,8 +11,8 @@
 
 // Variables --------------------------------------------------------- /
 
-@import "variables/fonts";
-@import "variables/colors";
+@import "helpers/fonts";
+@import "helpers/colors";
 
 $image-wrap-border-radius: 0;
 
@@ -25,7 +25,8 @@ $image-wrap-border-radius: 0;
 
 // Scaffolding ----------------------------------------------------- /
 
-@import "scaffolding";
+@import "scaffolding/scaffolding";
+@import "scaffolding/typography";
 
 // Layout ---------------------------------------------------------- /
 

@@ -19,13 +19,14 @@
 }
 
 %image-captioned {
-  @include rem(margin, 1rem 0);
-  @include rem(padding, 1rem);
   @extend %block-light;
   @extend %border-box;
   @extend %wide;
+  @include rem(margin, 1rem 0);
+  @include rem(padding, 1rem);
   @include rgba-background-inline(rgba(black, 0.03));
   text-align: center;
+
   @include from($desktop) {
     .image-wrap {
       max-width: 75%;

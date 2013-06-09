@@ -18,39 +18,9 @@ body {
   background-image: inline-image("noise.png");
 }
 
-a {
-  @extend %accent;
-  @extend %reset-link;
-  @extend %lips;
-  &:hover {
-    color: $color-accent--dark;
-  }
-  &.block, &.back {
-    @extend %block-accent--clickable;
-  }
-  &.back {
-    @extend %block-accent--light;
-    @extend %reset-margin;
-  }
-}
-
 span.block {
   @extend %accent;
   @extend %block-accent--clickable;
-}
-
-hr {
-  @extend %lips--accent;
-  @include rem(margin, 1rem 0);
-  clear: both;
-}
-
-h1, h2, h3, h4 {
-  @extend %reset-title;
-}
-
-strong {
-  @extend %accent;
 }
 
 dl {

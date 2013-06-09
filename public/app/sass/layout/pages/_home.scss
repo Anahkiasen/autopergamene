@@ -2,8 +2,6 @@
 /////////////////////////// PORTFOLIO HOME ///////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-@import "../layout/about";
-
 .categories {
 
   @extend %container-wide;
@@ -26,4 +24,12 @@
     @extend %category--giant;
   }
 
+}
+
+.about {
+  @extend %container-wide;
+  @import "about/header";
+  @import "about/about";
+  @import "about/biography";
+  @import "about/details";
 }
