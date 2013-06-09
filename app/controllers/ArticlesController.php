@@ -1,19 +1,25 @@
 <?php
+use Repositories\Articles;
+
 /**
- * ArticlesController
- *
  * Handles Articles display
  */
-use Repositories\ArticleRepository;
-
 class ArticlesController extends BaseController
 {
+
+  /**
+   * The Article Repository
+   *
+   * @var Articles
+   */
+  protected $articles;
+
   /**
    * Bind dependencies
    *
-   * @param ArticleRepository $articles
+   * @param Articles $articles
    */
-  public function __construct(ArticleRepository $articles)
+  public function __construct(Articles $articles)
   {
     $this->articles = $articles;
   }

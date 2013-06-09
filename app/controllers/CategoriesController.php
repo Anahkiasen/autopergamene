@@ -1,21 +1,27 @@
 <?php
+use Repositories\Categories;
+
 /**
- * Categories
- *
  * Dispatches to various Category places
  */
-use Repositories\CategoryRepository;
-
 class CategoriesController extends BaseController
 {
+
+  /**
+   * The Category Repository
+   *
+   * @var Categories
+   */
+  protected $categories;
+
   /**
    * Bind dependencies
    *
-   * @param CategoryRepository $categoriesRepository
+   * @param Categories $categories
    */
-  public function __construct(CategoryRepository $categoriesRepository)
+  public function __construct(Categories $categories)
   {
-    $this->categories = $categoriesRepository;
+    $this->categories = $categories;
   }
 
   /**

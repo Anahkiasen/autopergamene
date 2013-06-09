@@ -1,14 +1,12 @@
 <?php
-/**
- * CategoryRepository
- *
- * Fetches Categories from the database
- */
 namespace Repositories;
 
-use \Category as CategoryEntity;
+use Category;
 
-class CategoryRepository
+/**
+ * Fetches Categories from the database
+ */
+class Categories
 {
   // Global access points ------------------------------------------ /
 
@@ -19,7 +17,7 @@ class CategoryRepository
    */
   public function getOrdered()
   {
-    return CategoryEntity::orderBy('order', 'asc')->get();
+    return Category::orderBy('order', 'asc')->get();
   }
 
   /**
@@ -31,7 +29,7 @@ class CategoryRepository
    */
   public function getBySlug($slug)
   {
-    return CategoryEntity::find($slug);
+    return Category::find($slug);
   }
 
   // Specific fetchers --------------------------------------------- /

@@ -1,14 +1,12 @@
 <?php
-/**
- * ArticleRepository
- *
- * Fetches Categories from the database
- */
 namespace Repositories;
 
-use \Article as ArticleEntity;
+use Article as ArticleEntity;
 
-class ArticleRepository
+/**
+ * Fetches Categories from the database
+ */
+class Articles
 {
   /**
    * Get a Article by its slug
