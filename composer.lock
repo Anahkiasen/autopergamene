@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Anahkiasen/cerberus.git",
-                "reference": "60031791c387d9c7c1f75c937a0a67d9ab38bb74"
+                "reference": "6fba242916d93212776f44c6f8ec2f1e3dc31fb4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Anahkiasen/cerberus/zipball/60031791c387d9c7c1f75c937a0a67d9ab38bb74",
-                "reference": "60031791c387d9c7c1f75c937a0a67d9ab38bb74",
+                "url": "https://api.github.com/repos/Anahkiasen/cerberus/zipball/6fba242916d93212776f44c6f8ec2f1e3dc31fb4",
+                "reference": "6fba242916d93212776f44c6f8ec2f1e3dc31fb4",
                 "shasum": ""
             },
             "require": {
@@ -44,7 +44,7 @@
                 }
             ],
             "description": "Various helpers and classes for the Illuminate framework",
-            "time": "2013-06-09 01:07:27"
+            "time": "2013-06-09 01:12:14"
         },
         {
             "name": "anahkiasen/flickering",
@@ -946,12 +946,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jasonlewis/basset.git",
-                "reference": "84c9d0152e0a3f16cf2d1fde99c06d6c9c45aaaf"
+                "reference": "8597da67a550904e831b0cb8afece9201f778287"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jasonlewis/basset/zipball/84c9d0152e0a3f16cf2d1fde99c06d6c9c45aaaf",
-                "reference": "84c9d0152e0a3f16cf2d1fde99c06d6c9c45aaaf",
+                "url": "https://api.github.com/repos/jasonlewis/basset/zipball/8597da67a550904e831b0cb8afece9201f778287",
+                "reference": "8597da67a550904e831b0cb8afece9201f778287",
                 "shasum": ""
             },
             "require": {
@@ -990,6 +990,9 @@
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
             "authors": [
                 {
                     "name": "Jason Lewis",
@@ -1004,7 +1007,7 @@
                 "basset",
                 "laravel"
             ],
-            "time": "2013-06-08 08:13:24"
+            "time": "2013-06-09 03:18:04"
         },
         {
             "name": "kriswallsmith/assetic",
