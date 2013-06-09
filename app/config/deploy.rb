@@ -73,7 +73,7 @@ namespace :deploy do
 
   task :laravel_cleanup do
     info "Cleaning Laravel cache"
-    run_in_folder "php artisan basset --tidy-up"
+    #run_in_folder "php artisan basset --tidy-up"
     run_in_folder "php artisan cache:clear"
   end
 
