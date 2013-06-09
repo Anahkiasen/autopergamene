@@ -10,7 +10,6 @@ output_style     = :nested
 preferred_syntax = :sass
 line_comments    = false
 relative_assets  = true
-# sass_options     = { :debug_info => true }
 
 # Extensions
 require 'rgbapng'
