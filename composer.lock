@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "3a54c981f469e94e05a5e708c50407d6",
+    "hash": "193b0993cbc0bf4930276628526e81e4",
     "packages": [
         {
             "name": "anahkiasen/cerberus",
@@ -47,6 +47,53 @@
             "time": "2013-06-09 01:12:14"
         },
         {
+            "name": "anahkiasen/flatten",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Anahkiasen/flatten.git",
+                "reference": "20d439f86f126c0c3a30aa10cc4c63043ff37c0d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Anahkiasen/flatten/zipball/20d439f86f126c0c3a30aa10cc4c63043ff37c0d",
+                "reference": "20d439f86f126c0c3a30aa10cc4c63043ff37c0d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/cache": ">=4.0,<5.0",
+                "illuminate/config": ">=4.0,<5.0",
+                "illuminate/container": ">=4.0,<5.0",
+                "illuminate/http": ">=4.0,<5.0",
+                "illuminate/support": ">=4.0,<5.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Flatten": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Maxime Fabre",
+                    "email": "ehtnam6@gmail.com"
+                }
+            ],
+            "description": "A package for the Illuminate framework that flattens pages to plain HTML",
+            "keywords": [
+                "cache",
+                "laravel"
+            ],
+            "time": "2013-06-05 08:17:53"
+        },
+        {
             "name": "anahkiasen/flickering",
             "version": "dev-master",
             "source": {
@@ -85,7 +132,7 @@
             ],
             "authors": [
                 {
-                    "name": "Maxime Fabre",
+                    "name": "Anahkiasen",
                     "email": "ehtnam6@gmail.com"
                 }
             ],
@@ -2406,6 +2453,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "anahkiasen/cerberus": 20,
+        "anahkiasen/flatten": 20,
         "anahkiasen/flickering": 20,
         "anahkiasen/illuminage": 20,
         "anahkiasen/underscore-php": 20,

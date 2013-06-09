@@ -12,6 +12,7 @@
   "require": {
     "laravel/framework": "4.1.*",
     "anahkiasen/cerberus": "dev-master",
+    "anahkiasen/flatten": "dev-develop",
     "anahkiasen/flickering": "dev-master",
     "anahkiasen/illuminage": "dev-master",
     "anahkiasen/underscore-php": "dev-master",

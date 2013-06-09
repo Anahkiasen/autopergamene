@@ -29,7 +29,6 @@ $app->redirectIfTrailingSlash();
 $env = $app->detectEnvironment(array(
 
   'local'      => array('mackencheese.local', 'macadamia.local'),
-  'production' => array('autopergamene.eu'),
 
 ));
 

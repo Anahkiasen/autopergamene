@@ -117,7 +117,7 @@ return array(
 		'Cerberus\CerberusServiceProvider',
 		'Basset\BassetServiceProvider',
 		'Illuminage\IlluminageServiceProvider',
-		// 'Flatten\FlattenServiceProvider',
+		'Flatten\FlattenServiceProvider',
 
 	),
 
