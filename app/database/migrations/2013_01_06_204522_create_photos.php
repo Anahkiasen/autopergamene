@@ -1,4 +1,5 @@
 <?php
+
 class CreatePhotos extends Migration
 {
   public function up()

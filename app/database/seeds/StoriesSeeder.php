@@ -1,4 +1,5 @@
 <?php
+
 class StoriesSeeder extends BaseSeed
 {
   public function getSeeds()

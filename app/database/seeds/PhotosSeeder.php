@@ -1,10 +1,11 @@
 <?php
+
 class PhotosSeeder extends BaseSeed
 {
   public function getSeeds()
   {
     foreach ($this->getPhotosFromPhotosets() as $photosetId => $photoset) {
-      foreach($photoset as $photo) {
+      foreach ($photoset as $photo) {
         $name    = $photo['title'];
         $surname = $this->getSurnameFromTitle($name);
 
@@ -50,7 +51,7 @@ class PhotosSeeder extends BaseSeed
    */
   protected function getPhotosFromPhotosets()
   {
-    foreach(Photoset::all() as $photoset) {
+    foreach (Photoset::all() as $photoset) {
       $photosets[$photoset->id] = Flickering::photosetsGetPhotos($photoset->id)->getResults('photo');
     }
 

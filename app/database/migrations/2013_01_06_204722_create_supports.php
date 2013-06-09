@@ -1,4 +1,5 @@
 <?php
+
 class CreateSupports extends Migration
 {
   public function up()

@@ -1,4 +1,5 @@
 <?php
+
 class CreateArticles extends Migration
 {
   public function up()

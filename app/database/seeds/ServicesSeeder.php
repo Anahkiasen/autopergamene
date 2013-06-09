@@ -1,4 +1,5 @@
 <?php
+
 class ServicesSeeder extends BaseSeed
 {
   public function getSeeds()

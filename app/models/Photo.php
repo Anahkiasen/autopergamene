@@ -1,8 +1,11 @@
 <?php
-class Photo extends Base
+
+class Photo extends BaseModel
 {
+
   /**
    * Aliases for sizes
+   *
    * @var array
    */
   private static $sizes = array(
@@ -16,8 +19,15 @@ class Photo extends Base
     'original'     => 'o',
   );
 
-  // Relationships ------------------------------------------------- /
+  ////////////////////////////////////////////////////////////////////
+  /////////////////////////// RELATIONSHIPS //////////////////////////
+  ////////////////////////////////////////////////////////////////////
 
+  /**
+   * The Photoset the Photo's in
+   *
+   * @return Photoset
+   */
   public function photoset()
   {
     return $this->belongsTo('Photoset');
@@ -51,7 +61,9 @@ class Photo extends Base
     return parent::__get($method);
   }
 
-  // Attributes ---------------------------------------------------- /
+  ////////////////////////////////////////////////////////////////////
+  ///////////////////////////// ATTRIBUTES ///////////////////////////
+  ////////////////////////////////////////////////////////////////////
 
   /**
    * Format a photo's index
@@ -70,4 +82,5 @@ class Photo extends Base
   {
     return HTML::image($this->large_square, $this->surname);
   }
+
 }

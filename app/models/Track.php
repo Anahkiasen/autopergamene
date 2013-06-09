@@ -1,13 +1,18 @@
 <?php
+
 class Track extends Eloquent
 {
+
   /**
    * The color of the Soundcloud widget
+   *
    * @var string
    */
-  private static $color = 'ea2c46';
+  protected $color = 'ea2c46';
 
-  // Attributes ---------------------------------------------------- /
+  ////////////////////////////////////////////////////////////////////
+  ///////////////////////////// ATTRIBUTES ///////////////////////////
+  ////////////////////////////////////////////////////////////////////
 
   /**
    * Return the URL to the Soundcloud API
@@ -17,7 +22,9 @@ class Track extends Eloquent
     $track = $this->getOriginal('soundcloud');
     $track = 'http://api.soundcloud.com/tracks/' .$track;
 
-    return 'http://w.soundcloud.com/player/?url=' .$track. '&auto_play=false&show_artwork=true&color='.static::$color;
+    return
+      'http://w.soundcloud.com/player/?url=' .$track.
+      '&auto_play=false&show_artwork=true&color='.$this->color;
   }
 
   /**
@@ -33,4 +40,5 @@ class Track extends Eloquent
 
     return $movements;
   }
+
 }

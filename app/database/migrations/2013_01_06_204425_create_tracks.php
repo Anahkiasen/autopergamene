@@ -1,4 +1,5 @@
 <?php
+
 class CreateTracks extends Migration
 {
   public function up()

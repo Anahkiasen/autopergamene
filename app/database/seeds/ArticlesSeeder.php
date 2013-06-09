@@ -1,5 +1,4 @@
 <?php
-use Underscore\Parse;
 use Underscore\Types\Arrays;
 use Underscore\Types\String;
 
@@ -10,7 +9,7 @@ class ArticlesSeeder extends BaseSeed
    */
   public function getSeeds()
   {
-    foreach($this->getArticlesFeed() as $article) {
+    foreach ($this->getArticlesFeed() as $article) {
 
       // Category
       $categories = (array) $article->category;

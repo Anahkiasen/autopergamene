@@ -1,4 +1,5 @@
 <?php
+
 class CreateCategories extends Migration
 {
   public function up()

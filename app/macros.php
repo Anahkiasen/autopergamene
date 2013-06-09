@@ -12,6 +12,7 @@ HTML::macro('backLink', function($url, $text) {
  */
 HTML::macro('blockLink', function($url, $text, $attributes = array()) {
   $attributes['class'] = 'block';
+
   return HTML::link($url, $text, $attributes);
 });
 

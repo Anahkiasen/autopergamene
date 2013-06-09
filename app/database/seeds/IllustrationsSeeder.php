@@ -1,4 +1,5 @@
 <?php
+
 class IllustrationsSeeder extends BaseSeed
 {
   public function getSeeds()

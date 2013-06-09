@@ -1,4 +1,5 @@
 <?php
+
 class CreateIllustrations extends Migration
 {
   public function up()

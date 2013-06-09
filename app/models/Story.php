@@ -1,8 +1,11 @@
 <?php
-class Story extends Base
+
+class Story extends BaseModel
 {
 
-  // Attributes ---------------------------------------------------- /
+  ////////////////////////////////////////////////////////////////////
+  ///////////////////////////// ATTRIBUTES ///////////////////////////
+  ////////////////////////////////////////////////////////////////////
 
   /**
    * Get the quotation with linebreaks
@@ -30,8 +33,9 @@ class Story extends Base
     // Get story if it exists
     $storyService = App::make('Services\StoryServices');
     $markdown = $storyService->getMarkdownOf($this->id);
-    if (!$markdown) return false;
 
+    if (!$markdown) return false;
     return $storyService->parseMarkdown($markdown);
   }
+
 }

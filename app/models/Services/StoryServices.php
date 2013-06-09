@@ -35,7 +35,6 @@ class StoryServices
 
     if (File::exists($markdown)) $markdown = File::get($markdown);
     else $markdown = null;
-
     return $markdown;
   }
 

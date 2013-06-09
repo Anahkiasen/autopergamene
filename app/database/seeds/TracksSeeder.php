@@ -1,4 +1,5 @@
 <?php
+
 class TracksSeeder extends BaseSeed
 {
   public function getSeeds()

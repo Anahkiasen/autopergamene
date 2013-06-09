@@ -1,17 +1,29 @@
 <?php
 use Underscore\Parse;
 
-class Article extends Base
+/**
+ * An article from the Blog
+ */
+class Article extends BaseModel
 {
 
-  // Relationships ------------------------------------------------- /
+  ////////////////////////////////////////////////////////////////////
+  /////////////////////////// RELATIONSHIPS //////////////////////////
+  ////////////////////////////////////////////////////////////////////
 
+  /**
+   * The Category the Article's in
+   *
+   * @return Category
+   */
   public function category()
   {
     return $this->belongsTo('Category');
   }
 
-  // Attributes ---------------------------------------------------- /
+  ////////////////////////////////////////////////////////////////////
+  ///////////////////////////// ATTRIBUTES ///////////////////////////
+  ////////////////////////////////////////////////////////////////////
 
   /**
    * Get the link to the Article
@@ -67,4 +79,5 @@ class Article extends Base
 
     return $date->format('m/d/y');
   }
+
 }

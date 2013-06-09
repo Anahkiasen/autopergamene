@@ -1,7 +1,10 @@
 <?php
-class Support extends Base
+
+class Support extends BaseModel
 {
-  // Relationships ------------------------------------------------- /
+  ////////////////////////////////////////////////////////////////////
+  /////////////////////////// RELATIONSHIPS //////////////////////////
+  ////////////////////////////////////////////////////////////////////
 
   public function illustrations()
   {
@@ -13,7 +16,9 @@ class Support extends Base
     return $this->hasOne('Illustration')->thumbnails();
   }
 
-  // Attributes ---------------------------------------------------- /
+  ////////////////////////////////////////////////////////////////////
+  ///////////////////////////// ATTRIBUTES ///////////////////////////
+  ////////////////////////////////////////////////////////////////////
 
   /**
    * Get the folder of this support's illustrations
@@ -22,4 +27,5 @@ class Support extends Base
   {
     return 'app/img/illustrations/'.$this->id.'/';
   }
+
 }

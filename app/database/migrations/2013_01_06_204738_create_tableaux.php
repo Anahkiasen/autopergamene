@@ -1,4 +1,5 @@
 <?php
+
 class CreateTableaux extends Migration
 {
   public function up()

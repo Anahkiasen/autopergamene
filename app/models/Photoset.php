@@ -1,7 +1,11 @@
 <?php
-class Photoset extends Base
+
+class Photoset extends BaseModel
 {
-  // Relationships ------------------------------------------------- /
+
+  ////////////////////////////////////////////////////////////////////
+  /////////////////////////// RELATIONSHIPS //////////////////////////
+  ////////////////////////////////////////////////////////////////////
 
   public function photos()
   {
@@ -22,4 +26,5 @@ class Photoset extends Base
   {
     return static::with('thumbnail')->latest()->get();
   }
+
 }

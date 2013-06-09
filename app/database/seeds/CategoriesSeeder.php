@@ -1,4 +1,5 @@
 <?php
+
 class CategoriesSeeder extends BaseSeed
 {
   public function getSeeds()

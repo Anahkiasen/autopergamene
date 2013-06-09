@@ -1,4 +1,5 @@
 <?php
+
 class CreateRepositories extends Migration
 {
   public function up()

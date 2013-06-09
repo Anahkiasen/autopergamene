@@ -1,15 +1,28 @@
 <?php
+
+/**
+ * A media Category
+ */
 class Category extends Eloquent
 {
 
-  // Relationships ------------------------------------------------- /
+  ////////////////////////////////////////////////////////////////////
+  /////////////////////////// RELATIONSHIPS //////////////////////////
+  ////////////////////////////////////////////////////////////////////
 
+  /**
+   * Get all articles in a Category
+   *
+   * @return Collection
+   */
   public function articles()
   {
     return $this->hasMany('Article')->orderBy('created_at', 'desc');
   }
 
-  // Attributes ---------------------------------------------------- /
+  ////////////////////////////////////////////////////////////////////
+  ///////////////////////////// ATTRIBUTES ///////////////////////////
+  ////////////////////////////////////////////////////////////////////
 
   /**
    * Whether the category points to an external link or not
@@ -27,7 +40,6 @@ class Category extends Eloquent
     // External link
     $link = $this->getOriginal('link');
     if ($link) return $link;
-
     return URL::route('category', array('slug' => $this->id));
   }
 
@@ -38,4 +50,5 @@ class Category extends Eloquent
   {
     return HTML::image('app/img/categories/'.$this->id.'.jpg', $this->name);
   }
+
 }

@@ -1,9 +1,11 @@
 <?php
+
 class CollectionsSeeder extends BaseSeed
 {
   public function getSeeds()
   {
     $collections = Flickering::collectionsGetTree(0, '31667913@N06')->getResults('collection');
+
     return Arrays::each($collections, function($collection) {
 
       // Bind collections

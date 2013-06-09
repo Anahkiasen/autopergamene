@@ -1,9 +1,21 @@
 <?php
-class Tableau extends Base
+
+/**
+ * A Tableau in Today is Sunday
+ */
+class Tableau extends BaseModel
 {
+
+  /**
+   * The table associated with the model.
+   *
+   * @var string
+   */
   protected $table = 'tableaux';
 
-  // Attributes ---------------------------------------------------- /
+  ////////////////////////////////////////////////////////////////////
+  ///////////////////////////// ATTRIBUTES ///////////////////////////
+  ////////////////////////////////////////////////////////////////////
 
   /**
    * Get full path to the image
@@ -22,4 +34,5 @@ class Tableau extends Base
   {
     return HTML::lazyLoad($this->image, $this->name);
   }
+
 }

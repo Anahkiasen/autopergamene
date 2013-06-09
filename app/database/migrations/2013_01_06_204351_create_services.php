@@ -1,4 +1,5 @@
 <?php
+
 class CreateServices extends Migration
 {
   public function up()

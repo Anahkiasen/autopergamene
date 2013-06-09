@@ -1,4 +1,5 @@
 <?php
+
 class SupportsSeeder extends BaseSeed
 {
   public function getSeeds()

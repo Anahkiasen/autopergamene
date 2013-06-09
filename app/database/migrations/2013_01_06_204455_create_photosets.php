@@ -1,4 +1,5 @@
 <?php
+
 class CreatePhotosets extends Migration
 {
   public function up()

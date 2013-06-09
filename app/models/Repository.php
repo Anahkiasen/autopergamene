@@ -1,6 +1,13 @@
 <?php
+
 class Repository extends Eloquent
 {
+
+  /**
+   * Get a link to the Repository's author
+   *
+   * @return string
+   */
   public function getAuthorAttribute()
   {
     $link = 'https://github.com/' .$this->vendor;
@@ -45,4 +52,5 @@ class Repository extends Eloquent
       '&type=' .$type.
       '&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="85" height="20"></iframe>';
   }
+
 }

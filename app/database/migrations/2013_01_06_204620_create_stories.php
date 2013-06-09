@@ -1,4 +1,5 @@
 <?php
+
 class CreateStories extends Migration
 {
   public function up()

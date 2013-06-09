@@ -1,15 +1,20 @@
 <?php
-class Illustration extends Base
+
+class Illustration extends BaseModel
 {
 
-  // Relationships ------------------------------------------------- /
+  ////////////////////////////////////////////////////////////////////
+  /////////////////////////// RELATIONSHIPS //////////////////////////
+  ////////////////////////////////////////////////////////////////////
 
   public function support()
   {
     return $this->belongsTo('Support');
   }
 
-  // Attributes ---------------------------------------------------- /
+  ////////////////////////////////////////////////////////////////////
+  ///////////////////////////// ATTRIBUTES ///////////////////////////
+  ////////////////////////////////////////////////////////////////////
 
   /**
    * Get a thumb of the illustration
@@ -18,7 +23,6 @@ class Illustration extends Base
   {
     $image = Thumb::square($folder.$this->image, 200);
     if (!$name) $name = $this->name;
-
     return $image->alt($name);
   }
 
@@ -29,4 +33,5 @@ class Illustration extends Base
   {
     return HTML::lazyLoad($folder.$this->image, $this->name);
   }
+
 }

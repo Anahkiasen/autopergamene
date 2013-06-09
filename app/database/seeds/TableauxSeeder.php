@@ -1,4 +1,5 @@
 <?php
+
 class TableauxSeeder extends BaseSeed
 {
   public function getSeeds()
