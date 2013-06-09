@@ -51,6 +51,7 @@ namespace :deploy do
     info "Setting permissions"
     run "chmod -R +x #{current_release}/app/storage"
     run "chown -R www-data:www-data #{current_release}/app/storage"
+    run "chown -R www-data:www-data #{current_release}/public/packages/anahkiasen/illuminage"
   end
 
   # Package managers ----------------------------------------------- /
