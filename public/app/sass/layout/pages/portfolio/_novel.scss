@@ -9,7 +9,7 @@
     @extend %reset-margin;
     @extend %margin-underline;
     @include from($desktop) {
-      @include font-size($large);
+      @include font-size($font-size-large);
       @include rem(margin-top, 2rem);
     }
   }

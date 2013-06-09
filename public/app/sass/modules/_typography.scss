@@ -36,15 +36,15 @@
 // Font sizes ------------------------------------------------------ /
 
 %font-size-normal {
-  @include font-size($normal);
+  @include font-size($font-size-normal);
 }
 
 %font-size-medium {
-  @include font-size($medium);
+  @include font-size($font-size-medium);
 }
 
 %font-size-large {
-  @include font-size($large);
+  @include font-size($font-size-large);
 }
 
 // Margins --------------------------------------------------------- /

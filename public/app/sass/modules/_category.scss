@@ -126,10 +126,10 @@
       font-weight: 100;
     }
     h3 {
-      @include font-size($large);
+      @include font-size($font-size-large);
     }
     h4 {
-      @include font-size($medium);
+      @include font-size($font-size-medium);
     }
   }
 }

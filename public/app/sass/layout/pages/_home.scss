@@ -9,7 +9,7 @@
   // Main title ---------------------------------------------------- /
 
   h2 {
-    @include font-size($xlarge);
+    @include font-size($font-size-xlarge);
     @include rem(margin-bottom, 2rem);
     @extend %accent;
     @extend %font-light;

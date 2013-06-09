@@ -54,7 +54,7 @@ footer {
   // Responsive ---------------------------------------------------- /
 
   @include to($tablet) {
-    @include font-size($tiny);
+    @include font-size($font-size-tiny);
     .colophon, .social {
       @include rem(margin-top, 1rem);
       @include reset-columns;

@@ -8,7 +8,6 @@
   box-sizing: border-box; }
 
 footer .footer-container {
-  *zoom: 1;
   max-width: 59em;
   padding-left: 1em;
   padding-right: 1em;
@@ -20,7 +19,6 @@ footer .footer-container {
     clear: both; }
 
 #container, .error, .portfolio, .article, .novel, .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .portfolio .collection, .categories, .about, .about .about-more {
-  *zoom: 1;
   max-width: 59em;
   padding-left: 1em;
   padding-right: 1em;
@@ -201,7 +199,7 @@ h1, h2, h3, h4 {
     width: 49.15254%;
     float: left;
     margin-right: 1.69492%; }
-    .portfolio .photoset--list:nth-of-type(2n), .portfolio .support:nth-of-type(2n), .portfolio .repository:nth-of-type(2n) {
+    .portfolio .photoset--list:nth-child(2n), .portfolio .support:nth-child(2n), .portfolio .repository:nth-child(2n) {
       float: right;
       margin-right: 0; } }
 @media (min-width: 1200px) {
@@ -209,7 +207,7 @@ h1, h2, h3, h4 {
     width: 32.20339%;
     float: left;
     margin-right: 1.69492%; }
-    .portfolio .photoset--list:nth-of-type(3n), .portfolio .support:nth-of-type(3n), .portfolio .repository:nth-of-type(3n) {
+    .portfolio .photoset--list:nth-child(3n), .portfolio .support:nth-child(3n), .portfolio .repository:nth-child(3n) {
       float: right;
       margin-right: 0; } }
 
@@ -355,7 +353,7 @@ span.block, a.block, a.back {
     width: 49.15254%;
     float: left;
     margin-right: 1.69492%; }
-    .categories figure:nth-of-type(2n) {
+    .categories figure:nth-child(2n) {
       float: right;
       margin-right: 0; } }
 @media (min-width: 980px) and (max-width: 1200px) {
@@ -537,7 +535,6 @@ footer {
   footer .colophon {
     float: right;
     margin-right: 0;
-    *margin-left: -1em;
     text-align: left; }
     footer .colophon p:first-child {
       margin-top: 0; }
@@ -708,7 +705,7 @@ footer {
       width: 32.20339%;
       float: left;
       margin-right: 1.69492%; }
-      .about .about-biography p:nth-of-type(3n) {
+      .about .about-biography p:nth-child(3n) {
         float: right;
         margin-right: 0; } }
 @media (max-width: 980px) {
@@ -721,7 +718,6 @@ footer {
   float: none;
   width: auto;
   margin-right: auto;
-  *margin-left: auto;
   margin-top: 16px;
   margin-top: 1rem;
   clear: both; }
@@ -762,7 +758,7 @@ footer {
         width: 23.72881%;
         float: left;
         margin-right: 1.69492%; }
-        .about .about-more article:nth-of-type(4n) {
+        .about .about-more article:nth-child(4n) {
           float: right;
           margin-right: 0; } }
 
