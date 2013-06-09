@@ -43,17 +43,8 @@ namespace :deploy do
     bower
     basset
 
-    migrations
-
     info "Cleaning up", 2
     info "Cleaning up old releases"
-  end
-
-  task :migrations do
-    info "Migrating database", 2
-    run_in_folder "touch app/database/production.sqlite"
-    run_in_folder "php artisan migrate:install"
-    run_in_folder "php artisan migrate:refresh --seed"
   end
 
   task :finalize_update do
