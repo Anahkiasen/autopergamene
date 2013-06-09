@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "76f6b0587225e086165165c98deb1e8f",
+    "hash": "3a54c981f469e94e05a5e708c50407d6",
     "packages": [
         {
             "name": "anahkiasen/cerberus",
@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Anahkiasen/cerberus.git",
-                "reference": "a6ca2ec4ab418a7a98b92a86aa1ff2114addb2b9"
+                "reference": "16c2d56004f6363007db8e24d95df04deb9d673a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Anahkiasen/cerberus/zipball/a6ca2ec4ab418a7a98b92a86aa1ff2114addb2b9",
-                "reference": "a6ca2ec4ab418a7a98b92a86aa1ff2114addb2b9",
+                "url": "https://api.github.com/repos/Anahkiasen/cerberus/zipball/16c2d56004f6363007db8e24d95df04deb9d673a",
+                "reference": "16c2d56004f6363007db8e24d95df04deb9d673a",
                 "shasum": ""
             },
             "require": {
@@ -44,7 +44,7 @@
                 }
             ],
             "description": "Various helpers and classes for the Illuminate framework",
-            "time": "2013-06-05 15:16:39"
+            "time": "2013-06-09 00:26:45"
         },
         {
             "name": "anahkiasen/flickering",
