@@ -492,6 +492,12 @@ hr {
   margin: 1rem 0;
   clear: both; }
 
+h1 small, h2 small, h3 small, h4 small {
+  color: gray;
+  font-style: italic;
+  letter-spacing: -.1em;
+  line-height: 1; }
+
 header {
   padding: 12px 0;
   padding: 0.75rem 0; }

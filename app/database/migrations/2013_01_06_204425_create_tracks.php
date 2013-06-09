@@ -8,6 +8,8 @@ class CreateTracks extends Migration
       $table->increments('id');
       $table->string('name');
       $table->string('soundcloud');
+      $table->string('set');
+      $table->integer('plays');
       $table->text('movements');
       $table->timestamps();
     });

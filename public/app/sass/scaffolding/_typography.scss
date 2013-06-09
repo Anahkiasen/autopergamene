@@ -26,6 +26,13 @@ hr {
 
 h1, h2, h3, h4 {
   @extend %reset-title;
+
+  small {
+    color: grey(50);
+    font-style: italic;
+    letter-spacing: -.1em;
+    line-height: 1;
+  }
 }
 
 strong {

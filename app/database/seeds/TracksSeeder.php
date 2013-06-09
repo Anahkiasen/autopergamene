@@ -2,18 +2,10 @@
 
 class TracksSeeder extends BaseSeed
 {
-  public function getSeeds()
+  public function run()
   {
     return Arrays::each($this->getTracks(), function($track) {
-      list($name, $id, $movements) = $track;
-
-      return [
-        'name'       => $name,
-        'soundcloud' => $id,
-        'movements'  => $movements,
-        'created_at' => new DateTime,
-        'updated_at' => new DateTime,
-      ];
+      $track->touch();
     });
   }
 
@@ -21,27 +13,30 @@ class TracksSeeder extends BaseSeed
   /////////////////////////// CORE METHODS ///////////////////////////
   ////////////////////////////////////////////////////////////////////
 
+  /**
+   * Get the Tracks to seed
+   *
+   * @return array
+   */
   protected function getTracks()
   {
-    return [
-      ['Down Wonderlands', '11002144',
-        "00:00 - 01:25 : J'ai rêvé du brasier de son sourire (I dreamt of the fire of her smile)
-         01:25 - 04:35 : Caesura – du néant vers l'horizon (Caesura – from the void to the horizon)
-         04:35 - 09:30 : Turbulences et fragments sur les autoroutes d'un souvenir (Disruptions and fragments, on the highway of a memory)
-         09:30 - 13:20 : Des traces de pas sous une bruine de sève (Footprints under a rain of sap)
-         13:20 - 15:20 : Thème à l'insomnie sur mélodie de bruit blanc (Insomnia theme over white noise melody)"],
+    $sets = 'https://api.soundcloud.com/users/anahkiasen/playlists.json?consumer_key=2dfa4a9133c293421b743e7414d8b1f3';
+    $sets = Cache::remember($sets, 3600, function() use ($sets) {
+      return json_decode(File::getRemote($sets), true);
+    });
 
-      ['Prussian Black', '7195146',
-        "00:00 - 01:08 : Nuits troublées (Troubled nights)
-         01:08 - 04:08 : Une aube dans la gorge des vagues (A dawn in the waves throat)
-         04:08 - 05:14 : La noyade - (The drowning)
-         05:14 - 07:50 : Ma soeur les abysses (My sister the abyss)
-         07:50 - 09:35 : Une goutte de sueur dans une mer de nuit (A drop of sweat in a sea of night)"],
+    foreach ($sets as $set) {
+      foreach ($set['tracks'] as $track) {
+        $tracks[] = Track::create(array(
+          'name'       => $track['title'],
+          'soundcloud' => $track['id'],
+          'movements'  => $track['description'],
+          'set'        => $set['title'],
+          'plays'      => (int) ($track['playback_count'] + $track['download_count'])
+        ));
+      }
+    }
 
-      ['Bonefire', '6431808',
-        "00:00 - 02:15 : Les aquarelles de flamme (The fire watercolors)
-         02:15 - 04:30 : Retombée (Fell out)
-         04:30 - 06:33 : Drapée de cendres (Wrapped with ashes)"],
-    ];
+    return $tracks;
   }
 }

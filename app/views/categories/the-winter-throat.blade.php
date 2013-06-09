@@ -11,9 +11,14 @@
 
   @foreach($tracks as $track)
     <article>
-      <h3>{{ $track->name }}</h3>
+      <h3>
+        {{ $track->name }}<br>
+        <small>du set « {{ $track->set }} »</small>
+      </h3>
       <iframe width='100%' height='166' frameborder='no' src="{{ $track->soundcloud }}"></iframe>
-      <dl>{{ $track->movements }}</dl>
+      @if ($track->movements)
+        <dl>{{ $track->movements }}</dl>
+      @endif
     </article>
   @endforeach
 @stop

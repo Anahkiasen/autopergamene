@@ -28,7 +28,7 @@ View::composer('en-averse-dencre', function($view) {
 });
 
 View::composer('the-winter-throat', function($view) {
-  $view->tracks = Track::all();
+  $view->tracks = Track::orderBy('plays', 'desc')->get();
 });
 
 View::composer('memorabilia', function($view) {
