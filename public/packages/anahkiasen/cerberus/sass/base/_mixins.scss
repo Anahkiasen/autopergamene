@@ -19,7 +19,7 @@
 // CSS3 ------------------------------------------------------------ /
 
 // Changes the current selection color
-@mixin selectionColor($background, $color: white) {
+@mixin selection-color($background, $color: white) {
   @include selection {
     background: $background;
     color: $color;
@@ -36,134 +36,12 @@
   @include experimental(font-smoothing, $smooth);
 }
 
-// Create a ribbon
-@mixin ribbon($color, $padding: 1em) {
-  @include background-image(linear-gradient(lighten($color, 10), darken($color, 10)));
-  @include box-shadow(rgba(black, 0.3) 0 1px 1px);
-  background-color: $color;
-  font-size: $padding * 2;
-  position: absolute;
-  text-align: center;
-  h1 {
-    font-size: $padding * 1.5;
-  }
-  &:before, &:after {
-    border: 1.5em solid darken($color, 5);
-    bottom: -1em;
-    content: "";
-    display: block;
-    position: absolute;
-    z-index: -1;
-  }
-  &:before {
-    @include box-shadow(1px 1px 1px rgba(black, 0.4));
-    left: -2em;
-    border: {
-      right-width: 1.5em;
-      left-color: transparent;
-    };
-  }
-  &:after {
-    @include box-shadow(-1px 1px 1px rgba(black, 0.4));
-    right: -2em;
-    border: {
-      left-width: 1.5em;
-      right-color: transparent;
-    };
-  }
-  .content {
-    color: darken($color, 20);
-    padding: $padding * 0.7 $padding;
-    text-shadow: lighten($color, 10) 0 1px 0;
-    &:before, &:after {
-      border: {
-        color: darken($color, 20) transparent transparent transparent;
-        style: solid;
-      };
-      bottom: -1em;
-      content: "";
-      display: block;
-      position: absolute;
-      z-index: -2;
-    }
-    &:before {
-      border-width: 1em 0 0 1em;
-      left: 0;
-    }
-    &:after {
-      border-width: 1em 1em 0 0;
-      right: 0;
-    }
-  }
-  // Stitches ------ /
-  $stitchesSize: 3px;
-  $stitchesShadow: 2px $stitchesSize rgba(white, 0.2);
-  $stitchesWhite: 0 0 2px rgba(black, 0.3);
-  .stitches-top,
-  .stitches-bottom {
-    @include box-shadow($stitchesWhite, 0px $stitchesSize $stitchesShadow);
-    border-top: 1px dashed rgba(white, 0.2);
-  }
-  .stitches-top {
-    @include box-shadow($stitchesWhite, 0px -1 * $stitchesSize $stitchesShadow);
-    margin-top: 2px;
-  }
-  .stitches-bottom {
-    margin-bottom: 2px;
-  }
-}
-
-// Paper curl
-@mixin paper-curl($angleRaw: 10, $opacity: 0.5) {
-  $angle: unquote($angleRaw + "deg");
-  @include box-shadow(10px 10px 20px fade(black, 20));
-  &:before, &:after {
-    @include transform(skew(-$angle) rotate(-$angle));
-    @include box-shadow(0 6px 12px rgba(black, $opacity));
-    background: transparent;
-    bottom: $angleRaw * 4px;
-    content: " ";
-    height: 10px;
-    left: 12px;
-    position: absolute;
-    width: 40%;
-    z-index: -1;
-  }
-  &:after {
-    @include transform(skew($angle) rotate($angle));
-    left: auto;
-    right: 12px;
-  }
-}
-
-// Folded corners (triangles)
-@mixin folded-corners($size, $color, $offset: 0) {
-  position: relative;
-  &:before,
-  &:after {
-    border-bottom: $size solid transparent;
-    bottom: -$size + $offset;
-    content: "";
-    display: block;
-    height: 0;
-    position: absolute;
-    width: 0;
-    z-index: -5;
-  }
-  &:before {
-    border-right: $size solid $color;
-    left: -$offset;
-  }
-  &:after {
-    border-left: $size solid $color;
-    right: -$offset;
-  }
-}
-
+// Firefox-like "double shadow"
 @function double-shadow($size: 2px, $blur: 0) {
   @return 0 $size $blur fade(black, 10), inset 0 -$size $blur fade(black, 20);
 }
 
+// Firefox-like "double shadow"
 @mixin double-shadow($size: 2px, $blur: 0) {
   @include box-shadow(double-shadow($size, $blur));
 }
@@ -209,12 +87,19 @@
 
 // Utilities ------------------------------------------------------- /
 
-@mixin debug($mainBlock) {
+@mixin debug($main-block) {
   body {
     @include baseline-grid-background($base-line-height);
   }
-  #{$mainBlock} {
-    @include grid-background($total-columns, $column-width, $gutter-width, $base-line-height, $grid-padding, $force_fluid: true);
+  #{$main-block} {
+    @include grid-background(
+      $total-columns,
+      $column-width,
+      $gutter-width,
+      $base-line-height,
+      $grid-padding,
+      $force_fluid: true
+    );
   }
 }
 
@@ -254,64 +139,9 @@
   }
 }
 
-// Drops a text-shadow of a contrast color
-@mixin text-drop($color, $size: 2px) {
-  color: $color;
-  text-shadow: 0 $size 0 rgba(contrast-color($color), 0.5);
-}
-
-// Creates a beveling text-shadow
-@mixin bevel($size, $opacity: 20) {
-  text-shadow: 0 - $size 0 fade(black, $opacity), 0 $size 0 fade(white, $opacity);
-}
-
-// Loads a webfont using the +font-face mixin
-@mixin webfont($name, $font_path, $weight: normal, $style: normal) {
-  @include font-face($name, font-files("#{$font_path}.woff", "#{$font_path}.ttf", "#{$font_path}.otf", "#{$font_path}.svgz#FontAwesomeRegular", svg, "#{$font_path}.svg#FontAwesomeRegular", svg), "#{$font_path}.eot", $weight, $style);
-}
-
-// Percentage-based version of rba-background
-@mixin background-fade($color, $opacity) {
-  @include rgba-background($color, $opacity / 100);
-}
-
-// Padding mixins
-@mixin padding-h($padding) {
-  padding-left: $padding;
-  padding-right: $padding;
-}
-
-@mixin padding-v($padding) {
-  padding-bottom: $padding;
-  padding-top: $padding;
-}
-
-// Margin mixins
-@mixin margin-h($margin) {
-  margin-left: $margin;
-  margin-right: $margin;
-}
-
-@mixin margin-v($margin) {
-  margin-bottom: $margin;
-  margin-top: $margin;
-}
-
 //////////////////////////////////////////////////////////////////////
 ///////////////////////// TWITTER BOOTSTRAP //////////////////////////
 //////////////////////////////////////////////////////////////////////
-
-@mixin reset-bootstrap-icons {
-  [class^="icon-"],
-  [class*=" icon-"] {
-    background: none !important;
-    height: auto;
-    width: auto;
-    &:before {
-      opacity: 1;
-    }
-  }
-}
 
 @mixin input-shadow($color) {
   textarea,

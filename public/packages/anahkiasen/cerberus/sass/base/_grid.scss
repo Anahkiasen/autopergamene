@@ -8,12 +8,12 @@
 
 // Responsive design ----------------------------------------------- /
 
-$wider: 1500px;
-$wide: 1200px;
-$desktop: 980px;
-$tablet: 768px;
-$mobile: 480px;
-$mini: 300px;
+$wider   : 1500px;
+$wide    : 1200px;
+$desktop : 980px;
+$tablet  : 768px;
+$mobile  : 480px;
+$mini    : 300px;
 
 // Define a wide container ----------------------------------------- /
 
@@ -25,15 +25,16 @@ $mini: 300px;
 
 // Define a number of items per row -------------------------------- /
 
-@mixin per-row($perRow, $numberColumns: $total-columns, $padding: false, $last: false) {
-  $span: $numberColumns / $perRow;
-  @include span-columns($span, $numberColumns, $padding);
-  @if $last {
-    @include nth-omega;
+@mixin per-row($number, $gutter: nil) {
+  $old-gutter-width: $gutter-width;
+  @if $gutter != nil {
+    $gutter-width: $gutter;
   }
-  @else {
-    @include nth-omega(#{$perRow}n, of-type);
-  }
+
+  @include span-columns($total-columns / $number);
+  @include nth-omega(#{$number}n);
+
+  $gutter-width: $old-gutter-width;
 }
 
 // Breakpoint helpers ---------------------------------------------- /

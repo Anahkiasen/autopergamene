@@ -3,37 +3,38 @@
 //////////////////////////////////////////////////////////////////////
 
 // Text-shadows
-$default-text-shadow-color: fade(black, 75);
-$default-text-shadow-h-offset: 1px;
-$default-text-shadow-v-offset: $default-text-shadow-h-offset;
-$default-text-shadow-blur: 0;
+$default-text-shadow-color         : fade(black, 75);
+$default-text-shadow-h-offset      : 1px;
+$default-text-shadow-v-offset      : $default-text-shadow-h-offset;
+$default-text-shadow-blur          : 0;
 
 // Transitions
-$default-transition-function: ease-in-out;
+$default-transition-function       : ease-in-out;
 
 // Animations
-$default-animation-name: fadeIn;
-$default-animation-duration: 1s;
-$default-animation-timing-function: ease-in-out;
-$default-animation-fill-mode: both;
+$default-animation-name            : fadeIn;
+$default-animation-duration        : 1s;
+$default-animation-timing-function : ease-in-out;
+$default-animation-fill-mode       : both;
 
 // Contrast
-$contrasted-dark-default: lighten(black, 20);
-$contrasted-light-default: darken(white, 20);
-$contrasted-lightness-threshold: 40%;
+$contrasted-dark-default           : lighten(black, 20);
+$contrasted-light-default          : darken(white, 20);
+$contrasted-lightness-threshold    : 40%;
 
 // Browser support
-$legacy-support-for-ie6: false;
-$legacy-support-for-mozilla: false;
+$legacy-support-for-ie6            : false !default;
+$legacy-support-for-ie7            : false !default;
+$legacy-support-for-mozilla        : false !default;
 
 //////////////////////////////////////////////////////////////////////
 ////////////////////////////// CERBERUS //////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 // Gradients
-$cerberus-gradient-span: 5% !default;
-$cerberus-gradient-borders: 1px !default;
-$cerberus-border-radius: 5px !default;
+$cerberus-gradient-span            : 5%  !default;
+$cerberus-gradient-borders         : 1px !default;
+$cerberus-border-radius            : 5px !default;
 
 //////////////////////////////////////////////////////////////////////
 ////////////////////// FRAMEWORKS AND EXTENSIONS /////////////////////
