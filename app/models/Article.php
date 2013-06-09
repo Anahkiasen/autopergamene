@@ -52,7 +52,7 @@ class Article extends BaseModel
 
   public function getRelativeDateAttribute()
   {
-    list ($day, $month, $year) = explode('/', $this->created_at);
+    list ($month, $day, $year) = explode('/', $this->created_at);
     $date = Carbon::createFromDate('20'.$year, $month, $day)->diffForHumans();
 
     return strtr($date, array(
