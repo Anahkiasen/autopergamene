@@ -49,9 +49,9 @@ namespace :deploy do
 
   task :finalize_update do
     info "Setting permissions"
-    run "chmod -R +x #{current_release}/app/storage"
-    run "chown -R www-data:www-data #{current_release}/app"
-    run "chown -R www-data:www-data #{current_release}/public/packages/anahkiasen/illuminage"
+    run "sudo chmod -R +x #{current_release}/app/storage"
+    run "sudo chown -R www-data:www-data #{current_release}/app"
+    run "sudo chown -R www-data:www-data #{current_release}/public/packages/anahkiasen/illuminage"
   end
 
   # Package managers ----------------------------------------------- /
