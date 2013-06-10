@@ -589,12 +589,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "2169b0ce1d253d448c60b7d40bbe4e4b5afe22fe"
+                "reference": "2286642f9979a15a799e6fb6919579e8caf6ef11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/2169b0ce1d253d448c60b7d40bbe4e4b5afe22fe",
-                "reference": "2169b0ce1d253d448c60b7d40bbe4e4b5afe22fe",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/2286642f9979a15a799e6fb6919579e8caf6ef11",
+                "reference": "2286642f9979a15a799e6fb6919579e8caf6ef11",
                 "shasum": ""
             },
             "require": {
@@ -622,7 +622,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
+                    "name": "Jonathan H. Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/"
                 },
@@ -640,7 +640,7 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
                     "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
@@ -655,7 +655,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2013-05-27 19:11:46"
+            "time": "2013-06-10 10:34:35"
         },
         {
             "name": "doctrine/dbal",
@@ -993,12 +993,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jasonlewis/basset.git",
-                "reference": "8597da67a550904e831b0cb8afece9201f778287"
+                "reference": "d5ddbb0bedb47b5cc8e76004a00e39b7c5611f7c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jasonlewis/basset/zipball/8597da67a550904e831b0cb8afece9201f778287",
-                "reference": "8597da67a550904e831b0cb8afece9201f778287",
+                "url": "https://api.github.com/repos/jasonlewis/basset/zipball/d5ddbb0bedb47b5cc8e76004a00e39b7c5611f7c",
+                "reference": "d5ddbb0bedb47b5cc8e76004a00e39b7c5611f7c",
                 "shasum": ""
             },
             "require": {
@@ -1054,7 +1054,7 @@
                 "basset",
                 "laravel"
             ],
-            "time": "2013-06-09 03:18:04"
+            "time": "2013-06-10 05:11:43"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -1133,12 +1133,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "c6c56b1bbfc066c00c51b1ca334f0d235fe32fba"
+                "reference": "a032f5f14265bddb55789e392ec2068ad0024ab4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/c6c56b1bbfc066c00c51b1ca334f0d235fe32fba",
-                "reference": "c6c56b1bbfc066c00c51b1ca334f0d235fe32fba",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/a032f5f14265bddb55789e392ec2068ad0024ab4",
+                "reference": "a032f5f14265bddb55789e392ec2068ad0024ab4",
                 "shasum": ""
             },
             "require": {
@@ -1235,7 +1235,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-06-08 18:11:19"
+            "time": "2013-06-10 03:09:19"
         },
         {
             "name": "monolog/monolog",
@@ -1479,12 +1479,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/opauth/opauth.git",
-                "reference": "053e55755cbf1021cf9d1d47b7a9697d4251103c"
+                "reference": "469598c1263e83d1654912f38265d20ec6a8bf61"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/opauth/opauth/zipball/053e55755cbf1021cf9d1d47b7a9697d4251103c",
-                "reference": "053e55755cbf1021cf9d1d47b7a9697d4251103c",
+                "url": "https://api.github.com/repos/opauth/opauth/zipball/469598c1263e83d1654912f38265d20ec6a8bf61",
+                "reference": "469598c1263e83d1654912f38265d20ec6a8bf61",
                 "shasum": ""
             },
             "require": {
@@ -1524,7 +1524,7 @@
                 "omniauth",
                 "twitter"
             ],
-            "time": "2013-06-03 00:13:12"
+            "time": "2013-06-10 10:59:30"
         },
         {
             "name": "patchwork/utf8",
