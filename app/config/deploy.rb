@@ -37,6 +37,7 @@ namespace :deploy do
     info "Fetching latest release", 2
     info "Updating repository"
     update_code
+    finalize_update
 
     info "Installing dependencies", 2
     composer
@@ -49,7 +50,7 @@ namespace :deploy do
 
   task :finalize_update do
     info "Setting permissions"
-    run "sudo chmod -R +x #{current_release}/app/storage"
+    run "sudo chmod -R +x #{current_release}/app"
     run "sudo chown -R www-data:www-data #{current_release}/app"
     run "sudo chown -R www-data:www-data #{current_release}/public/packages/anahkiasen/illuminage"
   end
