@@ -18,7 +18,7 @@ set :user, "root"
 set :ssh_options, {:forward_agent => true}
 
 # Options
-logger.level = Logger::IMPORTANT
+#logger.level = Logger::IMPORTANT
 default_run_options[:pty] = true
 
 ######################################################################
@@ -37,7 +37,6 @@ namespace :deploy do
     info "Fetching latest release", 2
     info "Updating repository"
     update_code
-    finalize_update
 
     info "Installing dependencies", 2
     composer
@@ -46,10 +45,12 @@ namespace :deploy do
 
     info "Cleaning up", 2
     info "Cleaning up old releases"
+    finalize_update
   end
 
   task :finalize_update do
     info "Setting permissions"
+    print current_release
     run "sudo chmod -R +x #{current_release}/app"
     run "sudo chown -R www-data:www-data #{current_release}/app"
     run "sudo chown -R www-data:www-data #{current_release}/public/packages/anahkiasen/illuminage"
