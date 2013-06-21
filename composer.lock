@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "193b0993cbc0bf4930276628526e81e4",
+    "hash": "ecc0fee215a632f04a889e2c68afbf91",
     "packages": [
         {
             "name": "anahkiasen/cerberus",
@@ -414,7 +414,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan H. Wage",
+                    "name": "Jonathan Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/"
                 },
@@ -432,7 +432,7 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
                     "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
@@ -589,12 +589,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "d658ec7a03f6475eff0dd1eb940bdedd862e4b96"
+                "reference": "c4255b9fbd63ee1fe52697839318af5937fced9b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/d658ec7a03f6475eff0dd1eb940bdedd862e4b96",
-                "reference": "d658ec7a03f6475eff0dd1eb940bdedd862e4b96",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/c4255b9fbd63ee1fe52697839318af5937fced9b",
+                "reference": "c4255b9fbd63ee1fe52697839318af5937fced9b",
                 "shasum": ""
             },
             "require": {
@@ -642,7 +642,7 @@
                 {
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -655,7 +655,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2013-06-10 18:20:01"
+            "time": "2013-06-21 12:11:28"
         },
         {
             "name": "doctrine/dbal",
@@ -838,7 +838,7 @@
                     "email": "roman@code-factory.org"
                 },
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
                     "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
@@ -1065,16 +1065,16 @@
         },
         {
             "name": "kriswallsmith/assetic",
-            "version": "1.1.x-dev",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kriswallsmith/assetic.git",
-                "reference": "0e18168c45df6500617ad8739f122fdf917a9293"
+                "reference": "82e8fc20a3b043b378a7efbda9e3d406d420f00e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/0e18168c45df6500617ad8739f122fdf917a9293",
-                "reference": "0e18168c45df6500617ad8739f122fdf917a9293",
+                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/82e8fc20a3b043b378a7efbda9e3d406d420f00e",
+                "reference": "82e8fc20a3b043b378a7efbda9e3d406d420f00e",
                 "shasum": ""
             },
             "require": {
@@ -1103,7 +1103,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -1132,7 +1132,7 @@
                 "compression",
                 "minification"
             ],
-            "time": "2013-06-13 16:56:43"
+            "time": "2013-06-13 16:47:03"
         },
         {
             "name": "laravel/framework",
@@ -1140,12 +1140,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "a670440f8e62a2ffe4886310c14954b2c93f99a8"
+                "reference": "2d7f8bd816f688a7330fc0246727aeb3d541ede9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/a670440f8e62a2ffe4886310c14954b2c93f99a8",
-                "reference": "a670440f8e62a2ffe4886310c14954b2c93f99a8",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/2d7f8bd816f688a7330fc0246727aeb3d541ede9",
+                "reference": "2d7f8bd816f688a7330fc0246727aeb3d541ede9",
                 "shasum": ""
             },
             "require": {
@@ -1243,7 +1243,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-06-19 21:34:43"
+            "time": "2013-06-20 20:50:44"
         },
         {
             "name": "monolog/monolog",
@@ -1487,12 +1487,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/opauth/opauth.git",
-                "reference": "469598c1263e83d1654912f38265d20ec6a8bf61"
+                "reference": "040470e15fbde1ae26ad0f7e80c957d76fec807a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/opauth/opauth/zipball/469598c1263e83d1654912f38265d20ec6a8bf61",
-                "reference": "469598c1263e83d1654912f38265d20ec6a8bf61",
+                "url": "https://api.github.com/repos/opauth/opauth/zipball/040470e15fbde1ae26ad0f7e80c957d76fec807a",
+                "reference": "040470e15fbde1ae26ad0f7e80c957d76fec807a",
                 "shasum": ""
             },
             "require": {
@@ -1532,7 +1532,7 @@
                 "omniauth",
                 "twitter"
             ],
-            "time": "2013-06-10 10:59:30"
+            "time": "2013-06-21 14:39:42"
         },
         {
             "name": "patchwork/utf8",
@@ -1585,12 +1585,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "30408ff8fba4cd78fdc816dd63d99cdb5fa8b2ab"
+                "reference": "adf8afd4eb7566615decfc65892266d21f49612c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/30408ff8fba4cd78fdc816dd63d99cdb5fa8b2ab",
-                "reference": "30408ff8fba4cd78fdc816dd63d99cdb5fa8b2ab",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/adf8afd4eb7566615decfc65892266d21f49612c",
+                "reference": "adf8afd4eb7566615decfc65892266d21f49612c",
                 "shasum": ""
             },
             "require": {
@@ -1651,7 +1651,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2013-06-18 13:31:33"
+            "time": "2013-06-21 01:51:50"
         },
         {
             "name": "predis/predis",
@@ -2430,17 +2430,17 @@
         },
         {
             "name": "symfony/translation",
-            "version": "2.3.x-dev",
+            "version": "dev-master",
             "target-dir": "Symfony/Component/Translation",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Translation.git",
-                "reference": "v2.3.1"
+                "reference": "ed0c7257bfc533205dff78f9d247c2544c830ddc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Translation/zipball/v2.3.1",
-                "reference": "v2.3.1",
+                "url": "https://api.github.com/repos/symfony/Translation/zipball/ed0c7257bfc533205dff78f9d247c2544c830ddc",
+                "reference": "ed0c7257bfc533205dff78f9d247c2544c830ddc",
                 "shasum": ""
             },
             "require": {
@@ -2457,7 +2457,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3-dev"
+                    "dev-master": "2.4-dev"
                 }
             },
             "autoload": {
@@ -2481,7 +2481,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "http://symfony.com",
-            "time": "2013-05-13 14:36:40"
+            "time": "2013-05-16 07:54:39"
         },
         {
             "name": "themattharris/tmhoauth",
