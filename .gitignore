@@ -1,11 +1,17 @@
+# Laravel
 bootstrap/compiled.php
 /vendor
 
+# Database
 app/storage/database
 
+# Packages
+app/config.remote.php
+app/config/packages/anahkiasen/rocketeer/config.php
 public/builds
 public/cache/*.jpg
 
+# Other files
 .DS_Store
 .sass-cache
 sftp-config.json
