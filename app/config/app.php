@@ -119,6 +119,7 @@ return array(
 		'Basset\BassetServiceProvider',
 		'Illuminage\IlluminageServiceProvider',
 		'Flatten\FlattenServiceProvider',
+		'Rocketeer\RocketeerServiceProvider',
 
 	),
 
