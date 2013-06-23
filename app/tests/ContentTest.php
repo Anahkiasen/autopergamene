@@ -15,7 +15,7 @@ class ContentTest extends Cerberus\Scrutiny
     );
   }
 
-  protected $externalCategories = array(
+  public $externalCategories = array(
     'Le Soulèvement',
   );
 
@@ -70,13 +70,14 @@ class ContentTest extends Cerberus\Scrutiny
   public function testExternalLinksAreTargetBlank()
   {
     $crawler = $this->getPage();
+    $me      = $this;
 
-    $categories = $crawler->filter('.categories a')->each(function($category) {
+    $categories = $crawler->filter('.categories a')->each(function($category) use ($me) {
       $categoryName  = utf8_decode($category->filter('h3')->text());
       $linkBlank     = (bool) $category->attr('target');
-      $shouldBeBlank = in_array($categoryName, $this->externalCategories);
+      $shouldBeBlank = in_array($categoryName, $me->externalCategories);
 
-      $this->assertEquals($shouldBeBlank, $linkBlank);
+      $me->assertEquals($shouldBeBlank, $linkBlank);
     });
 
   }
