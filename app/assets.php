@@ -32,7 +32,7 @@ Basset::collection('modernizr', function($collection) {
 
 Basset::collection('lazyload', function($collection) {
   $collection->add('components/jquery/jquery.min.js');
-  $collection->add('components/jquery.lazyload/jquery.lazyload.min.js');
+  $collection->add('components/jquery.lazyload/jquery.lazyload.js');
   $collection->add('app/js/lazyload.js');
 })
 ->apply('JsMin');

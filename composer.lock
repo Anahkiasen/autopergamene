@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "edc7d41c14ad0756d80211c232adc43f",
+    "hash": "db66b51f29fd3f19e0e765c96251fa50",
     "packages": [
         {
             "name": "anahkiasen/cerberus",
@@ -238,12 +238,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Anahkiasen/rocketeer.git",
-                "reference": "0.2.0"
+                "reference": "0.3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Anahkiasen/rocketeer/zipball/0.2.0",
-                "reference": "0.2.0",
+                "url": "https://api.github.com/repos/Anahkiasen/rocketeer/zipball/0.3.0",
+                "reference": "0.3.0",
                 "shasum": ""
             },
             "require": {
@@ -278,7 +278,7 @@
                 "laravel",
                 "ssh"
             ],
-            "time": "2013-06-24 01:17:21"
+            "time": "2013-06-24 17:09:49"
         },
         {
             "name": "anahkiasen/underscore-php",
@@ -1633,12 +1633,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "adf8afd4eb7566615decfc65892266d21f49612c"
+                "reference": "b247ad174375dbdc323a85a2e2f82d10c3b225c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/adf8afd4eb7566615decfc65892266d21f49612c",
-                "reference": "adf8afd4eb7566615decfc65892266d21f49612c",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/b247ad174375dbdc323a85a2e2f82d10c3b225c7",
+                "reference": "b247ad174375dbdc323a85a2e2f82d10c3b225c7",
                 "shasum": ""
             },
             "require": {
@@ -1699,7 +1699,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2013-06-21 01:51:50"
+            "time": "2013-06-24 17:17:13"
         },
         {
             "name": "predis/predis",
