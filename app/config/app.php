@@ -198,6 +198,7 @@ return array(
 		'Illuminage' => 'Illuminage\Facades\Illuminage',
 
 		// Other packages
+		'Rocketeer'  => 'Rocketeer\Facades\Rocketeer',
 		'Carbon'     => 'Carbon\Carbon',
 		'Basset'     => 'Basset\Facade',
 		'Flickering' => 'Flickering\Facades\Flickering',

@@ -238,12 +238,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Anahkiasen/rocketeer.git",
-                "reference": "683ad45bcbca863990c4a3c06d0abcd8b1090e35"
+                "reference": "0.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Anahkiasen/rocketeer/zipball/683ad45bcbca863990c4a3c06d0abcd8b1090e35",
-                "reference": "683ad45bcbca863990c4a3c06d0abcd8b1090e35",
+                "url": "https://api.github.com/repos/Anahkiasen/rocketeer/zipball/0.2.0",
+                "reference": "0.2.0",
                 "shasum": ""
             },
             "require": {
@@ -253,7 +253,8 @@
             "require-dev": {
                 "illuminate/container": "4.1.x",
                 "illuminate/filesystem": "4.1.x",
-                "mockery/mockery": "dev-master"
+                "mockery/mockery": "dev-master",
+                "nesbot/carbon": "dev-master"
             },
             "type": "library",
             "autoload": {
@@ -277,7 +278,7 @@
                 "laravel",
                 "ssh"
             ],
-            "time": "2013-06-23 14:14:48"
+            "time": "2013-06-24 01:17:21"
         },
         {
             "name": "anahkiasen/underscore-php",
@@ -710,12 +711,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "4804a9a096f1a3f048da11b192b9df5caafc1a5d"
+                "reference": "8ca2763c66c1a3901aea7812b99e3dce73a202f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/4804a9a096f1a3f048da11b192b9df5caafc1a5d",
-                "reference": "4804a9a096f1a3f048da11b192b9df5caafc1a5d",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/8ca2763c66c1a3901aea7812b99e3dce73a202f8",
+                "reference": "8ca2763c66c1a3901aea7812b99e3dce73a202f8",
                 "shasum": ""
             },
             "require": {
@@ -772,7 +773,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2013-06-21 19:00:38"
+            "time": "2013-06-24 06:42:46"
         },
         {
             "name": "doctrine/inflector",
@@ -1187,12 +1188,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "2d7f8bd816f688a7330fc0246727aeb3d541ede9"
+                "reference": "f19a08af28f6214d031921bcae153865a905edd7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/2d7f8bd816f688a7330fc0246727aeb3d541ede9",
-                "reference": "2d7f8bd816f688a7330fc0246727aeb3d541ede9",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/f19a08af28f6214d031921bcae153865a905edd7",
+                "reference": "f19a08af28f6214d031921bcae153865a905edd7",
                 "shasum": ""
             },
             "require": {
@@ -1290,7 +1291,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-06-20 20:50:44"
+            "time": "2013-06-24 03:05:07"
         },
         {
             "name": "monolog/monolog",
