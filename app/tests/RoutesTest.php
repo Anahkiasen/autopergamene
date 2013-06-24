@@ -41,13 +41,13 @@ class RoutesTest extends Cerberus\Scrutiny
 
   public function testPathsToStylesAreCorrect()
   {
-    $this->markTestSkipped('foobar');
     $page   = $this->getPage('');
     $styles = $page->filter('link')->extract('href');
-    $styles = str_replace('http://localhost/', 'http://autopergamene.dev/', $styles[2]);
+    $style = sizeof($styles) == 3 ? $styles[2] : $styles[1];
+    $style = str_replace('http://localhost/', 'http://autopergamene.dev/', $style);
 
-    $styles = (bool) file_get_contents($styles);
-    $this->assertTrue($styles);
+    $style = (bool) file_get_contents($style);
+    $this->assertTrue($style);
   }
 
   /**
