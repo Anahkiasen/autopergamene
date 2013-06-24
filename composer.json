@@ -22,6 +22,9 @@
     "opauth/flickr": "dev-master",
     "anahkiasen/rocketeer": "dev-master"
   },
+  "require-dev": {
+    "phpunit/phpunit": "dev-master"
+  },
   "autoload": {
     "classmap": [
       "app/commands",
