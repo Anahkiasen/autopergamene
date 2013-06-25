@@ -20,7 +20,7 @@
     "jasonlewis/basset": "dev-master",
     "natxet/CssMin": "dev-master",
     "opauth/flickr": "dev-master",
-    "anahkiasen/rocketeer": "dev-master"
+    "anahkiasen/rocketeer": "dev-develop"
   },
   "require-dev": {
     "phpunit/phpunit": "dev-master"

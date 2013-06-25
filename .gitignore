@@ -7,7 +7,6 @@ app/storage/database
 
 # Packages
 app/config.remote.php
-app/config/packages/anahkiasen/rocketeer/config.php
 public/builds
 public/cache/*.jpg
 

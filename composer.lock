@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "db66b51f29fd3f19e0e765c96251fa50",
+    "hash": "a8590c40f52dc8f8433c7362b64198bb",
     "packages": [
         {
             "name": "anahkiasen/cerberus",
@@ -234,16 +234,16 @@
         },
         {
             "name": "anahkiasen/rocketeer",
-            "version": "dev-master",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Anahkiasen/rocketeer.git",
-                "reference": "0.3.0"
+                "reference": "28c26a4111a5cd00869c65458087db82ee3ddcc9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Anahkiasen/rocketeer/zipball/0.3.0",
-                "reference": "0.3.0",
+                "url": "https://api.github.com/repos/Anahkiasen/rocketeer/zipball/28c26a4111a5cd00869c65458087db82ee3ddcc9",
+                "reference": "28c26a4111a5cd00869c65458087db82ee3ddcc9",
                 "shasum": ""
             },
             "require": {
@@ -278,7 +278,7 @@
                 "laravel",
                 "ssh"
             ],
-            "time": "2013-06-24 17:09:49"
+            "time": "2013-06-25 23:55:18"
         },
         {
             "name": "anahkiasen/underscore-php",
@@ -286,12 +286,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Anahkiasen/underscore-php.git",
-                "reference": "4aa949b884ace9c3804df0edc745821604a62bde"
+                "reference": "1.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Anahkiasen/underscore-php/zipball/4aa949b884ace9c3804df0edc745821604a62bde",
-                "reference": "4aa949b884ace9c3804df0edc745821604a62bde",
+                "url": "https://api.github.com/repos/Anahkiasen/underscore-php/zipball/1.2.1",
+                "reference": "1.2.1",
                 "shasum": ""
             },
             "require": {
@@ -316,20 +316,20 @@
                 }
             ],
             "description": "A redacted port of Underscore.js for PHP",
-            "time": "2013-06-05 16:52:33"
+            "time": "2013-06-25 10:32:36"
         },
         {
             "name": "classpreloader/classpreloader",
-            "version": "dev-master",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mtdowling/ClassPreloader.git",
-                "reference": "62c99d52ce2f1b0b8449c61e2d94f48d918222eb"
+                "reference": "1.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mtdowling/ClassPreloader/zipball/62c99d52ce2f1b0b8449c61e2d94f48d918222eb",
-                "reference": "62c99d52ce2f1b0b8449c61e2d94f48d918222eb",
+                "url": "https://api.github.com/repos/mtdowling/ClassPreloader/zipball/1.0.1",
+                "reference": "1.0.1",
                 "shasum": ""
             },
             "require": {
@@ -363,7 +363,7 @@
                 "class",
                 "preload"
             ],
-            "time": "2013-05-26 16:10:36"
+            "time": "2013-06-24 22:58:34"
         },
         {
             "name": "dflydev/markdown",
@@ -711,12 +711,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "8ca2763c66c1a3901aea7812b99e3dce73a202f8"
+                "reference": "3253f7a1c13a2177d925bd0f6ee8387c5dd9c57a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/8ca2763c66c1a3901aea7812b99e3dce73a202f8",
-                "reference": "8ca2763c66c1a3901aea7812b99e3dce73a202f8",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/3253f7a1c13a2177d925bd0f6ee8387c5dd9c57a",
+                "reference": "3253f7a1c13a2177d925bd0f6ee8387c5dd9c57a",
                 "shasum": ""
             },
             "require": {
@@ -773,7 +773,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2013-06-24 06:42:46"
+            "time": "2013-06-25 17:49:29"
         },
         {
             "name": "doctrine/inflector",
@@ -1188,12 +1188,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "f19a08af28f6214d031921bcae153865a905edd7"
+                "reference": "f2dacb54157a2cc7c385f43355e4337479d438dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/f19a08af28f6214d031921bcae153865a905edd7",
-                "reference": "f19a08af28f6214d031921bcae153865a905edd7",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/f2dacb54157a2cc7c385f43355e4337479d438dd",
+                "reference": "f2dacb54157a2cc7c385f43355e4337479d438dd",
                 "shasum": ""
             },
             "require": {
@@ -1291,7 +1291,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-06-24 03:05:07"
+            "time": "2013-06-24 21:43:25"
         },
         {
             "name": "monolog/monolog",
@@ -1633,12 +1633,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "b247ad174375dbdc323a85a2e2f82d10c3b225c7"
+                "reference": "76ea505af84a123d72babc5f32be6cfaf1a5d672"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/b247ad174375dbdc323a85a2e2f82d10c3b225c7",
-                "reference": "b247ad174375dbdc323a85a2e2f82d10c3b225c7",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/76ea505af84a123d72babc5f32be6cfaf1a5d672",
+                "reference": "76ea505af84a123d72babc5f32be6cfaf1a5d672",
                 "shasum": ""
             },
             "require": {
@@ -1699,7 +1699,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2013-06-24 17:17:13"
+            "time": "2013-06-25 21:44:22"
         },
         {
             "name": "predis/predis",
@@ -2581,12 +2581,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "455a413d415959ee9626be61554788a2f58c300b"
+                "reference": "351fdf4e9b7e63fc5a76d2b809f3d58865096af3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/455a413d415959ee9626be61554788a2f58c300b",
-                "reference": "455a413d415959ee9626be61554788a2f58c300b",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/351fdf4e9b7e63fc5a76d2b809f3d58865096af3",
+                "reference": "351fdf4e9b7e63fc5a76d2b809f3d58865096af3",
                 "shasum": ""
             },
             "require": {
@@ -2635,7 +2635,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2013-06-23 03:56:03"
+            "time": "2013-06-24 11:57:58"
         },
         {
             "name": "phpunit/php-file-iterator",
