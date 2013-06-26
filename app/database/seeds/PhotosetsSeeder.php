@@ -8,11 +8,11 @@ class PhotosetsSeeder extends BaseSeed
 
     return Arrays::each($photosets, function($photoset) {
       return [
-        'id'            => $photoset['id'],
-        'name'          => $photoset['title']['_content'],
-        'slug'          => String::slugify($photoset['title']['_content']),
-        'created_at'    => $photoset['date_create'],
-        'updated_at'    => $photoset['date_update'],
+        'id'         => $photoset['id'],
+        'name'       => $photoset['title']['_content'],
+        'slug'       => String::slugify($photoset['title']['_content']),
+        'created_at' => $photoset['date_create'],
+        'updated_at' => $photoset['date_update'],
       ];
     });
   }
