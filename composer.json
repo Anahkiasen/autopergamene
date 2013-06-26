@@ -23,7 +23,7 @@
     "anahkiasen/rocketeer": "dev-develop"
   },
   "require-dev": {
-    "phpunit/phpunit": "dev-master"
+    "phpunit/phpunit": "3.7.*"
   },
   "autoload": {
     "classmap": [
