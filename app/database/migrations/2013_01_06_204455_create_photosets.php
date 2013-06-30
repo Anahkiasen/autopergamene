@@ -2,6 +2,12 @@
 
 class CreatePhotosets extends Migration
 {
+
+  /**
+   * Run the migrations.
+   *
+   * @return void
+   */
   public function up()
   {
     Schema::create('photosets', function($table) {
@@ -12,8 +18,14 @@ class CreatePhotosets extends Migration
     });
   }
 
+  /**
+   * Reverse the migrations.
+   *
+   * @return void
+   */
   public function down()
   {
     Schema::drop('photosets');
   }
+
 }

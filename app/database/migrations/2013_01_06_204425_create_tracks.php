@@ -2,6 +2,12 @@
 
 class CreateTracks extends Migration
 {
+
+  /**
+   * Run the migrations.
+   *
+   * @return void
+   */
   public function up()
   {
     Schema::create('tracks', function($table) {
@@ -15,8 +21,14 @@ class CreateTracks extends Migration
     });
   }
 
+  /**
+   * Reverse the migrations.
+   *
+   * @return void
+   */
   public function down()
   {
     Schema::drop('tracks');
   }
+
 }

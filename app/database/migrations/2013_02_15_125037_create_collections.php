@@ -2,6 +2,7 @@
 
 class CreateCollections extends Migration
 {
+
   /**
    * Run the migrations.
    *
@@ -26,4 +27,5 @@ class CreateCollections extends Migration
   {
     Schema::drop('collections');
   }
+
 }

@@ -44,6 +44,5 @@ class BaseSeed extends Seeder
 
     // Print number of seeds
     $element = String::remove(get_called_class(), 'Seeder');
-    //print sizeof($data).' '.lcfirst($element).' seeded successfully'.PHP_EOL;
   }
 }

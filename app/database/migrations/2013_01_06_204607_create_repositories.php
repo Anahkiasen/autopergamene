@@ -2,6 +2,12 @@
 
 class CreateRepositories extends Migration
 {
+
+  /**
+   * Run the migrations.
+   *
+   * @return void
+   */
   public function up()
   {
     Schema::create('repositories', function($table) {
@@ -20,8 +26,14 @@ class CreateRepositories extends Migration
     });
   }
 
+  /**
+   * Reverse the migrations.
+   *
+   * @return void
+   */
   public function down()
   {
     Schema::drop('repositories');
   }
+
 }

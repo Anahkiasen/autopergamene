@@ -2,6 +2,12 @@
 
 class CreateArticles extends Migration
 {
+
+  /**
+   * Run the migrations.
+   *
+   * @return void
+   */
   public function up()
   {
     Schema::create('articles', function($table) {
@@ -16,8 +22,14 @@ class CreateArticles extends Migration
     });
   }
 
+  /**
+   * Reverse the migrations.
+   *
+   * @return void
+   */
   public function down()
   {
     Schema::drop('articles');
   }
+
 }

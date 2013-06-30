@@ -22,7 +22,7 @@ class Tableau extends BaseModel
    */
   public function getImageAttribute()
   {
-    $image = String::slugify($this->name).'.jpg';
+    $image = Str::slug($this->name).'.jpg';
 
     return URL::asset("app/img/tableaux/".$image);
   }

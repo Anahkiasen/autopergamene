@@ -2,6 +2,12 @@
 
 class CreateIllustrations extends Migration
 {
+
+  /**
+   * Run the migrations.
+   *
+   * @return void
+   */
   public function up()
   {
     Schema::create('illustrations', function($table) {
@@ -15,8 +21,14 @@ class CreateIllustrations extends Migration
     });
   }
 
+  /**
+   * Reverse the migrations.
+   *
+   * @return void
+   */
   public function down()
   {
     Schema::drop('illustrations');
   }
+
 }

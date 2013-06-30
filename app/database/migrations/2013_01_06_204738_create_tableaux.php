@@ -2,6 +2,12 @@
 
 class CreateTableaux extends Migration
 {
+
+  /**
+   * Run the migrations.
+   *
+   * @return void
+   */
   public function up()
   {
     Schema::create('tableaux', function($table) {
@@ -11,8 +17,14 @@ class CreateTableaux extends Migration
     });
   }
 
+  /**
+   * Reverse the migrations.
+   *
+   * @return void
+   */
   public function down()
   {
     Schema::drop('tableaux');
   }
+
 }
