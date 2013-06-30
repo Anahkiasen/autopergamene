@@ -14,5 +14,3 @@ public/cache/*.jpg
 .DS_Store
 .sass-cache
 sftp-config.json
-Thumbs.db
-Capfile
