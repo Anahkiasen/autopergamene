@@ -191,7 +191,6 @@ return array(
 		// Underscore.php
 		'String'     => 'Underscore\Types\String',
 		'Arrays'     => 'Underscore\Types\Arrays',
-		'Number'     => 'Underscore\Types\Number',
 
 		// Cerberus
 		'HTML'       => 'Cerberus\Facades\HTML',

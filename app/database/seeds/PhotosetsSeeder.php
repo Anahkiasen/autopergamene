@@ -10,7 +10,7 @@ class PhotosetsSeeder extends BaseSeed
       return [
         'id'         => $photoset['id'],
         'name'       => $photoset['title']['_content'],
-        'slug'       => String::slugify($photoset['title']['_content']),
+        'slug'       => Str::slug($photoset['title']['_content']),
         'created_at' => $photoset['date_create'],
         'updated_at' => $photoset['date_update'],
       ];

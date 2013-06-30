@@ -1,5 +1,9 @@
 <?php
+use Underscore\Methods\NumberMethods as Number;
 
+/**
+ * A Photo in a Photoset
+ */
 class Photo extends BaseModel
 {
 

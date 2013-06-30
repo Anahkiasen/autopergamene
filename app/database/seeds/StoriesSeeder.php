@@ -8,10 +8,10 @@ class StoriesSeeder extends BaseSeed
       list($name, $date, $summary) = $story;
 
       return [
-        'id'          => String::slugify($name),
+        'id'          => Str::slug($name),
         'name'        => $name,
         'description' => $summary,
-        'image'       => String::slugify($name).'.jpg',
+        'image'       => Str::slug($name).'.jpg',
         'created_at'  => DateTime::createFromFormat('Y-m-d', $date),
         'updated_at'  => DateTime::createFromFormat('Y-m-d', $date),
       ];

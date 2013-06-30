@@ -32,7 +32,7 @@ class ArticlesController extends BaseController
    *
    * @return View article
    */
-  public function getArticle($categorySlug, $articleSlug)
+  public function article($categorySlug, $articleSlug)
   {
     $article = $this->articles->getBySlug($articleSlug);
 

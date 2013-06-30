@@ -8,7 +8,7 @@ class CategoriesSeeder extends BaseSeed
       list($name, $description, $link) = $category;
 
       return [
-        'id'          => String::slugify($name),
+        'id'          => Str::slug($name),
         'name'        => $name,
         'description' => $description,
         'link'        => $link,

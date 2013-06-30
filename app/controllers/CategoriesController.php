@@ -29,7 +29,7 @@ class CategoriesController extends BaseController
    *
    * @return View home
    */
-  public function getCategories()
+  public function categories()
   {
     $categories = $this->categories->getOrdered();
 
@@ -44,7 +44,7 @@ class CategoriesController extends BaseController
    *
    * @return View categories/$slug
    */
-  public function getCategory($categorySlug)
+  public function category($categorySlug)
   {
     $category = $this->categories->getBySlug($categorySlug);
 
@@ -59,7 +59,7 @@ class CategoriesController extends BaseController
    *
    * @return View photoset
    */
-  public function getAlbum($albumSlug)
+  public function album($albumSlug)
   {
     $photoset = Photoset::where('slug', $albumSlug)->first();
     $category = $this->categories->getPhotosCategory();
@@ -76,7 +76,7 @@ class CategoriesController extends BaseController
    *
    * @return View support
    */
-  public function getSupport($supportSlug)
+  public function support($supportSlug)
   {
     $support  = Support::with('illustrations')->find($supportSlug);
     $category = $this->categories->getIllustrationsCategory();
@@ -93,7 +93,7 @@ class CategoriesController extends BaseController
    *
    * @return View story
    */
-  public function getStory($storySlug)
+  public function story($storySlug)
   {
     $category = $this->categories->getStoriesCategory();
     $story = Story::find($storySlug);

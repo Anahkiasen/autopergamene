@@ -10,7 +10,7 @@
 
 @section('navigation')
   {{ HTML::homeLink() }}
-  {{ HTML::backLink(route('category', array('slug' => $category->id)), 'Retour à '.$category->name) }}
+  {{ HTML::backLink(URL::route('category', array('slug' => $category->id)), 'Retour à '.$category->name) }}
 @stop
 
 @section('layout')

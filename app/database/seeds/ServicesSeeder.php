@@ -9,7 +9,7 @@ class ServicesSeeder extends BaseSeed
 
       return [
         'name'       => $name,
-        'icon'       => String::slugify($name).'.svg',
+        'icon'       => Str::slug($name).'.svg',
         'link'       => $link,
         'created_at' => new DateTime,
         'updated_at' => new DateTime,

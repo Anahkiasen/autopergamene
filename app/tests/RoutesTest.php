@@ -19,6 +19,18 @@ class RoutesTest extends TestCase
 			$routes[] = $article->link;
 		}
 
+		foreach (Story::all() as $story) {
+			$routes[] = URL::action('CategoriesController@story', $story->id);
+		}
+
+		foreach (Photoset::all() as $photoset) {
+			$routes[] = URL::action('CategoriesController@album', $photoset->slug);
+		}
+
+		foreach (Support::all() as $support) {
+			$routes[] = URL::action('CategoriesController@support', $support->id);
+		}
+
 		foreach ($routes as $route) {
 			try {
 				print 'Testing route '.$route.PHP_EOL;

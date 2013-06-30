@@ -15,7 +15,7 @@
       <figure class='cover' style='background-image: url({{ $story->image }})'></figure>
       <p><strong>Publiée le :</strong> {{ $story->created_at }}</p>
       <blockquote>{{ $story->description }}</blockquote>
-      {{ HTML::blockLink(route('story', array('id' => $story->id)), 'Lire la nouvelle') }}
+      {{ HTML::blockLink(URL::route('story', array('id' => $story->id)), 'Lire la nouvelle') }}
     </article>
   @endforeach
 @stop

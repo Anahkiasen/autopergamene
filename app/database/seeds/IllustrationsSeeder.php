@@ -10,7 +10,7 @@ class IllustrationsSeeder extends BaseSeed
       return [
         'name'       => $name,
         'media'      => $description,
-        'image'      => String::slugify($name).'.jpg',
+        'image'      => Str::slug($name).'.jpg',
         'thumbnail'  => isset($illustration[3]) ? 1 : 0,
         'support_id' => $category,
         'created_at' => new DateTime,
@@ -63,6 +63,7 @@ class IllustrationsSeeder extends BaseSeed
 
       // Vidéo
       ['Christ Send Light', 'Encre et peinture<br />Musique montage à partir de Nadja - Christ Send Light', 'video', true],
+
     ];
   }
 }
