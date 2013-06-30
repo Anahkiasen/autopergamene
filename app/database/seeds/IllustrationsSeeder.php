@@ -62,7 +62,7 @@ class IllustrationsSeeder extends BaseSeed
       ['Vaisseau', '', 'maya'],
 
       // Vidéo
-      ['Christ Send Light', 'Encre et peinture<br />Musique montage à partir de Nadja - Christ Send Light', 'video', true],
+      ['Christ Send Light', 'Encre et peinture<br>Musique montage à partir de Nadja - Christ Send Light', 'video', true],
 
     ];
   }

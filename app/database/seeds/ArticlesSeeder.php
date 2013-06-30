@@ -96,7 +96,7 @@ class ArticlesSeeder extends BaseSeed
   {
     $hashtags = array('Musique', 'Photos', 'Compo');
     foreach ($hashtags as $hashtag) {
-      $title = str_replace("[$hashtag]", null, $title);
+      $title = String::remove($title, "[$hashtag]");
     }
 
     return $title;

@@ -7,7 +7,7 @@
     premiers pas dans la photographie dans laquelle je me lancerai quelques temps plus tards.
   </p>
 
-  <hr />
+  <hr>
 
   @foreach($tableaux as $tableau)
     <figure class='tableau'>

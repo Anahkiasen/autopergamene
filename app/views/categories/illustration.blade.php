@@ -4,7 +4,7 @@
   <p>
     Sur cette page sont entreposées toutes les illustrations, dessins et consors que j'ai pu faire entre deux. Cela va de la peinture digitale au dessin au fusain, au rendu 3D en passant par l'illustration vectorielle.
   </p>
-  <hr />
+  <hr>
 
   @foreach ($supports as $support)
     @unless ($support->thumbnail)
