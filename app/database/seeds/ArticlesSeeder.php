@@ -32,7 +32,7 @@ class ArticlesSeeder extends BaseSeed
       // Article
       $articles[] = array(
         'category_id' => $category_id,
-        'slug'        => String::slug($title),
+        'slug'        => Str::slug($title),
         'content'     => trim($article->content->__toString()),
         'summary'     => trim($article->description->__toString()),
         'tags'        => $tags,

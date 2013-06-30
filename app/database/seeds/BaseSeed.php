@@ -20,10 +20,10 @@ class BaseSeed extends Seeder
    */
   protected function getTableName()
   {
-    return String::from(get_called_class())
-      ->remove('Seeder')
-      ->lower()
-      ->obtain();
+    $string = String::remove(get_called_class(), 'Seeder');
+    $string = String::lower($string);
+
+    return $string;
   }
 
   /**
@@ -41,8 +41,5 @@ class BaseSeed extends Seeder
     foreach ($slices as $slice) {
       DB::table($table)->insert($slice);
     }
-
-    // Print number of seeds
-    $element = String::remove(get_called_class(), 'Seeder');
   }
 }

@@ -189,7 +189,7 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
 
 		// Underscore.php
-		'String'     => 'Underscore\Types\String',
+		'String'     => 'Underscore\Methods\StringMethods',
 		'Arrays'     => 'Underscore\Types\Arrays',
 
 		// Cerberus
