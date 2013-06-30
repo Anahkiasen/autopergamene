@@ -40,4 +40,5 @@ class ArticlesController extends BaseController
       ->with('category', $article->category)
       ->with('article', $article);
   }
+
 }

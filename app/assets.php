@@ -13,6 +13,7 @@ Basset::collection('application', function($collection) {
 
   $collection->add('app/js/scripts.js');
 })
+->rawOnEnvironment('local')
 ->apply('UriRewriteFilter')
 ->apply('CssMin');
 
@@ -24,6 +25,7 @@ Basset::collection('modernizr', function($collection) {
   $collection->add('components/modernizr/modernizr.min.js');
   $collection->add('app/js/polyfill.js');
 })
+->rawOnEnvironment('local')
 ->apply('JsMin');
 
 //////////////////////////////////////////////////////////////////////
@@ -35,6 +37,7 @@ Basset::collection('lazyload', function($collection) {
   $collection->add('components/jquery.lazyload/jquery.lazyload.js');
   $collection->add('app/js/lazyload.js');
 })
+->rawOnEnvironment('local')
 ->apply('JsMin');
 
 Basset::collection('article', function($collection) {
@@ -48,6 +51,7 @@ Basset::collection('article', function($collection) {
 
   $collection->add('app/js/article.js');
 })
+->rawOnEnvironment('local')
 ->apply('JsMin');
 
 //////////////////////////////////////////////////////////////////////
@@ -60,4 +64,5 @@ Basset::collection('affixed', function($collection) {
   $collection->add('components/bootstrap/js/bootstrap-scrollspy.js');
   $collection->add('app/js/affixed.js');
 })
+->rawOnEnvironment('local')
 ->apply('JsMin');
