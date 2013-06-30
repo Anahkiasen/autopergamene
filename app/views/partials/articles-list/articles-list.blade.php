@@ -2,6 +2,6 @@
 
 <section class='articles hidden'>
   @if($category->articles)
-    @each('article-block', $category->articles, 'article')
+    @each('partials.articles-list.article-block', $category->articles, 'article')
   @endif
 </section>

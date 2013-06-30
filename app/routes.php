@@ -1,24 +1,14 @@
 <?php
 
 //////////////////////////////////////////////////////////////////////
-////////////////////////////// NAMESPACES ////////////////////////////
-//////////////////////////////////////////////////////////////////////
-
-View::addLocation(__DIR__.'/views/layouts');
-View::addLocation(__DIR__.'/views/partials');
-View::addLocation(__DIR__.'/views/partials/articles-list');
-View::addLocation(__DIR__.'/views/categories');
-View::addLocation(__DIR__.'/views/categories/subcategories');
-
-//////////////////////////////////////////////////////////////////////
 /////////////////////////////// ROUTES ///////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-Route::any('/', 'CategoriesController@getCategories');
+Route::get('/', 'CategoriesController@getCategories');
 
 // Display a category ---------------------------------------------- /
 
-Route::any('category/{slug}', array(
+Route::get('category/{slug}', array(
   'as'   => 'category',
   'uses' => 'CategoriesController@getCategory'));
 
@@ -28,24 +18,24 @@ Route::any('category/{slug}', array(
 
 // Display an article ---------------------------------------------- /
 
-Route::any('category/{categorySlug}/articles/{articleSlug}', array(
+Route::get('category/{categorySlug}/articles/{articleSlug}', array(
   'as'   => 'article',
   'uses' => 'ArticlesController@getArticle'));
 
 // Display a support ----------------------------------------------- /
 
-Route::any('category/illustration/support/{id}', array(
+Route::get('category/illustration/support/{id}', array(
   'as'   => 'support',
   'uses' => 'CategoriesController@getSupport'));
 
 // Display a story ------------------------------------------------- /
 
-Route::any('category/les-fleurs-davril/story/{id}', array(
+Route::get('category/les-fleurs-davril/story/{id}', array(
   'as'   => 'story',
   'uses' => 'CategoriesController@getStory'));
 
 // Display a photoset ---------------------------------------------- /
 
-Route::any('category/memorabilia/album/{id}', array(
+Route::get('category/memorabilia/album/{id}', array(
   'as'   => 'photoset',
   'uses' => 'CategoriesController@getAlbum'));

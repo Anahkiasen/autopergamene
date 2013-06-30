@@ -1,4 +1,4 @@
-@extends('portfolio')
+@extends('layouts.portfolio')
 
 @section('content')
   <section class='memorabilia'>
@@ -7,7 +7,7 @@
       communication visuelle et m'étais dit que la photographie en serait un prérequis. Mes premières images étaient de ce qui m'entouraient — objets et personnes —
     </p>
 
-    @include('articles-list')
+    @include('partials.articles-list.articles-list')
 
     @foreach ($collections as $collection)
       <article class='collection'>

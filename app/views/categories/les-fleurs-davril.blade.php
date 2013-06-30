@@ -1,4 +1,4 @@
-@extends('portfolio')
+@extends('layouts.portfolio')
 
 @section('content')
   <p>
@@ -7,7 +7,7 @@
     améliorées à mesure que j'écrivais.
   </p>
 
-  @include('navigation', array('links' => $stories))
+  @include('partials.navigation', array('links' => $stories))
 
   @foreach($stories as $story)
     <article class='novel-summary' id='{{ $story->id }}'>

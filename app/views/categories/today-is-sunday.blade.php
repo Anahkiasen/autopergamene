@@ -1,4 +1,4 @@
-@extends('portfolio')
+@extends('layouts.portfolio')
 
 @section('content')
   <p>

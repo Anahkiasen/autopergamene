@@ -1,4 +1,4 @@
-@extends('portfolio')
+@extends('layouts.portfolio')
 
 @section('content')
   <p>
@@ -15,7 +15,7 @@
     les standards du {{ HTML::linkBlank('https://github.com/php-fig/fig-standards', 'PSR') }} et tirent partie des dernières avancées en terme d'OOP (namespaces, magic methods, etc).
   </p>
 
-  @include('articles-list')
+  @include('partials.articles-list.articles-list')
 
   <h2>Les projets</h2>
   <p>Les liens pointent soit sur Github vers la source, soit vers le site du projet.</p>

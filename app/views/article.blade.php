@@ -1,4 +1,4 @@
-@extends('global')
+@extends('layouts.global')
 
 @section('title')
   {{ $article->name }} - Les articles -

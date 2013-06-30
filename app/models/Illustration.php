@@ -7,6 +7,11 @@ class Illustration extends BaseModel
   /////////////////////////// RELATIONSHIPS //////////////////////////
   ////////////////////////////////////////////////////////////////////
 
+  /**
+   * Get the Support this Illustration belongs to
+   *
+   * @return Support
+   */
   public function support()
   {
     return $this->belongsTo('Support');

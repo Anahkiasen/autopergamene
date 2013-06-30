@@ -1,100 +1,34 @@
 <?php
-use Underscore\Types\String;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-class RoutesTest extends Cerberus\Scrutiny
+class RoutesTest extends TestCase
 {
-  // Data providers ------------------------------------------------ /
 
-  public function provideCategories()
-  {
-    return array(
-      array('Graceful Degradation'),
-      array('Illustration'),
-      array("Les Fleurs d'Avril"),
-      array('Memorabilia'),
-      array('The Winter Throat'),
-      array('Today is Sunday'),
-    );
-  }
+	public function testCanDisplayRoutes()
+	{
+		$routes = array(
+			'/',
+		);
 
-  public function provideArticles()
-  {
-    return DB::table('articles')->get();
-  }
+		foreach (Category::all() as $category) {
+			if ($category->isExternal()) continue;
+			$routes[] = $category->link;
+		}
 
-  public function provideSupports()
-  {
-    return array(
-      array('digital', 'Peinture digitale'),
-      array('drawings', 'Papier'),
-      array('maya', 'Rendus 3D'),
-      array('video', 'Vidéo'),
-    );
-  }
+		foreach (Article::all() as $article) {
+			$routes[] = $article->link;
+		}
 
-  // Tests --------------------------------------------------------- /
+		foreach ($routes as $route) {
+			try {
+				print 'Testing route '.$route.PHP_EOL;
 
-  public function testcanDisplayHomepage()
-  {
-    $this->assertIsPage('', 'Autopergamene');
-  }
+				$response = $this->call('GET', $route);
+				$this->assertResponseOk();
+			} catch (NotFoundHttpException $exception) {
+				$this->fail('Route "' .$route. '" was not found');
+			}
+		}
+	}
 
-  public function testPathsToStylesAreCorrect()
-  {
-    $this->markTestSkipped('Will come back on this later');
-
-    $page   = $this->getPage('');
-    $styles = $page->filter('link')->extract('href');
-    $style = sizeof($styles) == 3 ? $styles[2] : $styles[1];
-    $style = str_replace('http://localhost/', 'http://autopergamene.dev/', $style);
-
-    $style = (bool) file_get_contents($style);
-    $this->assertTrue($style);
-  }
-
-  /**
-   * @dataProvider provideCategories
-   */
-  public function testCanDisplayCategories($categoryName)
-  {
-    $url = 'category/'.String::slugify($categoryName);
-    $this->assertIsPage($url, $categoryName);
-
-    $page = $this->getPage($url);
-    $this->assertEquals($categoryName, $page->filter('.portfolio h1')->text());
-  }
-
-  // Subroutes ----------------------------------------------------- /
-
-  /**
-   * @dataProvider provideSupports
-   */
-  public function testCanDisplaySupport($slug, $name)
-  {
-    $url = 'category/illustration/support/'.$slug;
-    $this->assertIsPage($url, $name);
-  }
-
-  public function testCanDisplayArticles()
-  {
-    $url = 'category/graceful-degradation/articles/lost-and-found';
-    $this->assertIsPage($url, 'Lost and found');
-  }
-
-  public function testCanDisplayPhotoset()
-  {
-    $url = 'category/memorabilia/album/la-page-blanche';
-    $this->assertIsPage($url, 'La Page Blanche');
-  }
-
-  public function testCompiledAssetsPathAreCorrect()
-  {
-    $stylesheet = glob(__DIR__.'/../../public/builds/application/app/css/*.css');
-    $stylesheet = File::get($stylesheet[0]);
-
-    preg_match("#url\('([a-z/]+)maxime-fabre.jpg#", $stylesheet, $matches);
-    $image = $this->app['path.public'].'/'.$matches[1].'maxime-fabre.jpg';
-
-    $this->assertTrue(file_exists($image));
-  }
 }

@@ -1,4 +1,4 @@
-@extends('portfolio')
+@extends('layouts.portfolio')
 
 @section('content')
   <p>
@@ -7,7 +7,7 @@
   </p>
   <p>J'espère que vous aussi aurez le plaisir de vous imaginer ce que vous voulez en les écoutant.</p>
 
-  @include('articles-list')
+  @include('partials.articles-list.articles-list')
 
   @foreach($tracks as $track)
     <article>

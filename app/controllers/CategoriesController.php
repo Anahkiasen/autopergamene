@@ -48,7 +48,7 @@ class CategoriesController extends BaseController
   {
     $category = $this->categories->getBySlug($categorySlug);
 
-    return View::make($categorySlug)
+    return View::make('categories.'.$categorySlug)
       ->with('category', $category);
   }
 
@@ -64,7 +64,7 @@ class CategoriesController extends BaseController
     $photoset = Photoset::where('slug', $albumSlug)->first();
     $category = $this->categories->getPhotosCategory();
 
-    return View::make('photoset')
+    return View::make('categories.subcategories.photoset')
       ->with('category', $category)
       ->with('photoset', $photoset);
   }
@@ -81,7 +81,7 @@ class CategoriesController extends BaseController
     $support  = Support::with('illustrations')->find($supportSlug);
     $category = $this->categories->getIllustrationsCategory();
 
-    return View::make('support')
+    return View::make('categories.subcategories.support')
       ->with('category', $category)
       ->with('support', $support);
   }
@@ -98,8 +98,9 @@ class CategoriesController extends BaseController
     $category = $this->categories->getStoriesCategory();
     $story = Story::find($storySlug);
 
-    return View::make('story')
+    return View::make('categories.subcategories.story')
       ->with('category', $category)
       ->with('story', $story);
   }
+
 }

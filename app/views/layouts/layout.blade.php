@@ -1,4 +1,4 @@
-@extends('global')
+@extends('layouts.global')
 
 @section('layout')
   <section id='container'>

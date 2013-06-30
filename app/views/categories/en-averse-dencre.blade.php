@@ -1,4 +1,4 @@
-@extends('portfolio')
+@extends('layouts.portfolio')
 
 @section('content')
   <p>
@@ -10,7 +10,7 @@
   <hr />
 
   <section class='articles'>
-    @each('article-block', $articles, 'article')
+    @each('partials.articles-list.article-block', $articles, 'article')
   </section>
 @stop
 
