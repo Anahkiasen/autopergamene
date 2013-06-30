@@ -1,6 +1,5 @@
 <?php
-use Underscore\Types\Arrays;
-use Underscore\Types\String;
+use Underscore\Parse;
 
 class ArticlesSeeder extends BaseSeed
 {
@@ -17,9 +16,11 @@ class ArticlesSeeder extends BaseSeed
       if (!$category_id) continue;
 
       // Tags
-      $tags = Arrays::from($categories)->removeFirst()->each(function($tag) {
+      $tags = Arrays::removeFirst($categories);
+      $tags = Arrays::each($tags, function($tag) {
         return (string) $tag;
-      })->toJSON();
+      });
+      $tags = Parse::toJSON($tags);
 
       // Strip some stuff in the titles
       $title = $article->title->__toString();

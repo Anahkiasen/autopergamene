@@ -190,7 +190,7 @@ return array(
 
 		// Underscore.php
 		'String'     => 'Underscore\Methods\StringMethods',
-		'Arrays'     => 'Underscore\Types\Arrays',
+		'Arrays'     => 'Underscore\Methods\ArraysMethods',
 
 		// Cerberus
 		'HTML'       => 'Cerberus\Facades\HTML',
