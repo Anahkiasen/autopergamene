@@ -238,21 +238,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Anahkiasen/rocketeer.git",
-                "reference": "0.5.0"
+                "reference": "11d810d483a816fe9b18f44bb860e388ffd14a57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Anahkiasen/rocketeer/zipball/0.5.0",
-                "reference": "0.5.0",
+                "url": "https://api.github.com/repos/Anahkiasen/rocketeer/zipball/11d810d483a816fe9b18f44bb860e388ffd14a57",
+                "reference": "11d810d483a816fe9b18f44bb860e388ffd14a57",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "4.1.x",
+                "illuminate/support": "~4",
                 "php": ">=5.3.0"
             },
             "require-dev": {
-                "illuminate/container": "4.1.x",
-                "illuminate/filesystem": "4.1.x",
+                "illuminate/container": "~4",
+                "illuminate/filesystem": "~4",
                 "mockery/mockery": "dev-master",
                 "nesbot/carbon": "dev-master"
             },
@@ -278,7 +278,7 @@
                 "laravel",
                 "ssh"
             ],
-            "time": "2013-06-30 23:32:07"
+            "time": "2013-07-03 17:34:15"
         },
         {
             "name": "anahkiasen/underscore-php",
@@ -295,7 +295,7 @@
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": ">=4.0,<5.0",
+                "illuminate/support": "~4",
                 "patchwork/utf8": "1.1.*",
                 "php": ">=5.3.0"
             },
@@ -637,12 +637,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "2.4.0-RC4"
+                "reference": "6a39bb947b20d12a16820f2709509e41e28af005"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/2.4.0-RC4",
-                "reference": "2.4.0-RC4",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/6a39bb947b20d12a16820f2709509e41e28af005",
+                "reference": "6a39bb947b20d12a16820f2709509e41e28af005",
                 "shasum": ""
             },
             "require": {
@@ -690,7 +690,7 @@
                 {
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -703,7 +703,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2013-06-21 12:11:28"
+            "time": "2013-07-02 11:26:20"
         },
         {
             "name": "doctrine/dbal",
@@ -957,12 +957,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/avalanche123/Imagine.git",
-                "reference": "9c70f0d12b44e16f31fc7a4701082aa46d523761"
+                "reference": "6d10ccacb13585000251fe3bb4dd6dd46a33fd3b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/avalanche123/Imagine/zipball/9c70f0d12b44e16f31fc7a4701082aa46d523761",
-                "reference": "9c70f0d12b44e16f31fc7a4701082aa46d523761",
+                "url": "https://api.github.com/repos/avalanche123/Imagine/zipball/6d10ccacb13585000251fe3bb4dd6dd46a33fd3b",
+                "reference": "6d10ccacb13585000251fe3bb4dd6dd46a33fd3b",
                 "shasum": ""
             },
             "require": {
@@ -1001,7 +1001,7 @@
                 "image manipulation",
                 "image processing"
             ],
-            "time": "2013-04-29 19:10:37"
+            "time": "2013-07-02 20:28:04"
         },
         {
             "name": "ircmaxell/password-compat",
@@ -1188,12 +1188,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "63ed90022a6d58a752221e740ad0c73889b4e099"
+                "reference": "2d1fd89f89fc46493c258bf68acbc725debe1ad5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/63ed90022a6d58a752221e740ad0c73889b4e099",
-                "reference": "63ed90022a6d58a752221e740ad0c73889b4e099",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/2d1fd89f89fc46493c258bf68acbc725debe1ad5",
+                "reference": "2d1fd89f89fc46493c258bf68acbc725debe1ad5",
                 "shasum": ""
             },
             "require": {
@@ -1291,7 +1291,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-06-30 00:32:42"
+            "time": "2013-07-01 21:36:16"
         },
         {
             "name": "monolog/monolog",
@@ -1361,12 +1361,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/natxet/CssMin.git",
-                "reference": "9801e2a0de7ae252ca4f2b85542d75a82047a8b4"
+                "reference": "afdcdbdb5fc332313f47a79ae60346df3e69a572"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/natxet/CssMin/zipball/9801e2a0de7ae252ca4f2b85542d75a82047a8b4",
-                "reference": "9801e2a0de7ae252ca4f2b85542d75a82047a8b4",
+                "url": "https://api.github.com/repos/natxet/CssMin/zipball/afdcdbdb5fc332313f47a79ae60346df3e69a572",
+                "reference": "afdcdbdb5fc332313f47a79ae60346df3e69a572",
                 "shasum": ""
             },
             "require": {
@@ -1374,9 +1374,9 @@
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "CssMin": "src/"
-                }
+                "classmap": [
+                    "src/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1395,7 +1395,7 @@
                 "css",
                 "minify"
             ],
-            "time": "2013-03-15 18:47:32"
+            "time": "2013-07-02 20:53:35"
         },
         {
             "name": "nesbot/carbon",
@@ -2821,12 +2821,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "c7db815236e0a10207d6ec85c601ecb411bdb7b5"
+                "reference": "6a45d5297359d982f6929a7cae123abff6d3706d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c7db815236e0a10207d6ec85c601ecb411bdb7b5",
-                "reference": "c7db815236e0a10207d6ec85c601ecb411bdb7b5",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/6a45d5297359d982f6929a7cae123abff6d3706d",
+                "reference": "6a45d5297359d982f6929a7cae123abff6d3706d",
                 "shasum": ""
             },
             "require": {
@@ -2843,7 +2843,7 @@
                 "sebastian/diff": ">=1.0.0",
                 "sebastian/exporter": ">=1.0.0",
                 "sebastian/version": ">=1.0.0",
-                "symfony/yaml": ">=2.0,<3.0"
+                "symfony/yaml": "~2.0"
             },
             "require-dev": {
                 "pear-pear/pear": "1.9.4"
@@ -2890,7 +2890,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2013-06-29 20:53:05"
+            "time": "2013-07-02 08:35:13"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
