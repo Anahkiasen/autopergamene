@@ -10,6 +10,4 @@ Rocketeer::after('deploy', function($task) {
 
 	$task->command->comment('Building Basset containers');
 	$task->runForCurrentRelease('php artisan basset:build -f -p');
-
-	$task->setPermissions('app');
 });
