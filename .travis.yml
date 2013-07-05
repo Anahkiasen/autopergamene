@@ -1,7 +1,6 @@
 language: php
 
 php:
-  - 5.3
   - 5.4
   - 5.5
 
@@ -10,6 +9,6 @@ before_install:
   - composer install
   - bower install
   - php artisan asset:publish anahkiasen/cerberus
-  - php artisan basset:build -f --env=production
+  - php artisan basset:build -f -p
 
 script: phpunit
