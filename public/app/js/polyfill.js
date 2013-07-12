@@ -13,11 +13,12 @@ Modernizr.load([
  */
 window.addEvent = (function() {
   if (document.addEventListener) {
-    function(el, type, fn) {
+    return function(el, type, fn) {
       el.addEventListener(type, fn, false);
     };
   }
-  function(el, type, fn) {
+
+  return function(el, type, fn) {
     el.attachEvent("on" + type, function() {
       fn.call(el, window.event);
     });
