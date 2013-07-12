@@ -2,9 +2,6 @@
 bootstrap/compiled.php
 /vendor
 
-# Database
-app/storage/database
-
 # Packages
 app/config.remote.php
 public/builds
