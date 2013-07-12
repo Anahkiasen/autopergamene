@@ -1,46 +1,92 @@
 <?php
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class RoutesTest extends TestCase
 {
+	/**
+	 * The routes to test
+	 *
+	 * @var array
+	 */
+	protected $routes = array(
+		'/',
+	);
+
+	/**
+	 * The routes that failed
+	 *
+	 * @var array
+	 */
+	protected $failed = array();
 
 	public function testCanDisplayRoutes()
 	{
-		$routes = array(
-			'/',
-		);
 
 		foreach (Category::all() as $category) {
 			if ($category->isExternal()) continue;
-			$routes[] = $category->link;
+			$this->routes[] = $category->link;
 		}
 
 		foreach (Article::all() as $article) {
-			$routes[] = $article->link;
+			$this->routes[] = $article->link;
 		}
 
 		foreach (Story::all() as $story) {
-			$routes[] = URL::action('CategoriesController@story', $story->id);
+			$this->routes[] = URL::action('CategoriesController@story', $story->id);
 		}
 
 		foreach (Photoset::all() as $photoset) {
-			$routes[] = URL::action('CategoriesController@album', $photoset->slug);
+			$this->routes[] = URL::action('CategoriesController@album', $photoset->slug);
 		}
 
 		foreach (Support::all() as $support) {
-			$routes[] = URL::action('CategoriesController@support', $support->id);
+			$this->routes[] = URL::action('CategoriesController@support', $support->id);
 		}
 
-		foreach ($routes as $route) {
-			try {
-				print 'Testing route '.$route.PHP_EOL;
+		$this->testRoutes();
+	}
 
-				$response = $this->call('GET', $route);
+	/**
+	 * Test the routes
+	 *
+	 * @return void
+	 */
+	public function testRoutes()
+	{
+		foreach ($this->routes as $route) {
+			$shorthand = str_replace(Request::root(), null, $route);
+
+			try {
+				$this->comment('Testing route '.$shorthand);
+				$this->call('GET', $route);
 				$this->assertResponseOk();
-			} catch (NotFoundHttpException $exception) {
-				$this->fail('Route "' .$route. '" was not found');
+			} catch (Exception $exception) {
+				$this->failedRoute($shorthand, $exception->getMessage());
 			}
+		}
+
+		// Print summary
+		$this->line(PHP_EOL.str_repeat('-', 75));
+		$this->success(sizeof($this->routes). ' route(s) were tested');
+		if (!empty($this->failed)) {
+			$this->info(sizeof($this->failed). ' problem(s) were encountered :');
+			foreach ($this->failed as $route => $message) {
+				$this->error($route.str_repeat(' ', 25 - strlen($route)).$message);
+			}
+
+			$this->fail();
 		}
 	}
 
+	/**
+	 * Fail a route
+	 *
+	 * @param  string $route
+	 * @param  string $message
+	 *
+	 * @return void
+	 */
+	protected function failedRoute($route, $message)
+	{
+		$this->failed[$route] = sprintf($message, $route);
+	}
 }
