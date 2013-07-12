@@ -8,7 +8,6 @@ before_install:
   - npm install bower -g
   - composer install
   - bower install
-  - php artisan asset:publish anahkiasen/cerberus
   - php artisan basset:build -f -p
 
 script: phpunit
