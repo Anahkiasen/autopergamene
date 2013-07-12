@@ -1,6 +1,15 @@
 <?php
 
 /**
+ * A blank link
+ */
+HTML::macro('linkBlank', function($url, $link = null, $attributes = array()) {
+  $attributes['target'] = '_blank';
+
+  return HTML::link($url, $link, $attributes);
+});
+
+/**
  * A link with the .back class
  */
 HTML::macro('backLink', function($url, $text) {
@@ -20,7 +29,7 @@ HTML::macro('blockLink', function($url, $text, $attributes = array()) {
  * A link back home
  */
 HTML::macro('homeLink', function() {
-  return HTML::linkHome("Retour à l'accueil", array('class' => 'back'));
+  return HTML::link('/', "Retour à l'accueil", array('class' => 'back'));
 });
 
 /**

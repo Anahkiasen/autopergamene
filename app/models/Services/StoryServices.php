@@ -6,6 +6,7 @@
  */
 namespace Services;
 
+use App;
 use dflydev\markdown\MarkdownParser;
 use File;
 
@@ -30,7 +31,7 @@ class StoryServices
    */
   public function getMarkdownOf($slug)
   {
-    $markdown = App::make('path.app').'/database/novels/'.$slug.'.md';
+    $markdown = App::make('path').'/database/novels/'.$slug.'.md';
 
     return File::exists($markdown) ? File::get($markdown) : null;
   }

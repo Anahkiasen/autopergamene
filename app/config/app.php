@@ -115,7 +115,6 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
-		'Cerberus\CerberusServiceProvider',
 		'Basset\BassetServiceProvider',
 		'Illuminage\IlluminageServiceProvider',
 		'Flatten\FlattenServiceProvider',
@@ -193,7 +192,6 @@ return array(
 		'Arrays'     => 'Underscore\Methods\ArraysMethods',
 
 		// Cerberus
-		'HTML'       => 'Cerberus\Facades\HTML',
 		'Illuminage' => 'Illuminage\Facades\Illuminage',
 
 		// Other packages

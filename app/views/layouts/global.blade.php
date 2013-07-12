@@ -5,8 +5,10 @@
       @yield('title')
       Autopergamene
     </title>
-    {{ HTML::favicon('app/img/favicon.jpg') }}
-    {{ HTML::responsiveTags() }}
+    <link href='{{ URL::asset('app/img/favicon.jpg') }}' rel='shortcut icon' />
+    <meta name='apple-mobile-web-app-capable' content='yes' />
+    <meta name='apple-touch-fullscreen' content='yes' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
 
     {{ Basset::show('application.css') }}
     {{ Basset::show('modernizr.js') }}

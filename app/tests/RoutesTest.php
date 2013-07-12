@@ -42,7 +42,7 @@ class RoutesTest extends TestCase
 			$this->routes[] = URL::action('CategoriesController@support', $support->id);
 		}
 
-		$this->testRoutes();
+		$this->checkRoutes();
 	}
 
 	/**
@@ -50,7 +50,7 @@ class RoutesTest extends TestCase
 	 *
 	 * @return void
 	 */
-	public function testRoutes()
+	protected function checkRoutes()
 	{
 		foreach ($this->routes as $route) {
 			$shorthand = str_replace(Request::root(), null, $route);
@@ -70,7 +70,7 @@ class RoutesTest extends TestCase
 		if (!empty($this->failed)) {
 			$this->info(sizeof($this->failed). ' problem(s) were encountered :');
 			foreach ($this->failed as $route => $message) {
-				$this->error($route.str_repeat(' ', 25 - strlen($route)).$message);
+				$this->error($route.str_repeat(' ', 150 - strlen($route)).$message);
 			}
 
 			$this->fail();
