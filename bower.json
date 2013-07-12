@@ -6,7 +6,7 @@
     "jquery.lazyload": "latest",
     "normalize-css": "latest",
     "respond": "latest",
-    "rainbow": "https://github.com/ccampbell/rainbow.git",
-    "jquery": "1.10.1"
+    "rainbow": "latest",
+    "jquery": "~1"
   }
 }

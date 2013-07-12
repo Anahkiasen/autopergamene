@@ -8,10 +8,10 @@
  * Base required assets for all pages
  */
 Basset::collection('application', function($collection) {
-  $collection->add('components/normalize-css/normalize.css');
-  $collection->add('app/css/styles.css');
+  $collection->stylesheet('components/normalize-css/normalize.css');
+  $collection->stylesheet('app/css/styles.css');
 
-  $collection->add('app/js/scripts.js');
+  $collection->javascript('app/js/scripts.js');
 })
 ->rawOnEnvironment('local')
 ->apply('UriRewriteFilter')
@@ -21,48 +21,48 @@ Basset::collection('application', function($collection) {
  * Polyfill scripts
  */
 Basset::collection('modernizr', function($collection) {
-  $collection->add('components/respond/respond.min.js');
-  $collection->add('components/modernizr/modernizr.min.js');
-  $collection->add('app/js/polyfill.js');
+  $collection->javascript('components/respond/respond.min.js');
+  $collection->javascript('components/modernizr/modernizr.min.js');
+  $collection->javascript('app/js/polyfill.js');
 })
 ->rawOnEnvironment('local')
 ->apply('JsMin');
 
 //////////////////////////////////////////////////////////////////////
-//////////////////////////// ARTICLE VIEW ////////////////////////////
+//////////////////////// PAGE-SPECIFIC ASSETS ////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+Basset::collection('article', function($collection) {
+  $collection->stylesheet('components/rainbow/themes/tomorrow-night.css')->apply('CssMin');
+
+  $collection->directory('name: rainbow', function($collection) {
+    $collection->javascript('rainbow.min.js');
+    $collection->javascript('language/generic.js');
+    $collection->javascript('language/php.js');
+  });
+
+  $collection->javascript('app/js/article.js');
+})
+->rawOnEnvironment('local')
+->apply('JsMin');
+
+//////////////////////////////////////////////////////////////////////
+//////////////////////////// MODULE ASSETS ///////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 Basset::collection('lazyload', function($collection) {
-  $collection->add('components/jquery/jquery.min.js');
-  $collection->add('components/jquery.lazyload/jquery.lazyload.js');
-  $collection->add('app/js/lazyload.js');
+  $collection->javascript('components/jquery/jquery.min.js');
+  $collection->javascript('components/jquery.lazyload/jquery.lazyload.js');
+  $collection->javascript('app/js/modules/lazyload.js');
 })
 ->rawOnEnvironment('local')
 ->apply('JsMin');
-
-Basset::collection('article', function($collection) {
-  $collection->add('components/rainbow/themes/tomorrow-night.css')->apply('CssMin');
-
-  $collection->directory('name: rainbow', function($collection) {
-    $collection->add('rainbow.min.js');
-    $collection->add('language/generic.js');
-    $collection->add('language/php.js');
-  });
-
-  $collection->add('app/js/article.js');
-})
-->rawOnEnvironment('local')
-->apply('JsMin');
-
-//////////////////////////////////////////////////////////////////////
-///////////////////////// AFFIXED NAVIGATION /////////////////////////
-//////////////////////////////////////////////////////////////////////
 
 Basset::collection('affixed', function($collection) {
-  $collection->add('components/jquery/jquery.min.js');
-  $collection->add('components/bootstrap/js/bootstrap-affix.js');
-  $collection->add('components/bootstrap/js/bootstrap-scrollspy.js');
-  $collection->add('app/js/affixed.js');
+  $collection->javascript('components/jquery/jquery.min.js');
+  $collection->javascript('components/bootstrap/js/bootstrap-affix.js');
+  $collection->javascript('components/bootstrap/js/bootstrap-scrollspy.js');
+  $collection->javascript('app/js/modules/affixed.js');
 })
 ->rawOnEnvironment('local')
 ->apply('JsMin');
