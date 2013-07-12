@@ -39,8 +39,11 @@ class Category extends Eloquent
   {
     // External link
     $link = $this->getOriginal('link');
-    if ($link) return $link;
-    return URL::route('category', array('slug' => $this->id));
+    if ($link) {
+      return $link;
+    }
+
+    return URL::action('CategoriesController@category', $this->id);
   }
 
   /**

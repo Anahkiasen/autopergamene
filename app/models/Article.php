@@ -32,7 +32,7 @@ class Article extends BaseModel
    */
   public function getLinkAttribute()
   {
-    return URL::route('article', array(
+    return URL::action('ArticlesController@article', array(
       'categorySlug' => $this->category->id,
       'articleSlug'  => $this->slug));
   }

@@ -18,7 +18,7 @@
 
         @foreach ($collection->photosets as $photoset)
           <figure class='photoset--list'>
-            <a href='{{ URL::route('photoset', array('id' => $photoset->slug)) }}'>
+            <a href='{{ URL::action('CategoriesController@album', $photoset->slug) }}'>
               {{ HTML::image($photoset->thumbnail->large_square, $photoset->name) }}
               <figcaption>
                 <h3>{{ $photoset->name }}</h3>
