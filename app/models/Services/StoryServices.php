@@ -6,9 +6,8 @@
  */
 namespace Services;
 
-use \File;
-use \dflydev\markdown\MarkdownParser;
-use \Underscore\Types\String;
+use dflydev\markdown\MarkdownParser;
+use File;
 
 class StoryServices
 {
@@ -31,11 +30,9 @@ class StoryServices
    */
   public function getMarkdownOf($slug)
   {
-    $markdown = __DIR__.'/../../database/novels/'.$slug.'.md';
+    $markdown = App::make('path.app').'/database/novels/'.$slug.'.md';
 
-    if (File::exists($markdown)) $markdown = File::get($markdown);
-    else $markdown = null;
-    return $markdown;
+    return File::exists($markdown) ? File::get($markdown) : null;
   }
 
   /**
@@ -54,8 +51,8 @@ class StoryServices
     $text = nl2br($text);
     $text = preg_replace("#</(p|ul|h3)><br />\n<br />\n<(p|ul|h3)>#", '</$1><$2>', $text);
     $text = preg_replace("#(<br />\n)?<ul><br />#", '<ul>', $text);
-    $text = String::replace($text, "</li><br />", '</li>');
-    $text = String::replace($text, "…", '...');
+    $text = str_replace("</li><br />", '</li>', $text);
+    $text = str_replace("…", '...', $text);
 
     return $text;
   }
