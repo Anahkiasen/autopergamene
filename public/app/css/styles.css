@@ -1,35 +1,24 @@
-/*
-  Mixins are slightly modified from Benjamin Doherty's first implementations: http://gist.github.com/377912
-  rgba-background mixin can now be passed an option $dir variable
-*/
 .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .categories figure figcaption, .portfolio .photoset--list figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption, .portfolio .illustration, .portfolio .tableau, .portfolio .photoset figure, .article article .wp-caption, .novel article .wp-caption, .about p {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-footer .footer-container {
-  max-width: 59em;
-  padding-left: 1em;
-  padding-right: 1em;
-  margin-left: auto;
-  margin-right: auto; }
-  footer .footer-container:after {
-    content: "";
-    display: table;
-    clear: both; }
+.categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .articles.hidden, .about .about-more, .image-wrap, .about aside, .articles article, .articles article blockquote, .articles article h3, .articles article datetime, .about .about-biography {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
 
-#container, .error, .portfolio, .article, .novel, .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .portfolio .collection, .categories, .about, .about .about-more {
-  max-width: 59em;
-  padding-left: 1em;
-  padding-right: 1em;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 100%;
-  padding: 0; }
-  #container:after, .error:after, .portfolio:after, .article:after, .novel:after, .categories figure:after, .portfolio .photoset--list:after, .portfolio .support:after, .portfolio .repository figure:after, .portfolio .collection:after, .categories:after, .about:after, .about .about-more:after {
-    content: "";
-    display: table;
-    clear: both; }
+ul.fixed, footer .social, .about .about-more ul, .novel article ul {
+  list-style: none; }
+  ul.fixed, footer .social, .about .about-more ul, .novel article ul, ul.fixed li, footer .social li, .about .about-more ul li, .novel article ul li {
+    margin: 0;
+    padding: 0; }
 
 .articles.hidden, .about .about-more, .articles article datetime.absolute, .articles article:hover datetime.relative {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
@@ -47,90 +36,23 @@ footer .footer-container {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1; }
 
-ul.fixed, footer .social, .about .about-more ul, .novel article ul, ul.fixed li, footer .social li, .about .about-more ul li, .novel article ul li, h1, h2, h3, h4, .portfolio .illustration figcaption, .portfolio .tableau figcaption, dl dt, dl dd, a.back, .portfolio .novel-summary h2, .portfolio .photoset figure h2, .portfolio .photoset figure h3, .articles article, .article article blockquote p, .novel article blockquote p {
-  margin: 0; }
-
-ul.fixed, footer .social, .about .about-more ul, .novel article ul, ul.fixed li, footer .social li, .about .about-more ul li, .novel article ul li, h1, h2, h3, h4, body {
-  padding: 0; }
-
-a {
-  text-decoration: none; }
-  a:hover {
-    text-decoration: none; }
-
-ul.fixed, footer .social, .about .about-more ul, .novel article ul {
-  list-style: none; }
-
-.categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .articles.hidden, .about .about-more, .image-wrap, .about aside, .articles article, .articles article blockquote, .articles article h3, .articles article datetime, .about .about-biography {
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  -o-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0); }
-
-.image-wrap, .about aside {
-  display: inline-block;
+#container, .error, .portfolio, .article, .novel, .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .portfolio .collection, .categories, .about, .about .about-more {
+  max-width: 59em;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-left: auto;
+  margin-right: auto;
   max-width: 100%;
-  position: relative;
-  vertical-align: bottom; }
-  .image-wrap:after, .about aside:after {
-    -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
-    box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
-    border-radius: 7px;
-    border: solid 1px #1b1b1b;
-    content: " ";
-    height: 100%;
-    left: -1px;
-    position: absolute;
-    top: -1px;
-    width: 100%; }
-  .image-wrap img, .about aside img {
-    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-    border-radius: 7px;
-    vertical-align: bottom; }
-  .image-wrap.embossed:after, .about aside.embossed:after {
-    -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -6px 0 rgba(0, 0, 0, 0.6), inset 0 -7px 0 rgba(255, 255, 255, 0.3);
-    -moz-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -6px 0 rgba(0, 0, 0, 0.6), inset 0 -7px 0 rgba(255, 255, 255, 0.3);
-    box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -6px 0 rgba(0, 0, 0, 0.6), inset 0 -7px 0 rgba(255, 255, 255, 0.3); }
-  .image-wrap.glossy:before, .about aside.glossy:before {
-    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.15));
-    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.15));
-    background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.15));
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.15));
-    -webkit-border-top-right-radius: 7px;
-    -moz-border-radius-topright: 7px;
-    border-top-right-radius: 7px;
-    -webkit-border-top-left-radius: 7px;
-    -moz-border-radius-topleft: 7px;
-    border-top-left-radius: 7px;
-    content: " ";
-    height: 50%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%; }
-  .image-wrap.soft-embossed:after, .about aside.soft-embossed:after {
-    -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.5), inset 0 -6px 2px rgba(0, 0, 0, 0.6), inset 0 -8px 2px rgba(255, 255, 255, 0.3);
-    -moz-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.5), inset 0 -6px 2px rgba(0, 0, 0, 0.6), inset 0 -8px 2px rgba(255, 255, 255, 0.3);
-    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.5), inset 0 -6px 2px rgba(0, 0, 0, 0.6), inset 0 -8px 2px rgba(255, 255, 255, 0.3); }
-  .image-wrap.cutout:after, .about aside.cutout:after {
-    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 4px 5px rgba(0, 0, 0, 0.6), inset 0 1px 2px rgba(0, 0, 0, 0.6);
-    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 4px 5px rgba(0, 0, 0, 0.6), inset 0 1px 2px rgba(0, 0, 0, 0.6);
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 4px 5px rgba(0, 0, 0, 0.6), inset 0 1px 2px rgba(0, 0, 0, 0.6); }
-  .image-wrap.square:after, .about aside.square:after, .image-wrap.square:before, .about aside.square:before,
-  .image-wrap.square img,
-  .about aside.square img {
-    border-radius: 0; }
+  padding: 0; }
+  #container:after, .error:after, .portfolio:after, .article:after, .novel:after, .categories figure:after, .portfolio .photoset--list:after, .portfolio .support:after, .portfolio .repository figure:after, .portfolio .collection:after, .categories:after, .about:after, .about .about-more:after {
+    content: "";
+    display: table;
+    clear: both; }
 
 h1, h2, h3, h4 {
-  line-height: 1; }
+  line-height: 1;
+  margin: 0;
+  padding: 0; }
 
 .portfolio .collection h2, .articles article h3, span.block, a.block, a.back, .categories figure h4, .portfolio .photoset--list h4, .portfolio .support h4, .portfolio .repository figure h4, .portfolio .novel-summary h2, .portfolio .photoset figure h3, .about h2, .about h3, .about h4, .article article .wp-caption p, .novel article .wp-caption p, .article article h1, .novel article h1 {
   font-family: "adelle", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -147,22 +69,16 @@ h1, h2, h3, h4 {
   text-transform: uppercase; }
 
 .about p, span.block, a.block, a.back, .categories figure h4, .portfolio .photoset--list h4, .portfolio .support h4, .portfolio .repository figure h4, footer, .about .about-more h3 {
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 24px;
-  line-height: 1.5rem; }
+  font-size: 1em;
+  line-height: 1.5em; }
 
 .categories figure h3, header h1, .portfolio h3, .about h2, .article article .wp-caption p, .novel article .wp-caption p, .article article h2, .novel article h2 {
-  font-size: 24px;
-  font-size: 1.5rem;
-  line-height: 36px;
-  line-height: 2.25rem; }
+  font-size: 1.5em;
+  line-height: 2em; }
 
 .portfolio .illustration h2, .portfolio .tableau h2, .portfolio .photoset figure h2, .portfolio h1, .portfolio .photoset figure h3 {
-  font-size: 40px;
-  font-size: 2.5rem;
-  line-height: 48px;
-  line-height: 3rem; }
+  font-size: 2.5em;
+  line-height: 1.2em; }
 
 .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .portfolio .illustration figcaption, .portfolio .tableau figcaption, .portfolio .novel-summary, .portfolio .novel-summary h2, .portfolio .repository h3, .portfolio .photoset figure h2, .about aside, .about h4, .about article {
   margin-bottom: 16px;
@@ -180,21 +96,21 @@ h1, h2, h3, h4 {
 #container, .error, .portfolio, .article, .novel {
   padding: 32px;
   padding: 2rem; }
-  @media (max-width: 768px) {
+  @media (max-width: 50em) {
     #container, .error, .portfolio, .article, .novel {
       padding: 16px;
       padding: 1rem; } }
-  @media (min-width: 768px) and (max-width: 1200px) {
+  @media (min-width: 50em) and (max-width: 75em) {
     #container, .error, .portfolio, .article, .novel {
       width: 90%; } }
-  @media (min-width: 1200px) and (max-width: 1500px) {
+  @media (min-width: 75em) and (max-width: 90em) {
     #container, .error, .portfolio, .article, .novel {
       width: 70%; } }
-  @media (min-width: 1500px) {
+  @media (min-width: 90em) {
     #container, .error, .portfolio, .article, .novel {
       width: 60%; } }
 
-@media (min-width: 980px) and (max-width: 1200px) {
+@media (min-width: 60em) and (max-width: 75em) {
   .portfolio .photoset--list, .portfolio .support, .portfolio .repository {
     width: 49.15254%;
     float: left;
@@ -202,7 +118,7 @@ h1, h2, h3, h4 {
     .portfolio .photoset--list:nth-child(2n), .portfolio .support:nth-child(2n), .portfolio .repository:nth-child(2n) {
       float: right;
       margin-right: 0; } }
-@media (min-width: 1200px) {
+@media (min-width: 75em) {
   .portfolio .photoset--list, .portfolio .support, .portfolio .repository {
     width: 32.20339%;
     float: left;
@@ -250,7 +166,7 @@ span.block, a.block, a.back {
     background-color: #f17283; }
 
 .portfolio blockquote, .article article blockquote, .novel article blockquote, .novel article ul, .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .portfolio .illustration, .portfolio .tableau, .portfolio .photoset figure, .article article .wp-caption, .novel article .wp-caption, .portfolio .illustration figcaption, .portfolio .tableau figcaption, dl, .portfolio p, .about p, .about .about-more ul, .article article del, .novel article del, .novel .alert {
-  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNi4AUAABYAEFIOBzYAAAAASUVORK5CYII=');
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAQAAAAnZu5uAAAAEklEQVR4nGNi4IVBJgY4IMgEAA3yAEyYwsyHAAAAAElFTkSuQmCC');
   background: rgba(0, 0, 0, 0.05);
   color: #333333;
   padding: 12px;
@@ -261,9 +177,9 @@ span.block, a.block, a.back {
   font-style: italic;
   margin-left: 0;
   margin-right: 0; }
-  @media (min-width: 980px) {
+  @media (min-width: 60em) {
     .portfolio blockquote, .article article blockquote, .novel article blockquote, .novel article ul {
-      background-image: url('../img/quotes.png?1370698833');
+      background-image: url('../img/quotes.png?1371999416');
       background-position: 16px 16px;
       background-position: 1rem 1rem;
       background-repeat: no-repeat;
@@ -277,7 +193,7 @@ span.block, a.block, a.back {
   padding: 16px;
   padding: 1rem; }
   .categories figure:active, .portfolio .photoset--list:active, .portfolio .support:active, .portfolio .repository figure:active {
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNikAIAACMAHf9yvGMAAAAASUVORK5CYII=');
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAQAAAAnZu5uAAAAEklEQVR4nGNikIJBJgY4IMgEABpjAI3SojZdAAAAAElFTkSuQmCC');
     background: rgba(0, 0, 0, 0.1); }
   .categories figure figcaption, .portfolio .photoset--list figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption {
     padding-left: 16px;
@@ -291,9 +207,9 @@ span.block, a.block, a.back {
     margin-top: 8px;
     margin-top: 0.5rem;
     text-transform: none; }
-  @media (max-width: 768px) {
+  @media (max-width: 50em) {
     .categories figure:hover, .portfolio .photoset--list:hover, .portfolio .support:hover, .portfolio .repository figure:hover {
-      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNikAIAACMAHf9yvGMAAAAASUVORK5CYII=');
+      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAQAAAAnZu5uAAAAEklEQVR4nGNikIJBJgY4IMgEABpjAI3SojZdAAAAAElFTkSuQmCC');
       background: rgba(0, 0, 0, 0.1); }
     .categories figure img, .portfolio .photoset--list img, .portfolio .support img, .portfolio .repository figure img {
       width: 23.72881%;
@@ -303,7 +219,7 @@ span.block, a.block, a.back {
       width: 74.57627%;
       float: right;
       margin-right: 0; } }
-  @media (min-width: 768px) and (max-width: 980px) {
+  @media (min-width: 50em) and (max-width: 60em) {
     .categories figure img, .portfolio .photoset--list img, .portfolio .support img, .portfolio .repository figure img {
       width: 15.25424%;
       float: left;
@@ -312,24 +228,20 @@ span.block, a.block, a.back {
       width: 83.05085%;
       float: right;
       margin-right: 0; } }
-  @media (min-width: 980px) {
+  @media (min-width: 60em) {
     .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure {
-      opacity: 0.25;
-      filter: alpha(opacity=25); }
+      opacity: 0.25; }
       .categories figure h4, .portfolio .photoset--list h4, .portfolio .support h4, .portfolio .repository figure h4 {
-        opacity: 0;
-        filter: alpha(opacity=0); }
+        opacity: 0; }
       .categories figure:hover, .portfolio .photoset--list:hover, .portfolio .support:hover, .portfolio .repository figure:hover {
-        opacity: 1;
-        filter: alpha(opacity=100); }
+        opacity: 1; }
         .categories figure:hover h4, .portfolio .photoset--list:hover h4, .portfolio .support:hover h4, .portfolio .repository figure:hover h4 {
           -webkit-transition: all 0.3s;
           -moz-transition: all 0.3s;
           -o-transition: all 0.3s;
           transition: all 0.3s;
-          opacity: 1;
-          filter: alpha(opacity=100); } }
-  @media (min-width: 980px) and (max-width: 1200px) {
+          opacity: 1; } }
+  @media (min-width: 60em) and (max-width: 75em) {
     .categories figure img, .portfolio .photoset--list img, .portfolio .support img, .portfolio .repository figure img {
       width: 23.72881%;
       float: left;
@@ -338,7 +250,7 @@ span.block, a.block, a.back {
       width: 74.57627%;
       float: right;
       margin-right: 0; } }
-  @media (min-width: 1200px) {
+  @media (min-width: 75em) {
     .categories figure img, .portfolio .photoset--list img, .portfolio .support img, .portfolio .repository figure img {
       width: 23.72881%;
       float: left;
@@ -348,7 +260,7 @@ span.block, a.block, a.back {
       float: right;
       margin-right: 0; } }
 
-@media (min-width: 768px) and (max-width: 980px) {
+@media (min-width: 50em) and (max-width: 60em) {
   .categories figure {
     width: 49.15254%;
     float: left;
@@ -356,10 +268,10 @@ span.block, a.block, a.back {
     .categories figure:nth-child(2n) {
       float: right;
       margin-right: 0; } }
-@media (min-width: 980px) and (max-width: 1200px) {
+@media (min-width: 60em) and (max-width: 75em) {
   .categories figure figcaption {
     margin-top: 5%; } }
-@media (min-width: 980px) {
+@media (min-width: 60em) {
   .categories figure {
     width: 80%;
     -webkit-transform: skewY(-3deg);
@@ -381,15 +293,11 @@ span.block, a.block, a.back {
     .categories figure h3, .categories figure h4 {
       font-weight: 100; }
     .categories figure h3 {
-      font-size: 40px;
-      font-size: 2.5rem;
-      line-height: 48px;
-      line-height: 3rem; }
+      font-size: 2.5em;
+      line-height: 1.2em; }
     .categories figure h4 {
-      font-size: 24px;
-      font-size: 1.5rem;
-      line-height: 36px;
-      line-height: 2.25rem;
+      font-size: 1.5em;
+      line-height: 2em;
       line-height: .25em; } }
 
 .articles.hidden, .about .about-more {
@@ -400,12 +308,35 @@ span.block, a.block, a.back {
   height: 100%;
   max-height: auto; }
 
+.image-wrap, .about aside {
+  display: inline-block;
+  max-width: 100%;
+  position: relative;
+  vertical-align: bottom; }
+  .image-wrap:after, .about aside:after {
+    -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+    border: solid 1px #1a1a1a;
+    content: " ";
+    height: 100%;
+    left: -1px;
+    position: absolute;
+    top: -1px;
+    width: 100%; }
+  .image-wrap img, .about aside img {
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    border-radius: 0;
+    vertical-align: bottom; }
+
 .portfolio .novel-summary figure, .about aside, .novel figure {
   background-position: center;
   background-size: cover;
   height: 240px;
   height: 15rem; }
-  @media (min-width: 1200px) {
+  @media (min-width: 75em) {
     .portfolio .novel-summary figure, .about aside, .novel figure {
       height: 320px;
       height: 20rem; } }
@@ -415,14 +346,15 @@ span.block, a.block, a.back {
   margin: 1rem 0;
   padding: 16px;
   padding: 1rem;
-  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNi4AAAABEAC43pSewAAAAASUVORK5CYII=');
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAQAAAAnZu5uAAAAEklEQVR4nGNi4IBBJgY4IMgEAAkpADNL6V6/AAAAAElFTkSuQmCC');
   background: rgba(0, 0, 0, 0.03);
   text-align: center; }
-  @media (min-width: 980px) {
+  @media (min-width: 60em) {
     .portfolio .illustration .image-wrap, .portfolio .tableau .image-wrap, .portfolio .photoset figure .image-wrap, .article article .wp-caption .image-wrap, .novel article .wp-caption .image-wrap, .portfolio .illustration .about aside, .about .portfolio .illustration aside, .portfolio .tableau .about aside, .about .portfolio .tableau aside, .portfolio .photoset figure .about aside, .about .portfolio .photoset figure aside, .article article .wp-caption .about aside, .about .article article .wp-caption aside, .novel article .wp-caption .about aside, .about .novel article .wp-caption aside {
       max-width: 75%; } }
 
 .portfolio .illustration figcaption, .portfolio .tableau figcaption {
+  margin: 0;
   font-style: italic; }
 .portfolio .illustration h2, .portfolio .tableau h2 {
   margin: 0 0 16px;
@@ -437,6 +369,7 @@ ul.fixed {
   -webkit-column-count: 4;
   -moz-column-count: 4;
   column-count: 4;
+  margin: 0;
   z-index: 50; }
   ul.fixed li {
     margin-right: -5px;
@@ -451,7 +384,7 @@ ul.fixed {
     border: none;
     color: white;
     text-transform: lowercase; }
-  @media (max-width: 980px) {
+  @media (max-width: 60em) {
     ul.fixed {
       display: none; } }
   ul.affix.fixed {
@@ -471,22 +404,45 @@ html {
   font-size: 100%;
   line-height: 1.5em; }
 
-@media (max-width: 768px) {
+@media (max-width: 50em) {
   html {
     font-size: 112.5%;
     line-height: 1.5em; } }
+::-webkit-selection {
+  background-color: #ea2c46;
+  color: white; }
+
+::-moz-selection {
+  background-color: #ea2c46;
+  color: white; }
+
+::-o-selection {
+  background-color: #ea2c46;
+  color: white; }
+
+::selection {
+  background-color: #ea2c46;
+  color: white; }
+
 body {
+  padding: 0;
   font-family: "adelle", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: white;
   background-image: url('data:image/png;base64,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'); }
 
+dl dt, dl dd {
+  margin: 0; }
 dl dt {
   margin-right: 16px;
   margin-right: 1rem;
   font-weight: 700; }
 
+a, a:hover {
+  text-decoration: none; }
 a:hover {
   color: #a01024; }
+a.back {
+  margin: 0; }
 
 hr {
   margin: 16px 0;
@@ -504,15 +460,13 @@ header {
   padding: 0.75rem 0; }
   header h1 {
     text-transform: lowercase; }
-  @media (min-width: 980px) {
+  @media (min-width: 60em) {
     header {
       padding: 24px 0 24px;
       padding: 1.5rem 0 1.5rem; }
       header h1 {
-        font-size: 68px;
-        font-size: 4.25rem;
-        line-height: 72px;
-        line-height: 4.5rem; } }
+        font-size: 4.25em;
+        line-height: 1.05882em; } }
 
 footer {
   padding: 16px;
@@ -526,6 +480,16 @@ footer {
     -webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.15);
     -moz-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.15);
     box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.15); }
+  footer .footer-container {
+    max-width: 59em;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-left: auto;
+    margin-right: auto; }
+    footer .footer-container:after {
+      content: "";
+      display: table;
+      clear: both; }
   footer .colophon, footer .social {
     width: 49.15254%;
     float: left;
@@ -545,12 +509,10 @@ footer {
     text-align: left; }
     footer .colophon p:first-child {
       margin-top: 0; }
-  @media (max-width: 768px) {
+  @media (max-width: 50em) {
     footer {
-      font-size: 12px;
-      font-size: 0.75rem;
-      line-height: 24px;
-      line-height: 1.5rem; }
+      font-size: 0.75em;
+      line-height: 2em; }
       footer .colophon, footer .social {
         margin-top: 16px;
         margin-top: 1rem;
@@ -561,7 +523,7 @@ footer {
         width: 100%; } }
 
 .portfolio {
-  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6Xw8AAoYBgRDEVrUAAAAASUVORK5CYII=');
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAQAAAAnZu5uAAAAEklEQVR4nGP6Xw+DTAxwQJAJAHQhB4GKBdKAAAAAAElFTkSuQmCC');
   background: rgba(255, 255, 255, 0.5); }
   .portfolio h1 {
     margin: 16px 0;
@@ -575,21 +537,21 @@ footer {
   .portfolio h3 {
     margin-bottom: 4px;
     margin-bottom: 0.25rem; }
-  @media (min-width: 980px) {
-    .portfolio .novel-summary h2 {
-      font-size: 40px;
-      font-size: 2.5rem;
-      line-height: 48px;
-      line-height: 3rem;
-      margin-top: 32px;
-      margin-top: 2rem; } }
+  .portfolio .novel-summary h2 {
+    margin: 0; }
+    @media (min-width: 60em) {
+      .portfolio .novel-summary h2 {
+        font-size: 2.5em;
+        line-height: 1.2em;
+        margin-top: 32px;
+        margin-top: 2rem; } }
   .portfolio .repository:hover figure {
     background-color: #ea2c46; }
     .portfolio .repository:hover figure h3, .portfolio .repository:hover figure h4 {
       color: white; }
   .portfolio .repository .build {
     margin-right: 0.5rem; }
-  @media (min-width: 1200px) {
+  @media (min-width: 75em) {
     .portfolio .repository figure {
       min-height: 240px;
       min-height: 15rem; } }
@@ -601,11 +563,14 @@ footer {
       padding-bottom: 1rem; }
   .portfolio .photoset figure {
     position: relative; }
+    .portfolio .photoset figure h2 {
+      margin: 0; }
     .portfolio .photoset figure h3 {
       bottom: 8px;
       bottom: 0.5rem;
       left: 16px;
       left: 1rem;
+      margin: 0;
       color: rgba(255, 255, 255, 0.2);
       position: absolute;
       text-align: center; }
@@ -618,6 +583,7 @@ footer {
   .articles article {
     padding: 0 0 32px 0;
     padding: 0 0 2rem 0;
+    margin: 0;
     position: relative; }
     .articles article datetime {
       color: #bfbfbf; }
@@ -625,19 +591,17 @@ footer {
       margin: 8px 0 0;
       margin: 0.5rem 0 0; }
     .articles article h3 {
-      font-size: 20px;
-      font-size: 1.25rem;
-      line-height: 24px;
-      line-height: 1.5rem;
+      font-size: 1.25em;
+      line-height: 1.2em;
       color: #666666; }
     .articles article:hover {
       border-left-color: #ea2c46; }
       .articles article:hover h3, .articles article:hover datetime {
         color: #ea2c46; }
       .articles article:hover blockquote {
-        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNikAIAACMAHf9yvGMAAAAASUVORK5CYII=');
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAQAAAAnZu5uAAAAEklEQVR4nGNikIJBJgY4IMgEABpjAI3SojZdAAAAAElFTkSuQmCC');
         background: rgba(0, 0, 0, 0.1); }
-    @media (min-width: 768px) {
+    @media (min-width: 50em) {
       .articles article {
         margin-left: 32px;
         margin-left: 2rem;
@@ -661,10 +625,8 @@ footer {
           top: 3rem; } }
 
 .categories h2 {
-  font-size: 68px;
-  font-size: 4.25rem;
-  line-height: 72px;
-  line-height: 4.5rem;
+  font-size: 4.25em;
+  line-height: 1.05882em;
   margin-bottom: 32px;
   margin-bottom: 2rem;
   font-weight: 100;
@@ -674,12 +636,12 @@ footer {
 .about aside {
   height: 320px;
   height: 20rem;
-  background-image: url('../img/maxime-fabre.jpg?1370698833'); }
-  @media (min-width: 980px) and (max-width: 1200px) {
+  background-image: url('../img/maxime-fabre.jpg?1371999416'); }
+  @media (min-width: 60em) and (max-width: 75em) {
     .about aside {
       height: 400px;
       height: 25rem; } }
-  @media (min-width: 1200px) {
+  @media (min-width: 75em) {
     .about aside {
       height: 480px;
       height: 30rem; } }
@@ -695,7 +657,7 @@ footer {
   width: 20px;
   width: 1.25rem;
   position: relative; }
-@media (min-width: 768px) {
+@media (min-width: 50em) {
   .about .about-biography {
     max-width: 59em;
     padding-left: 1em;
@@ -715,11 +677,10 @@ footer {
       .about .about-biography p:nth-child(3n) {
         float: right;
         margin-right: 0; } }
-@media (max-width: 980px) {
+@media (max-width: 60em) {
   .about .about-biography {
     height: 0;
     opacity: 0;
-    filter: alpha(opacity=0);
     overflow: hidden; } }
 .about .about-more {
   float: none;
@@ -729,12 +690,10 @@ footer {
   margin-top: 1rem;
   clear: both; }
   .about .about-more h3 {
-    -webkit-border-top-right-radius: 3px;
-    -moz-border-radius-topright: 3px;
-    border-top-right-radius: 3px;
     -webkit-border-top-left-radius: 3px;
-    -moz-border-radius-topleft: 3px;
     border-top-left-radius: 3px;
+    -webkit-border-top-right-radius: 3px;
+    border-top-right-radius: 3px;
     -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1), inset -2px 0 rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1), inset -2px 0 rgba(0, 0, 0, 0.2);
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1), inset -2px 0 rgba(0, 0, 0, 0.2);
@@ -743,12 +702,12 @@ footer {
     font-weight: 400; }
   .about .about-more ul li {
     text-align: left; }
-  @media (max-width: 768px) {
+  @media (max-width: 50em) {
     .about .about-more ul {
       -webkit-column-count: 2;
       -moz-column-count: 2;
       column-count: 2; } }
-  @media (min-width: 768px) {
+  @media (min-width: 50em) {
     .about .about-more {
       max-width: 59em;
       padding-left: 1em;
@@ -770,7 +729,7 @@ footer {
           margin-right: 0; } }
 
 .article, .novel {
-  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6Xw8AAoYBgRDEVrUAAAAASUVORK5CYII=');
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAQAAAAnZu5uAAAAEklEQVR4nGP6Xw+DTAxwQJAJAHQhB4GKBdKAAAAAAElFTkSuQmCC');
   background: rgba(255, 255, 255, 0.5); }
   .article h1, .novel h1 {
     text-align: center; }
@@ -812,22 +771,20 @@ footer {
   .article article h2, .novel article h2 {
     margin: 16px 0;
     margin: 1rem 0; }
+  .article article blockquote p, .novel article blockquote p {
+    margin: 0; }
   .article article p, .novel article p {
     text-align: justify; }
 
 .novel h1 {
-  font-size: 64px;
-  font-size: 4rem;
-  line-height: 72px;
-  line-height: 4.5rem;
+  font-size: 4em;
+  line-height: 1.125em;
   margin-bottom: 32px;
   margin-bottom: 2rem; }
-  @media (max-width: 768px) {
+  @media (max-width: 50em) {
     .novel h1 {
-      font-size: 40px;
-      font-size: 2.5rem;
-      line-height: 48px;
-      line-height: 3rem;
+      font-size: 2.5em;
+      line-height: 1.2em;
       margin-bottom: 16px;
       margin-bottom: 1rem; } }
 .novel article h3 {
@@ -838,6 +795,7 @@ footer {
   text-indent: 48px;
   text-indent: 3rem; }
 .novel article ul {
+  margin: 0;
   padding: 32px;
   padding: 2rem;
   font-style: normal; }
@@ -845,7 +803,7 @@ footer {
     content: "-";
     padding-right: 16px;
     padding-right: 1rem; }
-  @media (max-width: 768px) {
+  @media (max-width: 50em) {
     .novel article ul {
       padding: 16px;
       padding: 1rem; } }

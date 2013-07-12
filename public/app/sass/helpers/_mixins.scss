@@ -1,0 +1,85 @@
+// MIXINS
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+// font-size
+//
+// Alias for adjust-font-size-to
+//
+// @param integer $font-size
+
+@mixin font-size($font-size) {
+	@include adjust-font-size-to($font-size);
+}
+
+// double-shadow
+//
+// Firefox-like "double shadow"
+
+@mixin double-shadow($size: 2px, $blur: 0) {
+  @include box-shadow(0 $size $blur fade(black, 10), inset 0 -$size $blur fade(black, 20));
+}
+
+// Changes the selection effect
+$prefixes: ("-webkit-","-moz-", "-o-", "");
+@mixin selection {
+  @each $prefix in $prefixes {
+    ::#{$prefix}selection {
+      @content;
+    }
+  }
+}
+
+// Responsive mixins
+//////////////////////////////////////////////////////////////////////
+
+// container-wide
+//
+// Creates a wide container
+
+@mixin container-wide {
+  @include container;
+  max-width: 100%;
+  padding: 0;
+}
+
+// per-row
+//
+// Set a number of items per row
+
+@mixin per-row($number, $gutter: nil) {
+  // Replace temporarly gutter-width if required
+  $old-gutter-width: $gutter-width;
+  @if $gutter != nil {
+    $gutter-width: $gutter;
+  }
+
+  // Set columns
+  @include span-columns(round($total-columns / $number));
+  @include nth-omega(#{$number}n);
+
+  // Restore gutter-width
+  $gutter-width: $old-gutter-width;
+}
+
+// from-to, to and from
+//
+// Helpers to create media queries
+
+@mixin from-to($from, $to) {
+  @include at-breakpoint($from $total-columns $to) {
+    @content;
+  }
+}
+
+@mixin to($to) {
+  @include at-breakpoint(0 $total-columns $to) {
+    @content;
+  }
+}
+
+@mixin from($from) {
+  @include at-breakpoint($from $total-columns) {
+    @content;
+  }
+}

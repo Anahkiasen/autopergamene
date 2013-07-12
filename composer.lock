@@ -3,49 +3,8 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "87c7542151804d94b8faf36cee0c5acf",
+    "hash": "f2f906e1ae507b1e98af2491690f0078",
     "packages": [
-        {
-            "name": "anahkiasen/cerberus",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Anahkiasen/cerberus.git",
-                "reference": "6fba242916d93212776f44c6f8ec2f1e3dc31fb4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Anahkiasen/cerberus/zipball/6fba242916d93212776f44c6f8ec2f1e3dc31fb4",
-                "reference": "6fba242916d93212776f44c6f8ec2f1e3dc31fb4",
-                "shasum": ""
-            },
-            "require": {
-                "anahkiasen/illuminage": "dev-master",
-                "anahkiasen/underscore-php": "dev-master",
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "dev-master"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Cerberus": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "CC-BY-NC-SA-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "Maxime Fabre",
-                    "email": "ehtnam6@gmail.com"
-                }
-            ],
-            "description": "Various helpers and classes for the Illuminate framework",
-            "time": "2013-06-09 01:12:14"
-        },
         {
             "name": "anahkiasen/flatten",
             "version": "dev-master",
@@ -3158,7 +3117,6 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "anahkiasen/cerberus": 20,
         "anahkiasen/flatten": 20,
         "anahkiasen/flickering": 20,
         "anahkiasen/illuminage": 20,
@@ -3166,7 +3124,6 @@
         "dflydev/markdown": 20,
         "jasonlewis/basset": 20,
         "natxet/cssmin": 20,
-        "opauth/flickr": 20,
         "anahkiasen/rocketeer": 20,
         "phpunit/phpunit": 20
     },

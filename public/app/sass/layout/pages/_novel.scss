@@ -29,7 +29,7 @@
     ul {
       @extend %block-light--quotation;
       @extend %reset-list;
-      @extend %reset-margin;
+      margin: 0;
       @include rem(padding, 2rem);
       font-style: normal;
       li:before {

@@ -1,12 +1,48 @@
-// Imports and variables ------------------------------------------- /
 
-@import "common";
+// Frameworks
+//////////////////////////////////////////////////////////////////////
 
-// Layout ---------------------------------------------------------- /
+@import "compass";
+@import "rgbapng";
+@import "susy";
 
+// Helpers
+//////////////////////////////////////////////////////////////////////
+
+@import "helpers/functions";
+@import "helpers/variables";
+@import "helpers/mixins";
+
+// Patterns
+//////////////////////////////////////////////////////////////////////
+
+@import "modules/patterns/properties";
+@import "modules/patterns/layout";
+
+// Modules
+//////////////////////////////////////////////////////////////////////
+
+@import "modules/typography";
+@import "modules/blocks";
+@import "modules/images";
+@import "modules/affixed";
+
+// Scaffolding
+//////////////////////////////////////////////////////////////////////
+
+@import "scaffolding/scaffolding";
+@import "scaffolding/typography";
+
+// Layout
+//////////////////////////////////////////////////////////////////////
+
+@import "layout/header";
+@import "layout/container";
+@import "layout/footer";
 @import "layout/portfolio";
 
-// Page-specific styles -------------------------------------------- /
+// Pages
+//////////////////////////////////////////////////////////////////////
 
 @import "layout/pages/home";
 @import "layout/pages/article";

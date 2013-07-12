@@ -6,10 +6,10 @@
   @extend %margin-underline;
   h2 {
     @extend %font-base;
-    @extend %reset-margin;
+    margin: 0;
     @extend %margin-underline;
     @include from($desktop) {
-      @include font-size($font-size-large);
+      @include font-size(2.5rem);
       @include rem(margin-top, 2rem);
     }
   }

@@ -1,0 +1,30 @@
+// PROPERTIES PATTERNS
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+// Set a block in border-box mode
+%border-box {
+  @include box-sizing(border-box);
+}
+
+// Add transition to a block
+%transition {
+  @include transition(all 0.3s);
+  @include translate3d(0, 0, 0);
+}
+
+// A reseted list
+%reset-list {
+  list-style: none;
+  &, & li {
+	  margin: 0;
+	  padding: 0;
+  }
+}
+
+// Opacity
+@each $o in (0 25 50 75 100) {
+  %opacity#{$o} {
+    @include opacity($o / 100);
+  }
+}

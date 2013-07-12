@@ -10,9 +10,13 @@
   @include establish-baseline(18px);
 }
 
+@include selection {
+  background-color: $color-accent;
+  color: white;
+}
 
 body {
-  @extend %reset-padding;
+  padding: 0;
   font-family: $font-base;
   background-color: white;
   background-image: inline-image("noise.png");
@@ -27,7 +31,7 @@ dl {
   @extend %block-light;
 
   dt, dd {
-    @extend %reset-margin;
+    margin: 0;
   }
   dt {
     @include rem(margin-right, 1rem);

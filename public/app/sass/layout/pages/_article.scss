@@ -87,7 +87,7 @@
     blockquote {
       @extend %block-light--quotation;
       p {
-        @extend %reset-margin;
+        margin: 0;
       }
     }
 

@@ -21,7 +21,7 @@
   article {
     @include rem(padding, 0 0 2rem 0);
     @extend %transition;
-    @extend %reset-margin;
+    margin: 0;
     position: relative;
     blockquote, h3 {
       @extend %transition;

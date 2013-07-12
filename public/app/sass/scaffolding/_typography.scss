@@ -4,8 +4,10 @@
 
 a {
   @extend %accent;
-  @extend %reset-link;
   @extend %lips;
+  &, &:hover {
+    text-decoration: none;
+  }
   &:hover {
     color: $color-accent--dark;
   }
@@ -14,7 +16,7 @@ a {
   }
   &.back {
     @extend %block-accent--light;
-    @extend %reset-margin;
+    margin: 0;
   }
 }
 

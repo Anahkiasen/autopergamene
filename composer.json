@@ -1,6 +1,6 @@
 {
   "name": "anahkiasen/autopergamene",
-  "description": "Personnal portfolio",
+  "description": "Personal portfolio",
   "homepage": "http://autopergamene.eu",
   "license": "CC-BY-NC-ND-3.0",
   "authors": [
@@ -11,7 +11,6 @@
   ],
   "require": {
     "laravel/framework": "4.1.*",
-    "anahkiasen/cerberus": "dev-master",
     "anahkiasen/flatten": "dev-master",
     "anahkiasen/flickering": "dev-master",
     "anahkiasen/illuminage": "dev-master",
@@ -19,7 +18,6 @@
     "dflydev/markdown": "dev-master",
     "jasonlewis/basset": "dev-master",
     "natxet/CssMin": "dev-master",
-    "opauth/flickr": "dev-master",
     "anahkiasen/rocketeer": "dev-develop"
   },
   "require-dev": {

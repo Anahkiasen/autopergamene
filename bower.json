@@ -2,7 +2,7 @@
   "name": "Autopergamene",
   "dependencies": {
     "bootstrap": "latest",
-    "classlist": "https://github.com/eligrey/classList.js.git",
+    "classlist": "latest",
     "jquery.lazyload": "latest",
     "normalize-css": "latest",
     "respond": "latest",

@@ -191,14 +191,12 @@ return array(
 		'String'     => 'Underscore\Methods\StringMethods',
 		'Arrays'     => 'Underscore\Methods\ArraysMethods',
 
-		// Cerberus
-		'Illuminage' => 'Illuminage\Facades\Illuminage',
-
 		// Other packages
-		'Rocketeer'  => 'Rocketeer\Facades\Rocketeer',
-		'Carbon'     => 'Carbon\Carbon',
 		'Basset'     => 'Basset\Facade',
+		'Carbon'     => 'Carbon\Carbon',
 		'Flickering' => 'Flickering\Facades\Flickering',
+		'Illuminage' => 'Illuminage\Facades\Illuminage',
+		'Rocketeer'  => 'Rocketeer\Facades\Rocketeer',
 
 	),
 

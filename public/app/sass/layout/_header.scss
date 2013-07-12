@@ -16,7 +16,7 @@ header {
   @include from($desktop) {
     @include rem(padding, 1.5rem 0 1.5rem);
     h1 {
-      @include font-size($font-size-xlarge);
+      @include font-size(4.25rem);
     }
   }
 

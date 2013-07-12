@@ -8,7 +8,7 @@
   @include column-count(4);
   @extend %block-accent;
   @extend %reset-list;
-  @extend %reset-margin;
+  margin: 0;
   z-index: 50;
 
   // Links --------------------------------------------------------- /
