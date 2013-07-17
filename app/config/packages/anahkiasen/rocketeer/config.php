@@ -18,13 +18,13 @@
 		'scm' => 'git',
 
 		// The SSH/HTTPS adress to your repository
-		'repository' => 'git://github.com/Anahkiasen/autopergamene.git',
+		'repository' => 'https://github.com/Anahkiasen/autopergamene.git',
 
 		// The repository credentials : you can leave those empty
 		// if you're using SSH or if your repository is public
 		// In other cases you can leave this empty too, and you will
 		// be prompted for the credentials on deploy
-		'username'   => 'Anahkiasen',
+		'username'   => '',
 		'password'   => '',
 
 		// The branch to deploy
