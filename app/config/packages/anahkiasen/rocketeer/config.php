@@ -18,7 +18,7 @@
 		'scm' => 'git',
 
 		// The SSH/HTTPS adress to your repository
-		'repository' => 'https://github.com/Anahkiasen/autopergamene.git',
+		'repository' => 'git://github.com/Anahkiasen/autopergamene.git',
 
 		// The repository credentials : you can leave those empty
 		// if you're using SSH or if your repository is public
