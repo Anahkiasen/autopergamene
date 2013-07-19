@@ -5,16 +5,13 @@
 .repository {
 
   @extend %responsive-content;
-  @extend %opacity25;
+  @extend %opacity75;
 
-  &:hover {
-    @extend %opacity100;
-    figure {
-      @extend %block-accent;
-      background-color: $color-accent;
-      h3, h4 {
-        color: white;
-      }
+  figure {
+    @extend %category;
+    @include opacity(0.75);
+    @include from($wide) {
+      @include rem(min-height, 15rem);
     }
   }
 
@@ -24,10 +21,15 @@
   .build {
     margin-right: 0.5rem;
   }
-  figure {
-    @extend %category;
-    @include from($wide) {
-      @include rem(min-height, 15rem);
+
+  &:hover {
+    @extend %opacity100;
+    figure {
+      @extend %block-accent;
+      background-color: $color-accent;
+      h3, h4 {
+        color: white;
+      }
     }
   }
 

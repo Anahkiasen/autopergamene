@@ -23,14 +23,13 @@ View::composer('partials.about', function($view) {
   $view->work = Carbon::createFromDate(2009, 10, 1)->diffInYears($today);
 });
 
-View::composer('partials.footer', function($view) {
+View::composer('layouts.partials.footer', function($view) {
   $view->services = Service::where('name', '!=', 'Mail')->where('name', '!=', 'YouTube')->get();
 });
 
 //////////////////////////////////////////////////////////////////////
 /////////////////////////// PAGE COMPOSERS ///////////////////////////
 //////////////////////////////////////////////////////////////////////
-
 
 View::composer('categories.the-winter-throat', function($view) {
   $view->tracks = Track::orderBy('plays', 'desc')->get();

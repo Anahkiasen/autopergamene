@@ -3,6 +3,7 @@ namespace Autopergamene;
 
 use App;
 use URL;
+use File;
 
 /**
  * A short story
@@ -43,11 +44,22 @@ class Story extends BaseModel
    */
   public function getContentAttribute()
   {
-    // Get story if it exists
-    $storyService = App::make('Services\StoryServices');
-    $markdown = $storyService->getMarkdownOf($this->id);
+    $content = App::make('path').'/database/novels/'.$this->id.'.md';
+    if (!File::exists($content)) {
+      return false;
+    }
 
-    if (!$markdown) return false;
-    return $storyService->parseMarkdown($markdown);
+    // Transform Markdown
+    $content = File::get($content);
+    $content = App::make('dflydev\markdown\MarkdownParser')->transformMarkdown($content);
+
+    // Remove extra line breaks (yeah it's dirty)
+    $content = nl2br($content);
+    $content = preg_replace("#</(p|ul|h3)><br />\n<br />\n<(p|ul|h3)>#", '</$1><$2>', $content);
+    $content = preg_replace("#(<br />\n)?<ul><br />#", '<ul>', $content);
+    $content = str_replace("</li><br />", '</li>', $content);
+    $content = str_replace("…", '...', $content);
+
+    return $content;
   }
 }

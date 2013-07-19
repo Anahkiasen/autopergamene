@@ -1,5 +1,5 @@
 <article>
-  <a href='{{ URL::action('ArticlesController@article', array($article->category->id, $article->slug)) }}'>
+  <a href='{{ URL::action('ArticlesController@article', $article->slug) }}'>
     <h3>{{ $article->name }}</h3>
     <datetime class='relative'>{{ $article->relativeDate }}</datetime>
     <datetime class='absolute'>{{ $article->creationDate }}</datetime>

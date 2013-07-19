@@ -1,7 +1,7 @@
 <?php
 use Autopergamene\Repositories\CategoriesRepository;
-use Autopergamene\Repositories\CollectionsRepository;
-use Autopergamene\Repositories\PhotosetsRepository;
+use Autopergamene\Photography\Collection;
+use Autopergamene\Photography\Photoset;
 
 /**
  * Controller for the photographies
@@ -9,23 +9,23 @@ use Autopergamene\Repositories\PhotosetsRepository;
 class PhotographiesController extends BaseController
 {
 	/**
-	 * The CategoriesRepository
+	 * The Category
 	 *
-	 * @var CategoriesRepository
+	 * @var Category
 	 */
-	protected $categories;
+	protected $category;
 
 	/**
-	 * The CollectionsRepository
+	 * The Collections Repository
 	 *
-	 * @var CollectionsRepository
+	 * @var Collection
 	 */
 	protected $collections;
 
 	/**
-	 * The PhotosetsRepository
+	 * The Photosets Repository
 	 *
-	 * @var PhotosetsRepository
+	 * @var Photoset
 	 */
 	protected $photosets;
 
@@ -33,10 +33,10 @@ class PhotographiesController extends BaseController
 	 * Build a new PhotographiesController
 	 *
 	 * @param CategoriesRepository  $categories
-	 * @param CollectionsRepository $collections
-	 * @param PhotosetsRepository   $photosets
+	 * @param Collection            $collections
+	 * @param Photoset              $photosets
 	 */
-	public function __construct(CategoriesRepository $categories, CollectionsRepository $collections, PhotosetsRepository $photosets)
+	public function __construct(CategoriesRepository $categories, Collection $collections, Photoset $photosets)
 	{
 		$this->collections = $collections;
 		$this->photosets   = $photosets;
@@ -50,8 +50,8 @@ class PhotographiesController extends BaseController
 	 */
 	public function collections()
 	{
-  	return View::make('categories.memorabilia', array(
-			'collections' => $this->collections->get(),
+  	return View::make('categories.collections', array(
+			'collections' => $this->collections->with('photosets.thumbnail')->latest()->get(),
 			'articles'    => $this->category->articles,
 			'category'    => $this->category,
   	));
@@ -67,7 +67,7 @@ class PhotographiesController extends BaseController
 	public function photoset($slug)
 	{
 		return View::make('categories.subcategories.photoset', array(
-			'photoset' => $this->photosets->getBySlug($slug),
+			'photoset' => $this->photosets->whereSlug($slug)->firstOrFail(),
 			'category' => $this->category,
   	));
 	}

@@ -1,16 +1,23 @@
 <?php
-use Autopergamene\Repositories\ArticlesRepository;
+use Autopergamene\Repositories\CategoriesRepository;
+use Autopergamene\Article;
 
 /**
  * Handles Articles display
  */
 class ArticlesController extends BaseController
 {
+  /**
+   * The Category
+   *
+   * @var Category
+   */
+  protected $category;
 
   /**
    * The Article Repository
    *
-   * @var ArticlesRepository
+   * @var Article
    */
   protected $articles;
 
@@ -19,9 +26,23 @@ class ArticlesController extends BaseController
    *
    * @param Articles $articles
    */
-  public function __construct(ArticlesRepository $articles)
+  public function __construct(CategoriesRepository $categories, Article $articles)
   {
+    $this->category = $categories->getBySlug('en-averse-dencre');
     $this->articles = $articles;
+  }
+
+  /**
+   * Display all articles
+   *
+   * @return View
+   */
+  public function articles()
+  {
+    return View::make('categories.articles', array(
+      'category' => $this->category,
+      'articles' => $this->articles->all(),
+    ));
   }
 
   /**
@@ -30,15 +51,14 @@ class ArticlesController extends BaseController
    * @param string $categorySlug The category slug
    * @param string $articleSlug  The article slug
    *
-   * @return View article
+   * @return View
    */
-  public function article($categorySlug, $articleSlug)
+  public function article($slug)
   {
-    $article = $this->articles->getBySlug($articleSlug);
-
-    return View::make('article')
-      ->with('category', $article->category)
-      ->with('article', $article);
+    return View::make('categories.subcategories.article', array(
+      'category' => $this->category,
+      'article'  => $this->articles->whereSlug($slug)->firstOrFail(),
+    ));
   }
 
 }

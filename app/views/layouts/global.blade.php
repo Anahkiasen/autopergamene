@@ -26,7 +26,7 @@
     @yield('layout')
     @yield('navigation')
 
-    @include('partials.footer')
+    @include('layouts.partials.footer')
 
     <script type="text/javascript" src="//use.typekit.net/enr5hww.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>

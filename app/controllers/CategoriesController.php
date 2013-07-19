@@ -6,7 +6,6 @@ use Autopergamene\Repositories\CategoriesRepository;
  */
 class CategoriesController extends BaseController
 {
-
   /**
    * The Category Repository
    *
@@ -27,29 +26,29 @@ class CategoriesController extends BaseController
   /**
    * Display all categories
    *
-   * @return View home
+   * @return View
    */
   public function categories()
   {
-    $categories = $this->categories->getOrdered();
-
-    return View::make('home')
-      ->with('categories', $categories);
+    return View::make('home', array(
+      'categories' => $this->categories->getOrdered(),
+    ));
   }
 
   /**
    * Displays a Category
    *
-   * @param string $categorySlug The Category slug
+   * @param string $slug
    *
-   * @return View categories/$slug
+   * @return View
    */
-  public function category($categorySlug)
+  public function category($slug)
   {
-    $category = $this->categories->getBySlug($categorySlug);
+    $category = $this->categories->getBySlug($slug);
 
-    return View::make('categories.'.$categorySlug)
-      ->with('category', $category);
+    return View::make('categories.'.$slug, array(
+      'category' => $category,
+      'articles' => $category->articles,
+    ));
   }
-
 }

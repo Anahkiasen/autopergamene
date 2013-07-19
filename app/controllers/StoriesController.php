@@ -8,11 +8,11 @@ use Autopergamene\Story;
 class StoriesController extends BaseController
 {
 	/**
-	 * The Categories Repository
+	 * The Category
 	 *
-	 * @var CategoriesRepository
+	 * @var Category
 	 */
-	protected $categories;
+	protected $category;
 
 	/**
 	 * The Stories Repository
@@ -40,8 +40,9 @@ class StoriesController extends BaseController
 	 */
 	public function stories()
 	{
-		return View::make('categories.les-fleurs-davril', array(
+		return View::make('categories.stories', array(
 			'category' => $this->category,
+			'stories'  => $this->stories->latest()->get(),
 		));
 	}
 

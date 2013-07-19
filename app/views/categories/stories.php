@@ -7,7 +7,7 @@
     améliorées à mesure que j'écrivais.
   </p>
 
-  @include('partials.navigation', array('links' => $stories))
+  @include('layouts.partials.navigation', array('links' => $stories))
 
   @foreach($stories as $story)
     <article class='novel-summary' id='{{ $story->id }}'>

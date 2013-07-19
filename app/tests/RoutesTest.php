@@ -3,7 +3,7 @@ use Autopergamene\Article;
 use Autopergamene\Category;
 use Autopergamene\Photography\Photoset;
 use Autopergamene\Story;
-use Autopergamene\Support;
+use Autopergamene\Illustration\Support;
 
 class RoutesTest extends TestCase
 {

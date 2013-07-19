@@ -5,6 +5,20 @@ use Autopergamene\Illustration\Support;
 class IllustrationsController extends BaseController
 {
 	/**
+	 * The Category
+	 *
+	 * @var Category
+	 */
+	protected $category;
+
+	/**
+	 * The Support Repository
+	 *
+	 * @var Support
+	 */
+	protected $supports;
+
+	/**
 	 * Build a new IllustrationsController
 	 *
 	 * @param CategoriesRepository $categories
