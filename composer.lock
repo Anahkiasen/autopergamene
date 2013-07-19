@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "f2f906e1ae507b1e98af2491690f0078",
+    "hash": "f28c4c7f0e7737747e318669b96f3c59",
     "packages": [
         {
             "name": "anahkiasen/flatten",
@@ -1263,6 +1263,47 @@
                 "laravel"
             ],
             "time": "2013-07-12 16:31:10"
+        },
+        {
+            "name": "loic-sharma/profiler",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/loic-sharma/profiler.git",
+                "reference": "66edb80ab48673dd460b09ee88d0cb1c82766bbf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/loic-sharma/profiler/zipball/66edb80ab48673dd460b09ee88d0cb1c82766bbf",
+                "reference": "66edb80ab48673dd460b09ee88d0cb1c82766bbf",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "psr/log": "1.0.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Profiler": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Loic Sharma"
+                }
+            ],
+            "description": "A PHP 5.3 profiler based off of Laravel 3's Anbu.",
+            "keywords": [
+                "anbu",
+                "laravel",
+                "profiler"
+            ],
+            "time": "2013-07-18 04:33:34"
         },
         {
             "name": "monolog/monolog",
@@ -3130,6 +3171,7 @@
         "jasonlewis/basset": 20,
         "natxet/cssmin": 20,
         "anahkiasen/rocketeer": 20,
+        "loic-sharma/profiler": 20,
         "phpunit/phpunit": 20
     },
     "platform": [

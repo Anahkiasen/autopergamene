@@ -30,9 +30,9 @@ class Photoset extends BaseModel
   }
 
   /**
-   * Get the URL of the thumbnail for the Photoset
+   * Get the thumbnail for the Photoset
    *
-   * @return string
+   * @return Photo
    */
   public function thumbnail()
   {

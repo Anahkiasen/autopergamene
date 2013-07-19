@@ -1,7 +1,7 @@
 <?php
 namespace Autopergamene;
 
-class Track extends Eloquent
+class Track extends BaseModel
 {
   /**
    * The table associated with the model.

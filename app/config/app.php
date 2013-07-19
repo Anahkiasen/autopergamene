@@ -119,6 +119,7 @@ return array(
 		'Illuminage\IlluminageServiceProvider',
 		'Flatten\FlattenServiceProvider',
 		'Rocketeer\RocketeerServiceProvider',
+		'Profiler\ProfilerServiceProvider',
 
 	),
 

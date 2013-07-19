@@ -18,7 +18,8 @@
     "dflydev/markdown": "dev-master",
     "jasonlewis/basset": "dev-master",
     "natxet/CssMin": "dev-master",
-    "anahkiasen/rocketeer": "dev-develop"
+    "anahkiasen/rocketeer": "dev-develop",
+    "loic-sharma/profiler": "dev-master"
   },
   "require-dev": {
     "phpunit/phpunit": "dev-master"

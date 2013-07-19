@@ -40,7 +40,7 @@ class RoutesTest extends TestCase
 		}
 
 		foreach (Photoset::all() as $photoset) {
-			$this->routes[] = URL::action('CategoriesController@album', $photoset->slug);
+			$this->routes[] = URL::action('PhotographiesController@photoset', $photoset->slug);
 		}
 
 		foreach (Support::all() as $support) {

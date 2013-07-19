@@ -31,36 +31,4 @@ class CategoriesRepository
   {
     return Category::find($slug);
   }
-
-  // Specific fetchers --------------------------------------------- /
-
-  /**
-   * Get the category holding Photosets and Photos
-   *
-   * @return Category
-   */
-  public function getPhotosCategory()
-  {
-    return $this->getBySlug('memorabilia');
-  }
-
-  /**
-   * Get the category holding Supports and Illustrations
-   *
-   * @return Category
-   */
-  public function getIllustrationsCategory()
-  {
-    return $this->getBySlug('illustration');
-  }
-
-  /**
-   * Get the category holding Stories
-   *
-   * @return Category
-   */
-  public function getStoriesCategory()
-  {
-    return $this->getBySlug('les-fleurs-davril');
-  }
 }

@@ -4,9 +4,11 @@ namespace Autopergamene;
 use App;
 use URL;
 
+/**
+ * A short story
+ */
 class Story extends BaseModel
 {
-
   /**
    * The table associated with the model.
    *
@@ -48,5 +50,4 @@ class Story extends BaseModel
     if (!$markdown) return false;
     return $storyService->parseMarkdown($markdown);
   }
-
 }

@@ -16,6 +16,10 @@ abstract class BaseModel extends Eloquent
 
   /**
    * Get by latest first
+   *
+   * @param Query $query
+   *
+   * @return  Query
    */
   public static function scopeLatest($query)
   {
@@ -24,6 +28,10 @@ abstract class BaseModel extends Eloquent
 
   /**
    * Get where thumbnails only
+   *
+   * @param Query $query
+   *
+   * @return  Query
    */
   public static function scopeThumbnails($query)
   {

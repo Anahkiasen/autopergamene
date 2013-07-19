@@ -1,22 +1,46 @@
 <?php
-use Autopergamene\Repositories\CollectionsRepository;
 use Autopergamene\Repositories\CategoriesRepository;
+use Autopergamene\Repositories\CollectionsRepository;
 use Autopergamene\Repositories\PhotosetsRepository;
-use Autopergamene\Photography\Photo;
 
 /**
  * Controller for the photographies
  */
 class PhotographiesController extends BaseController
 {
-	public function __construct(CategoriesRepository $categories, CollectionsRepository $collections, PhotosetsRepository $photosets, Photo $photos)
+	/**
+	 * The CategoriesRepository
+	 *
+	 * @var CategoriesRepository
+	 */
+	protected $categories;
+
+	/**
+	 * The CollectionsRepository
+	 *
+	 * @var CollectionsRepository
+	 */
+	protected $collections;
+
+	/**
+	 * The PhotosetsRepository
+	 *
+	 * @var PhotosetsRepository
+	 */
+	protected $photosets;
+
+	/**
+	 * Build a new PhotographiesController
+	 *
+	 * @param CategoriesRepository  $categories
+	 * @param CollectionsRepository $collections
+	 * @param PhotosetsRepository   $photosets
+	 */
+	public function __construct(CategoriesRepository $categories, CollectionsRepository $collections, PhotosetsRepository $photosets)
 	{
-		$this->categories  = $categories;
 		$this->collections = $collections;
 		$this->photosets   = $photosets;
-		$this->photos      = $photos;
-
-		$this->category = $categories->getBySlug('memorabilia');
+		$this->category    = $categories->getBySlug('memorabilia');
 	}
 
 	/**
@@ -26,10 +50,8 @@ class PhotographiesController extends BaseController
 	 */
 	public function collections()
 	{
-  	$collections = $this->collections->get();
-
   	return View::make('categories.memorabilia', array(
-			'collections' => $collections,
+			'collections' => $this->collections->get(),
 			'category'    => $this->category,
   	));
 	}
@@ -43,10 +65,8 @@ class PhotographiesController extends BaseController
 	 */
 	public function photoset($slug)
 	{
-		$photoset = $this->photosets->getBySlug($slug);
-
 		return View::make('categories.subcategories.photoset', array(
-			'photoset' => $photoset,
+			'photoset' => $this->photosets->getBySlug($slug),
 			'category' => $this->category,
   	));
 	}

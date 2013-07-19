@@ -61,29 +61,12 @@ class CategoriesController extends BaseController
    */
   public function support($supportSlug)
   {
-    $support  = Support::with('illustrations')->find($supportSlug);
-    $category = $this->categories->getIllustrationsCategory();
+    $support  = Autopergamene\Support::with('illustrations')->find($supportSlug);
+    $category = $this->categories->getBySlug('illustration');
 
     return View::make('categories.subcategories.support')
       ->with('category', $category)
       ->with('support', $support);
-  }
-
-  /**
-   * Display a Story
-   *
-   * @param string $storySlug The Story slug
-   *
-   * @return View story
-   */
-  public function story($storySlug)
-  {
-    $category = $this->categories->getStoriesCategory();
-    $story = Story::find($storySlug);
-
-    return View::make('categories.subcategories.story')
-      ->with('category', $category)
-      ->with('story', $story);
   }
 
 }
