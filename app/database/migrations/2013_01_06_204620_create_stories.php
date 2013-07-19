@@ -12,9 +12,9 @@ class CreateStories extends Migration
   {
     Schema::create('stories', function($table) {
       $table->string('id');
-      $table->string('name');
-      $table->text('description');
-      $table->string('image');
+        $table->string('name');
+        $table->text('description');
+        $table->string('image');
       $table->timestamps();
     });
   }

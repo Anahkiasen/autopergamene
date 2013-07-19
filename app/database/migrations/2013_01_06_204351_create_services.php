@@ -12,9 +12,9 @@ class CreateServices extends Migration
   {
     Schema::create('services', function($table) {
       $table->increments('id');
-      $table->string('name');
-      $table->string('icon');
-      $table->string('link');
+        $table->string('name');
+        $table->string('icon');
+        $table->string('link');
       $table->timestamps();
     });
   }

@@ -12,8 +12,8 @@ class CreatePhotosets extends Migration
   {
     Schema::create('photosets', function($table) {
       $table->increments('id');
-      $table->string('name');
-      $table->string('slug');
+        $table->string('name');
+        $table->string('slug');
       $table->timestamps();
     });
   }

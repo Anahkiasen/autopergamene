@@ -12,10 +12,10 @@ class CreateIllustrations extends Migration
   {
     Schema::create('illustrations', function($table) {
       $table->increments('id');
-      $table->string('name');
-      $table->string('media');
-      $table->string('image');
-      $table->boolean('thumbnail')->default(0);
+        $table->string('name');
+        $table->string('media');
+        $table->string('image');
+        $table->boolean('thumbnail')->default(0);
       $table->integer('support_id');
       $table->timestamps();
     });
