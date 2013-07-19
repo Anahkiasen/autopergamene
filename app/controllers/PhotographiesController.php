@@ -52,6 +52,7 @@ class PhotographiesController extends BaseController
 	{
   	return View::make('categories.memorabilia', array(
 			'collections' => $this->collections->get(),
+			'articles'    => $this->category->articles,
 			'category'    => $this->category,
   	));
 	}

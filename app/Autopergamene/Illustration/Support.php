@@ -1,6 +1,11 @@
 <?php
-namespace Autopergamene;
+namespace Autopergamene\Illustration;
 
+use Autopergamene\BaseModel;
+
+/**
+ * A Support holding various Illustrations
+ */
 class Support extends BaseModel
 {
   /**
@@ -21,7 +26,7 @@ class Support extends BaseModel
    */
   public function illustrations()
   {
-    return $this->hasMany('Autopergamene\Illustration');
+    return $this->hasMany('Autopergamene\Illustration\Illustration');
   }
 
   /**
@@ -31,7 +36,7 @@ class Support extends BaseModel
    */
   public function thumbnail()
   {
-    return $this->hasOne('Autopergamene\Illustration')->thumbnails();
+    return $this->hasOne('Autopergamene\Illustration\Illustration')->thumbnails();
   }
 
   ////////////////////////////////////////////////////////////////////

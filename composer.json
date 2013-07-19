@@ -16,7 +16,7 @@
     "anahkiasen/illuminage": "dev-master",
     "anahkiasen/underscore-php": "dev-master",
     "dflydev/markdown": "dev-master",
-    "jasonlewis/basset": "dev-master",
+    "jasonlewis/basset": "dev-develop",
     "natxet/CssMin": "dev-master",
     "anahkiasen/rocketeer": "dev-develop",
     "loic-sharma/profiler": "dev-master"

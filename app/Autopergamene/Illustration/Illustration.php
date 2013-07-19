@@ -1,9 +1,13 @@
 <?php
-namespace Autopergamene;
+namespace Autopergamene\Illustration;
 
+use Autopergamene\BaseModel;
 use Illuminage;
 use HTML;
 
+/**
+ * An Illustration
+ */
 class Illustration extends BaseModel
 {
   /**
@@ -24,7 +28,7 @@ class Illustration extends BaseModel
    */
   public function support()
   {
-    return $this->belongsTo('Autopergamene\Support');
+    return $this->belongsTo('Autopergamene\Illustration\Support');
   }
 
   ////////////////////////////////////////////////////////////////////

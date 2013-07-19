@@ -52,21 +52,4 @@ class CategoriesController extends BaseController
       ->with('category', $category);
   }
 
-  /**
-   * Display a Support
-   *
-   * @param string $supportSlug The Support slug
-   *
-   * @return View support
-   */
-  public function support($supportSlug)
-  {
-    $support  = Autopergamene\Support::with('illustrations')->find($supportSlug);
-    $category = $this->categories->getBySlug('illustration');
-
-    return View::make('categories.subcategories.support')
-      ->with('category', $category)
-      ->with('support', $support);
-  }
-
 }

@@ -15,7 +15,8 @@ Basset::collection('application', function($collection) {
 })
 ->rawOnEnvironment('local')
 ->apply('UriRewriteFilter')
-->apply('CssMin');
+->apply('CssMin')
+->apply('JsMin');
 
 /**
  * Polyfill scripts
@@ -34,7 +35,7 @@ Basset::collection('modernizr', function($collection) {
 Basset::collection('article', function($collection) {
   $collection->stylesheet('components/rainbow/themes/tomorrow-night.css')->apply('CssMin');
 
-  $collection->directory('name: rainbow', function($collection) {
+  $collection->directory('components/rainbow/js', function($collection) {
     $collection->javascript('rainbow.min.js');
     $collection->javascript('language/generic.js');
     $collection->javascript('language/php.js');

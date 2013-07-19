@@ -17,6 +17,6 @@ class StoriesRepository
    */
   public function getBySlug($slug)
   {
-    return Story::where('slug', $slug)->first();
+    return Story::findOrFail($slug);
   }
 }

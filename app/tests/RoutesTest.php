@@ -36,7 +36,7 @@ class RoutesTest extends TestCase
 		}
 
 		foreach (Story::all() as $story) {
-			$this->routes[] = URL::action('CategoriesController@story', $story->id);
+			$this->routes[] = URL::action('StoriesController@story', $story->id);
 		}
 
 		foreach (Photoset::all() as $photoset) {
@@ -44,7 +44,7 @@ class RoutesTest extends TestCase
 		}
 
 		foreach (Support::all() as $support) {
-			$this->routes[] = URL::action('CategoriesController@support', $support->id);
+			$this->routes[] = URL::action('IllustrationsController@support', $support->id);
 		}
 
 		$this->checkRoutes();

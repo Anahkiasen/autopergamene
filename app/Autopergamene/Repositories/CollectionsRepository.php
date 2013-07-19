@@ -4,7 +4,7 @@ namespace Autopergamene\Repositories;
 use Autopergamene\Photography\Collection;
 
 /**
- * Repository for the Collections
+ * Fetches Collections from the database
  */
 class CollectionsRepository
 {
@@ -15,6 +15,6 @@ class CollectionsRepository
 	 */
 	public function get()
 	{
-		return Collection::with('photosets')->orderBy('created_at', 'desc')->get();
+		return Collection::with('photosets.thumbnail')->orderBy('created_at', 'desc')->get();
 	}
 }

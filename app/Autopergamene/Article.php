@@ -17,6 +17,13 @@ class Article extends BaseModel
    */
   protected $table = 'articles';
 
+  /**
+   * The relations to eager load on every query.
+   *
+   * @var array
+   */
+  protected $with = array('category');
+
   ////////////////////////////////////////////////////////////////////
   /////////////////////////// RELATIONSHIPS //////////////////////////
   ////////////////////////////////////////////////////////////////////
@@ -34,18 +41,6 @@ class Article extends BaseModel
   ////////////////////////////////////////////////////////////////////
   ///////////////////////////// ATTRIBUTES ///////////////////////////
   ////////////////////////////////////////////////////////////////////
-
-  /**
-   * Get the link to the Article
-   *
-   * @return string
-   */
-  public function getLinkAttribute()
-  {
-    return URL::action('ArticlesController@article', array(
-      'categorySlug' => $this->category->id,
-      'articleSlug'  => $this->slug));
-  }
 
   /**
    * Get the imploded tags of the article

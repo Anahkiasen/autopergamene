@@ -8,8 +8,6 @@ use Autopergamene\Category;
  */
 class CategoriesRepository
 {
-  // Global access points ------------------------------------------ /
-
   /**
    * Get all categories in a predefined order
    *
@@ -29,6 +27,6 @@ class CategoriesRepository
    */
   public function getBySlug($slug)
   {
-    return Category::find($slug);
+    return Category::findOrFail($slug);
   }
 }
