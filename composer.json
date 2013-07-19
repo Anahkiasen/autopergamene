@@ -24,14 +24,14 @@
     "phpunit/phpunit": "dev-master"
   },
   "autoload": {
+    "psr-0": {
+      "Autopergamene": "app"
+    },
     "classmap": [
       "app/commands",
       "app/controllers",
       "app/database/migrations",
       "app/database/seeds",
-      "app/models",
-      "app/models/Repositories",
-      "app/models/Services",
       "app/tests/TestCase.php"
     ]
   },

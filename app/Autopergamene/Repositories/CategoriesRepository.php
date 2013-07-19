@@ -1,12 +1,12 @@
 <?php
-namespace Repositories;
+namespace Autopergamene\Repositories;
 
-use Category;
+use Autopergamene\Category;
 
 /**
  * Fetches Categories from the database
  */
-class Categories
+class CategoriesRepository
 {
   // Global access points ------------------------------------------ /
 

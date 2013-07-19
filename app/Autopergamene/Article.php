@@ -1,11 +1,21 @@
 <?php
+namespace Autopergamene;
+
+use Carbon;
 use Underscore\Parse;
+use URL;
 
 /**
  * An article from the Blog
  */
 class Article extends BaseModel
 {
+  /**
+   * The table associated with the model.
+   *
+   * @var string
+   */
+  protected $table = 'articles';
 
   ////////////////////////////////////////////////////////////////////
   /////////////////////////// RELATIONSHIPS //////////////////////////
@@ -18,7 +28,7 @@ class Article extends BaseModel
    */
   public function category()
   {
-    return $this->belongsTo('Category');
+    return $this->belongsTo('Autopergamene\Category');
   }
 
   ////////////////////////////////////////////////////////////////////
@@ -52,8 +62,7 @@ class Article extends BaseModel
 
   public function getRelativeDateAttribute()
   {
-    list ($month, $day, $year) = explode('/', $this->created_at);
-    $date = Carbon::createFromDate('20'.$year, $month, $day)->diffForHumans();
+    $date = $this->created_at->diffForHumans();
 
     return strtr($date, array(
       'from now' => null,
@@ -72,12 +81,8 @@ class Article extends BaseModel
    *
    * @return string
    */
-  public function getCreatedAtAttribute()
+  public function getCreationDateAttribute()
   {
-    $date = $this->getOriginal('created_at');
-    $date = new DateTime($date);
-
-    return $date->format('m/d/y');
+    return $this->created_at->format('m/d/y');
   }
-
 }

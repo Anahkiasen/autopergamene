@@ -1,10 +1,20 @@
 <?php
+namespace Autopergamene;
+
+use HTML;
+use URL;
 
 /**
  * A media Category
  */
-class Category extends Eloquent
+class Category extends BaseModel
 {
+  /**
+   * The table associated with the model.
+   *
+   * @var string
+   */
+  protected $table = 'categories';
 
   ////////////////////////////////////////////////////////////////////
   /////////////////////////// RELATIONSHIPS //////////////////////////
@@ -17,7 +27,7 @@ class Category extends Eloquent
    */
   public function articles()
   {
-    return $this->hasMany('Article')->orderBy('created_at', 'desc');
+    return $this->hasMany('Autopergamene\Article')->orderBy('created_at', 'desc');
   }
 
   ////////////////////////////////////////////////////////////////////
@@ -53,5 +63,4 @@ class Category extends Eloquent
   {
     return HTML::image('app/img/categories/'.$this->id.'.jpg', $this->name);
   }
-
 }

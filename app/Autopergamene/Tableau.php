@@ -1,11 +1,15 @@
 <?php
+namespace Autopergamene;
+
+use HTML;
+use Str;
+use URL;
 
 /**
  * A Tableau in Today is Sunday
  */
 class Tableau extends BaseModel
 {
-
   /**
    * The table associated with the model.
    *
@@ -34,5 +38,4 @@ class Tableau extends BaseModel
   {
     return HTML::lazyLoad($this->image, $this->name);
   }
-
 }

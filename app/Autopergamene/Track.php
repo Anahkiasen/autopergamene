@@ -1,7 +1,14 @@
 <?php
+namespace Autopergamene;
 
 class Track extends Eloquent
 {
+  /**
+   * The table associated with the model.
+   *
+   * @var string
+   */
+  protected $table = 'tracks';
 
   /**
    * The color of the Soundcloud widget
@@ -40,5 +47,4 @@ class Track extends Eloquent
 
     return $movements;
   }
-
 }

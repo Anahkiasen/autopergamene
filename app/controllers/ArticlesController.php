@@ -1,5 +1,5 @@
 <?php
-use Repositories\Articles;
+use Autopergamene\Repositories\ArticlesRepository;
 
 /**
  * Handles Articles display
@@ -10,7 +10,7 @@ class ArticlesController extends BaseController
   /**
    * The Article Repository
    *
-   * @var Articles
+   * @var ArticlesRepository
    */
   protected $articles;
 
@@ -19,7 +19,7 @@ class ArticlesController extends BaseController
    *
    * @param Articles $articles
    */
-  public function __construct(Articles $articles)
+  public function __construct(ArticlesRepository $articles)
   {
     $this->articles = $articles;
   }

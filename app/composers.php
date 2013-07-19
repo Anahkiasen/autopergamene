@@ -1,4 +1,12 @@
 <?php
+use Autopergamene\Article;
+use Autopergamene\Collection;
+use Autopergamene\Repository;
+use Autopergamene\Service;
+use Autopergamene\Story;
+use Autopergamene\Support;
+use Autopergamene\Tableau;
+use Autopergamene\Track;
 
 //////////////////////////////////////////////////////////////////////
 /////////////////////////// VIEW COMPOSERS ///////////////////////////
@@ -29,10 +37,6 @@ View::composer('categories.en-averse-dencre', function($view) {
 
 View::composer('categories.the-winter-throat', function($view) {
   $view->tracks = Track::orderBy('plays', 'desc')->get();
-});
-
-View::composer('categories.memorabilia', function($view) {
-  $view->collections = Collection::with('photosets')->orderBy('id', 'desc')->get();
 });
 
 View::composer('categories.les-fleurs-davril', function($view) {

@@ -1,7 +1,18 @@
 <?php
+namespace Autopergamene;
+
+use App;
+use URL;
 
 class Story extends BaseModel
 {
+
+  /**
+   * The table associated with the model.
+   *
+   * @var string
+   */
+  protected $table = 'stories';
 
   ////////////////////////////////////////////////////////////////////
   ///////////////////////////// ATTRIBUTES ///////////////////////////

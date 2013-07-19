@@ -1,16 +1,11 @@
 <?php
-/**
- * StoryServices
- *
- * Various helpers to format stories
- */
-namespace Services;
+namespace Autopergamene\DataProviders;
 
 use App;
 use dflydev\markdown\MarkdownParser;
 use File;
 
-class StoryServices
+class StoryProvider
 {
   /**
    * Bind dependencies

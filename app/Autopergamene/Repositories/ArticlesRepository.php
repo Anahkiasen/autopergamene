@@ -1,12 +1,12 @@
 <?php
-namespace Repositories;
+namespace Autopergamene\Repositories;
 
-use Article as ArticleEntity;
+use Autopergamene\Article;
 
 /**
  * Fetches Categories from the database
  */
-class Articles
+class ArticlesRepository
 {
   /**
    * Get a Article by its slug
@@ -17,6 +17,6 @@ class Articles
    */
   public function getBySlug($slug)
   {
-    return ArticleEntity::where('slug', $slug)->first();
+    return Article::where('slug', $slug)->first();
   }
 }

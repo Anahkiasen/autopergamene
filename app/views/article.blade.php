@@ -19,7 +19,7 @@
     <article>
       {{ $article->content }}
       <blockquote>
-        <strong>Publié le : {{ $article->created_at }}</strong>
+        <strong>Publié le : {{ $article->creationDate }}</strong>
       </blockquote>
     </article>
   </section>

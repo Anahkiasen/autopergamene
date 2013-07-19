@@ -1,11 +1,20 @@
 <?php
-use Underscore\Methods\NumberMethods as Number;
+namespace Autopergamene\Photography;
+
+use Autopergamene\BaseModel;
+use HTML;
 
 /**
  * A Photo in a Photoset
  */
 class Photo extends BaseModel
 {
+  /**
+   * The table associated with the model.
+   *
+   * @var string
+   */
+  protected $table = 'photos';
 
   /**
    * Aliases for sizes
@@ -34,7 +43,7 @@ class Photo extends BaseModel
    */
   public function photoset()
   {
-    return $this->belongsTo('Photoset');
+    return $this->belongsTo('Autopergamene\Photography\Photoset');
   }
 
   // Sizes --------------------------------------------------------- /
@@ -74,7 +83,10 @@ class Photo extends BaseModel
    */
   public function index($key)
   {
-    return Number::paddingLeft($key, 2);
+    $padding = 2 - strlen($key);
+    $padding = ($padding > 0) ? str_repeat('0', $padding) : '';
+
+    return $padding.$key;
   }
 
   /**
@@ -86,5 +98,4 @@ class Photo extends BaseModel
   {
     return HTML::image($this->large_square, $this->surname);
   }
-
 }

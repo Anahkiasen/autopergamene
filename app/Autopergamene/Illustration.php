@@ -1,7 +1,17 @@
 <?php
+namespace Autopergamene;
+
+use Illuminage;
+use HTML;
 
 class Illustration extends BaseModel
 {
+  /**
+   * The table associated with the model.
+   *
+   * @var string
+   */
+  protected $table = 'illustrations';
 
   ////////////////////////////////////////////////////////////////////
   /////////////////////////// RELATIONSHIPS //////////////////////////
@@ -14,7 +24,7 @@ class Illustration extends BaseModel
    */
   public function support()
   {
-    return $this->belongsTo('Support');
+    return $this->belongsTo('Autopergamene\Support');
   }
 
   ////////////////////////////////////////////////////////////////////
@@ -39,5 +49,4 @@ class Illustration extends BaseModel
   {
     return HTML::lazyLoad($folder.$this->image, $this->name);
   }
-
 }

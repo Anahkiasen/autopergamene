@@ -18,11 +18,11 @@
 
         @foreach ($collection->photosets as $photoset)
           <figure class='photoset--list'>
-            <a href='{{ URL::action('CategoriesController@album', $photoset->slug) }}'>
+            <a href='{{ URL::action('PhotographiesController@photoset', $photoset->slug) }}'>
               {{ HTML::image($photoset->thumbnail->large_square, $photoset->name) }}
               <figcaption>
                 <h3>{{ $photoset->name }}</h3>
-                <h4>{{ $photoset->created_at }}</h4>
+                <h4>{{ $photoset->created_at->toDateString() }}</h4>
               </figcaption>
             </a>
           </figure>

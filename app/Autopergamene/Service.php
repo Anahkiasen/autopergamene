@@ -1,7 +1,14 @@
 <?php
+namespace Autopergamene;
 
-class Service extends Eloquent
+class Service extends BaseModel
 {
+  /**
+   * The table associated with the model.
+   *
+   * @var string
+   */
+  protected $table = 'services';
 
   ////////////////////////////////////////////////////////////////////
   ///////////////////////////// ATTRIBUTES ///////////////////////////
@@ -14,11 +21,6 @@ class Service extends Eloquent
    */
   public function getLinkNameAttribute()
   {
-    $linkName = String::remove($this->link, '/anahkiasen');
-    $linkName = String::remove($linkName, 'http://');
-    $linkName = String::remove($linkName, 'www.');
-
-    return $linkName;
+    return preg_replace('#(http://)(www.)?(.+)(/anahkiasen)#', '$3', $this->link);
   }
-
 }

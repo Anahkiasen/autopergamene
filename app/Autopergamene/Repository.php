@@ -1,7 +1,20 @@
 <?php
+namespace Autopergamene;
 
-class Repository extends Eloquent
+use HTML;
+
+class Repository extends BaseModel
 {
+  /**
+   * The table associated with the model.
+   *
+   * @var string
+   */
+  protected $table = 'repositories';
+
+  ////////////////////////////////////////////////////////////////////
+  ///////////////////////////// ATTRIBUTES ///////////////////////////
+  ////////////////////////////////////////////////////////////////////
 
   /**
    * Get a link to the Repository's author
@@ -52,5 +65,4 @@ class Repository extends Eloquent
       '&type=' .$type.
       '&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="85" height="20"></iframe>';
   }
-
 }

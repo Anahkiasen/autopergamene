@@ -1,5 +1,5 @@
 <?php
-use Repositories\Categories;
+use Autopergamene\Repositories\CategoriesRepository;
 
 /**
  * Dispatches to various Category places
@@ -10,16 +10,16 @@ class CategoriesController extends BaseController
   /**
    * The Category Repository
    *
-   * @var Categories
+   * @var CategoriesRepository
    */
   protected $categories;
 
   /**
    * Bind dependencies
    *
-   * @param Categories $categories
+   * @param CategoriesRepository $categories
    */
-  public function __construct(Categories $categories)
+  public function __construct(CategoriesRepository $categories)
   {
     $this->categories = $categories;
   }
@@ -50,23 +50,6 @@ class CategoriesController extends BaseController
 
     return View::make('categories.'.$categorySlug)
       ->with('category', $category);
-  }
-
-  /**
-   * Display an album
-   *
-   * @param string $albumSlug The Photoset slug
-   *
-   * @return View photoset
-   */
-  public function album($albumSlug)
-  {
-    $photoset = Photoset::where('slug', $albumSlug)->first();
-    $category = $this->categories->getPhotosCategory();
-
-    return View::make('categories.subcategories.photoset')
-      ->with('category', $category)
-      ->with('photoset', $photoset);
   }
 
   /**
