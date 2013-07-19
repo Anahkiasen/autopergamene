@@ -5,6 +5,10 @@ Modernizr.load([
   {
     test: Modernizr.classlist,
     nope: '../../components/classlist/classList.min.js'
+  },
+  {
+    test: Modernizr.mediaqueries,
+    nope: '../../components/respond/respond.min.js'
   }
 ]);
 

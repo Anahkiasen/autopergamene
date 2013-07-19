@@ -197,12 +197,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Anahkiasen/rocketeer.git",
-                "reference": "2c5d5512db10383542e404383b2b728db2a60a92"
+                "reference": "00ca4f948245a238c89ec8b242c7f6a9dcb5c524"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Anahkiasen/rocketeer/zipball/2c5d5512db10383542e404383b2b728db2a60a92",
-                "reference": "2c5d5512db10383542e404383b2b728db2a60a92",
+                "url": "https://api.github.com/repos/Anahkiasen/rocketeer/zipball/00ca4f948245a238c89ec8b242c7f6a9dcb5c524",
+                "reference": "00ca4f948245a238c89ec8b242c7f6a9dcb5c524",
                 "shasum": ""
             },
             "require": {
@@ -239,7 +239,7 @@
                 "laravel",
                 "ssh"
             ],
-            "time": "2013-07-17 17:06:10"
+            "time": "2013-07-19 11:06:41"
         },
         {
             "name": "anahkiasen/underscore-php",
@@ -923,12 +923,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/avalanche123/Imagine.git",
-                "reference": "3fe37e3e4cc23f0baddd498c7725e3d1d24b82aa"
+                "reference": "e66f55c68c0854e4ab3efcfe5dfce9ee5685cd67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/avalanche123/Imagine/zipball/3fe37e3e4cc23f0baddd498c7725e3d1d24b82aa",
-                "reference": "3fe37e3e4cc23f0baddd498c7725e3d1d24b82aa",
+                "url": "https://api.github.com/repos/avalanche123/Imagine/zipball/e66f55c68c0854e4ab3efcfe5dfce9ee5685cd67",
+                "reference": "e66f55c68c0854e4ab3efcfe5dfce9ee5685cd67",
                 "shasum": ""
             },
             "require": {
@@ -972,7 +972,7 @@
                 "image manipulation",
                 "image processing"
             ],
-            "time": "2013-07-16 10:26:23"
+            "time": "2013-07-19 12:54:36"
         },
         {
             "name": "ircmaxell/password-compat",
@@ -1088,12 +1088,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kriswallsmith/assetic.git",
-                "reference": "41930af87d8182c3298cf66f49a1606fa3c1d367"
+                "reference": "v1.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/41930af87d8182c3298cf66f49a1606fa3c1d367",
-                "reference": "41930af87d8182c3298cf66f49a1606fa3c1d367",
+                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/v1.1.2",
+                "reference": "v1.1.2",
                 "shasum": ""
             },
             "require": {
@@ -1151,7 +1151,7 @@
                 "compression",
                 "minification"
             ],
-            "time": "2013-07-11 15:46:25"
+            "time": "2013-07-19 00:03:27"
         },
         {
             "name": "laravel/framework",
@@ -1604,12 +1604,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "ae2a0886a5332e18d0449bfa95c606f723f18681"
+                "reference": "78f9fadd3d34c390d732efef5ab7e3e50deda226"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/ae2a0886a5332e18d0449bfa95c606f723f18681",
-                "reference": "ae2a0886a5332e18d0449bfa95c606f723f18681",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/78f9fadd3d34c390d732efef5ab7e3e50deda226",
+                "reference": "78f9fadd3d34c390d732efef5ab7e3e50deda226",
                 "shasum": ""
             },
             "require": {
@@ -1670,7 +1670,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2013-07-16 16:21:46"
+            "time": "2013-07-19 15:34:11"
         },
         {
             "name": "predis/predis",
