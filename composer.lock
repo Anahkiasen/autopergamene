@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "d8de29bdc93674be757f6c3ba2f15305",
+    "hash": "220ad34209191e0f6896127f394242da",
     "packages": [
         {
             "name": "anahkiasen/flatten",
@@ -190,6 +190,53 @@
                 "thumb"
             ],
             "time": "2013-06-20 09:49:32"
+        },
+        {
+            "name": "anahkiasen/polyglot",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Anahkiasen/polyglot.git",
+                "reference": "2411de42dcc5f927b6d61e4477c8febe3fe2b3db"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Anahkiasen/polyglot/zipball/2411de42dcc5f927b6d61e4477c8febe3fe2b3db",
+                "reference": "2411de42dcc5f927b6d61e4477c8febe3fe2b3db",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/container": "~4",
+                "illuminate/support": "~4",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Polyglot": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Maxime Fabre",
+                    "email": "ehtnam6@gmail.Com"
+                }
+            ],
+            "description": "Laravel localization helpers and models",
+            "keywords": [
+                "laravel",
+                "localization",
+                "model",
+                "translation"
+            ],
+            "time": "2013-07-25 19:33:58"
         },
         {
             "name": "anahkiasen/rocketeer",
@@ -3173,6 +3220,7 @@
         "natxet/cssmin": 20,
         "anahkiasen/rocketeer": 20,
         "loic-sharma/profiler": 20,
+        "anahkiasen/polyglot": 20,
         "phpunit/phpunit": 20
     },
     "platform": [

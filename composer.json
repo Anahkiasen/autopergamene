@@ -19,7 +19,8 @@
     "jasonlewis/basset": "dev-develop",
     "natxet/CssMin": "dev-master",
     "anahkiasen/rocketeer": "dev-develop",
-    "loic-sharma/profiler": "dev-master"
+    "loic-sharma/profiler": "dev-master",
+    "anahkiasen/polyglot": "dev-master"
   },
   "require-dev": {
     "phpunit/phpunit": "dev-master"
