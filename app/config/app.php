@@ -120,6 +120,7 @@ return array(
 		'Flatten\FlattenServiceProvider',
 		'Rocketeer\RocketeerServiceProvider',
 		'Profiler\ProfilerServiceProvider',
+		'Polyglot\PolyglotServiceProvider',
 
 	),
 
@@ -198,6 +199,7 @@ return array(
 		'Flickering' => 'Flickering\Facades\Flickering',
 		'Illuminage' => 'Illuminage\Facades\Illuminage',
 		'Rocketeer'  => 'Rocketeer\Facades\Rocketeer',
+		'Language'   => 'Polyglot\Facades\Language',
 
 	),
 

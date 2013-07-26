@@ -1,5 +1,6 @@
 <footer>
 
+  {{ HTML::link('fr', 'Français') }} - {{ HTML::link('en', 'English') }}<br>
   &copy; {{ date('Y') }} - autopergamene - Maxime Fabre
   <hr>
 
@@ -14,18 +15,18 @@
       @endforeach
     </ul>
 
-      <section class="colophon last">
-        <p>
-          Ce site a été construit en PHP en utilisant {{ HTML::linkBlank('http://laravel.com/', 'Laravel') }}<br>
-          Le design a été codé en {{ HTML::linkBlank('http://sass-lang.com', 'Sass') }} avec {{ HTML::linkBlank('http://compass-style.org/', 'Compass') }}
-          et {{ HTML::linkBlank('http://susy.oddbird.net/', 'Susy') }}<br>
-          Polices fournies par {{ HTML::linkBlank('https://typekit.com/colophons/enr5hww', 'Typekit') }}
-        </p>
+    <section class="colophon last">
+      <p>
+        {{ Lang::get('footer.built') }} {{ HTML::linkBlank('http://laravel.com/', 'Laravel') }}<br>
+        {{ Lang::get('footer.design') }} {{ HTML::linkBlank('http://sass-lang.com', 'Sass') }} {{ Lang::get('footer.with') }} {{ HTML::linkBlank('http://compass-style.org/', 'Compass') }}
+        {{ Lang::get('footer.and') }} {{ HTML::linkBlank('http://susy.oddbird.net/', 'Susy') }}<br>
+        {{ Lang::get('footer.fonts') }} {{ HTML::linkBlank('https://typekit.com/colophons/enr5hww', 'Typekit') }}
+      </p>
 
-        <p>
-          Sources en {{ HTML::linkBlank('https://github.com/Anahkiasen/autopergamene', 'libre consultation') }}
-        </p>
-      </section>
+      <p>
+        <a target="_blank" href="https://github.com/Anahkiasen/autopergamene">{{ Lang::get('footer.open_source') }}</a>
+      </p>
+    </section>
   </div>
 
 </footer>

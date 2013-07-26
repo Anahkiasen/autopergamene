@@ -1,4 +1,5 @@
 <?php
+use Autopergamene\Track;
 
 class TracksSeeder extends BaseSeed
 {

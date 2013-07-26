@@ -15,7 +15,7 @@ class CategoriesRepository
    */
   public function getOrdered()
   {
-    return Category::orderBy('order', 'asc')->get();
+    return Category::withLang()->orderBy('order', 'asc')->get();
   }
 
   /**

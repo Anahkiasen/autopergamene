@@ -1,4 +1,5 @@
 <?php
+use Autopergamene\Photography\Photoset;
 
 class PhotosSeeder extends BaseSeed
 {

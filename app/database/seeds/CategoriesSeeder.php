@@ -1,22 +1,33 @@
 <?php
+use Autopergamene\Category;
+use Autopergamene\Lang\Category as CategoryLang;
 
 class CategoriesSeeder extends BaseSeed
 {
-  public function getSeeds()
+  public function run()
   {
-    return Arrays::each($this->getCategories(), function($category, $key) {
-      list($name, $description, $link) = $category;
+    $categoriesNames = ['Memorabilia', 'Graceful Degradation', 'The Winter Throat', 'Les Fleurs d\'Avril', 'Le Soulèvement', 'Today is Sunday', 'Illustration', 'En averse d\'encre'];
+    foreach ($categoriesNames as $key => $name) {
+      $link = ($name == 'Le Soulèvement')
+        ? 'http://the8day.info/OVAP'
+        : null;
 
-      return [
+      Category::create([
         'id'          => Str::slug($name),
         'name'        => $name,
-        'description' => $description,
         'link'        => $link,
         'order'       => $key,
-        'created_at'  => new DateTime,
-        'updated_at'  => new DateTime,
-      ];
-    });
+      ]);
+    }
+
+    foreach ($this->getTranslations() as $lang => $categories) {
+      foreach ($categories as $key => $description) {
+        Category::whereId(Str::slug($categoriesNames[$key]))->first()->fill([
+          'description' => $description,
+          'lang'        => $lang,
+        ])->save();
+      }
+    }
   }
 
   ////////////////////////////////////////////////////////////////////
@@ -28,17 +39,29 @@ class CategoriesSeeder extends BaseSeed
    *
    * @return array
    */
-  public function getCategories()
+  public function getTranslations()
   {
     return [
-      ['Memorabilia', 'Photographies', ''],
-      ['Graceful Degradation', 'Projets et librairies web', ''],
-      ['The Winter Throat', 'Compositions post-rock à influences diverses', ''],
-      ['Les Fleurs d\'Avril', 'Recueil de nouvelles', ''],
-      ['Le Soulèvement', 'Webcomic post-apocalpytique', 'http://the8day.info/OVAP/'],
-      ['Today is Sunday', 'Tableaux surréalistes', ''],
-      ['Illustration', 'Dessins et peinture digitale', ''],
-      ['En averse d\'encre', 'Divers articles', ''],
+      'fr' => [
+        'Photographies',
+        'Projets et librairies web',
+        'Compositions post-rock à influences diverses',
+        'Recueil de nouvelles',
+        'Webcomic post-apocalpytique',
+        'Tableaux surréalistes',
+        'Dessins et peinture digitale',
+        'Divers articles',
+      ],
+      'en' => [
+        'Photographies',
+        'Web projects and libraries',
+        'Post-rock pieces of various influences',
+        'Short stories',
+        'Post-apocalyptic webcomic',
+        'Surrealist tableaux',
+        'Drawings and digital painting',
+        'Various articles',
+      ]
     ];
   }
 }

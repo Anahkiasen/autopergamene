@@ -2,13 +2,13 @@
 namespace Autopergamene;
 
 use Carbon;
-use Eloquent;
+use Polyglot\Polyglot;
 use Str;
 
 /**
  * An abstract Model to extend
  */
-abstract class BaseModel extends Eloquent
+abstract class BaseModel extends Polyglot
 {
   ////////////////////////////////////////////////////////////////////
   /////////////////////////////// FETCHERS ///////////////////////////
