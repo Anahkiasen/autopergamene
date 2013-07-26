@@ -28,6 +28,7 @@ class RoutesTest extends TestCase
 			$uri = $route->getPath();
 
 			// Skip some routes
+			var_dump($uri);
 			if (Str::contains($uri, ['_profiler'])) {
 				continue;
 			}
