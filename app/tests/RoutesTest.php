@@ -28,7 +28,6 @@ class RoutesTest extends TestCase
 			$uri = $route->getPath();
 
 			// Skip some routes
-			var_dump($uri);
 			if (Str::contains($uri, ['_profiler'])) {
 				continue;
 			}
@@ -71,7 +70,12 @@ class RoutesTest extends TestCase
 			try {
 				$this->comment('Testing route '.$shorthand);
 				$this->call('GET', $route);
-				$this->assertResponseOk();
+
+				if ($route == 'http://autopergamene.dev') {
+					$this->assertResponseStatus(302);
+				} else {
+					$this->assertResponseOk();
+				}
 			} catch (Exception $exception) {
 				$this->failedRoute($shorthand, $exception->getMessage());
 			}
