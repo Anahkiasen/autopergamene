@@ -13,7 +13,6 @@ class RoutesTest extends TestCase
 	 * @var array
 	 */
 	protected $routes = array(
-		'/',
 	);
 
 	/**
