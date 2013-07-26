@@ -25,26 +25,34 @@ class RoutesTest extends TestCase
 
 	public function testCanDisplayRoutes()
 	{
+		foreach (Route::getRoutes() as $route) {
+			$uri = $route->getPath();
 
-		foreach (Category::all() as $category) {
-			if ($category->isExternal()) continue;
-			$this->routes[] = $category->link;
-		}
+			// Skip some routes
+			if (Str::contains($uri, ['_profiler'])) {
+				continue;
+			}
 
-		foreach (Article::all() as $article) {
-			$this->routes[] = $article->link;
-		}
+			// Replace model with their IDs
+			preg_match('/\{([^}]+)\}/', $uri, $pattern);
+			$model = Str::studly(array_get($pattern, 1));
+			if ($model == 'Photoset') $model = 'Photography\Photoset';
+			if ($model == 'Support')  $model = 'Illustration\Support';
+			$model = 'Autopergamene\\'.$model;
 
-		foreach (Story::all() as $story) {
-			$this->routes[] = URL::action('StoriesController@story', $story->id);
-		}
+			if (class_exists($model)) {
+				foreach ($model::all() as $model) {
+					if ($model instanceof Category and $model->isExternal()) {
+						continue;
+					}
 
-		foreach (Photoset::all() as $photoset) {
-			$this->routes[] = URL::action('PhotographiesController@photoset', $photoset->slug);
-		}
+					$modelRoute = str_replace('{'.$pattern[1].'}', $model->slug, $uri);
+					$this->routes[] = URL::to($modelRoute);
+				}
+				continue;
+			}
 
-		foreach (Support::all() as $support) {
-			$this->routes[] = URL::action('IllustrationsController@support', $support->id);
+			$this->routes[] = URL::to($uri);
 		}
 
 		$this->checkRoutes();

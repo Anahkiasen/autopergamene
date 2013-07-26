@@ -2,12 +2,15 @@
 namespace Autopergamene\Illustration;
 
 use Autopergamene\BaseModel;
+use Autopergamene\Traits\HasSlugId;
 
 /**
  * A Support holding various Illustrations
  */
 class Support extends BaseModel
 {
+  use HasSlugId;
+
   /**
    * The table associated with the model.
    *

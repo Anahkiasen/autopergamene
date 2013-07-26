@@ -9,6 +9,8 @@ use URL;
  */
 class Category extends BaseModel
 {
+  use Traits\HasSlugId;
+
   /**
    * The table associated with the model.
    *
