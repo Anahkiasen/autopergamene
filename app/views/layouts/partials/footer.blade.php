@@ -17,10 +17,13 @@
 
     <section class="colophon last">
       <p>
-        {{ Lang::get('footer.built') }} {{ HTML::linkBlank('http://laravel.com/', 'Laravel') }}<br>
-        {{ Lang::get('footer.design') }} {{ HTML::linkBlank('http://sass-lang.com', 'Sass') }} {{ Lang::get('footer.with') }} {{ HTML::linkBlank('http://compass-style.org/', 'Compass') }}
-        {{ Lang::get('footer.and') }} {{ HTML::linkBlank('http://susy.oddbird.net/', 'Susy') }}<br>
-        {{ Lang::get('footer.fonts') }} {{ HTML::linkBlank('https://typekit.com/colophons/enr5hww', 'Typekit') }}
+        {{ Lang::get('footer.built', array(
+          'laravel' => HTML::linkBlank('http://laravel.com/', 'Laravel'),
+          'sass'    => HTML::linkBlank('http://sass-lang.com', 'Sass'),
+          'compass' => HTML::linkBlank('http://compass-style.org/', 'Compass'),
+          'susy'    => HTML::linkBlank('http://susy.oddbird.net/', 'Susy'),
+          'typekit' => HTML::linkBlank('https://typekit.com/colophons/enr5hww', 'Typekit'),
+        )) }}
       </p>
 
       <p>

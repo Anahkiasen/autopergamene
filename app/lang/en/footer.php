@@ -1,8 +1,4 @@
 <?php return array(
-	'built'       => 'This site was built in PHP using',
-	'design'      => 'The design is in',
-	'with'        => 'with',
-	'and'         => 'and',
-	'fonts'       => 'Fonts provided by',
+	'built'       => 'This website was built in PHP using :laravel.<br>The design is in :sass with :compass.<br>Fonts provided by :typekit',
 	'open_source' => 'Open source',
 );

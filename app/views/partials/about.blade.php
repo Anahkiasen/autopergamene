@@ -9,13 +9,13 @@
     {{-- Summary --}}
     <h2>
       <span itemprop='name'>Maxime Fabre</span>
-      <span>{{ $age }} ans</span>
+      <small>{{ $age }} @lang('about.age')</small>
     </h2>
     <h3 itemprop='jobTitle'>Webdesigner - Webdeveloper</h3>
-    <h4 itemprop='address'>Nice, France</h4>
+    <h4 itemprop='address'>Saint-Étienne, France</h4>
 
     {{-- Biography --}}
-    <span class='block' data-show='.about-biography'>Qui je suis ?</span>
+    <span class='block' data-show='.about-biography'>@lang('about.whois')</span>
     <section class='about-biography'>
       <p>
         Je travaille dans le web depuis bientôt {{ $work }} ans au <span itemprop='worksFor'>{{ HTML::linkBlank('http://www.stappler.fr/', 'Principe de Stappler') }}</span>.
@@ -30,10 +30,10 @@
       </p>
 
       {{-- Details and links --}}
-      <span class='block' data-show='.about-more'>Informations complémentaires</span>
+      <span class='block' data-show='.about-more'>@lang('about.informations')</span>
       <section class='about-more'>
         <article class='social'>
-          <h3>Me trouver</h3>
+          <h3>@lang('about.findme')</h3>
           <ul>
             @foreach($services as $service)
               <li>
@@ -49,7 +49,7 @@
           </ul>
         </article>
         <article>
-          <h3>Langages employés</h3>
+          <h3>@lang('about.languages')</h3>
           <ul>
             <li>HTML5</li>
             <li>CSS3 – LESS et SASS</li>
@@ -59,7 +59,7 @@
           </ul>
         </article>
         <article>
-          <h3>Logiciels maîtrisés</h3>
+          <h3>@lang('about.softwares')</h3>
           <ul>
             <li>Sublime Text</li>
             <li>Suite Adobe CS6</li>
@@ -69,10 +69,10 @@
           </ul>
         </article>
         <article>
-          <h3>Autres informations</h3>
+          <h3>@lang('about.misc')</h3>
           <ul>
-            <li>Diplômé d'un BTS en communication visuelle</li>
-            <li>Détenteur du permis B</li>
+            <li>@lang('about.bts')</li>
+            <li>@lang('about.license')</li>
           </ul>
         </article>
       </section>
