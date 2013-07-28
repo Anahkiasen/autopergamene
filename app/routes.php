@@ -24,7 +24,7 @@ $routes = function () {
 	Route::get('category/{category}', 'CategoriesController@category');
 };
 
-Config::set('app.locale', Request::segment(1) ?: 'fr');
+App::setLocale(Request::segment(1) ?: 'fr');
 
 Route::get('/', function() {
 	return Redirect::to(Config::get('app.locale'));
