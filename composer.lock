@@ -198,12 +198,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Anahkiasen/polyglot.git",
-                "reference": "4167d856fa2bdcc1a8ecad1600604f08551c580c"
+                "reference": "a3cff8e19730650e2e989b5397e24506c5a63849"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Anahkiasen/polyglot/zipball/4167d856fa2bdcc1a8ecad1600604f08551c580c",
-                "reference": "4167d856fa2bdcc1a8ecad1600604f08551c580c",
+                "url": "https://api.github.com/repos/Anahkiasen/polyglot/zipball/a3cff8e19730650e2e989b5397e24506c5a63849",
+                "reference": "a3cff8e19730650e2e989b5397e24506c5a63849",
                 "shasum": ""
             },
             "require": {
@@ -237,7 +237,7 @@
                 "model",
                 "translation"
             ],
-            "time": "2013-07-26 16:31:51"
+            "time": "2013-07-29 15:53:18"
         },
         {
             "name": "anahkiasen/rocketeer",
@@ -245,12 +245,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Anahkiasen/rocketeer.git",
-                "reference": "475bdef88e2db1b870d346dbd2efc2b69ca16ae8"
+                "reference": "0.6.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Anahkiasen/rocketeer/zipball/475bdef88e2db1b870d346dbd2efc2b69ca16ae8",
-                "reference": "475bdef88e2db1b870d346dbd2efc2b69ca16ae8",
+                "url": "https://api.github.com/repos/Anahkiasen/rocketeer/zipball/0.6.5",
+                "reference": "0.6.5",
                 "shasum": ""
             },
             "require": {
@@ -287,7 +287,7 @@
                 "laravel",
                 "ssh"
             ],
-            "time": "2013-07-27 15:11:00"
+            "time": "2013-07-29 15:18:48"
         },
         {
             "name": "anahkiasen/underscore-php",
