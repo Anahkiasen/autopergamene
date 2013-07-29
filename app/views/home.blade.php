@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('title')
-  Portfolio de Maxime Fabre -
+  @lang('global.titles.home') -
 @stop
 
 @section('content')
