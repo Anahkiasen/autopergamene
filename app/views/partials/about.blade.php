@@ -89,6 +89,7 @@
           <ul>
             <li>@lang('about.bts')</li>
             <li>@lang('about.license')</li>
+            <li>@lang('about.languages')</li>
           </ul>
         </article>
       </section>
