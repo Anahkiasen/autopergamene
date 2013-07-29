@@ -1,10 +1,6 @@
 <?php
-use Autopergamene\Article;
-use Autopergamene\Collection;
 use Autopergamene\Repository;
 use Autopergamene\Service;
-use Autopergamene\Story;
-use Autopergamene\Support;
 use Autopergamene\Tableau;
 use Autopergamene\Track;
 

@@ -1,6 +1,5 @@
 <?php
 use Autopergamene\Category;
-use Autopergamene\Lang\Category as CategoryLang;
 
 class CategoriesSeeder extends BaseSeed
 {

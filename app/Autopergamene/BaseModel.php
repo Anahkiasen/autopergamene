@@ -1,9 +1,7 @@
 <?php
 namespace Autopergamene;
 
-use Carbon;
 use Polyglot\Polyglot;
-use Str;
 
 /**
  * An abstract Model to extend

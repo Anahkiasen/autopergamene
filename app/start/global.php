@@ -48,8 +48,7 @@ Log::useDailyFiles(storage_path().'/logs/'.$logFile);
 |
 */
 
-App::error(function(Exception $exception, $code)
-{
+App::error(function(Exception $exception, $code) {
 	Log::error($exception);
 });
 
@@ -72,8 +71,7 @@ Flickering::handshake('30de750088fe29573e0fb8bcdefbd473', 'c700f167e4f9a162');
 |
 */
 
-App::down(function()
-{
+App::down(function() {
 	return Response::make("Be right back!", 503);
 });
 

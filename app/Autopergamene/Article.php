@@ -1,9 +1,7 @@
 <?php
 namespace Autopergamene;
 
-use Carbon;
 use Underscore\Parse;
-use URL;
 
 /**
  * An article from the Blog

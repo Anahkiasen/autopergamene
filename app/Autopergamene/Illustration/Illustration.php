@@ -42,7 +42,6 @@ class Illustration extends BaseModel
   {
     $image = Illuminage::square($folder.$this->image, 200);
     if (!$name) $name = $this->name;
-
     return $image->alt($name);
   }
 

@@ -150,8 +150,7 @@ return array(
             |
             */
 
-            'CssMin' => array('CssMinFilter', function($filter)
-            {
+            'CssMin' => array('CssMinFilter', function($filter) {
                 $filter->whenProductionBuild()->whenAssetIsStylesheet()->whenClassExists('CssMin');
             }),
 
@@ -165,8 +164,7 @@ return array(
             |
             */
 
-            'JsMin' => array('JSMinFilter', function($filter)
-            {
+            'JsMin' => array('JSMinFilter', function($filter) {
                 $filter->whenProductionBuild()->whenAssetIsJavascript()->whenClassExists('JSMin');
             }),
 
@@ -179,8 +177,7 @@ return array(
             |
             */
 
-            'UriRewriteFilter' => array('UriRewriteFilter', function($filter)
-            {
+            'UriRewriteFilter' => array('UriRewriteFilter', function($filter) {
                 $filter->setArguments(public_path());
             })
 
