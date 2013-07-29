@@ -20,7 +20,7 @@ View::composer('partials.about', function($view) {
 
   // Calculating dates
   $view->age  = Carbon::createFromDate(1990, 3, 2)->diffInYears($today);
-  $view->work = Carbon::createFromDate(2009, 10, 1)->diffInYears($today);
+  $view->work = ceil(Carbon::createFromDate(2009, 10, 1)->diffInMonths($today) / 12);
 });
 
 View::composer('layouts.partials.footer', function($view) {
