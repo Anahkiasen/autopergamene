@@ -198,12 +198,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Anahkiasen/polyglot.git",
-                "reference": "a3cff8e19730650e2e989b5397e24506c5a63849"
+                "reference": "b234b3147f977a50c7994a1f1377dff9b401cb57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Anahkiasen/polyglot/zipball/a3cff8e19730650e2e989b5397e24506c5a63849",
-                "reference": "a3cff8e19730650e2e989b5397e24506c5a63849",
+                "url": "https://api.github.com/repos/Anahkiasen/polyglot/zipball/b234b3147f977a50c7994a1f1377dff9b401cb57",
+                "reference": "b234b3147f977a50c7994a1f1377dff9b401cb57",
                 "shasum": ""
             },
             "require": {
@@ -237,7 +237,7 @@
                 "model",
                 "translation"
             ],
-            "time": "2013-07-29 15:53:18"
+            "time": "2013-07-29 16:03:19"
         },
         {
             "name": "anahkiasen/rocketeer",
