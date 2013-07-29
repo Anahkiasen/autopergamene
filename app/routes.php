@@ -25,11 +25,15 @@ $routes = function () {
 };
 
 App::setLocale(Request::segment(1) ?: 'fr');
-
 Route::get('/', function() {
 	return Redirect::to(Config::get('app.locale'));
 });
 
 // Languages
-Route::group(['prefix' => 'fr'], $routes);
-Route::group(['prefix' => 'en'], $routes);
+if (Config::get('app.locale') == 'fr') {
+	Route::group(['prefix' => 'fr'], $routes);
+	Route::group(['prefix' => 'en'], $routes);
+} else {
+	Route::group(['prefix' => 'en'], $routes);
+	Route::group(['prefix' => 'fr'], $routes);
+}

@@ -29,7 +29,7 @@ HTML::macro('blockLink', function($url, $text, $attributes = array()) {
  * A link back home
  */
 HTML::macro('homeLink', function() {
-  return HTML::link('/', "Retour à l'accueil", array('class' => 'back'));
+  return HTML::link('/', Lang::get('global.home'), array('class' => 'back'));
 });
 
 /**

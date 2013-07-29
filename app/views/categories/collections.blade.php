@@ -4,7 +4,8 @@
   <section class='memorabilia'>
     <p>
       J'ai commencé à faire de la photographie il y a quelques temsp déjà. Ma raison était alors purement préventive — j'allais entrer en école de
-      communication visuelle et m'étais dit que la photographie en serait un prérequis. Mes premières images étaient de ce qui m'entouraient — objets et personnes —
+      communication visuelle et m'étais dit que la photographie en serait un prérequis.
+      Mes premières images étaient de ce qui m'entouraient — objets et personnes — et peu à peu ma passion s'est tournée vers les lieux abandonnés et ce qu'ils évoquent.
     </p>
 
     @include('partials.articles-list.articles-list')
