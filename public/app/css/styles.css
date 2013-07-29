@@ -1,3 +1,7 @@
+/*
+  Mixins are slightly modified from Benjamin Doherty's first implementations: http://gist.github.com/377912
+  rgba-background mixin can now be passed an option $dir variable
+*/
 .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .categories figure figcaption, .portfolio .photoset--list figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption, .portfolio .illustration, .portfolio .tableau, .portfolio .photoset figure, .article article .wp-caption, .novel article .wp-caption, .about p {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -162,7 +166,7 @@ span.block, a.block, a.back {
     background-color: #f17283; }
 
 .portfolio blockquote, .article article blockquote, .novel article blockquote, .novel article ul, .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .portfolio .illustration, .portfolio .tableau, .portfolio .photoset figure, .article article .wp-caption, .novel article .wp-caption, .portfolio .illustration figcaption, .portfolio .tableau figcaption, dl, .portfolio p, .about p, .about .about-more ul, .article article del, .novel article del, .novel .alert {
-  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAQAAAAnZu5uAAAAEklEQVR4nGNi4IVBJgY4IMgEAA3yAEyYwsyHAAAAAElFTkSuQmCC');
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNi4AUAABYAEFIOBzYAAAAASUVORK5CYII=');
   background: rgba(0, 0, 0, 0.05);
   color: #333333;
   padding: 12px;
@@ -189,7 +193,7 @@ span.block, a.block, a.back {
   padding: 16px;
   padding: 1rem; }
   .categories figure:active, .portfolio .photoset--list:active, .portfolio .support:active, .portfolio .repository figure:active {
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAQAAAAnZu5uAAAAEklEQVR4nGNikIJBJgY4IMgEABpjAI3SojZdAAAAAElFTkSuQmCC');
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNikAIAACMAHf9yvGMAAAAASUVORK5CYII=');
     background: rgba(0, 0, 0, 0.1); }
   .categories figure figcaption, .portfolio .photoset--list figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption {
     padding-left: 16px;
@@ -205,7 +209,7 @@ span.block, a.block, a.back {
     text-transform: none; }
   @media (max-width: 50em) {
     .categories figure:hover, .portfolio .photoset--list:hover, .portfolio .support:hover, .portfolio .repository figure:hover {
-      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAQAAAAnZu5uAAAAEklEQVR4nGNikIJBJgY4IMgEABpjAI3SojZdAAAAAElFTkSuQmCC');
+      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNikAIAACMAHf9yvGMAAAAASUVORK5CYII=');
       background: rgba(0, 0, 0, 0.1); }
     .categories figure img, .portfolio .photoset--list img, .portfolio .support img, .portfolio .repository figure img {
       width: 23.72881%;
@@ -342,7 +346,7 @@ span.block, a.block, a.back {
   margin: 1rem 0;
   padding: 16px;
   padding: 1rem;
-  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAQAAAAnZu5uAAAAEklEQVR4nGNi4IBBJgY4IMgEAAkpADNL6V6/AAAAAElFTkSuQmCC');
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNi4AAAABEAC43pSewAAAAASUVORK5CYII=');
   background: rgba(0, 0, 0, 0.03);
   text-align: center; }
   @media (min-width: 60em) {
@@ -519,7 +523,7 @@ footer {
         width: 100%; } }
 
 .portfolio {
-  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAQAAAAnZu5uAAAAEklEQVR4nGP6Xw+DTAxwQJAJAHQhB4GKBdKAAAAAAElFTkSuQmCC');
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6Xw8AAoYBgRDEVrUAAAAASUVORK5CYII=');
   background: rgba(255, 255, 255, 0.5); }
   .portfolio h1 {
     margin: 16px 0;
@@ -598,7 +602,7 @@ footer {
       .articles article:hover h3, .articles article:hover datetime {
         color: #ea2c46; }
       .articles article:hover blockquote {
-        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAQAAAAnZu5uAAAAEklEQVR4nGNikIJBJgY4IMgEABpjAI3SojZdAAAAAElFTkSuQmCC');
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNikAIAACMAHf9yvGMAAAAASUVORK5CYII=');
         background: rgba(0, 0, 0, 0.1); }
     @media (min-width: 50em) {
       .articles article {
@@ -644,7 +648,7 @@ footer {
     .about aside {
       height: 480px;
       height: 30rem; } }
-.about h2 span, .about h3 span, .about h4 span {
+.about h2 small, .about h3 small, .about h4 small {
   color: #999999; }
 .about h2 {
   font-weight: 300; }
@@ -688,25 +692,49 @@ footer {
   margin-top: 16px;
   margin-top: 1rem;
   clear: both; }
+  @media (min-width: 90em) {
+    .about .about-more {
+      opacity: 1;
+      height: 100%;
+      max-height: auto; } }
   .about .about-more h3 {
-    -webkit-border-top-left-radius: 3px;
-    border-top-left-radius: 3px;
-    -webkit-border-top-right-radius: 3px;
-    border-top-right-radius: 3px;
-    -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1), inset -2px 0 rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1), inset -2px 0 rgba(0, 0, 0, 0.2);
-    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1), inset -2px 0 rgba(0, 0, 0, 0.2);
     padding: 8px 0;
     padding: 0.5rem 0;
     font-weight: 400; }
   .about .about-more ul li {
     text-align: left; }
+  .about .about-more ul h4 {
+    border: 1px solid #ef5a6f;
+    border-width: 0 0 1px;
+    color: #ef5a6f;
+    padding: 0.25rem 0;
+    margin: 0.5rem 0; }
   @media (max-width: 50em) {
     .about .about-more ul {
       -webkit-column-count: 2;
       -moz-column-count: 2;
       column-count: 2; } }
-  @media (min-width: 50em) {
+  @media (min-width: 50em) and (max-width: 90em) {
+    .about .about-more {
+      max-width: 59em;
+      padding-left: 1em;
+      padding-right: 1em;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 100%;
+      padding: 0; }
+      .about .about-more:after {
+        content: "";
+        display: table;
+        clear: both; }
+      .about .about-more article {
+        width: 32.20339%;
+        float: left;
+        margin-right: 1.69492%; }
+        .about .about-more article:nth-child(3n) {
+          float: right;
+          margin-right: 0; } }
+  @media (min-width: 90em) {
     .about .about-more {
       max-width: 59em;
       padding-left: 1em;
@@ -728,7 +756,7 @@ footer {
           margin-right: 0; } }
 
 .article, .novel {
-  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAQAAAAnZu5uAAAAEklEQVR4nGP6Xw+DTAxwQJAJAHQhB4GKBdKAAAAAAElFTkSuQmCC');
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6Xw8AAoYBgRDEVrUAAAAASUVORK5CYII=');
   background: rgba(255, 255, 255, 0.5); }
   .article h1, .novel h1 {
     text-align: center; }

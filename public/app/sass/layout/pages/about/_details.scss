@@ -13,11 +13,15 @@
     @extend %reveal;
   }
 
+  @include from($wider) {
+    @include opacity(1);
+    height: 100%;
+    max-height: auto;
+  }
+
   // Titles -------------------------------------------------------- /
 
   h3 {
-    @include border-top-radius(3px);
-    @include double-shadow(2px);
     @include rem(padding, 0.5rem 0);
     @extend %font-size-normal;
     @extend %block-accent--light;
@@ -32,6 +36,15 @@
     li {
       text-align: left;
     }
+
+    h4 {
+      $color: lighten($color-accent, 10);
+      border: 1px solid $color;
+      border-width: 0 0 1px;
+      color: $color;
+      padding: 0.25rem 0;
+      margin: 0.5rem 0;
+    }
   }
 
   // Responsive ---------------------------------------------------- /
@@ -42,7 +55,14 @@
     }
   }
 
-  @include from($tablet) {
+  @include from-to($tablet, $wider) {
+    @include container-wide;
+    article {
+      @include per-row(3);
+    }
+  }
+
+  @include from($wider) {
     @include container-wide;
     article {
       @include per-row(4);

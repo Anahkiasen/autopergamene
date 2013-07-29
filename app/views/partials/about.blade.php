@@ -17,17 +17,13 @@
     {{-- Biography --}}
     <span class='block' data-show='.about-biography'>@lang('about.whois')</span>
     <section class='about-biography'>
-      <p>
-        Je travaille dans le web depuis bientôt {{ $work }} ans au <span itemprop='worksFor'>{{ HTML::linkBlank('http://www.stappler.fr/', 'Principe de Stappler') }}</span>.
-        J'y ai fait mes premières incursions avec à peine quelques connaissances personnelles, puis de projet en projet c'est devenu ma passion. J'embrasse aujourd'hui la scène du web et tout ce qu'elle a de standards et d'enjeux – qu'il s'agisse des technologies et langages front-end (<strong>HTML5</strong>, <strong>CSS</strong> ou <strong>Javascript</strong>) ou back-end (<strong>PHP</strong>, <strong>Ruby</strong> avec maîtrise de l'<strong>OOP</strong> et de divers frameworks).
-      </p>
-      <p>
-        Je suis sérieux, passionné, et au courant des derniers mouvements d'un domaine changeant au jour-le-jour. Ce, via les nombreux designers et developpeurs influents que je suis activement sur des réseaux sociaux comme {{ HTML::linkBlank('http://twitter.com/Anahkiasen', 'Twitter') }}.<br>
-        Je cherche à comprendre plutôt qu'à recopier&nbsp;; je ne cherche pas à faire simplement mon travail, je cherche à le faire <em>bien</em>.
-      </p>
-      <p>
-        Plongé jusqu'au cou dans l'univers de l'<strong>open-source</strong>, j'ai moi-même de nombreux projets et librairies disponibles sur des sites majeurs comme {{ HTML::linkBlank('http://github.com/Anahkiasen/', 'Github') }} ou {{ HTML::linkBlank('https://bitbucket.org/Anahkiasen', 'Bitbucket') }}. Cette proximité me permet de participer activement au développement des outils que j'emploie, de les améliorer, ou d'en créer de nouveaux.
-      </p>
+      {{ Lang::get('about.biography', array(
+        'work'      => $work,
+        'stappler'  => HTML::linkBlank('http://www.stappler.fr/', 'Principe de Stappler'),
+        'twitter'   => HTML::linkBlank('http://twitter.com/Anahkiasen', 'Twitter'),
+        'github'    => HTML::linkBlank('http://github.com/Anahkiasen/', 'Github'),
+        'bitbucket' => HTML::linkBlank('https://bitbucket.org/Anahkiasen', 'Bitbucket'),
+      )) }}
 
       {{-- Details and links --}}
       <span class='block' data-show='.about-more'>@lang('about.informations')</span>
@@ -49,23 +45,43 @@
           </ul>
         </article>
         <article>
-          <h3>@lang('about.languages')</h3>
+          <h3>@lang('about.knowledge')</h3>
           <ul>
-            <li>HTML5</li>
-            <li>CSS3 – LESS et SASS</li>
-            <li>Javascript – Coffeescript</li>
-            <li>PHP 5.4+, MySQL/SQLite, MongoDB</li>
-            <li>ActionScript 2</li>
+            <li>{{ implode('</li><li>', Lang::get('about.knowledge_of')) }}
           </ul>
         </article>
         <article>
-          <h3>@lang('about.softwares')</h3>
+          <h3>@lang('about.languages')</h3>
           <ul>
-            <li>Sublime Text</li>
-            <li>Suite Adobe CS6</li>
-            <li>Autodesk Maya</li>
-            <li>Google Sketchup</li>
-            <li>Sony Vegas</li>
+            <h4>Back-end</h4>
+              <li>HTML5</li>
+              <li>CSS3 – LESS/SASS</li>
+              <li>Javascript – Coffeescript</li>
+            <h4>Front-end</h4>
+              <li>PHP 5.3+</li>
+              <li>MySQL/SQLite, MongoDB (NoSQL)</li>
+              <li>Ruby (bases)</li>
+            <h4>Autre</h4>
+              <li>bash/zsh</li>
+              <li>ActionScript 2</li>
+          </ul>
+        </article>
+        <article>
+          <h3>@lang('about.with')</h3>
+          <ul>
+            <h4>@lang('about.frameworks')</h4>
+              <li>Laravel 3/4</li>
+              <li>Slim</li>
+              <li>jQuery</li>
+              <li>Backbone</li>
+              <li>Bootstrap</li>
+              <li>Wordpress</li>
+            <h4>@lang('about.softwares')</h4>
+              <li>Sublime Text 3</li>
+              <li>Suite Adobe CS6</li>
+              <li>Autodesk Maya</li>
+              <li>Google Sketchup</li>
+              <li>Sony Vegas</li>
           </ul>
         </article>
         <article>
