@@ -13,7 +13,7 @@ HTML::macro('linkBlank', function($url, $link = null, $attributes = array()) {
  * A link with the .back class
  */
 HTML::macro('backLink', function($url, $text) {
-  return HTML::link($url, $text, array('class' => 'back'));
+  return HTML::link($url, $text, ['class' => 'back']);
 });
 
 /**
@@ -29,7 +29,7 @@ HTML::macro('blockLink', function($url, $text, $attributes = array()) {
  * A link back home
  */
 HTML::macro('homeLink', function() {
-  return HTML::link('/', Lang::get('global.home'), array('class' => 'back'));
+  return HTML::link('/'.Config::get('app.locale'), Lang::get('global.home'), ['class' => 'back']);
 });
 
 /**
