@@ -69,11 +69,7 @@ class RoutesTest extends TestCase
 				$this->comment('Testing route '.$shorthand);
 				$this->call('GET', $route);
 
-				if ($route == 'http://autopergamene.dev') {
-					$this->assertResponseStatus(302);
-				} else {
-					$this->assertResponseOk();
-				}
+				$this->assertResponseOk();
 			} catch (Exception $exception) {
 				$this->failedRoute($shorthand, $exception->getMessage());
 			}

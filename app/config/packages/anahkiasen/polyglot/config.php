@@ -1,5 +1,8 @@
 <?php return array(
 
+	// The default locale if none is provided
+	'default' => 'fr',
+
 	// The available locales
 	'locales' => array('fr', 'en'),
 
