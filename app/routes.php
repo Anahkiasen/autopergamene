@@ -1,10 +1,26 @@
 <?php
 
 //////////////////////////////////////////////////////////////////////
+///////////////////////////////// LOCALE /////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+// Get locale from URL
+$locale = Request::segment(1);
+if (in_array($locale, ['fr', 'en'])) {
+	$prefix = ['prefix' => $locale];
+} else {
+	$prefix = [];
+	$locale = 'fr';
+}
+
+// Set locale
+App::setLocale($locale);
+
+//////////////////////////////////////////////////////////////////////
 /////////////////////////////// ROUTES ///////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-$routes = function () {
+Route::group($prefix, function() {
 	Route::get('/', 'CategoriesController@categories');
 
 	Route::get('category/graceful-degradation', 'RepositoriesController@repositories');
@@ -22,18 +38,4 @@ $routes = function () {
 	Route::get('category/illustration/support/{support}', 'IllustrationsController@support');
 
 	Route::get('category/{category}', 'CategoriesController@category');
-};
-
-App::setLocale(Request::segment(1) ?: 'fr');
-Route::get('/', function() {
-	return Redirect::to(Config::get('app.locale'));
 });
-
-// Languages
-if (Config::get('app.locale') == 'fr') {
-	Route::group(['prefix' => 'fr'], $routes);
-	Route::group(['prefix' => 'en'], $routes);
-} else {
-	Route::group(['prefix' => 'en'], $routes);
-	Route::group(['prefix' => 'fr'], $routes);
-}

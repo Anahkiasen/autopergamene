@@ -1,6 +1,6 @@
 <footer>
 
-  {{ HTML::link('fr', 'Français') }} - {{ HTML::link('en', 'English') }}<br>
+  {{ HTML::link('/', 'Français') }} - {{ HTML::link('en', 'English') }}<br>
   &copy; {{ date('Y') }} - autopergamene - Maxime Fabre
   <hr>
 

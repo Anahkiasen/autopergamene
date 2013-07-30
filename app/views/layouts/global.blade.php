@@ -16,7 +16,7 @@
   </head>
   <body>
 
-    <a href='{{ URL::to('/') }}'>
+    <a href='{{ URL::to(Config::get('app.locale')) }}'>
       <header>
         <h1>Autopergamene</h1>
       </header>
