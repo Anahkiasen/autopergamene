@@ -57,7 +57,7 @@
 
 		// The name of the application to deploy
 		// This will create a folder of the same name in the root directory
-		// configured above
+		// configured above, so be careful about the characters used
 		'application_name' => 'autopergamene',
 
 		// The number of releases to keep at all times
@@ -70,11 +70,27 @@
 			'app/database/production.sqlite',
 		),
 
-		// The Apache user and group
-		// This is used for setting folders as web-writable
-		'apache' => array(
-			'user'  => 'www-data',
-			'group' => 'www-data',
+		'permissions' => array(
+
+			// The permissions to CHMOD folders to
+			'permissions' => 755,
+
+			// The folders and files to set as web writable
+			// You can pass paths in brackets, so {path.public} will return
+			// the correct path to the public folder
+			'files' => array(
+				'app/database/production.sqlite',
+				'{path.storage}',
+				'{path.public}',
+			),
+
+			// The Apache user and group to CHOWN folders to
+			// Leave empty to leave the above folders untouched
+			'apache' => array(
+				'user'  => 'www-data',
+				'group' => 'www-data',
+			),
+
 		),
 	),
 
@@ -83,7 +99,7 @@
 	// Here you can define in the `before` and `after` array, Tasks to execute
 	// before or after the core Rocketeer Tasks. You can either put a simple command,
 	// a closure which receives a $task object, or the name of a class extending
-	// the Rocketeer\Tasks\Abstracts\Task class
+	// the Rocketeer\Traits\Task class
 	//
 	// In the `custom` array you can list custom Tasks classes to be added
 	// to Rocketeer. Those will then be available in Artisan
@@ -106,8 +122,8 @@
 			'cleanup' => array(),
 		),
 
-    // Custom Tasks to register with Rocketeer
-    'custom' => array(),
+		// Custom Tasks to register with Rocketeer
+		'custom' => array(),
 	),
 
 );
