@@ -117,10 +117,10 @@ return array(
 
 		'Basset\BassetServiceProvider',
 		'Illuminage\IlluminageServiceProvider',
-		'Flatten\FlattenServiceProvider',
 		'Rocketeer\RocketeerServiceProvider',
 		'Profiler\ProfilerServiceProvider',
 		'Polyglot\PolyglotServiceProvider',
+		// 'Flatten\FlattenServiceProvider',
 
 	),
 
