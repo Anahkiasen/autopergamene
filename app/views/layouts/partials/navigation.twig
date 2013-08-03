@@ -1,0 +1,8 @@
+<ul class='fixed nav'>
+	{% for link in links %}
+		<li>
+			<a href="#{{ link.id }}">{{ link.name }}</a>
+		</li>
+	{% endfor %}
+</ul>
+<hr>

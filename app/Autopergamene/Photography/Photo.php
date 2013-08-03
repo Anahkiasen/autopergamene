@@ -74,6 +74,22 @@ class Photo extends BaseModel
 		return parent::__get($method);
 	}
 
+	/**
+	 * Check if a size is set
+	 *
+	 * @param  string  $method
+	 *
+	 * @return boolean
+	 */
+	public function __isset($method)
+	{
+		if (isset(static::$sizes[$method])) {
+			return true;
+		}
+
+		return parent::__isset($method);
+	}
+
 	////////////////////////////////////////////////////////////////////
 	///////////////////////////// ATTRIBUTES ///////////////////////////
 	////////////////////////////////////////////////////////////////////

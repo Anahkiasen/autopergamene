@@ -7,7 +7,7 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-.categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .articles.hidden, .about .about-more, .image-wrap, .about aside, .articles article, .articles article blockquote, .articles article h3, .articles article datetime, .about .about-biography {
+.categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .articles.hidden, .about .about-more, .image-wrap, .about aside, .articles article, .articles article blockquote, .articles article h3, .articles article time, .about .about-biography {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -24,7 +24,7 @@ ul.fixed, footer .social, .about .about-more ul, .novel article ul {
     margin: 0;
     padding: 0; }
 
-.articles.hidden, .about .about-more, .articles article datetime.absolute, .articles article:hover datetime.relative {
+.articles.hidden, .about .about-more, .articles article time.absolute, .articles article:hover time.relative {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0; }
 
@@ -32,7 +32,7 @@ ul.fixed, footer .social, .about .about-more ul, .novel article ul {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
   opacity: 0.75; }
 
-.articles.open, .about .about-biography.open, .about .about-more.open, .portfolio .repository:hover, .articles article:hover datetime.absolute {
+.articles.open, .about .about-biography.open, .about .about-more.open, .portfolio .repository:hover, .articles article:hover time.absolute {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1; }
 
@@ -588,7 +588,7 @@ footer {
     padding: 0 0 2rem 0;
     margin: 0;
     position: relative; }
-    .articles article datetime {
+    .articles article time {
       color: #bfbfbf; }
     .articles article blockquote {
       margin: 8px 0 0;
@@ -599,7 +599,7 @@ footer {
       color: #666666; }
     .articles article:hover {
       border-left-color: #ea2c46; }
-      .articles article:hover h3, .articles article:hover datetime {
+      .articles article:hover h3, .articles article:hover time {
         color: #ea2c46; }
       .articles article:hover blockquote {
         background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNikAIAACMAHf9yvGMAAAAASUVORK5CYII=');
@@ -614,7 +614,7 @@ footer {
         .articles article blockquote {
           padding: 16px;
           padding: 1rem; }
-        .articles article datetime {
+        .articles article time {
           font-size: 24px;
           font-size: 1.5rem;
           -webkit-transform: rotate(-90deg);

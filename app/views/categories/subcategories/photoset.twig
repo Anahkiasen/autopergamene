@@ -1,0 +1,33 @@
+{% extends 'layouts.portfolio' %}
+
+{% block title %}
+	{{ photoset.name }} -
+{% endblock %}
+
+{% block navigation %}
+	{{ parent() }}
+	{{ html_backLink('category/memorabilia', 'Retour aux albums') }}
+{% endblock %}
+
+{% block content %}
+	<section class='photoset'>
+		<h1>{{ photoset.name }}</h1>
+		{% for photo in photoset.photos %}
+			<figure>
+				<figcaption>
+					{% if photo.surname %}
+						<h2>{{ photo.surname }}</h2>
+					{% endif %}
+				</figcaption>
+				<div class='image-wrap'>
+					<h3>{{ photo.index(loop.index0) }}</h3>
+					{{ html_lazyLoad(photo.medium_large, photo.name) }}
+				</div>
+			</figure>
+		{% endfor %}
+	</section>
+{% endblock %}
+
+{% block js %}
+	{{ assets('lazyload.js') }}
+{% endblock %}

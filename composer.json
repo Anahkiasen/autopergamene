@@ -20,7 +20,8 @@
     "natxet/CssMin": "dev-master",
     "anahkiasen/rocketeer": "dev-develop",
     "loic-sharma/profiler": "dev-master",
-    "anahkiasen/polyglot": "dev-master"
+    "anahkiasen/polyglot": "dev-master",
+    "rcrowe/twigbridge": "dev-master"
   },
   "require-dev": {
     "phpunit/phpunit": "dev-master"
@@ -30,7 +31,6 @@
       "Autopergamene": "app"
     },
     "classmap": [
-      "app/commands",
       "app/controllers",
       "app/database/migrations",
       "app/database/seeds",

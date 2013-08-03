@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "220ad34209191e0f6896127f394242da",
+    "hash": "7cf42d3d9101c2ff069e883b39a4ceb4",
     "packages": [
         {
             "name": "anahkiasen/flatten",
@@ -1848,6 +1848,57 @@
             "time": "2012-12-21 11:40:51"
         },
         {
+            "name": "rcrowe/twigbridge",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rcrowe/TwigBridge.git",
+                "reference": "0.5.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rcrowe/TwigBridge/zipball/0.5.0",
+                "reference": "0.5.0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "twig/twig": "1.*"
+            },
+            "require-dev": {
+                "illuminate/filesystem": "4.0.*",
+                "illuminate/foundation": "4.0.*",
+                "mockery/mockery": "0.7.2"
+            },
+            "suggest": {
+                "twig/extensions": "1.0.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "TwigBridge": "src/",
+                    "TwigBridgeTests": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rob Crowe",
+                    "email": "hello@vivalacrowe.com",
+                    "homepage": "http://vivalacrowe.com"
+                }
+            ],
+            "description": "Adds the power of Twig to Illuminate / Laravel 4",
+            "keywords": [
+                "laravel",
+                "twig"
+            ],
+            "time": "2013-08-01 15:50:08"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "v5.0.1",
             "source": {
@@ -2634,6 +2685,55 @@
                 "twitter"
             ],
             "time": "2013-06-15 18:00:16"
+        },
+        {
+            "name": "twig/twig",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fabpot/Twig.git",
+                "reference": "aae4c29a01e353bb145989ce6a794ecb1872b5dd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/aae4c29a01e353bb145989ce6a794ecb1872b5dd",
+                "reference": "aae4c29a01e353bb145989ce6a794ecb1872b5dd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.13-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Twig_": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Armin Ronacher",
+                    "email": "armin.ronacher@active-4.com"
+                }
+            ],
+            "description": "Twig, the flexible, fast, and secure template language for PHP",
+            "homepage": "http://twig.sensiolabs.org",
+            "keywords": [
+                "templating"
+            ],
+            "time": "2013-08-03 15:19:26"
         }
     ],
     "packages-dev": [
@@ -3223,6 +3323,7 @@
         "anahkiasen/rocketeer": 20,
         "loic-sharma/profiler": 20,
         "anahkiasen/polyglot": 20,
+        "rcrowe/twigbridge": 20,
         "phpunit/phpunit": 20
     },
     "platform": [

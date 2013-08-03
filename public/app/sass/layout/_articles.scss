@@ -7,6 +7,7 @@
   @include rem(margin-top, 1rem);
   @include rem(padding-bottom, 1rem);
   @extend %lips--accent;
+  $border-color: grey(75);
 
   &.hidden {
     @extend %hidden;
@@ -14,7 +15,6 @@
   &.open {
     @extend %reveal;
   }
-  $border-color: grey(75);
 
   // Articles ------------------------------------------------------ /
 
@@ -23,34 +23,40 @@
     @extend %transition;
     margin: 0;
     position: relative;
+
     blockquote, h3 {
       @extend %transition;
     }
-    datetime {
+
+    time {
       @extend %transition;
       color: $border-color;
       &.absolute {
         @extend %opacity0;
       }
     }
+
     blockquote {
       @include rem(margin, 0.5rem 0 0);
     }
+
     h3 {
       @include font-size(1.25rem);
       @extend %title-strict;
       color: grey(40);
     }
+
     &:hover {
       border-left-color: $color-accent;
+
       // Switch date format
-      h3, datetime {
+      h3, time {
         color: $color-accent;
       }
-      datetime.relative {
+      time.relative {
         @extend %opacity0;
       }
-      datetime.absolute {
+      time.absolute {
         @extend %opacity100;
       }
       blockquote {
@@ -64,10 +70,12 @@
       @include rem(margin-left, 2rem);
       @include rem(padding-left, 1rem);
       border-left: 3px solid $border-color;
+
       blockquote {
         @include rem(padding, 1rem);
       }
-      datetime {
+
+      time {
         @include rem(font-size, 1.5rem);
         @include rotate(-90deg);
         left: -4rem;

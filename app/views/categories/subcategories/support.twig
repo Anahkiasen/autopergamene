@@ -1,0 +1,28 @@
+{% extends 'layouts.portfolio' %}
+
+{% block title %}
+	{{ support.name }} -
+{% endblock %}
+
+{% block navigation %}
+	{{ parent() }}
+	{{ html_backLink('category/illustration', 'Retour aux supports') }}
+{% endblock %}
+
+{% block content %}
+	{% for illustration in support.illustrations %}
+		<figure class='illustration'>
+			<h2>{{ illustration.name }}</h2>
+			<div class='image-wrap'>
+				{{ illustration.image(support.folder) }}
+			</div>
+			{% if illustration.media %}
+				<figcaption>{{ illustration.media }}</figcaption>
+			{% endif %}
+		</figure>
+	{% endfor %}
+{% endblock %}
+
+{% block js %}
+	{{ assets('lazyload.js') }}
+{% endblock %}

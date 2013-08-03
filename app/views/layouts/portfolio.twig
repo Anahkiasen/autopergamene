@@ -1,0 +1,17 @@
+{% extends 'layouts.global' %}
+
+{% block title %}
+	{{ category.name }} -
+{% endblock %}
+
+{% block navigation %}
+	{{ html_homeLink() }}
+{% endblock %}
+
+{% block layout %}
+	<section class='portfolio'>
+		<h1>{{ category.name }}</h1>
+		{% block content %}
+		{% endblock %}
+	</section>
+{% endblock %}

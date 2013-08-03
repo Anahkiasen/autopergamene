@@ -121,6 +121,7 @@ return array(
 		'Profiler\ProfilerServiceProvider',
 		'Polyglot\PolyglotServiceProvider',
 		// 'Flatten\FlattenServiceProvider',
+		'TwigBridge\TwigServiceProvider',
 
 	),
 

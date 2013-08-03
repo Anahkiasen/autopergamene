@@ -1,0 +1,30 @@
+{% extends 'layouts.layout' %}
+
+{% block title %}
+	{{ lang('global.titles.home') }} -
+{% endblock %}
+
+{% block content %}
+	{% include 'partials.about' %}
+	<hr>
+	<nav class='categories'>
+	<h2>Portfolio</h2>
+
+	{% for category in categories %}
+		<figure>
+			{% if category.isExternal() %}
+				<a href='{{ category.link }}' target='_blank'>
+			{% else %}
+				<a href='{{ category.link }}'>
+			{% endif %}
+				{{ category.thumb }}
+				<figcaption>
+					<h3>{{ category.name }}</h3>
+					<h4>{{ category.description }}</h4>
+				</figcaption>
+			</a>
+		</figure>
+	{% endfor %}
+</nav>
+
+{% endblock %}

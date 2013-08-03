@@ -1,0 +1,31 @@
+{% extends 'layouts.global' %}
+
+{% block title %}
+	{{ story.name }} -
+{% endblock %}
+
+{% block css %}
+	{{ assets('article.css') }}
+{% endblock %}
+
+{% block navigation %}
+	{{ html_homeLink() }}
+	{{ html_backLink(url_action('CategoriesController@category', category.id), "Retour à #{category.name}") }}
+{% endblock %}
+
+{% block layout %}
+	<section class='novel'>
+		<h1>{{ story.name }}</h1>
+		<figure class='cover' style='background-image: url({{ story.image }})'></figure>
+		{% if story.content %}
+			<article>
+				{{ story.content }}
+				<blockquote>
+					<strong>Publié le : {{ story.created_at }}</strong>
+				</blockquote>
+			</article>
+		{% else %}
+			<div class='alert'>Cette nouvelle n'est pas encore lisible ici.</div>
+		{% endif %}
+	</section>
+{% endblock %}

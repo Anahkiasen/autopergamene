@@ -1,0 +1,35 @@
+<footer>
+
+	{{ html_link('/', 'Français') }} - {{ html_link('en', 'English') }}<br>
+	&copy; {{ "now"|date('Y') }} - autopergamene - Maxime Fabre
+	<hr>
+
+	<div class='footer-container'>
+		<ul class='social'>
+			{% for service in services %}
+				<li>
+					<a target='_blank' href='{{ service.link }}'>
+						{{ service.linkName }}/<span class='name'>anahkiasen</span>
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+
+		<section class="colophon last">
+			<p>
+				{{ lang('footer.built', {
+					'laravel':  html_linkBlank('http://laravel.com/', 'Laravel'),
+					'sass':     html_linkBlank('http://sass-lang.com', 'Sass'),
+					'compass':  html_linkBlank('http://compass-style.org/', 'Compass'),
+					'susy':     html_linkBlank('http://susy.oddbird.net/', 'Susy'),
+					'typekit':  html_linkBlank('https://typekit.com/colophons/enr5hww', 'Typekit'),
+				}) }}
+			</p>
+
+			<p>
+				<a target="_blank" href="https://github.com/Anahkiasen/autopergamene">{{ lang('footer.open_source') }}</a>
+			</p>
+		</section>
+	</div>
+
+</footer>
