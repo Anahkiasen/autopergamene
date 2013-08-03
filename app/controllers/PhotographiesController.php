@@ -50,11 +50,11 @@ class PhotographiesController extends BaseController
 	 */
 	public function collections()
 	{
-  	return View::make('categories.collections', array(
+		return View::make('categories.collections', array(
 			'collections' => $this->collections->with('photosets.thumbnail')->latest()->get(),
 			'articles'    => $this->category->articles,
 			'category'    => $this->category,
-  	));
+		));
 	}
 
 	/**
@@ -69,6 +69,6 @@ class PhotographiesController extends BaseController
 		return View::make('categories.subcategories.photoset', array(
 			'photoset' => $this->photosets->whereSlug($slug)->firstOrFail(),
 			'category' => $this->category,
-  	));
+		));
 	}
 }

@@ -9,93 +9,93 @@ use HTML;
  */
 class Photo extends BaseModel
 {
-  /**
-   * The table associated with the model.
-   *
-   * @var string
-   */
-  protected $table = 'photos';
+	/**
+	 * The table associated with the model.
+	 *
+	 * @var string
+	 */
+	protected $table = 'photos';
 
-  /**
-   * Aliases for sizes
-   *
-   * @var array
-   */
-  private static $sizes = array(
-    'square'       => 's',
-    'large_square' => 'q',
-    'thumbnail'    => 't',
-    'small'        => 'n',
-    'medium'       => '',
-    'medium_large' => 'z',
-    'large'        => 'b',
-    'original'     => 'o',
-  );
+	/**
+	 * Aliases for sizes
+	 *
+	 * @var array
+	 */
+	private static $sizes = array(
+		'square'       => 's',
+		'large_square' => 'q',
+		'thumbnail'    => 't',
+		'small'        => 'n',
+		'medium'       => '',
+		'medium_large' => 'z',
+		'large'        => 'b',
+		'original'     => 'o',
+	);
 
-  ////////////////////////////////////////////////////////////////////
-  /////////////////////////// RELATIONSHIPS //////////////////////////
-  ////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////
+	/////////////////////////// RELATIONSHIPS //////////////////////////
+	////////////////////////////////////////////////////////////////////
 
-  /**
-   * The Photoset the Photo's in
-   *
-   * @return Photoset
-   */
-  public function photoset()
-  {
-    return $this->belongsTo('Autopergamene\Photography\Photoset');
-  }
+	/**
+	 * The Photoset the Photo's in
+	 *
+	 * @return Photoset
+	 */
+	public function photoset()
+	{
+		return $this->belongsTo('Autopergamene\Photography\Photoset');
+	}
 
-  // Sizes --------------------------------------------------------- /
+	// Sizes --------------------------------------------------------- /
 
-  /**
-   * Get the URL to a photo
-   */
-  public function size($size)
-  {
-    $size = static::$sizes[$size];
-    $image = $size
-      ? $this->farm.'_'.$size
-      : $this->farm;
+	/**
+	 * Get the URL to a photo
+	 */
+	public function size($size)
+	{
+		$size = static::$sizes[$size];
+		$image = $size
+			? $this->farm.'_'.$size
+			: $this->farm;
 
-    return $image.'.jpg';
-  }
+		return $image.'.jpg';
+	}
 
-  /**
-   * Dynamic size getting
-   */
-  public function __get($method)
-  {
-    // Get a size
-    if (isset(static::$sizes[$method])) {
-      return $this->size($method);
-    }
+	/**
+	 * Dynamic size getting
+	 */
+	public function __get($method)
+	{
+		// Get a size
+		if (isset(static::$sizes[$method])) {
+			return $this->size($method);
+		}
 
-    return parent::__get($method);
-  }
+		return parent::__get($method);
+	}
 
-  ////////////////////////////////////////////////////////////////////
-  ///////////////////////////// ATTRIBUTES ///////////////////////////
-  ////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////
+	///////////////////////////// ATTRIBUTES ///////////////////////////
+	////////////////////////////////////////////////////////////////////
 
-  /**
-   * Format a photo's index
-   */
-  public function index($key)
-  {
-    $padding = 2 - strlen($key);
-    $padding = ($padding > 0) ? str_repeat('0', $padding) : '';
+	/**
+	 * Format a photo's index
+	 */
+	public function index($key)
+	{
+		$padding = 2 - strlen($key);
+		$padding = ($padding > 0) ? str_repeat('0', $padding) : '';
 
-    return $padding.$key;
-  }
+		return $padding.$key;
+	}
 
-  /**
-   * Render the photo
-   *
-   * @return string
-   */
-  public function __toString()
-  {
-    return HTML::image($this->large_square, $this->surname);
-  }
+	/**
+	 * Render the photo
+	 *
+	 * @return string
+	 */
+	public function __toString()
+	{
+		return HTML::image($this->large_square, $this->surname);
+	}
 }

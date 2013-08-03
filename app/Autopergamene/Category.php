@@ -9,67 +9,67 @@ use URL;
  */
 class Category extends BaseModel
 {
-  use Traits\HasSlugId;
+	use Traits\HasSlugId;
 
-  /**
-   * The table associated with the model.
-   *
-   * @var string
-   */
-  protected $table = 'categories';
+	/**
+	 * The table associated with the model.
+	 *
+	 * @var string
+	 */
+	protected $table = 'categories';
 
-  /**
-   * The localized fields
-   *
-   * @var array
-   */
-  protected $polyglot = ['description'];
+	/**
+	 * The localized fields
+	 *
+	 * @var array
+	 */
+	protected $polyglot = ['description'];
 
-  ////////////////////////////////////////////////////////////////////
-  /////////////////////////// RELATIONSHIPS //////////////////////////
-  ////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////
+	/////////////////////////// RELATIONSHIPS //////////////////////////
+	////////////////////////////////////////////////////////////////////
 
-  /**
-   * Get all articles in a Category
-   *
-   * @return Collection
-   */
-  public function articles()
-  {
-    return $this->hasMany('Autopergamene\Article')->orderBy('created_at', 'desc');
-  }
+	/**
+	 * Get all articles in a Category
+	 *
+	 * @return Collection
+	 */
+	public function articles()
+	{
+		return $this->hasMany('Autopergamene\Article')->orderBy('created_at', 'desc');
+	}
 
-  ////////////////////////////////////////////////////////////////////
-  ///////////////////////////// ATTRIBUTES ///////////////////////////
-  ////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////
+	///////////////////////////// ATTRIBUTES ///////////////////////////
+	////////////////////////////////////////////////////////////////////
 
-  /**
-   * Whether the category points to an external link or not
-   */
-  public function isExternal()
-  {
-    return (bool) $this->getOriginal('link');
-  }
+	/**
+	 * Whether the category points to an external link or not
+	 */
+	public function isExternal()
+	{
+		return (bool) $this->getOriginal('link');
+	}
 
-  /**
-   * Get a link to the category's content
-   */
-  public function getLinkAttribute()
-  {
-    // External link
-    $link = $this->getOriginal('link');
-    if ($link) {
-      return $link;
-    }
+	/**
+	 * Get a link to the category's content
+	 */
+	public function getLinkAttribute()
+	{
+		// External link
+		$link = $this->getOriginal('link');
+		if ($link) {
+			return $link;
+		}
 
-    return URL::action('CategoriesController@category', $this->id);
-  }
+		return URL::action('CategoriesController@category', $this->id);
+	}
 
-  /**
-   * Get the category's thumb
-   */
-  public function getThumbAttribute()
-  {
-    return HTML::image('app/img/categories/'.$this->id.'.jpg', $this->name);
-  }
+	/**
+	 * Get the category's thumb
+	 */
+	public function getThumbAttribute()
+	{
+		return HTML::image('app/img/categories/'.$this->id.'.jpg', $this->name);
+	}
 }

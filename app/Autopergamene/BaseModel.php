@@ -8,31 +8,31 @@ use Polyglot\Polyglot;
  */
 abstract class BaseModel extends Polyglot
 {
-  ////////////////////////////////////////////////////////////////////
-  /////////////////////////////// FETCHERS ///////////////////////////
-  ////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////
+	/////////////////////////////// FETCHERS ///////////////////////////
+	////////////////////////////////////////////////////////////////////
 
-  /**
-   * Get by latest first
-   *
-   * @param Query $query
-   *
-   * @return  Query
-   */
-  public static function scopeLatest($query)
-  {
-    return $query->orderBy('created_at', 'desc');
-  }
+	/**
+	 * Get by latest first
+	 *
+	 * @param Query $query
+	 *
+	 * @return  Query
+	 */
+	public static function scopeLatest($query)
+	{
+		return $query->orderBy('created_at', 'desc');
+	}
 
-  /**
-   * Get where thumbnails only
-   *
-   * @param Query $query
-   *
-   * @return  Query
-   */
-  public static function scopeThumbnails($query)
-  {
-    return $query->where('thumbnail', 1);
-  }
+	/**
+	 * Get where thumbnails only
+	 *
+	 * @param Query $query
+	 *
+	 * @return  Query
+	 */
+	public static function scopeThumbnails($query)
+	{
+		return $query->where('thumbnail', 1);
+	}
 }

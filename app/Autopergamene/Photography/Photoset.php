@@ -8,34 +8,34 @@ use Autopergamene\BaseModel;
  */
 class Photoset extends BaseModel
 {
-  /**
-   * The table associated with the model.
-   *
-   * @var string
-   */
-  protected $table = 'photosets';
+	/**
+	 * The table associated with the model.
+	 *
+	 * @var string
+	 */
+	protected $table = 'photosets';
 
-  ////////////////////////////////////////////////////////////////////
-  /////////////////////////// RELATIONSHIPS //////////////////////////
-  ////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////
+	/////////////////////////// RELATIONSHIPS //////////////////////////
+	////////////////////////////////////////////////////////////////////
 
-  /**
-   * Get the Photoset's Photos
-   *
-   * @return Illuminate\Support\Collection
-   */
-  public function photos()
-  {
-    return $this->hasMany('Autopergamene\Photography\Photo')->orderBy('name', 'asc');
-  }
+	/**
+	 * Get the Photoset's Photos
+	 *
+	 * @return Illuminate\Support\Collection
+	 */
+	public function photos()
+	{
+		return $this->hasMany('Autopergamene\Photography\Photo')->orderBy('name', 'asc');
+	}
 
-  /**
-   * Get the thumbnail for the Photoset
-   *
-   * @return Photo
-   */
-  public function thumbnail()
-  {
-    return $this->hasOne('Autopergamene\Photography\Photo')->thumbnails();
-  }
+	/**
+	 * Get the thumbnail for the Photoset
+	 *
+	 * @return Photo
+	 */
+	public function thumbnail()
+	{
+		return $this->hasOne('Autopergamene\Photography\Photo')->thumbnails();
+	}
 }

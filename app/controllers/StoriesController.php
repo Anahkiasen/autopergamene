@@ -46,18 +46,18 @@ class StoriesController extends BaseController
 		));
 	}
 
-  /**
-   * Display a Story
-   *
-   * @param string $slug The Story slug
-   *
-   * @return View story
-   */
-  public function story($slug)
-  {
-    return View::make('categories.subcategories.story', array(
-    	'category' => $this->category,
-    	'story'    => $this->stories->findOrFail($slug),
-    ));
-  }
+	/**
+	 * Display a Story
+	 *
+	 * @param string $slug The Story slug
+	 *
+	 * @return View story
+	 */
+	public function story($slug)
+	{
+		return View::make('categories.subcategories.story', array(
+			'category' => $this->category,
+			'story'    => $this->stories->findOrFail($slug),
+		));
+	}
 }

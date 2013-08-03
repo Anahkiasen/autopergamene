@@ -8,25 +8,25 @@ use Autopergamene\Category;
  */
 class CategoriesRepository
 {
-  /**
-   * Get all categories in a predefined order
-   *
-   * @return Collection
-   */
-  public function getOrdered()
-  {
-    return Category::withLang()->orderBy('order', 'asc')->get();
-  }
+	/**
+	 * Get all categories in a predefined order
+	 *
+	 * @return Collection
+	 */
+	public function getOrdered()
+	{
+		return Category::withLang()->orderBy('order', 'asc')->get();
+	}
 
-  /**
-   * Get a Category by its slug
-   *
-   * @param string $slug The slug
-   *
-   * @return Category
-   */
-  public function getBySlug($slug)
-  {
-    return Category::findOrFail($slug);
-  }
+	/**
+	 * Get a Category by its slug
+	 *
+	 * @param string $slug The slug
+	 *
+	 * @return Category
+	 */
+	public function getBySlug($slug)
+	{
+		return Category::findOrFail($slug);
+	}
 }

@@ -197,7 +197,6 @@ return array(
 		'Basset'     => 'Basset\Facade',
 		'Carbon'     => 'Carbon\Carbon',
 		'Flickering' => 'Flickering\Facades\Flickering',
-		'Illuminage' => 'Illuminage\Facades\Illuminage',
 		'Rocketeer'  => 'Rocketeer\Facades\Rocketeer',
 		'Language'   => 'Polyglot\Facades\Language',
 
