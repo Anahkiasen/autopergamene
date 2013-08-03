@@ -10,4 +10,6 @@ Rocketeer::after('deploy', function($task) {
 
 	$task->command->comment('Building Basset containers');
 	$task->runForCurrentRelease('php artisan basset:build -f -p');
+
+	$task->runForCurrentRelease('chown www-data app/storage/meta/collections.json');
 });
