@@ -5,7 +5,7 @@
 //////////////////////////////////////////////////////////////////////
 
 Route::group(Language::getRoutesPrefix(), function() {
-	Route::get('/', 'CategoriesController@categories');
+	Route::get('/', ['as' => 'home', 'uses' => 'CategoriesController@categories']);
 
 	Route::get('category/graceful-degradation', 'RepositoriesController@repositories');
 
