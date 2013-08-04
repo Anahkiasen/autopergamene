@@ -1,11 +1,11 @@
 <?php
 use Autopergamene\Category;
 
-class CategoriesSeeder extends BaseSeed
+class CategoriesSeeder extends Seeder
 {
 	public function run()
 	{
-		$categoriesNames = ['Memorabilia', 'Graceful Degradation', 'The Winter Throat', 'Les Fleurs d\'Avril', 'Le Soulèvement', 'Today is Sunday', 'Illustration', 'En averse d\'encre'];
+		$categoriesNames = $this->getCategories();
 		foreach ($categoriesNames as $key => $name) {
 			$link = ($name == 'Le Soulèvement')
 				? 'http://the8day.info/OVAP'
@@ -21,10 +21,11 @@ class CategoriesSeeder extends BaseSeed
 
 		foreach ($this->getTranslations() as $lang => $categories) {
 			foreach ($categories as $key => $description) {
-				Category::whereId(Str::slug($categoriesNames[$key]))->first()->fill([
+				$key = Str::slug($categoriesNames[$key]);
+				Category::find($key)->update([
 					'description' => $description,
 					'lang'        => $lang,
-				])->save();
+				]);
 			}
 		}
 	}
@@ -34,11 +35,30 @@ class CategoriesSeeder extends BaseSeed
 	////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Get the categories to seed
+	 *
+	 * @return array
+	 */
+	protected function getCategories()
+	{
+		return [
+			'Memorabilia',
+			'Graceful Degradation',
+			'The Winter Throat',
+			'Les Fleurs d\'Avril',
+			'Le Soulèvement',
+			'Today is Sunday',
+			'Illustration',
+			'En averse d\'encre'
+		];
+	}
+
+	/**
 	 * Raw categories
 	 *
 	 * @return array
 	 */
-	public function getTranslations()
+	protected function getTranslations()
 	{
 		return [
 			'fr' => [

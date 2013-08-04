@@ -1,26 +1,33 @@
 <?php
+use Autopergamene\Service;
 
-class ServicesSeeder extends BaseSeed
+/**
+ * Set the social networks
+ */
+class ServicesSeeder extends Seeder
 {
-	public function getSeeds()
+	public function run()
 	{
-		return Arrays::each($this->getSocial(), function($social) {
+		foreach ($this->getSocial() as $social) {
 			list($name, $link) = $social;
 
-			return [
-				'name'       => $name,
-				'icon'       => Str::slug($name).'.svg',
-				'link'       => $link,
-				'created_at' => new DateTime,
-				'updated_at' => new DateTime,
-			];
-		});
+			Service::create(array(
+				'name' => $name,
+				'icon' => Str::slug($name).'.svg',
+				'link' => $link,
+			));
+		}
 	}
 
 	////////////////////////////////////////////////////////////////////
 	/////////////////////////// CORE METHODS ///////////////////////////
 	////////////////////////////////////////////////////////////////////
 
+	/**
+	 * Get the social networks's URLs
+	 *
+	 * @return array
+	 */
 	protected function getSocial()
 	{
 		return [

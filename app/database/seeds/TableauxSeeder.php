@@ -1,18 +1,19 @@
 <?php
+use Autopergamene\Tableau;
 
-class TableauxSeeder extends BaseSeed
+class TableauxSeeder extends Seeder
 {
-	public function getSeeds()
+	public function run()
 	{
-		return Arrays::each($this->getTableaux(), function($tableau) {
+		foreach ($this->getTableaux() as $tableau) {
 			list($name, $date) = $tableau;
 
-			return [
+			Tableau::create(array(
 				'name'       => $name,
 				'created_at' => DateTime::createFromFormat('Y-m-d', $date),
 				'updated_at' => DateTime::createFromFormat('Y-m-d', $date),
-			];
-		});
+			));
+		}
 	}
 
 	////////////////////////////////////////////////////////////////////

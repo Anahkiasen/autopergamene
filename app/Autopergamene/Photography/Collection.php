@@ -8,13 +8,6 @@ use Autopergamene\BaseModel;
  */
 class Collection extends BaseModel
 {
-	/**
-	 * The table associated with the model.
-	 *
-	 * @var string
-	 */
-	protected $table = 'collections';
-
 	////////////////////////////////////////////////////////////////////
 	/////////////////////////// RELATIONSHIPS //////////////////////////
 	////////////////////////////////////////////////////////////////////
@@ -26,6 +19,6 @@ class Collection extends BaseModel
 	 */
 	public function photosets()
 	{
-		return $this->belongsToMany('Autopergamene\Photography\Photoset')->orderBy('created_at', 'desc');
+		return $this->belongsToMany('Autopergamene\Photography\Photoset')->latest();
 	}
 }

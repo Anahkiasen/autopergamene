@@ -1,30 +1,24 @@
 <?php
+use Autopergamene\Photography\Collection;
 
-class CollectionsSeeder extends BaseSeed
+class CollectionsSeeder extends Seeder
 {
-	public function getSeeds()
+	public function run()
 	{
 		$collections = Flickering::collectionsGetTree(0, '31667913@N06')->getResults('collection');
+		foreach ($collections as $collection) {
+			$sets = array_pluck($collection['set'], 'id');
+			$id   = $collection['id'];
 
-		return Arrays::each($collections, function($collection) {
-
-			// Bind collections
-			foreach ($collection['set'] as $photoset) {
-				DB::table('collection_photoset')->insert(array(
-					'collection_id' => $collection['id'],
-					'photoset_id'   => $photoset['id'],
-					'created_at'    => new DateTime,
-					'updated_at'    => new DateTime,
-				));
-			}
-
-			return [
-				'id'          => $collection['id'],
+			$collection = Collection::create(array(
+				'id'          => $id,
 				'name'        => $collection['title'],
 				'description' => $collection['description'],
-				'created_at'  => new DateTime,
-				'updated_at'  => new DateTime,
-			];
-		});
+			));
+
+			foreach ($sets as $set) {
+				$collection->photosets()->attach($set, ['collection_id' => $id]);
+			}
+		}
 	}
 }

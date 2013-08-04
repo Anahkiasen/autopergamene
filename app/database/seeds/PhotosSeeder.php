@@ -1,29 +1,29 @@
 <?php
+use Autopergamene\Photography\Photo;
 use Autopergamene\Photography\Photoset;
 
-class PhotosSeeder extends BaseSeed
+/**
+ * Seed the photos
+ */
+class PhotosSeeder extends Seeder
 {
-	public function getSeeds()
+	public function run()
 	{
 		foreach ($this->getPhotosFromPhotosets() as $photosetId => $photoset) {
 			foreach ($photoset as $photo) {
 				$name    = $photo['title'];
 				$surname = $this->getSurnameFromTitle($name);
 
-				$photos[$photo['id']] = array(
+				Photo::create(array(
 					'id'          => $photo['id'],
 					'name'        => $name,
 					'surname'     => $surname,
 					'farm'        => 'http://farm' .$photo['farm']. '.staticflickr.com/' .$photo['server']. '/' .$photo['id']. '_'.$photo['secret'],
 					'thumbnail'   => $photo['isprimary'],
 					'photoset_id' => $photosetId,
-					'created_at'  => new DateTime,
-					'updated_at'  => new DateTime,
-				);
+				));
 			}
 		}
-
-		return $photos;
 	}
 
 	////////////////////////////////////////////////////////////////////
@@ -35,12 +35,14 @@ class PhotosSeeder extends BaseSeed
 	 *
 	 * @param string $title The photo title
 	 *
-	 * @return string Its (facultative) surname
+	 * @return string Its facultative surname
 	 */
 	protected function getSurnameFromTitle($title)
 	{
 		$surname = preg_replace('/[0-9a-z]+ (- )?\(?([a-zA-Zàèé\' ]+)\)?/', '$2', $title);
-		if (preg_match('/[0-9]{1,2}[a-z]{0,2}/', $surname)) $surname = '';
+		if (preg_match('/[0-9]{1,2}[a-z]{0,2}/', $surname)) {
+			$surname = '';
+		}
 
 		return $surname;
 	}

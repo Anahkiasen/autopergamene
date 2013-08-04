@@ -1,7 +1,10 @@
 <?php
 use Autopergamene\Photography\Photoset;
 
-class PhotosetsSeeder extends BaseSeed
+/**
+ * Seed the Photos from Flickr
+ */
+class PhotosetsSeeder extends Seeder
 {
 	public function run()
 	{
@@ -12,8 +15,8 @@ class PhotosetsSeeder extends BaseSeed
 				'id'         => $photoset['id'],
 				'name'       => $photoset['title']['_content'],
 				'slug'       => Str::slug($photoset['title']['_content']),
-				'created_at' => $photoset['date_create'],
-				'updated_at' => $photoset['date_update'],
+				'created_at' => Carbon::createFromTimestamp($photoset['date_create']),
+				'updated_at' => Carbon::createFromTimestamp($photoset['date_update']),
 			]);
 		}
 	}

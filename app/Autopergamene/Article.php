@@ -9,13 +9,6 @@ use Underscore\Parse;
 class Article extends BaseModel
 {
 	/**
-	 * The table associated with the model.
-	 *
-	 * @var string
-	 */
-	protected $table = 'articles';
-
-	/**
 	 * The relations to eager load on every query.
 	 *
 	 * @var array
@@ -41,16 +34,23 @@ class Article extends BaseModel
 	////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Encode array of tags as JSON
+	 *
+	 * @param array $tags
+	 */
+	public function setTagsAttribute($tags)
+	{
+		$this->attributes['tags'] = json_encode($tags);
+	}
+
+	/**
 	 * Get the imploded tags of the article
 	 *
 	 * @return string
 	 */
 	public function getTagsAttribute()
 	{
-		$tags = $this->getOriginal('tags');
-		$tags = Parse::fromJSON($tags);
-
-		return implode(', ', $tags);
+		return json_decode($this->getOriginal('tags'), true);
 	}
 
 	public function getRelativeDateAttribute()

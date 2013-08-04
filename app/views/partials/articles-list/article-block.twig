@@ -6,7 +6,7 @@
 		<blockquote>{{ article.summary }}</blockquote>
 		{% if article.tags %}
 			<p class='block-light'>
-				<strong>tags :</strong> {{ article.tags }}
+				<strong>tags :</strong> {{ article.tags|join(', ') }}
 			</p>
 		{% endif %}
 	</a>

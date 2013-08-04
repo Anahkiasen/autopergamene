@@ -40,7 +40,7 @@ class RepositoriesController extends BaseController
 		return View::make('categories.repositories', array(
 			'category'     => $this->category,
 			'articles'     => $this->category->articles,
-			'repositories' => $this->repositories->orderBy('order', 'ASC')->get(),
+			'repositories' => $this->repositories->orderBy('order')->get(),
 		));
 	}
 }

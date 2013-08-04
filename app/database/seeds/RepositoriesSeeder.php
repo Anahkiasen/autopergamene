@@ -1,30 +1,37 @@
 <?php
+use Autopergamene\Repository;
 
-class RepositoriesSeeder extends BaseSeed
+/**
+ * Seed the Github repositories
+ */
+class RepositoriesSeeder extends Seeder
 {
-	public function getSeeds()
+	public function run()
 	{
-		return Arrays::each($this->getRepositories(), function($repository, $order) {
+		foreach ($this->getRepositories() as $order => $repository) {
 			list($name, $content, $tags, $vendor, $package, $master) = $repository;
 
-			return [
-				'name'       => $name,
-				'content'    => $content,
-				'tags'       => $tags,
-				'vendor'     => $vendor,
-				'package'    => $package,
-				'order'      => $order,
-				'master'     => $master,
-				'created_at' => new DateTime,
-				'updated_at' => new DateTime,
-			];
-		});
+			Repository::create(array(
+				'name'    => $name,
+				'content' => $content,
+				'tags'    => $tags,
+				'vendor'  => $vendor,
+				'package' => $package,
+				'order'   => $order,
+				'master'  => $master,
+			));
+		}
 	}
 
 	////////////////////////////////////////////////////////////////////
 	/////////////////////////// CORE METHODS ///////////////////////////
 	////////////////////////////////////////////////////////////////////
 
+	/**
+	 * Get the repositories' meta data
+	 *
+	 * @return array
+	 */
 	protected function getRepositories()
 	{
 		return [

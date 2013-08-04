@@ -116,12 +116,13 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
 		'Basset\BassetServiceProvider',
+		'Flickering\FlickeringServiceProvider',
 		'Illuminage\IlluminageServiceProvider',
-		'Rocketeer\RocketeerServiceProvider',
-		'Profiler\ProfilerServiceProvider',
 		'Polyglot\PolyglotServiceProvider',
-		// 'Flatten\FlattenServiceProvider',
+		'Profiler\ProfilerServiceProvider',
+		'Rocketeer\RocketeerServiceProvider',
 		'TwigBridge\TwigServiceProvider',
+		// 'Flatten\FlattenServiceProvider',
 
 	),
 

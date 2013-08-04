@@ -1,12 +1,12 @@
 <?php
-use Underscore\Parse;
+use Autopergamene\Article;
 
-class ArticlesSeeder extends BaseSeed
+class ArticlesSeeder extends Seeder
 {
 	/**
 	 * Seed articles
 	 */
-	public function getSeeds()
+	public function run()
 	{
 		foreach ($this->getArticlesFeed() as $article) {
 
@@ -16,11 +16,11 @@ class ArticlesSeeder extends BaseSeed
 			if (!$category_id) continue;
 
 			// Tags
-			$tags = Arrays::removeFirst($categories);
-			$tags = Arrays::each($tags, function($tag) {
-				return (string) $tag;
-			});
-			$tags = Parse::toJSON($tags);
+			$tags = array();
+			array_shift($categories);
+			foreach ($categories as $tag) {
+				$tags[] = (string) $tag;
+			}
 
 			// Strip some stuff in the titles
 			$title = $article->title->__toString();
@@ -31,7 +31,7 @@ class ArticlesSeeder extends BaseSeed
 			$date = new DateTime($date);
 
 			// Article
-			$articles[] = array(
+			Article::create([
 				'category_id' => $category_id,
 				'slug'        => Str::slug($title),
 				'content'     => trim($article->content->__toString()),
@@ -40,10 +40,8 @@ class ArticlesSeeder extends BaseSeed
 				'name'        => $title,
 				'created_at'  => $date,
 				'updated_at'  => $date,
-			);
+			]);
 		}
-
-		return $articles;
 	}
 
 	////////////////////////////////////////////////////////////////////
@@ -73,7 +71,9 @@ class ArticlesSeeder extends BaseSeed
 	 */
 	protected function getCategoryOf($category)
 	{
-		if (!$category) return false;
+		if (!$category) {
+			return false;
+		}
 
 		$category = $category[0]->__toString();
 		$categories = array(
@@ -82,7 +82,7 @@ class ArticlesSeeder extends BaseSeed
 			'Musique'       => 'the-winter-throat',
 		);
 
-		return Arrays::get($categories, $category);
+		return array_get($categories, $category);
 	}
 
 	/**
@@ -96,7 +96,7 @@ class ArticlesSeeder extends BaseSeed
 	{
 		$hashtags = array('Musique', 'Photos', 'Compo');
 		foreach ($hashtags as $hashtag) {
-			$title = String::remove($title, "[$hashtag]");
+			$title = str_replace("[$hashtag]", null, $title);
 		}
 
 		return $title;

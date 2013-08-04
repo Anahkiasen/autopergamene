@@ -4,13 +4,6 @@ namespace Autopergamene;
 class Track extends BaseModel
 {
 	/**
-	 * The table associated with the model.
-	 *
-	 * @var string
-	 */
-	protected $table = 'tracks';
-
-	/**
 	 * The color of the Soundcloud widget
 	 *
 	 * @var string

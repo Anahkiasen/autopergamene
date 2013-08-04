@@ -1,27 +1,36 @@
 <?php
+use Autopergamene\Story;
 
-class StoriesSeeder extends BaseSeed
+/**
+ * Seed short stories
+ */
+class StoriesSeeder extends Seeder
 {
 	public function getSeeds()
 	{
-		return Arrays::each($this->getStories(), function($story) {
+		foreach ($this->getStories() as $story) {
 			list($name, $date, $summary) = $story;
 
-			return [
+			Story::create(array(
 				'id'          => Str::slug($name),
 				'name'        => $name,
 				'description' => $summary,
 				'image'       => Str::slug($name).'.jpg',
 				'created_at'  => DateTime::createFromFormat('Y-m-d', $date),
 				'updated_at'  => DateTime::createFromFormat('Y-m-d', $date),
-			];
-		});
+			));
+		}
 	}
 
 	////////////////////////////////////////////////////////////////////
 	/////////////////////////// CORE METHODS ///////////////////////////
 	////////////////////////////////////////////////////////////////////
 
+	/**
+	 * Get the meta data for the stories
+	 *
+	 * @return array
+	 */
 	protected function getStories()
 	{
 		return [

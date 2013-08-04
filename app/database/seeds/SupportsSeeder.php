@@ -1,19 +1,19 @@
 <?php
+use Autopergamene\Illustration\Support;
 
-class SupportsSeeder extends BaseSeed
+/**
+ * Seed Illustrations Supports
+ */
+class SupportsSeeder extends Seeder
 {
-	public function getSeeds()
+	public function run()
 	{
-		return Arrays::each($this->getSupports(), function($support) {
-			list($slug, $name) = $support;
-
-			return [
-				'id'         => $slug,
-				'name'       => $name,
-				'created_at' => new DateTime,
-				'updated_at' => new DateTime,
-			];
-		});
+		foreach ($this->getSupports() as $support) {
+			Support::create(array(
+				'id'   => $support[0],
+				'name' => $support[1],
+			));
+		}
 	}
 
 	////////////////////////////////////////////////////////////////////

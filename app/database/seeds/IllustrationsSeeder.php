@@ -1,28 +1,32 @@
 <?php
+use Autopergamene\Illustration\Illustration;
 
-class IllustrationsSeeder extends BaseSeed
+class IllustrationsSeeder extends Seeder
 {
-	public function getSeeds()
+	public function run()
 	{
-		return Arrays::each($this->getIllustrations(), function($illustration) {
+		foreach ($this->getIllustrations() as $illustration) {
 			list ($name, $description, $category) = $illustration;
 
-			return [
+			Illustration::create([
 				'name'       => $name,
 				'media'      => $description,
 				'image'      => Str::slug($name).'.jpg',
-				'thumbnail'  => isset($illustration[3]) ? 1 : 0,
+				'thumbnail'  => (bool) isset($illustration[3]),
 				'support_id' => $category,
-				'created_at' => new DateTime,
-				'updated_at' => new DateTime,
-			];
-		});
+			]);
+		}
 	}
 
 	////////////////////////////////////////////////////////////////////
 	/////////////////////////// CORE METHODS ///////////////////////////
 	////////////////////////////////////////////////////////////////////
 
+	/**
+	 * Get the Illustrations to insert
+	 *
+	 * @return array
+	 */
 	protected function getIllustrations()
 	{
 		return [

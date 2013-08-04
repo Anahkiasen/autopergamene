@@ -10,13 +10,6 @@ use HTML;
 class Photo extends BaseModel
 {
 	/**
-	 * The table associated with the model.
-	 *
-	 * @var string
-	 */
-	protected $table = 'photos';
-
-	/**
 	 * Aliases for sizes
 	 *
 	 * @var array

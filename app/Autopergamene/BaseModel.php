@@ -13,18 +13,6 @@ abstract class BaseModel extends Polyglot
 	////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Get by latest first
-	 *
-	 * @param Query $query
-	 *
-	 * @return  Query
-	 */
-	public static function scopeLatest($query)
-	{
-		return $query->orderBy('created_at', 'desc');
-	}
-
-	/**
 	 * Get where thumbnails only
 	 *
 	 * @param Query $query

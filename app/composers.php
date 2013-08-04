@@ -32,7 +32,7 @@ View::composer('categories.the-winter-throat', function($view) {
 });
 
 View::composer('categories.graceful-degradation', function($view) {
-	$view->repositories = Repository::orderBy('master', 'desc')->orderBy('order', 'asc')->get();
+	$view->repositories = Repository::orderBy('master', 'desc')->orderBy('order')->get();
 });
 
 View::composer('categories.today-is-sunday', function($view) {

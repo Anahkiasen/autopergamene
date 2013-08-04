@@ -2,7 +2,6 @@
 
 class DatabaseSeeder extends Seeder
 {
-
 	/**
 	 * Run the database seeds.
 	 *
@@ -14,9 +13,11 @@ class DatabaseSeeder extends Seeder
 
 		$this->call('CategoriesSeeder');
 
+		// Illustration
 		$this->call('SupportsSeeder');
 		$this->call('IllustrationsSeeder');
 
+		// Photography
 		$this->call('PhotosetsSeeder');
 		$this->call('CollectionsSeeder');
 		$this->call('PhotosSeeder');
@@ -28,5 +29,4 @@ class DatabaseSeeder extends Seeder
 		$this->call('TableauxSeeder');
 		$this->call('TracksSeeder');
 	}
-
 }

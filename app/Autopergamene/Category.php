@@ -12,13 +12,6 @@ class Category extends BaseModel
 	use Traits\HasSlugId;
 
 	/**
-	 * The table associated with the model.
-	 *
-	 * @var string
-	 */
-	protected $table = 'categories';
-
-	/**
 	 * The localized fields
 	 *
 	 * @var array
@@ -36,7 +29,7 @@ class Category extends BaseModel
 	 */
 	public function articles()
 	{
-		return $this->hasMany('Autopergamene\Article')->orderBy('created_at', 'desc');
+		return $this->hasMany('Autopergamene\Article')->latest();
 	}
 
 	////////////////////////////////////////////////////////////////////
