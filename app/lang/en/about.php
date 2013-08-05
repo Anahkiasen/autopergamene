@@ -14,7 +14,7 @@
 	'misc'         => 'Also',
 	'bts'          => "Diploma in visual communication",
 	'license'      => 'Driving license',
-	'languages'    => 'French and English – read, written and spoken',
+	'spoken'       => 'French and English – read, written and spoken',
 	'knowledge'    => 'Knowledge',
 	'frameworks'   => 'Frameworks, libraries and CMS',
 	'with'         => 'What I work with',

@@ -13,7 +13,7 @@
 	'softwares'    => 'Logiciels maîtrisés',
 	'misc'         => 'Et aussi',
 	'bts'          => "Diplômé d'un BTS en communication visuelle",
-	'languages'    => 'Français et anglais – lu, écrit et parlé',
+	'spoken'       => 'Français et anglais – lu, écrit et parlé',
 	'license'      => 'Détenteur du permis B',
 	'knowledge'    => 'Connaissances',
 	'frameworks'   => 'Frameworks, librairies et CMS',
