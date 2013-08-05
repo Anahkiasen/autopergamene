@@ -16,11 +16,11 @@ View::composer('partials.about', function($view) {
 
 	// Calculating dates
 	$view->age  = Carbon::createFromDate(1990, 3, 2)->diffInYears($today);
-	$view->work = ceil(Carbon::createFromDate(2009, 10, 1)->diffInMonths($today) / 12);
+	$view->work = ceil(Carbon::createFromDate(2009, 10, 1)->diffInYears($today, false));
 });
 
 View::composer('layouts.partials.footer', function($view) {
-	$view->services = Service::where('name', '!=', 'Mail')->where('name', '!=', 'YouTube')->get();
+	$view->services = Service::whereNotIn('name', ['Mail', 'Youtube'])->get();
 });
 
 //////////////////////////////////////////////////////////////////////

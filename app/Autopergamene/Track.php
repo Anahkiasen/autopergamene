@@ -28,16 +28,22 @@ class Track extends BaseModel
 	}
 
 	/**
-	 * Format movements for display
+	 * Save the movements as JSON
+	 *
+	 * @param array $movements
+	 */
+	public function setMovementsAttribute($movements)
+	{
+		$this->attributes['movements'] = json_encode($movements);
+	}
+
+	/**
+	 * Decode movements on get
+	 *
+	 * @return array
 	 */
 	public function getMovementsAttribute()
 	{
-		$movements = $this->getOriginal('movements');
-
-		// Format time and translation
-		$movements = preg_replace('/([\d:]{5} - [\d:]{5}) : /', '<dt>$1</dt><dd>', $movements);
-		$movements = preg_replace('/\(([^)]+)\)/', '<em>($1)</em></dd>', $movements);
-
-		return $movements;
+		return json_decode($this->getOriginal('movements'), true);
 	}
 }

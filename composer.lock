@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "7cf42d3d9101c2ff069e883b39a4ceb4",
+    "hash": "fc0dff491aa051d89edffbb5d5af17e6",
     "packages": [
         {
             "name": "anahkiasen/flatten",
@@ -59,12 +59,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Anahkiasen/flickering.git",
-                "reference": "19a50eceed7e2fe85b41b51b55d0d361c71b1725"
+                "reference": "b5acab37aa588afda526f68f005ebfb0335e27f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Anahkiasen/flickering/zipball/19a50eceed7e2fe85b41b51b55d0d361c71b1725",
-                "reference": "19a50eceed7e2fe85b41b51b55d0d361c71b1725",
+                "url": "https://api.github.com/repos/Anahkiasen/flickering/zipball/b5acab37aa588afda526f68f005ebfb0335e27f9",
+                "reference": "b5acab37aa588afda526f68f005ebfb0335e27f9",
                 "shasum": ""
             },
             "require": {
@@ -101,9 +101,10 @@
             "keywords": [
                 "api",
                 "flickr",
+                "laravel",
                 "php"
             ],
-            "time": "2013-08-04 15:16:49"
+            "time": "2013-08-04 17:03:47"
         },
         {
             "name": "anahkiasen/html-object",
@@ -111,12 +112,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Anahkiasen/html-object.git",
-                "reference": "84d3b1266865e054ef33e24b9eee08aa3dd29c21"
+                "reference": "387c93c889d036106c1f68f1314ca4270b084daf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Anahkiasen/html-object/zipball/84d3b1266865e054ef33e24b9eee08aa3dd29c21",
-                "reference": "84d3b1266865e054ef33e24b9eee08aa3dd29c21",
+                "url": "https://api.github.com/repos/Anahkiasen/html-object/zipball/387c93c889d036106c1f68f1314ca4270b084daf",
+                "reference": "387c93c889d036106c1f68f1314ca4270b084daf",
                 "shasum": ""
             },
             "require": {
@@ -139,7 +140,7 @@
                 }
             ],
             "description": "A set of classes to create and manipulate HTML objects abstractions",
-            "time": "2013-07-29 14:47:43"
+            "time": "2013-08-05 11:57:21"
         },
         {
             "name": "anahkiasen/illuminage",
@@ -1556,12 +1557,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "01123ae6af005009d1c5fd37e06130bd85aad5dc"
+                "reference": "3d467ca18ec08c5df2d5cad5c51442be148a7f21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/01123ae6af005009d1c5fd37e06130bd85aad5dc",
-                "reference": "01123ae6af005009d1c5fd37e06130bd85aad5dc",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/3d467ca18ec08c5df2d5cad5c51442be148a7f21",
+                "reference": "3d467ca18ec08c5df2d5cad5c51442be148a7f21",
                 "shasum": ""
             },
             "require": {
@@ -1592,7 +1593,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2013-07-27 16:50:08"
+            "time": "2013-08-04 14:15:12"
         },
         {
             "name": "opauth/flickr",
@@ -1694,16 +1695,16 @@
         },
         {
             "name": "patchwork/utf8",
-            "version": "v1.1.8",
+            "version": "v1.1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nicolas-grekas/Patchwork-UTF8.git",
-                "reference": "v1.1.8"
+                "reference": "v1.1.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nicolas-grekas/Patchwork-UTF8/zipball/v1.1.8",
-                "reference": "v1.1.8",
+                "url": "https://api.github.com/repos/nicolas-grekas/Patchwork-UTF8/zipball/v1.1.9",
+                "reference": "v1.1.9",
                 "shasum": ""
             },
             "require": {
@@ -1735,7 +1736,7 @@
                 "utf-8",
                 "utf8"
             ],
-            "time": "2013-05-24 12:11:22"
+            "time": "2013-08-04 15:20:14"
         },
         {
             "name": "phpseclib/phpseclib",
@@ -2852,12 +2853,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fabpot/Twig.git",
-                "reference": "9a01db60e8b7552955cfcbef7caf0b24dc3119b4"
+                "reference": "7c1ce36f87ab1dd1dea007749325b8e120208be6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/9a01db60e8b7552955cfcbef7caf0b24dc3119b4",
-                "reference": "9a01db60e8b7552955cfcbef7caf0b24dc3119b4",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/7c1ce36f87ab1dd1dea007749325b8e120208be6",
+                "reference": "7c1ce36f87ab1dd1dea007749325b8e120208be6",
                 "shasum": ""
             },
             "require": {
@@ -2893,7 +2894,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2013-08-04 13:12:06"
+            "time": "2013-08-05 08:15:36"
         }
     ],
     "packages-dev": [

@@ -17,7 +17,12 @@
 			</h3>
 			<iframe width='100%' height='166' frameborder='no' src="{{ track.soundcloud }}"></iframe>
 			{% if track.movements %}
-				<dl>{{ track.movements }}</dl>
+				<dl>
+					{% for movement in track.movements %}
+						<dt>{{ movement.time }}</dt>
+						<dd>{{ movement.name }}</dd>
+					{% endfor %}
+				</dl>
 			{% endif %}
 		</article>
 	{% endfor %}

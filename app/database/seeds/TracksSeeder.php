@@ -7,10 +7,22 @@ class TracksSeeder extends Seeder
 	{
 		foreach ($this->getSets() as $set) {
 			foreach ($set['tracks'] as $track) {
+
+				// Create movements
+				if (!$track['description']) {
+					$movements = array();
+				} else {
+					$movements = explode(PHP_EOL, $track['description']);
+					foreach ($movements as $key => $movement) {
+						list($time, $name) = explode(' : ', $movement);
+						$movements[$key] = compact('time', 'name');
+					}
+				}
+
 				Track::create(array(
 					'name'       => $track['title'],
 					'soundcloud' => $track['id'],
-					'movements'  => $track['description'],
+					'movements'  => $movements,
 					'set'        => $set['title'],
 					'plays'      => (int) ($track['playback_count'] + $track['download_count'])
 				));
