@@ -4,7 +4,7 @@
 /////////////////////////////// ROUTES ///////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-Route::group(Language::getRoutesPrefix(), function() {
+Route::groupLocale(function() {
 	Route::get('/', ['as' => 'home', 'uses' => 'CategoriesController@categories']);
 
 	Route::get('category/graceful-degradation', 'RepositoriesController@repositories');

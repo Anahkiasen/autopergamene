@@ -200,7 +200,6 @@ return array(
 		'Carbon'     => 'Carbon\Carbon',
 		'Flickering' => 'Flickering\Facades\Flickering',
 		'Rocketeer'  => 'Rocketeer\Facades\Rocketeer',
-		'Language'   => 'Polyglot\Facades\Language',
 
 	),
 
