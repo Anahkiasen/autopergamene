@@ -10,6 +10,26 @@ class Repository extends BaseModel
 	////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Return tags as array
+	 *
+	 * @return array
+	 */
+	public function getTagsAttribute()
+	{
+		return json_decode($this->getOriginal('tags'), true);
+	}
+
+	/**
+	 * Save tags as JSON
+	 *
+	 * @param array $tags
+	 */
+	public function setTagsAttribute($tags)
+	{
+		$this->attributes['tags'] = json_encode($tags);
+	}
+
+	/**
 	 * Get a link to the Repository's author
 	 *
 	 * @return string

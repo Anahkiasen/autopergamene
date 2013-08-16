@@ -5,13 +5,17 @@
 .repository {
 
   @extend %responsive-content;
-  @extend %opacity75;
+  @include opacity(1);
 
   figure {
     @extend %category;
-    @include opacity(0.75);
+    @include opacity(1);
     @include from($wide) {
       @include rem(min-height, 15rem);
+    }
+
+    h4 {
+      @include opacity(1);
     }
   }
 

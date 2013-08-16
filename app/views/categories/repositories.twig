@@ -1,32 +1,23 @@
 {% extends 'layouts.portfolio' %}
 
 {% block content %}
-	<p>
-		Un ensemble de projets ou librairies développées au fur et à mesure de mon travail.
-		En majorité des bundles pour le framework {{ html_linkBlank('http://laravel.com', 'Laravel') }}
-		ou distribués via {{ html_linkBlank('http://getcomposer.org', 'Composer') }}
-	</p>
-	<p>
-		Tous sont en PHP — même si mes compétences s'étendent à d'autres langages, j'ai principalement
-		eu l'occasion de créer des bundles pour Laravel. Le framework étant relativement jeune (même si ayant réussi à devenir un agent majeur en peu de temps) il y a énormément de vides à combler dans les plugins, ce qui m'a permis de mettre mon savoir-faire au travail.
-	</p>
-	<p>
-		Étant très à cheval sur le fait de rester à jour quand on est webdévelopeur on webdesigner, tous réspectent autant que faire se peut
-		les standards du {{ html_linkBlank('https://github.com/php-fig/fig-standards', 'PSR') }} et tirent partie des dernières avancées en terme d'OOP (namespaces, magic methods, etc).
-	</p>
+	{{ lang('repositories.introduction', {
+		laravel: html_linkBlank('http://laravel.com', 'Laravel') ,
+		composer: html_linkBlank('http://getcomposer.org', 'Composer'),
+		psr: html_linkBlank('https://github.com/php-fig/fig-standards', 'PSR'),
+	}) }}
 
 	{% include 'partials.articles-list.articles-list' %}
 
-	<h2>Les projets</h2>
-	<p>Les liens pointent soit sur Github vers la source, soit vers le site du projet.</p>
+	{# <h2>{{ lang('repositories.projects') }}</h2> #}
+	<h2>{{ lang('repositories.repositories') }}</h2>
+	<p>{{ lang('repositories.repositories_intro') }}</p>
 
 	{% for repository in repositories %}
 		{% if title is not defined and not repository.master %}
-			{% set title = 'Projets en collaboration' %}
+			{% set title = lang('repositories.collaboration') %}
 			<h2>{{ title }}</h2>
-			<p>
-				Ci-dessous des projets que je n'ai pas initiés mais sur lesquels à force de contributions je suis passé collaborateur.
-			</p>
+			<p>{{ lang('repositories.collaboration_intro') }}</p>
 		{% endif %}
 
 		<article class='repository'>
@@ -35,12 +26,19 @@
 					<h3>{{ repository.name }}</h3>
 					<h4>{{ repository.content }}</h4>
 				</figure>
-				{% if not repository.master %}
-					<p><strong>par</strong> {{ repository.author }}</p>
-				{% endif %}
-				<p><strong>tags :</strong> {{ repository.tags }}</p>
-				<p>{{ repository.status }} {{ repository.getButton('watch') }} {{ repository.getButton('fork') }}</p>
 			</a>
+			{% if not repository.master %}
+				<p>{{ lang('repositories.by') }} {{ repository.author }}</p>
+			{% endif %}
+			<p>
+				<strong>tags :</strong>
+				{% if repository.tags %}
+					{{ repository.tags|join(', ') }}
+				{% else %}
+					<em>{{ lang('repositories.notags') }}</em>
+				{% endif %}
+			</p>
+			<p>{{ repository.status }} {{ repository.getButton('watch') }} {{ repository.getButton('fork') }}</p>
 		</article>
 	{% endfor %}
 {% endblock %}

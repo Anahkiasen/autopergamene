@@ -21,7 +21,8 @@
     "anahkiasen/rocketeer": "dev-develop",
     "loic-sharma/profiler": "dev-master",
     "anahkiasen/polyglot": "dev-master",
-    "rcrowe/twigbridge": "dev-master"
+    "rcrowe/twigbridge": "dev-master",
+    "knplabs/packagist-api": "dev-master"
   },
   "require-dev": {
     "phpunit/phpunit": "dev-master"
