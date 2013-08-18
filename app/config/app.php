@@ -115,14 +115,14 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
+		'Flatten\FlattenServiceProvider',
 		'Basset\BassetServiceProvider',
 		'Flickering\FlickeringServiceProvider',
 		'Illuminage\IlluminageServiceProvider',
 		'Polyglot\PolyglotServiceProvider',
-		'Profiler\ProfilerServiceProvider',
+		'Juy\Profiler\Providers\ProfilerServiceProvider',
 		'Rocketeer\RocketeerServiceProvider',
 		'TwigBridge\TwigServiceProvider',
-		// 'Flatten\FlattenServiceProvider',
 
 	),
 

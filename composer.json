@@ -11,7 +11,7 @@
   ],
   "require": {
     "laravel/framework": "4.1.*",
-    "anahkiasen/flatten": "dev-master",
+    "anahkiasen/flatten": "dev-develop",
     "anahkiasen/flickering": "dev-master",
     "anahkiasen/illuminage": "dev-master",
     "anahkiasen/underscore-php": "dev-master",
@@ -19,10 +19,10 @@
     "jasonlewis/basset": "dev-develop",
     "natxet/CssMin": "dev-master",
     "anahkiasen/rocketeer": "dev-develop",
-    "loic-sharma/profiler": "dev-master",
     "anahkiasen/polyglot": "dev-master",
     "rcrowe/twigbridge": "dev-master",
-    "knplabs/packagist-api": "dev-master"
+    "knplabs/packagist-api": "dev-master",
+    "juy/profiler": "dev-master"
   },
   "require-dev": {
     "phpunit/phpunit": "dev-master"
