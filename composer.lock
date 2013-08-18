@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "dc9c09e5e9a30b91eca5a09eefc069e9",
+    "hash": "d35d66bd8f868e2244dccee4d3244a7d",
     "packages": [
         {
             "name": "anahkiasen/flatten",
@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Anahkiasen/flatten.git",
-                "reference": "0.2.1"
+                "reference": "491f4d44076531802fbf506b40c7d908ca09eeaf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Anahkiasen/flatten/zipball/0.2.1",
-                "reference": "0.2.1",
+                "url": "https://api.github.com/repos/Anahkiasen/flatten/zipball/491f4d44076531802fbf506b40c7d908ca09eeaf",
+                "reference": "491f4d44076531802fbf506b40c7d908ca09eeaf",
                 "shasum": ""
             },
             "require": {
@@ -25,9 +25,10 @@
                 "illuminate/container": "~4",
                 "illuminate/http": "~4",
                 "illuminate/support": "~4",
-                "philf/setting": "dev-develop"
+                "philf/setting": "dev-master"
             },
             "require-dev": {
+                "illuminate/view": "~4",
                 "mockery/mockery": "dev-master"
             },
             "type": "library",
@@ -52,7 +53,7 @@
                 "laravel",
                 "performance"
             ],
-            "time": "2013-08-18 16:13:35"
+            "time": "2013-08-18 18:33:43"
         },
         {
             "name": "anahkiasen/flickering",
@@ -201,12 +202,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Anahkiasen/polyglot.git",
-                "reference": "aee81f46a285cdc451679e4a078eda4ac7d5a49e"
+                "reference": "0b723f1f5d3dde4732c27e96d26cc6f66c478722"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Anahkiasen/polyglot/zipball/aee81f46a285cdc451679e4a078eda4ac7d5a49e",
-                "reference": "aee81f46a285cdc451679e4a078eda4ac7d5a49e",
+                "url": "https://api.github.com/repos/Anahkiasen/polyglot/zipball/0b723f1f5d3dde4732c27e96d26cc6f66c478722",
+                "reference": "0b723f1f5d3dde4732c27e96d26cc6f66c478722",
                 "shasum": ""
             },
             "require": {
@@ -233,7 +234,7 @@
             "authors": [
                 {
                     "name": "Maxime Fabre",
-                    "email": "ehtnam6@gmail.com"
+                    "email": "ehtnam6@gmail.Com"
                 }
             ],
             "description": "Laravel localization helpers and models",
@@ -243,7 +244,7 @@
                 "model",
                 "translation"
             ],
-            "time": "2013-08-16 14:36:19"
+            "time": "2013-08-18 16:29:56"
         },
         {
             "name": "anahkiasen/rocketeer",
@@ -251,12 +252,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Anahkiasen/rocketeer.git",
-                "reference": "1c6c965a28da2554e3b43c68063a77b595049f66"
+                "reference": "ac33e569601e8719fdf234f01b223eb715bff490"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Anahkiasen/rocketeer/zipball/1c6c965a28da2554e3b43c68063a77b595049f66",
-                "reference": "1c6c965a28da2554e3b43c68063a77b595049f66",
+                "url": "https://api.github.com/repos/Anahkiasen/rocketeer/zipball/ac33e569601e8719fdf234f01b223eb715bff490",
+                "reference": "ac33e569601e8719fdf234f01b223eb715bff490",
                 "shasum": ""
             },
             "require": {
@@ -297,7 +298,7 @@
                 "laravel",
                 "ssh"
             ],
-            "time": "2013-08-16 11:54:55"
+            "time": "2013-08-18 19:09:34"
         },
         {
             "name": "anahkiasen/underscore-php",
@@ -1623,47 +1624,6 @@
             "time": "2013-08-15 05:03:24"
         },
         {
-            "name": "loic-sharma/profiler",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/loic-sharma/profiler.git",
-                "reference": "66edb80ab48673dd460b09ee88d0cb1c82766bbf"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/loic-sharma/profiler/zipball/66edb80ab48673dd460b09ee88d0cb1c82766bbf",
-                "reference": "66edb80ab48673dd460b09ee88d0cb1c82766bbf",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0",
-                "psr/log": "1.0.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Profiler": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Loic Sharma"
-                }
-            ],
-            "description": "A PHP 5.3 profiler based off of Laravel 3's Anbu.",
-            "keywords": [
-                "anbu",
-                "laravel",
-                "profiler"
-            ],
-            "time": "2013-07-18 04:33:34"
-        },
-        {
             "name": "monolog/monolog",
             "version": "1.5.0",
             "source": {
@@ -1954,16 +1914,16 @@
         },
         {
             "name": "patchwork/utf8",
-            "version": "v1.1.10",
+            "version": "v1.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nicolas-grekas/Patchwork-UTF8.git",
-                "reference": "v1.1.10"
+                "reference": "v1.1.11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nicolas-grekas/Patchwork-UTF8/zipball/v1.1.10",
-                "reference": "v1.1.10",
+                "url": "https://api.github.com/repos/nicolas-grekas/Patchwork-UTF8/zipball/v1.1.11",
+                "reference": "v1.1.11",
                 "shasum": ""
             },
             "require": {
@@ -1995,23 +1955,24 @@
                 "utf-8",
                 "utf8"
             ],
-            "time": "2013-08-13 16:36:44"
+            "time": "2013-08-19 09:37:02"
         },
         {
             "name": "philf/setting",
-            "version": "dev-develop",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Phil-F/Setting.git",
-                "reference": "4a9f5c69486ba5a7e4f18baf1fd31fef90a9d489"
+                "reference": "51e6e2ce7f906d527abb694f73c6603a4e9799c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Phil-F/Setting/zipball/4a9f5c69486ba5a7e4f18baf1fd31fef90a9d489",
-                "reference": "4a9f5c69486ba5a7e4f18baf1fd31fef90a9d489",
+                "url": "https://api.github.com/repos/Phil-F/Setting/zipball/51e6e2ce7f906d527abb694f73c6603a4e9799c1",
+                "reference": "51e6e2ce7f906d527abb694f73c6603a4e9799c1",
                 "shasum": ""
             },
             "require": {
+                "illuminate/support": "~4",
                 "php": ">=5.3.0"
             },
             "require-dev": {
@@ -2038,7 +1999,7 @@
                 "config",
                 "laravel"
             ],
-            "time": "2013-08-18 15:14:55"
+            "time": "2013-08-18 19:00:34"
         },
         {
             "name": "phpseclib/phpseclib",
@@ -3678,7 +3639,6 @@
         "jasonlewis/basset": 20,
         "natxet/cssmin": 20,
         "anahkiasen/rocketeer": 20,
-        "loic-sharma/profiler": 20,
         "anahkiasen/polyglot": 20,
         "rcrowe/twigbridge": 20,
         "knplabs/packagist-api": 20,

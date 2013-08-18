@@ -1,11 +1,11 @@
 <?php return array(
 
   // The environments in which Flatten should not run
-  'environments' => array('local'),
+  'environments' => array(),
 
   // The default period during which a cached page should be kept (in minutes)
   // 0 means the page never gets refreshed by itself
-  'lifetime' => 0,
+  'lifetime'     => 0,
 
   // The different pages to be ignored when caching
   // They're all regexes so go crazy
@@ -18,5 +18,7 @@
 
   // An array of string or variables to add to the salt being used
   // to differentiate pages
-  'saltshaker' => array(),
+  'saltshaker'   => array(
+    Lang::getLocale(),
+  ),
 );
