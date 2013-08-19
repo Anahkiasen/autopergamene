@@ -6,7 +6,7 @@ use Autopergamene\Story;
  */
 class StoriesSeeder extends Seeder
 {
-	public function getSeeds()
+	public function run()
 	{
 		foreach ($this->getStories() as $story) {
 			list($name, $date, $summary) = $story;
