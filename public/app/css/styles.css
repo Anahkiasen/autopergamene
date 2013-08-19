@@ -540,14 +540,12 @@ footer {
   .portfolio h3 {
     margin-bottom: 4px;
     margin-bottom: 0.25rem; }
-  .portfolio .novel-summary h2 {
-    margin: 0; }
-    @media (min-width: 60em) {
-      .portfolio .novel-summary h2 {
-        font-size: 2.5em;
-        line-height: 1.2em;
-        margin-top: 32px;
-        margin-top: 2rem; } }
+  @media (min-width: 60em) {
+    .portfolio .novel-summary h2 {
+      font-size: 2.5em;
+      line-height: 1.2em;
+      margin-top: 32px;
+      margin-top: 2rem; } }
   .portfolio .project h3 {
     margin-bottom: 1.5rem; }
     .portfolio .project h3 small {

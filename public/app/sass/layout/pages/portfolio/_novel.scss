@@ -6,7 +6,6 @@
   @extend %margin-underline;
   h2 {
     @extend %font-base;
-    margin: 0;
     @extend %margin-underline;
     @include from($desktop) {
       @include font-size(2.5rem);
