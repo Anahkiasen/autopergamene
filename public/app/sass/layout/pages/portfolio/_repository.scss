@@ -2,8 +2,39 @@
 ///////////////////////// GRACEFUL DEGRADATION ///////////////////////
 //////////////////////////////////////////////////////////////////////
 
-.repository {
+.project {
+  @extend %container-wide;
 
+  h3 {
+    margin-bottom: 1.5rem;
+    small {
+      display: block;
+    }
+  }
+
+  figure {
+    @extend %block-light;
+    margin: 2rem 0;
+  }
+  figcaption {
+    background: rgba(black, .05);
+    padding: 0.5rem;
+    line-height: 1.2;
+    font-style: italic;
+  }
+}
+
+.project__summary__links {
+  padding: 0;
+  a {
+    display: inline-block;
+    width: auto;
+    @extend %block-accent--clickable;
+    padding: 0.5rem;
+  }
+}
+
+.repository {
   @extend %responsive-content;
   @include opacity(1);
 

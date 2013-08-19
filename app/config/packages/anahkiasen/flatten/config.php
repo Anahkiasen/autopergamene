@@ -1,7 +1,7 @@
 <?php return array(
 
   // The environments in which Flatten should not run
-  'environments' => array(),
+  'environments' => array('local'),
 
   // The default period during which a cached page should be kept (in minutes)
   // 0 means the page never gets refreshed by itself

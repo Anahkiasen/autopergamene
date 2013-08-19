@@ -24,6 +24,10 @@ hr {
   @extend %lips--accent;
   @include rem(margin, 1rem 0);
   clear: both;
+
+  .portfolio & + h2 {
+    @include rem(margin, 3rem 0);
+  }
 }
 
 h1, h2, h3, h4 {

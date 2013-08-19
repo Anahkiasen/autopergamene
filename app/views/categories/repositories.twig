@@ -9,7 +9,36 @@
 
 	{% include 'partials.articles-list.articles-list' %}
 
-	{# <h2>{{ lang('repositories.projects') }}</h2> #}
+	{# Projects #}
+	<hr>
+	<h2>{{ lang('repositories.projects') }}</h2>
+	<article class='project'>
+		<div class='project__summary'>
+			<h3>
+				The Laravel Packages Registry
+				<small>Un Packagist-like dédié aux packages pour le framework Laravel</small>
+			</h3>
+			<nav class="project__summary__links">
+				{{ html_linkBlank('https://registry.autopergamene.eu', 'Voir le site') }}
+				{{ html_linkBlank('https://github.com/Anahkiasen/registry', 'Voir les sources') }}
+			</nav>
+		</div>
+		<figure>
+			{{ image('app/img/web/registry.png', 'Registry', {'class': 'image-wrap'}) }}
+			<figcaption>Accueil</figcaption>
+		</figure>
+		<figure>
+			{{ image('app/img/web/registry-package.png', 'Registry', {'class': 'image-wrap'}) }}
+			<figcaption>Packages</figcaption>
+		</figure>
+		<figure>
+			{{ image('app/img/web/registry-maintainer.png', 'Registry', {'class': 'image-wrap'}) }}
+			<figcaption>Maintainers</figcaption>
+		</figure>
+	</article>
+
+	{# Libraries #}
+	<hr>
 	<h2>{{ lang('repositories.repositories') }}</h2>
 	<p>{{ lang('repositories.repositories_intro') }}</p>
 

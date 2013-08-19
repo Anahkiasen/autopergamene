@@ -36,7 +36,7 @@ ul.fixed, footer .social, .about .about-more ul, .novel article ul {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1; }
 
-#container, .error, .portfolio, .article, .novel, .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .portfolio .collection, .categories, .about, .about .about-more {
+#container, .error, .portfolio, .article, .novel, .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .portfolio .project, .portfolio .collection, .categories, .about, .about .about-more {
   max-width: 59em;
   padding-left: 1em;
   padding-right: 1em;
@@ -44,7 +44,7 @@ ul.fixed, footer .social, .about .about-more ul, .novel article ul {
   margin-right: auto;
   max-width: 100%;
   padding: 0; }
-  #container:after, .error:after, .portfolio:after, .article:after, .novel:after, .categories figure:after, .portfolio .photoset--list:after, .portfolio .support:after, .portfolio .repository figure:after, .portfolio .collection:after, .categories:after, .about:after, .about .about-more:after {
+  #container:after, .error:after, .portfolio:after, .article:after, .novel:after, .categories figure:after, .portfolio .photoset--list:after, .portfolio .support:after, .portfolio .repository figure:after, .portfolio .project:after, .portfolio .collection:after, .categories:after, .about:after, .about .about-more:after {
     content: "";
     display: table;
     clear: both; }
@@ -54,7 +54,7 @@ h1, h2, h3, h4 {
   margin: 0;
   padding: 0; }
 
-.portfolio .collection h2, .articles article h3, span.block, a.block, a.back, .categories figure h4, .portfolio .photoset--list h4, .portfolio .support h4, .portfolio .repository figure h4, .portfolio .novel-summary h2, .portfolio .photoset figure h3, .about h2, .about h3, .about h4, .article article .wp-caption p, .novel article .wp-caption p, .article article h1, .novel article h1 {
+.portfolio .collection h2, .articles article h3, span.block, a.block, a.back, .portfolio .project__summary__links a, .categories figure h4, .portfolio .photoset--list h4, .portfolio .support h4, .portfolio .repository figure h4, .portfolio .novel-summary h2, .portfolio .photoset figure h3, .about h2, .about h3, .about h4, .article article .wp-caption p, .novel article .wp-caption p, .article article h1, .novel article h1 {
   font-family: "adelle", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
   text-transform: lowercase; }
@@ -68,7 +68,7 @@ h1, h2, h3, h4 {
   font-weight: 400;
   text-transform: uppercase; }
 
-.about p, span.block, a.block, a.back, .categories figure h4, .portfolio .photoset--list h4, .portfolio .support h4, .portfolio .repository figure h4, footer, .about .about-more h3 {
+.about p, span.block, a.block, a.back, .portfolio .project__summary__links a, .categories figure h4, .portfolio .photoset--list h4, .portfolio .support h4, .portfolio .repository figure h4, footer, .about .about-more h3 {
   font-size: 1em;
   line-height: 1.5em; }
 
@@ -127,10 +127,10 @@ h1, h2, h3, h4 {
       float: right;
       margin-right: 0; } }
 
-span.block, a.block, a.back, .article article del, .novel article del, .portfolio .illustration, .portfolio .tableau, .portfolio .photoset figure, .article article .wp-caption, .novel article .wp-caption, ul.affix.fixed, .about aside, .article article img.wide, .novel article img.wide {
+span.block, a.block, a.back, .portfolio .project__summary__links a, .article article del, .novel article del, .portfolio .illustration, .portfolio .tableau, .portfolio .photoset figure, .article article .wp-caption, .novel article .wp-caption, ul.affix.fixed, .about aside, .article article img.wide, .novel article img.wide {
   width: 100%; }
 
-span.block, a.block, a.back, .article article del, .novel article del {
+span.block, a.block, a.back, .portfolio .project__summary__links a, .article article del, .novel article del {
   display: block; }
 
 span.block, dl dt, a, strong, .categories h2, .about h2 {
@@ -144,7 +144,7 @@ hr, .articles, a, .article article h1, .novel article h1 {
 hr, .articles {
   border-color: #f8bfc7; }
 
-a.back, .about .about-more h3, span.block, a.block, ul.fixed, ul.fixed li, header, footer, .portfolio .repository:hover figure {
+a.back, .about .about-more h3, span.block, a.block, .portfolio .project__summary__links a, ul.fixed, ul.fixed li, header, footer, .portfolio .repository:hover figure {
   background-color: #ea2c46;
   border: none;
   color: white;
@@ -154,18 +154,18 @@ a.back, .about .about-more h3 {
   background-color: #f38997;
   text-shadow: 0 0.15em 0 rgba(0, 0, 0, 0.25); }
 
-span.block, a.block, a.back {
+span.block, a.block, a.back, .portfolio .project__summary__links a {
   clear: both;
   cursor: pointer;
   padding: 4px 0;
   padding: 0.25rem 0; }
-  span.block:hover, a.block:hover, a.back:hover {
+  span.block:hover, a.block:hover, a.back:hover, .portfolio .project__summary__links a:hover {
     background-color: #ef5a6f;
     color: white; }
-  span.block:active, a.block:active, a.back:active {
+  span.block:active, a.block:active, a.back:active, .portfolio .project__summary__links a:active {
     background-color: #f17283; }
 
-.portfolio blockquote, .article article blockquote, .novel article blockquote, .novel article ul, .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .portfolio .illustration, .portfolio .tableau, .portfolio .photoset figure, .article article .wp-caption, .novel article .wp-caption, .portfolio .illustration figcaption, .portfolio .tableau figcaption, dl, .portfolio p, .about p, .about .about-more ul, .article article del, .novel article del, .novel .alert {
+.portfolio blockquote, .article article blockquote, .novel article blockquote, .novel article ul, .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .portfolio .illustration, .portfolio .tableau, .portfolio .photoset figure, .article article .wp-caption, .novel article .wp-caption, .portfolio .illustration figcaption, .portfolio .tableau figcaption, dl, .portfolio p, .portfolio .project figure, .about p, .about .about-more ul, .article article del, .novel article del, .novel .alert {
   background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNi4AUAABYAEFIOBzYAAAAASUVORK5CYII=');
   background: rgba(0, 0, 0, 0.05);
   color: #333333;
@@ -179,7 +179,7 @@ span.block, a.block, a.back {
   margin-right: 0; }
   @media (min-width: 60em) {
     .portfolio blockquote, .article article blockquote, .novel article blockquote, .novel article ul {
-      background-image: url('../img/quotes.png?1371999416');
+      background-image: url('../img/quotes.png?1376924844');
       background-position: 16px 16px;
       background-position: 1rem 1rem;
       background-repeat: no-repeat;
@@ -448,6 +448,9 @@ hr {
   margin: 16px 0;
   margin: 1rem 0;
   clear: both; }
+  .portfolio hr + h2 {
+    margin: 48px 0;
+    margin: 3rem 0; }
 
 h1 small, h2 small, h3 small, h4 small {
   color: gray;
@@ -545,6 +548,23 @@ footer {
         line-height: 1.2em;
         margin-top: 32px;
         margin-top: 2rem; } }
+  .portfolio .project h3 {
+    margin-bottom: 1.5rem; }
+    .portfolio .project h3 small {
+      display: block; }
+  .portfolio .project figure {
+    margin: 2rem 0; }
+  .portfolio .project figcaption {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 0.5rem;
+    line-height: 1.2;
+    font-style: italic; }
+  .portfolio .project__summary__links {
+    padding: 0; }
+    .portfolio .project__summary__links a {
+      display: inline-block;
+      width: auto;
+      padding: 0.5rem; }
   .portfolio .repository {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1; }
