@@ -13,7 +13,7 @@
 		<article class='novel-summary' id='{{ story.id }}'>
 			<h2>{{ story.name }}</h2>
 			<figure class='cover' style='background-image: url({{ story.image }})'></figure>
-			<p><strong>Publiée le :</strong> {{ story.created_at }}</p>
+			<p><strong>Publiée</strong> il y a {{ story.created_at.diffInYears(Carbon_now()) }} ans</p>
 			<blockquote>{{ story.description }}</blockquote>
 			{{ html_blockLink(url_action('StoriesController@story', story.id), 'Lire la nouvelle') }}
 		</article>
