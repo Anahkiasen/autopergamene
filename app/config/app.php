@@ -115,7 +115,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
-		'Flatten\FlattenServiceProvider',
+		// 'Flatten\FlattenServiceProvider',
 		'Basset\BassetServiceProvider',
 		'Flickering\FlickeringServiceProvider',
 		'Illuminage\IlluminageServiceProvider',
