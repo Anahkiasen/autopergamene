@@ -4,8 +4,8 @@ bootstrap/compiled.php
 
 # Packages
 app/config.remote.php
+node_modules
 public/builds
-public/cache/*.jpg
 
 # Other files
 .DS_Store

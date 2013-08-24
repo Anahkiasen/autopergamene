@@ -15,8 +15,8 @@ Basset::collection('application', function($collection) {
 })
 ->rawOnEnvironment('local')
 ->apply('UriRewriteFilter')
-->apply('CssMin')
-->apply('JsMin');
+->apply('UglifyCss')
+->apply('UglifyJs');
 
 /**
  * Polyfill scripts
@@ -26,14 +26,14 @@ Basset::collection('modernizr', function($collection) {
 	$collection->javascript('app/js/polyfill.js');
 })
 ->rawOnEnvironment('local')
-->apply('JsMin');
+->apply('UglifyJs');
 
 //////////////////////////////////////////////////////////////////////
 //////////////////////// PAGE-SPECIFIC ASSETS ////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 Basset::collection('article', function($collection) {
-	$collection->stylesheet('components/rainbow/themes/tomorrow-night.css')->apply('CssMin');
+	$collection->stylesheet('components/rainbow/themes/tomorrow-night.css')->apply('UglifyCss');
 
 	$collection->directory('components/rainbow/js', function($collection) {
 		$collection->javascript('rainbow.min.js');
@@ -44,7 +44,7 @@ Basset::collection('article', function($collection) {
 	$collection->javascript('app/js/article.js');
 })
 ->rawOnEnvironment('local')
-->apply('JsMin');
+->apply('UglifyJs');
 
 //////////////////////////////////////////////////////////////////////
 //////////////////////////// MODULE ASSETS ///////////////////////////
@@ -56,7 +56,7 @@ Basset::collection('lazyload', function($collection) {
 	$collection->javascript('app/js/modules/lazyload.js');
 })
 ->rawOnEnvironment('local')
-->apply('JsMin');
+->apply('UglifyJs');
 
 Basset::collection('affixed', function($collection) {
 	$collection->javascript('components/jquery/jquery.min.js');
@@ -65,4 +65,4 @@ Basset::collection('affixed', function($collection) {
 	$collection->javascript('app/js/modules/affixed.js');
 })
 ->rawOnEnvironment('local')
-->apply('JsMin');
+->apply('UglifyJs');

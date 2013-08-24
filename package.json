@@ -1,0 +1,7 @@
+{
+  "name": "autopergamene",
+  "dependencies": {
+    "uglify-js": "~2",
+    "uglifycss": "*"
+  }
+}
