@@ -5,9 +5,8 @@ php:
   - 5.5
 
 before_install:
-  - npm install bower -g
+  - npm install
   - composer install
-  - bower install
-  - php artisan basset:build -f -p
+  - grunt
 
 script: phpunit
