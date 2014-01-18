@@ -111,7 +111,6 @@ return array(
 		'Flickering\FlickeringServiceProvider',
 		'Illuminage\IlluminageServiceProvider',
 		'Polyglot\PolyglotServiceProvider',
-		'Juy\Profiler\Providers\ProfilerServiceProvider',
 		'Rocketeer\RocketeerServiceProvider',
 		'TwigBridge\TwigServiceProvider',
 		'Acetone\AcetoneServiceProvider',

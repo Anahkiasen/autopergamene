@@ -20,7 +20,6 @@
     "anahkiasen/polyglot": "dev-master",
     "rcrowe/twigbridge": "dev-master",
     "knplabs/packagist-api": "dev-master",
-    "juy/profiler": "dev-master",
     "anahkiasen/acetone": "dev-master"
   },
   "require-dev": {
