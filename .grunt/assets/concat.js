@@ -1,5 +1,5 @@
 module.exports = {
-	stylesheets: {
+	css: {
 		files: {
 			'application.css': [
 				'components/normalize-css/normalize.css',
@@ -10,7 +10,7 @@ module.exports = {
 			],
 		},
 	},
-	javascript: {
+	js: {
 		files: {
 			'application.js': [
 				'app/js/scripts.js',

@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "grunt-bower-task": "*",
-    "grunt-concat-sourcemap": "*",
+    "grunt-contrib-concat": "*",
     "grunt-contrib-clean": "*",
     "grunt-contrib-compass": "*",
     "grunt-contrib-copy": "*",
