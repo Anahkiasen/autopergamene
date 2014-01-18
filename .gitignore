@@ -1,13 +1,13 @@
-# Laravel
-bootstrap/compiled.php
-/vendor
-
-# Packages
-app/config.remote.php
+# Dependencies
+public/components
 node_modules
+vendor
+
+# Cache and compiled
+.sass-cache
+bootstrap/compiled.php
 public/builds
 
 # Other files
 .DS_Store
-.sass-cache
 sftp-config.json

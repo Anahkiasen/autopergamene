@@ -16,13 +16,12 @@
     "anahkiasen/illuminage": "dev-master",
     "anahkiasen/underscore-php": "dev-master",
     "dflydev/markdown": "dev-master",
-    "jasonlewis/basset": "dev-develop",
-    "natxet/CssMin": "dev-master",
     "anahkiasen/rocketeer": "dev-develop",
     "anahkiasen/polyglot": "dev-master",
     "rcrowe/twigbridge": "dev-master",
     "knplabs/packagist-api": "dev-master",
-    "juy/profiler": "dev-master"
+    "juy/profiler": "dev-master",
+    "anahkiasen/acetone": "dev-master"
   },
   "require-dev": {
     "phpunit/phpunit": "dev-master"
