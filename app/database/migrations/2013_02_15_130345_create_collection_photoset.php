@@ -13,7 +13,7 @@ class CreateCollectionPhotoset extends Migration
 			$table->increments('id');
 				$table->integer('collection_id');
 				$table->integer('photoset_id');
-			$table->timestamps();
+			$table->nullableTimestamps();
 		});
 	}
 

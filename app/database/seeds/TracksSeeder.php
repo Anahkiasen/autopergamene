@@ -43,7 +43,7 @@ class TracksSeeder extends Seeder
 	{
 		$sets = 'https://api.soundcloud.com/users/anahkiasen/playlists.json?consumer_key=2dfa4a9133c293421b743e7414d8b1f3';
 		$sets = Cache::remember($sets, 3600, function () use ($sets) {
-			return json_decode(File::getRemote($sets), true);
+			return json_decode(file_get_contents($sets), true);
 		});
 
 		return $sets;

@@ -12,7 +12,7 @@ class CreateCategories extends Migration
 		Schema::create('categories', function ($table) {
 			$table->string('id');
 				$table->string('name');
-				$table->string('link');
+				$table->string('link')->nullable();
 				$table->integer('order');
 			$table->timestamps();
 
