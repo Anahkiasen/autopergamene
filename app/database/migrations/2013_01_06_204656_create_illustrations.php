@@ -9,7 +9,7 @@ class CreateIllustrations extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('illustrations', function($table) {
+		Schema::create('illustrations', function ($table) {
 			$table->increments('id');
 				$table->string('name');
 				$table->string('media');

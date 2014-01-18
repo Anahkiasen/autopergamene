@@ -9,7 +9,7 @@ class CreateCollections extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('collections', function($table) {
+		Schema::create('collections', function ($table) {
 			$table->string('id');
 				$table->string('name');
 				$table->string('description');

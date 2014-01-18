@@ -9,7 +9,7 @@ class CreateCategoriesLang extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('categories_lang', function($table) {
+		Schema::create('categories_lang', function ($table) {
 			$table->increments('id');
 			$table->string('lang');
 				$table->string('description');

@@ -9,7 +9,7 @@ class CreateRepositories extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('repositories', function($table) {
+		Schema::create('repositories', function ($table) {
 			$table->increments('id');
 				$table->string('name');
 				$table->text('content');

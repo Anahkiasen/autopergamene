@@ -9,7 +9,7 @@ class CreateCategories extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('categories', function($table) {
+		Schema::create('categories', function ($table) {
 			$table->string('id');
 				$table->string('name');
 				$table->string('link');

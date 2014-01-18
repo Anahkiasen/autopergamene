@@ -9,7 +9,7 @@ class CreateCollectionPhotoset extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('collection_photoset', function($table) {
+		Schema::create('collection_photoset', function ($table) {
 			$table->increments('id');
 				$table->integer('collection_id');
 				$table->integer('photoset_id');

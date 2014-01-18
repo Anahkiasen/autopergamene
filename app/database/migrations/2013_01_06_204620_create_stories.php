@@ -9,7 +9,7 @@ class CreateStories extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('stories', function($table) {
+		Schema::create('stories', function ($table) {
 			$table->string('id');
 				$table->string('name');
 				$table->text('description');

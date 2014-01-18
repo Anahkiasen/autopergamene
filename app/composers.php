@@ -8,7 +8,7 @@ use Autopergamene\Track;
 /////////////////////////// VIEW COMPOSERS ///////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-View::composer('partials.about', function($view) {
+View::composer('partials.about', function ($view) {
 	$view->services = Service::all();
 
 	// Get current time and timezone
@@ -19,7 +19,7 @@ View::composer('partials.about', function($view) {
 	$view->work = ceil(Carbon::createFromDate(2009, 10, 1)->diffInMonths($today) / 12);
 });
 
-View::composer('layouts.partials.footer', function($view) {
+View::composer('layouts.partials.footer', function ($view) {
 	$view->services = Service::whereNotIn('name', ['Mail', 'Youtube'])->get();
 });
 
@@ -27,14 +27,14 @@ View::composer('layouts.partials.footer', function($view) {
 /////////////////////////// PAGE COMPOSERS ///////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-View::composer('categories.the-winter-throat', function($view) {
+View::composer('categories.the-winter-throat', function ($view) {
 	$view->tracks = Track::orderBy('plays', 'desc')->get();
 });
 
-View::composer('categories.graceful-degradation', function($view) {
+View::composer('categories.graceful-degradation', function ($view) {
 	$view->repositories = Repository::orderBy('master', 'desc')->orderBy('order')->get();
 });
 
-View::composer('categories.today-is-sunday', function($view) {
+View::composer('categories.today-is-sunday', function ($view) {
 	$view->tableaux = Tableau::latest()->get();
 });

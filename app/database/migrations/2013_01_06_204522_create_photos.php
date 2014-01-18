@@ -9,7 +9,7 @@ class CreatePhotos extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('photos', function($table) {
+		Schema::create('photos', function ($table) {
 			$table->increments('id');
 				$table->string('name');
 				$table->string('surname');

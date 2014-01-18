@@ -12,7 +12,7 @@ HTML::macro('linkBlank', function($url, $link = null, $attributes = array()) {
 /**
  * A link with the .back class
  */
-HTML::macro('backLink', function($url, $text) {
+HTML::macro('backLink', function ($url, $text) {
 	return HTML::link($url, $text, ['class' => 'back']);
 });
 
@@ -28,13 +28,13 @@ HTML::macro('blockLink', function($url, $text, $attributes = array()) {
 /**
  * A link back home
  */
-HTML::macro('homeLink', function() {
+HTML::macro('homeLink', function () {
 	return HTML::link(URL::route('home'), Lang::get('global.home'), ['class' => 'back']);
 });
 
 /**
  * Lazy loaded image
  */
-HTML::macro('lazyLoad', function($image, $alt) {
+HTML::macro('lazyLoad', function ($image, $alt) {
 	return HTML::image('http://placehold.it/350&text=Chargement...', $alt, array('data-original' => URL::asset($image)));
 });

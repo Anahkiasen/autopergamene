@@ -1,8 +1,6 @@
 <?php
 namespace Autopergamene;
 
-use Underscore\Parse;
-
 /**
  * An article from the Blog
  */

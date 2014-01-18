@@ -11,7 +11,6 @@ return array(
 	|
 	*/
 
-
 	'extension' => 'twig',
 
 	/*

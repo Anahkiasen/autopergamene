@@ -4,7 +4,7 @@
 ///////////////////////////// DEPLOYMENT /////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-Rocketeer::after('deploy', function($task) {
+Rocketeer::after('deploy', function ($task) {
 	$task->command->comment('Installing Bower components');
 	$task->runForCurrentRelease('bower install --allow-root');
 

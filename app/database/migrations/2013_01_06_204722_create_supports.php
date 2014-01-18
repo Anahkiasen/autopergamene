@@ -9,7 +9,7 @@ class CreateSupports extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('supports', function($table) {
+		Schema::create('supports', function ($table) {
 			$table->string('id');
 				$table->string('name');
 			$table->timestamps();

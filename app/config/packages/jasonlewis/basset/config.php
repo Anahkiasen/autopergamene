@@ -25,10 +25,10 @@ return array(
 			|--------------------------------------------------------------------------
 			*/
 
-			'UglifyCss' => array('UglifyCssFilter', function($filter) {
+			'UglifyCss' => array('UglifyCssFilter', function ($filter) {
 				$filter->whenProductionBuild()->whenAssetIsStylesheet();
 				$filter->setArgument('node_modules/.bin/uglifycss');
-				$filter->beforeFiltering(function($instance) {
+				$filter->beforeFiltering(function ($instance) {
 					$instance->setUglyComments(true);
 				});
 			}),
@@ -39,10 +39,10 @@ return array(
 			|--------------------------------------------------------------------------
 			*/
 
-			'UglifyJs' => array('UglifyJs2Filter', function($filter) {
+			'UglifyJs' => array('UglifyJs2Filter', function ($filter) {
 				$filter->whenProductionBuild()->whenAssetIsJavascript();
 				$filter->setArgument('node_modules/.bin/uglifyjs');
-				$filter->beforeFiltering(function($instance) {
+				$filter->beforeFiltering(function ($instance) {
 					$instance->setCompress(true);
 					$instance->setMangle(true);
 				});
@@ -57,7 +57,7 @@ return array(
 			|
 			*/
 
-			'UriRewriteFilter' => array('UriRewriteFilter', function($filter) {
+			'UriRewriteFilter' => array('UriRewriteFilter', function ($filter) {
 				$filter->setArguments(public_path())->whenAssetIsStylesheet();
 			}),
 
