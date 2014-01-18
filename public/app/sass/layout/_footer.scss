@@ -19,7 +19,7 @@ footer {
     @include container;
   }
   .colophon, .social {
-    @include span-columns(6);
+    @include span(6);
   }
   a {
     color: $color-accent--dark;
@@ -57,7 +57,7 @@ footer {
     @include font-size(0.75rem);
     .colophon, .social {
       @include rem(margin-top, 1rem);
-      @include reset-columns;
+      @include full;
       text-align: right;
       width: 100%;
     }

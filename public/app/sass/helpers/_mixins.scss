@@ -49,14 +49,16 @@ $prefixes: ("-webkit-","-moz-", "-o-", "");
 
 @mixin per-row($number, $gutter: nil) {
   // Replace temporarly gutter-width if required
-  $old-gutter-width: $gutter-width;
+  $old-gutter-width: susy-get("gutters");
   @if $gutter != nil {
     $gutter-width: $gutter;
   }
 
   // Set columns
-  @include span-columns(round($total-columns / $number));
-  @include nth-omega(#{$number}n);
+  @include span(round(susy-get("columns") / $number));
+  &:nth-child(#{$number}n) {
+    @include omega;
+  }
 
   // Restore gutter-width
   $gutter-width: $old-gutter-width;
@@ -67,19 +69,19 @@ $prefixes: ("-webkit-","-moz-", "-o-", "");
 // Helpers to create media queries
 
 @mixin from-to($from, $to) {
-  @include at-breakpoint($from $total-columns $to) {
+  @include breakpoint($from $to) {
     @content;
   }
 }
 
 @mixin to($to) {
-  @include at-breakpoint(0 $total-columns $to) {
+  @include breakpoint(max-width $to) {
     @content;
   }
 }
 
 @mixin from($from) {
-  @include at-breakpoint($from $total-columns) {
+  @include breakpoint(min-width $from) {
     @content;
   }
 }

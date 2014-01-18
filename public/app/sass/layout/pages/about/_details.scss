@@ -4,7 +4,7 @@
 
 .about-more {
 
-  @include reset-columns;
+  @include full;
   @include rem(margin-top, 1rem);
   @extend %container-wide;
   @extend %hidden;

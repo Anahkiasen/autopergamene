@@ -1,4 +1,4 @@
-// VARIABLES
+// Variables
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
@@ -14,7 +14,7 @@ $font-condensed             : "atrament-web", $font-sans;
 // Colors
 //////////////////////////////////////////////////////////////////////
 
-$pink-red                   : #ea2c46;
+$pink-red                   : hsl(352, 82%, 55%);
 
 $color-accent               : $pink-red;
 $color-accent--light        : lighten($color-accent, 20);
@@ -30,11 +30,10 @@ $tablet                     : 50em;
 $mobile                     : 30em;
 $mini                       : 20em;
 
-// Configuration
+// Susy
 //////////////////////////////////////////////////////////////////////
 
-$legacy-support-for-ie      : true;
-$legacy-support-for-ie6     : false;
-$legacy-support-for-ie7     : false;
-$legacy-support-for-ie8     : true;
-$legacy-support-for-mozilla : false;
+$susy: (
+	container : 59em,
+	columns   : 12,
+);

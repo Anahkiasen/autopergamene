@@ -79,7 +79,7 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('js', 'Build scripts', [
 		'jshint',
-		'concat:hs',
+		'concat:js',
 	]);
 
 	grunt.registerTask('css', 'Build stylesheets', [

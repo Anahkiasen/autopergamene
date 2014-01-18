@@ -19,6 +19,9 @@ GEM
       multi_json (~> 1.0)
       sass (>= 3.3.rc.1)
     compass-import-once (1.0.2)
+    compass-rgbapng (0.2.1)
+      chunky_png (>= 0.8.0)
+      compass (>= 0.10.0)
     csscss (1.3.2)
       colorize
       parslet (~> 1.5)
@@ -43,9 +46,8 @@ GEM
     sassy-maps (0.3.1)
       compass (~> 1.0.0.alpha.13)
       sass (~> 3.3.0.rc.2)
-    susy (1.0.9)
-      compass (>= 0.12.2)
-      sass (>= 3.2.0)
+    susy (2.0.0.beta.3)
+      sass (~> 3.3.0.rc.1)
 
 PLATFORMS
   ruby
@@ -53,7 +55,8 @@ PLATFORMS
 DEPENDENCIES
   breakpoint (~> 2.4.0)
   compass (~> 1.0.0.alpha.17)
+  compass-rgbapng (~> 0.2.1)
   csscss (~> 1.3.2)
   sass (~> 3.3.0.rc.2)
   sass-globbing (~> 1.1.0)
-  susy (~> 1.0.9)
+  susy (~> 2.0.0.beta.3)

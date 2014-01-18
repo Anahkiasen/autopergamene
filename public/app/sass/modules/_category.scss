@@ -46,19 +46,19 @@
       @include rgba-background-inline(rgba(black, 0.1));
     }
     img {
-      @include span-columns(3);
+      @include span(3);
     }
     figcaption {
-      @include span-columns(9 omega);
+      @include span(9 omega);
     }
   }
 
   @include from-to($tablet, $desktop) {
     img {
-      @include span-columns(2);
+      @include span(2);
     }
     figcaption {
-      @include span-columns(10 omega);
+      @include span(10 omega);
     }
   }
 
@@ -78,19 +78,19 @@
 
   @include from-to($desktop, $wide) {
     img {
-      @include span-columns(3);
+      @include span(3);
     }
     figcaption {
-      @include span-columns(9 omega);
+      @include span(9 omega);
     }
   }
 
   @include from($wide) {
     img {
-      @include span-columns(3);
+      @include span(3);
     }
     figcaption {
-      @include span-columns(9 omega);
+      @include span(9 omega);
     }
   }
 }
