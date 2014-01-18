@@ -3,8 +3,6 @@
 //////////////////////////////////////////////////////////////////////
 
 .about-more {
-
-  @include full;
   @include rem(margin-top, 1rem);
   @extend %container-wide;
   @extend %hidden;
@@ -56,14 +54,12 @@
   }
 
   @include from-to($tablet, $wider) {
-    @include container-wide;
     article {
       @include per-row(3);
     }
   }
 
   @include from($wider) {
-    @include container-wide;
     article {
       @include per-row(4);
     }

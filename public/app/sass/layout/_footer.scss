@@ -16,7 +16,7 @@ footer {
     @include box-shadow(0 1px 0 0 fade(white, 15));
   }
   .footer-container {
-    @include container;
+    @extend %container;
   }
   .colophon, .social {
     @include span(6);
