@@ -108,13 +108,13 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
 		'Flatten\FlattenServiceProvider',
-		'Basset\BassetServiceProvider',
 		'Flickering\FlickeringServiceProvider',
 		'Illuminage\IlluminageServiceProvider',
 		'Polyglot\PolyglotServiceProvider',
 		'Juy\Profiler\Providers\ProfilerServiceProvider',
 		'Rocketeer\RocketeerServiceProvider',
 		'TwigBridge\TwigServiceProvider',
+		'Acetone\AcetoneServiceProvider',
 
 	),
 
@@ -187,7 +187,7 @@ return array(
 		'Arrays'     => 'Underscore\Methods\ArraysMethods',
 
 		// Other packages
-		'Basset'     => 'Basset\Facade',
+		'Acetone'    => 'Acetone\Facades\Acetone',
 		'Carbon'     => 'Carbon\Carbon',
 		'Flickering' => 'Flickering\Facades\Flickering',
 		'Rocketeer'  => 'Rocketeer\Facades\Rocketeer',

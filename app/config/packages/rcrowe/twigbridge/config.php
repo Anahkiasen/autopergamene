@@ -116,9 +116,11 @@ return array(
 		'link_to_action',
 		'secure_asset',
 		'secure_url',
+
 		// Translation
 		'trans',
 		'trans_choice',
+
 		// Miscellaneous
 		'csrf_token',
 	),
