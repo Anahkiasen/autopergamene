@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "dbdba645ab8f82ababec953a03231361",
+    "hash": "9abc32d871434e9f46b004423eac051b",
     "packages": [
         {
             "name": "anahkiasen/acetone",
@@ -45,6 +45,52 @@
             ],
             "description": "A lightweight assets pipeline to use over Grunt",
             "time": "2013-12-19 17:08:57"
+        },
+        {
+            "name": "anahkiasen/arrounded",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Anahkiasen/arrounded.git",
+                "reference": "bb8f06ab60aa9f01fb1629e879d23b6a5eec9a3f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Anahkiasen/arrounded/zipball/bb8f06ab60aa9f01fb1629e879d23b6a5eec9a3f",
+                "reference": "bb8f06ab60aa9f01fb1629e879d23b6a5eec9a3f",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~4",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "illuminate/container": "~4",
+                "illuminate/database": "~4",
+                "mockery/mockery": "dev-master",
+                "patchwork/utf8": "dev-master"
+            },
+            "suggest": {
+                "kevinlebrun/colors.php": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Arrounded": "src"
+                },
+                "classmap": [
+                    "tests"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Maxime Fabre",
+                    "email": "ehtnam6@gmail.com"
+                }
+            ],
+            "description": "A set of self-aware Laravel abstracts that know their way around",
+            "time": "2014-01-16 10:07:32"
         },
         {
             "name": "anahkiasen/flatten",
@@ -239,16 +285,16 @@
         },
         {
             "name": "anahkiasen/polyglot",
-            "version": "dev-master",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Anahkiasen/polyglot.git",
-                "reference": "36ea08fdce01188a8b17cee9b7fd6e80d84e065f"
+                "reference": "d7f09e97169ec3529907bcf185e06784e3f477ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Anahkiasen/polyglot/zipball/36ea08fdce01188a8b17cee9b7fd6e80d84e065f",
-                "reference": "36ea08fdce01188a8b17cee9b7fd6e80d84e065f",
+                "url": "https://api.github.com/repos/Anahkiasen/polyglot/zipball/d7f09e97169ec3529907bcf185e06784e3f477ca",
+                "reference": "d7f09e97169ec3529907bcf185e06784e3f477ca",
                 "shasum": ""
             },
             "require": {
@@ -285,7 +331,7 @@
                 "model",
                 "translation"
             ],
-            "time": "2014-01-10 21:03:02"
+            "time": "2014-01-18 16:06:02"
         },
         {
             "name": "anahkiasen/rocketeer",
@@ -997,52 +1043,6 @@
             "time": "2013-10-09 04:20:00"
         },
         {
-            "name": "juy/profiler",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/juy/profiler.git",
-                "reference": "2fc6f0998eadb25994d839c0d18335214ee6f2fb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/juy/profiler/zipball/2fc6f0998eadb25994d839c0d18335214ee6f2fb",
-                "reference": "2fc6f0998eadb25994d839c0d18335214ee6f2fb",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "~4",
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Juy\\Profiler": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Sevdin Filiz",
-                    "email": "angelside@users.sourceforge.net",
-                    "homepage": "http://juysoft.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A profiler for Laravel 4.",
-            "homepage": "http://github.com/juy/profiler",
-            "keywords": [
-                "anbu",
-                "debug bar",
-                "laravel",
-                "profiler"
-            ],
-            "time": "2013-09-29 20:11:48"
-        },
-        {
             "name": "knplabs/packagist-api",
             "version": "dev-master",
             "source": {
@@ -1101,12 +1101,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "f666769daad9f0accd980897451012d6acac48d7"
+                "reference": "a54dda66de814f8c2085e71c69e44e91f1b46a9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/f666769daad9f0accd980897451012d6acac48d7",
-                "reference": "f666769daad9f0accd980897451012d6acac48d7",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/a54dda66de814f8c2085e71c69e44e91f1b46a9c",
+                "reference": "a54dda66de814f8c2085e71c69e44e91f1b46a9c",
                 "shasum": ""
             },
             "require": {
@@ -1210,7 +1210,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2014-01-17 22:56:05"
+            "time": "2014-01-18 16:40:32"
         },
         {
             "name": "monolog/monolog",
@@ -1710,12 +1710,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "65f363ac44058796a8e1428cf41e6d92d8a75ddc"
+                "reference": "a78d6504ff5d4367497785ab2ade91db3a9fbe11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/65f363ac44058796a8e1428cf41e6d92d8a75ddc",
-                "reference": "65f363ac44058796a8e1428cf41e6d92d8a75ddc",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/a78d6504ff5d4367497785ab2ade91db3a9fbe11",
+                "reference": "a78d6504ff5d4367497785ab2ade91db3a9fbe11",
                 "shasum": ""
             },
             "type": "library",
@@ -1745,7 +1745,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2013-12-25 11:17:50"
+            "time": "2014-01-18 15:33:09"
         },
         {
             "name": "rcrowe/twigbridge",
@@ -1804,12 +1804,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/stackphp/builder.git",
-                "reference": "49ab90450d7f959943f3659a4bcb5965530117c2"
+                "reference": "f98a5eb77b212a77b67a70f74d856ae859dd74b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stackphp/builder/zipball/49ab90450d7f959943f3659a4bcb5965530117c2",
-                "reference": "49ab90450d7f959943f3659a4bcb5965530117c2",
+                "url": "https://api.github.com/repos/stackphp/builder/zipball/f98a5eb77b212a77b67a70f74d856ae859dd74b3",
+                "reference": "f98a5eb77b212a77b67a70f74d856ae859dd74b3",
                 "shasum": ""
             },
             "require": {
@@ -1846,7 +1846,7 @@
             "keywords": [
                 "stack"
             ],
-            "time": "2013-10-25 14:04:45"
+            "time": "2014-01-18 16:33:58"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3278,14 +3278,13 @@
         "anahkiasen/flatten": 20,
         "anahkiasen/flickering": 20,
         "anahkiasen/illuminage": 20,
-        "anahkiasen/underscore-php": 20,
         "dflydev/markdown": 20,
         "anahkiasen/rocketeer": 20,
         "anahkiasen/polyglot": 20,
         "rcrowe/twigbridge": 20,
         "knplabs/packagist-api": 20,
-        "juy/profiler": 20,
         "anahkiasen/acetone": 20,
+        "anahkiasen/arrounded": 20,
         "phpunit/phpunit": 20
     },
     "platform": [

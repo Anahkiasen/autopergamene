@@ -14,13 +14,13 @@
     "anahkiasen/flatten": "dev-develop",
     "anahkiasen/flickering": "dev-master",
     "anahkiasen/illuminage": "dev-master",
-    "anahkiasen/underscore-php": "dev-master",
     "dflydev/markdown": "dev-master",
     "anahkiasen/rocketeer": "dev-develop",
-    "anahkiasen/polyglot": "dev-master",
+    "anahkiasen/polyglot": "dev-develop",
     "rcrowe/twigbridge": "dev-master",
     "knplabs/packagist-api": "dev-master",
-    "anahkiasen/acetone": "dev-master"
+    "anahkiasen/acetone": "dev-master",
+    "anahkiasen/arrounded": "dev-master"
   },
   "require-dev": {
     "phpunit/phpunit": "dev-master"
