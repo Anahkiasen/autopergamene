@@ -1,5 +1,6 @@
 <?php
 use Autopergamene\Category;
+use Autopergamene\Lang\Category as CategoryLang;
 
 class CategoriesSeeder extends Seeder
 {
@@ -12,17 +13,17 @@ class CategoriesSeeder extends Seeder
 				: null;
 
 			Category::create([
-				'id'          => Str::slug($name),
-				'name'        => $name,
-				'link'        => $link,
-				'order'       => $key,
+				'id'    => Str::slug($name),
+				'name'  => $name,
+				'link'  => $link,
+				'order' => $key,
 			]);
 		}
 
 		foreach ($this->getTranslations() as $lang => $categories) {
 			foreach ($categories as $key => $description) {
 				$key = Str::slug($categoriesNames[$key]);
-				Category::find($key)->update([
+				CategoryLang::where('category_id', $key)->update([
 					'description' => $description,
 					'lang'        => $lang,
 				]);
