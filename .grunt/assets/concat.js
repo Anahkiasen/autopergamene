@@ -28,13 +28,13 @@ module.exports = {
 			'<%= paths.compiled.js %>/lazyload.js': [
 				'<%= components %>/jquery/jquery.min.js',
 				'<%= components %>/jquery.lazyload/jquery.lazyload.js',
-				'<%= paths.original.js %>/modules/lazyload.js',
+				'<%= paths.original.js %>/components/lazyload.js',
 			],
 			'<%= paths.compiled.js %>/affixed.js': [
 				'<%= components %>/jquery/jquery.min.js',
 				'<%= components %>/bootstrap/js/bootstrap-affix.js',
 				'<%= components %>/bootstrap/js/bootstrap-scrollspy.js',
-				'<%= paths.original.js %>/modules/affixed.js',
+				'<%= paths.original.js %>/components/affixed.js',
 			],
 		},
 	}

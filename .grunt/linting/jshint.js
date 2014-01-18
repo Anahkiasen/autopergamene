@@ -27,6 +27,12 @@ module.exports = {
 		trailing      : true,
 		undef         : true,
 		unused        : true,
+
+		predef: ['Modernizr', 'Rainbow'],
+		globals: {
+			foreach: true,
+			addEvent: true,
+		}
 	},
 
 	all: ['<%= paths.original.js %>/*'],
