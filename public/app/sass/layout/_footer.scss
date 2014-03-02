@@ -12,8 +12,8 @@ footer {
   hr {
     width: 50%;
     @include rem(margin, 1rem auto);
-    border-color: fade($color-accent--dark, 25);
-    @include box-shadow(0 1px 0 0 fade(white, 15));
+    border-color: fade($color-accent--dark, 0.25);
+    box-shadow: 0 1px 0 0 fade(white, 0.15);
   }
   .footer-container {
     @extend %container;

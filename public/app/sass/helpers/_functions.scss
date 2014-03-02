@@ -2,11 +2,6 @@
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-// Shortcut for rgba() with a percentage-based $opacity
-@function fade($color, $opacity) {
-  @return rgba($color, $opacity / 100);
-}
-
 // Generate a grey on a lightness-scale from 0 to 100
 @function grey($lightness) {
   @return lighten(black, $lightness);

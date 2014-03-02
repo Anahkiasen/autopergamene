@@ -12,7 +12,7 @@
   }
 
   @include from($wider) {
-    @include opacity(1);
+    opacity: 1;
     height: 100%;
     max-height: auto;
   }

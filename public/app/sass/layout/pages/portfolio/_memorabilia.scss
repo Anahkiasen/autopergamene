@@ -39,7 +39,7 @@
       @extend %font-base;
       @extend %font-size-large;
       margin: 0;
-      color: fade(white, 20);
+      color: fade(white, 0.20);
       position: absolute;
       text-align: center;
     }

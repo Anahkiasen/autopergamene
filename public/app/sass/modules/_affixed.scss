@@ -37,7 +37,7 @@
 
   // Active -------------------------------------------------------- /
   &.affix {
-    @include box-shadow(0 1rem 0 fade($color-accent, 10));
+    box-shadow: 0 1rem 0 fade($color-accent, 0.10);
     @include column-count(1);
     left: 0;
     position: fixed;

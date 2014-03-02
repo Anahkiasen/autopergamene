@@ -17,7 +17,7 @@
 // Firefox-like "double shadow"
 
 @mixin double-shadow($size: 2px, $blur: 0) {
-  @include box-shadow(0 $size $blur fade(black, 10), inset 0 -$size $blur fade(black, 20));
+  box-shadow: 0 $size $blur fade(black, 0.10), inset 0 -$size $blur fade(black, 0.20);
 }
 
 // Changes the selection effect

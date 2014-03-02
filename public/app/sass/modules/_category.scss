@@ -63,15 +63,15 @@
   }
 
   @include from($desktop) {
-    @include opacity(0.25);
+    opacity: 0.25;
     h4 {
-      @include opacity(0);
+      opacity: 0;
     }
     &:hover {
-      @include opacity(1);
+      opacity: 1;
       h4 {
-        @include transition(all 0.3s);
-        @include opacity(1);
+        transition: all 0.3s;
+        opacity: 1;
       }
     }
   }

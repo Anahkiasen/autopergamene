@@ -20,7 +20,7 @@
 
   @include to($desktop) {
     height: 0;
-    @include opacity(0);
+    opacity: 0;
     overflow: hidden;
   }
 }
