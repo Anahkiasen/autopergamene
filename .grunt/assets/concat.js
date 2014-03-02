@@ -3,10 +3,8 @@ module.exports = {
 		files: {
 			'<%= paths.compiled.css %>/application.css': [
 				'<%= components %>/normalize-css/normalize.css',
-				'<%= paths.original.css %>/styles.css',
-			],
-			'<%= paths.compiled.css %>/article.css': [
 				'<%= components %>/rainbow/themes/tomorrow-night.css',
+				'<%= paths.original.css %>/**/*.css',
 			],
 		},
 	},
@@ -26,14 +24,14 @@ module.exports = {
 				'<%= paths.original.js %>/article.js',
 			],
 			'<%= paths.compiled.js %>/lazyload.js': [
-				'<%= components %>/jquery/jquery.min.js',
+				'<%= paths.components.jquery %>',
 				'<%= components %>/jquery.lazyload/jquery.lazyload.js',
 				'<%= paths.original.js %>/components/lazyload.js',
 			],
 			'<%= paths.compiled.js %>/affixed.js': [
-				'<%= components %>/jquery/jquery.min.js',
-				'<%= components %>/bootstrap/js/bootstrap-affix.js',
-				'<%= components %>/bootstrap/js/bootstrap-scrollspy.js',
+				'<%= paths.components.jquery %>',
+				'<%= components %>/bootstrap/js/affix.js',
+				'<%= components %>/bootstrap/js/scrollspy.js',
 				'<%= paths.original.js %>/components/affixed.js',
 			],
 		},

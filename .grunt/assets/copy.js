@@ -4,15 +4,15 @@ module.exports = {
 			{
 				expand : true,
 				src    : ['**'],
-				cwd    : '<%= paths.original.img %>',
-				dest   : '<%= paths.compiled.img %>'
+				cwd    : '<%= paths.components.bootstrap.fonts %>',
+				dest   : '<%= builds %>/fonts'
 			},
 			{
 				expand : true,
 				src    : ['**'],
-				cwd    : '<%= paths.original.svg %>',
-				dest   : '<%= paths.compiled.svg %>'
-			},
+				cwd    : '<%= paths.original.img %>',
+				dest   : '<%= paths.compiled.img %>'
+			}
 		]
 	}
 };

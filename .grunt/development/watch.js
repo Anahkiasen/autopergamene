@@ -2,11 +2,10 @@ module.exports = {
 	options: {
 		livereload : true,
 		interrupt  : true,
-		poll       : true,
 	},
 
 	grunt: {
-		files: 'Gruntfile.js',
+		files: ['Gruntfile.js', '<%= grunt %>/**/*'],
 		tasks: 'default',
 	},
 	img: {
@@ -20,9 +19,5 @@ module.exports = {
 	css: {
 		files: '<%= paths.original.sass %>/**/*',
 		tasks: 'css',
-	},
-	phpunit: {
-		files: 'app/**/*.php',
-		tasks: 'phpunit:core',
 	},
 };
