@@ -1,6 +1,6 @@
 <footer>
 
-	{{ html_link('/', 'Français') }} - {{ html_link('en', 'English') }}<br>
+	{{ HTML.link('/', 'Français') }} - {{ HTML.link('en', 'English') }}<br>
 	&copy; {{ "now"|date('Y') }} - autopergamene - Maxime Fabre
 	<hr>
 
@@ -17,17 +17,17 @@
 
 		<section class="colophon last">
 			<p>
-				{{ lang('footer.built', {
-					'laravel':  html_linkBlank('http://laravel.com/', 'Laravel'),
-					'sass':     html_linkBlank('http://sass-lang.com', 'Sass'),
-					'compass':  html_linkBlank('http://compass-style.org/', 'Compass'),
-					'susy':     html_linkBlank('http://susy.oddbird.net/', 'Susy'),
-					'typekit':  html_linkBlank('https://typekit.com/colophons/enr5hww', 'Typekit'),
+				{{ Lang.get('footer.built', {
+					'laravel':  HTML.linkBlank('http://laravel.com/', 'Laravel'),
+					'sass':     HTML.linkBlank('http://sass-lang.com', 'Sass'),
+					'compass':  HTML.linkBlank('http://compass-style.org/', 'Compass'),
+					'susy':     HTML.linkBlank('http://susy.oddbird.net/', 'Susy'),
+					'typekit':  HTML.linkBlank('https://typekit.com/colophons/enr5hww', 'Typekit'),
 				}) }}
 			</p>
 
 			<p>
-				<a target="_blank" href="https://github.com/Anahkiasen/autopergamene">{{ lang('footer.open_source') }}</a>
+				<a target="_blank" href="https://github.com/Anahkiasen/autopergamene">{{ Lang.get('footer.open_source') }}</a>
 			</p>
 		</section>
 	</div>

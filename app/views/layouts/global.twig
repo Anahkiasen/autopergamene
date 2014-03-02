@@ -8,19 +8,19 @@
 		</title>
 
 		<meta charset='utf-8'>
-		<link href='{{ url_asset('app/img/favicon.jpg') }}' rel='shortcut icon' />
+		<link href='{{ URL.asset('app/img/favicon.jpg') }}' rel='shortcut icon' />
 		<meta name='apple-mobile-web-app-capable' content='yes' />
 		<meta name='apple-touch-fullscreen' content='yes' />
 		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
 
-		{{ acetone_stylesheets('builds/css/application.css') }}
-		{{ acetone_scripts('builds/js/modernizr.js') }}
+		{{ Acetone.stylesheets('builds/css/application.css') }}
+		{{ Acetone.scripts('builds/js/modernizr.js') }}
 		{% block css %}
 		{% endblock %}
 	</head>
 	<body>
 
-		<a href='{{ url_route('home') }}'>
+		<a href='{{ URL.route('home') }}'>
 			<header>
 				<h1>Autopergamene</h1>
 			</header>
@@ -36,7 +36,7 @@
 
 		<script type="text/javascript" src="//use.typekit.net/enr5hww.js"></script>
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-		{{ acetone_scripts('builds/js/application.js') }}
+		{{ Acetone.scripts('builds/js/application.js') }}
 		{% block js %}
 		{% endblock %}
 

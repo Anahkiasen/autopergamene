@@ -9,49 +9,49 @@
 		{# Summary #}
 		<h2>
 			<span itemprop='name'>Maxime Fabre</span>
-			<small>{{ age }} {{ lang('about.age') }}</small>
+			<small>{{ age }} {{ Lang.get('about.age') }}</small>
 		</h2>
 		<h3 itemprop='jobTitle'>Webdesigner - Webdeveloper</h3>
 		<h4 itemprop='address'>Saint-Étienne, France</h4>
 
 		{# Biography #}
-		<span class='block' data-show='.about-biography'>{{ lang('about.whois') }}</span>
+		<span class='block' data-show='.about-biography'>{{ Lang.get('about.whois') }}</span>
 		<section class='about-biography'>
-			{{ lang('about.biography', {
+			{{ Lang.get('about.biography', {
 				'work':       work,
-				'stappler':   html_linkBlank('http://www.stappler.fr/', 'Principe de Stappler'),
-				'twitter':    html_linkBlank('http://twitter.com/Anahkiasen', 'Twitter'),
-				'github':     html_linkBlank('http://github.com/Anahkiasen/', 'Github'),
-				'bitbucket':  html_linkBlank('https://bitbucket.org/Anahkiasen', 'Bitbucket'),
+				'stappler':   HTML.linkBlank('http://www.stappler.fr/', 'Principe de Stappler'),
+				'twitter':    HTML.linkBlank('http://twitter.com/Anahkiasen', 'Twitter'),
+				'github':     HTML.linkBlank('http://github.com/Anahkiasen/', 'Github'),
+				'bitbucket':  HTML.linkBlank('https://bitbucket.org/Anahkiasen', 'Bitbucket'),
 			}) }}
 
 			{# Details and links #}
-			<span class='block' data-show='.about-more'>{{ lang('about.informations') }}</span>
+			<span class='block' data-show='.about-more'>{{ Lang.get('about.informations') }}</span>
 			<section class='about-more'>
 				<article class='social'>
-					<h3>{{ lang('about.findme') }}</h3>
+					<h3>{{ Lang.get('about.findme') }}</h3>
 					<ul>
 						{% for service in services %}
 							<li>
-								{% if str_contains(service.link, '@') %}
-									{{ image("app/svg/#{service.icon}", service.name) }}
-									{{ html_mailto(service.link, service.name) }}
+								{% if Str.contains(service.link, '@') %}
+									{{ HTML.image("app/svg/#{service.icon}", service.name) }}
+									{{ HTML.mailto(service.link, service.name) }}
 								{% else %}
-									{{ image("app/svg/#{service.icon}", service.name) }}
-									{{ html_linkBlank(service.link, service.name) }}
+									{{ HTML.image("app/svg/#{service.icon}", service.name) }}
+									{{ HTML.linkBlank(service.link, service.name) }}
 								{% endif %}
 							</li>
 						{% endfor %}
 					</ul>
 				</article>
 				<article>
-					<h3>{{ lang('about.knowledge') }}</h3>
+					<h3>{{ Lang.get('about.knowledge') }}</h3>
 					<ul>
-						<li>{{ lang('about.knowledge_of')|join('</li><li>') }}
+						<li>{{ Lang.get('about.knowledge_of')|join('</li><li>') }}
 					</ul>
 				</article>
 				<article>
-					<h3>{{ lang('about.languages') }}</h3>
+					<h3>{{ Lang.get('about.languages') }}</h3>
 					<ul>
 						<h4>Back-end</h4>
 							<li>PHP 5.3+</li>
@@ -67,16 +67,16 @@
 					</ul>
 				</article>
 				<article>
-					<h3>{{ lang('about.with') }}</h3>
+					<h3>{{ Lang.get('about.with') }}</h3>
 					<ul>
-						<h4>{{ lang('about.frameworks') }}</h4>
+						<h4>{{ Lang.get('about.frameworks') }}</h4>
 							<li>Laravel 3/4</li>
 							<li>Slim</li>
 							<li>jQuery</li>
 							<li>Backbone</li>
 							<li>Bootstrap</li>
 							<li>Wordpress</li>
-						<h4>{{ lang('about.softwares') }}</h4>
+						<h4>{{ Lang.get('about.softwares') }}</h4>
 							<li>Sublime Text 3</li>
 							<li>Suite Adobe CS6</li>
 							<li>Autodesk Maya</li>
@@ -85,11 +85,11 @@
 					</ul>
 				</article>
 				<article>
-					<h3>{{ lang('about.misc') }}</h3>
+					<h3>{{ Lang.get('about.misc') }}</h3>
 					<ul>
-						<li>{{ lang('about.bts') }}</li>
-						<li>{{ lang('about.license') }}</li>
-						<li>{{ lang('about.spoken') }}</li>
+						<li>{{ Lang.get('about.bts') }}</li>
+						<li>{{ Lang.get('about.license') }}</li>
+						<li>{{ Lang.get('about.spoken') }}</li>
 					</ul>
 				</article>
 			</section>

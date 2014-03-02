@@ -5,12 +5,12 @@
 {% endblock %}
 
 {% block css %}
-	{{ acetone_stylesheets('builds/css/article.css') }}
+	{{ Acetone.stylesheets('builds/css/article.css') }}
 {% endblock %}
 
 {% block navigation %}
-	{{ html_homeLink() }}
-	{{ html_backLink(url_action('CategoriesController@category', category.id), "Retour à #{category.name}") }}
+	{{ HTML.homeLink() }}
+	{{ HTML.backLink(URL.action('CategoriesController@category', category.id), "Retour à #{category.name}") }}
 {% endblock %}
 
 {% block layout %}
@@ -30,5 +30,5 @@
 {% endblock %}
 
 {% block js %}
-	{{ acetone_scripts('builds/js/article.js') }}
+	{{ Acetone.scripts('builds/js/article.js') }}
 {% endblock %}

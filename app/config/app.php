@@ -112,8 +112,8 @@ return array(
 		'Illuminage\IlluminageServiceProvider',
 		'Polyglot\PolyglotServiceProvider',
 		'Rocketeer\RocketeerServiceProvider',
-		'TwigBridge\TwigServiceProvider',
 		'Acetone\AcetoneServiceProvider',
+		'Barryvdh\TwigBridge\ServiceProvider',
 
 	),
 

@@ -6,7 +6,7 @@
 
 {% block navigation %}
 	{{ parent() }}
-	{{ html_backLink('category/illustration', 'Retour aux supports') }}
+	{{ HTML.backLink('category/illustration', 'Retour aux supports') }}
 {% endblock %}
 
 {% block content %}
@@ -24,5 +24,5 @@
 {% endblock %}
 
 {% block js %}
-	{{ acetone_scripts('builds/js/lazyload.js') }}
+	{{ Acetone.scripts('builds/js/lazyload.js') }}
 {% endblock %}

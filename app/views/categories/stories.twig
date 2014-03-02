@@ -15,11 +15,11 @@
 			<figure class='cover' style='background-image: url({{ story.image }})'></figure>
 			<p><strong>Publiée</strong> il y a {{ story.created_at.diffInYears(Carbon_now()) }} ans</p>
 			<blockquote>{{ story.description }}</blockquote>
-			{{ html_blockLink(url_action('StoriesController@story', story.id), 'Lire la nouvelle') }}
+			{{ HTML.blockLink(URL.action('StoriesController@story', story.id), 'Lire la nouvelle') }}
 		</article>
 	{% endfor %}
 {% endblock %}
 
 {% block js %}
-	{{ acetone_scripts('builds/js/affixed.js') }}
+	{{ Acetone.scripts('builds/js/affixed.js') }}
 {% endblock %}

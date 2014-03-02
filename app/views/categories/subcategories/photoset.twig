@@ -6,7 +6,7 @@
 
 {% block navigation %}
 	{{ parent() }}
-	{{ html_backLink('category/memorabilia', 'Retour aux albums') }}
+	{{ HTML.backLink('category/memorabilia', 'Retour aux albums') }}
 {% endblock %}
 
 {% block content %}
@@ -21,7 +21,7 @@
 				</figcaption>
 				<div class='image-wrap'>
 					<h3>{{ photo.index(loop.index0) }}</h3>
-					{{ html_lazyLoad(photo.medium_large, photo.name) }}
+					{{ HTML.lazyLoad(photo.medium_large, photo.name) }}
 				</div>
 			</figure>
 		{% endfor %}
@@ -29,5 +29,5 @@
 {% endblock %}
 
 {% block js %}
-	{{ acetone_scripts('builds/js/lazyload.js') }}
+	{{ Acetone.scripts('builds/js/lazyload.js') }}
 {% endblock %}

@@ -1,17 +1,17 @@
 {% extends 'layouts.portfolio' %}
 
 {% block content %}
-	{{ lang('repositories.introduction', {
-		laravel: html_linkBlank('http://laravel.com', 'Laravel') ,
-		composer: html_linkBlank('http://getcomposer.org', 'Composer'),
-		psr: html_linkBlank('https://github.com/php-fig/fig-standards', 'PSR'),
+	{{ Lang.get('repositories.introduction', {
+		laravel: HTML.linkBlank('http://laravel.com', 'Laravel') ,
+		composer: HTML.linkBlank('http://getcomposer.org', 'Composer'),
+		psr: HTML.linkBlank('https://github.com/php-fig/fig-standards', 'PSR'),
 	}) }}
 
 	{% include 'partials.articles-list.articles-list' %}
 
 	{# Projects #}
 	<hr>
-	<h2>{{ lang('repositories.projects') }}</h2>
+	<h2>{{ Lang.get('repositories.projects') }}</h2>
 	<article class='project'>
 		<div class='project__summary'>
 			<h3>
@@ -19,34 +19,34 @@
 				<small>Un Packagist-like dédié aux packages pour le framework Laravel</small>
 			</h3>
 			<nav class="project__summary__links">
-				{{ html_linkBlank('https://registry.autopergamene.eu', 'Voir le site') }}
-				{{ html_linkBlank('https://github.com/Anahkiasen/registry', 'Voir les sources') }}
+				{{ HTML.linkBlank('https://registry.autopergamene.eu', 'Voir le site') }}
+				{{ HTML.linkBlank('https://github.com/Anahkiasen/registry', 'Voir les sources') }}
 			</nav>
 		</div>
 		<figure>
-			{{ image('app/img/web/registry.png', 'Registry', {'class': 'image-wrap'}) }}
+			{{ HTML.image('app/img/web/registry.png', 'Registry', {'class': 'image-wrap'}) }}
 			<figcaption>Accueil</figcaption>
 		</figure>
 		<figure>
-			{{ image('app/img/web/registry-package.png', 'Registry', {'class': 'image-wrap'}) }}
+			{{ HTML.image('app/img/web/registry-package.png', 'Registry', {'class': 'image-wrap'}) }}
 			<figcaption>Packages</figcaption>
 		</figure>
 		<figure>
-			{{ image('app/img/web/registry-maintainer.png', 'Registry', {'class': 'image-wrap'}) }}
+			{{ HTML.image('app/img/web/registry-maintainer.png', 'Registry', {'class': 'image-wrap'}) }}
 			<figcaption>Maintainers</figcaption>
 		</figure>
 	</article>
 
 	{# Libraries #}
 	<hr>
-	<h2>{{ lang('repositories.repositories') }}</h2>
-	<p>{{ lang('repositories.repositories_intro') }}</p>
+	<h2>{{ Lang.get('repositories.repositories') }}</h2>
+	<p>{{ Lang.get('repositories.repositories_intro') }}</p>
 
 	{% for repository in repositories %}
 		{% if title is not defined and not repository.master %}
-			{% set title = lang('repositories.collaboration') %}
+			{% set title = Lang.get('repositories.collaboration') %}
 			<h2>{{ title }}</h2>
-			<p>{{ lang('repositories.collaboration_intro') }}</p>
+			<p>{{ Lang.get('repositories.collaboration_intro') }}</p>
 		{% endif %}
 
 		<article class='repository'>
@@ -57,14 +57,14 @@
 				</figure>
 			</a>
 			{% if not repository.master %}
-				<p>{{ lang('repositories.by') }} {{ repository.author }}</p>
+				<p>{{ Lang.get('repositories.by') }} {{ repository.author }}</p>
 			{% endif %}
 			<p>
 				<strong>tags :</strong>
 				{% if repository.tags %}
 					{{ repository.tags|join(', ') }}
 				{% else %}
-					<em>{{ lang('repositories.notags') }}</em>
+					<em>{{ Lang.get('repositories.notags') }}</em>
 				{% endif %}
 			</p>
 			<p>{{ repository.status }} {{ repository.getButton('watch') }} {{ repository.getButton('fork') }}</p>
