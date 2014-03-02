@@ -21,6 +21,7 @@ module.exports = {
 			'overqualified-elements'     : false,
 			'universal-selector'         : false,
 			'fallback-colors'            : false,
+			'duplicate-background-images': false,
 		},
 		src: ['<%= paths.original.css %>/*']
 	},

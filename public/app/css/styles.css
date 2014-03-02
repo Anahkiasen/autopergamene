@@ -4,12 +4,10 @@
   box-sizing: border-box; }
 
 .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .articles.hidden, .about .about-more, .image-wrap, .about aside, .articles article, .articles article blockquote, .articles article h3, .articles article time, .about .about-biography {
-  -moz-transition: all 0.3s;
-  -o-transition: all 0.3s;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  -moz-transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0); }
 
 ul.fixed, footer .social, .about .about-more ul, .novel article ul {
@@ -31,11 +29,10 @@ ul.fixed, footer .social, .about .about-more ul, .novel article ul {
   opacity: 1; }
 
 .layout-container, .error, .portfolio, .article, .novel, .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .portfolio .project, .portfolio .collection, .categories, .about, .about .about-more, footer .footer-container {
-  *zoom: 1;
   max-width: 59em;
   margin-left: auto;
   margin-right: auto; }
-  .layout-container:after, .error:after, .portfolio:after, .article:after, .novel:after, .categories figure:after, .portfolio .photoset--list:after, .portfolio .support:after, .portfolio .repository figure:after, .portfolio .project:after, .portfolio .collection:after, .categories:after, .about:after, .about .about-more:after, footer .footer-container:after {
+  .layout-container::after, .error::after, .portfolio::after, .article::after, .novel::after, .categories figure::after, .portfolio .photoset--list::after, .portfolio .support::after, .portfolio .repository figure::after, .portfolio .project::after, .portfolio .collection::after, .categories::after, .about::after, .about .about-more::after, footer .footer-container::after {
     content: " ";
     display: block;
     clear: both; }
@@ -173,10 +170,11 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
   margin-right: 0; }
   @media (min-width: 60em) {
     .portfolio blockquote, .article article blockquote, .novel article blockquote, .novel article ul {
-      background-image: url('../img/quotes.png?1390057934');
+      background-image: url('../img/quotes.png?1393796213');
       background-position: 16px 16px;
       background-position: 1rem 1rem;
       background-repeat: no-repeat;
+      -webkit-background-size: 10%;
       background-size: 10%;
       margin: 32px 10%;
       margin: 2rem 10%;
@@ -231,8 +229,6 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
         filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
         opacity: 1; }
         .categories figure:hover h4, .portfolio .photoset--list:hover h4, .portfolio .support:hover h4, .portfolio .repository figure:hover h4 {
-          -moz-transition: all 0.3s;
-          -o-transition: all 0.3s;
           -webkit-transition: all 0.3s;
           transition: all 0.3s;
           filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
@@ -268,18 +264,14 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
 @media (min-width: 60em) {
   .categories figure {
     width: 80%;
-    -moz-transform: skewY(-3deg);
     -ms-transform: skewY(-3deg);
-    -o-transform: skewY(-3deg);
     -webkit-transform: skewY(-3deg);
     transform: skewY(-3deg);
     position: relative;
     left: 10%; }
     .categories figure:hover {
       left: 0;
-      -moz-transform: skewY(0deg);
       -ms-transform: skewY(0deg);
-      -o-transform: skewY(0deg);
       -webkit-transform: skewY(0deg);
       transform: skewY(0deg); }
     .categories figure figcaption {
@@ -308,7 +300,6 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
   position: relative;
   vertical-align: bottom; }
   .image-wrap:after, .about aside:after {
-    -moz-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
     box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
     border: solid 1px #1a1a1a;
@@ -319,7 +310,6 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
     top: -1px;
     width: 100%; }
   .image-wrap img, .about aside img {
-    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
     -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
     border-radius: 0;
@@ -327,6 +317,7 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
 
 .portfolio .novel-summary figure, .about aside, .novel figure {
   background-position: center;
+  -webkit-background-size: cover;
   background-size: cover;
   height: 240px;
   height: 15rem; }
@@ -382,7 +373,6 @@ ul.fixed {
     ul.fixed {
       display: none; } }
   ul.affix.fixed {
-    -moz-box-shadow: 0 1rem 0 rgba(234, 46, 71, 0.1);
     -webkit-box-shadow: 0 1rem 0 rgba(234, 46, 71, 0.1);
     box-shadow: 0 1rem 0 rgba(234, 46, 71, 0.1);
     -moz-column-count: 1;
@@ -423,7 +413,7 @@ body {
   padding: 0;
   font-family: "adelle", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: white;
-  background-image: url('data:image/png;base64,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'); }
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkBAMAAACCzIhnAAAAG1BMVEUAAABYWFi5ubkPDw8wMDDb29t+fn6bm5v29vbUUXx5AAAACXRSTlMAMzMzMzMzMzMKys8FAAADPElEQVRYw72X3a3FIAyDU34Kj4zACIzQERihI3SEjn6cr2eGRKjicivVcoydY2/1dWcb1Z5qV7K32662iz3Z7tOGVrOr2HXqv76PqXXaSv7dmUDYbDXfX4c93dZhq9oUsKo3OTwspKBCeIrtblPfzU7RbsAo4seRDPBc3W49q8XUSPY026e9xZm5k06EBK46zdUz2YKxXfy1mNqZrwtbEhgoEjNqX/6f3AXqtLTX4WkxtUWFePiaqFWEyrE9Ev/JSbc3qYkOdYEwpJBT4rpVh3FVcSicfgfvrn85MHjTCw5vZYupuzsJE/3MwxEubUQjBD7NBfZ0nSAwkRZlFxskS18v7KFrw8yGwFVBnmzT4itKY6O48kdHUfCGqeKuFcE3scp5dngrWUwJA8rBIvxuAgPXWgXjcnfFT5DfCmMseXemvouX3jRr65nVOKElm9TKjtNyW2PqIf7Exmp/x1jJgYEK8Teboo7nPHyFFNoWKuxiahGIb8LZ0v/CziS6tJBZ0K0ERiMrT2EjmBA/f3qj9yGQXAT6G+ZjD+J/O66VMDSpzpUGe1Ak8EwdetOhxhSWDhWnpza3UgCIqkxKCm3xju+kFSj+g6+71PFV6Np/c/MmDhxsSWNMRzPMLirCxvCn9uULSi6ghJdpaCdSM44RJf7nJIYa17DholyH+fkYljsrr2lVRxtT46RlzfEMNP+CZ4kuh4HgswBDnRQYNvN3RkEs4mK6GET5TE4akz9EIbNJi2Nq8ANkd4xLrcz8YioOeAkn2DZ59DKhhbXyLn+BbcGrntfD/UqLLhfC9Btl6bI2MXVhTXxaIqeVpPnWSswVBOidxJjOA8WPcd0QMkUavWPa4VZyYbWuzowN8pBC1UywX1C+wHv8kIY2oqE4sNlx/iDxcxNJ59GYebynRMCBu+K9NxeWSSNstIYTPGp10ueANx2qp9jXN34MuJoYb0wNJuer0cEkxgB5kFOM0yhNvQZ5CxutEXZyVAPX+p7vN/AQTxMFTgFrsFctpHDX5sImHPEHYSDNV8N1tUdy7wFpUcDejNsnEtz9n8h22XMTkxSIhyC/mX0fUjgYnZqdW/CPRYe6ScwLqKOCLQveD900n9F36BsGAAAAAElFTkSuQmCC'); }
 
 dl dt, dl dd {
   margin: 0; }
@@ -475,7 +465,6 @@ footer {
     margin: 16px auto;
     margin: 1rem auto;
     border-color: rgba(162, 16, 36, 0.25);
-    -moz-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.15);
     -webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.15);
     box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.15); }
   footer .colophon, footer .social {
@@ -626,9 +615,7 @@ footer {
         .articles article time {
           font-size: 24px;
           font-size: 1.5rem;
-          -moz-transform: rotate(-90deg);
           -ms-transform: rotate(-90deg);
-          -o-transform: rotate(-90deg);
           -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
           left: -4rem;
@@ -648,7 +635,7 @@ footer {
 .about aside {
   height: 320px;
   height: 20rem;
-  background-image: url('../img/maxime-fabre.jpg?1390057934'); }
+  background-image: url('../img/maxime-fabre.jpg?1393796213'); }
   @media (min-width: 60em) and (max-width: 75em) {
     .about aside {
       height: 400px;
@@ -671,12 +658,11 @@ footer {
   position: relative; }
 @media (min-width: 50em) {
   .about .about-biography {
-    *zoom: 1;
     max-width: 59em;
     margin-left: auto;
     margin-right: auto;
     max-width: 100%; }
-    .about .about-biography:after {
+    .about .about-biography::after {
       content: " ";
       display: block;
       clear: both; }
