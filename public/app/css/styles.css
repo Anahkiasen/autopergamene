@@ -1,6 +1,18 @@
+.layout-container, .error, .portfolio, .article, .novel, .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .portfolio .project, .portfolio .collection, .categories, .about, .about .about-more, footer .footer-container {
+  max-width: 59em;
+  margin-left: auto;
+  margin-right: auto; }
+  .layout-container::after, .error::after, .portfolio::after, .article::after, .novel::after, .categories figure::after, .portfolio .photoset--list::after, .portfolio .support::after, .portfolio .repository figure::after, .portfolio .project::after, .portfolio .collection::after, .categories::after, .about::after, .about .about-more::after, footer .footer-container::after {
+    content: " ";
+    display: block;
+    clear: both; }
+
+.layout-container, .error, .portfolio, .article, .novel, .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .portfolio .project, .portfolio .collection, .categories, .about, .about .about-more {
+  max-width: 100%; }
+
 .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .categories figure figcaption, .portfolio .photoset--list figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption, .portfolio .illustration, .portfolio .tableau, .portfolio .photoset figure, .article article .wp-caption, .novel article .wp-caption, .about p {
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .articles.hidden, .about .about-more, .image-wrap, .about aside, .articles article, .articles article blockquote, .articles article h3, .articles article time, .about .about-biography {
@@ -17,72 +29,47 @@ ul.fixed, footer .social, .about .about-more ul, .novel article ul {
     padding: 0; }
 
 .articles.hidden, .about .about-more, .articles article time.absolute, .articles article:hover time.relative {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0; }
 
 .image-wrap:hover, .about aside:hover {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
   opacity: 0.75; }
 
-.articles.open, .about .about-biography.open, .about .about-more.open, .portfolio .repository:hover, .articles article:hover time.absolute {
-  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+.articles.open, .about .about-biography.open, .about .about-more.open, .articles article:hover time.absolute, .portfolio .repository:hover {
   opacity: 1; }
 
-.layout-container, .error, .portfolio, .article, .novel, .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .portfolio .project, .portfolio .collection, .categories, .about, .about .about-more, footer .footer-container {
-  max-width: 59em;
-  margin-left: auto;
-  margin-right: auto; }
-  .layout-container::after, .error::after, .portfolio::after, .article::after, .novel::after, .categories figure::after, .portfolio .photoset--list::after, .portfolio .support::after, .portfolio .repository figure::after, .portfolio .project::after, .portfolio .collection::after, .categories::after, .about::after, .about .about-more::after, footer .footer-container::after {
-    content: " ";
-    display: block;
-    clear: both; }
-
-.layout-container, .error, .portfolio, .article, .novel, .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .portfolio .project, .portfolio .collection, .categories, .about, .about .about-more {
-  max-width: 100%; }
-
-h1, h2, h3, h4 {
-  line-height: 1;
+ul.fixed {
+  -webkit-column-count: 4;
+  -moz-column-count: 4;
+  column-count: 4;
   margin: 0;
-  padding: 0; }
-
-.portfolio .collection h2, .articles article h3, span.block, a.block, a.back, .portfolio .project__summary__links a, .categories figure h4, .portfolio .photoset--list h4, .portfolio .support h4, .portfolio .repository figure h4, .portfolio .novel-summary h2, .portfolio .photoset figure h3, .about h2, .about h3, .about h4, .article article .wp-caption p, .novel article .wp-caption p, .article article h1, .novel article h1 {
-  font-family: "adelle", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  text-transform: lowercase; }
-
-.categories figure h3, .portfolio .photoset--list h3, .portfolio .support h3, .portfolio .repository figure h3, header h1, .portfolio h1, .categories h2, .article h1, .novel h1 {
-  font-family: "jubilat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 100; }
-
-.portfolio .illustration h2, .portfolio .tableau h2, .portfolio .photoset figure h2 {
-  font-family: "atrament-web", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  text-transform: uppercase; }
-
-.about p, span.block, a.block, a.back, .portfolio .project__summary__links a, .categories figure h4, .portfolio .photoset--list h4, .portfolio .support h4, .portfolio .repository figure h4, footer, .about .about-more h3 {
-  font-size: 1em;
-  line-height: 1.5em; }
-
-.categories figure h3, .portfolio .photoset--list h3, .portfolio .support h3, .portfolio .repository figure h3, header h1, .portfolio h3, .about h2, .article article .wp-caption p, .novel article .wp-caption p, .article article h2, .novel article h2 {
-  font-size: 1.5em;
-  line-height: 2em; }
-
-.portfolio .illustration h2, .portfolio .tableau h2, .portfolio .photoset figure h2, .portfolio h1, .portfolio .photoset figure h3 {
-  font-size: 2.5em;
-  line-height: 1.2em; }
-
-.categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .portfolio .illustration figcaption, .portfolio .tableau figcaption, .portfolio .novel-summary, .portfolio .novel-summary h2, .portfolio .repository h3, .portfolio .photoset figure h2, .about aside, .about h4, .about article {
-  margin-bottom: 16px;
-  margin-bottom: 1rem; }
-
-.portfolio .illustration h2, .portfolio .tableau h2, .portfolio .photoset figure h2 {
-  color: #666666;
-  text-align: center;
-  text-shadow: 0 0.1em 0 #e6e6e6; }
-
-.portfolio .collection h2, .articles article h3 {
-  font-weight: 600;
-  text-transform: uppercase; }
+  z-index: 50; }
+  ul.fixed li {
+    margin-right: -5px;
+    margin-right: -0.3rem;
+    padding: 4px 8px;
+    padding: 0.25rem 0.5rem; }
+    ul.fixed li:hover, ul.fixed li.active {
+      background-color: #f48b99; }
+  ul.fixed a {
+    font-size: 13px;
+    font-size: 0.8rem;
+    border: none;
+    color: white;
+    text-transform: lowercase; }
+  @media (max-width: 60em) {
+    ul.fixed {
+      display: none; } }
+  ul.affix.fixed {
+    -webkit-box-shadow: 0 1rem 0 fade(#ea2e47, 0.1);
+    box-shadow: 0 1rem 0 fade(#ea2e47, 0.1);
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+    left: 0;
+    position: fixed;
+    top: 0; }
+    ul.affix.fixed li {
+      display: inline-block; }
 
 .layout-container, .error, .portfolio, .article, .novel {
   padding: 32px;
@@ -118,7 +105,7 @@ h1, h2, h3, h4 {
       float: right;
       margin-right: 0; } }
 
-span.block, a.block, a.back, .portfolio .project__summary__links a, .article article del, .novel article del, .portfolio .illustration, .portfolio .tableau, .portfolio .photoset figure, .article article .wp-caption, .novel article .wp-caption, ul.affix.fixed, .about aside, .article article img.wide, .novel article img.wide {
+ul.affix.fixed, span.block, a.block, a.back, .portfolio .project__summary__links a, .article article del, .novel article del, .portfolio .illustration, .portfolio .tableau, .portfolio .photoset figure, .article article .wp-caption, .novel article .wp-caption, .article article img.wide, .novel article img.wide, .about aside {
   width: 100%; }
 
 span.block, a.block, a.back, .portfolio .project__summary__links a, .article article del, .novel article del {
@@ -135,7 +122,7 @@ hr, .articles, a, .article article h1, .novel article h1 {
 hr, .articles {
   border-color: #f8c0c7; }
 
-a.back, .about .about-more h3, span.block, a.block, .portfolio .project__summary__links a, ul.fixed, ul.fixed li, header, footer, .portfolio .repository:hover figure {
+ul.fixed, ul.fixed li, a.back, .about .about-more h3, span.block, a.block, .portfolio .project__summary__links a, footer, header, .portfolio .repository:hover figure {
   background-color: #ea2e47;
   border: none;
   color: white;
@@ -143,7 +130,7 @@ a.back, .about .about-more h3, span.block, a.block, .portfolio .project__summary
 
 a.back, .about .about-more h3 {
   background-color: #f48b99;
-  text-shadow: 0 0.15em 0 rgba(0, 0, 0, 0.25); }
+  text-shadow: 0 0.15em 0 fade(black, 0.25); }
 
 span.block, a.block, a.back, .portfolio .project__summary__links a {
   clear: both;
@@ -156,7 +143,7 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
   span.block:active, a.block:active, a.back:active, .portfolio .project__summary__links a:active {
     background-color: #f17484; }
 
-.portfolio blockquote, .article article blockquote, .novel article blockquote, .novel article ul, .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .portfolio .illustration, .portfolio .tableau, .portfolio .photoset figure, .article article .wp-caption, .novel article .wp-caption, .portfolio .illustration figcaption, .portfolio .tableau figcaption, dl, .portfolio p, .portfolio .project figure, .about p, .about .about-more ul, .article article del, .novel article del, .novel .alert {
+.portfolio blockquote, .article article blockquote, .novel article blockquote, .novel article ul, .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .portfolio .illustration, .portfolio .tableau, .portfolio .photoset figure, .article article .wp-caption, .novel article .wp-caption, .portfolio .illustration figcaption, .portfolio .tableau figcaption, dl, .portfolio p, .portfolio .project figure, .article article del, .novel article del, .about p, .about .about-more ul, .novel .alert {
   background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAQAAAAnZu5uAAAAEklEQVR4nGNi4IVBJgY4IMgEAA3yAEyYwsyHAAAAAElFTkSuQmCC');
   background: rgba(0, 0, 0, 0.05);
   color: #333333;
@@ -220,18 +207,14 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
       float: right; } }
   @media (min-width: 60em) {
     .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure {
-      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=25);
       opacity: 0.25; }
       .categories figure h4, .portfolio .photoset--list h4, .portfolio .support h4, .portfolio .repository figure h4 {
-        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
         opacity: 0; }
       .categories figure:hover, .portfolio .photoset--list:hover, .portfolio .support:hover, .portfolio .repository figure:hover {
-        filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
         opacity: 1; }
         .categories figure:hover h4, .portfolio .photoset--list:hover h4, .portfolio .support:hover h4, .portfolio .repository figure:hover h4 {
           -webkit-transition: all 0.3s;
           transition: all 0.3s;
-          filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
           opacity: 1; } }
   @media (min-width: 60em) and (max-width: 75em) {
     .categories figure img, .portfolio .photoset--list img, .portfolio .support img, .portfolio .repository figure img {
@@ -294,14 +277,115 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
   height: 100%;
   max-height: auto; }
 
+.categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure {
+  padding: 16px;
+  padding: 1rem; }
+  .categories figure:active, .portfolio .photoset--list:active, .portfolio .support:active, .portfolio .repository figure:active {
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAQAAAAnZu5uAAAAEklEQVR4nGNikIJBJgY4IMgEABpjAI3SojZdAAAAAElFTkSuQmCC');
+    background: rgba(0, 0, 0, 0.1); }
+  .categories figure figcaption, .portfolio .photoset--list figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption {
+    padding-left: 16px;
+    padding-left: 1rem; }
+  .categories figure h3, .portfolio .photoset--list h3, .portfolio .support h3, .portfolio .repository figure h3, .categories figure h4, .portfolio .photoset--list h4, .portfolio .support h4, .portfolio .repository figure h4 {
+    color: #333333;
+    text-align: left; }
+  .categories figure h3, .portfolio .photoset--list h3, .portfolio .support h3, .portfolio .repository figure h3 {
+    line-height: 1; }
+  .categories figure h4, .portfolio .photoset--list h4, .portfolio .support h4, .portfolio .repository figure h4 {
+    margin-top: 8px;
+    margin-top: 0.5rem;
+    text-transform: none; }
+  @media (max-width: 50em) {
+    .categories figure:hover, .portfolio .photoset--list:hover, .portfolio .support:hover, .portfolio .repository figure:hover {
+      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAQAAAAnZu5uAAAAEklEQVR4nGNikIJBJgY4IMgEABpjAI3SojZdAAAAAElFTkSuQmCC');
+      background: rgba(0, 0, 0, 0.1); }
+    .categories figure img, .portfolio .photoset--list img, .portfolio .support img, .portfolio .repository figure img {
+      width: 23.72881%;
+      float: left;
+      margin-right: 1.69492%; }
+    .categories figure figcaption, .portfolio .photoset--list figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption {
+      width: 74.57627%;
+      float: right; } }
+  @media (min-width: 50em) and (max-width: 60em) {
+    .categories figure img, .portfolio .photoset--list img, .portfolio .support img, .portfolio .repository figure img {
+      width: 15.25424%;
+      float: left;
+      margin-right: 1.69492%; }
+    .categories figure figcaption, .portfolio .photoset--list figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption {
+      width: 83.05085%;
+      float: right; } }
+  @media (min-width: 60em) {
+    .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure {
+      opacity: 0.25; }
+      .categories figure h4, .portfolio .photoset--list h4, .portfolio .support h4, .portfolio .repository figure h4 {
+        opacity: 0; }
+      .categories figure:hover, .portfolio .photoset--list:hover, .portfolio .support:hover, .portfolio .repository figure:hover {
+        opacity: 1; }
+        .categories figure:hover h4, .portfolio .photoset--list:hover h4, .portfolio .support:hover h4, .portfolio .repository figure:hover h4 {
+          -webkit-transition: all 0.3s;
+          transition: all 0.3s;
+          opacity: 1; } }
+  @media (min-width: 60em) and (max-width: 75em) {
+    .categories figure img, .portfolio .photoset--list img, .portfolio .support img, .portfolio .repository figure img {
+      width: 23.72881%;
+      float: left;
+      margin-right: 1.69492%; }
+    .categories figure figcaption, .portfolio .photoset--list figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption {
+      width: 74.57627%;
+      float: right; } }
+  @media (min-width: 75em) {
+    .categories figure img, .portfolio .photoset--list img, .portfolio .support img, .portfolio .repository figure img {
+      width: 23.72881%;
+      float: left;
+      margin-right: 1.69492%; }
+    .categories figure figcaption, .portfolio .photoset--list figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption {
+      width: 74.57627%;
+      float: right; } }
+
+@media (min-width: 50em) and (max-width: 60em) {
+  .categories figure {
+    width: 49.15254%;
+    float: left;
+    margin-right: 1.69492%; }
+    .categories figure:nth-child(2n) {
+      float: right;
+      margin-right: 0; } }
+@media (min-width: 60em) and (max-width: 75em) {
+  .categories figure figcaption {
+    margin-top: 5%; } }
+@media (min-width: 60em) {
+  .categories figure {
+    width: 80%;
+    -ms-transform: skewY(-3deg);
+    -webkit-transform: skewY(-3deg);
+    transform: skewY(-3deg);
+    position: relative;
+    left: 10%; }
+    .categories figure:hover {
+      left: 0;
+      -ms-transform: skewY(0deg);
+      -webkit-transform: skewY(0deg);
+      transform: skewY(0deg); }
+    .categories figure figcaption {
+      margin-top: 6%; }
+    .categories figure h3, .categories figure h4 {
+      font-weight: 100; }
+    .categories figure h3 {
+      font-size: 2.5em;
+      line-height: 1.2em; }
+    .categories figure h4 {
+      font-size: 1.5em;
+      line-height: 2em;
+      line-height: .25em; } }
+
 .image-wrap, .about aside {
   display: inline-block;
   max-width: 100%;
   position: relative;
   vertical-align: bottom; }
   .image-wrap:after, .about aside:after {
-    -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
-    box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 0 0 1px fade(white, 0.4), inset 0 1px 0 fade(white, 0.4), 0 1px 2px fade(black, 0.3);
+    box-shadow: inset 0 0 1px fade(white, 0.4), inset 0 1px 0 fade(white, 0.4), 0 1px 2px fade(black, 0.3);
     border: solid 1px #1a1a1a;
     content: " ";
     height: 100%;
@@ -310,8 +394,8 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
     top: -1px;
     width: 100%; }
   .image-wrap img, .about aside img {
-    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 1px 2px fade(black, 0.4);
+    box-shadow: 0 1px 2px fade(black, 0.4);
     border-radius: 0;
     vertical-align: bottom; }
 
@@ -350,39 +434,49 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
   .portfolio figure img, .portfolio .photoset figure img {
     max-width: 100%; }
 
-ul.fixed {
-  -moz-column-count: 4;
-  -webkit-column-count: 4;
-  column-count: 4;
+h1, h2, h3, h4 {
+  line-height: 1;
   margin: 0;
-  z-index: 50; }
-  ul.fixed li {
-    margin-right: -5px;
-    margin-right: -0.3rem;
-    padding: 4px 8px;
-    padding: 0.25rem 0.5rem; }
-    ul.fixed li:hover, ul.fixed li.active {
-      background-color: #f48b99; }
-  ul.fixed a {
-    font-size: 13px;
-    font-size: 0.8rem;
-    border: none;
-    color: white;
-    text-transform: lowercase; }
-  @media (max-width: 60em) {
-    ul.fixed {
-      display: none; } }
-  ul.affix.fixed {
-    -webkit-box-shadow: 0 1rem 0 rgba(234, 46, 71, 0.1);
-    box-shadow: 0 1rem 0 rgba(234, 46, 71, 0.1);
-    -moz-column-count: 1;
-    -webkit-column-count: 1;
-    column-count: 1;
-    left: 0;
-    position: fixed;
-    top: 0; }
-    ul.affix.fixed li {
-      display: inline-block; }
+  padding: 0; }
+
+span.block, a.block, a.back, .portfolio .project__summary__links a, .categories figure h4, .portfolio .photoset--list h4, .portfolio .support h4, .portfolio .repository figure h4, .articles article h3, .portfolio .collection h2, .portfolio .novel-summary h2, .portfolio .photoset figure h3, .article article .wp-caption p, .novel article .wp-caption p, .article article h1, .novel article h1, .about h2, .about h3, .about h4 {
+  font-family: "adelle", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  text-transform: lowercase; }
+
+.categories figure h3, .portfolio .photoset--list h3, .portfolio .support h3, .portfolio .repository figure h3, header h1, .portfolio h1, .article h1, .novel h1, .categories h2 {
+  font-family: "jubilat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 100; }
+
+.portfolio .illustration h2, .portfolio .tableau h2, .portfolio .photoset figure h2 {
+  font-family: "atrament-web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase; }
+
+span.block, a.block, a.back, .portfolio .project__summary__links a, .categories figure h4, .portfolio .photoset--list h4, .portfolio .support h4, .portfolio .repository figure h4, .about p, footer, .about .about-more h3 {
+  font-size: 1em;
+  line-height: 1.5em; }
+
+.categories figure h3, .portfolio .photoset--list h3, .portfolio .support h3, .portfolio .repository figure h3, header h1, .portfolio h3, .article article .wp-caption p, .novel article .wp-caption p, .article article h2, .novel article h2, .about h2 {
+  font-size: 1.5em;
+  line-height: 2em; }
+
+.portfolio .illustration h2, .portfolio .tableau h2, .portfolio .photoset figure h2, .portfolio h1, .portfolio .photoset figure h3 {
+  font-size: 2.5em;
+  line-height: 1.2em; }
+
+.categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .portfolio .illustration figcaption, .portfolio .tableau figcaption, .portfolio .novel-summary, .portfolio .novel-summary h2, .portfolio .repository h3, .portfolio .photoset figure h2, .about aside, .about h4, .about article {
+  margin-bottom: 16px;
+  margin-bottom: 1rem; }
+
+.portfolio .illustration h2, .portfolio .tableau h2, .portfolio .photoset figure h2 {
+  color: #666666;
+  text-align: center;
+  text-shadow: 0 0.1em 0 #e6e6e6; }
+
+.articles article h3, .portfolio .collection h2 {
+  font-weight: 600;
+  text-transform: uppercase; }
 
 html {
   font-size: 100%;
@@ -443,18 +537,52 @@ h1 small, h2 small, h3 small, h4 small {
   letter-spacing: -.1em;
   line-height: 1; }
 
-header {
-  padding: 12px 0;
-  padding: 0.75rem 0; }
-  header h1 {
-    text-transform: lowercase; }
-  @media (min-width: 60em) {
-    header {
-      padding: 24px 0 24px;
-      padding: 1.5rem 0 1.5rem; }
-      header h1 {
-        font-size: 4.25em;
-        line-height: 1.05882em; } }
+.articles {
+  margin-top: 16px;
+  margin-top: 1rem;
+  padding-bottom: 16px;
+  padding-bottom: 1rem; }
+  .articles article {
+    padding: 0 0 32px 0;
+    padding: 0 0 2rem 0;
+    margin: 0;
+    position: relative; }
+    .articles article time {
+      color: #bfbfbf; }
+    .articles article blockquote {
+      margin: 8px 0 0;
+      margin: 0.5rem 0 0; }
+    .articles article h3 {
+      font-size: 1.25em;
+      line-height: 1.2em;
+      color: #666666; }
+    .articles article:hover {
+      border-left-color: #ea2e47; }
+      .articles article:hover h3, .articles article:hover time {
+        color: #ea2e47; }
+      .articles article:hover blockquote {
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAQAAAAnZu5uAAAAEklEQVR4nGNikIJBJgY4IMgEABpjAI3SojZdAAAAAElFTkSuQmCC');
+        background: rgba(0, 0, 0, 0.1); }
+    @media (min-width: 50em) {
+      .articles article {
+        margin-left: 32px;
+        margin-left: 2rem;
+        padding-left: 16px;
+        padding-left: 1rem;
+        border-left: 3px solid #bfbfbf; }
+        .articles article blockquote {
+          padding: 16px;
+          padding: 1rem; }
+        .articles article time {
+          font-size: 24px;
+          font-size: 1.5rem;
+          -webkit-transform: rotate(-90deg);
+          -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+          left: -4rem;
+          min-width: 5.5rem;
+          position: absolute;
+          top: 3rem; } }
 
 footer {
   padding: 16px;
@@ -464,9 +592,9 @@ footer {
     width: 50%;
     margin: 16px auto;
     margin: 1rem auto;
-    border-color: rgba(162, 16, 36, 0.25);
-    -webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.15);
-    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.15); }
+    border-color: fade(#a21024, 0.25);
+    -webkit-box-shadow: 0 1px 0 0 fade(white, 0.15);
+    box-shadow: 0 1px 0 0 fade(white, 0.15); }
   footer .colophon, footer .social {
     width: 49.15254%;
     float: left;
@@ -498,6 +626,19 @@ footer {
         float: left;
         text-align: right;
         width: 100%; } }
+
+header {
+  padding: 12px 0;
+  padding: 0.75rem 0; }
+  header h1 {
+    text-transform: lowercase; }
+  @media (min-width: 60em) {
+    header {
+      padding: 24px 0 24px;
+      padding: 1.5rem 0 1.5rem; }
+      header h1 {
+        font-size: 4.25em;
+        line-height: 1.05882em; } }
 
 .portfolio {
   background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAQAAAAnZu5uAAAAEklEQVR4nGP6Xw+DTAxwQJAJAHQhB4GKBdKAAAAAAElFTkSuQmCC');
@@ -538,17 +679,14 @@ footer {
       width: auto;
       padding: 0.5rem; }
   .portfolio .repository {
-    filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
     opacity: 1; }
     .portfolio .repository figure {
-      filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
       opacity: 1; }
       @media (min-width: 75em) {
         .portfolio .repository figure {
           min-height: 240px;
           min-height: 15rem; } }
       .portfolio .repository figure h4 {
-        filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
         opacity: 1; }
     .portfolio .repository .build {
       margin-right: 0.5rem; }
@@ -572,7 +710,7 @@ footer {
       left: 16px;
       left: 1rem;
       margin: 0;
-      color: rgba(255, 255, 255, 0.2);
+      color: fade(white, 0.2);
       position: absolute;
       text-align: center; }
 
@@ -615,13 +753,61 @@ footer {
         .articles article time {
           font-size: 24px;
           font-size: 1.5rem;
-          -ms-transform: rotate(-90deg);
           -webkit-transform: rotate(-90deg);
+          -ms-transform: rotate(-90deg);
           transform: rotate(-90deg);
           left: -4rem;
           min-width: 5.5rem;
           position: absolute;
           top: 3rem; } }
+
+.article, .novel {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAQAAAAnZu5uAAAAEklEQVR4nGP6Xw+DTAxwQJAJAHQhB4GKBdKAAAAAAElFTkSuQmCC');
+  background: rgba(255, 255, 255, 0.5); }
+  .article h1, .novel h1 {
+    text-align: center; }
+  .article article .wp-caption a, .novel article .wp-caption a {
+    border: none; }
+  .article article .wp-caption a + a > img, .novel article .wp-caption a + a > img {
+    width: 50%; }
+  .article article .wp-caption p, .novel article .wp-caption p {
+    font-weight: 500;
+    margin: 8px 0 0;
+    margin: 0.5rem 0 0;
+    text-align: center; }
+  .article article img, .novel article img {
+    max-width: 100%; }
+    .article article img.alignleft, .novel article img.alignleft {
+      float: left;
+      margin-right: 16px;
+      margin-right: 1rem;
+      width: 20%; }
+    .article article img.aligncenter, .novel article img.aligncenter {
+      display: block;
+      margin: auto; }
+  .article article .image-wrap, .article article .about aside, .about .article article aside, .novel article .image-wrap, .novel article .about aside, .about .novel article aside {
+    margin: 16px 0;
+    margin: 1rem 0;
+    display: inline-block;
+    width: auto; }
+  .article article del, .novel article del {
+    text-decoration: none; }
+    .article article del strong, .novel article del strong {
+      color: #4d4d4d; }
+  .article article pre, .novel article pre {
+    padding: 16px;
+    padding: 1rem; }
+  .article article h1, .novel article h1 {
+    padding-bottom: 4px;
+    padding-bottom: 0.25rem;
+    text-align: left; }
+  .article article h2, .novel article h2 {
+    margin: 16px 0;
+    margin: 1rem 0; }
+  .article article blockquote p, .novel article blockquote p {
+    margin: 0; }
+  .article article p, .novel article p {
+    text-align: justify; }
 
 .categories h2 {
   font-size: 4.25em;
@@ -676,7 +862,6 @@ footer {
 @media (max-width: 60em) {
   .about .about-biography {
     height: 0;
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     overflow: hidden; } }
 .about .about-more {
@@ -685,7 +870,6 @@ footer {
   clear: both; }
   @media (min-width: 90em) {
     .about .about-more {
-      filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
       opacity: 1;
       height: 100%;
       max-height: auto; } }
@@ -703,8 +887,8 @@ footer {
     margin: 0.5rem 0; }
   @media (max-width: 50em) {
     .about .about-more ul {
-      -moz-column-count: 2;
       -webkit-column-count: 2;
+      -moz-column-count: 2;
       column-count: 2; } }
   @media (min-width: 50em) and (max-width: 90em) {
     .about .about-more article {
@@ -722,54 +906,6 @@ footer {
       .about .about-more article:nth-child(4n) {
         float: right;
         margin-right: 0; } }
-
-.article, .novel {
-  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAQAAAAnZu5uAAAAEklEQVR4nGP6Xw+DTAxwQJAJAHQhB4GKBdKAAAAAAElFTkSuQmCC');
-  background: rgba(255, 255, 255, 0.5); }
-  .article h1, .novel h1 {
-    text-align: center; }
-  .article article .wp-caption a, .novel article .wp-caption a {
-    border: none; }
-  .article article .wp-caption a + a > img, .novel article .wp-caption a + a > img {
-    width: 50%; }
-  .article article .wp-caption p, .novel article .wp-caption p {
-    font-weight: 500;
-    margin: 8px 0 0;
-    margin: 0.5rem 0 0;
-    text-align: center; }
-  .article article img, .novel article img {
-    max-width: 100%; }
-    .article article img.alignleft, .novel article img.alignleft {
-      float: left;
-      margin-right: 16px;
-      margin-right: 1rem;
-      width: 20%; }
-    .article article img.aligncenter, .novel article img.aligncenter {
-      display: block;
-      margin: auto; }
-  .article article .image-wrap, .article article .about aside, .about .article article aside, .novel article .image-wrap, .novel article .about aside, .about .novel article aside {
-    margin: 16px 0;
-    margin: 1rem 0;
-    display: inline-block;
-    width: auto; }
-  .article article del, .novel article del {
-    text-decoration: none; }
-    .article article del strong, .novel article del strong {
-      color: #4d4d4d; }
-  .article article pre, .novel article pre {
-    padding: 16px;
-    padding: 1rem; }
-  .article article h1, .novel article h1 {
-    padding-bottom: 4px;
-    padding-bottom: 0.25rem;
-    text-align: left; }
-  .article article h2, .novel article h2 {
-    margin: 16px 0;
-    margin: 1rem 0; }
-  .article article blockquote p, .novel article blockquote p {
-    margin: 0; }
-  .article article p, .novel article p {
-    text-align: justify; }
 
 .novel h1 {
   font-size: 4em;

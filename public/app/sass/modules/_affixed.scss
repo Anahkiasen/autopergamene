@@ -5,7 +5,7 @@
 %affixed {
 
   // Base definition
-  @include column-count(4);
+  column-count: 4;;
   @extend %block-accent;
   @extend %reset-list;
   margin: 0;
@@ -38,7 +38,7 @@
   // Active -------------------------------------------------------- /
   &.affix {
     box-shadow: 0 1rem 0 fade($color-accent, 0.10);
-    @include column-count(1);
+    column-count: 1;;
     left: 0;
     position: fixed;
     top: 0;
