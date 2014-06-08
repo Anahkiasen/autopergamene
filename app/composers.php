@@ -8,7 +8,7 @@ use Autopergamene\Track;
 /////////////////////////// VIEW COMPOSERS ///////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-View::composer('partials.about', function ($view) {
+View::composer('_partials.about', function ($view) {
 	$view->services = Service::all();
 
 	// Get current time and timezone
@@ -19,7 +19,7 @@ View::composer('partials.about', function ($view) {
 	$view->work = ceil(Carbon::createFromDate(2009, 10, 1)->diffInMonths($today) / 12);
 });
 
-View::composer('layouts.partials.footer', function ($view) {
+View::composer('_layouts.partials.footer', function ($view) {
 	$view->services = Service::whereNotIn('name', ['Mail', 'Youtube'])->get();
 });
 

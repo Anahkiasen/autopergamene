@@ -1,0 +1,106 @@
+<section class='about'>
+
+	{# Header image #}
+	<aside></aside>
+
+	{# About me #}
+	<article class='biography' itemscope itemtype='http://schema.org/Person'>
+
+		{# Summary #}
+		<h2>
+			<span itemprop='name'>Maxime Fabre</span>
+			<small>{% trans %}{{ age }} ans{% endtrans %}</small>
+		</h2>
+		<h3 itemprop='jobTitle'>Webdesigner - Webdeveloper</h3>
+		<h4 itemprop='address'>Saint-Étienne, France</h4>
+
+		{# Biography #}
+		<span class='block' data-show='.about-biography'>{{ 'Certes... et donc, qui je suis ?'|trans }}</span>
+		<section class='about-biography'>
+			{% set work =       work %}
+			{% set stappler =   HTML.linkBlank('http://www.stappler.fr/', 'Principe de Stappler') %}
+			{% set twitter =    HTML.linkBlank('http://twitter.com/Anahkiasen', 'Twitter') %}
+			{% set github =     HTML.linkBlank('http://github.com/Anahkiasen/', 'Github') %}
+			{% set bitbucket =  HTML.linkBlank('https://bitbucket.org/Anahkiasen', 'Bitbucket') %}
+
+			{% trans %}
+<p>Je travaille dans le web depuis bientôt {{ work }} ans, avec une grande part de mon expérience faite au <span itemprop='worksFor'>{{ stappler }}</span>. J'y ai fait mes premières incursions avec à peine quelques connaissances personnelles, puis de projet en projet c'est devenu ma passion. J'embrasse aujourd'hui la scène du web et tout ce qu'elle a de standards et d'enjeux – qu'il s'agisse des technologies et langages front-end (<strong>HTML5</strong>, <strong>CSS</strong> ou <strong>Javascript</strong>) ou back-end (<strong>PHP</strong>, <strong>Ruby</strong> avec maîtrise de l'<strong>OOP</strong> et de divers frameworks).</p><p>Je suis sérieux, passionné, et au courant des derniers mouvements d'un domaine changeant au jour-le-jour. Ce, via les nombreux designers et developpeurs influents que je suis activement sur des réseaux sociaux comme {{ twitter }}.<br>Je cherche à comprendre plutôt qu'à recopier&nbsp;; je ne cherche pas à faire simplement mon travail, je cherche à le faire <em>bien</em>.</p><p>Plongé jusqu'au cou dans l'univers de l'<strong>open-source</strong>, j'ai moi-même de nombreux projets et librairies disponibles sur des sites majeurs comme {{ github }} ou {{ bitbucket }}. Cette proximité me permet de participer activement au développement des outils que j'emploie, de les améliorer, ou d'en créer de nouveaux.</p>
+			{% endtrans %}
+
+			{# Details and links #}
+			<span class='block' data-show='.about-more'>{{ 'Mais encore ?'|trans }}</span>
+			<section class='about-more'>
+				<article class='social'>
+					<h3>{{ 'Me trouver (je suis partout)'|trans }}</h3>
+					<ul>
+						{% for service in services %}
+							<li>
+								{% if Str.contains(service.link, '@') %}
+									{{ HTML.image("app/svg/#{service.icon}", service.name) }}
+									{{ HTML.mailto(service.link, service.name) }}
+								{% else %}
+									{{ HTML.image("app/svg/#{service.icon}", service.name) }}
+									{{ HTML.linkBlank(service.link, service.name) }}
+								{% endif %}
+							</li>
+						{% endfor %}
+					</ul>
+				</article>
+				<article>
+					<h3>{{ 'Connaissances'|trans }}</h3>
+					<ul>
+						<li>{{ 'Architecture MVC'|trans }}</li>
+						<li>{{ 'Maîtrise de la POO'|trans }}</li>
+						<li>{{ "Design d'application et architécture web"|trans }}</li>
+						<li>{{ "Design d'API"|trans }}</li>
+						<li>{{ 'Site live en AJAX'|trans }}</li>
+						<li>{{ 'Responsive design'|trans }}</li>
+						<li>{{ 'Techniques de découplage CSS (SMACKS, OOCSS, BEM)'|trans }}</li>
+					</ul>
+				</article>
+				<article>
+					<h3>{{ 'Langages employés'|trans }}</h3>
+					<ul>
+						<h4>Back-end</h4>
+							<li>PHP 5.3+</li>
+							<li>MySQL/SQLite, MongoDB (NoSQL)</li>
+							<li>Ruby (bases)</li>
+						<h4>Front-end</h4>
+							<li>HTML5</li>
+							<li>CSS3 – LESS/SASS</li>
+							<li>Javascript – Coffeescript</li>
+						<h4>Autre</h4>
+							<li>bash/zsh</li>
+							<li>ActionScript 2</li>
+					</ul>
+				</article>
+				<article>
+					<h3>{{ 'Je travaille avec'|trans }}</h3>
+					<ul>
+						<h4>{{ 'Frameworks, librairies et CMS'|trans }}</h4>
+							<li>Laravel 3/4</li>
+							<li>Slim</li>
+							<li>jQuery</li>
+							<li>Backbone</li>
+							<li>Bootstrap</li>
+							<li>Wordpress</li>
+						<h4>{{ 'Logiciels maîtrisés'|trans }}</h4>
+							<li>Sublime Text 3</li>
+							<li>Suite Adobe CS6</li>
+							<li>Autodesk Maya</li>
+							<li>Google Sketchup</li>
+							<li>Sony Vegas</li>
+					</ul>
+				</article>
+				<article>
+					<h3>{{ 'Et aussi'|trans }}</h3>
+					<ul>
+						<li>{{ "Diplômé d'un BTS en communication visuelle"|trans }}</li>
+						<li>{{ 'Français et anglais – lu, écrit et parlé'|trans }}</li>
+						<li>{{ 'Détenteur du permis B'|trans }}</li>
+					</ul>
+				</article>
+			</section>
+		</section>
+	</article>
+</section>

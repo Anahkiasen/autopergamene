@@ -1,4 +1,4 @@
-{% extends 'layouts.global' %}
+{% extends '_layouts.global' %}
 
 {% block title %}
 	{{ story.name }} -
@@ -10,7 +10,7 @@
 
 {% block navigation %}
 	{{ HTML.homeLink() }}
-	{{ HTML.backLink(URL.action('CategoriesController@category', category.id), "Retour à #{category.name}") }}
+	<a href="{{ URL.action('CategoriesController@category', category.id) }}" class="bank">{{ 'Retour à'|trans }} {{ category.name }}</a>
 {% endblock %}
 
 {% block layout %}
@@ -21,11 +21,11 @@
 			<article>
 				{{ story.content }}
 				<blockquote>
-					<strong>Publié le : {{ story.created_at }}</strong>
+					<strong>{{ 'Publié le'|trans }} : {{ story.created_at }}</strong>
 				</blockquote>
 			</article>
 		{% else %}
-			<div class='alert'>Cette nouvelle n'est pas encore lisible ici.</div>
+			<div class='alert'>{{ "Cette nouvelle n'est pas encore lisible ici."|trans }}</div>
 		{% endif %}
 	</section>
 {% endblock %}

@@ -78,7 +78,7 @@ return array(
 	|
 	*/
 
-	'key' => 'YourSecretKey!!!',
+	'key' => 'Gqm4bwYiqwnNwMSsbOsOyk8JtUGJsg5I',
 
 	'cipher' => MCRYPT_RIJNDAEL_128,
 
@@ -122,6 +122,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
+		// Packages
 		'Flatten\FlattenServiceProvider',
 		'Flickering\FlickeringServiceProvider',
 		'Illuminage\IlluminageServiceProvider',
@@ -129,6 +130,7 @@ return array(
 		'Rocketeer\RocketeerServiceProvider',
 		'Acetone\AcetoneServiceProvider',
 		'Barryvdh\TwigBridge\ServiceProvider',
+		'Arrounded\Localization\LocalizationServiceProvider',
 
 	),
 

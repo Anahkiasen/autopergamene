@@ -1,52 +1,63 @@
-{% extends 'layouts.portfolio' %}
+{% extends '_layouts.portfolio' %}
 
 {% block content %}
-	{{ Lang.get('repositories.introduction', {
-		laravel: HTML.linkBlank('http://laravel.com', 'Laravel') ,
-		composer: HTML.linkBlank('http://getcomposer.org', 'Composer'),
-		psr: HTML.linkBlank('https://github.com/php-fig/fig-standards', 'PSR'),
-	}) }}
+	{% set laravel  = HTML.linkBlank('http://laravel.com', 'Laravel')  %}
+	{% set composer = HTML.linkBlank('http://getcomposer.org', 'Composer') %}
+	{% set psr      = HTML.linkBlank('https://github.com/php-fig/fig-standards', 'PSR') %}
+	<p>
+		Un ensemble de projets ou librairies développées au fur et à mesure de mon travail.
+		En majorité des bundles pour le framework {{ laravel }}
+		ou distribués via {{ composer }}
+	</p>
+	<p>
+		Tous sont en PHP — même si mes compétences s'étendent à d'autres langages, j'ai principalement
+		eu l'occasion de créer des packages. Le framework Laravel étant devenu un des acteurs majeurs de la scène PHP en peut de temps, il y avait un vide à combler dans son écosystème de bundles.
+	</p>
+	<p>
+		Étant très à cheval sur le fait de rester à jour quand on est webdévelopeur on webdesigner, tous réspectent autant que faire se peut
+		les standards du {{ psr }} et tirent partie des dernières avancées en terme d'OOP (namespaces, magic methods, etc).
+	</p>
 
-	{% include 'partials.articles-list.articles-list' %}
+	{% include '_partials.articles-list.articles-list' %}
 
 	{# Projects #}
 	<hr>
-	<h2>{{ Lang.get('repositories.projects') }}</h2>
+	<h2>{{ 'Projets'|trans }}</h2>
 	<article class='project'>
 		<div class='project__summary'>
 			<h3>
 				The Laravel Packages Registry
-				<small>Un Packagist-like dédié aux packages pour le framework Laravel</small>
+				<small>{{ 'Un Packagist-like dédié aux packages pour le framework Laravel'|trans }}</small>
 			</h3>
 			<nav class="project__summary__links">
-				{{ HTML.linkBlank('https://registry.autopergamene.eu', 'Voir le site') }}
-				{{ HTML.linkBlank('https://github.com/Anahkiasen/registry', 'Voir les sources') }}
+				{{ HTML.linkBlank('https://registry.autopergamene.eu', 'Voir le site'|trans) }}
+				{{ HTML.linkBlank('https://github.com/Anahkiasen/registry', 'Voir les sources'|trans) }}
 			</nav>
 		</div>
 		<figure>
 			{{ HTML.image('app/img/web/registry.png', 'Registry', {'class': 'image-wrap'}) }}
-			<figcaption>Accueil</figcaption>
+			<figcaption>{{ 'Accueil'|trans }}</figcaption>
 		</figure>
 		<figure>
 			{{ HTML.image('app/img/web/registry-package.png', 'Registry', {'class': 'image-wrap'}) }}
-			<figcaption>Packages</figcaption>
+			<figcaption>{{ 'Packages'|trans }}</figcaption>
 		</figure>
 		<figure>
 			{{ HTML.image('app/img/web/registry-maintainer.png', 'Registry', {'class': 'image-wrap'}) }}
-			<figcaption>Maintainers</figcaption>
+			<figcaption>{{ 'Maintainers'|trans }}</figcaption>
 		</figure>
 	</article>
 
 	{# Libraries #}
 	<hr>
-	<h2>{{ Lang.get('repositories.repositories') }}</h2>
-	<p>{{ Lang.get('repositories.repositories_intro') }}</p>
+	<h2>{{ 'Libraries'|trans }}</h2>
+	<p>{{ 'Les liens pointent soit sur Github vers la source, soit vers le site du projet.'|trans }}</p>
 
 	{% for repository in repositories %}
 		{% if title is not defined and not repository.master %}
-			{% set title = Lang.get('repositories.collaboration') %}
+			{% set title = 'Librairies en collaboration'|trans %}
 			<h2>{{ title }}</h2>
-			<p>{{ Lang.get('repositories.collaboration_intro') }}</p>
+			<p>{{ "Ci-dessous des projets que je n'ai pas initiés mais sur lesquels à force de contributions je suis passé collaborateur."|trans }}</p>
 		{% endif %}
 
 		<article class='repository'>
@@ -57,14 +68,14 @@
 				</figure>
 			</a>
 			{% if not repository.master %}
-				<p>{{ Lang.get('repositories.by') }} {{ repository.author }}</p>
+				<p>{{ 'by'|trans }} {{ repository.author }}</p>
 			{% endif %}
 			<p>
 				<strong>tags :</strong>
 				{% if repository.tags %}
 					{{ repository.tags|join(', ') }}
 				{% else %}
-					<em>{{ Lang.get('repositories.notags') }}</em>
+					<em>{{ 'Aucun tag associé'|trans }}</em>
 				{% endif %}
 			</p>
 			<p>{{ repository.status }} {{ repository.getButton('watch') }} {{ repository.getButton('fork') }}</p>

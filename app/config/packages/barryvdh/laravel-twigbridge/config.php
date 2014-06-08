@@ -1,4 +1,7 @@
-<?php return array(
+<?php
+use Illuminate\Support\Facades\Config;
+
+return array(
 
  /*
   |--------------------------------------------------------------------------
@@ -8,7 +11,7 @@
   | Available options:
   |
   |   * debug: When set to true, it automatically set "auto_reload" to true as
-  |           well (default to app.debug setting).
+  |           well (default to false).
   |
   |   * charset: The charset used by the templates (default to UTF-8).
   |
@@ -16,14 +19,14 @@
   |                         templates (default to Barryvdh\TwigBridge\TwigTemplate).
   |
   |   * cache: An absolute path where to store the compiled templates, or
-  |           false to disable compilation cache. Default is $app['path.storage'].'/views/twig'
+  |           false to disable compilation cache. Default to storage_path('views/twig')
   |
   |   * auto_reload: Whether to reload the template if the original source changed.
   |                 If you don't provide the auto_reload option, it will be
   |                 determined automatically based on the debug value.
   |
   |   * strict_variables: Whether to ignore invalid variables in templates
-  |                      (default to false).
+  |                      (defaults to false).
   |
   |   * autoescape: Whether to enable auto-escaping (default to html):
   |                   * false: disable auto-escaping
@@ -38,8 +41,14 @@
   */
 
   'options' => array(
-    'debug'      => true,
-    'autoescape' => false,
+    'debug'                 => Config::get('app.debug'),
+    'charset'               => 'UTF-8',
+    'base_template_class'   => 'Barryvdh\TwigBridge\TwigTemplate',
+    'auto_reload'           => null,
+    'cache'                 => storage_path('twig'),
+    'strict_variables'      => false,
+    'autoescape'            => false,
+    'optimizations'         => -1,
   ),
 
   /*
@@ -48,18 +57,31 @@
    |--------------------------------------------------------------------------
    |
    | List of Functions & Filters that are made available to your Twig templates.
-   | Supports string, array, closure or Twig_SimpleFilter / Twig_SimpleFunction .
+   | Supports string, array, closure or Twig_SimpleFilter / Twig_SimpleFunction.
+   | The default options are used when no options are set.
    |
    */
 
-  'functions' => array(),
+  'default_options' => array(
+    'needs_environment' => false,
+    'needs_context'     => false,
+    'is_safe'           => null, // null or array('html')
+    'is_safe_callback'  => null, // null or callback
+    'pre_escape'        => null, // null or 'html'
+    'preserves_safety'  => null,
+  ),
 
-  'filters' => array(),
+  'functions' => array(
 
-  // Facades made accessible to the views
+  ),
+
+  'filters' => array(
+
+  ),
+
   'facades' => array(
     'HTML', 'URL', 'Lang', 'Config', 'Input', 'Form', 'Auth', 'Str', 'Session', 'View',
     'Twitter', 'Facebook', 'Former', 'Acetone',
-  ),
+  )
 
 );

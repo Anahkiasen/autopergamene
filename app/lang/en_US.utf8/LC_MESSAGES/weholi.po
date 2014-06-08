@@ -1,0 +1,237 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Weholi\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-08 15:23+0200\n"
+"PO-Revision-Date: 2014-06-08 15:25+0100\n"
+"Last-Translator: \n"
+"Language-Team: Madewithlove <maxime@madewithlove.be>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.5\n"
+
+msgid "%age% ans"
+msgstr ""
+
+msgid ""
+"<p>Je travaille dans le web depuis bientôt %work% ans, avec une grande part "
+"de mon expérience faite au <span itemprop='worksFor'>%stappler%</span>. J'y "
+"ai fait mes premières incursions avec à peine quelques connaissances "
+"personnelles, puis de projet en projet c'est devenu ma passion. J'embrasse "
+"aujourd'hui la scène du web et tout ce qu'elle a de standards et d'enjeux – "
+"qu'il s'agisse des technologies et langages front-end (<strong>HTML5</"
+"strong>, <strong>CSS</strong> ou <strong>Javascript</strong>) ou back-end "
+"(<strong>PHP</strong>, <strong>Ruby</strong> avec maîtrise de l'<strong>OOP</"
+"strong> et de divers frameworks).</p><p>Je suis sérieux, passionné, et au "
+"courant des derniers mouvements d'un domaine changeant au jour-le-jour. Ce, "
+"via les nombreux designers et developpeurs influents que je suis activement "
+"sur des réseaux sociaux comme %twitter%.<br>Je cherche à comprendre plutôt "
+"qu'à recopier&nbsp;; je ne cherche pas à faire simplement mon travail, je "
+"cherche à le faire <em>bien</em>.</p><p>Plongé jusqu'au cou dans l'univers "
+"de l'<strong>open-source</strong>, j'ai moi-même de nombreux projets et "
+"librairies disponibles sur des sites majeurs comme %github% ou %bitbucket%. "
+"Cette proximité me permet de participer activement au développement des "
+"outils que j'emploie, de les améliorer, ou d'en créer de nouveaux.</p>"
+msgstr ""
+
+msgid "<strong>Publiée</strong> il y a {{ ages }} ans"
+msgstr ""
+
+msgid "Accueil"
+msgstr ""
+
+msgid "Accéder au blog \"Out through the winter throat\""
+msgstr ""
+
+msgid "Architecture MVC"
+msgstr ""
+
+msgid "Aucun tag associé"
+msgstr ""
+
+msgid ""
+"Ce site a été construit en utilisant %laravel%.<br>Le design a été codé en "
+"%sass% avec %compass% et %susy%.<br>Polices fournies par %typekit%."
+msgstr ""
+
+msgid "Certes... et donc, qui je suis ?"
+msgstr ""
+
+msgid "Cette nouvelle n'est pas encore lisible ici."
+msgstr ""
+
+msgid ""
+"Ci-dessous des nouvelles écrites entre 2007 et 2010, toutes dans un registre "
+"plutôt sombre et un style ampoulé qui m'a souvent été reproché. Malgré cela "
+"ce portfolio ne serait complet si ces textes n'y étaient présents. Leur "
+"longueur varie, leur qualité aussi — mes compétences s'étant améliorées à "
+"mesure que j'écrivais."
+msgstr ""
+
+msgid ""
+"Ci-dessous des projets que je n'ai pas initiés mais sur lesquels à force de "
+"contributions je suis passé collaborateur."
+msgstr ""
+
+msgid "Connaissances"
+msgstr ""
+
+msgid "Design d'API"
+msgstr ""
+
+msgid "Design d'application et architécture web"
+msgstr ""
+
+msgid "Diplômé d'un BTS en communication visuelle"
+msgstr ""
+
+msgid "Détenteur du permis B"
+msgstr ""
+
+msgid "Et aussi"
+msgstr ""
+
+msgid "Frameworks, librairies et CMS"
+msgstr ""
+
+msgid "Français et anglais – lu, écrit et parlé"
+msgstr ""
+
+msgid ""
+"J'ai commencé à faire de la photographie il y a quelques temps déjà. Ma "
+"raison était alors purement préventive — j'allais entrer en école de "
+"communication visuelle et m'étais dit que la photographie en serait un "
+"prérequis. Mes premières images étaient de ce qui m'entouraient — objets et "
+"personnes — et peu à peu ma passion s'est tournée vers les lieux abandonnés "
+"et ce qu'ils évoquent."
+msgstr ""
+
+msgid ""
+"J'espère que vous aussi aurez le plaisir de vous imaginer ce que vous voulez "
+"en les écoutant."
+msgstr ""
+
+msgid "Je travaille avec"
+msgstr ""
+
+msgid "Langages employés"
+msgstr ""
+
+msgid "Les articles"
+msgstr ""
+
+msgid ""
+"Les liens pointent soit sur Github vers la source, soit vers le site du "
+"projet."
+msgstr ""
+
+msgid "Librairies en collaboration"
+msgstr ""
+
+msgid "Libraries"
+msgstr ""
+
+msgid "Lire la nouvelle"
+msgstr ""
+
+msgid "Logiciels maîtrisés"
+msgstr ""
+
+msgid "Maintainers"
+msgstr ""
+
+msgid "Mais encore ?"
+msgstr "Ok and so what ?"
+
+msgid "Maîtrise de la POO"
+msgstr ""
+
+msgid "Me trouver (je suis partout)"
+msgstr ""
+
+msgid "Packages"
+msgstr ""
+
+msgid "Portfolio"
+msgstr ""
+
+msgid "Projets"
+msgstr ""
+
+msgid "Publié le"
+msgstr ""
+
+msgid "Publiée le"
+msgstr ""
+
+msgid ""
+"Quelques pistes que j'ai faites pendant mon temps libre — toutes partageant "
+"les mêmes influences, du drone au post-rock en passant par le noise ou "
+"l'ambient.<br>\n"
+"\t\t\tRestant un loisir ces pistes sont bien sûr loin d'être de qualité "
+"professionnelle mais reflètent quand même ce que j'ai voulu en faire : des "
+"morceaux assez cinématiques, où j'ai essayé d'une certaine manière de "
+"laisser les gens se créer leurs propres histoires en les écoutant."
+msgstr ""
+
+msgid "Responsive design"
+msgstr ""
+
+msgid "Retour aux supports"
+msgstr ""
+
+msgid "Retour à"
+msgstr ""
+
+msgid "Site live en AJAX"
+msgstr ""
+
+msgid "Sources en libre consultation"
+msgstr ""
+
+msgid ""
+"Sur cette page sont entreposées toutes les illustrations, dessins et consors "
+"que j'ai pu faire entre deux. Cela va de la peinture digitale au dessin au "
+"fusain, au rendu 3D en passant par l'illustration vectorielle."
+msgstr ""
+
+msgid "Techniques de découplage CSS (SMACKS, OOCSS, BEM)"
+msgstr ""
+
+msgid ""
+"Tous sont trouvables dans leurs catégories respectives mais sont rassemblés "
+"ici. Ils proviennent à l'origine de mon"
+msgstr ""
+
+msgid "Un Packagist-like dédié aux packages pour le framework Laravel"
+msgstr ""
+
+msgid ""
+"Un ensemble d'articles sur les sujets qui me passionnent : le web, la "
+"photographie, la musique, et j'en passe."
+msgstr ""
+
+msgid ""
+"Un ensemble de tableaux à tendances relativement sombres. Faits à l'époque "
+"sur le %garry%, ils représentent en quelque sorte mes premiers pas dans la "
+"photographie dans laquelle je me lancerai quelques temps plus tards."
+msgstr ""
+
+msgid "Voir le site"
+msgstr ""
+
+msgid "Voir les articles liés"
+msgstr ""
+
+msgid "Voir les sources"
+msgstr ""
+
+msgid "by"
+msgstr ""

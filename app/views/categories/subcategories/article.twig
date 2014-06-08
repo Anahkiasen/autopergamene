@@ -1,7 +1,7 @@
-{% extends 'layouts.global' %}
+{% extends '_layouts.global' %}
 
 {% block title %}
-	{{ article.name }} - Les articles -
+	{{ article.name }} - {{ 'Les articles'|trans }} -
 {% endblock %}
 
 {% block css %}
@@ -10,7 +10,7 @@
 
 {% block navigation %}
 	{{ HTML.homeLink() }}
-	{{ HTML.backLink(URL.action('CategoriesController@category', category.id), "Retour à #{category.name}") }}
+	<a href="{{ URL.action('CategoriesController@category', category.id) }}" class="bank">{{ 'Retour à'|trans }} {{ category.name }}</a>
 {% endblock %}
 
 {% block layout %}
@@ -23,7 +23,7 @@
 		<article>
 			{{ article.content }}
 			<blockquote>
-				<strong>Publié le : {{ article.creationDate }}</strong>
+				<strong>{{ 'Publié le'|trans }} : {{ article.creationDate }}</strong>
 			</blockquote>
 		</article>
 	</section>

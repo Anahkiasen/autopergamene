@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2a85a26830133a5ee3c77ef551f260ab",
+    "hash": "95447b3b24cac463b8bb0af7755ee77d",
     "packages": [
         {
             "name": "anahkiasen/acetone",
@@ -53,12 +53,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Anahkiasen/arrounded.git",
-                "reference": "0273542b35d60e3a931abdba91ad624cc040220e"
+                "reference": "cdb04d25b2f5ac8a539d4742a3f9e62f8900493c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Anahkiasen/arrounded/zipball/0273542b35d60e3a931abdba91ad624cc040220e",
-                "reference": "0273542b35d60e3a931abdba91ad624cc040220e",
+                "url": "https://api.github.com/repos/Anahkiasen/arrounded/zipball/cdb04d25b2f5ac8a539d4742a3f9e62f8900493c",
+                "reference": "cdb04d25b2f5ac8a539d4742a3f9e62f8900493c",
                 "shasum": ""
             },
             "require": {
@@ -91,7 +91,7 @@
                 }
             ],
             "description": "A set of self-aware Laravel abstracts that know their way around",
-            "time": "2014-06-06 14:30:45"
+            "time": "2014-06-08 12:17:41"
         },
         {
             "name": "anahkiasen/flatten",
@@ -3677,6 +3677,55 @@
             "time": "2013-08-19 23:46:08"
         },
         {
+            "name": "twig/extensions",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fabpot/Twig-extensions.git",
+                "reference": "502303198afc1ec0bcc061c6f3a0926f7eb685e3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fabpot/Twig-extensions/zipball/502303198afc1ec0bcc061c6f3a0926f7eb685e3",
+                "reference": "502303198afc1ec0bcc061c6f3a0926f7eb685e3",
+                "shasum": ""
+            },
+            "require": {
+                "twig/twig": "~1.12"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Twig_Extensions_": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
+                }
+            ],
+            "description": "Common additional features for Twig that do not directly belong in core",
+            "homepage": "https://github.com/fabpot/Twig-extensions",
+            "keywords": [
+                "debug",
+                "i18n",
+                "text"
+            ],
+            "time": "2014-03-01 02:53:07"
+        },
+        {
             "name": "twig/twig",
             "version": "dev-master",
             "source": {
@@ -3748,6 +3797,7 @@
         "anahkiasen/acetone": 20,
         "anahkiasen/arrounded": 20,
         "barryvdh/laravel-twigbridge": 20,
+        "twig/extensions": 20,
         "phpunit/phpunit": 20,
         "mockery/mockery": 20
     },

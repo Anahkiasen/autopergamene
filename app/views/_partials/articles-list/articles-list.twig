@@ -1,9 +1,9 @@
-<a class='block' data-show='.articles'>{{ Lang.get('global.see_articles') }}</a>
+<a class='block' data-show='.articles'>{{ 'Voir les articles liés'|trans }}</a>
 
 <section class='articles hidden'>
 	{% if articles is not empty %}
 		{% for article in articles %}
-			{% include 'partials.articles-list.article-block' %}
+			{% include '_partials.articles-list.article-block' %}
 		{% endfor %}
 	{% endif %}
 </section>

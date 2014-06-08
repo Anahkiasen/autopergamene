@@ -1,4 +1,4 @@
-{% extends 'layouts.portfolio' %}
+{% extends '_layouts.portfolio' %}
 
 {% block title %}
 	{{ support.name }} -
@@ -6,7 +6,7 @@
 
 {% block navigation %}
 	{{ parent() }}
-	{{ HTML.backLink('category/illustration', 'Retour aux supports') }}
+	<a href="{{ URL.action('CategoriesController@category', 'illustration') }}" class="bank">{{ 'Retour aux supports'|trans }}</a>
 {% endblock %}
 
 {% block content %}
