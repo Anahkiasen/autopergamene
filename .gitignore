@@ -4,6 +4,7 @@ node_modules
 vendor
 
 # Cache and compiled
+.vagrant
 .sass-cache
 bootstrap/compiled.php
 public/builds
