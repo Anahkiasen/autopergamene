@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'debug' => false,
+	'debug' => true,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -130,7 +130,6 @@ return array(
 		'Rocketeer\RocketeerServiceProvider',
 		'Acetone\AcetoneServiceProvider',
 		'Barryvdh\TwigBridge\ServiceProvider',
-		'Arrounded\Localization\LocalizationServiceProvider',
 
 	),
 
