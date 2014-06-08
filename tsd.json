@@ -1,0 +1,12 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "public/app/ts/_definitions",
+  "bundle": "public/app/ts/tsd.ts",
+  "installed": {
+    "jquery/jquery.d.ts": {
+      "commit": "d2989ce35fcf03ace1df9dda33a9a3b68c416b08"
+    }
+  }
+}

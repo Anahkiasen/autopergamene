@@ -19,7 +19,6 @@
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   -webkit-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0); }
 
 ul.fixed, footer .social, .about .about-more ul, .novel article ul {
@@ -157,7 +156,7 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
   margin-right: 0; }
   @media (min-width: 60em) {
     .portfolio blockquote, .article article blockquote, .novel article blockquote, .novel article ul {
-      background-image: url('../img/quotes.png?1393796213');
+      background-image: url('../img/quotes.png?1390065889');
       background-position: 16px 16px;
       background-position: 1rem 1rem;
       background-repeat: no-repeat;
@@ -821,7 +820,7 @@ header {
 .about aside {
   height: 320px;
   height: 20rem;
-  background-image: url('../img/maxime-fabre.jpg?1393796213'); }
+  background-image: url('../img/maxime-fabre.jpg?1390057934'); }
   @media (min-width: 60em) and (max-width: 75em) {
     .about aside {
       height: 400px;
