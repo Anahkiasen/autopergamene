@@ -126,10 +126,10 @@ return array(
 		'Flatten\FlattenServiceProvider',
 		'Flickering\FlickeringServiceProvider',
 		'Illuminage\IlluminageServiceProvider',
-		'Polyglot\PolyglotServiceProvider',
 		'Rocketeer\RocketeerServiceProvider',
 		'Acetone\AcetoneServiceProvider',
 		'Barryvdh\TwigBridge\ServiceProvider',
+		'Polyglot\PolyglotServiceProvider',
 
 	),
 

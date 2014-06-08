@@ -3,7 +3,10 @@
 {% block content %}
 	<p>
 		{% set garry = HTML.linkBlank('http://store.steampowered.com/app/4000/', "Garry's Mod") %}
-		{% trans %}Un ensemble de tableaux à tendances relativement sombres. Faits à l'époque sur le {{ garry }}, ils représentent en quelque sorte mes premiers pas dans la photographie dans laquelle je me lancerai quelques temps plus tards.{% endtrans %}
+		{% trans -%}
+			Un ensemble de tableaux à tendances relativement sombres. Faits à l'époque sur le {{ garry }},
+			ils représentent en quelque sorte mes premiers pas dans la photographie dans laquelle je me lancerai quelques temps plus tards.
+		{%- endtrans %}
 	</p>
 
 	<hr>
