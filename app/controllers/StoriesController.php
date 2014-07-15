@@ -5,7 +5,7 @@ use Autopergamene\Story;
 /**
  * Controller for the Stories
  */
-class StoriesController extends BaseController
+class StoriesController extends Controller
 {
 	/**
 	 * The Category

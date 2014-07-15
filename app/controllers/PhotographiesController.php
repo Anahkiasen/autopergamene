@@ -6,7 +6,7 @@ use Autopergamene\Repositories\CategoriesRepository;
 /**
  * Controller for the photographies
  */
-class PhotographiesController extends BaseController
+class PhotographiesController extends Controller
 {
 	/**
 	 * The Category

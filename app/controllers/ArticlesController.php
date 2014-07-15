@@ -5,7 +5,7 @@ use Autopergamene\Repositories\CategoriesRepository;
 /**
  * Handles Articles display
  */
-class ArticlesController extends BaseController
+class ArticlesController extends Controller
 {
 	/**
 	 * The Category

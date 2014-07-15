@@ -2,7 +2,7 @@
 use Autopergamene\Illustration\Support;
 use Autopergamene\Repositories\CategoriesRepository;
 
-class IllustrationsController extends BaseController
+class IllustrationsController extends Controller
 {
 	/**
 	 * The Category

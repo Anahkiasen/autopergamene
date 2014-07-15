@@ -2,7 +2,7 @@
 use Autopergamene\Repositories\CategoriesRepository;
 use Autopergamene\Repository;
 
-class RepositoriesController extends BaseController
+class RepositoriesController extends Controller
 {
 	/**
 	 * The Category

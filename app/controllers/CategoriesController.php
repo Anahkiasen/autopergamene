@@ -4,7 +4,7 @@ use Autopergamene\Repositories\CategoriesRepository;
 /**
  * Dispatches to various Category places
  */
-class CategoriesController extends BaseController
+class CategoriesController extends Controller
 {
 	/**
 	 * The Category Repository
