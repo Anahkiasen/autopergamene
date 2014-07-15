@@ -1,4 +1,6 @@
 <?php
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateStories extends Migration
 {
@@ -9,7 +11,7 @@ class CreateStories extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('stories', function ($table) {
+		Schema::create('stories', function (Blueprint $table) {
 			$table->string('id');
 			$table->string('name');
 			$table->text('description');

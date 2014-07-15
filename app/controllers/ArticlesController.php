@@ -24,7 +24,8 @@ class ArticlesController extends BaseController
 	/**
 	 * Bind dependencies
 	 *
-	 * @param Articles $articles
+	 * @param CategoriesRepository $categories
+	 * @param Article              $articles
 	 */
 	public function __construct(CategoriesRepository $categories, Article $articles)
 	{
@@ -48,8 +49,10 @@ class ArticlesController extends BaseController
 	/**
 	 * Display an article
 	 *
-	 * @param string $categorySlug The category slug
-	 * @param string $articleSlug  The article slug
+	 * @param $slug
+	 *
+	 * @internal param string $categorySlug The category slug
+	 * @internal param string $articleSlug The article slug
 	 *
 	 * @return View
 	 */

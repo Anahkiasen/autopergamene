@@ -1,4 +1,6 @@
 <?php
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateArticles extends Migration
 {
@@ -9,7 +11,7 @@ class CreateArticles extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('articles', function ($table) {
+		Schema::create('articles', function (Blueprint $table) {
 			$table->increments('id');
 			$table->string('name');
 			$table->string('slug');

@@ -25,7 +25,9 @@
   },
   "require-dev": {
     "phpunit/phpunit": "dev-master",
-    "mockery/mockery": "dev-master"
+    "mockery/mockery": "dev-master",
+    "barryvdh/laravel-ide-helper": "dev-master",
+    "doctrine/dbal": "~2.3"
   },
   "autoload": {
     "psr-0": {

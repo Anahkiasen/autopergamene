@@ -1,4 +1,6 @@
 <?php
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreatePhotosets extends Migration
 {
@@ -9,7 +11,7 @@ class CreatePhotosets extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('photosets', function ($table) {
+		Schema::create('photosets', function (Blueprint $table) {
 			$table->increments('id');
 			$table->string('name');
 			$table->string('slug');

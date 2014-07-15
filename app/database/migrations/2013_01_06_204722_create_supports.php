@@ -1,4 +1,6 @@
 <?php
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateSupports extends Migration
 {
@@ -9,7 +11,7 @@ class CreateSupports extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('supports', function ($table) {
+		Schema::create('supports', function (Blueprint $table) {
 			$table->string('id');
 			$table->string('name');
 			$table->timestamps();

@@ -1,4 +1,6 @@
 <?php
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateRepositories extends Migration
 {
@@ -9,7 +11,7 @@ class CreateRepositories extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('repositories', function ($table) {
+		Schema::create('repositories', function (Blueprint $table) {
 			$table->increments('id');
 			$table->string('name');
 			$table->text('content');

@@ -1,4 +1,6 @@
 <?php
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateCollectionPhotoset extends Migration
 {
@@ -9,7 +11,7 @@ class CreateCollectionPhotoset extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('collection_photoset', function ($table) {
+		Schema::create('collection_photoset', function (Blueprint $table) {
 			$table->increments('id');
 			$table->integer('collection_id');
 			$table->integer('photoset_id');

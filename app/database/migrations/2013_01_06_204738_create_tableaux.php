@@ -1,4 +1,6 @@
 <?php
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateTableaux extends Migration
 {
@@ -9,7 +11,7 @@ class CreateTableaux extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('tableaux', function ($table) {
+		Schema::create('tableaux', function (Blueprint $table) {
 			$table->increments('id');
 			$table->string('name');
 			$table->timestamps();

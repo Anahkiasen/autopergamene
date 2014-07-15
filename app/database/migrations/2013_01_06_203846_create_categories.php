@@ -1,4 +1,6 @@
 <?php
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateCategories extends Migration
 {
@@ -9,7 +11,7 @@ class CreateCategories extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('categories', function ($table) {
+		Schema::create('categories', function (Blueprint $table) {
 			$table->string('id');
 			$table->string('name');
 			$table->string('link')->nullable();

@@ -1,4 +1,6 @@
 <?php
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateCategoriesLang extends Migration
 {
@@ -9,7 +11,7 @@ class CreateCategoriesLang extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('categories_lang', function ($table) {
+		Schema::create('categories_lang', function (Blueprint $table) {
 			$table->increments('id');
 			$table->string('lang');
 			$table->string('description');
