@@ -1,14 +1,14 @@
 <?php
 namespace Autopergamene\Illustration;
 
-use Autopergamene\BaseModel;
+use Autopergamene\Abstracts\AbstractModel;
 use HTML;
 use Illuminage\Facades\Illuminage;
 
 /**
  * An Illustration
  */
-class Illustration extends BaseModel
+class Illustration extends AbstractModel
 {
 	////////////////////////////////////////////////////////////////////
 	/////////////////////////// RELATIONSHIPS //////////////////////////

@@ -1,13 +1,14 @@
 <?php
 namespace Autopergamene;
 
+use Autopergamene\Abstracts\AbstractModel;
 use HTML;
 use URL;
 
 /**
  * A media Category
  */
-class Category extends BaseModel
+class Category extends AbstractModel
 {
 	use Traits\HasSlugId;
 
@@ -38,6 +39,8 @@ class Category extends BaseModel
 
 	/**
 	 * Whether the category points to an external link or not
+	 *
+	 * @return boolean
 	 */
 	public function isExternal()
 	{
@@ -46,6 +49,8 @@ class Category extends BaseModel
 
 	/**
 	 * Get a link to the category's content
+	 *
+	 * @return string
 	 */
 	public function getLinkAttribute()
 	{
@@ -60,6 +65,8 @@ class Category extends BaseModel
 
 	/**
 	 * Get the category's thumb
+	 *
+	 * @return string
 	 */
 	public function getThumbAttribute()
 	{

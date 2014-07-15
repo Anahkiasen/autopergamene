@@ -1,7 +1,9 @@
 <?php
 namespace Autopergamene;
 
-class Track extends BaseModel
+use Autopergamene\Abstracts\AbstractModel;
+
+class Track extends AbstractModel
 {
 	/**
 	 * The color of the Soundcloud widget

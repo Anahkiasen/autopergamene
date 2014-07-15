@@ -1,13 +1,13 @@
 <?php
 namespace Autopergamene\Illustration;
 
-use Autopergamene\BaseModel;
+use Autopergamene\Abstracts\AbstractModel;
 use Autopergamene\Traits\HasSlugId;
 
 /**
  * A Support holding various Illustrations
  */
-class Support extends BaseModel
+class Support extends AbstractModel
 {
 	use HasSlugId;
 

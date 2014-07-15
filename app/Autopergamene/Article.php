@@ -1,10 +1,12 @@
 <?php
 namespace Autopergamene;
 
+use Autopergamene\Abstracts\AbstractModel;
+
 /**
  * An article from the Blog
  */
-class Article extends BaseModel
+class Article extends AbstractModel
 {
 	/**
 	 * The relations to eager load on every query.

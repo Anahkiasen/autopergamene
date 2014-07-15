@@ -1,13 +1,13 @@
 <?php
 namespace Autopergamene\Photography;
 
-use Autopergamene\BaseModel;
+use Autopergamene\Abstracts\AbstractModel;
 use HTML;
 
 /**
  * A Photo in a Photoset
  */
-class Photo extends BaseModel
+class Photo extends AbstractModel
 {
 	/**
 	 * Aliases for sizes

@@ -1,12 +1,12 @@
 <?php
 namespace Autopergamene\Photography;
 
-use Autopergamene\BaseModel;
+use Autopergamene\Abstracts\AbstractModel;
 
 /**
  * A Collection of Photosets
  */
-class Collection extends BaseModel
+class Collection extends AbstractModel
 {
 	////////////////////////////////////////////////////////////////////
 	/////////////////////////// RELATIONSHIPS //////////////////////////
@@ -15,7 +15,7 @@ class Collection extends BaseModel
 	/**
 	 * Get all the Photosets in a Collection
 	 *
-	 * @return Illuminate\Support\Collection
+	 * @return \Illuminate\Support\Collection
 	 */
 	public function photosets()
 	{

@@ -1,7 +1,9 @@
 <?php
 namespace Autopergamene;
 
-class Service extends BaseModel
+use Autopergamene\Abstracts\AbstractModel;
+
+class Service extends AbstractModel
 {
 	////////////////////////////////////////////////////////////////////
 	///////////////////////////// ATTRIBUTES ///////////////////////////

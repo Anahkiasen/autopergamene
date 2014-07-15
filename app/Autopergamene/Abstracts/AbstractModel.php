@@ -1,12 +1,13 @@
 <?php
-namespace Autopergamene;
+namespace Autopergamene\Abstracts;
 
+use Autopergamene\Query;
 use Polyglot\Polyglot;
 
 /**
  * An abstract Model to extend
  */
-abstract class BaseModel extends Polyglot
+abstract class AbstractModel extends Polyglot
 {
 	////////////////////////////////////////////////////////////////////
 	/////////////////////////////// FETCHERS ///////////////////////////

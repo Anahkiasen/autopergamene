@@ -1,6 +1,7 @@
 <?php
 namespace Autopergamene;
 
+use Autopergamene\Abstracts\AbstractModel;
 use HTML;
 use Str;
 use URL;
@@ -8,7 +9,7 @@ use URL;
 /**
  * A Tableau in Today is Sunday
  */
-class Tableau extends BaseModel
+class Tableau extends AbstractModel
 {
 	/**
 	 * The table associated with the model.

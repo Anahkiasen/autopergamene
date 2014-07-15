@@ -2,13 +2,14 @@
 namespace Autopergamene;
 
 use App;
+use Autopergamene\Abstracts\AbstractModel;
 use File;
 use URL;
 
 /**
  * A short story
  */
-class Story extends BaseModel
+class Story extends AbstractModel
 {
 	use Traits\HasSlugId;
 

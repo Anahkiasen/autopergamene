@@ -1,9 +1,10 @@
 <?php
 namespace Autopergamene;
 
+use Autopergamene\Abstracts\AbstractModel;
 use HTML;
 
-class Repository extends BaseModel
+class Repository extends AbstractModel
 {
 	////////////////////////////////////////////////////////////////////
 	///////////////////////////// ATTRIBUTES ///////////////////////////

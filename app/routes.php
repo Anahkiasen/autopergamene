@@ -5,6 +5,7 @@
 //////////////////////////////////////////////////////////////////////
 
 Route::groupLocale(function () {
+
 	Route::get('/', ['as' => 'home', 'uses' => 'CategoriesController@categories']);
 
 	Route::get('category/graceful-degradation', 'RepositoriesController@repositories');
@@ -22,4 +23,5 @@ Route::groupLocale(function () {
 	Route::get('category/illustration/support/{support}', 'IllustrationsController@support');
 
 	Route::get('category/{category}', 'CategoriesController@category');
+
 });
