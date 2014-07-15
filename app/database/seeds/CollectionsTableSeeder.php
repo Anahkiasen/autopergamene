@@ -1,5 +1,5 @@
 <?php
-use Autopergamene\Photography\Collection;
+use Autopergamene\Models\Photography\Collection;
 
 class CollectionsTableSeeder extends DatabaseSeeder
 {

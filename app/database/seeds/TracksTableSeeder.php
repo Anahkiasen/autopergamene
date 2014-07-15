@@ -1,5 +1,5 @@
 <?php
-use Autopergamene\Track;
+use Autopergamene\Models\Track;
 
 class TracksTableSeeder extends DatabaseSeeder
 {

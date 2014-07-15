@@ -1,5 +1,5 @@
 <?php
-use Autopergamene\Photography\Photoset;
+use Autopergamene\Models\Photography\Photoset;
 
 /**
  * Seed the Photos from Flickr

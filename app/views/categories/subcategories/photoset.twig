@@ -21,7 +21,7 @@
 				</figcaption>
 				<div class='image-wrap'>
 					<h3>{{ photo.index(loop.index0) }}</h3>
-					{{ HTML.lazyLoad(photo.medium_large, photo.name) }}
+					{{ HTML.lazyLoad(photo.size('medium_large'), photo.name) }}
 				</div>
 			</figure>
 		{% endfor %}

@@ -1,6 +1,6 @@
 <?php
-use Autopergamene\Photography\Photo;
-use Autopergamene\Photography\Photoset;
+use Autopergamene\Models\Photography\Photo;
+use Autopergamene\Models\Photography\Photoset;
 
 /**
  * Seed the photos
@@ -18,7 +18,7 @@ class PhotosTableSeeder extends DatabaseSeeder
 					'id'          => $photo['id'],
 					'name'        => $name,
 					'surname'     => $surname,
-					'farm'        => 'http://farm'.$photo['farm'].'.staticflickr.com/'.$photo['server'].'/'.$photo['id'].'_'.$photo['secret'],
+					'farm'        => 'https://farm'.$photo['farm'].'.staticflickr.com/'.$photo['server'].'/'.$photo['id'].'_'.$photo['secret'],
 					'thumbnail'   => $photo['isprimary'],
 					'photoset_id' => $photosetId,
 				));

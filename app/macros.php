@@ -36,5 +36,7 @@ HTML::macro('homeLink', function () {
  * Lazy loaded image
  */
 HTML::macro('lazyLoad', function ($image, $alt) {
-	return HTML::image('http://placehold.it/350&text=Chargement...', $alt, array('data-original' => URL::asset($image)));
+	return HTML::image('http://placehold.it/350&text=Chargement...', $alt, array(
+		'data-original' => URL::asset($image),
+	));
 });

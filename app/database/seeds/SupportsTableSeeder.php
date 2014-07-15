@@ -1,5 +1,5 @@
 <?php
-use Autopergamene\Illustration\Support;
+use Autopergamene\Models\Illustration\Support;
 
 /**
  * Seed Illustrations Supports

@@ -43,6 +43,10 @@ class Photo extends AbstractModel
 
 	/**
 	 * Get the URL to a photo
+	 *
+	 * @param string $size
+	 *
+	 * @return string
 	 */
 	public function size($size)
 	{
@@ -54,41 +58,16 @@ class Photo extends AbstractModel
 		return $image.'.jpg';
 	}
 
-	/**
-	 * Dynamic size getting
-	 */
-	public function __get($method)
-	{
-		// Get a size
-		if (isset(static::$sizes[$method])) {
-			return $this->size($method);
-		}
-
-		return parent::__get($method);
-	}
-
-	/**
-	 * Check if a size is set
-	 *
-	 * @param  string $method
-	 *
-	 * @return boolean
-	 */
-	public function __isset($method)
-	{
-		if (isset(static::$sizes[$method])) {
-			return true;
-		}
-
-		return parent::__isset($method);
-	}
-
 	////////////////////////////////////////////////////////////////////
 	///////////////////////////// ATTRIBUTES ///////////////////////////
 	////////////////////////////////////////////////////////////////////
 
 	/**
 	 * Format a photo's index
+	 *
+	 * @param $key
+	 *
+	 * @return string
 	 */
 	public function index($key)
 	{

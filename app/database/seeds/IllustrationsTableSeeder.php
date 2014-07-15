@@ -1,5 +1,5 @@
 <?php
-use Autopergamene\Illustration\Illustration;
+use Autopergamene\Models\Illustration\Illustration;
 
 class IllustrationsTableSeeder extends DatabaseSeeder
 {
@@ -45,7 +45,6 @@ class IllustrationsTableSeeder extends DatabaseSeeder
 			['Coloration', 'Recoloration d\'une peinture', 'digital'],
 			['Guitare', '', 'digital'],
 			['Hiver', '', 'digital'],
-
 			// Drawings
 			['Chair', 'Feutre, eau et Posca blanc', 'drawings', true],
 			['Tree People', 'Fusain et encre de chine', 'drawings'],
@@ -60,13 +59,16 @@ class IllustrationsTableSeeder extends DatabaseSeeder
 			['Bougeoir', 'Encre de chine', 'drawings'],
 			['Beksinski', 'Crayon à papier', 'drawings'],
 			['Wanderer', 'Crayon à papier', 'drawings'],
-
 			// Rendus 3D
 			['Les rues', '', 'maya', true],
 			['Vaisseau', '', 'maya'],
-
 			// Vidéo
-			['Christ Send Light', 'Encre et peinture<br>Musique montage à partir de Nadja - Christ Send Light', 'video', true],
+			[
+				'Christ Send Light',
+				'Encre et peinture<br>Musique montage à partir de Nadja - Christ Send Light',
+				'video',
+				true
+			],
 
 		];
 	}

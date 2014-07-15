@@ -1,6 +1,6 @@
 <?php
-use Autopergamene\Category;
 use Autopergamene\Lang\Category as CategoryLang;
+use Autopergamene\Models\Category;
 
 class CategoriesTableSeeder extends DatabaseSeeder
 {

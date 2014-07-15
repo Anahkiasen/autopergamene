@@ -1,5 +1,5 @@
 <?php
-use Autopergamene\Tableau;
+use Autopergamene\Models\Tableau;
 
 class TableauxTableSeeder extends DatabaseSeeder
 {

@@ -7,12 +7,16 @@
 			'/app/css/styles.css',
 		),
 		'js'  => array(
-			'/components/modernizr/modernizr.min.js',
-			'/app/js/polyfill.js',
 			'/app/js/scripts.js',
 		),
 	),
 	'modernizr'   => array(
+		'js' => array(
+			'/components/modernizr/modernizr.min.js',
+			'/app/js/polyfill.js',
+		),
+	),
+	'article'     => array(
 		'js' => array(
 			'/components/rainbow/js/rainbow.min.js',
 			'/components/rainbow/js/language/generic.js',
@@ -20,14 +24,14 @@
 			'/app/js/article.js',
 		),
 	),
-	'article'     => array(
+	'lazyload'    => array(
 		'js' => array(
 			'/components/jquery/dist/jquery.js',
 			'/components/jquery.lazyload/jquery.lazyload.js',
 			'/app/js/components/lazyload.js',
 		),
 	),
-	'lazyload'    => array(
+	'affixed'     => array(
 		'js' => array(
 			'/components/jquery/dist/jquery.js',
 			'/components/bootstrap/js/affix.js',
@@ -35,6 +39,5 @@
 			'/app/js/components/affixed.js',
 		),
 	),
-
 
 );
