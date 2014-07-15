@@ -4,7 +4,7 @@ use Autopergamene\Photography\Photoset;
 /**
  * Seed the Photos from Flickr
  */
-class PhotosetsSeeder extends Seeder
+class PhotosetsTableSeeder extends DatabaseSeeder
 {
 	public function run()
 	{

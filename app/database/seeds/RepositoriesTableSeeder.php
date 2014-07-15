@@ -6,7 +6,7 @@ use Packagist\Api\Client as Packagist;
 /**
  * Seed the Github repositories
  */
-class RepositoriesSeeder extends Seeder
+class RepositoriesTableSeeder extends DatabaseSeeder
 {
 	public function run()
 	{

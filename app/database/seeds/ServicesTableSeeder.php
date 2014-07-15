@@ -4,7 +4,7 @@ use Autopergamene\Service;
 /**
  * Set the social networks
  */
-class ServicesSeeder extends Seeder
+class ServicesTableSeeder extends DatabaseSeeder
 {
 	public function run()
 	{

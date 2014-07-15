@@ -1,7 +1,7 @@
 <?php
 use Autopergamene\Tableau;
 
-class TableauxSeeder extends Seeder
+class TableauxTableSeeder extends DatabaseSeeder
 {
 	public function run()
 	{

@@ -1,7 +1,7 @@
 <?php
 use Autopergamene\Photography\Collection;
 
-class CollectionsSeeder extends Seeder
+class CollectionsTableSeeder extends DatabaseSeeder
 {
 	public function run()
 	{

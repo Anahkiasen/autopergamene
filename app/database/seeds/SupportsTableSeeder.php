@@ -4,7 +4,7 @@ use Autopergamene\Illustration\Support;
 /**
  * Seed Illustrations Supports
  */
-class SupportsSeeder extends Seeder
+class SupportsTableSeeder extends DatabaseSeeder
 {
 	public function run()
 	{

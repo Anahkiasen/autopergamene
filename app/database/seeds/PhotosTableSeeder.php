@@ -5,7 +5,7 @@ use Autopergamene\Photography\Photoset;
 /**
  * Seed the photos
  */
-class PhotosSeeder extends Seeder
+class PhotosTableSeeder extends DatabaseSeeder
 {
 	public function run()
 	{

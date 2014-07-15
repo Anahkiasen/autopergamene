@@ -1,7 +1,7 @@
 <?php
 use Autopergamene\Illustration\Illustration;
 
-class IllustrationsSeeder extends Seeder
+class IllustrationsTableSeeder extends DatabaseSeeder
 {
 	public function run()
 	{

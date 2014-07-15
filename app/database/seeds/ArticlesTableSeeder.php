@@ -1,7 +1,7 @@
 <?php
 use Autopergamene\Article;
 
-class ArticlesSeeder extends Seeder
+class ArticlesTableSeeder extends DatabaseSeeder
 {
 	/**
 	 * Seed articles

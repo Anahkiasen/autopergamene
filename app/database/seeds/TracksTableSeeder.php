@@ -1,7 +1,7 @@
 <?php
 use Autopergamene\Track;
 
-class TracksSeeder extends Seeder
+class TracksTableSeeder extends DatabaseSeeder
 {
 	public function run()
 	{

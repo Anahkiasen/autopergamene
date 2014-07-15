@@ -4,7 +4,7 @@ use Autopergamene\Story;
 /**
  * Seed short stories
  */
-class StoriesSeeder extends Seeder
+class StoriesTableSeeder extends DatabaseSeeder
 {
 	public function run()
 	{

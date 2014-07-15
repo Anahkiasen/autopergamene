@@ -2,7 +2,7 @@
 use Autopergamene\Category;
 use Autopergamene\Lang\Category as CategoryLang;
 
-class CategoriesSeeder extends Seeder
+class CategoriesTableSeeder extends DatabaseSeeder
 {
 	public function run()
 	{

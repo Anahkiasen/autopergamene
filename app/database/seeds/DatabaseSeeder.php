@@ -1,6 +1,7 @@
 <?php
+use Arrounded\Seeders\AbstractSeeder;
 
-class DatabaseSeeder extends Seeder
+class DatabaseSeeder extends AbstractSeeder
 {
 	/**
 	 * Run the database seeds.
@@ -11,22 +12,22 @@ class DatabaseSeeder extends Seeder
 	{
 		Eloquent::unguard();
 
-		$this->call('CategoriesSeeder');
+		$this->seed('Categories');
 
 		// Illustration
-		$this->call('SupportsSeeder');
-		$this->call('IllustrationsSeeder');
+		$this->seed('Supports');
+		$this->seed('Illustrations');
 
 		// Photography
-		$this->call('PhotosetsSeeder');
-		$this->call('CollectionsSeeder');
-		$this->call('PhotosSeeder');
+		$this->seed('Photosets');
+		$this->seed('Collections');
+		$this->seed('Photos');
 
-		$this->call('ArticlesSeeder');
-		$this->call('RepositoriesSeeder');
-		$this->call('ServicesSeeder');
-		$this->call('StoriesSeeder');
-		$this->call('TableauxSeeder');
-		$this->call('TracksSeeder');
+		$this->seed('Articles');
+		$this->seed('Repositories');
+		$this->seed('Services');
+		$this->seed('Stories');
+		$this->seed('Tableaux');
+		$this->seed('Tracks');
 	}
 }
