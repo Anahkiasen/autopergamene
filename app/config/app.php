@@ -130,6 +130,7 @@ return array(
 		'Acetone\AcetoneServiceProvider',
 		'Barryvdh\TwigBridge\ServiceProvider',
 		'Polyglot\PolyglotServiceProvider',
+		'Arrounded\ArroundedServiceProvider',
 
 		// Application
 		'Autopergamene\AutopergameneServiceProvider',

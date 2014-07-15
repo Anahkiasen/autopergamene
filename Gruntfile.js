@@ -1,8 +1,9 @@
 module.exports = function(grunt) {
 
 	// Load modules
-	grunt.loadNpmTasks('grunt-notify');
-	require('jit-grunt')(grunt);
+	require('jit-grunt')(grunt, {
+		useminPrepare: 'grunt-usemin',
+	});
 
 	/**
 	 * Loads all available tasks options

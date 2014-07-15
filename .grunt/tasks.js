@@ -18,9 +18,12 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('production', 'Build assets for production', [
 		'js',
-		'concat:css',
+		'shell:assets',
+		'useminPrepare',
+		'concat',
 		'copy',
-		'minify'
+		'minify',
+		'usemin',
 	]);
 
 	// Flow
@@ -48,7 +51,6 @@ module.exports = function(grunt) {
 	grunt.registerTask('js', 'Build scripts', [
 		'typescript',
 		'jshint',
-		'concat:js',
 	]);
 
 	grunt.registerTask('css', 'Build stylesheets', [
@@ -56,7 +58,6 @@ module.exports = function(grunt) {
 		'csslint',
 		'csscss',
 		'autoprefixer',
-		'concat:css',
 	]);
 
 }

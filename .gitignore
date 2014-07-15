@@ -4,6 +4,7 @@ node_modules
 vendor
 
 # Cache and compiled
+.tmp
 .sass-cache
 .vagrant
 _ide_helper.php

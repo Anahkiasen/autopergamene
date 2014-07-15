@@ -16,10 +16,6 @@ class AutopergameneServiceProvider extends ServiceProvider
 	 */
 	public function register()
 	{
-		$this->app->singleton('assets', function ($app) {
-			return new AssetsHandler($app['config']['assets']);
-		});
-
 		$this->app->view->composers(array(
 			'Autopergamene\Composers\PagesComposer@composeHome'         => '_partials.about',
 			'Autopergamene\Composers\LayoutComposer@composerFooter'     => '_layouts.partials.footer',

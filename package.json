@@ -1,28 +1,30 @@
 {
-	"name": "autopergamene",
-	"dependencies": {
-		"bower": "*",
-		"grunt": "*",
-		"grunt-cli": "*",
-		"glob": "*"
-	},
-	"devDependencies": {
-		"grunt-autoprefixer": "*",
-		"grunt-bower-task": "*",
-		"grunt-contrib-clean": "*",
-		"grunt-contrib-compass": "*",
-		"grunt-contrib-concat": "*",
-		"grunt-contrib-copy": "*",
-		"grunt-contrib-csslint": "*",
-		"grunt-contrib-cssmin": "*",
-		"grunt-contrib-jshint": "*",
-		"grunt-contrib-uglify": "*",
-		"grunt-contrib-watch": "*",
-		"grunt-csscss": "*",
-		"grunt-notify": "*",
-		"grunt-svgmin": "*",
-		"grunt-tinypng": "*",
-		"grunt-typescript": "*",
-		"jit-grunt": "*"
-	}
+  "name": "autopergamene",
+  "dependencies": {
+    "bower": "*",
+    "grunt": "*",
+    "grunt-cli": "*",
+    "glob": "*"
+  },
+  "devDependencies": {
+    "grunt-autoprefixer": "*",
+    "grunt-bower-task": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-compass": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-csslint": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-csscss": "*",
+    "grunt-notify": "*",
+    "grunt-shell": "^0.7.0",
+    "grunt-svgmin": "*",
+    "grunt-tinypng": "*",
+    "grunt-typescript": "*",
+    "grunt-usemin": "*",
+    "jit-grunt": "*"
+  }
 }
