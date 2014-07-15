@@ -4,7 +4,7 @@
 /////////////////////////////// ROUTES ///////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-Route::groupLocale(function () {
+Route::groupLocale(['namespace' => 'Autopergamene\Controllers'], function () {
 
 	Route::get('/', ['as' => 'home', 'uses' => 'CategoriesController@categories']);
 

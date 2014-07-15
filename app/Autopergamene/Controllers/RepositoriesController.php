@@ -1,6 +1,10 @@
 <?php
+namespace Autopergamene\Controllers;
+
 use Autopergamene\Repositories\CategoriesRepository;
-use Autopergamene\Repository;
+use Autopergamene\Repositories\RepositoriesRepository;
+use Controller;
+use View;
 
 class RepositoriesController extends Controller
 {
@@ -14,17 +18,17 @@ class RepositoriesController extends Controller
 	/**
 	 * The Repositories Repository
 	 *
-	 * @type Repository
+	 * @type RepositoriesRepository
 	 */
 	protected $repositories;
 
 	/**
 	 * Build a new IllustrationsController
 	 *
-	 * @param CategoriesRepository $categories
-	 * @param Repository           $repositories
+	 * @param CategoriesRepository   $categories
+	 * @param RepositoriesRepository $repositories
 	 */
-	public function __construct(CategoriesRepository $categories, Repository $repositories)
+	public function __construct(CategoriesRepository $categories, RepositoriesRepository $repositories)
 	{
 		$this->repositories = $repositories;
 		$this->category     = $categories->getBySlug('graceful-degradation');
@@ -40,7 +44,7 @@ class RepositoriesController extends Controller
 		return View::make('categories.repositories', array(
 			'category'     => $this->category,
 			'articles'     => $this->category->articles,
-			'repositories' => $this->repositories->orderBy('order')->get(),
+			'repositories' => $this->repositories->getOrderedRepositories(),
 		));
 	}
 }

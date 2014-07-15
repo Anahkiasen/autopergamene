@@ -1,7 +1,8 @@
 <?php
-namespace Autopergamene;
+namespace Autopergamene\Models;
 
 use Autopergamene\Abstracts\AbstractModel;
+use Autopergamene\Traits\HasSlugId;
 use HTML;
 use URL;
 
@@ -10,7 +11,7 @@ use URL;
  */
 class Category extends AbstractModel
 {
-	use Traits\HasSlugId;
+	use HasSlugId;
 
 	/**
 	 * The localized fields
@@ -30,7 +31,7 @@ class Category extends AbstractModel
 	 */
 	public function articles()
 	{
-		return $this->hasMany('Autopergamene\Article')->latest();
+		return $this->hasMany('Autopergamene\Models\Article')->latest();
 	}
 
 	////////////////////////////////////////////////////////////////////
@@ -60,7 +61,7 @@ class Category extends AbstractModel
 			return $link;
 		}
 
-		return URL::action('CategoriesController@category', $this->id);
+		return URL::action('Autopergamene\Controllers\CategoriesController@category', $this->id);
 	}
 
 	/**

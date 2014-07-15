@@ -1,7 +1,11 @@
 <?php
-use Autopergamene\Photography\Collection;
-use Autopergamene\Photography\Photoset;
+namespace Autopergamene\Controllers;
+
+use Autopergamene\Models\Photography\Collection;
+use Autopergamene\Models\Photography\Photoset;
 use Autopergamene\Repositories\CategoriesRepository;
+use Controller;
+use View;
 
 /**
  * Controller for the photographies

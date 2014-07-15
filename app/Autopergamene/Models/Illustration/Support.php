@@ -1,5 +1,5 @@
 <?php
-namespace Autopergamene\Illustration;
+namespace Autopergamene\Models\Illustration;
 
 use Autopergamene\Abstracts\AbstractModel;
 use Autopergamene\Traits\HasSlugId;
@@ -18,21 +18,21 @@ class Support extends AbstractModel
 	/**
 	 * Get the Support's Illustrations
 	 *
-	 * @return Collectino
+	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
 	 */
 	public function illustrations()
 	{
-		return $this->hasMany('Autopergamene\Illustration\Illustration');
+		return $this->hasMany('Autopergamene\Models\Illustration\Illustration');
 	}
 
 	/**
 	 * Get the Support's Thumbnail
 	 *
-	 * @return Illuminage
+	 * @return mixed
 	 */
 	public function thumbnail()
 	{
-		return $this->hasOne('Autopergamene\Illustration\Illustration')->thumbnails();
+		return $this->hasOne('Autopergamene\Models\Illustration\Illustration')->thumbnails();
 	}
 
 	////////////////////////////////////////////////////////////////////
@@ -41,6 +41,8 @@ class Support extends AbstractModel
 
 	/**
 	 * Get the folder of this support's illustrations
+	 *
+	 * @return string
 	 */
 	public function getFolderAttribute()
 	{

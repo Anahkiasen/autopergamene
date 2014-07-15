@@ -16,7 +16,7 @@
 			{% set ages = story.created_at.diffInYears() %}
 			<p>{{ '<strong>Publiée</strong> il y a {{ ages }} ans'|trans }}</p>
 			<blockquote>{{ story.description }}</blockquote>
-			{{ HTML.blockLink(URL.action('StoriesController@story', story.id), 'Lire la nouvelle'|trans) }}
+			{{ HTML.blockLink(URL.action('Autopergamene\\Controllers\\StoriesController@story', story.id), 'Lire la nouvelle'|trans) }}
 		</article>
 	{% endfor %}
 {% endblock %}

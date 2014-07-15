@@ -1,6 +1,10 @@
 <?php
-use Autopergamene\Article;
+namespace Autopergamene\Controllers;
+
+use Autopergamene\Models\Article;
 use Autopergamene\Repositories\CategoriesRepository;
+use Controller;
+use View;
 
 /**
  * Handles Articles display
@@ -53,7 +57,6 @@ class ArticlesController extends Controller
 	 *
 	 * @internal param string $categorySlug The category slug
 	 * @internal param string $articleSlug The article slug
-	 *
 	 * @return View
 	 */
 	public function article($slug)

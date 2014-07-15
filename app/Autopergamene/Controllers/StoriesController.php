@@ -1,6 +1,10 @@
 <?php
+namespace Autopergamene\Controllers;
+
+use Autopergamene\Models\Story;
 use Autopergamene\Repositories\CategoriesRepository;
-use Autopergamene\Story;
+use Controller;
+use View;
 
 /**
  * Controller for the Stories

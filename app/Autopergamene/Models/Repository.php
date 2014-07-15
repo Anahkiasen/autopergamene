@@ -1,5 +1,5 @@
 <?php
-namespace Autopergamene;
+namespace Autopergamene\Models;
 
 use Autopergamene\Abstracts\AbstractModel;
 use HTML;

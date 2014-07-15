@@ -1,5 +1,5 @@
 <?php
-namespace Autopergamene\Illustration;
+namespace Autopergamene\Models\Illustration;
 
 use Autopergamene\Abstracts\AbstractModel;
 use HTML;
@@ -21,7 +21,7 @@ class Illustration extends AbstractModel
 	 */
 	public function support()
 	{
-		return $this->belongsTo('Autopergamene\Illustration\Support');
+		return $this->belongsTo('Autopergamene\Models\Illustration\Support');
 	}
 
 	////////////////////////////////////////////////////////////////////

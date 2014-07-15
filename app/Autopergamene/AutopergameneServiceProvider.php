@@ -19,15 +19,13 @@ class AutopergameneServiceProvider extends ServiceProvider
 		$this->app->singleton('assets', function ($app) {
 			return new AssetsHandler($app['config']['assets']);
 		});
-	}
 
-	/**
-	 * Bootstrap the application events.
-	 *
-	 * @return void
-	 */
-	public function boot()
-	{
-		// ...
+		$this->app->view->composers(array(
+			'Autopergamene\Composers\PagesComposer@composeHome'         => '_partials.about',
+			'Autopergamene\Composers\LayoutComposer@composerFooter'     => '_layouts.partials.footer',
+			'Autopergamene\Composers\PagesComposer@composeTracks'       => 'categories.the-winter-throat',
+			'Autopergamene\Composers\PagesComposer@composeRepositories' => 'categories.graceful-degradation',
+			'Autopergamene\Composers\PagesComposer@composeTableaux'     => 'categories.today-is-sunday',
+		));
 	}
 }

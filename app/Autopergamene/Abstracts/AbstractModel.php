@@ -1,6 +1,7 @@
 <?php
 namespace Autopergamene\Abstracts;
 
+use Arrounded\Traits\JsonAttributes;
 use Autopergamene\Query;
 use Polyglot\Polyglot;
 
@@ -9,6 +10,8 @@ use Polyglot\Polyglot;
  */
 abstract class AbstractModel extends Polyglot
 {
+	use JsonAttributes;
+
 	////////////////////////////////////////////////////////////////////
 	/////////////////////////////// FETCHERS ///////////////////////////
 	////////////////////////////////////////////////////////////////////

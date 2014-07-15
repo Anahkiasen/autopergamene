@@ -1,5 +1,5 @@
 <?php
-namespace Autopergamene\Photography;
+namespace Autopergamene\Models\Photography;
 
 use Autopergamene\Abstracts\AbstractModel;
 use HTML;
@@ -36,7 +36,7 @@ class Photo extends AbstractModel
 	 */
 	public function photoset()
 	{
-		return $this->belongsTo('Autopergamene\Photography\Photoset');
+		return $this->belongsTo('Autopergamene\Models\Photography\Photoset');
 	}
 
 	// Sizes --------------------------------------------------------- /

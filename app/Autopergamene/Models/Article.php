@@ -1,20 +1,14 @@
 <?php
-namespace Autopergamene;
+namespace Autopergamene\Models;
 
 use Autopergamene\Abstracts\AbstractModel;
+use Lang;
 
 /**
  * An article from the Blog
  */
 class Article extends AbstractModel
 {
-	/**
-	 * The relations to eager load on every query.
-	 *
-	 * @type array
-	 */
-	protected $with = array();
-
 	////////////////////////////////////////////////////////////////////
 	/////////////////////////// RELATIONSHIPS //////////////////////////
 	////////////////////////////////////////////////////////////////////
@@ -26,7 +20,7 @@ class Article extends AbstractModel
 	 */
 	public function category()
 	{
-		return $this->belongsTo('Autopergamene\Category');
+		return $this->belongsTo('Autopergamene\Models\Category');
 	}
 
 	////////////////////////////////////////////////////////////////////
@@ -40,7 +34,7 @@ class Article extends AbstractModel
 	 */
 	public function setTagsAttribute($tags)
 	{
-		$this->attributes['tags'] = json_encode($tags);
+		@$this->setJsonAttribute('tags', $tags);
 	}
 
 	/**
@@ -50,23 +44,33 @@ class Article extends AbstractModel
 	 */
 	public function getTagsAttribute()
 	{
-		return json_decode($this->getOriginal('tags'), true);
+		return $this->getJsonAttribute('tags');
 	}
 
+	/**
+	 * Get the date in human format
+	 *
+	 * @return string
+	 */
 	public function getRelativeDateAttribute()
 	{
 		$date = $this->created_at->diffForHumans();
+		if (Lang::getLocale() == 'en') {
+			return $date;
+		}
 
-		return strtr($date, array(
-			'from now' => null,
-			'ago'      => null,
-			'days'     => 'jour(s)',
-			'months'   => 'mois',
-			'weeks'    => 'sem.',
-			'week'     => 'sem.',
-			'years'    => 'ans',
-			'year'     => 'an',
-		));
+		return strtr(
+			$date, array(
+				'from now' => null,
+				'ago'      => null,
+				'days'     => 'jour(s)',
+				'months'   => 'mois',
+				'weeks'    => 'sem.',
+				'week'     => 'sem.',
+				'years'    => 'ans',
+				'year'     => 'an',
+			)
+		);
 	}
 
 	/**

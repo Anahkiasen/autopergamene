@@ -1,5 +1,9 @@
 <?php
+namespace Autopergamene\Controllers;
+
 use Autopergamene\Repositories\CategoriesRepository;
+use Controller;
+use View;
 
 /**
  * Dispatches to various Category places

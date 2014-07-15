@@ -1,8 +1,9 @@
 <?php
-namespace Autopergamene;
+namespace Autopergamene\Models;
 
 use App;
 use Autopergamene\Abstracts\AbstractModel;
+use Autopergamene\Traits\HasSlugId;
 use File;
 use URL;
 
@@ -11,7 +12,7 @@ use URL;
  */
 class Story extends AbstractModel
 {
-	use Traits\HasSlugId;
+	use HasSlugId;
 
 	////////////////////////////////////////////////////////////////////
 	///////////////////////////// ATTRIBUTES ///////////////////////////

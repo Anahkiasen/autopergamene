@@ -1,7 +1,7 @@
 <?php
 namespace Autopergamene\Repositories;
 
-use Autopergamene\Category;
+use Autopergamene\Models\Category;
 
 /**
  * Fetches Categories from the database
