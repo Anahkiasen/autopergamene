@@ -13,8 +13,7 @@
 		<meta name='apple-touch-fullscreen' content='yes' />
 		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
 
-		{{ Acetone.stylesheets('builds/css/application.css') }}
-		{{ Acetone.scripts('builds/js/modernizr.js') }}
+		{{ Assets.styles('application') }}
 		{% block css %}
 		{% endblock %}
 	</head>
@@ -36,7 +35,8 @@
 
 		<script type="text/javascript" src="//use.typekit.net/enr5hww.js"></script>
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-		{{ Acetone.scripts('builds/js/application.js') }}
+		{{ Assets.scripts('application') }}
+		{{ Assets.scripts('modernizr') }}
 		{% block js %}
 		{% endblock %}
 

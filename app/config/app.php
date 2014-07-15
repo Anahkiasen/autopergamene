@@ -131,6 +131,9 @@ return array(
 		'Barryvdh\TwigBridge\ServiceProvider',
 		'Polyglot\PolyglotServiceProvider',
 
+		// Application
+		'Autopergamene\AutopergameneServiceProvider',
+
 	),
 
 	/*
@@ -199,7 +202,7 @@ return array(
 		'View'              => 'Illuminate\Support\Facades\View',
 
 		// Other packages
-		'Acetone'    => 'Acetone\Facades\Acetone',
+		'Assets'     => 'Arrounded\Facades\Assets',
 		'Carbon'     => 'Carbon\Carbon',
 		'Flickering' => 'Flickering\Facades\Flickering',
 		'Rocketeer'  => 'Rocketeer\Facades\Rocketeer',

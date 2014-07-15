@@ -81,7 +81,7 @@ return array(
 
   'facades' => array(
     'HTML', 'URL', 'Lang', 'Config', 'Input', 'Form', 'Auth', 'Str', 'Session', 'View',
-    'Twitter', 'Facebook', 'Former', 'Acetone',
+    'Twitter', 'Facebook', 'Former', 'Assets',
   )
 
 );

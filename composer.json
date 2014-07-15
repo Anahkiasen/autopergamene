@@ -10,6 +10,7 @@
     }
   ],
   "require": {
+		"raveren/kint": "dev-master",
     "laravel/framework": "4.2.*",
     "anahkiasen/flatten": "dev-develop",
     "anahkiasen/flickering": "dev-master",
@@ -18,7 +19,6 @@
     "anahkiasen/rocketeer": "dev-develop",
     "anahkiasen/polyglot": "dev-develop",
     "knplabs/packagist-api": "dev-master",
-    "anahkiasen/acetone": "dev-master",
     "anahkiasen/arrounded": "dev-master",
     "barryvdh/laravel-twigbridge": "dev-master",
     "twig/extensions": "dev-master"
