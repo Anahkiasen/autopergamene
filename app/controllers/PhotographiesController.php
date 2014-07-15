@@ -1,7 +1,7 @@
 <?php
-use Autopergamene\Repositories\CategoriesRepository;
 use Autopergamene\Photography\Collection;
 use Autopergamene\Photography\Photoset;
+use Autopergamene\Repositories\CategoriesRepository;
 
 /**
  * Controller for the photographies
@@ -32,9 +32,9 @@ class PhotographiesController extends BaseController
 	/**
 	 * Build a new PhotographiesController
 	 *
-	 * @param CategoriesRepository  $categories
-	 * @param Collection            $collections
-	 * @param Photoset              $photosets
+	 * @param CategoriesRepository $categories
+	 * @param Collection           $collections
+	 * @param Photoset             $photosets
 	 */
 	public function __construct(CategoriesRepository $categories, Collection $collections, Photoset $photosets)
 	{

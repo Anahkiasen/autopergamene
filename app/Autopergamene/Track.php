@@ -20,10 +20,10 @@ class Track extends BaseModel
 	public function getSoundcloudAttribute()
 	{
 		$track = $this->getOriginal('soundcloud');
-		$track = 'http://api.soundcloud.com/tracks/' .$track;
+		$track = 'http://api.soundcloud.com/tracks/'.$track;
 
 		return
-			'http://w.soundcloud.com/player/?url=' .$track.
+			'http://w.soundcloud.com/player/?url='.$track.
 			'&auto_play=false&show_artwork=true&color='.$this->color;
 	}
 

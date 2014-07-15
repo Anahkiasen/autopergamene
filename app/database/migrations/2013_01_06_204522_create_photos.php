@@ -11,10 +11,10 @@ class CreatePhotos extends Migration
 	{
 		Schema::create('photos', function ($table) {
 			$table->increments('id');
-				$table->string('name');
-				$table->string('surname');
-				$table->string('farm');
-				$table->integer('thumbnail');
+			$table->string('name');
+			$table->string('surname');
+			$table->string('farm');
+			$table->integer('thumbnail');
 			$table->integer('photoset_id');
 			$table->timestamps();
 		});

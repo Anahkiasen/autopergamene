@@ -11,8 +11,8 @@ class CreateCollectionPhotoset extends Migration
 	{
 		Schema::create('collection_photoset', function ($table) {
 			$table->increments('id');
-				$table->integer('collection_id');
-				$table->integer('photoset_id');
+			$table->integer('collection_id');
+			$table->integer('photoset_id');
 			$table->nullableTimestamps();
 		});
 	}

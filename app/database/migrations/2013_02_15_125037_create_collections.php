@@ -11,8 +11,8 @@ class CreateCollections extends Migration
 	{
 		Schema::create('collections', function ($table) {
 			$table->string('id');
-				$table->string('name');
-				$table->string('description');
+			$table->string('name');
+			$table->string('description');
 			$table->timestamps();
 		});
 	}

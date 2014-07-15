@@ -1,6 +1,6 @@
 <?php
-use Autopergamene\Repositories\CategoriesRepository;
 use Autopergamene\Illustration\Support;
+use Autopergamene\Repositories\CategoriesRepository;
 
 class IllustrationsController extends BaseController
 {

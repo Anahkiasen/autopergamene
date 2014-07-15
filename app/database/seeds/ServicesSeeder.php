@@ -31,16 +31,16 @@ class ServicesSeeder extends Seeder
 	protected function getSocial()
 	{
 		return [
-			['Mail'      , 'ehtnam6@gmail.com'],
-			['Facebook'  , 'http://facebook.com/anahkiasen'],
-			['Twitter'   , 'http://twitter.com/anahkiasen'],
-			['Github'    , 'http://github.com/anahkiasen'],
-			['Flickr'    , 'http://flickr.com/photos/anahkiasen'],
-			['Last.fm'   , 'http://last.fm/user/anahkiasen'],
-			['Steam'     , 'http://steamcommunity.com/id/anahkiasen'],
-			['Wordpress' , 'http://blogs.wefrag.com/anahkiasen'],
+			['Mail', 'ehtnam6@gmail.com'],
+			['Facebook', 'http://facebook.com/anahkiasen'],
+			['Twitter', 'http://twitter.com/anahkiasen'],
+			['Github', 'http://github.com/anahkiasen'],
+			['Flickr', 'http://flickr.com/photos/anahkiasen'],
+			['Last.fm', 'http://last.fm/user/anahkiasen'],
+			['Steam', 'http://steamcommunity.com/id/anahkiasen'],
+			['Wordpress', 'http://blogs.wefrag.com/anahkiasen'],
 			['SoundCloud', 'http://soundcloud.com/anahkiasen'],
-			['YouTube'   , 'http://youtube.com/user/Ehtnam6'],
+			['YouTube', 'http://youtube.com/user/Ehtnam6'],
 		];
 	}
 }

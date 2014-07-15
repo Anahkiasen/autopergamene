@@ -18,7 +18,7 @@ class PhotosSeeder extends Seeder
 					'id'          => $photo['id'],
 					'name'        => $name,
 					'surname'     => $surname,
-					'farm'        => 'http://farm' .$photo['farm']. '.staticflickr.com/' .$photo['server']. '/' .$photo['id']. '_'.$photo['secret'],
+					'farm'        => 'http://farm'.$photo['farm'].'.staticflickr.com/'.$photo['server'].'/'.$photo['id'].'_'.$photo['secret'],
 					'thumbnail'   => $photo['isprimary'],
 					'photoset_id' => $photosetId,
 				));

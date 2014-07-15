@@ -12,7 +12,7 @@ class CreateCategoriesLang extends Migration
 		Schema::create('categories_lang', function ($table) {
 			$table->increments('id');
 			$table->string('lang');
-				$table->string('description');
+			$table->string('description');
 			$table->integer('category_id');
 			$table->timestamps();
 		});

@@ -46,7 +46,7 @@ class Photo extends BaseModel
 	 */
 	public function size($size)
 	{
-		$size = static::$sizes[$size];
+		$size  = static::$sizes[$size];
 		$image = $size
 			? $this->farm.'_'.$size
 			: $this->farm;
@@ -70,7 +70,7 @@ class Photo extends BaseModel
 	/**
 	 * Check if a size is set
 	 *
-	 * @param  string  $method
+	 * @param  string $method
 	 *
 	 * @return boolean
 	 */

@@ -11,7 +11,7 @@ class CreateTableaux extends Migration
 	{
 		Schema::create('tableaux', function ($table) {
 			$table->increments('id');
-				$table->string('name');
+			$table->string('name');
 			$table->timestamps();
 		});
 	}

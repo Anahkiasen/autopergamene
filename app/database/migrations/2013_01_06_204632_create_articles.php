@@ -11,11 +11,11 @@ class CreateArticles extends Migration
 	{
 		Schema::create('articles', function ($table) {
 			$table->increments('id');
-				$table->string('name');
-				$table->string('slug');
-				$table->string('summary');
-				$table->text('content');
-				$table->string('tags');
+			$table->string('name');
+			$table->string('slug');
+			$table->string('summary');
+			$table->text('content');
+			$table->string('tags');
 			$table->integer('category_id');
 			$table->timestamps();
 		});

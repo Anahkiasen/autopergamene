@@ -1,6 +1,6 @@
 <?php
-use Autopergamene\Repositories\CategoriesRepository;
 use Autopergamene\Article;
+use Autopergamene\Repositories\CategoriesRepository;
 
 /**
  * Handles Articles display
@@ -60,5 +60,4 @@ class ArticlesController extends BaseController
 			'article'  => $this->articles->whereSlug($slug)->firstOrFail(),
 		));
 	}
-
 }

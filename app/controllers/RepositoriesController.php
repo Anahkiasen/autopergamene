@@ -22,7 +22,7 @@ class RepositoriesController extends BaseController
 	 * Build a new IllustrationsController
 	 *
 	 * @param CategoriesRepository $categories
-	 * @param Repository              $repositories
+	 * @param Repository           $repositories
 	 */
 	public function __construct(CategoriesRepository $categories, Repository $repositories)
 	{

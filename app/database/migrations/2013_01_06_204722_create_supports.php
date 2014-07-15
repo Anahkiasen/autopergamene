@@ -11,7 +11,7 @@ class CreateSupports extends Migration
 	{
 		Schema::create('supports', function ($table) {
 			$table->string('id');
-				$table->string('name');
+			$table->string('name');
 			$table->timestamps();
 		});
 	}

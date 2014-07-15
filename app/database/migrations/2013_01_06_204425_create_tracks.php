@@ -11,11 +11,11 @@ class CreateTracks extends Migration
 	{
 		Schema::create('tracks', function ($table) {
 			$table->increments('id');
-				$table->string('name');
-				$table->string('soundcloud');
-				$table->string('set');
-				$table->integer('plays');
-				$table->text('movements');
+			$table->string('name');
+			$table->string('soundcloud');
+			$table->string('set');
+			$table->integer('plays');
+			$table->text('movements');
 			$table->timestamps();
 		});
 	}

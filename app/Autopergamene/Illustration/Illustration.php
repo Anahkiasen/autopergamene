@@ -34,7 +34,10 @@ class Illustration extends BaseModel
 	public function thumb($folder, $name = null)
 	{
 		$image = Illuminage::square($folder.$this->image, 200);
-		if (!$name) $name = $this->name;
+		if (!$name) {
+			$name = $this->name;
+		}
+
 		return $image->alt($name);
 	}
 

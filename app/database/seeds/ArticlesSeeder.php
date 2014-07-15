@@ -11,9 +11,11 @@ class ArticlesSeeder extends Seeder
 		foreach ($this->getArticlesFeed() as $article) {
 
 			// Category
-			$categories = (array) $article->category;
+			$categories  = (array) $article->category;
 			$category_id = $this->getCategoryOf($categories);
-			if (!$category_id) continue;
+			if (!$category_id) {
+				continue;
+			}
 
 			// Tags
 			$tags = array();
@@ -75,7 +77,7 @@ class ArticlesSeeder extends Seeder
 			return false;
 		}
 
-		$category = $category[0]->__toString();
+		$category   = $category[0]->__toString();
 		$categories = array(
 			'Webdesign'     => 'graceful-degradation',
 			'Photographies' => 'memorabilia',
