@@ -7,14 +7,14 @@ class IllustrationsController extends Controller
 	/**
 	 * The Category
 	 *
-	 * @var Category
+	 * @type Category
 	 */
 	protected $category;
 
 	/**
 	 * The Support Repository
 	 *
-	 * @var Support
+	 * @type Support
 	 */
 	protected $supports;
 

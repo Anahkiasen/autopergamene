@@ -11,21 +11,21 @@ class PhotographiesController extends Controller
 	/**
 	 * The Category
 	 *
-	 * @var Category
+	 * @type Category
 	 */
 	protected $category;
 
 	/**
 	 * The Collections Repository
 	 *
-	 * @var Collection
+	 * @type Collection
 	 */
 	protected $collections;
 
 	/**
 	 * The Photosets Repository
 	 *
-	 * @var Photoset
+	 * @type Photoset
 	 */
 	protected $photosets;
 

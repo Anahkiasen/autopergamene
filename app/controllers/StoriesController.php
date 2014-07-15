@@ -10,14 +10,14 @@ class StoriesController extends Controller
 	/**
 	 * The Category
 	 *
-	 * @var Category
+	 * @type Category
 	 */
 	protected $category;
 
 	/**
 	 * The Stories Repository
 	 *
-	 * @var Story
+	 * @type Story
 	 */
 	protected $stories;
 

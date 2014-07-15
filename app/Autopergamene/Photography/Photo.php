@@ -12,7 +12,7 @@ class Photo extends AbstractModel
 	/**
 	 * Aliases for sizes
 	 *
-	 * @var array
+	 * @type array
 	 */
 	private static $sizes = array(
 		'square'       => 's',

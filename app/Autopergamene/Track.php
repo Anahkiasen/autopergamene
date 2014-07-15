@@ -8,7 +8,7 @@ class Track extends AbstractModel
 	/**
 	 * The color of the Soundcloud widget
 	 *
-	 * @var string
+	 * @type string
 	 */
 	protected $color = 'ea2c46';
 

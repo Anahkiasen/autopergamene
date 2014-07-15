@@ -11,7 +11,7 @@ class Article extends AbstractModel
 	/**
 	 * The relations to eager load on every query.
 	 *
-	 * @var array
+	 * @type array
 	 */
 	protected $with = array();
 

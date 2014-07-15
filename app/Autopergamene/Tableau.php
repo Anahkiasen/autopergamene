@@ -14,7 +14,7 @@ class Tableau extends AbstractModel
 	/**
 	 * The table associated with the model.
 	 *
-	 * @var string
+	 * @type string
 	 */
 	protected $table = 'tableaux';
 

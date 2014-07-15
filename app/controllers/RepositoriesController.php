@@ -7,14 +7,14 @@ class RepositoriesController extends Controller
 	/**
 	 * The Category
 	 *
-	 * @var Category
+	 * @type Category
 	 */
 	protected $category;
 
 	/**
 	 * The Repositories Repository
 	 *
-	 * @var Repository
+	 * @type Repository
 	 */
 	protected $repositories;
 

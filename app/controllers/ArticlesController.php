@@ -10,14 +10,14 @@ class ArticlesController extends Controller
 	/**
 	 * The Category
 	 *
-	 * @var Category
+	 * @type Category
 	 */
 	protected $category;
 
 	/**
 	 * The Article Repository
 	 *
-	 * @var Article
+	 * @type Article
 	 */
 	protected $articles;
 

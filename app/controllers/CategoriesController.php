@@ -9,7 +9,7 @@ class CategoriesController extends Controller
 	/**
 	 * The Category Repository
 	 *
-	 * @var CategoriesRepository
+	 * @type CategoriesRepository
 	 */
 	protected $categories;
 

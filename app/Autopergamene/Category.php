@@ -15,7 +15,7 @@ class Category extends AbstractModel
 	/**
 	 * The localized fields
 	 *
-	 * @var array
+	 * @type array
 	 */
 	protected $polyglot = ['description'];
 
