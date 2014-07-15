@@ -6,6 +6,8 @@ class CategoriesTableSeeder extends DatabaseSeeder
 {
 	public function run()
 	{
+		Eloquent::unguard();
+
 		$categoriesNames = $this->getCategories();
 		foreach ($categoriesNames as $key => $name) {
 			$link = ($name == 'Le Soulèvement')
@@ -23,7 +25,8 @@ class CategoriesTableSeeder extends DatabaseSeeder
 		foreach ($this->getTranslations() as $lang => $categories) {
 			foreach ($categories as $key => $description) {
 				$key = Str::slug($categoriesNames[$key]);
-				CategoryLang::where('category_id', $key)->update([
+				CategoryLang::create([
+					'category_id' => $key,
 					'description' => $description,
 					'lang'        => $lang,
 				]);
