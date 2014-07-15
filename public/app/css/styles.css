@@ -12,12 +12,11 @@
 
 .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .categories figure figcaption, .portfolio .photoset--list figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption, .portfolio .illustration, .portfolio .tableau, .portfolio .photoset figure, .article article .wp-caption, .novel article .wp-caption, .about p {
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
+          box-sizing: border-box; }
 
 .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .articles.hidden, .about .about-more, .image-wrap, .about aside, .articles article, .articles article blockquote, .articles article h3, .articles article time, .about .about-biography {
   -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+          transition: all 0.3s;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0); }
 
@@ -38,8 +37,8 @@ ul.fixed, footer .social, .about .about-more ul, .novel article ul {
 
 ul.fixed {
   -webkit-column-count: 4;
-  -moz-column-count: 4;
-  column-count: 4;
+     -moz-column-count: 4;
+          column-count: 4;
   margin: 0;
   z-index: 50; }
   ul.fixed li {
@@ -60,10 +59,10 @@ ul.fixed {
       display: none; } }
   ul.affix.fixed {
     -webkit-box-shadow: 0 1rem 0 fade(#ea2e47, 0.1);
-    box-shadow: 0 1rem 0 fade(#ea2e47, 0.1);
+            box-shadow: 0 1rem 0 fade(#ea2e47, 0.1);
     -webkit-column-count: 1;
-    -moz-column-count: 1;
-    column-count: 1;
+       -moz-column-count: 1;
+            column-count: 1;
     left: 0;
     position: fixed;
     top: 0; }
@@ -160,8 +159,8 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
       background-position: 16px 16px;
       background-position: 1rem 1rem;
       background-repeat: no-repeat;
-      -webkit-background-size: 10%;
-      background-size: 10%;
+      -webkit-background-size: 10% 10%;
+              background-size: 10%;
       margin: 32px 10%;
       margin: 2rem 10%;
       padding: 32px;
@@ -213,7 +212,7 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
         opacity: 1; }
         .categories figure:hover h4, .portfolio .photoset--list:hover h4, .portfolio .support:hover h4, .portfolio .repository figure:hover h4 {
           -webkit-transition: all 0.3s;
-          transition: all 0.3s;
+                  transition: all 0.3s;
           opacity: 1; } }
   @media (min-width: 60em) and (max-width: 75em) {
     .categories figure img, .portfolio .photoset--list img, .portfolio .support img, .portfolio .repository figure img {
@@ -322,7 +321,7 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
         opacity: 1; }
         .categories figure:hover h4, .portfolio .photoset--list:hover h4, .portfolio .support:hover h4, .portfolio .repository figure:hover h4 {
           -webkit-transition: all 0.3s;
-          transition: all 0.3s;
+                  transition: all 0.3s;
           opacity: 1; } }
   @media (min-width: 60em) and (max-width: 75em) {
     .categories figure img, .portfolio .photoset--list img, .portfolio .support img, .portfolio .repository figure img {
@@ -384,7 +383,7 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
   vertical-align: bottom; }
   .image-wrap:after, .about aside:after {
     -webkit-box-shadow: inset 0 0 1px fade(white, 0.4), inset 0 1px 0 fade(white, 0.4), 0 1px 2px fade(black, 0.3);
-    box-shadow: inset 0 0 1px fade(white, 0.4), inset 0 1px 0 fade(white, 0.4), 0 1px 2px fade(black, 0.3);
+            box-shadow: inset 0 0 1px fade(white, 0.4), inset 0 1px 0 fade(white, 0.4), 0 1px 2px fade(black, 0.3);
     border: solid 1px #1a1a1a;
     content: " ";
     height: 100%;
@@ -394,14 +393,14 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
     width: 100%; }
   .image-wrap img, .about aside img {
     -webkit-box-shadow: 0 1px 2px fade(black, 0.4);
-    box-shadow: 0 1px 2px fade(black, 0.4);
+            box-shadow: 0 1px 2px fade(black, 0.4);
     border-radius: 0;
     vertical-align: bottom; }
 
 .portfolio .novel-summary figure, .about aside, .novel figure {
   background-position: center;
   -webkit-background-size: cover;
-  background-size: cover;
+          background-size: cover;
   height: 240px;
   height: 15rem; }
   @media (min-width: 75em) {
@@ -576,8 +575,8 @@ h1 small, h2 small, h3 small, h4 small {
           font-size: 24px;
           font-size: 1.5rem;
           -webkit-transform: rotate(-90deg);
-          -ms-transform: rotate(-90deg);
-          transform: rotate(-90deg);
+              -ms-transform: rotate(-90deg);
+                  transform: rotate(-90deg);
           left: -4rem;
           min-width: 5.5rem;
           position: absolute;
@@ -593,7 +592,7 @@ footer {
     margin: 1rem auto;
     border-color: fade(#a21024, 0.25);
     -webkit-box-shadow: 0 1px 0 0 fade(white, 0.15);
-    box-shadow: 0 1px 0 0 fade(white, 0.15); }
+            box-shadow: 0 1px 0 0 fade(white, 0.15); }
   footer .colophon, footer .social {
     width: 49.15254%;
     float: left;
@@ -753,8 +752,8 @@ header {
           font-size: 24px;
           font-size: 1.5rem;
           -webkit-transform: rotate(-90deg);
-          -ms-transform: rotate(-90deg);
-          transform: rotate(-90deg);
+              -ms-transform: rotate(-90deg);
+                  transform: rotate(-90deg);
           left: -4rem;
           min-width: 5.5rem;
           position: absolute;
@@ -887,8 +886,8 @@ header {
   @media (max-width: 50em) {
     .about .about-more ul {
       -webkit-column-count: 2;
-      -moz-column-count: 2;
-      column-count: 2; } }
+         -moz-column-count: 2;
+              column-count: 2; } }
   @media (min-width: 50em) and (max-width: 90em) {
     .about .about-more article {
       width: 32.20339%;
