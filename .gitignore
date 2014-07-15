@@ -11,4 +11,5 @@ public/builds
 
 # Other files
 .DS_Store
+.idea
 sftp-config.json
