@@ -4,61 +4,20 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d5733ac91100cc4d2616e9e07ae4c798",
+    "hash": "72e6b29b80f0b90f2ea65f612ed0bf2e",
     "packages": [
-        {
-            "name": "anahkiasen/acetone",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Anahkiasen/acetone.git",
-                "reference": "559ee4529d4cfc858587031f8949cb66dce28659"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Anahkiasen/acetone/zipball/559ee4529d4cfc858587031f8949cb66dce28659",
-                "reference": "559ee4529d4cfc858587031f8949cb66dce28659",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/html": "~4",
-                "illuminate/routing": "~4",
-                "illuminate/support": "~4"
-            },
-            "require-dev": {
-                "mockery/mockery": "dev-master"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Acetone": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Maxime Fabre",
-                    "email": "ehtnam6@gmail.com"
-                }
-            ],
-            "description": "A lightweight assets pipeline to use over Grunt",
-            "time": "2014-06-08 15:44:12"
-        },
         {
             "name": "anahkiasen/arrounded",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Anahkiasen/arrounded.git",
-                "reference": "5c9b57b2a6ac5fcf35e2e6d1b89bcdae2028a14f"
+                "reference": "aca345985fcace4331adeedef421ed10bcf4d1bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Anahkiasen/arrounded/zipball/5c9b57b2a6ac5fcf35e2e6d1b89bcdae2028a14f",
-                "reference": "5c9b57b2a6ac5fcf35e2e6d1b89bcdae2028a14f",
+                "url": "https://api.github.com/repos/Anahkiasen/arrounded/zipball/aca345985fcace4331adeedef421ed10bcf4d1bf",
+                "reference": "aca345985fcace4331adeedef421ed10bcf4d1bf",
                 "shasum": ""
             },
             "require": {
@@ -91,7 +50,7 @@
                 }
             ],
             "description": "A set of self-aware Laravel abstracts that know their way around",
-            "time": "2014-07-15 14:25:24"
+            "time": "2014-07-15 21:23:51"
         },
         {
             "name": "anahkiasen/flatten",
@@ -731,16 +690,16 @@
         },
         {
             "name": "filp/whoops",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "ae05259236204ccf904a94e5b0d96df8d4351da5"
+                "reference": "9f451fbc7b8cad5e71300672c340c28c6bec09ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/ae05259236204ccf904a94e5b0d96df8d4351da5",
-                "reference": "ae05259236204ccf904a94e5b0d96df8d4351da5",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/9f451fbc7b8cad5e71300672c340c28c6bec09ff",
+                "reference": "9f451fbc7b8cad5e71300672c340c28c6bec09ff",
                 "shasum": ""
             },
             "require": {
@@ -785,7 +744,7 @@
                 "whoops",
                 "zf2"
             ],
-            "time": "2014-05-13 05:05:11"
+            "time": "2014-07-11 05:56:54"
         },
         {
             "name": "guzzle/common",
@@ -1188,12 +1147,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "d46a280485005b03fd069c289d0264f922b09297"
+                "reference": "3fb9c130f9fd6bc10e32e59ece76593cd58bd311"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/d46a280485005b03fd069c289d0264f922b09297",
-                "reference": "d46a280485005b03fd069c289d0264f922b09297",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/3fb9c130f9fd6bc10e32e59ece76593cd58bd311",
+                "reference": "3fb9c130f9fd6bc10e32e59ece76593cd58bd311",
                 "shasum": ""
             },
             "require": {
@@ -1297,7 +1256,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2014-07-15 02:59:43"
+            "time": "2014-07-16 03:00:55"
         },
         {
             "name": "mockery/mockery",
@@ -1824,12 +1783,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nrk/predis.git",
-                "reference": "5fde716098bb5c7abe1443337e58bc74bb8cbd54"
+                "reference": "18f5cea8e683bfe551693c7157de65d293f7da9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nrk/predis/zipball/5fde716098bb5c7abe1443337e58bc74bb8cbd54",
-                "reference": "5fde716098bb5c7abe1443337e58bc74bb8cbd54",
+                "url": "https://api.github.com/repos/nrk/predis/zipball/18f5cea8e683bfe551693c7157de65d293f7da9c",
+                "reference": "18f5cea8e683bfe551693c7157de65d293f7da9c",
                 "shasum": ""
             },
             "require": {
@@ -1866,7 +1825,7 @@
                 "predis",
                 "redis"
             ],
-            "time": "2014-07-15 10:38:13"
+            "time": "2014-07-16 17:12:35"
         },
         {
             "name": "psr/log",
@@ -2125,12 +2084,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "2b9e4e36d132fb2b3c5efe022db5c3a2bfab40c3"
+                "reference": "386fa63407805959bd2c5fe540294721ad4224c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/2b9e4e36d132fb2b3c5efe022db5c3a2bfab40c3",
-                "reference": "2b9e4e36d132fb2b3c5efe022db5c3a2bfab40c3",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/386fa63407805959bd2c5fe540294721ad4224c8",
+                "reference": "386fa63407805959bd2c5fe540294721ad4224c8",
                 "shasum": ""
             },
             "require": {
@@ -2173,7 +2132,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2014-07-09 09:05:48"
+            "time": "2014-07-15 14:15:12"
         },
         {
             "name": "symfony/css-selector",
@@ -2632,12 +2591,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Process.git",
-                "reference": "5e53efbf61a7fbf73c79e3e08feea50f64c20bfa"
+                "reference": "389f090b817141f9922ad14db748470072fb20e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Process/zipball/5e53efbf61a7fbf73c79e3e08feea50f64c20bfa",
-                "reference": "5e53efbf61a7fbf73c79e3e08feea50f64c20bfa",
+                "url": "https://api.github.com/repos/symfony/Process/zipball/389f090b817141f9922ad14db748470072fb20e2",
+                "reference": "389f090b817141f9922ad14db748470072fb20e2",
                 "shasum": ""
             },
             "require": {
@@ -2672,7 +2631,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "http://symfony.com",
-            "time": "2014-07-09 09:05:48"
+            "time": "2014-07-16 13:13:02"
         },
         {
             "name": "symfony/routing",
@@ -2926,12 +2885,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/TwigBridge.git",
-                "reference": "a4c0b23e7f7bf7220281444ec9a312f7d05c935c"
+                "reference": "75b246215a899c154be35902e42c46e2add81eb8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/TwigBridge/zipball/a4c0b23e7f7bf7220281444ec9a312f7d05c935c",
-                "reference": "a4c0b23e7f7bf7220281444ec9a312f7d05c935c",
+                "url": "https://api.github.com/repos/symfony/TwigBridge/zipball/75b246215a899c154be35902e42c46e2add81eb8",
+                "reference": "75b246215a899c154be35902e42c46e2add81eb8",
                 "shasum": ""
             },
             "require": {
@@ -2991,7 +2950,7 @@
             ],
             "description": "Symfony Twig Bridge",
             "homepage": "http://symfony.com",
-            "time": "2014-07-11 15:37:14"
+            "time": "2014-07-15 14:15:21"
         },
         {
             "name": "themattharris/tmhoauth",
@@ -4553,7 +4512,6 @@
         "anahkiasen/rocketeer": 20,
         "anahkiasen/polyglot": 20,
         "knplabs/packagist-api": 20,
-        "anahkiasen/acetone": 20,
         "anahkiasen/arrounded": 20,
         "barryvdh/laravel-twigbridge": 20,
         "twig/extensions": 20,
