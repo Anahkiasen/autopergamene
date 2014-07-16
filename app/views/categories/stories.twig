@@ -14,7 +14,11 @@
 			<h2>{{ story.name }}</h2>
 			<figure class='cover' style='background-image: url({{ story.image }})'></figure>
 			{% set ages = story.created_at.diffInYears() %}
-			<p>{{ '<strong>Publiée</strong> il y a {{ ages }} ans'|trans }}</p>
+			<p>
+				{% trans -%}
+					<strong>Publiée</strong> il y a {{ ages }} ans
+				{%- endtrans %}
+			</p>
 			<blockquote>{{ story.description }}</blockquote>
 			{{ HTML.blockLink(story.getPath('show'), 'Lire la nouvelle'|trans) }}
 		</article>

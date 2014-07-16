@@ -3,6 +3,7 @@ namespace Autopergamene\Controllers;
 
 use Autopergamene\Models\Story;
 use Autopergamene\Repositories\CategoriesRepository;
+use Autopergamene\Repositories\StoriesRepository;
 use Controller;
 use View;
 
@@ -21,7 +22,7 @@ class StoriesController extends Controller
 	/**
 	 * The Stories Repository
 	 *
-	 * @type Story
+	 * @type StoriesRepository
 	 */
 	protected $stories;
 
@@ -29,9 +30,9 @@ class StoriesController extends Controller
 	 * Build a new StoriesController
 	 *
 	 * @param CategoriesRepository $categories
-	 * @param Story                $stories
+	 * @param StoriesRepository    $stories
 	 */
-	public function __construct(CategoriesRepository $categories, Story $stories)
+	public function __construct(CategoriesRepository $categories, StoriesRepository $stories)
 	{
 		$this->category = $categories->getBySlug('les-fleurs-davril');
 		$this->stories  = $stories;
@@ -46,22 +47,22 @@ class StoriesController extends Controller
 	{
 		return View::make('categories.stories', array(
 			'category' => $this->category,
-			'stories'  => $this->stories->latest()->get(),
+			'stories'  => $this->stories->getLatest(),
 		));
 	}
 
 	/**
 	 * Display a Story
 	 *
-	 * @param string $slug The Story slug
+	 * @param Story $story
 	 *
 	 * @return View story
 	 */
-	public function show($story)
+	public function show(Story $story)
 	{
 		return View::make('categories.subcategories.story', array(
 			'category' => $this->category,
-			'story'    => $this->stories->findOrFail($story),
+			'story'    => $story,
 		));
 	}
 }

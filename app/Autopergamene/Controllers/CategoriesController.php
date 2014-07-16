@@ -1,6 +1,7 @@
 <?php
 namespace Autopergamene\Controllers;
 
+use Autopergamene\Models\Category;
 use Autopergamene\Repositories\CategoriesRepository;
 use Controller;
 use View;
@@ -15,7 +16,7 @@ class CategoriesController extends Controller
 	 *
 	 * @type CategoriesRepository
 	 */
-	protected $categories;
+	protected $repository;
 
 	/**
 	 * Bind dependencies
@@ -24,7 +25,7 @@ class CategoriesController extends Controller
 	 */
 	public function __construct(CategoriesRepository $categories)
 	{
-		$this->categories = $categories;
+		$this->repository = $categories;
 	}
 
 	/**
@@ -35,22 +36,20 @@ class CategoriesController extends Controller
 	public function index()
 	{
 		return View::make('home', array(
-			'categories' => $this->categories->getOrdered(),
+			'categories' => $this->repository->getOrdered(),
 		));
 	}
 
 	/**
 	 * Displays a Category
 	 *
-	 * @param string $slug
+	 * @param Category $category
 	 *
 	 * @return View
 	 */
-	public function show($slug)
+	public function show(Category $category)
 	{
-		$category = $this->categories->getBySlug($slug);
-
-		return View::make('categories.'.$slug, array(
+		return View::make('categories.'.$category->id, array(
 			'category' => $category,
 			'articles' => $category->articles,
 		));
