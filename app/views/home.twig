@@ -12,15 +12,11 @@
 
 	{% for category in categories %}
 		<figure>
-			{% if category.isExternal() %}
-				<a href='{{ category.link }}' target='_blank'>
-			{% else %}
-				<a href='{{ category.link }}'>
-			{% endif %}
+			<a href='{{ category.link }}' {% if category.isExternal() %}target='_blank'{% endif %}>
 				{{ category.thumb }}
 				<figcaption>
 					<h3>{{ category.name }}</h3>
-					<h4>{{ category.description }}</h4>
+					<h4>{{ category.lang.description }}</h4>
 				</figcaption>
 			</a>
 		</figure>
