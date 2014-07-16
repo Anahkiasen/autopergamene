@@ -19,7 +19,7 @@
 
 				{% for photoset in collection.photosets %}
 					<figure class='photoset--list'>
-						<a href='{{ URL.action('Autopergamene\\Controllers\\PhotographiesController@photoset', photoset.slug) }}'>
+						<a href='{{ URL.action('Autopergamene\\Controllers\\PhotographiesController@show', photoset.slug) }}'>
 							{{ HTML.image(photoset.thumbnail.large_square, photoset.name) }}
 							<figcaption>
 								<h3>{{ photoset.name }}</h3>

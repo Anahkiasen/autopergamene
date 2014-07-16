@@ -1,5 +1,5 @@
 <article>
-	<a href='{{ URL.action('Autopergamene\\Controllers\\ArticlesController@article', article.slug) }}'>
+	<a href="{{ article.getPath('show') }}">
 		<h3>{{ article.name }}</h3>
 		<time class='relative'>{{ article.relativeDate }}</time>
 		<time class='absolute'>{{ article.creationDate }}</time>

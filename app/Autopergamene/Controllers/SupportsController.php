@@ -6,7 +6,7 @@ use Autopergamene\Repositories\CategoriesRepository;
 use Controller;
 use View;
 
-class IllustrationsController extends Controller
+class SupportsController extends Controller
 {
 	/**
 	 * The Category
@@ -23,7 +23,7 @@ class IllustrationsController extends Controller
 	protected $supports;
 
 	/**
-	 * Build a new IllustrationsController
+	 * Build a new SupportsController
 	 *
 	 * @param CategoriesRepository $categories
 	 * @param Support              $supports
@@ -39,7 +39,7 @@ class IllustrationsController extends Controller
 	 *
 	 * @return View categories.illustration
 	 */
-	public function supports()
+	public function index()
 	{
 		return View::make('categories.illustration', array(
 			'category' => $this->category,
@@ -54,7 +54,7 @@ class IllustrationsController extends Controller
 	 *
 	 * @return View categories.subcategories.support
 	 */
-	public function support($slug)
+	public function show($slug)
 	{
 		return View::make('categories.subcategories.support', array(
 			'category' => $this->category,

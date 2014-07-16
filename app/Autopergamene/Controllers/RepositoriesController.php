@@ -23,7 +23,7 @@ class RepositoriesController extends Controller
 	protected $repositories;
 
 	/**
-	 * Build a new IllustrationsController
+	 * Build a new SupportsController
 	 *
 	 * @param CategoriesRepository   $categories
 	 * @param RepositoriesRepository $repositories
@@ -39,7 +39,7 @@ class RepositoriesController extends Controller
 	 *
 	 * @return View
 	 */
-	public function repositories()
+	public function index()
 	{
 		return View::make('categories.repositories', array(
 			'category'     => $this->category,

@@ -52,7 +52,7 @@ class PhotographiesController extends Controller
 	 *
 	 * @return View categories/memorabilia
 	 */
-	public function collections()
+	public function index()
 	{
 		return View::make('categories.collections', array(
 			'collections' => $this->collections->with('photosets.thumbnail')->latest()->get(),
@@ -68,7 +68,7 @@ class PhotographiesController extends Controller
 	 *
 	 * @return View categories/subcategories/photoset
 	 */
-	public function photoset($slug)
+	public function show($slug)
 	{
 		return View::make('categories.subcategories.photoset', array(
 			'photoset' => $this->photosets->whereSlug($slug)->firstOrFail(),

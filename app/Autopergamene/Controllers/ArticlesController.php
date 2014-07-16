@@ -42,7 +42,7 @@ class ArticlesController extends Controller
 	 *
 	 * @return View
 	 */
-	public function articles()
+	public function index()
 	{
 		return View::make('categories.articles', array(
 			'category' => $this->category,
@@ -59,7 +59,7 @@ class ArticlesController extends Controller
 	 * @internal param string $articleSlug The article slug
 	 * @return View
 	 */
-	public function article($slug)
+	public function show($slug)
 	{
 		return View::make('categories.subcategories.article', array(
 			'category' => $this->category,

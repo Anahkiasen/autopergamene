@@ -42,7 +42,7 @@ class StoriesController extends Controller
 	 *
 	 * @return View categories.les-fleurs-davril
 	 */
-	public function stories()
+	public function index()
 	{
 		return View::make('categories.stories', array(
 			'category' => $this->category,
@@ -57,11 +57,11 @@ class StoriesController extends Controller
 	 *
 	 * @return View story
 	 */
-	public function story($slug)
+	public function show($story)
 	{
 		return View::make('categories.subcategories.story', array(
 			'category' => $this->category,
-			'story'    => $this->stories->findOrFail($slug),
+			'story'    => $this->stories->findOrFail($story),
 		));
 	}
 }

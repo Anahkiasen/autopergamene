@@ -32,7 +32,7 @@ class CategoriesController extends Controller
 	 *
 	 * @return View
 	 */
-	public function categories()
+	public function index()
 	{
 		return View::make('home', array(
 			'categories' => $this->categories->getOrdered(),
@@ -46,7 +46,7 @@ class CategoriesController extends Controller
 	 *
 	 * @return View
 	 */
-	public function category($slug)
+	public function show($slug)
 	{
 		$category = $this->categories->getBySlug($slug);
 

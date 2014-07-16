@@ -61,7 +61,7 @@ class Category extends AbstractModel
 			return $link;
 		}
 
-		return URL::action('Autopergamene\Controllers\CategoriesController@category', $this->id);
+		return $this->getPath('show');
 	}
 
 	/**

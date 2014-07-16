@@ -6,22 +6,22 @@
 
 Route::groupLocale(['namespace' => 'Autopergamene\Controllers'], function () {
 
-	Route::get('/', ['as' => 'home', 'uses' => 'CategoriesController@categories']);
+	Route::get('/', ['as' => 'home', 'uses' => 'CategoriesController@index']);
 
-	Route::get('category/graceful-degradation', 'RepositoriesController@repositories');
+	Route::get('category/graceful-degradation', 'RepositoriesController@index');
 
-	Route::get('category/en-averse-dencre',                   'ArticlesController@articles');
-	Route::get('category/en-averse-dencre/article/{article}', 'ArticlesController@article');
+	Route::get('category/en-averse-dencre',                   'ArticlesController@index');
+	Route::get('category/en-averse-dencre/article/{article}', 'ArticlesController@show');
 
-	Route::get('category/memorabilia',                  'PhotographiesController@collections');
-	Route::get('category/memorabilia/album/{photoset}', 'PhotographiesController@photoset');
+	Route::get('category/memorabilia',                  'PhotographiesController@index');
+	Route::get('category/memorabilia/album/{photoset}', 'PhotographiesController@show');
 
-	Route::get('category/les-fleurs-davril',               'StoriesController@stories');
-	Route::get('category/les-fleurs-davril/story/{story}', 'StoriesController@story');
+	Route::get('category/les-fleurs-davril',               'StoriesController@index');
+	Route::get('category/les-fleurs-davril/story/{story}', 'StoriesController@show');
 
-	Route::get('category/illustration',                   'IllustrationsController@supports');
-	Route::get('category/illustration/support/{support}', 'IllustrationsController@support');
+	Route::get('category/illustration',                   'SupportsController@index');
+	Route::get('category/illustration/support/{support}', 'SupportsController@show');
 
-	Route::get('category/{category}', 'CategoriesController@category');
+	Route::get('category/{category}', 'CategoriesController@show');
 
 });

@@ -2,6 +2,7 @@
 namespace Autopergamene\Abstracts;
 
 use Arrounded\Traits\JsonAttributes;
+use Arrounded\Traits\ReflectionModel;
 use Autopergamene\Query;
 use Polyglot\Polyglot;
 
@@ -11,6 +12,9 @@ use Polyglot\Polyglot;
 abstract class AbstractModel extends Polyglot
 {
 	use JsonAttributes;
+	use ReflectionModel {
+		getController as getRawController;
+	}
 
 	////////////////////////////////////////////////////////////////////
 	/////////////////////////////// FETCHERS ///////////////////////////
@@ -26,5 +30,15 @@ abstract class AbstractModel extends Polyglot
 	public static function scopeThumbnails($query)
 	{
 		return $query->where('thumbnail', 1);
+	}
+
+	/**
+	 * Get the controller name
+	 *
+	 * @return string
+	 */
+	public function getController()
+	{
+		return 'Autopergamene\Controllers\\'.$this->getRawController();
 	}
 }

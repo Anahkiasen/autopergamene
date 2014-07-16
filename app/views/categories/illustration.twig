@@ -10,7 +10,7 @@
 
 	{% for support in supports if support.thumbnail %}
 		<figure class='support'>
-			<a href='{{ URL.action('Autopergamene\\Controllers\\IllustrationsController@support', support.id) }}'>
+			<a href='{{ support.getPath('show') }}'>
 				{{ support.thumbnail.thumb(support.folder, support.name) }}
 				<figcaption>
 					<h3>{{ support.name }}</h3>
