@@ -35,6 +35,38 @@ ul.fixed, footer .social, .about .about-more ul, .novel article ul {
 .articles.open, .about .about-biography.open, .about .about-more.open, .articles article:hover time.absolute, .portfolio .repository:hover {
   opacity: 1; }
 
+h1, h2, h3, h4 {
+  line-height: 1;
+  margin: 0;
+  padding: 0; }
+
+span.block, a.block, a.back, .portfolio .project__summary__links a, .categories figure h4, .portfolio .photoset--list h4, .portfolio .support h4, .portfolio .repository figure h4, .articles article h3, .portfolio .collection h2, .portfolio .novel-summary h2, .portfolio .photoset figure h3, .article article .wp-caption p, .novel article .wp-caption p, .article article h1, .novel article h1, .about h2, .about h3, .about h4 {
+  font-family: "adelle", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  text-transform: lowercase; }
+
+.categories figure h3, .portfolio .photoset--list h3, .portfolio .support h3, .portfolio .repository figure h3, header h1, .portfolio h1, .article h1, .novel h1, .categories h2 {
+  font-family: "jubilat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 100; }
+
+.portfolio .illustration h2, .portfolio .tableau h2, .portfolio .photoset figure h2 {
+  font-family: "atrament-web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase; }
+
+.about p, span.block, a.block, a.back, .portfolio .project__summary__links a, .categories figure h4, .portfolio .photoset--list h4, .portfolio .support h4, .portfolio .repository figure h4, footer, .about .about-more h3 {
+  font-size: 1rem; }
+
+.categories figure h3, .portfolio .photoset--list h3, .portfolio .support h3, .portfolio .repository figure h3, header h1, .portfolio h3, .article article .wp-caption p, .novel article .wp-caption p, .article article h2, .novel article h2, .about h2 {
+  font-size: 1.5rem; }
+
+.portfolio .illustration h2, .portfolio .tableau h2, .portfolio .photoset figure h2, .portfolio h1, .portfolio .photoset figure h3 {
+  font-size: 2.5rem; }
+
+.categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .portfolio .illustration figcaption, .portfolio .tableau figcaption, .portfolio .novel-summary, .portfolio .novel-summary h2, .portfolio .repository h3, .portfolio .photoset figure h2, .about aside, .about h4, .about article {
+  margin-bottom: 16px;
+  margin-bottom: 1rem; }
+
 ul.fixed {
   -webkit-column-count: 4;
      -moz-column-count: 4;
@@ -260,11 +292,9 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
     .categories figure h3, .categories figure h4 {
       font-weight: 100; }
     .categories figure h3 {
-      font-size: 2.5em;
-      line-height: 1.2em; }
+      font-size: 2.5rem; }
     .categories figure h4 {
-      font-size: 1.5em;
-      line-height: 2em;
+      font-size: 1.5rem;
       line-height: .25em; } }
 
 .articles.hidden, .about .about-more {
@@ -369,11 +399,9 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
     .categories figure h3, .categories figure h4 {
       font-weight: 100; }
     .categories figure h3 {
-      font-size: 2.5em;
-      line-height: 1.2em; }
+      font-size: 2.5rem; }
     .categories figure h4 {
-      font-size: 1.5em;
-      line-height: 2em;
+      font-size: 1.5rem;
       line-height: .25em; } }
 
 .image-wrap, .about aside {
@@ -431,41 +459,6 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
   text-align: center; }
   .portfolio figure img, .portfolio .photoset figure img {
     max-width: 100%; }
-
-h1, h2, h3, h4 {
-  line-height: 1;
-  margin: 0;
-  padding: 0; }
-
-span.block, a.block, a.back, .portfolio .project__summary__links a, .categories figure h4, .portfolio .photoset--list h4, .portfolio .support h4, .portfolio .repository figure h4, .articles article h3, .portfolio .collection h2, .portfolio .novel-summary h2, .portfolio .photoset figure h3, .article article .wp-caption p, .novel article .wp-caption p, .article article h1, .novel article h1, .about h2, .about h3, .about h4 {
-  font-family: "adelle", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  text-transform: lowercase; }
-
-.categories figure h3, .portfolio .photoset--list h3, .portfolio .support h3, .portfolio .repository figure h3, header h1, .portfolio h1, .article h1, .novel h1, .categories h2 {
-  font-family: "jubilat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 100; }
-
-.portfolio .illustration h2, .portfolio .tableau h2, .portfolio .photoset figure h2 {
-  font-family: "atrament-web", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  text-transform: uppercase; }
-
-span.block, a.block, a.back, .portfolio .project__summary__links a, .categories figure h4, .portfolio .photoset--list h4, .portfolio .support h4, .portfolio .repository figure h4, .about p, footer, .about .about-more h3 {
-  font-size: 1em;
-  line-height: 1.5em; }
-
-.categories figure h3, .portfolio .photoset--list h3, .portfolio .support h3, .portfolio .repository figure h3, header h1, .portfolio h3, .article article .wp-caption p, .novel article .wp-caption p, .article article h2, .novel article h2, .about h2 {
-  font-size: 1.5em;
-  line-height: 2em; }
-
-.portfolio .illustration h2, .portfolio .tableau h2, .portfolio .photoset figure h2, .portfolio h1, .portfolio .photoset figure h3 {
-  font-size: 2.5em;
-  line-height: 1.2em; }
-
-.categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .portfolio .illustration figcaption, .portfolio .tableau figcaption, .portfolio .novel-summary, .portfolio .novel-summary h2, .portfolio .repository h3, .portfolio .photoset figure h2, .about aside, .about h4, .about article {
-  margin-bottom: 16px;
-  margin-bottom: 1rem; }
 
 .portfolio .illustration h2, .portfolio .tableau h2, .portfolio .photoset figure h2 {
   color: #666666;

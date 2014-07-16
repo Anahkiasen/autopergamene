@@ -2,57 +2,6 @@
 //////////////////////////// PLACEHOLDERS ////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-// Resets ---------------------------------------------------------- /
-
-%reset-title {
-  line-height: 1;
-  margin: 0;
-  padding: 0;
-}
-
-%reset-text {
-  @extend %font-size-normal;
-}
-
-// Font stacks ----------------------------------------------------- /
-
-%font-base {
-  font-family: $font-base;
-  font-weight: 400;
-  text-transform: lowercase;
-}
-
-%font-light {
-  font-family: $font-light;
-  font-weight: 100;
-}
-
-%font-condensed {
-  font-family: $font-condensed;
-  font-weight: 400;
-  text-transform: uppercase;
-}
-
-// Font sizes ------------------------------------------------------ /
-
-%font-size-normal {
-  @include font-size(1rem);
-}
-
-%font-size-medium {
-  @include font-size(1.5rem);
-}
-
-%font-size-large {
-  @include font-size(2.5rem);
-}
-
-// Margins --------------------------------------------------------- /
-
-%margin-underline {
-  @include rem(margin-bottom, 1rem);
-}
-
 // Font styles ----------------------------------------------------- /
 
 %title-condensed {
