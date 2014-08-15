@@ -36,6 +36,8 @@ return array(
 	// Permissions
 	////////////////////////////////////////////////////////////////////
 
+	'login' => true,
+
 	'permissions' => array(
 
 		// The folders and files to set as web writable
