@@ -15,13 +15,13 @@
     "anahkiasen/flatten": "0.5.*",
     "anahkiasen/flickering": "0.1.*",
     "anahkiasen/illuminage": "~1.2",
-    "dflydev/markdown": "~1.0",
     "anahkiasen/rocketeer": "~2.0",
     "anahkiasen/polyglot": "~1.3",
     "knplabs/packagist-api": "~1.2",
     "anahkiasen/arrounded": "0.5.*",
     "twig/extensions": "~1.2",
-    "rcrowe/twigbridge": "0.6.*"
+    "rcrowe/twigbridge": "0.6.*",
+    "league/commonmark": "0.6.*"
   },
   "require-dev": {
     "phpunit/phpunit": "~4.4",

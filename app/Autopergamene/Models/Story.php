@@ -5,6 +5,7 @@ use App;
 use Autopergamene\Abstracts\AbstractModel;
 use Autopergamene\Traits\HasSlugId;
 use File;
+use League\CommonMark\CommonMarkConverter;
 use URL;
 
 /**
@@ -47,8 +48,9 @@ class Story extends AbstractModel
 		}
 
 		// Transform Markdown
+        $markdown = new CommonMarkConverter();
 		$content = File::get($content);
-		$content = App::make('dflydev\markdown\MarkdownParser')->transformMarkdown($content);
+		$content = $markdown->convertToHtml($content);
 
 		// Remove extra line breaks (yeah it's dirty)
 		$content = nl2br($content);
