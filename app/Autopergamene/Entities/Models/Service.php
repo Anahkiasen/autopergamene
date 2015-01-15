@@ -1,5 +1,5 @@
 <?php
-namespace Autopergamene\Models;
+namespace Autopergamene\Entities\Models;
 
 use Autopergamene\Abstracts\AbstractModel;
 

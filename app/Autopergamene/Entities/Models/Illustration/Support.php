@@ -1,5 +1,5 @@
 <?php
-namespace Autopergamene\Models\Illustration;
+namespace Autopergamene\Entities\Models\Illustration;
 
 use Autopergamene\Abstracts\AbstractModel;
 use Autopergamene\Traits\HasSlugId;
@@ -22,7 +22,7 @@ class Support extends AbstractModel
      */
     public function illustrations()
     {
-        return $this->hasMany('Autopergamene\Models\Illustration\Illustration');
+        return $this->hasMany('Autopergamene\Entities\Models\Illustration\Illustration');
     }
 
     /**
@@ -32,7 +32,7 @@ class Support extends AbstractModel
      */
     public function thumbnail()
     {
-        return $this->hasOne('Autopergamene\Models\Illustration\Illustration')->thumbnails();
+        return $this->hasOne('Autopergamene\Entities\Models\Illustration\Illustration')->thumbnails();
     }
 
     ////////////////////////////////////////////////////////////////////

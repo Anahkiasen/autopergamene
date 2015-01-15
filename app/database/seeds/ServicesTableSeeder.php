@@ -1,5 +1,5 @@
 <?php
-use Autopergamene\Models\Service;
+use Autopergamene\Entities\Models\Service;
 
 /**
  * Set the social networks

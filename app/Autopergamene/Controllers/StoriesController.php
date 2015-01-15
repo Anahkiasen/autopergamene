@@ -1,9 +1,9 @@
 <?php
 namespace Autopergamene\Controllers;
 
-use Autopergamene\Models\Story;
-use Autopergamene\Repositories\CategoriesRepository;
-use Autopergamene\Repositories\StoriesRepository;
+use Autopergamene\Entities\Models\Story;
+use Autopergamene\Entities\Repositories\CategoriesRepository;
+use Autopergamene\Entities\Repositories\StoriesRepository;
 use Controller;
 use View;
 
@@ -21,8 +21,9 @@ class StoriesController extends Controller
 
     /**
      * The Stories Repository
+
      *
-     * @type StoriesRepository
+*@type \Autopergamene\Entities\Repositories\StoriesRepository
      */
     protected $stories;
 

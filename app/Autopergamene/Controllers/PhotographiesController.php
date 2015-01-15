@@ -1,9 +1,9 @@
 <?php
 namespace Autopergamene\Controllers;
 
-use Autopergamene\Models\Photography\Collection;
-use Autopergamene\Models\Photography\Photoset;
-use Autopergamene\Repositories\CategoriesRepository;
+use Autopergamene\Entities\Models\Photography\Collection;
+use Autopergamene\Entities\Models\Photography\Photoset;
+use Autopergamene\Entities\Repositories\CategoriesRepository;
 use Controller;
 use View;
 

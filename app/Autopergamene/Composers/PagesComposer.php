@@ -1,10 +1,10 @@
 <?php
 namespace Autopergamene\Composers;
 
-use Autopergamene\Models\Tableau;
-use Autopergamene\Models\Track;
-use Autopergamene\Repositories\RepositoriesRepository;
-use Autopergamene\Repositories\ServicesRepository;
+use Autopergamene\Entities\Models\Tableau;
+use Autopergamene\Entities\Models\Track;
+use Autopergamene\Entities\Repositories\RepositoriesRepository;
+use Autopergamene\Entities\Repositories\ServicesRepository;
 use Carbon\Carbon;
 use Illuminate\View\View;
 
@@ -16,7 +16,7 @@ class PagesComposer
     private $services;
 
     /**
-     * @type RepositoriesRepository
+     * @type \Autopergamene\Entities\Repositories\RepositoriesRepository
      */
     private $repositories;
 

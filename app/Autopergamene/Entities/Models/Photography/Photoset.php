@@ -1,5 +1,5 @@
 <?php
-namespace Autopergamene\Models\Photography;
+namespace Autopergamene\Entities\Models\Photography;
 
 use Autopergamene\Abstracts\AbstractModel;
 
@@ -19,7 +19,7 @@ class Photoset extends AbstractModel
      */
     public function photos()
     {
-        return $this->hasMany('Autopergamene\Models\Photography\Photo')->orderBy('name', 'asc');
+        return $this->hasMany('Autopergamene\Entities\Models\Photography\Photo')->orderBy('name', 'asc');
     }
 
     /**
@@ -29,6 +29,6 @@ class Photoset extends AbstractModel
      */
     public function thumbnail()
     {
-        return $this->hasOne('Autopergamene\Models\Photography\Photo')->thumbnails();
+        return $this->hasOne('Autopergamene\Entities\Models\Photography\Photo')->thumbnails();
     }
 }

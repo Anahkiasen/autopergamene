@@ -1,8 +1,8 @@
 <?php
-namespace Autopergamene\Models;
+namespace Autopergamene\Entities\Models;
 
 use Autopergamene\Abstracts\AbstractModel;
-use Autopergamene\Lang\Category;
+use Autopergamene\Entities\Lang\Category;
 use Lang;
 
 /**

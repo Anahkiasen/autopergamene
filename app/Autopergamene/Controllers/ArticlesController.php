@@ -1,8 +1,8 @@
 <?php
 namespace Autopergamene\Controllers;
 
-use Autopergamene\Models\Article;
-use Autopergamene\Repositories\CategoriesRepository;
+use Autopergamene\Entities\Models\Article;
+use Autopergamene\Entities\Repositories\CategoriesRepository;
 use Controller;
 use View;
 

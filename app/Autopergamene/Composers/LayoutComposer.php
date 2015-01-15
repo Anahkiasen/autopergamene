@@ -1,7 +1,7 @@
 <?php
 namespace Autopergamene\Composers;
 
-use Autopergamene\Repositories\ServicesRepository;
+use Autopergamene\Entities\Repositories\ServicesRepository;
 use Illuminate\View\View;
 
 class LayoutComposer
@@ -12,7 +12,7 @@ class LayoutComposer
     private $services;
 
     /**
-     * @param ServicesRepository $services
+     * @param \Autopergamene\Entities\Repositories\ServicesRepository $services
      */
     public function __construct(ServicesRepository $services)
     {

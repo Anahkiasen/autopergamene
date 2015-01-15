@@ -1,5 +1,5 @@
 <?php
-use Autopergamene\Models\Illustration\Illustration;
+use Autopergamene\Entities\Models\Illustration\Illustration;
 
 class IllustrationsTableSeeder extends DatabaseSeeder
 {

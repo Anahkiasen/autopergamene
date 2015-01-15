@@ -1,8 +1,8 @@
 <?php
-namespace Autopergamene\Repositories;
+namespace Autopergamene\Entities\Repositories;
 
 use Arrounded\Abstracts\AbstractRepository;
-use Autopergamene\Models\Repository;
+use Autopergamene\Entities\Models\Repository;
 
 class RepositoriesRepository extends AbstractRepository
 {

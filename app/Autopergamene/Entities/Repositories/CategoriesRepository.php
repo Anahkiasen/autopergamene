@@ -1,8 +1,9 @@
 <?php
-namespace Autopergamene\Repositories;
+namespace Autopergamene\Entities\Repositories;
 
 use Arrounded\Abstracts\AbstractRepository;
-use Autopergamene\Models\Category;
+use Autopergamene\Entities\Models\Category;
+use Autopergamene\Repositories\Collection;
 
 /**
  * Fetches Categories from the database

@@ -1,5 +1,5 @@
 <?php
-namespace Autopergamene\Lang;
+namespace Autopergamene\Entities\Lang;
 
 use Eloquent;
 

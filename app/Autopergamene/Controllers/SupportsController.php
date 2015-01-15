@@ -1,9 +1,9 @@
 <?php
 namespace Autopergamene\Controllers;
 
-use Autopergamene\Models\Illustration\Support;
-use Autopergamene\Repositories\CategoriesRepository;
-use Autopergamene\Repositories\SupportsRepository;
+use Autopergamene\Entities\Models\Illustration\Support;
+use Autopergamene\Entities\Repositories\CategoriesRepository;
+use Autopergamene\Entities\Repositories\SupportsRepository;
 use Controller;
 use View;
 
@@ -18,16 +18,19 @@ class SupportsController extends Controller
 
     /**
      * The Support Repository
+
      *
-     * @type SupportsRepository
+*@type \Autopergamene\Entities\Repositories\SupportsRepository
      */
     protected $supports;
 
     /**
      * Build a new SupportsController
-     *
-     * @param CategoriesRepository $categories
-     * @param SupportsRepository   $supports
+
+
+*
+*@param CategoriesRepository $categories
+     * @param \Autopergamene\Entities\Repositories\SupportsRepository   $supports
      */
     public function __construct(CategoriesRepository $categories, SupportsRepository $supports)
     {

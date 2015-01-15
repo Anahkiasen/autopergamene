@@ -1,6 +1,6 @@
 <?php
-use Autopergamene\Models\Photography\Photo;
-use Autopergamene\Models\Photography\Photoset;
+use Autopergamene\Entities\Models\Photography\Photo;
+use Autopergamene\Entities\Models\Photography\Photoset;
 
 /**
  * Seed the photos

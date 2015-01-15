@@ -1,5 +1,5 @@
 <?php
-namespace Autopergamene\Models\Photography;
+namespace Autopergamene\Entities\Models\Photography;
 
 use Autopergamene\Abstracts\AbstractModel;
 
@@ -19,6 +19,6 @@ class Collection extends AbstractModel
      */
     public function photosets()
     {
-        return $this->belongsToMany('Autopergamene\Models\Photography\Photoset')->latest();
+        return $this->belongsToMany('Autopergamene\Entities\Models\Photography\Photoset')->latest();
     }
 }

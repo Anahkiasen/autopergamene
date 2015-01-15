@@ -1,5 +1,5 @@
 <?php
-use Autopergamene\Models\Story;
+use Autopergamene\Entities\Models\Story;
 
 /**
  * Seed short stories

@@ -1,5 +1,5 @@
 <?php
-use Autopergamene\Models\Repository;
+use Autopergamene\Entities\Models\Repository;
 use Guzzle\Http\Exception\ClientErrorResponseException;
 use Packagist\Api\Client as Packagist;
 

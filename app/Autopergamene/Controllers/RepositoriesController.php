@@ -1,8 +1,8 @@
 <?php
 namespace Autopergamene\Controllers;
 
-use Autopergamene\Repositories\CategoriesRepository;
-use Autopergamene\Repositories\RepositoriesRepository;
+use Autopergamene\Entities\Repositories\CategoriesRepository;
+use Autopergamene\Entities\Repositories\RepositoriesRepository;
 use Controller;
 use View;
 
@@ -17,16 +17,19 @@ class RepositoriesController extends Controller
 
     /**
      * The Repositories Repository
+
      *
-     * @type RepositoriesRepository
+*@type \Autopergamene\Entities\Repositories\RepositoriesRepository
      */
     protected $repositories;
 
     /**
      * Build a new SupportsController
-     *
-     * @param CategoriesRepository   $categories
-     * @param RepositoriesRepository $repositories
+
+
+*
+*@param CategoriesRepository   $categories
+     * @param \Autopergamene\Entities\Repositories\RepositoriesRepository $repositories
      */
     public function __construct(CategoriesRepository $categories, RepositoriesRepository $repositories)
     {
