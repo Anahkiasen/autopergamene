@@ -2,6 +2,7 @@
 namespace Autopergamene\Models;
 
 use Autopergamene\Abstracts\AbstractModel;
+use Autopergamene\Lang\Category;
 use Lang;
 
 /**
@@ -20,7 +21,7 @@ class Article extends AbstractModel
      */
     public function category()
     {
-        return $this->belongsTo('Autopergamene\Models\Category');
+        return $this->belongsTo(Category::class);
     }
 
     ////////////////////////////////////////////////////////////////////

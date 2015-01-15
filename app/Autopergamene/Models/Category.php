@@ -30,7 +30,7 @@ class Category extends AbstractModel
      */
     public function articles()
     {
-        return $this->hasMany('Autopergamene\Models\Article')->latest();
+        return $this->hasMany(Article::class)->latest();
     }
 
     ////////////////////////////////////////////////////////////////////
