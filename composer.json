@@ -30,8 +30,8 @@
     "doctrine/dbal": "~2.5"
   },
   "autoload": {
-    "psr-0": {
-      "Autopergamene": "app"
+    "psr-4": {
+      "Autopergamene\\": "app/Autopergamene"
     },
     "classmap": [
       "app/database/migrations",
