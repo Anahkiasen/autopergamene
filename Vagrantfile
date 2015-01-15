@@ -319,5 +319,6 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "https://raw.githubusercontent.com/madewithlove/vaprobash-scripts/master/remove-host.sh"
   config.vm.provision "shell", path: "https://raw.githubusercontent.com/madewithlove/vaprobash-scripts/master/mysql-db.sh", args: [mysql_root_password, 'autopergamene']
   config.vm.provision "shell", path: "https://raw.githubusercontent.com/madewithlove/vaprobash-scripts/master/zsh.sh"
+  config.vm.provision "shell", inline: "sudo apt-get install -y gettext php-gettext language-pack-en language-pack-de && sudo service apache2 restart"
 
 end
