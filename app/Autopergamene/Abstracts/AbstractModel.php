@@ -2,7 +2,8 @@
 namespace Autopergamene\Abstracts;
 
 use Arrounded\Traits\JsonAttributes;
-use Arrounded\Traits\ReflectionModel;
+use Arrounded\Traits\Reflection\ReflectionModel;
+use Arrounded\Traits\Reflection\RoutableModel;
 use Autopergamene\Query;
 use Polyglot\Polyglot;
 
