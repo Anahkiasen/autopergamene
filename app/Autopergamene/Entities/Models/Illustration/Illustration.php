@@ -21,7 +21,7 @@ class Illustration extends AbstractModel
      */
     public function support()
     {
-        return $this->belongsTo('Autopergamene\Entities\Models\Illustration\Support');
+        return $this->belongsTo(Support::class);
     }
 
     ////////////////////////////////////////////////////////////////////
@@ -30,19 +30,30 @@ class Illustration extends AbstractModel
 
     /**
      * Get a thumb of the illustration
+     *
+     * @param string      $folder
+     * @param string|null $name
+     *
+     * @return string
      */
     public function thumb($folder, $name = null)
     {
-        $image = Illuminage::square($folder.$this->image, 200);
+        $builder = app('glide.url');
+        $image   = $builder->getUrl($folder.$this->image, ['w' => 200, 'h' => 200, 'fit' => 'crop']);
+
         if (!$name) {
             $name = $this->name;
         }
 
-        return $image->alt($name);
+        return HTML::image($image, $name);
     }
 
     /**
      * Display the illustration
+     *
+     * @param string $folder
+     *
+     * @return string
      */
     public function image($folder)
     {

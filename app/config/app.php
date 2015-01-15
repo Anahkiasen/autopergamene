@@ -124,7 +124,6 @@ return array(
         // Packages
         'Flatten\FlattenServiceProvider',
         'Flickering\FlickeringServiceProvider',
-        'Illuminage\IlluminageServiceProvider',
         'Rocketeer\RocketeerServiceProvider',
         'TwigBridge\ServiceProvider',
         'Polyglot\PolyglotServiceProvider',

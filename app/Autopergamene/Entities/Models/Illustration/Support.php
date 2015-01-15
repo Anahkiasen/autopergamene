@@ -46,6 +46,6 @@ class Support extends AbstractModel
      */
     public function getFolderAttribute()
     {
-        return 'app/img/illustrations/'.$this->id.'/';
+        return 'img/illustrations/'.$this->id.'/';
     }
 }

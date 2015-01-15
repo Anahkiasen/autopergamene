@@ -2,9 +2,8 @@
 namespace Autopergamene;
 
 use Arrounded\Abstracts\AbstractServiceProvider;
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Str;
-use Symfony\Component\Finder\Finder;
+use League\Glide\Factories\Server;
+use League\Glide\Factories\UrlBuilder;
 
 /**
  * Register the AutopergameneServiceProvider classes
@@ -40,5 +39,16 @@ class AutopergameneServiceProvider extends AbstractServiceProvider
         $this->app['arrounded']->setModelsNamespace('Autopergamene\Entities');
 
         $this->bootRouteBindings();
+
+        $this->app->singleton('glide', function () {
+            return Server::create(array(
+                'source'   => public_path('app'),
+                'cache'    => public_path('cache'),
+            ));
+        });
+
+        $this->app->singleton('glide.url', function ($app) {
+           return UrlBuilder::create($app['config']['app.url']);
+        });
     }
 }

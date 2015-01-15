@@ -23,4 +23,14 @@ Route::groupLocale(['namespace' => 'Autopergamene\Controllers'], function () {
     Route::get('category/illustration/support/{support}', 'SupportsController@show');
 
     Route::get('category/{category}', 'CategoriesController@show');
+
 });
+
+// Images
+//////////////////////////////////////////////////////////////////////
+
+Route::get('img/{image}', function () {
+    $request = app('request');
+
+    return app('glide')->outputImage($request);
+})->where('image', '.+');
