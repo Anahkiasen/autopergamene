@@ -36,7 +36,7 @@ class Photo extends AbstractModel
      */
     public function photoset()
     {
-        return $this->belongsTo('Autopergamene\Entities\Models\Photography\Photoset');
+        return $this->belongsTo(Photoset::class);
     }
 
     // Sizes --------------------------------------------------------- /
