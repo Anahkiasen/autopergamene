@@ -6,7 +6,10 @@
   "bundle": "public/app/ts/tsd.ts",
   "installed": {
     "jquery/jquery.d.ts": {
-      "commit": "d2989ce35fcf03ace1df9dda33a9a3b68c416b08"
+      "commit": "2cc4331067a81e2ae6bc4590e7b33bf286c8f28f"
+    },
+    "modernizr/modernizr.d.ts": {
+      "commit": "2cc4331067a81e2ae6bc4590e7b33bf286c8f28f"
     }
   }
 }

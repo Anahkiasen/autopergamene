@@ -8,6 +8,9 @@ interface Element {
 	classList;
 }
 
-declare var Modernizr;
+interface ModernizrStatic {
+	classlist: boolean;
+	mediaqueries: boolean;
+}
 
 declare var Rainbow;
