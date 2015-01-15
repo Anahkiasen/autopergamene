@@ -28,7 +28,8 @@
     "phpunit/phpunit": "~4.4",
     "mockery/mockery": "0.9.*",
     "barryvdh/laravel-ide-helper": "~1.11",
-    "doctrine/dbal": "~2.5"
+    "doctrine/dbal": "~2.5",
+    "barryvdh/laravel-debugbar": "~1.8"
   },
   "autoload": {
     "psr-4": {

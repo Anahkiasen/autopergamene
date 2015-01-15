@@ -14,6 +14,7 @@ return array(
     */
 
     'debug'           => true,
+
     /*
     |--------------------------------------------------------------------------
     | Application URL
@@ -26,6 +27,7 @@ return array(
     */
 
     'url'             => 'http://autopergamene.dev',
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
@@ -38,6 +40,7 @@ return array(
     */
 
     'timezone'        => 'Europe/Paris',
+
     /*
     |--------------------------------------------------------------------------
     | Application Locale Configuration
@@ -50,6 +53,7 @@ return array(
     */
 
     'locale'          => 'fr',
+
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
@@ -62,6 +66,7 @@ return array(
     */
 
     'fallback_locale' => 'en',
+
     /*
     |--------------------------------------------------------------------------
     | Encryption Key
@@ -75,6 +80,7 @@ return array(
 
     'key'             => 'Gqm4bwYiqwnNwMSsbOsOyk8JtUGJsg5I',
     'cipher'          => MCRYPT_RIJNDAEL_128,
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
@@ -114,6 +120,7 @@ return array(
         'Illuminate\Validation\ValidationServiceProvider',
         'Illuminate\View\ViewServiceProvider',
         'Illuminate\Workbench\WorkbenchServiceProvider',
+
         // Packages
         'Flatten\FlattenServiceProvider',
         'Flickering\FlickeringServiceProvider',
@@ -122,10 +129,12 @@ return array(
         'TwigBridge\ServiceProvider',
         'Polyglot\PolyglotServiceProvider',
         'Arrounded\ArroundedServiceProvider',
+
         // Application
         'Autopergamene\AutopergameneServiceProvider',
 
     ),
+
     /*
     |--------------------------------------------------------------------------
     | Service Provider Manifest
@@ -138,6 +147,7 @@ return array(
     */
 
     'manifest'        => storage_path().'/meta',
+
     /*
     |--------------------------------------------------------------------------
     | Class Aliases
@@ -189,6 +199,7 @@ return array(
         'URL'               => 'Illuminate\Support\Facades\URL',
         'Validator'         => 'Illuminate\Support\Facades\Validator',
         'View'              => 'Illuminate\Support\Facades\View',
+
         // Other packages
         'Assets'            => 'Arrounded\Facades\Assets',
         'Carbon'            => 'Carbon\Carbon',
