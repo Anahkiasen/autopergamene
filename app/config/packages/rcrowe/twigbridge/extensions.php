@@ -4,9 +4,8 @@
  * This file is part of the TwigBridge package.
  *
  * @copyright Robert Crowe <hello@vivalacrowe.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ *            For the full copyright and license information, please view the LICENSE
+ *            file that was distributed with this source code.
  */
 
 /**
@@ -24,11 +23,10 @@ return [
     | `Twig_Extension_Debug` is enabled automatically if twig.debug is TRUE.
     |
     */
-    'enabled' => [
+    'enabled'   => [
         'TwigBridge\Extension\Loader\Facades',
         'TwigBridge\Extension\Loader\Filters',
         'TwigBridge\Extension\Loader\Functions',
-
         'TwigBridge\Extension\Laravel\Auth',
         'TwigBridge\Extension\Laravel\Config',
         'TwigBridge\Extension\Laravel\Form',
@@ -41,7 +39,6 @@ return [
 
         // 'TwigBridge\Extension\Laravel\Legacy\Facades',
     ],
-
     /*
     |--------------------------------------------------------------------------
     | Facades
@@ -69,11 +66,22 @@ return [
     | in order to be marked as safe.
     |
     */
-    'facades' => [
-        'HTML', 'URL', 'Lang', 'Config', 'Input', 'Form', 'Auth', 'Str', 'Session', 'View',
-        'Twitter', 'Facebook', 'Former', 'Assets',
+    'facades'   => [
+        'HTML',
+        'URL',
+        'Lang',
+        'Config',
+        'Input',
+        'Form',
+        'Auth',
+        'Str',
+        'Session',
+        'View',
+        'Twitter',
+        'Facebook',
+        'Former',
+        'Assets',
     ],
-
     /*
     |--------------------------------------------------------------------------
     | Functions
@@ -103,7 +111,6 @@ return [
     |
     */
     'functions' => [],
-
     /*
     |--------------------------------------------------------------------------
     | Filters
@@ -132,6 +139,6 @@ return [
     | </code>
     |
     */
-    'filters' => [],
+    'filters'   => [],
 
 ];

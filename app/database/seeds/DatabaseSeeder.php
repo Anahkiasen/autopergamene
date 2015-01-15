@@ -3,31 +3,31 @@ use Arrounded\Seeders\AbstractSeeder;
 
 class DatabaseSeeder extends AbstractSeeder
 {
-	/**
-	 * Run the database seeds.
-	 *
-	 * @return void
-	 */
-	public function run()
-	{
-		Eloquent::unguard();
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        Eloquent::unguard();
 
-		$this->seed('Categories');
+        $this->seed('Categories');
 
-		// Illustration
-		$this->seed('Supports');
-		$this->seed('Illustrations');
+        // Illustration
+        $this->seed('Supports');
+        $this->seed('Illustrations');
 
-		// Photography
-		$this->seed('Photosets');
-		$this->seed('Collections');
-		$this->seed('Photos');
+        // Photography
+        $this->seed('Photosets');
+        $this->seed('Collections');
+        $this->seed('Photos');
 
-		$this->seed('Articles');
-		$this->seed('Repositories');
-		$this->seed('Services');
-		$this->seed('Stories');
-		$this->seed('Tableaux');
-		$this->seed('Tracks');
-	}
+        $this->seed('Articles');
+        $this->seed('Repositories');
+        $this->seed('Services');
+        $this->seed('Stories');
+        $this->seed('Tableaux');
+        $this->seed('Tracks');
+    }
 }

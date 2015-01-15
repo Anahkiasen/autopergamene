@@ -9,8 +9,7 @@
 			{% for service in services %}
 				<li>
 					<a target='_blank' href='{{ service.link }}'>
-						{{ service.linkName }}/<span class='name'>anahkiasen</span>
-					</a>
+						{{ service.linkName }}/<span class='name'>anahkiasen</span> </a>
 				</li>
 			{% endfor %}
 		</ul>
@@ -24,7 +23,7 @@
 				{% set typekit = HTML.linkBlank('https://typekit.com/colophons/enr5hww', 'Typekit') %}
 
 				{% trans -%}
-					Ce site a été construit en utilisant {{ laravel }}.<br>Le design a été codé en {{ sass }} avec {{ compass }} et {{ susy }}.<br>Polices fournies par {{ typekit }}.
+				Ce site a été construit en utilisant {{ laravel }}.<br>Le design a été codé en {{ sass }} avec {{ compass }} et {{ susy }}.<br>Polices fournies par {{ typekit }}.
 				{%- endtrans %}
 			</p>
 

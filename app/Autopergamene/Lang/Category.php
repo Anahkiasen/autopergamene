@@ -5,5 +5,5 @@ use Eloquent;
 
 class Category extends Eloquent
 {
-	protected $table = 'categories_lang';
+    protected $table = 'categories_lang';
 }

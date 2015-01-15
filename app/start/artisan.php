@@ -5,5 +5,5 @@
 //////////////////////////////////////////////////////////////////////
 
 Rocketeer::listenTo('deploy.before-symlink', array(
-	'node_modules/.bin/grunt production'
+    'node_modules/.bin/grunt production'
 ));

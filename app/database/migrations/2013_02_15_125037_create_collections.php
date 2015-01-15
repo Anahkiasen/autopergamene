@@ -4,28 +4,28 @@ use Illuminate\Database\Schema\Blueprint;
 
 class CreateCollections extends Migration
 {
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
-	public function up()
-	{
-		Schema::create('collections', function (Blueprint $table) {
-			$table->string('id');
-			$table->string('name');
-			$table->string('description');
-			$table->timestamps();
-		});
-	}
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('collections', function (Blueprint $table) {
+            $table->string('id');
+            $table->string('name');
+            $table->string('description');
+            $table->timestamps();
+        });
+    }
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
-	public function down()
-	{
-		Schema::drop('collections');
-	}
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('collections');
+    }
 }

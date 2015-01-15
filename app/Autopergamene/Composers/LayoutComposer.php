@@ -6,26 +6,26 @@ use Illuminate\View\View;
 
 class LayoutComposer
 {
-	/**
-	 * @type ServicesRepository
-	 */
-	private $services;
+    /**
+     * @type ServicesRepository
+     */
+    private $services;
 
-	/**
-	 * @param ServicesRepository $services
-	 */
-	public function __construct(ServicesRepository $services)
-	{
-		$this->services = $services;
-	}
+    /**
+     * @param ServicesRepository $services
+     */
+    public function __construct(ServicesRepository $services)
+    {
+        $this->services = $services;
+    }
 
-	/**
-	 * Composer the header, footer, etc.
-	 *
-	 * @param View $view
-	 */
-	public function composerFooter(View $view)
-	{
-		$view->services = $this->services->getFooterServices();
-	}
+    /**
+     * Composer the header, footer, etc.
+     *
+     * @param View $view
+     */
+    public function composerFooter(View $view)
+    {
+        $view->services = $this->services->getFooterServices();
+    }
 }

@@ -3,7 +3,6 @@ namespace Autopergamene\Abstracts;
 
 use Arrounded\Traits\JsonAttributes;
 use Arrounded\Traits\Reflection\ReflectionModel;
-use Arrounded\Traits\Reflection\RoutableModel;
 use Autopergamene\Query;
 use Polyglot\Polyglot;
 
@@ -12,34 +11,34 @@ use Polyglot\Polyglot;
  */
 abstract class AbstractModel extends Polyglot
 {
-	use JsonAttributes;
-	use ReflectionModel {
-		getController as getRawController;
-	}
+    use JsonAttributes;
+    use ReflectionModel {
+        getController as getRawController;
+    }
 
-	////////////////////////////////////////////////////////////////////
-	/////////////////////////////// FETCHERS ///////////////////////////
-	////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////
+    /////////////////////////////// FETCHERS ///////////////////////////
+    ////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Get where thumbnails only
-	 *
-	 * @param Query $query
-	 *
-	 * @return  Query
-	 */
-	public static function scopeThumbnails($query)
-	{
-		return $query->where('thumbnail', 1);
-	}
+    /**
+     * Get where thumbnails only
+     *
+     * @param Query $query
+     *
+     * @return  Query
+     */
+    public static function scopeThumbnails($query)
+    {
+        return $query->where('thumbnail', 1);
+    }
 
-	/**
-	 * Get the controller name
-	 *
-	 * @return string
-	 */
-	public function getController()
-	{
-		return 'Autopergamene\Controllers\\'.$this->getRawController();
-	}
+    /**
+     * Get the controller name
+     *
+     * @return string
+     */
+    public function getController()
+    {
+        return 'Autopergamene\Controllers\\'.$this->getRawController();
+    }
 }

@@ -15,10 +15,10 @@
 
 {% block layout %}
 	{% if article.image %}
-		<section class='article novel'>
+<section class='article novel'>
 	{% else %}
-		<section class='article'>
-	{% endif %}
+	<section class='article'>
+		{% endif %}
 		<h1>{{ article.name }}</h1>
 		<article>
 			{{ article.content }}
@@ -27,8 +27,8 @@
 			</blockquote>
 		</article>
 	</section>
-{% endblock %}
+	{% endblock %}
 
-{% block js %}
-	{{ Assets.scripts('article') }}
-{% endblock %}
+	{% block js %}
+		{{ Assets.scripts('article') }}
+	{% endblock %}

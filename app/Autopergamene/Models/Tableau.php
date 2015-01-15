@@ -11,32 +11,32 @@ use URL;
  */
 class Tableau extends AbstractModel
 {
-	/**
-	 * The table associated with the model.
-	 *
-	 * @type string
-	 */
-	protected $table = 'tableaux';
+    /**
+     * The table associated with the model.
+     *
+     * @type string
+     */
+    protected $table = 'tableaux';
 
-	////////////////////////////////////////////////////////////////////
-	///////////////////////////// ATTRIBUTES ///////////////////////////
-	////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////
+    ///////////////////////////// ATTRIBUTES ///////////////////////////
+    ////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Get full path to the image
-	 */
-	public function getImageAttribute()
-	{
-		$image = Str::slug($this->name).'.jpg';
+    /**
+     * Get full path to the image
+     */
+    public function getImageAttribute()
+    {
+        $image = Str::slug($this->name).'.jpg';
 
-		return URL::asset("app/img/tableaux/".$image);
-	}
+        return URL::asset("app/img/tableaux/".$image);
+    }
 
-	/**
-	 * Prints out a tableau
-	 */
-	public function __toString()
-	{
-		return HTML::lazyLoad($this->image, $this->name);
-	}
+    /**
+     * Prints out a tableau
+     */
+    public function __toString()
+    {
+        return HTML::lazyLoad($this->image, $this->name);
+    }
 }

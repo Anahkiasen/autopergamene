@@ -8,19 +8,19 @@
 	{% include '_partials.about' %}
 	<hr>
 	<nav class='categories'>
-	<h2>{{ 'Portfolio'|trans }}</h2>
+		<h2>{{ 'Portfolio'|trans }}</h2>
 
-	{% for category in categories %}
-		<figure>
-			<a href='{{ category.link }}' {% if category.isExternal() %}target='_blank'{% endif %}>
-				{{ category.thumb }}
-				<figcaption>
-					<h3>{{ category.name }}</h3>
-					<h4>{{ category.lang.description }}</h4>
-				</figcaption>
-			</a>
-		</figure>
-	{% endfor %}
-</nav>
+		{% for category in categories %}
+			<figure>
+				<a href='{{ category.link }}' {% if category.isExternal() %}target='_blank'{% endif %}>
+					{{ category.thumb }}
+					<figcaption>
+						<h3>{{ category.name }}</h3>
+						<h4>{{ category.lang.description }}</h4>
+					</figcaption>
+				</a>
+			</figure>
+		{% endfor %}
+	</nav>
 
 {% endblock %}

@@ -6,12 +6,12 @@ use Autopergamene\Models\Illustration\Support;
 
 class SupportsRepository extends AbstractRepository
 {
-	/**
-	 * @param Support $items
-	 */
-	public function __construct(Support $items)
-	{
-		$this->items = $items;
-	}
+    /**
+     * @param Support $items
+     */
+    public function __construct(Support $items)
+    {
+        $this->items = $items;
+    }
 }
 

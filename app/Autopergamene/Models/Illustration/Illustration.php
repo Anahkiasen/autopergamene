@@ -10,42 +10,42 @@ use Illuminage\Facades\Illuminage;
  */
 class Illustration extends AbstractModel
 {
-	////////////////////////////////////////////////////////////////////
-	/////////////////////////// RELATIONSHIPS //////////////////////////
-	////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////
+    /////////////////////////// RELATIONSHIPS //////////////////////////
+    ////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Get the Support this Illustration belongs to
-	 *
-	 * @return Support
-	 */
-	public function support()
-	{
-		return $this->belongsTo('Autopergamene\Models\Illustration\Support');
-	}
+    /**
+     * Get the Support this Illustration belongs to
+     *
+     * @return Support
+     */
+    public function support()
+    {
+        return $this->belongsTo('Autopergamene\Models\Illustration\Support');
+    }
 
-	////////////////////////////////////////////////////////////////////
-	///////////////////////////// ATTRIBUTES ///////////////////////////
-	////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////
+    ///////////////////////////// ATTRIBUTES ///////////////////////////
+    ////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Get a thumb of the illustration
-	 */
-	public function thumb($folder, $name = null)
-	{
-		$image = Illuminage::square($folder.$this->image, 200);
-		if (!$name) {
-			$name = $this->name;
-		}
+    /**
+     * Get a thumb of the illustration
+     */
+    public function thumb($folder, $name = null)
+    {
+        $image = Illuminage::square($folder.$this->image, 200);
+        if (!$name) {
+            $name = $this->name;
+        }
 
-		return $image->alt($name);
-	}
+        return $image->alt($name);
+    }
 
-	/**
-	 * Display the illustration
-	 */
-	public function image($folder)
-	{
-		return HTML::lazyLoad($folder.$this->image, $this->name);
-	}
+    /**
+     * Display the illustration
+     */
+    public function image($folder)
+    {
+        return HTML::lazyLoad($folder.$this->image, $this->name);
+    }
 }

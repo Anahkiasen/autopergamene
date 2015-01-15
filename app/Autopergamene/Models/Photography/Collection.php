@@ -8,17 +8,17 @@ use Autopergamene\Abstracts\AbstractModel;
  */
 class Collection extends AbstractModel
 {
-	////////////////////////////////////////////////////////////////////
-	/////////////////////////// RELATIONSHIPS //////////////////////////
-	////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////
+    /////////////////////////// RELATIONSHIPS //////////////////////////
+    ////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Get all the Photosets in a Collection
-	 *
-	 * @return \Illuminate\Support\Collection
-	 */
-	public function photosets()
-	{
-		return $this->belongsToMany('Autopergamene\Models\Photography\Photoset')->latest();
-	}
+    /**
+     * Get all the Photosets in a Collection
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    public function photosets()
+    {
+        return $this->belongsToMany('Autopergamene\Models\Photography\Photoset')->latest();
+    }
 }

@@ -9,43 +9,43 @@ use Autopergamene\Traits\HasSlugId;
  */
 class Support extends AbstractModel
 {
-	use HasSlugId;
+    use HasSlugId;
 
-	////////////////////////////////////////////////////////////////////
-	/////////////////////////// RELATIONSHIPS //////////////////////////
-	////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////
+    /////////////////////////// RELATIONSHIPS //////////////////////////
+    ////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Get the Support's Illustrations
-	 *
-	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
-	 */
-	public function illustrations()
-	{
-		return $this->hasMany('Autopergamene\Models\Illustration\Illustration');
-	}
+    /**
+     * Get the Support's Illustrations
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function illustrations()
+    {
+        return $this->hasMany('Autopergamene\Models\Illustration\Illustration');
+    }
 
-	/**
-	 * Get the Support's Thumbnail
-	 *
-	 * @return mixed
-	 */
-	public function thumbnail()
-	{
-		return $this->hasOne('Autopergamene\Models\Illustration\Illustration')->thumbnails();
-	}
+    /**
+     * Get the Support's Thumbnail
+     *
+     * @return mixed
+     */
+    public function thumbnail()
+    {
+        return $this->hasOne('Autopergamene\Models\Illustration\Illustration')->thumbnails();
+    }
 
-	////////////////////////////////////////////////////////////////////
-	///////////////////////////// ATTRIBUTES ///////////////////////////
-	////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////
+    ///////////////////////////// ATTRIBUTES ///////////////////////////
+    ////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Get the folder of this support's illustrations
-	 *
-	 * @return string
-	 */
-	public function getFolderAttribute()
-	{
-		return 'app/img/illustrations/'.$this->id.'/';
-	}
+    /**
+     * Get the folder of this support's illustrations
+     *
+     * @return string
+     */
+    public function getFolderAttribute()
+    {
+        return 'app/img/illustrations/'.$this->id.'/';
+    }
 }
