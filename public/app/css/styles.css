@@ -2,7 +2,7 @@
   max-width: 59em;
   margin-left: auto;
   margin-right: auto; }
-  .layout-container::after, .error::after, .portfolio::after, .article::after, .novel::after, .categories figure::after, .portfolio .photoset--list::after, .portfolio .support::after, .portfolio .repository figure::after, .portfolio .project::after, .portfolio .collection::after, .categories::after, .about::after, .about .about-more::after, footer .footer-container::after {
+  .layout-container:after, .error:after, .portfolio:after, .article:after, .novel:after, .categories figure:after, .portfolio .photoset--list:after, .portfolio .support:after, .portfolio .repository figure:after, .portfolio .project:after, .portfolio .collection:after, .categories:after, .about:after, .about .about-more:after, footer .footer-container:after {
     content: " ";
     display: block;
     clear: both; }
@@ -11,12 +11,10 @@
   max-width: 100%; }
 
 .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .categories figure figcaption, .portfolio .photoset--list figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption, .portfolio .illustration, .portfolio .tableau, .portfolio .photoset figure, .article article .wp-caption, .novel article .wp-caption, .about p {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+  box-sizing: border-box; }
 
 .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .articles.hidden, .about .about-more, .image-wrap, .about aside, .articles article, .articles article blockquote, .articles article h3, .articles article time, .about .about-biography {
-  -webkit-transition: all 0.3s;
-          transition: all 0.3s;
+  transition: all 0.3s;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0); }
 
@@ -90,8 +88,7 @@ ul.fixed {
     ul.fixed {
       display: none; } }
   ul.affix.fixed {
-    -webkit-box-shadow: 0 1rem 0 fade(#ea2e47, 0.1);
-            box-shadow: 0 1rem 0 fade(#ea2e47, 0.1);
+    box-shadow: 0 1rem 0 fade(#ea2e47, 0.1);
     -webkit-column-count: 1;
        -moz-column-count: 1;
             column-count: 1;
@@ -174,8 +171,7 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
     background-color: #f17484; }
 
 .portfolio blockquote, .article article blockquote, .novel article blockquote, .novel article ul, .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure, .portfolio .illustration, .portfolio .tableau, .portfolio .photoset figure, .article article .wp-caption, .novel article .wp-caption, .portfolio .illustration figcaption, .portfolio .tableau figcaption, dl, .portfolio p, .portfolio .project figure, .article article del, .novel article del, .about p, .about .about-more ul, .novel .alert {
-  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAQAAAAnZu5uAAAAEklEQVR4nGNi4IVBJgY4IMgEAA3yAEyYwsyHAAAAAElFTkSuQmCC');
-  background: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.05);
   color: #333333;
   padding: 12px;
   padding: 0.75rem;
@@ -187,12 +183,11 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
   margin-right: 0; }
   @media (min-width: 60em) {
     .portfolio blockquote, .article article blockquote, .novel article blockquote, .novel article ul {
-      background-image: url('../img/quotes.png?1390065889');
+      background-image: url('../img/quotes.png');
       background-position: 16px 16px;
       background-position: 1rem 1rem;
       background-repeat: no-repeat;
-      -webkit-background-size: 10% 10%;
-              background-size: 10%;
+      background-size: 10%;
       margin: 32px 10%;
       margin: 2rem 10%;
       padding: 32px;
@@ -202,8 +197,7 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
   padding: 16px;
   padding: 1rem; }
   .categories figure:active, .portfolio .photoset--list:active, .portfolio .support:active, .portfolio .repository figure:active {
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAQAAAAnZu5uAAAAEklEQVR4nGNikIJBJgY4IMgEABpjAI3SojZdAAAAAElFTkSuQmCC');
-    background: rgba(0, 0, 0, 0.1); }
+    background-color: rgba(0, 0, 0, 0.1); }
   .categories figure figcaption, .portfolio .photoset--list figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption {
     padding-left: 16px;
     padding-left: 1rem; }
@@ -218,15 +212,15 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
     text-transform: none; }
   @media (max-width: 50em) {
     .categories figure:hover, .portfolio .photoset--list:hover, .portfolio .support:hover, .portfolio .repository figure:hover {
-      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAQAAAAnZu5uAAAAEklEQVR4nGNikIJBJgY4IMgEABpjAI3SojZdAAAAAElFTkSuQmCC');
-      background: rgba(0, 0, 0, 0.1); }
+      background-color: rgba(0, 0, 0, 0.1); }
     .categories figure img, .portfolio .photoset--list img, .portfolio .support img, .portfolio .repository figure img {
       width: 23.72881%;
       float: left;
       margin-right: 1.69492%; }
     .categories figure figcaption, .portfolio .photoset--list figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption {
       width: 74.57627%;
-      float: right; } }
+      float: right;
+      margin-right: 0; } }
   @media (min-width: 50em) and (max-width: 60em) {
     .categories figure img, .portfolio .photoset--list img, .portfolio .support img, .portfolio .repository figure img {
       width: 15.25424%;
@@ -234,7 +228,8 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
       margin-right: 1.69492%; }
     .categories figure figcaption, .portfolio .photoset--list figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption {
       width: 83.05085%;
-      float: right; } }
+      float: right;
+      margin-right: 0; } }
   @media (min-width: 60em) {
     .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure {
       opacity: 0.25; }
@@ -243,8 +238,7 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
       .categories figure:hover, .portfolio .photoset--list:hover, .portfolio .support:hover, .portfolio .repository figure:hover {
         opacity: 1; }
         .categories figure:hover h4, .portfolio .photoset--list:hover h4, .portfolio .support:hover h4, .portfolio .repository figure:hover h4 {
-          -webkit-transition: all 0.3s;
-                  transition: all 0.3s;
+          transition: all 0.3s;
           opacity: 1; } }
   @media (min-width: 60em) and (max-width: 75em) {
     .categories figure img, .portfolio .photoset--list img, .portfolio .support img, .portfolio .repository figure img {
@@ -253,7 +247,8 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
       margin-right: 1.69492%; }
     .categories figure figcaption, .portfolio .photoset--list figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption {
       width: 74.57627%;
-      float: right; } }
+      float: right;
+      margin-right: 0; } }
   @media (min-width: 75em) {
     .categories figure img, .portfolio .photoset--list img, .portfolio .support img, .portfolio .repository figure img {
       width: 23.72881%;
@@ -261,7 +256,8 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
       margin-right: 1.69492%; }
     .categories figure figcaption, .portfolio .photoset--list figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption {
       width: 74.57627%;
-      float: right; } }
+      float: right;
+      margin-right: 0; } }
 
 @media (min-width: 50em) and (max-width: 60em) {
   .categories figure {
@@ -309,8 +305,7 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
   padding: 16px;
   padding: 1rem; }
   .categories figure:active, .portfolio .photoset--list:active, .portfolio .support:active, .portfolio .repository figure:active {
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAQAAAAnZu5uAAAAEklEQVR4nGNikIJBJgY4IMgEABpjAI3SojZdAAAAAElFTkSuQmCC');
-    background: rgba(0, 0, 0, 0.1); }
+    background-color: rgba(0, 0, 0, 0.1); }
   .categories figure figcaption, .portfolio .photoset--list figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption {
     padding-left: 16px;
     padding-left: 1rem; }
@@ -325,15 +320,15 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
     text-transform: none; }
   @media (max-width: 50em) {
     .categories figure:hover, .portfolio .photoset--list:hover, .portfolio .support:hover, .portfolio .repository figure:hover {
-      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAQAAAAnZu5uAAAAEklEQVR4nGNikIJBJgY4IMgEABpjAI3SojZdAAAAAElFTkSuQmCC');
-      background: rgba(0, 0, 0, 0.1); }
+      background-color: rgba(0, 0, 0, 0.1); }
     .categories figure img, .portfolio .photoset--list img, .portfolio .support img, .portfolio .repository figure img {
       width: 23.72881%;
       float: left;
       margin-right: 1.69492%; }
     .categories figure figcaption, .portfolio .photoset--list figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption {
       width: 74.57627%;
-      float: right; } }
+      float: right;
+      margin-right: 0; } }
   @media (min-width: 50em) and (max-width: 60em) {
     .categories figure img, .portfolio .photoset--list img, .portfolio .support img, .portfolio .repository figure img {
       width: 15.25424%;
@@ -341,7 +336,8 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
       margin-right: 1.69492%; }
     .categories figure figcaption, .portfolio .photoset--list figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption {
       width: 83.05085%;
-      float: right; } }
+      float: right;
+      margin-right: 0; } }
   @media (min-width: 60em) {
     .categories figure, .portfolio .photoset--list, .portfolio .support, .portfolio .repository figure {
       opacity: 0.25; }
@@ -350,8 +346,7 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
       .categories figure:hover, .portfolio .photoset--list:hover, .portfolio .support:hover, .portfolio .repository figure:hover {
         opacity: 1; }
         .categories figure:hover h4, .portfolio .photoset--list:hover h4, .portfolio .support:hover h4, .portfolio .repository figure:hover h4 {
-          -webkit-transition: all 0.3s;
-                  transition: all 0.3s;
+          transition: all 0.3s;
           opacity: 1; } }
   @media (min-width: 60em) and (max-width: 75em) {
     .categories figure img, .portfolio .photoset--list img, .portfolio .support img, .portfolio .repository figure img {
@@ -360,7 +355,8 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
       margin-right: 1.69492%; }
     .categories figure figcaption, .portfolio .photoset--list figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption {
       width: 74.57627%;
-      float: right; } }
+      float: right;
+      margin-right: 0; } }
   @media (min-width: 75em) {
     .categories figure img, .portfolio .photoset--list img, .portfolio .support img, .portfolio .repository figure img {
       width: 23.72881%;
@@ -368,7 +364,8 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
       margin-right: 1.69492%; }
     .categories figure figcaption, .portfolio .photoset--list figcaption, .portfolio .support figcaption, .portfolio .repository figure figcaption {
       width: 74.57627%;
-      float: right; } }
+      float: right;
+      margin-right: 0; } }
 
 @media (min-width: 50em) and (max-width: 60em) {
   .categories figure {
@@ -410,8 +407,7 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
   position: relative;
   vertical-align: bottom; }
   .image-wrap:after, .about aside:after {
-    -webkit-box-shadow: inset 0 0 1px fade(white, 0.4), inset 0 1px 0 fade(white, 0.4), 0 1px 2px fade(black, 0.3);
-            box-shadow: inset 0 0 1px fade(white, 0.4), inset 0 1px 0 fade(white, 0.4), 0 1px 2px fade(black, 0.3);
+    box-shadow: inset 0 0 1px fade(white, 0.4), inset 0 1px 0 fade(white, 0.4), 0 1px 2px fade(black, 0.3);
     border: solid 1px #1a1a1a;
     content: " ";
     height: 100%;
@@ -420,15 +416,13 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
     top: -1px;
     width: 100%; }
   .image-wrap img, .about aside img {
-    -webkit-box-shadow: 0 1px 2px fade(black, 0.4);
-            box-shadow: 0 1px 2px fade(black, 0.4);
+    box-shadow: 0 1px 2px fade(black, 0.4);
     border-radius: 0;
     vertical-align: bottom; }
 
 .portfolio .novel-summary figure, .about aside, .novel figure {
   background-position: center;
-  -webkit-background-size: cover;
-          background-size: cover;
+  background-size: cover;
   height: 240px;
   height: 15rem; }
   @media (min-width: 75em) {
@@ -441,8 +435,7 @@ span.block, a.block, a.back, .portfolio .project__summary__links a {
   margin: 1rem 0;
   padding: 16px;
   padding: 1rem;
-  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAQAAAAnZu5uAAAAEklEQVR4nGNi4IBBJgY4IMgEAAkpADNL6V6/AAAAAElFTkSuQmCC');
-  background: rgba(0, 0, 0, 0.03);
+  background-color: rgba(0, 0, 0, 0.03);
   text-align: center; }
   @media (min-width: 60em) {
     .portfolio .illustration .image-wrap, .portfolio .tableau .image-wrap, .portfolio .photoset figure .image-wrap, .article article .wp-caption .image-wrap, .novel article .wp-caption .image-wrap, .portfolio .illustration .about aside, .about .portfolio .illustration aside, .portfolio .tableau .about aside, .about .portfolio .tableau aside, .portfolio .photoset figure .about aside, .about .portfolio .photoset figure aside, .article article .wp-caption .about aside, .about .article article .wp-caption aside, .novel article .wp-caption .about aside, .about .novel article .wp-caption aside {
@@ -552,8 +545,7 @@ h1 small, h2 small, h3 small, h4 small {
       .articles article:hover h3, .articles article:hover time {
         color: #ea2e47; }
       .articles article:hover blockquote {
-        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAQAAAAnZu5uAAAAEklEQVR4nGNikIJBJgY4IMgEABpjAI3SojZdAAAAAElFTkSuQmCC');
-        background: rgba(0, 0, 0, 0.1); }
+        background-color: rgba(0, 0, 0, 0.1); }
     @media (min-width: 50em) {
       .articles article {
         margin-left: 32px;
@@ -584,8 +576,7 @@ footer {
     margin: 16px auto;
     margin: 1rem auto;
     border-color: fade(#a21024, 0.25);
-    -webkit-box-shadow: 0 1px 0 0 fade(white, 0.15);
-            box-shadow: 0 1px 0 0 fade(white, 0.15); }
+    box-shadow: 0 1px 0 0 fade(white, 0.15); }
   footer .colophon, footer .social {
     width: 49.15254%;
     float: left;
@@ -615,6 +606,8 @@ footer {
         clear: both;
         width: 100%;
         float: left;
+        margin-left: 0;
+        margin-right: 0;
         text-align: right;
         width: 100%; } }
 
@@ -632,8 +625,7 @@ header {
         line-height: 1.05882em; } }
 
 .portfolio {
-  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAQAAAAnZu5uAAAAEklEQVR4nGP6Xw+DTAxwQJAJAHQhB4GKBdKAAAAAAElFTkSuQmCC');
-  background: rgba(255, 255, 255, 0.5); }
+  background-color: rgba(255, 255, 255, 0.5); }
   .portfolio h1 {
     margin: 16px 0;
     margin: 1rem 0;
@@ -729,8 +721,7 @@ header {
       .articles article:hover h3, .articles article:hover time {
         color: #ea2e47; }
       .articles article:hover blockquote {
-        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAQAAAAnZu5uAAAAEklEQVR4nGNikIJBJgY4IMgEABpjAI3SojZdAAAAAElFTkSuQmCC');
-        background: rgba(0, 0, 0, 0.1); }
+        background-color: rgba(0, 0, 0, 0.1); }
     @media (min-width: 50em) {
       .articles article {
         margin-left: 32px;
@@ -753,8 +744,7 @@ header {
           top: 3rem; } }
 
 .article, .novel {
-  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAQAAAAnZu5uAAAAEklEQVR4nGP6Xw+DTAxwQJAJAHQhB4GKBdKAAAAAAElFTkSuQmCC');
-  background: rgba(255, 255, 255, 0.5); }
+  background-color: rgba(255, 255, 255, 0.5); }
   .article h1, .novel h1 {
     text-align: center; }
   .article article .wp-caption a, .novel article .wp-caption a {
@@ -812,7 +802,7 @@ header {
 .about aside {
   height: 320px;
   height: 20rem;
-  background-image: url('../img/maxime-fabre.jpg?1390057934'); }
+  background-image: url('../img/maxime-fabre.jpg'); }
   @media (min-width: 60em) and (max-width: 75em) {
     .about aside {
       height: 400px;
@@ -839,7 +829,7 @@ header {
     margin-left: auto;
     margin-right: auto;
     max-width: 100%; }
-    .about .about-biography::after {
+    .about .about-biography:after {
       content: " ";
       display: block;
       clear: both; }
@@ -932,3 +922,5 @@ header {
 .novel .alert {
   margin: 32px 0;
   margin: 2rem 0; }
+
+/*# sourceMappingURL=styles.css.map */

@@ -2,13 +2,13 @@ module.exports = {
 	options: {
 		blockReplacements: {
 			css: function (block) {
-				return '{{ HTML.style("' + block.dest + '") }}';
+				return '{{ HTML.style("' + block.dest + '")|raw }}';
 			},
-			js: function (block) {
-				return '{{ HTML.script("' + block.dest + '") }}';
+			js : function (block) {
+				return '{{ HTML.script("' + block.dest + '")|raw }}';
 			},
 		},
 	},
 
-	html: 'app/views/**/*.twig',
+	html: '<%= views %>/**/*.twig',
 };

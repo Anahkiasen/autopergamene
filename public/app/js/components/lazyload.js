@@ -1,3 +1,4 @@
 $('.image-wrap img').lazyload({
-	effect: 'fadeIn'
+    effect: 'fadeIn',
 });
+//# sourceMappingURL=lazyload.js.map

@@ -1,25 +1,25 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
 	////////////////////////////////////////////////////////////////////
 	/////////////////////////////// COMMANDS ///////////////////////////
 	////////////////////////////////////////////////////////////////////
 
 	grunt.registerTask('default', 'Build assets for local', [
-		'css',
-		'js',
-		'copy',
+		'concurrent:build',
 	]);
 
 	grunt.registerTask('rebuild', 'Rebuild all assets from scratch', [
-		'clean',
-		'compass:clean',
-		'default',
+		'concurrent:clean',
+		'concurrent:build',
 	]);
 
 	grunt.registerTask('production', 'Build assets for production', [
-		'js',
+		'concurrent:images',
+		'rebuild',
+		'ngAnnotate',
 		'shell:assets',
 		'useminPrepare',
+		'ngtemplates',
 		'concat',
 		'copy',
 		'minify',
@@ -29,35 +29,39 @@ module.exports = function(grunt) {
 	// Flow
 	////////////////////////////////////////////////////////////////////
 
-	grunt.registerTask('minify', 'Minify assets', [
+	grunt.registerTask('minify', 'Minify the files', [
 		'cssmin',
-		'uglify',
+		'uglify'
 	]);
 
 	grunt.registerTask('images', 'Recompress images', [
-		'svgmin',
-		'tinypng',
+		'newer:imagemin',
+	]);
+
+	grunt.registerTask('lint', 'Lint the files', [
+		'phplint',
+		'tslint',
+		'scsslint',
+		'csslint',
+		'csscss',
 	]);
 
 	// By filetype
 	////////////////////////////////////////////////////////////////////
 
 	grunt.registerTask('md', 'Build contents', [
-		'concat:md',
-		'markdown',
-		'prettify',
+		'newer:concat:md',
+		'newer:markdown',
+		'newer:prettify',
 	]);
 
 	grunt.registerTask('js', 'Build scripts', [
-		'typescript',
-		'jshint',
+		'concurrent:js'
 	]);
 
 	grunt.registerTask('css', 'Build stylesheets', [
-		'compass:compile',
-		'csslint',
-		'csscss',
-		'autoprefixer',
+		'newer:compass:compile',
+		'newer:autoprefixer',
 	]);
 
 }

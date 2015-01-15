@@ -90,7 +90,7 @@
 // Light blocks ---------------------------------------------------- /
 
 %block-light {
-  @include rgba-background-inline(rgba(black, 0.05));
+  background-color: rgba(black, 0.05);
   color: grey(20);
   @include rem(padding, 0.75rem);
   text-align: justify;

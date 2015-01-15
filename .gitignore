@@ -5,6 +5,7 @@ vendor
 
 # Cache and compiled
 Gemfile.lock
+*.map
 .tmp
 .sass-cache
 .vagrant
