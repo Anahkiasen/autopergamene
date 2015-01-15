@@ -2,6 +2,7 @@
 
 return array(
 
+
     /*
     |--------------------------------------------------------------------------
     | PDO Fetch Style
@@ -14,6 +15,7 @@ return array(
     */
 
     'fetch'       => PDO::FETCH_CLASS,
+
     /*
     |--------------------------------------------------------------------------
     | Default Database Connection Name
@@ -25,7 +27,8 @@ return array(
     |
     */
 
-    'default'     => 'sqlite',
+    'default'     => 'mysql',
+
     /*
     |--------------------------------------------------------------------------
     | Database Connections
@@ -52,9 +55,9 @@ return array(
         'mysql'  => array(
             'driver'    => 'mysql',
             'host'      => 'localhost',
-            'database'  => 'database',
+            'database'  => 'autopergamene',
             'username'  => 'root',
-            'password'  => '',
+            'password'  => 'root',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
@@ -79,6 +82,7 @@ return array(
         ),
 
     ),
+
     /*
     |--------------------------------------------------------------------------
     | Migration Repository Table
@@ -91,6 +95,7 @@ return array(
     */
 
     'migrations'  => 'migrations',
+
     /*
     |--------------------------------------------------------------------------
     | Redis Databases

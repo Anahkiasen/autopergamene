@@ -14,14 +14,13 @@ class CreateRepositories extends Migration
         Schema::create('repositories', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->text('content');
+            $table->text('content')->nullable();
             $table->string('tags');
 
             $table->string('vendor');
             $table->string('package');
 
-            $table->integer('order');
-            $table->boolean('master');
+            $table->integer('downloads');
             $table->timestamps();
         });
     }

@@ -19,6 +19,6 @@ class RepositoriesRepository extends AbstractRepository
      */
     public function getOrderedRepositories()
     {
-        return $this->items()->orderBy('master', 'desc')->orderBy('order')->get();
+        return $this->items()->orderBy('downloads', 'DESC')->get();
     }
 }

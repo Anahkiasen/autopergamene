@@ -56,12 +56,6 @@
 	<p>{{ 'Les liens pointent soit sur Github vers la source, soit vers le site du projet.'|trans }}</p>
 
 	{% for repository in repositories %}
-		{% if title is not defined and not repository.master %}
-			{% set title = 'Librairies en collaboration'|trans %}
-			<h2>{{ title }}</h2>
-			<p>{{ "Ci-dessous des projets que je n'ai pas initiés mais sur lesquels à force de contributions je suis passé collaborateur."|trans }}</p>
-		{% endif %}
-
 		<article class='repository'>
 			<a href='{{ repository.link }}' target='_blank'>
 				<figure>
@@ -69,9 +63,6 @@
 					<h4>{{ repository.content }}</h4>
 				</figure>
 			</a>
-			{% if not repository.master %}
-				<p>{{ 'par'|trans }} {{ repository.author }}</p>
-			{% endif %}
 			<p>
 				<strong>tags :</strong>
 				{% if repository.tags %}
