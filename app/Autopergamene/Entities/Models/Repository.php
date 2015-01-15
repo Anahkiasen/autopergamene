@@ -64,7 +64,8 @@ class Repository extends AbstractModel
      */
     public function getStatusAttribute()
     {
-        $image = 'https://secure.travis-ci.org/'.$this->vendor.'/'.$this->package.'.png';
+        $vendor = $this->vendor === 'anahkiasen' ? ucfirst($this->vendor) : $this->vendor;
+        $image  = 'https://secure.travis-ci.org/'.$vendor.'/'.$this->package.'.png';
 
         return HTML::image($image, 'Travis status', array('class' => 'build'));
     }
