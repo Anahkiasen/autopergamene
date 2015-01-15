@@ -6,7 +6,7 @@
 
 {% block navigation %}
 	{{ parent() }}
-	<a href="{{ URL.action('Autopergamene\\Controllers\\CategoriesController@show', 'illustration') }}" class="bank">{{ 'Retour aux supports'|trans }}</a>
+	<a href="{{ URL.action('Autopergamene\\Controllers\\CategoriesController@show', 'illustration') }}" class="back">{{ 'Retour aux supports'|trans }}</a>
 {% endblock %}
 
 {% block content %}

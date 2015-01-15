@@ -10,7 +10,7 @@
 
 {% block navigation %}
 	{{ HTML.homeLink() }}
-	<a href="{{ category.getPath('show') }}" class="bank">{{ 'Retour à'|trans }} {{ category.name }}</a>
+	<a href="{{ category.getPath('show') }}" class="back">{{ 'Retour à'|trans }} {{ category.name }}</a>
 {% endblock %}
 
 {% block layout %}
