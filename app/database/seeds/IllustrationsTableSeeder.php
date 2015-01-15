@@ -6,7 +6,7 @@ class IllustrationsTableSeeder extends DatabaseSeeder
     public function run()
     {
         foreach ($this->getIllustrations() as $illustration) {
-            list ($name, $description, $category) = $illustration;
+            list($name, $description, $category) = $illustration;
 
             Illustration::create([
                 'name'       => $name,
@@ -67,7 +67,7 @@ class IllustrationsTableSeeder extends DatabaseSeeder
                 'Christ Send Light',
                 'Encre et peinture<br>Musique montage à partir de Nadja - Christ Send Light',
                 'video',
-                true
+                true,
             ],
 
         ];

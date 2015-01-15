@@ -9,7 +9,7 @@ class RepositoriesRepository extends AbstractRepository
     /**
      * @param Repository $items
      */
-    function __construct(Repository $items)
+    public function __construct(Repository $items)
     {
         $this->items = $items;
     }

@@ -64,7 +64,7 @@ class PhotographiesController extends Controller
     /**
      * Display a Photoset
      *
-     * @param  string $slug
+     * @param string $slug
      *
      * @return View categories/subcategories/photoset
      */

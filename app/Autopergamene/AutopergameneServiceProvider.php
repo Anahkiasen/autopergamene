@@ -28,7 +28,7 @@ class AutopergameneServiceProvider extends ServiceProvider
     {
         // List all repositories
         $repositories = app_path('Autopergamene/Repositories');
-        $finder       = new Finder;
+        $finder       = new Finder();
         $files        = $finder->in($repositories)->files();
 
         /** @type \SplFileObject $file */

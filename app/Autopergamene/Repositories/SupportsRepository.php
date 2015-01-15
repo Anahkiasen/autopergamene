@@ -14,4 +14,3 @@ class SupportsRepository extends AbstractRepository
         $this->items = $items;
     }
 }
-

@@ -25,7 +25,7 @@ abstract class AbstractModel extends Polyglot
      *
      * @param Query $query
      *
-     * @return  Query
+     * @return Query
      */
     public static function scopeThumbnails($query)
     {
