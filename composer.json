@@ -20,8 +20,8 @@
     "anahkiasen/polyglot": "~1.3",
     "knplabs/packagist-api": "~1.2",
     "anahkiasen/arrounded": "0.5.*",
-    "barryvdh/laravel-twigbridge": "0.3.*",
-    "twig/extensions": "~1.2"
+    "twig/extensions": "~1.2",
+    "rcrowe/twigbridge": "0.6.*"
   },
   "require-dev": {
     "phpunit/phpunit": "~4.4",

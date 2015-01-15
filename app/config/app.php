@@ -127,7 +127,7 @@ return array(
 		'Flickering\FlickeringServiceProvider',
 		'Illuminage\IlluminageServiceProvider',
 		'Rocketeer\RocketeerServiceProvider',
-		'Barryvdh\TwigBridge\ServiceProvider',
+		'TwigBridge\ServiceProvider',
 		'Polyglot\PolyglotServiceProvider',
 		'Arrounded\ArroundedServiceProvider',
 
