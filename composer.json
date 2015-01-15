@@ -10,24 +10,24 @@
     }
   ],
   "require": {
-		"raveren/kint": "dev-master",
+    "raveren/kint": "0.9.*",
     "laravel/framework": "4.2.*",
-    "anahkiasen/flatten": "dev-develop",
-    "anahkiasen/flickering": "dev-master",
-    "anahkiasen/illuminage": "dev-master",
-    "dflydev/markdown": "dev-master",
-    "anahkiasen/rocketeer": "dev-develop",
-    "anahkiasen/polyglot": "dev-develop",
-    "knplabs/packagist-api": "dev-master",
-    "anahkiasen/arrounded": "dev-master",
-    "barryvdh/laravel-twigbridge": "dev-master",
-    "twig/extensions": "dev-master"
+    "anahkiasen/flatten": "0.5.*",
+    "anahkiasen/flickering": "0.1.*",
+    "anahkiasen/illuminage": "~1.2",
+    "dflydev/markdown": "~1.0",
+    "anahkiasen/rocketeer": "~2.0",
+    "anahkiasen/polyglot": "~1.3",
+    "knplabs/packagist-api": "~1.2",
+    "anahkiasen/arrounded": "0.5.*",
+    "barryvdh/laravel-twigbridge": "0.3.*",
+    "twig/extensions": "~1.2"
   },
   "require-dev": {
-    "phpunit/phpunit": "dev-master",
-    "mockery/mockery": "dev-master",
-    "barryvdh/laravel-ide-helper": "dev-master",
-    "doctrine/dbal": "~2.3"
+    "phpunit/phpunit": "~4.4",
+    "mockery/mockery": "0.9.*",
+    "barryvdh/laravel-ide-helper": "~1.11",
+    "doctrine/dbal": "~2.5"
   },
   "autoload": {
     "psr-0": {
@@ -54,6 +54,5 @@
   },
   "config": {
     "preferred-install": "dist"
-  },
-  "minimum-stability": "dev"
+  }
 }
