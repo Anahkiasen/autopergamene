@@ -4,10 +4,6 @@ interface JQuery {
 	lazyload;
 }
 
-interface Element {
-	classList;
-}
-
 interface ModernizrStatic {
 	classlist: boolean;
 	mediaqueries: boolean;
